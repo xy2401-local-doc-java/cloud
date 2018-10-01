@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Request Configuration Page for Inbound Adapters</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="For an inbound adapter, create the Request Configuration page in the wizard." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7DA46D87-8B34-47E2-B48A-E0C014459B07.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-ED01D778-E5AA-4A3E-9DA5-9D3F1A90ED7A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A97BED9A-E3FF-4F0D-8605-62F2D15CF528"></a> <span id="PAGE" style="display:none;">23/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-A97BED9A-E3FF-4F0D-8605-62F2D15CF528" class="sect1">Request Configuration Page for Inbound Adapters</h1>
+<div>
+<p>For an inbound adapter, create the Request Configuration page in the wizard.</p>
+<p>Refer to the <code>SampleInboundRequestConfigPage</code> class.</p>
+<div class="tblformal" id="GUID-A97BED9A-E3FF-4F0D-8605-62F2D15CF528__GUID-E100D3B2-50BF-4BA3-83C5-97FCCB4B5265">
+<table class="cellalignment290" summary="This table describes the SampleInboundRequestConfigPage class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d7490e37">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d7490e37">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d7490e50">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e60">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleInboundRequestConfigPage</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e60">
+<p>This class implements the Request Configuration page.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e73">
+<p><span class="bold">Method:</span></p>
+<p><code>getPageName()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e73">
+<p>Gets the page name.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e89">
+<p><code>getPageTitle()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e89">
+<p>Gets the page title.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e101">
+<p><code>getWelcomeText()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e101">
+<p>Gets the page&rsquo;s welcome text.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e113">
+<p><code>getPageEditFields()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e113">
+<p>Returns the page fields.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e125">
+<p><code>Populate()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e125">
+<p>Populates the page with business objects and business object descriptions.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e137">
+<p><code>populateBusinessObjects()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e137">
+<p>Gets business objects from the metadata parser.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e149">
+<p><code>updateBackEndModel()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e149">
+<p>Updates the back-end data model.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d7490e161">
+<p><code>getUpdatedEditPages()</code></p>
+</td>
+<td class="cellalignment291" headers="d7490e161">
+<p>Returns the page state with user selections.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="618" height="567" src="img/GUID-8398C5CF-1656-4554-AD39-80A5A9CBA5D3-default.png" alt="media/image25.png" title="media/image25.png" /><br />
+<a href="img_text/GUID-AF5C9761-61ED-4FB0-9D53-1B00A839E20A.htm">Description of the illustration GUID-8398C5CF-1656-4554-AD39-80A5A9CBA5D3-default.png</a></p>
+<p>Implement the <code>iCloudAdapterPage</code> for <code>SampleCloudRequestConfigPage</code>, because the UI Framework does not have any abstract implementation.</p>
+<p>Implement the <code>getPageEditFields()</code> methods to add page-level fields and populate respective values into the request configuration page.</p>
+<pre dir="ltr">
+// To get Metadata browser object
+CloudMetadataBrowser browser = CloudAdapterUtils.getMetadataBrowser(adapterPluginContext);
+// populate required controls in request configuration page.
+populate(currentPageFields, browser, null);
+</pre>
+<p>Implement the supporting private method called populate() to load and display service-level business objects.</p>
+<pre dir="ltr">
+//UI controls to display list of business objects of respective SaaS application service.
+
+SelectObject selectBizObject = UIFactory.createSelectObject(this.bizObjArray,this.bizObjArray,
+   bizObjArray[0], ISelectObject.DISPLAY_LIST_AS_LISTBOX,false, true, 
+   SampleCloudAdapterCloudText.getString(SampleCloudAdapterCloudText.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_LISTBOX_FILTER_PLACEHOLDER_TEXT));
+
+this.createOrUpdateField(currentPageFields, SampleCloudAdapterConstants.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_BUSINESS_OBJ_LIST_FIELD, 
+   SampleCloudAdapterCloudText.getString(SampleCloudAdapterCloudText.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_BUSINESS_OBJ_LIST_LABEL),
+   SampleCloudAdapterCloudText.getString(SampleCloudAdapterCloudText.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_BUSINESS_OBJ_LIST_DESC),
+   false, selectBizObject, EditField.LabelFieldLayout.TWO_ROW_LAYOUT, "", -1, null);
+
+//To get the list of businesss object details
+    List&lt;CloudDataObjectNode&gt; dataObjects = browser.getDataObjectNodes();
+
+//To add business objects into array
+   bizObjArray = new String[boList.size()];
+   bizObjArray = boList.toArray(bizObjArray);
+   Arrays.sort(bizObjArray);
+
+</pre>
+<p>Override the <code>updateBackEndModel()</code> method to maintain the state of the request configuration page. The back-end transformation model generates runtime artifacts such as the JCA and WSDL based on wizard user selections.</p>
+<pre dir="ltr">
+//To get the state of the Adapter Page
+   CloudAdapterPageState state = new CloudAdapterPageState(false, wizardPages, currentPageFields);
+//To transfer state details to backend model to construct runtime artifacts.
+   transferUIDataToModel(props, map);
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-7DA46D87-8B34-47E2-B48A-E0C014459B07.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-ED01D778-E5AA-4A3E-9DA5-9D3F1A90ED7A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

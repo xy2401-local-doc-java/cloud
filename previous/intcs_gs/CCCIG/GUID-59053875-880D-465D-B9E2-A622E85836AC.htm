@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Building a SOA Composite Application Using MyCloudAdapter</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="To use MyCloudAdapter, you can add it to a SOA composite application in JDeveloper." />
+<meta name="dcterms.created" content="2016-04-01T12:06:20Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Adapter SDK Installation Guide" />
+<meta name="dcterms.identifier" content="E68714-01" />
+<meta name="dcterms.isVersionOf" content="CCCIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7DE9B662-6A9A-43E8-A0B2-137EF66DCD38.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-CFF0801B-43BA-425D-A2C0-65EBE3DBE9F7.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-59053875-880D-465D-B9E2-A622E85836AC"></a> <span id="PAGE" style="display:none;">12/13</span> <!-- End Header -->
+<h1 id="CCCIG-GUID-59053875-880D-465D-B9E2-A622E85836AC" class="sect1">Building a SOA Composite Application Using MyCloudAdapter</h1>
+<div>
+<p>To use MyCloudAdapter, you can add it to a SOA composite application in JDeveloper.</p>
+<ol>
+<li class="stepexpand"><span>Open JDeveloper.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">File &gt; New &gt; From Gallery</span>.</span>
+<div><img width="633" height="471" src="img/GUID-CAF705C0-BA09-4206-8EEB-3F395DCEF6FA-default.png" alt="media/image20.png" title="media/image20.png" /><br />
+<a href="img_text/GUID-21457405-F47A-4453-B8B6-EC0E38EA70D5.htm">Description of the illustration GUID-CAF705C0-BA09-4206-8EEB-3F395DCEF6FA-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">SOA Application</span> from the gallery.</span></li>
+<li class="stepexpand"><span>Type an Application Name.</span></li>
+<li class="stepexpand"><span>Type a Project Name.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span>.</span>
+<div>An empty <code>composite.xml</code> file for the project opens.</div>
+</li>
+<li class="stepexpand"><span>Drag and drop MyCloudAdapter from the Cloud category of the component palette to the External References section of the <code>composite.xml</code> file.</span>
+<div>An adapter used as an external reference is <span class="italic">outbound</span>: the adapter invokes the application with which it interfaces.</div>
+<div>The MyCloudAdapter wizard opens to the Welcome page.</div>
+</li>
+<li class="stepexpand"><span>Type a Reference Name for the adapter.</span>
+<div><img width="996" height="595" src="img/GUID-26FABE65-739F-4943-9C07-3A7BADA02BFB-default.png" alt="media/image21.png" title="media/image21.png" /><br />
+<a href="img_text/GUID-406BB067-DA00-40AA-8742-F25C2BAF92A2.htm">Description of the illustration GUID-26FABE65-739F-4943-9C07-3A7BADA02BFB-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>The Connection page of the wizard appears.</div>
+</li>
+<li class="stepexpand"><span>Type the MyCloudAppService URL in the WSDL URL field.</span>
+<div><code>http://<span class="variable">hostname</span>:<span class="variable">port</span>/MyCloudApplication/MyCloudAppService?WSDL</code></div>
+</li>
+<li class="stepexpand"><span>Create a new Authentication Key and provide CSF key details.</span>
+<div><img width="998" height="647" src="img/GUID-9D29BFD3-D552-4E11-B41F-447B106EADD0-default.png" alt="media/image22.png" title="media/image22.png" /><br />
+<a href="img_text/GUID-1B69B1B2-D958-4675-94E7-AE8F8A0CBF5E.htm">Description of the illustration GUID-9D29BFD3-D552-4E11-B41F-447B106EADD0-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Test</span> to test connectivity to the service.</span>
+<div><img width="1003" height="457" src="img/GUID-E643429B-A0E0-42A1-B175-9D6C2F670E97-default.png" alt="media/image23.png" title="media/image23.png" /><br />
+<a href="img_text/GUID-EBE6FA76-F7A5-4EC5-BE9F-E0128628F950.htm">Description of the illustration GUID-E643429B-A0E0-42A1-B175-9D6C2F670E97-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>
+<p>The Operations page of the wizard appears.</p>
+<img width="999" height="597" src="img/GUID-5CA30F86-0171-47F6-8157-FE3EB2F5AF76-default.png" alt="media/image24.png" title="media/image24.png" /><br />
+<a href="img_text/GUID-EFB72185-A92E-4A8A-BE77-A1ECC3D82437.htm">Description of the illustration GUID-5CA30F86-0171-47F6-8157-FE3EB2F5AF76-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Move desired business objects to the Selected area.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>
+<p>The Summary page of the wizard appears.</p>
+<img width="995" height="603" src="img/GUID-AFBB51F1-74DA-4CDD-85E0-52C07F7429DC-default.png" alt="media/image25.png" title="media/image25.png" /><br />
+<a href="img_text/GUID-6DE4F921-6BC2-4AB7-8324-D5262B4ECD03.htm">Description of the illustration GUID-AFBB51F1-74DA-4CDD-85E0-52C07F7429DC-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span> to generate artifacts and references for the adapter.</span>
+<div>Runtime artifacts such as the Cloud Application Configuration file (<code>.jca</code>), Integration WSDL files, and corresponding schemas are generated.</div>
+</li>
+<li class="stepexpand"><span>Drag and drop MyCloudAdapter from the Cloud category of the component palette to the Exposed Services section of the <code>composite.xml</code> file.</span>
+<div>An adapter used as an exposed service is <span class="italic">inbound</span>: the application with which the adapter interfaces invokes the adapter.</div>
+<div>The MyCloudAdapter wizard opens to the Welcome page.</div>
+</li>
+<li class="stepexpand"><span>Type a Service Name for the adapter.</span>
+<div><img width="1187" height="607" src="img/GUID-C4BAC320-067F-4C97-B79E-C907B5C4D014-default.png" alt="media/image26.png" title="media/image26.png" /><br />
+<a href="img_text/GUID-E40431A7-FCA3-44F5-9B89-41F9282849FD.htm">Description of the illustration GUID-C4BAC320-067F-4C97-B79E-C907B5C4D014-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>The Connection page of the wizard appears.</div>
+</li>
+<li class="stepexpand"><span>Type the MyCloudAppService URL in the WSDL URL field.</span>
+<div><code>http://<span class="variable">hostname</span>:<span class="variable">port</span>/MyCloudApplication/MyCloudAppService?WSDL</code></div>
+</li>
+<li class="stepexpand"><span>Select the Authentication Key you created in a previous step.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Test</span> to test connectivity to the service.</span>
+<div><img width="1006" height="434" src="img/GUID-ACD330D2-E5EA-45E6-BBB9-866C4A311DE0-default.png" alt="media/image27.png" title="media/image27.png" /><br />
+<a href="img_text/GUID-EBE6FA76-F7A5-4EC5-BE9F-E0128628F950.htm">Description of the illustration GUID-ACD330D2-E5EA-45E6-BBB9-866C4A311DE0-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>
+<p>The Request page of the wizard appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the business object you would like to receive in a request to this integration flow.</span>
+<div><img width="1000" height="597" src="img/GUID-B64CD2BD-DBFF-4EBA-9617-547BD64F19E1-default.png" alt="media/image28.png" title="media/image28.png" /><br />
+<a href="img_text/GUID-4217223E-BBA3-40F4-90B0-0C8AE93B1650.htm">Description of the illustration GUID-B64CD2BD-DBFF-4EBA-9617-547BD64F19E1-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>
+<p>The Response page of the wizard appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the business object to which you would like to send a response in this integration flow.</span>
+<div><img width="998" height="601" src="img/GUID-D9274880-D168-428A-9D20-56984AAB9981-default.png" alt="media/image29.png" title="media/image29.png" /><br />
+<a href="img_text/GUID-DF979AE0-0B3A-4C47-9606-C90BD4DE92CC.htm">Description of the illustration GUID-D9274880-D168-428A-9D20-56984AAB9981-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span>
+<div>
+<p>The Summary page of the wizard appears.</p>
+<img width="995" height="603" src="img/GUID-AFBB51F1-74DA-4CDD-85E0-52C07F7429DC-default.png" alt="media/image25.png" title="media/image25.png" /><br />
+<a href="img_text/GUID-6DE4F921-6BC2-4AB7-8324-D5262B4ECD03.htm">Description of the illustration GUID-AFBB51F1-74DA-4CDD-85E0-52C07F7429DC-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span> to generate artifacts and references for the adapter.</span>
+<div>Runtime artifacts such as the Cloud Application Configuration file (<code>.jca</code>), Integration WSDL file, Endpoint WSDL file, and corresponding schemas are generated.</div>
+</li>
+<li class="stepexpand"><span>Create a synchronous BPEL process to consume the inbound MyCloudAdapterService and reply back with an outbound response from MyCloudApplication.</span></li>
+<li class="stepexpand"><span>Make sure to deselect the <span class="bold">Expose as a SOAP Service</span> box.</span>
+<div><img width="911" height="541" src="img/GUID-6CF90CA5-F1CD-46BA-B4D8-5CD1C5AAE97E-default.png" alt="media/image30.png" title="media/image30.png" /><br />
+<a href="img_text/GUID-2A12E5A2-9704-4C41-A3DD-4395027190F5.htm">Description of the illustration GUID-6CF90CA5-F1CD-46BA-B4D8-5CD1C5AAE97E-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Wire the inbound (exposed service) and outbound (external reference) adapters to the BPEL process.</span>
+<div><img width="917" height="277" src="img/GUID-1D47531B-1A6D-49C1-B92A-7F1535CA2E0F-default.png" alt="media/image31.png" title="media/image31.png" /><br />
+<a href="img_text/GUID-006A5A25-34CB-44FB-828B-BE1C032329B3.htm">Description of the illustration GUID-1D47531B-1A6D-49C1-B92A-7F1535CA2E0F-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Double click the BPEL process component to open it.</span></li>
+<li class="stepexpand"><span>After the Receive input activity, drag and drop an Invoke activity from the Webservice section of the component palette.</span></li>
+<li class="stepexpand"><span>Wire the Invoke activity to the outbound adapter.</span>
+<div><img width="1010" height="446" src="img/GUID-9E5549A0-F1F5-478A-ADFD-FCC8DFA414C0-default.png" alt="media/image33.png" title="media/image33.png" /><br />
+<a href="img_text/GUID-8F8BFB54-16D4-4832-8083-24C94A97AFC7.htm">Description of the illustration GUID-9E5549A0-F1F5-478A-ADFD-FCC8DFA414C0-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Edit the Invoke activity and create input and output variables for the reference service.</span>
+<div><img width="498" height="548" src="img/GUID-01D56594-C170-4987-BCD3-A07B476AEFF0-default.png" alt="media/image32.png" title="media/image32.png" /><br />
+<a href="img_text/GUID-F7991762-B577-47A7-982C-2DF79B21EDFF.htm">Description of the illustration GUID-01D56594-C170-4987-BCD3-A07B476AEFF0-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>To map Request values, add an Assign activity above the Invoke activity to transform the values from source to destination.</span>
+<div><img width="1019" height="535" src="img/GUID-C9929EFE-7B55-40C2-BCBF-82F93D84AE5C-default.png" alt="media/image34.png" title="media/image34.png" /><br />
+<a href="img_text/GUID-1F17C1BF-0083-493F-93E0-7BF706ED7FFB.htm">Description of the illustration GUID-C9929EFE-7B55-40C2-BCBF-82F93D84AE5C-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Double click the Assign activity to open it.</span></li>
+<li class="stepexpand"><span>Map the Account ID value from source to destination.</span>
+<div><img width="1233" height="632" src="img/GUID-DE08BC4C-B97F-44E3-8F79-020B233344E3-default.png" alt="media/image35.png" title="media/image35.png" /><br />
+<a href="img_text/GUID-2D20E092-BD44-4F2D-A038-71072DC22BAD.htm">Description of the illustration GUID-DE08BC4C-B97F-44E3-8F79-020B233344E3-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>To map Response values, drag and drop another Assign activity after the Invoke activity.</span>
+<div><img width="1006" height="614" src="img/GUID-A6D7978D-D603-416F-9192-AD45E293E22F-default.png" alt="media/image36.png" title="media/image36.png" /><br />
+<a href="img_text/GUID-57D993CF-5EA9-4646-8AB8-7A9DD5C3D01F.htm">Description of the illustration GUID-A6D7978D-D603-416F-9192-AD45E293E22F-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Map the Account ID value from source to destination.</span>
+<div><img width="1270" height="667" src="img/GUID-64E3A416-E701-4B07-8153-242AD0926D46-default.png" alt="media/image37.png" title="media/image37.png" /><br />
+<a href="img_text/GUID-6F1E38FF-2E03-48D2-A29E-B67E4C317CBB.htm">Description of the illustration GUID-64E3A416-E701-4B07-8153-242AD0926D46-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Save all modified files and deploy to the WebLogic SOA server.</span></li>
+<li class="stepexpand"><span>To test the inbound adapter, use one of these URL patterns with any web service client:</span>
+<div>
+<p>For SOA:</p>
+<pre dir="ltr">
+https://<span class="variable">hostname</span>:<span class="variable">port</span>/integration/flowsvc/<span class="variable">adapter</span>/<span class="variable">partitionName</span>/<span class="variable">compositeName</span>/<span class="variable">serviceName</span>/<span class="variable">version</span>?wsdl
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+https://<span class="variable">hostname</span>:<span class="variable">port</span>/integration/flowsvc/mycloudadapter/default/TestComposite/TestService/v1.0/?wsdl
+</pre>
+<p>For Service Bus:</p>
+<pre dir="ltr">
+https://<span class="variable">hostname</span>:<span class="variable">port</span>/integration/flowsvc/<span class="variable">adapter</span>/<span class="variable">applicationName</span>/<span class="variable">proxyName</span>?wsdl
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+https://<span class="variable">hostname</span>:<span class="variable">port</span>/integration/flowsvc/mycloudadapter/TestApp/TestService/?wsdl
+</pre></div>
+</li>
+</ol>
+<div class="section">Next, see <a href="GUID-CFF0801B-43BA-425D-A2C0-65EBE3DBE9F7.htm" title="After you use MyCloudAdapter to change business objects or metadata in MyCloudApplication, you can look in MyCloudApplication to see the changes.">Verifying the Result in MyCloudApplication</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment65">
+<tr>
+<td class="cellalignment72">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment69"><a href="GUID-7DE9B662-6A9A-43E8-A0B2-137EF66DCD38.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment69"><a href="GUID-CFF0801B-43BA-425D-A2C0-65EBE3DBE9F7.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment74">
+<table class="cellalignment68">
+<tr>
+<td class="cellalignment69"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment69"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment69"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

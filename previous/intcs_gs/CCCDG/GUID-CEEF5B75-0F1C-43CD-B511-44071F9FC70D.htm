@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adapter User Interface Entry Point</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="Create the entry point for the adapter plugin." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-5FDE4D65-C82B-4F12-9E3F-DB2F5090FF5D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7C9015F0-C57C-45D0-9F59-21CAB2108A30.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D"></a> <span id="PAGE" style="display:none;">19/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D" class="sect1">Adapter User Interface Entry Point</h1>
+<div>
+<p>Create the entry point for the adapter plugin.</p>
+<p>Refer to an implementation class called <code>SampleCloudScaEndpointImpl</code> as specified in <code>extension.xml</code>.</p>
+<div class="tblformal" id="GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D__GUID-B9362F58-80EF-47E2-8E4B-C5680F9D5317">
+<table class="cellalignment290" summary="This table describes the SampleCloudScaEndpointImpl class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d5557e40">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d5557e40">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d5557e53">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e63">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudScaEndpointImpl</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e63">
+<p>The <code>SCAEndpoint</code> is invoked when a new adapter is dragged and dropped into the SOA diagram or when an existing adapter is double-clicked.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e80">
+<p><span class="bold">Method:</span></p>
+<p><code>runCreateWizard()</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e80">
+<p>Initiates the Sample Cloud Adapter Wizard. References the <code>UIBinding</code> class (see the class diagram).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="389" height="722" src="img/GUID-5E087A51-BC0F-44D9-9E8A-3EBA9E3F7EBD-default.png" alt="media/image17.png" title="media/image17.png" /><br />
+<a href="img_text/GUID-A442C7CB-9BD7-4ACD-B2D4-D2B14282C467.htm">Description of the illustration GUID-5E087A51-BC0F-44D9-9E8A-3EBA9E3F7EBD-default.png</a></p>
+<p>Implement the <code>runCreateWizard</code> method. This method references the <code>UIBinding</code> class.</p>
+<pre dir="ltr">
+ICloudAdapterUIBinding iCloudAdapterUIBinding  = new SampleCloudUIBinding(uiHandler.getFilter(),uiHandler.getLocale(), adapterId);
+</pre>
+<p><span class="bold">Note:</span> You must implement the UI Provider Class to register the adapter with ICS.</p>
+<p>The code snippet below is in <code>SampleCloudAdapterProvider</code>. This class references the <code>UIBinding</code> class as specified in diagram.</p>
+<pre dir="ltr">
+public class SampleCloudAdapterProvider extends CloudAdapterUIProvider
+{
+  public ICloudAdapterUIBinding getCloudAdapterUIBinding(CloudAdapterFilter cloudAdapterFilter, Locale locale)
+    throws CloudAdapterException
+  {
+    SampleCloudUIBinding uiBinding = null;
+    try
+    {
+      uiBinding = new SampleCloudUIBinding(cloudAdapterFilter, locale);
+    } catch (Exception ex) {
+      throw new CloudAdapterException(ex.getMessage());
+    }
+    return uiBinding;
+  }
+    @Override
+    public String getLocalizedAdapterType(Locale locale) {
+       
+        return "SampleCloudAdapterLab";
+    }
+}        
+</pre>
+<p>Here is the corresponding <code>cloud-adapter.xml</code> entry:</p>
+<pre dir="ltr">
+&lt;UIProviderClass&gt; oracle.tip.tools.ide.adapters.samplecloudadapter.wizard.SampleCloudAdapterProvider&lt;/UIProviderClass&gt;
+</pre>
+<p>Refer to a UI binding class called <code>SampleCloudAdapterUIBinding</code>.</p>
+<div class="tblformal" id="GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D__GUID-ECDF7BA8-05BC-4EA4-BC86-BBCF364A01C5">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapterUIBinding class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d5557e152">
+<p><span class="bold">Package, Class and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d5557e152">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d5557e166">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e176">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterUIBinding</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e176">
+<p>The implementation class of <code>ICloudAdapterUIBinding</code>:</p>
+<ul style="list-style-type: disc;">
+<li>Creates the <code>DefaultAdapterPluginContext</code>. This is an adapter-specific context for creating artifacts. This context object is passed to all pages, so pages can pass values from one page to other.</li>
+<li>Creates the actual <code>adapterProvider</code> (subclass of <code>AbstractCloudApplicationAdapter</code>). Sets this in the context created in the previous step.</li>
+<li>Has APIs to get the list of pages, get the fields for each page, perform business logic validation, delegate page actions to respective pages, and generate artifacts. Handles interactions between the wizard and the actual adapter pages.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e210">
+<p><span class="bold">Method:</span></p>
+<p><code>getEditPages()</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e210">
+<p>Returns the list of pages to display in the wizard. The key in the map is the <code>pageId</code> and the value is an instance of <code>ICloudAdapterPage</code>.</p>
+<p>The page sequence in the map determines the page sequence in the wizard.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e234">
+<p><code>generateMetadataArtifacts()</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e234">
+<p>Returns <code>CloudAdapter</code> runtime artifacts such as the Cloud Adapter Configuration file and the integration WSDL based on user selections.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="497" height="782" src="img/GUID-61BC8BC0-C5ED-42DF-8BFB-E77FF687C175-default.png" alt="media/image18.png" title="media/image18.png" /><br />
+<a href="img_text/GUID-4BF56CEE-551A-40AD-9E0A-2CA113D83DF6.htm">Description of the illustration GUID-61BC8BC0-C5ED-42DF-8BFB-E77FF687C175-default.png</a></p>
+<p>As specified in diagram, add the wizard pages into <code>getEditPages()</code> to display the page sequence.</p>
+<ul style="list-style-type: disc;">
+<li>Welcome Page: For Welcome Screen</li>
+<li>Connection Page: To provide connectivity details</li>
+<li>Operations Page: To choose cloud operation and respective business objects (outbound only)</li>
+<li>Request Configuration Page: To choose request type business object (inbound only)</li>
+<li>Response Configuration Page: To choose type of integration and to choose the reply type business object (inbound only)</li>
+<li>Summary Page: To display configured information</li>
+</ul>
+<pre dir="ltr">
+public LinkedHashMap&lt;String, ICloudAdapterPage&gt; getEditPages(Object adapterConfiguration) {
+
+LinkedHashMap&lt;String, ICloudAdapterPage&gt;  editPages = new LinkedHashMap&lt;String, ICloudAdapterPage&gt;();
+editPages = new LinkedHashMap&lt;String, ICloudAdapterPage&gt;();
+String referenceName = context.getReferenceBindingName();
+editPages.put(CloudAdapterConstants.WELCOME_PAGE_ID, new SampleCloudAdapterWelcomePage(context));
+ 
+// Skip connection page if applicationInstanceId is present.
+CloudAdapterFilter filter = (CloudAdapterFilter)context.getContextObject(CloudAdapterConstants.UI_CLOUD_ADAPTER_FILTER);
+
+   if(filter.isAddConnection()) {       
+      editPages.put(CloudAdapterConstants.CONNECTION_PAGE_ID, new CloudAdapterConnectionPage(context));
+   }
+
+   if (!filter.isInbound()) {
+      editPages.put(CloudAdapterConstants.OPERATIONS_PAGE_ID, new SampleCloudAdapterOperationsPage(context));
+   }
+        
+   if (filter.isInbound()) {
+      editPages.put(SampleCloudAdapterConstants.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_ID,
+         new SampleInboundRequestConfigPage(context));
+      editPages.put(SampleCloudAdapterConstants.SAMPLE_CLOUD_APP_INBOUND_REP_CONFIG_PAGE_ID,
+         new SampleInboundReplyConfigPage(context));
+   }
+        
+editPages.put(CloudAdapterConstants.SUMMARY_PAGE_ID, new SampleCloudAdapterSummaryPage(context));
+        
+return editPages;
+}
+</pre>
+<p>Implementation of the <code>generateMetadataArtifacts()</code> method is optional. It is required if you wish to add any additional parameters to the Cloud Application Configuration (CAC) file.</p>
+<pre dir="ltr">
+&lt;connection-factory location="cloud/CloudAdapter"&gt;
+    &lt;non-managed-connection managedConnectionFactoryClassName="oracle.tip.tools.ide.adapters.samplecloudadapter.runtime.SampleCloudAppConnectionFactory"&gt;
+      &lt;property name="targetWSDLURL" value="../WSDLs/AccountServiceSoapHttpPort.wsdl"/&gt;
+      &lt;property name="csfkey" value="samplekey"/&gt;
+      &lt;property name="csfMap" value="oracle.wsm.security"/&gt;
+      &lt;property name="applicationVersion" value="1.2"/&gt;
+    &lt;/non-managed-connection&gt;
+&lt;/connection-factory&gt;
+</pre>
+<p>Refer to the <code>SampleCloudAdapter</code> class.</p>
+<div class="tblformal" id="GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D__GUID-CFC7690D-D32A-4A6D-9725-69FA867E5C34">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapter class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d5557e297">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d5557e297">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d5557e310">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.plugin</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e321">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapter</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e321">
+<p>Creates and initializes the application-specific adapter.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e334">
+<p><span class="bold">Method:</span></p>
+<p><code>getConnection()</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e334">
+<p>Returns the adapter&rsquo;s <code>Connection</code> object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5557e352">
+<p><code>getName()</code></p>
+</td>
+<td class="cellalignment291" headers="d5557e352">
+<p>Returns the name of the adapter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Implement these methods:</p>
+<ul style="list-style-type: disc;">
+<li><code>getConnection()</code> &mdash; To get the cloud connection object</li>
+<li><code>getName()</code> &mdash; To get the name of the adapter</li>
+</ul>
+<p><span class="bold">Note:</span> The remaining methods (<code>getMetadataBrowser</code> and <code>getRuntimeMetadataGenerator</code>) are implemented after the first check.</p>
+<pre dir="ltr">
+// Get adapter connection object 
+public CloudConnection getConnection() {
+   return new SampleCloudAdapterConnection(getPluginContext());
+}
+
+@Override
+public CloudMetadataBrowser getMetadataBrowser(CloudConnection connection) {
+        
+   return null;
+}
+        
+@Override
+public RuntimeMetadataGenerator getRuntimeMetadataGenerator() {
+
+   return null;
+}
+
+@Override
+public String getName() {
+   return "Sample Cloud Adapter";
+}
+
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-5FDE4D65-C82B-4F12-9E3F-DB2F5090FF5D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-7C9015F0-C57C-45D0-9F59-21CAB2108A30.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

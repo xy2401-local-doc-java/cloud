@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>SAP Inbound Communication</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="During SAP inbound communication, the SAP Adapter acts as a client sending requests to the SAP system." />
+<meta name="dcterms.created" content="2016-12-16T16:34:08Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the SAP Adapter" />
+<meta name="dcterms.identifier" content="E68142-10" />
+<meta name="dcterms.isVersionOf" content="ICSSA" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4FC91D76-19CD-4160-ADFF-2C2C18C6EEA0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8E5FBC43-F2B5-40D6-9308-59B0FEC907D0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSA.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSA.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSA.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5BB0B84D-C1BE-4C18-9597-E37EA78DB07D"></a> <span id="PAGE" style="display:none;">27/41</span> <!-- End Header -->
+<h1 id="ICSSA-GUID-5BB0B84D-C1BE-4C18-9597-E37EA78DB07D" class="sect1">SAP Inbound Communication</h1>
+<div>
+<p>During SAP inbound communication, the <span>SAP Adapter</span> acts as a client sending requests to the SAP system.</p>
+<p>This section describes how to configure the adapter for communication.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-8E5FBC43-F2B5-40D6-9308-59B0FEC907D0.htm" title="Take the following actions before you begin configuration.">Prerequisites</a></p>
+</li>
+<li>
+<p><a href="GUID-21E3386D-9BCD-459A-8474-E19DC8FFC4A8.htm" title="Use the following steps to configure a logical system.">Configuring a Logical System</a></p>
+</li>
+<li>
+<p><a href="GUID-6BB3AD22-978E-40F3-AFE0-9546D177B8A0.htm" title="In SAP, all partner systems involved in a distribution model have a profile. There are several profile types, such as customer profiles and vendor profiles. This distinction is generally not necessary and you usually create your partners profiles using a generic Logical System type.">Configuring a Partner Profile</a></p>
+</li>
+<li>
+<p><a href="GUID-7F552441-9CC6-4E6F-B251-F234CEF3E494.htm" title="The process code contains the details of the function module that are used for IDoc processing. The message type can be linked to the process code.">Configuring Inbound Process Code</a></p>
+</li>
+<li>
+<p><a href="GUID-FAB11E0C-94AF-4655-9058-FFC6049D9B86.htm" title="The distribution model determines the sender and receiver of the IDoc&rsquo;s and defines the transfer rules.">Configuring a Distribution Model</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment772">
+<tr>
+<td class="cellalignment779">
+<table class="cellalignment777">
+<tr>
+<td class="cellalignment776"><a href="GUID-4FC91D76-19CD-4160-ADFF-2C2C18C6EEA0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment776"><a href="GUID-8E5FBC43-F2B5-40D6-9308-59B0FEC907D0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment781">
+<table class="cellalignment775">
+<tr>
+<td class="cellalignment776"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment776"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment776"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

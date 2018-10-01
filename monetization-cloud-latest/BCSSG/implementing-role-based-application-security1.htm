@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Implementing role-based application security</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-08-21T08:13:36Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Security Guide" />
+<meta name="dcterms.identifier" content="E92622-02" />
+<meta name="dcterms.isVersionOf" content="BCSSG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="getting-started-user-management1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="data-privacy1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92622-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92622-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92622-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5EBEA6FD-4EDE-4288-9466-2A726B2C90DC"></a> <span id="PAGE" style="display:none;">6/7</span> <!-- End Header -->
+<a id="BCSSG1119"></a><a id="BCSSG1069"></a>
+<h1 id="BCSSG-GUID-5EBEA6FD-4EDE-4288-9466-2A726B2C90DC" class="sect1"><span class="enumeration_chapter">3</span> Implementing role-based application security</h1>
+<div>
+<p>This document explains how to implement role-based application security for Oracle Monetization Cloud.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-DBEBF639-BEAE-4A6F-86C6-24DB62A9CB8F">About implementing role-based application security for Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-4763ACC3-7840-41AF-9069-1B7E847636C5">Creating users in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-44CF0A14-79A3-439F-965B-B058B3AFF6E1">Assigning roles to users in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-80F33872-32E4-4254-A478-BEEB493874DC">Reviewing roles and role assignments in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-AB6A7548-E134-4FAB-A7BF-40D5BF3425C5">Removing roles from users in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-874ABDF8-F2CB-4537-A1A8-15E39FEBFB61">Removing users from Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-E334E3AF-CFB5-46DD-AF07-CB7818995BA1">Setting password policies for Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-616C4A5E-A52D-435C-B80A-B1D4B61F0484">Related topics</a></p>
+</li>
+</ul>
+<p>See also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Information about roles and users in <span><cite>Oracle Fusion Middleware User&rsquo;s Guide for Oracle Identity Manager</cite></span></p>
+</li>
+<li>
+<p>Information about managing password policies in <span><cite>Oracle Fusion Middleware Administrator&rsquo;s Guide for Oracle Identity Manager</cite></span></p>
+</li>
+</ul>
+</div>
+<a id="BCSSG1070"></a>
+<div class="props_rev_3"><a id="GUID-DBEBF639-BEAE-4A6F-86C6-24DB62A9CB8F"></a>
+<h2 id="BCSSG-GUID-DBEBF639-BEAE-4A6F-86C6-24DB62A9CB8F" class="sect2">About implementing role-based application security for Oracle Monetization Cloud</h2>
+<div>
+<p>Oracle Monetization Cloud comes with a preconfigured set of roles. You manage access to Oracle Monetization Cloud environments and functionality by assigning those roles to users.</p>
+<div class="infobox-note" id="GUID-DBEBF639-BEAE-4A6F-86C6-24DB62A9CB8F__GUID-6140A2F4-BEE2-408F-BA24-1DD01A08CE2A">
+<p class="notep1">Note:</p>
+<p>You can't create or modify roles. You can, however, mix and match existing roles among users to create unique combinations of environment and functional access for each user.</p>
+</div>
+<p>You must assign the following types of roles to each user:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>One or more environment roles</p>
+<p>Environment roles grant access to your Oracle Monetization Cloud development and production environments. See <a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a>.</p>
+</li>
+<li>
+<p>One or more functional roles</p>
+<p>Functional roles determine which applications a user can access from the Oracle Monetization Cloud home page and which operations the user can perform in those applications. See <a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a>.</p>
+</li>
+</ul>
+<p>All of a user's functional roles are valid for each environment the user has access to. A user can't have a different set of functional roles for different environments. This means, for example, that you can't grant a user access to Offer Design in your development environment but deny the user access to Offer Design in your production environment.</p>
+<p>For more information, see the discussion about managing roles in <span><cite>Oracle Fusion Middleware User&rsquo;s Guide for Oracle Identity Manager</cite></span>.</p>
+</div>
+<a id="BCSSG1097"></a>
+<div class="props_rev_3"><a id="GUID-FFBD83C9-8163-470B-B340-DADFFECE648B"></a>
+<h3 id="BCSSG-GUID-FFBD83C9-8163-470B-B340-DADFFECE648B" class="sect3">Environment roles in Oracle Monetization Cloud</h3>
+<div>
+<p>The following table lists the environment roles available in Oracle Monetization Cloud:</p>
+<div class="tblformal" id="GUID-FFBD83C9-8163-470B-B340-DADFFECE648B__GUID-A64AF32A-5B37-4BC6-9E44-E50D6C0E3527">
+<table class="cellalignment13" summary="Contains the BRM Cloud Service environment roles available for Reporting users.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment14" id="d1137e125">Environment Role</th>
+<th class="cellalignment15" id="d1137e128">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e133" headers="d1137e125">
+<p>Development</p>
+</td>
+<td class="cellalignment17" headers="d1137e133 d1137e128">
+<p>Grants access to your development Oracle Monetization Cloud instance</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e140" headers="d1137e125">
+<p>Production</p>
+</td>
+<td class="cellalignment17" headers="d1137e140 d1137e128">
+<p>Grants access to your production Oracle Monetization Cloud instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1073"></a>
+<div class="props_rev_3"><a id="GUID-25A57787-8E71-4317-864C-F8E3DC5F8614"></a>
+<h3 id="BCSSG-GUID-25A57787-8E71-4317-864C-F8E3DC5F8614" class="sect3">Functional roles in Oracle Monetization Cloud</h3>
+<div>
+<p>Access to most Oracle Monetization Cloud functionality requires two types of functional roles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Roles that grant access to the appropriate applications on the Oracle Monetization Cloud home page</p>
+</li>
+<li>
+<p>Roles that grant access to application or system administration functionality</p>
+</li>
+</ul>
+<p>For example, to have read/write access to Offer Design, a user needs the following functional roles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Pricing Analyst:</span> Grants access to Offer Design on the Oracle Monetization Cloud home page</p>
+</li>
+<li>
+<p><span class="bold">Pricing Design Admin:</span> Grants read/write access to Offer Design</p>
+</li>
+</ul>
+<p>To maintain data privacy and security, assign users only the roles they need to accomplish their tasks, especially for roles that expose customer personal data. For example, a system administrator doesn't need to see customer contact information to configure event messaging, and a pricing analyst doesn't need to see customer invoices to analyze new offerings, so neither of these users need access to Subscriber Management.</p>
+<p>The following sections list the functional roles available in Oracle Monetization Cloud:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-873AB871-10CC-46FF-BE24-B4CF0900677C">Business Configuration functional roles</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-8D86CE83-B591-447C-901A-8E642091FB4E">Business Operations functional roles</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-159BB225-5275-4048-A276-99F71CC6F466">Offer Design functional roles</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-E03A2989-5DD2-474E-9167-7296A2CF6725">Oracle BI Publisher functional roles</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004">System administration functional roles</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSSG1121"></a>
+<div class="sect4"><a id="GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113"></a>
+<h4 id="BCSSG-GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113" class="sect4">Functional roles for accessing applications</h4>
+<div>
+<p>The functional roles in the following table grant access to the specified applications from the Oracle Monetization Cloud home page. To access application functionality, users need additional functional roles (see the following sections).</p>
+<div class="infobox-note" id="GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113__GUID-5D8A894A-EF14-4E63-8179-6002E07F498D">
+<p class="notep1">Note:</p>
+<p>If a user doesn't have a role that grants access to an application, a "no authorization" message appears when the user opens the application.</p>
+</div>
+<div class="tblformalwide" id="GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113__GUID-3BF76A04-8643-4363-8BF7-5AC7096D91B8">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to cards on the Oracle Monetization Cloud home page.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment19" id="d1137e232">Application access functional role</th>
+<th class="cellalignment20" id="d1137e235">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e240" headers="d1137e232">
+<p>BRM Admin</p>
+</td>
+<td class="cellalignment22" headers="d1137e240 d1137e235">
+<p>Grants read-only access to the following applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscriber Management</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a>.</p>
+</li>
+<li>
+<p><span class="bold">Oracle BI Publisher</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-E03A2989-5DD2-474E-9167-7296A2CF6725">Oracle BI Publisher functional roles</a>.</p>
+</li>
+</ul>
+<p>Grants access to <span class="bold">Business Configuration</span>. This role enables users to set up prerequisite configurations used to design product offerings, to create accounts, to run billing, and to perform other functions. See also <a href="implementing-role-based-application-security1.htm#GUID-873AB871-10CC-46FF-BE24-B4CF0900677C">Business Configuration functional roles</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e274" headers="d1137e232">
+<p>CSR</p>
+</td>
+<td class="cellalignment22" headers="d1137e274 d1137e235">
+<p>Grants read-only access to the following application:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscriber Management</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e291" headers="d1137e232">
+<p>Financial Analyst</p>
+</td>
+<td class="cellalignment22" headers="d1137e291 d1137e235">
+<p>Grants read-only access to the following applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscriber Management</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a>.</p>
+</li>
+<li>
+<p><span class="bold">Business Operations</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-8D86CE83-B591-447C-901A-8E642091FB4E">Business Operations functional roles</a>.</p>
+</li>
+<li>
+<p><span class="bold">Oracle BI Publisher</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-E03A2989-5DD2-474E-9167-7296A2CF6725">Oracle BI Publisher functional roles</a>.</p>
+</li>
+</ul>
+<p>Grants access to <span class="bold">Business Configuration</span>. This role enables users to create tax codes, general ledger accounts, and other business-related components. See also <a href="implementing-role-based-application-security1.htm#GUID-873AB871-10CC-46FF-BE24-B4CF0900677C">Business Configuration functional roles</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e334" headers="d1137e232">
+<p>Operations</p>
+</td>
+<td class="cellalignment22" headers="d1137e334 d1137e235">
+<p>Grants read-only access to the following applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscriber Management</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a>.</p>
+</li>
+<li>
+<p><span class="bold">Business Operations</span></p>
+<p>To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-8D86CE83-B591-447C-901A-8E642091FB4E">Business Operations functional roles</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e360" headers="d1137e232">
+<p>Pricing Analyst</p>
+</td>
+<td class="cellalignment22" headers="d1137e360 d1137e235">
+<p>Grants read-only access to <span class="bold">Subscriber Management</span>. To access the application, users must also have a role listed in <a href="implementing-role-based-application-security1.htm#GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81">Subscriber Management functional roles</a>.</p>
+<p>Grants access to <span class="bold">Offer Design</span>. This role enables users to create and edit pricing components and to review setup components. See also <a href="implementing-role-based-application-security1.htm#GUID-159BB225-5275-4048-A276-99F71CC6F466">Offer Design functional roles</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment21" id="d1137e381" headers="d1137e232">
+<p>Sys Admin</p>
+</td>
+<td class="cellalignment22" headers="d1137e381 d1137e235">
+<p>Grants read-only access to the following applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Oracle Identity Self Service</span> in <span class="bold">User Management</span>.</p>
+<p>To manage their own Oracle Monetization Cloud account, users must also have the OIMAdministrators functional role.</p>
+<p>To perform administrative functions in Oracle Access Manager and Oracle Identity Manager, users must also have the IDM Administrators role.</p>
+</li>
+<li>
+<p><span class="bold">Oracle Entitlements Server</span> in <span class="bold">User Management</span></p>
+<p>To create application access policies, users must also have the OESAdministrators role.</p>
+</li>
+</ul>
+<p>See <a href="implementing-role-based-application-security1.htm#GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004">System administration functional roles</a>.</p>
+<p>Grants read/write access to the following applications:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Event Publishing</span> in <span class="bold">System Configuration</span>.</p>
+<p><span>This role enables users to configure Oracle Monetization Cloud for event publishing and email messaging</span>. See <a class="olink BCSIG2112" target="_blank" href="../BCSIG/sending-data-external-applications2.htm#BCSIG2112">Sending data to external applications</a> and <a class="olink BCSIG1830" target="_blank" href="../BCSIG/sending-messages-customers1.htm#BCSIG1830">Sending messages to customers</a>.</p>
+</li>
+<li>
+<p><span class="bold">Payment Gateway</span> in <span class="bold">System Configuration</span></p>
+<p><span>This role enables users to connect Oracle Monetization Cloud to external payment gateways</span>. See <a class="olink BCSIG964" target="_blank" href="../BCSIG/connecting-payment-gateways2.htm#BCSIG964">Connecting to payment gateways</a>.</p>
+</li>
+<li>
+<p><span class="bold">Taxation Gateway</span> in <span class="bold">System Configuration</span></p>
+<p><span>This role enables users to connect Oracle Monetization Cloud to external taxation gateways</span>. See <a class="olink BCSIG2283" target="_blank" href="../BCSIG/connecting-taxation-gateways1.htm#BCSIG2283">Connecting to taxation gateways</a>.</p>
+</li>
+<li>
+<p><span class="bold">SSL Certificate</span> in <span class="bold">System Configuration</span></p>
+<p>This role enables users to import Secure Sockets Layer (SSL) certificates to secure connections between Oracle Monetization Cloud and external service providers, such as payment processors and tax calculators. See <a class="olink BCSIG2274" target="_blank" href="../BCSIG/using-ssl-secure-connections-service-providers1.htm#BCSIG2274">Using SSL to secure connections to service providers</a>.</p>
+</li>
+<li>
+<p><span class="bold">Federation Services</span> in <span class="bold">System Configuration</span></p>
+<p>This role enables users to configure the following:</p>
+<p>External Security Assertion Markup Language (SAML) identity providers to authenticate requests for access to web services. See <a class="olink BCSIG2259" target="_blank" href="../BCSIG/using-saml-authenticate-access-requests1.htm#BCSIG2259">Using SAML to authenticate access requests</a>.</p>
+<p>OAuth clients to authorize external applications to access web services. See <a class="olink BCSIG2266" target="_blank" href="../BCSIG/using-oauth-authorize-access1.htm#BCSIG2266">Using OAuth to authorize access</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1122"></a>
+<div class="sect4"><a id="GUID-873AB871-10CC-46FF-BE24-B4CF0900677C"></a>
+<h4 id="BCSSG-GUID-873AB871-10CC-46FF-BE24-B4CF0900677C" class="sect4">Business Configuration functional roles</h4>
+<div>
+<p>The roles listed in the following table grant functional access to Business Configuration.</p>
+<div class="infobox-note" id="GUID-873AB871-10CC-46FF-BE24-B4CF0900677C__GUID-AF169005-1235-4C73-B630-F5BBC0FF97F4">
+<p class="notep1">Note:</p>
+To work with Business Configuration, users need one of the roles listed below and either the BRM Admin or Financial Analyst functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-873AB871-10CC-46FF-BE24-B4CF0900677C__GUID-7B82CAC1-C232-4AD5-A9BF-122D4AE48B30">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to the Business Configuration application.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment14" id="d1137e527">Business Configuration functional role</th>
+<th class="cellalignment15" id="d1137e530">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e535" headers="d1137e527">
+<p>BRM Admin</p>
+</td>
+<td class="cellalignment17" headers="d1137e535 d1137e530">
+<p>Enables users to set up prerequisite configurations used to design product offerings, to create accounts, to run billing, and to perform other functions.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e542" headers="d1137e527">
+<p>Financial Analyst</p>
+</td>
+<td class="cellalignment17" headers="d1137e542 d1137e530">
+<p>Enables users to create tax codes, general ledger accounts, and other business-related components.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e549" headers="d1137e527">
+<p>DesignCenterAdapterGroup</p>
+</td>
+<td class="cellalignment17" headers="d1137e549 d1137e530">
+<p>This role is required to submit changesets in Business Configuration.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e556" headers="d1137e527">
+<p>JDGroup</p>
+</td>
+<td class="cellalignment17" headers="d1137e556 d1137e530">
+<p>This role is required to submit changesets in Business Configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1123"></a>
+<div class="sect4"><a id="GUID-8D86CE83-B591-447C-901A-8E642091FB4E"></a>
+<h4 id="BCSSG-GUID-8D86CE83-B591-447C-901A-8E642091FB4E" class="sect4">Business Operations functional roles</h4>
+<div>
+<p>The roles listed in the following table grant functional access to Business Operations.</p>
+<div class="infobox-note" id="GUID-8D86CE83-B591-447C-901A-8E642091FB4E__GUID-8C1788AB-A3B1-4270-99E5-FB9430EFC3FB">
+<p class="notep1">Note:</p>
+To work with Business Operations, users need one of the roles listed below and either the Financial Analyst or Operations functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-8D86CE83-B591-447C-901A-8E642091FB4E__GUID-B6A48552-9B4D-4E61-B4AE-CEEE01D481AD">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to the Business Operations application.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment23" id="d1137e587">Business Operations functional role</th>
+<th class="cellalignment24" id="d1137e589">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e593" headers="d1137e587">BOC_SUPER_ADMIN</td>
+<td class="cellalignment26" headers="d1137e593 d1137e589">Enables users to access all Business Operations functionality.</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e598" headers="d1137e587">OPERATIONS_VIEW</td>
+<td class="cellalignment26" headers="d1137e598 d1137e589">Gives users read-only access to Business Operations functionality, including job history and log files..</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e603" headers="d1137e587">FINANCIALS_VIEW</td>
+<td class="cellalignment26" headers="d1137e603 d1137e589">Enables users to view business metrics on the Business Dashboard page.</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e608" headers="d1137e587">OPERATIONS_BILLING_ADMIN</td>
+<td class="cellalignment26" headers="d1137e608 d1137e589">Enables users to manage billing jobs, including scheduling jobs, modifying them, and viewing their history.</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e613" headers="d1137e587">OPERATIONS_FINANCE_ADMIN</td>
+<td class="cellalignment26" headers="d1137e613 d1137e589">Enables users to manage jobs for general ledger, payment collections, invoicing, and refunds, including scheduling jobs, modifying them, and viewing their history.</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment25" id="d1137e618" headers="d1137e587">OPERATIONS_PRICING_SYNC_ADMIN</td>
+<td class="cellalignment26" headers="d1137e618 d1137e589">Enables users to manage product catalog synchronization jobs, including scheduling jobs, modifying them, and viewing their history.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1124"></a>
+<div class="sect4"><a id="GUID-159BB225-5275-4048-A276-99F71CC6F466"></a>
+<h4 id="BCSSG-GUID-159BB225-5275-4048-A276-99F71CC6F466" class="sect4">Offer Design functional roles</h4>
+<div>
+<p>The roles listed in the following table grant functional access to Offer Design.</p>
+<div class="infobox-note" id="GUID-159BB225-5275-4048-A276-99F71CC6F466__GUID-D980341B-A4EA-4E1A-B3DF-48757745D9ED">
+<p class="notep1">Note:</p>
+To work with Offer Design, users need one of the roles listed below and the Pricing Analyst functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-159BB225-5275-4048-A276-99F71CC6F466__GUID-67AB3D73-923C-4A74-97C0-4BC7CCE594EC">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to the Offer Design application.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment27" id="d1137e646">Offer Design functional role</th>
+<th class="cellalignment28" id="d1137e649">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e654" headers="d1137e646">
+<p>Pricing Design Admin</p>
+</td>
+<td class="cellalignment30" headers="d1137e654 d1137e649">
+<p>Grants read/write access to all pricing and setup components in Offer Design.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e661" headers="d1137e646">
+<p>Pricing Analyst</p>
+</td>
+<td class="cellalignment30" headers="d1137e661 d1137e649">
+<p>Grants read/write access to all pricing components and read-only access to all setup components in Offer Design.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e668" headers="d1137e646">
+<p>Pricing Reviewer</p>
+</td>
+<td class="cellalignment30" headers="d1137e668 d1137e649">
+<p>Grants read-only access to all pricing and setup components in Offer Design.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e675" headers="d1137e646">
+<p>DesignCenterAdapterGroup</p>
+</td>
+<td class="cellalignment30" headers="d1137e675 d1137e649">
+<p>This role is required to submit changesets in Offer Design.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e682" headers="d1137e646">
+<p>JDGroup</p>
+</td>
+<td class="cellalignment30" headers="d1137e682 d1137e649">
+<p>This role is required to submit changesets in Offer Design.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment29" id="d1137e689" headers="d1137e646">
+<p>MigrationAdmin</p>
+</td>
+<td class="cellalignment30" headers="d1137e689 d1137e649">
+<p>Enables users to migrate pricing data from the Oracle Monetization Cloud database to the Offer Design database.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1125"></a>
+<div class="sect4"><a id="GUID-E03A2989-5DD2-474E-9167-7296A2CF6725"></a>
+<h4 id="BCSSG-GUID-E03A2989-5DD2-474E-9167-7296A2CF6725" class="sect4">Oracle BI Publisher functional roles</h4>
+<div>
+<p>The roles listed in the following table grant functional access to Oracle BI Publisher.</p>
+<div class="infobox-note" id="GUID-E03A2989-5DD2-474E-9167-7296A2CF6725__GUID-DF48688D-782A-47A4-83BE-A06012CCE060">
+<p class="notep1">Note:</p>
+To work with Oracle BI Publisher, users need one of the roles listed below and either the BRM Admin or Financial Analyst functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-E03A2989-5DD2-474E-9167-7296A2CF6725__GUID-A31182C1-F094-48A4-80DF-44007011205B">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to the Oracle BI Publisher application.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment31" id="d1137e719">Oracle BI Publisher functional role</th>
+<th class="cellalignment32" id="d1137e722">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment33" id="d1137e727" headers="d1137e719">
+<p>BIAdministrators</p>
+</td>
+<td class="cellalignment34" headers="d1137e727 d1137e722">
+<p>Enables users to manage Oracle BI Publisher application settings.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment33" id="d1137e734" headers="d1137e719">
+<p>BIReportAdministrators</p>
+</td>
+<td class="cellalignment34" headers="d1137e734 d1137e722">
+<p>Grants read/write access to all reports and templates in the system, including those created by other users.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment33" id="d1137e741" headers="d1137e719">
+<p>BIAuthors</p>
+</td>
+<td class="cellalignment34" headers="d1137e741 d1137e722">
+<p>Grants read/write access to the user's reports and templates.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment33" id="d1137e748" headers="d1137e719">
+<p>BIConsumer</p>
+</td>
+<td class="cellalignment34" headers="d1137e748 d1137e722">
+<p>Grants read-only access to reports and templates created by other users.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1126"></a>
+<div class="sect4"><a id="GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81"></a>
+<h4 id="BCSSG-GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81" class="sect4">Subscriber Management functional roles</h4>
+<div>
+<p>The roles listed in the following table grant functional access to Subscriber Management.</p>
+<p>Because Subscriber Management exposes customer personal data, such as contact and financial information, we recommend only granting these roles to the users who truly need them to accomplish their tasks. This helps promote data privacy.</p>
+<div class="infobox-note" id="GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81__GUID-BD43CE30-0087-4E1C-9151-A12E476C3E0F">
+<p class="notep1">Note:</p>
+To work with Subscriber Management, users need one of the roles listed below and either the BRM Admin, CSR, Financial Analyst, Operations, or Pricing Analyst functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-778DDF9B-06EB-4AFD-9DDE-7E471972EE81__GUID-A45AA617-3A87-4376-984C-E04D194A5698">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to the Subscriber Management application.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment35" id="d1137e781">Subscriber Management functional role</th>
+<th class="cellalignment36" id="d1137e784">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e789" headers="d1137e781">
+<p>Regular CSR</p>
+</td>
+<td class="cellalignment38" headers="d1137e789 d1137e784">
+<p>Grants read/write access to subscribers' payments and adjustments up to a specified amount.</p>
+<p>By default, this role has the following limits, which are specified as units of a balance (for example, in US dollars, 30 units equals $30.00, and in minutes, it equals 30 minutes):</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Maximum noncurrency adjustment amount: 40</p>
+</li>
+<li>
+<p>Maximum currency adjustment amount: 30</p>
+</li>
+<li>
+<p>Maximum payment amount: 50</p>
+</li>
+</ul>
+<p>To change these limits, see <a href="implementing-role-based-application-security1.htm#GUID-F0DF81C2-A266-41BE-BAB5-F20716B0EB87">Changing the default limits for Subscriber Management roles</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e813" headers="d1137e781">
+<p>Super CSR</p>
+</td>
+<td class="cellalignment38" headers="d1137e813 d1137e784">
+<p>Grants read/write access to all subscriber information.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e820" headers="d1137e781">
+<p>ReadOnly</p>
+</td>
+<td class="cellalignment38" headers="d1137e820 d1137e784">
+<p>Grants read-only access to all subscriber information.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e827" headers="d1137e781">
+<p>WriteOff</p>
+</td>
+<td class="cellalignment38" headers="d1137e827 d1137e784">
+<p>Enables users to write off unpaid or disputed accounts receivable.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e834" headers="d1137e781">
+<p>AccountResource</p>
+</td>
+<td class="cellalignment38" headers="d1137e834 d1137e784">
+<p>Enables users to perform the following tasks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Create accounts.</p>
+</li>
+<li>
+<p>Search for accounts.</p>
+</li>
+<li>
+<p>Change account status.</p>
+</li>
+<li>
+<p>View account profiles and other customer information.</p>
+</li>
+</ul>
+<p>Prevents users from adding, deleting, or saving contact information.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e856" headers="d1137e781">
+<p>PaymentResource</p>
+</td>
+<td class="cellalignment38" headers="d1137e856 d1137e784">
+<p>Enables users to perform the following tasks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Make payments.</p>
+</li>
+<li>
+<p>Move posted payments into suspended status.</p>
+</li>
+<li>
+<p>Reverse payments.</p>
+</li>
+<li>
+<p>Allocate payments.</p>
+</li>
+<li>
+<p>Allocate suspended payments partially or fully to an account.</p>
+</li>
+<li>
+<p>View audit information in the payment details screen. (Audit information in the payment suspense screen is always visible.)</p>
+</li>
+<li>
+<p>Make batch payments.</p>
+</li>
+<li>
+<p>Reverse suspended payments.</p>
+</li>
+</ul>
+<p>Prevents users from performing the following tasks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Viewing general payment suspense information.</p>
+</li>
+<li>
+<p>Making suspended payments.</p>
+</li>
+<li>
+<p>Assigning and reassigning suspense payment handlers to suspended payments.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment37" id="d1137e900" headers="d1137e781">
+<p>RefundResource</p>
+</td>
+<td class="cellalignment38" headers="d1137e900 d1137e784">
+<p>Enables users to refund payments.</p>
+<p>By default, the maximum refund amount that this role can issue is 3 units of a balance (for example, in US dollars, 3 units equals $3.00).</p>
+<p>To change the maximum refund amount, see <a href="implementing-role-based-application-security1.htm#GUID-F0DF81C2-A266-41BE-BAB5-F20716B0EB87">Changing the default limits for Subscriber Management roles</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSSG1127"></a>
+<div class="sect4"><a id="GUID-F0DF81C2-A266-41BE-BAB5-F20716B0EB87"></a>
+<h4 id="BCSSG-GUID-F0DF81C2-A266-41BE-BAB5-F20716B0EB87" class="sect4">Changing the default limits for Subscriber Management roles</h4>
+<div>
+<p>To change the default limits in Subscriber Management roles:</p>
+<ol>
+<li>
+<p>Open the User Management application.</p>
+</li>
+<li>
+<p>Select <span class="bold">Oracle Entitlements Server</span>.</p>
+</li>
+<li>
+<p>Under <span class="bold">Authorization Policies</span>, select <span class="bold">Search</span>.</p>
+</li>
+<li>
+<p>In the Search section, select <span class="bold">Search</span>.</p>
+</li>
+<li>
+<p>In the Search Results table, select the row that corresponds to the role whose limits you want to change.</p>
+<p>For example, for the Regular CSR role, select the <span class="bold">Regular CSR Policy</span> row.</p>
+</li>
+<li>
+<p>Select <span class="bold">Open</span>.</p>
+</li>
+<li>
+<p>In the Targets table, select the target that corresponds to the limit you want to change.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Obligations</span> tab.</p>
+</li>
+<li>
+<p>In the Attributes table, select the appropriate attribute.</p>
+</li>
+<li>
+<p>Select <span class="bold">Edit</span>.</p>
+</li>
+<li>
+<p>In the Edit Obligation Attribute dialog box, change the value.</p>
+</li>
+<li>
+<p>Select <span class="bold">Update</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Apply</span>.</p>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSSG1128"></a>
+<div class="sect4"><a id="GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004"></a>
+<h4 id="BCSSG-GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004" class="sect4">System administration functional roles</h4>
+<div>
+<p>The roles listed in the following table grant access to various Oracle Monetization Cloud system administration functions.</p>
+<div class="infobox-note" id="GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004__GUID-E1CC315A-4AED-44B6-9552-278571BB6D24">
+<p class="notep1">Note:</p>
+To work with the system administration applications, users need one of the roles listed below and the Sys Admin functional role described in <a href="implementing-role-based-application-security1.htm#GUID-2BCDF503-9419-4F99-A5CF-742D1FE33113">Functional roles for accessing applications</a>.</div>
+<div class="tblformalwide" id="GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004__GUID-8A9368B2-FBEE-477F-B434-3EEA6C683064">
+<table class="cellalignment18" summary="This table lists and describes the functional roles that grant access to system administration functionality.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment14" id="d1137e1021">System administration functional role</th>
+<th class="cellalignment15" id="d1137e1024">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e1029" headers="d1137e1021">
+<p>IDM Administrators</p>
+</td>
+<td class="cellalignment17" headers="d1137e1029 d1137e1024">
+<p>Enables users to perform Oracle Identity Manager administrative functions.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e1036" headers="d1137e1021">
+<p>OIMAdministrators</p>
+</td>
+<td class="cellalignment17" headers="d1137e1036 d1137e1024">
+<p>Enables users with access to <span class="bold">Oracle Identity Self Service</span> in <span class="bold">User Management</span> to manage their own Oracle Monetization Cloud account as follows:</p>
+<ul style="list-style-type: disc;" id="GUID-924C27F7-AA9C-4DDE-A6ED-651092FDA004__UL_I22_2NR_V2B">
+<li>Manage their profile, passwords, challenge questions, direct reports, and proxies.</li>
+<li>View resources they have access to.</li>
+<li>Request access to additional resources.</li>
+<li>Track the status of their pending requests.</li>
+<li>Perform fulfillment tasks assigned to them.</li>
+<li>Respond to approval requests assigned to them.</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e1067" headers="d1137e1021">
+<p>OESAdministrators</p>
+</td>
+<td class="cellalignment17" headers="d1137e1067 d1137e1024">
+<p>Enables users to control access privileges for the following by using Oracle Entitlements Server:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Subscriber Management</p>
+</li>
+<li>
+<p>Business Operations Center</p>
+</li>
+<li>
+<p>Oracle Monetization Cloud home page</p>
+</li>
+</ul>
+<p>For more information, see the Oracle Entitlements Server online Help.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e1086" headers="d1137e1021">
+<p>SOAP Administrator</p>
+</td>
+<td class="cellalignment17" headers="d1137e1086 d1137e1024">
+<p>Grants administrative access to the <span>Oracle Monetization Cloud SOAP API.</span></p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment16" id="d1137e1095" headers="d1137e1021">WSIntegration</td>
+<td class="cellalignment17" headers="d1137e1095 d1137e1024">For use when basic authentication of SOAP requests is required. Enables an integration user to perform tasks from a SOAP client or integration using the Oracle Monetization Cloud SOAP API.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+</div>
+<a id="BCSSG1087"></a>
+<div class="props_rev_3"><a id="GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B"></a>
+<h2 id="BCSSG-GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B" class="sect2">About Oracle Monetization Cloud users</h2>
+<div>
+<p>Oracle Monetization Cloud includes one default administrative user, <span class="italic">TenantSysAdmin</span>.</p>
+<div class="infobox-note" id="GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B__GUID-4B5A796A-3BE3-44DE-AD13-9F1AAC37493A">
+<p class="notep1">Note:</p>
+<p>In this topic, <span class="italic">TenantSysAdmin</span> is a placeholder for the name you give your default administrative user when your Oracle Monetization Cloud system is set up.</p>
+</div>
+<p>This is the only user who can manage the other users needed for your Oracle Monetization Cloud environments. User management tasks include:</p>
+<ul style="list-style-type: disc;" id="GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B__UL_E5T_WP3_V2B">
+<li>Creating, disabling, and deleting users</li>
+<li>Assigning, removing, and viewing roles</li>
+<li>Resetting passwords</li>
+</ul>
+<p>In addition to user management capabilities, the <span class="italic">TenantSysAdmin</span> user has the following roles that enable other administrative functions:</p>
+<ul style="list-style-type: disc;">
+<li>Production</li>
+<li>Sys Admin</li>
+<li>IDM Administrators</li>
+<li>OESAdministrators</li>
+<li>OIMAdministrators</li>
+</ul>
+<p>For more information about users and roles, see the following topics:</p>
+<ul style="list-style-type: disc;">
+<li><a href="implementing-role-based-application-security1.htm#GUID-4763ACC3-7840-41AF-9069-1B7E847636C5">Creating users in Oracle Monetization Cloud</a></li>
+<li><a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a></li>
+<li><a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a></li>
+</ul>
+</div>
+<a id="BCSSG1105"></a>
+<div class="props_rev_3"><a id="GUID-A7DEBEEF-0BCA-4582-ABCF-CA8E7B342A54"></a>
+<h3 id="BCSSG-GUID-A7DEBEEF-0BCA-4582-ABCF-CA8E7B342A54" class="sect3">About Oracle Monetization Cloud test users</h3>
+<div>
+<p>In addition to <span class="italic">TenantSysAdmin</span>, Oracle Monetization Cloud includes the test users that Oracle uses to set up Oracle Monetization Cloud.</p>
+<p>After setup, Oracle disables and locks the test users, but they remain visible in the Oracle Identity Manager <span class="bold">Users</span> tab. You can display their details by selecting their names.</p>
+<div class="infobox-note" id="GUID-A7DEBEEF-0BCA-4582-ABCF-CA8E7B342A54__GUID-4D6AEB06-D6C2-4146-8215-54DF18DA7D95">
+<p class="notep1">Note:</p>
+<p>Don't unlock and reenable the test users. Instead, use them as <span class="italic">examples</span> to guide you in creating your own users.</p>
+</div>
+<p>The following table lists the Oracle Monetization Cloud test users and their roles:</p>
+<div class="tblformal" id="GUID-A7DEBEEF-0BCA-4582-ABCF-CA8E7B342A54__GUID-DFE04EBE-6CDF-4D81-9F0F-CB23060F553F">
+<table class="cellalignment13" summary="This table lists the Oracle Monetization Cloud test users and their roles.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment39" id="d1137e1191">Test user</th>
+<th class="cellalignment40" id="d1137e1194">Roles</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1199" headers="d1137e1191">
+<p>SysAdmin</p>
+</td>
+<td class="cellalignment42" headers="d1137e1199 d1137e1194">
+<p>Sys Admin</p>
+<p>IDM Administrators</p>
+<p>OESAdministrators</p>
+<p>OIMAdministrators</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1212" headers="d1137e1191">
+<p>BRMAdmin</p>
+</td>
+<td class="cellalignment42" headers="d1137e1212 d1137e1194">
+<p>BRM Admin</p>
+<p>CSR</p>
+<p>Regular CSR</p>
+<p>Super CSR</p>
+<p>BIAdministrators</p>
+<p>BIAuthors</p>
+<p>BIConsumer</p>
+<p>DesignCenterAdapterGroup</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1233" headers="d1137e1191">
+<p>FinancialAnalyst</p>
+</td>
+<td class="cellalignment42" headers="d1137e1233 d1137e1194">
+<p>Financial Analyst</p>
+<p>CSR</p>
+<p>Regular CSR</p>
+<p>BOC_OPERATIONS_FINANCE</p>
+<p>BIAdministrators</p>
+<p>BIAuthors</p>
+<p>BIConsumer</p>
+<p>DesignCenterAdapterGroup</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1254" headers="d1137e1191">
+<p>PricingAnalyst</p>
+</td>
+<td class="cellalignment42" headers="d1137e1254 d1137e1194">
+<p>CSR</p>
+<p>Regular CSR</p>
+<p>Super CSR</p>
+<p>Pricing Analyst</p>
+<p>Pricing Reviewer</p>
+<p>Pricing Design Admin</p>
+<p>DesignCenterAdapterGroup</p>
+<p>JDGroup</p>
+<p>MigrationAdmin</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1277" headers="d1137e1191">
+<p>CSR</p>
+</td>
+<td class="cellalignment42" headers="d1137e1277 d1137e1194">
+<p>CSR</p>
+<p>Regular CSR</p>
+<p>Super CSR</p>
+<p>ReadOnly</p>
+<p>AccountResource</p>
+<p>PaymentResource</p>
+<p>RefundResource</p>
+<p>WriteOff</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1298" headers="d1137e1191">
+<p>Operations</p>
+</td>
+<td class="cellalignment42" headers="d1137e1298 d1137e1194">
+<p>Operations</p>
+<p>Super CSR</p>
+<p>BOC_OPERATIONS_ADMIN</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment41" id="d1137e1309" headers="d1137e1191">
+<p>soapUser</p>
+</td>
+<td class="cellalignment42" headers="d1137e1309 d1137e1194">
+<p>SOAP Administrator</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<a id="BCSSG1056"></a>
+<div class="props_rev_3"><a id="GUID-4763ACC3-7840-41AF-9069-1B7E847636C5"></a>
+<h2 id="BCSSG-GUID-4763ACC3-7840-41AF-9069-1B7E847636C5" class="sect2">Creating users in Oracle Monetization Cloud</h2>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>You can assign roles to users when you create the users, or you can assign roles later.</p>
+<p>For a list of roles that you can assign to users, see the following sections:</p>
+<ul style="list-style-type: disc;" id="GUID-4763ACC3-7840-41AF-9069-1B7E847636C5__UL_IWT_NHS_H2B">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a></p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-4763ACC3-7840-41AF-9069-1B7E847636C5__GUID-240D5F72-32D5-46C4-839E-E99939876CCD">
+<p class="notep1">Caution:</p>
+Oracle recommends that you carefully consider Oracle Monetization Cloud security when creating users and assigning roles. Create unique users for each environment and assign each user only the functional roles required for the user to perform his or her assigned tasks.</div>
+<p>To create a user:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Create</span>.</span></li>
+<li class="stepexpand"><span>Enter the user information. The following table lists the minimum recommended fields. Use additional fields as needed for your business requirements.</span>
+<div>
+<div class="tblformal" id="GUID-4763ACC3-7840-41AF-9069-1B7E847636C5__GUID-950B4AF0-AEDC-4946-8923-94078E53C7E0">
+<table class="cellalignment43" summary="This table lists the recommended fields to populate when creating a user in Oracle Monetization Cloud.">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment44" id="d1137e1394">Fields</th>
+<th class="cellalignment45" id="d1137e1397">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment46" id="d1137e1402" headers="d1137e1394">
+<p><span class="bold">Effective Date</span></p>
+</td>
+<td class="cellalignment47" headers="d1137e1402 d1137e1397">
+<p>Specify the effective date of the new user account.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment46" id="d1137e1410" headers="d1137e1394">
+<p><span class="bold">Justification</span></p>
+</td>
+<td class="cellalignment47" headers="d1137e1410 d1137e1397">
+<p>Specify the justification for the new user account.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment46" id="d1137e1418" headers="d1137e1394">
+<p><span class="bold">Basic Information</span></p>
+</td>
+<td class="cellalignment47" headers="d1137e1418 d1137e1397">
+<p>Includes the <span class="bold">Name</span>, <span class="bold">E-mail</span>, <span class="bold">Organization</span>, and <span class="bold">User Type</span> fields.</p>
+<p>Oracle provides a default organization for your Oracle Monetization Cloud environment. Select the magnifying glass icon next to the <span class="bold">Organization</span> field to select your organization value.</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment46" id="d1137e1443" headers="d1137e1394">
+<p><span class="bold">Account Settings</span></p>
+</td>
+<td class="cellalignment47" headers="d1137e1443 d1137e1397">
+<p>Includes the <span class="bold">User Login</span> and <span class="bold">Password</span> fields.</p>
+<p>Select the icon next to the <span class="bold">Password</span> field to display password requirements. New users must change their passwords the first time they sign in.</p>
+<p>For information about the default password policy, see <a href="implementing-role-based-application-security1.htm#GUID-E334E3AF-CFB5-46DD-AF07-CB7818995BA1">Setting password policies for Oracle Monetization Cloud</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Submit</span>.</span>
+<div>
+<p>The <span class="bold">Users</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Refresh</span>.</span>
+<div>
+<p>The new user appears in the Users table.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the new user's sign-in name.</span>
+<div>
+<p>The new user's details tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the user's <span class="bold">Roles</span> tab.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Request Roles</span>.</span>
+<div>
+<p>The <span class="bold">Role Access Request</span> tab appears. Use this tab to assign environment and functional roles to the new user.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSSG1075"></a>
+<div class="props_rev_3"><a id="GUID-44CF0A14-79A3-439F-965B-B058B3AFF6E1"></a>
+<h2 id="BCSSG-GUID-44CF0A14-79A3-439F-965B-B058B3AFF6E1" class="sect2">Assigning roles to users in Oracle Monetization Cloud</h2>
+<div>
+<div class="section">
+<p>You can assign roles to Oracle Monetization Cloud users in either of the following ways:</p>
+<ul style="list-style-type: disc;" id="GUID-44CF0A14-79A3-439F-965B-B058B3AFF6E1__UL_LQP_SHS_H2B">
+<li>
+<p>Assign roles as you create a user. See <a href="implementing-role-based-application-security1.htm#GUID-4763ACC3-7840-41AF-9069-1B7E847636C5">Creating users in Oracle Monetization Cloud</a>.</p>
+</li>
+<li>
+<p>Assign roles after a user is created. See <a href="implementing-role-based-application-security1.htm#GUID-8A685B50-FC17-410F-981C-1BCD3DFF9321">Assigning roles to existing users in Oracle Monetization Cloud</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<a id="BCSSG1078"></a>
+<div class="props_rev_3"><a id="GUID-8A685B50-FC17-410F-981C-1BCD3DFF9321"></a>
+<h3 id="BCSSG-GUID-8A685B50-FC17-410F-981C-1BCD3DFF9321" class="sect3">Assigning roles to existing users in Oracle Monetization Cloud</h3>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>For a list of roles that you can assign to users, see the following sections:</p>
+<ul style="list-style-type: disc;" id="GUID-8A685B50-FC17-410F-981C-1BCD3DFF9321__UL_DRG_JKS_H2B">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a></p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-8A685B50-FC17-410F-981C-1BCD3DFF9321__GUID-FC8CD893-CC3C-4AC8-9B49-BD1EEDE0A9F4">
+<p class="notep1">Caution:</p>
+Oracle recommends that you carefully consider Oracle Monetization Cloud security when assigning roles. Assign each user only the functional roles required for the user to perform his or her assigned tasks.</div>
+<p>To assign a role to an existing user:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span>
+<div>
+<p>The <span class="bold">Users</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Use the <span class="bold">Search</span> fields to find the user you want to assign a role to.</span>
+<div>
+<p>Users meeting the search criteria are listed in the search results.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">User Login</span> column, select the link for the user you want to assign a role to.</span>
+<div>
+<p>The <span class="bold">User Details</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Roles</span> tab if it's not open by default.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Request Roles</span>.</span>
+<div>
+<p>The <span class="bold">Role Access Request</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Catalog</span> tab, select the roles you want to assign:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>To select an individual role, select the role's <span class="bold">Add to Cart</span> icon.</p>
+</li>
+<li>
+<p>To select multiple roles, use the <span class="bold">Ctrl</span> key, and then select <span class="bold">Add Selected to Cart</span>.</p>
+</li>
+</ul>
+<p>For a list of available roles, see the following sections:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a></p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Checkout</span> at the top of the <span class="bold">Role Access Request</span> tab.</span></li>
+<li class="stepexpand"><span>(Optional) Enter a justification and an effective date.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Submit</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Refresh</span>.</span>
+<div>
+<p>The new roles appear in the user's list of roles.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<a id="BCSSG1089"></a>
+<div class="props_rev_3"><a id="GUID-80F33872-32E4-4254-A478-BEEB493874DC"></a>
+<h2 id="BCSSG-GUID-80F33872-32E4-4254-A478-BEEB493874DC" class="sect2">Reviewing roles and role assignments in Oracle Monetization Cloud</h2>
+<div>
+<p>You can view the following information about roles in Oracle Monetization Cloud:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>All roles assigned to a specific user. See <a href="implementing-role-based-application-security1.htm#GUID-538B9898-14F0-40FD-B892-E3786B974B74">Viewing the roles assigned to a user</a>.</p>
+</li>
+<li>
+<p>All users who have a specific role. See <a href="implementing-role-based-application-security1.htm#GUID-56BDFF18-D4E1-4431-88C3-A30D213B62BC">Viewing all users who have a specific role</a>.</p>
+</li>
+<li>
+<p>All available roles. See <a href="implementing-role-based-application-security1.htm#GUID-19CF6F63-B475-4879-9979-DC6A29CCBDC0">Viewing all available roles</a>.</p>
+</li>
+</ul>
+</div>
+<a id="BCSSG1090"></a>
+<div class="props_rev_3"><a id="GUID-538B9898-14F0-40FD-B892-E3786B974B74"></a>
+<h3 id="BCSSG-GUID-538B9898-14F0-40FD-B892-E3786B974B74" class="sect3">Viewing the roles assigned to a user</h3>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To view the roles assigned to a user:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span>
+<div>
+<p>The Users tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Use the <span class="bold">Search</span> fields to find the user whose roles you want to view.</span>
+<div>
+<p>Users meeting the search criteria are listed in the search results.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">User Login</span> column, select the link for the appropriate user.</span>
+<div>
+<p>The User Details tab appears.</p>
+<p>In the User Details tab, the Roles tab is open by default. A list of all the roles assigned to the user is displayed in the tab.</p>
+<p>For information about roles, see <a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a> and <a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a>.</p>
+</div>
+</li>
+</ol>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSSG1106"></a>
+<div class="props_rev_3"><a id="GUID-56BDFF18-D4E1-4431-88C3-A30D213B62BC"></a>
+<h3 id="BCSSG-GUID-56BDFF18-D4E1-4431-88C3-A30D213B62BC" class="sect3">Viewing all users who have a specific role</h3>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To view all users who have a specific role:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Roles</span>.</span>
+<div>
+<p>The <span class="bold">Roles</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the name of the appropriate role.</span>
+<div>
+<p>The role's tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Members</span> tab.</span></li>
+<li class="stepexpand"><span>In the tab's <span class="bold">Member assignment</span> table, select <span class="bold">All Members</span>.</span>
+<div>
+<p>All users assigned to the role are listed in the table.</p>
+<p>For information about roles, see <a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a> and <a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a>.</p>
+</div>
+</li>
+</ol>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSSG1093"></a>
+<div class="props_rev_3"><a id="GUID-19CF6F63-B475-4879-9979-DC6A29CCBDC0"></a>
+<h3 id="BCSSG-GUID-19CF6F63-B475-4879-9979-DC6A29CCBDC0" class="sect3">Viewing all available roles</h3>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To view all available roles:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Roles</span>.</span>
+<div>
+<p>The <span class="bold">Roles</span> tab appears. This tab lists all the roles in your Oracle Monetization Cloud system.</p>
+<p>To see details about a role, select the role's name.</p>
+<p>For information about roles, see <a href="implementing-role-based-application-security1.htm#GUID-FFBD83C9-8163-470B-B340-DADFFECE648B">Environment roles in Oracle Monetization Cloud</a> and <a href="implementing-role-based-application-security1.htm#GUID-25A57787-8E71-4317-864C-F8E3DC5F8614">Functional roles in Oracle Monetization Cloud</a>.</p>
+</div>
+</li>
+</ol>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<a id="BCSSG1079"></a>
+<div class="props_rev_3"><a id="GUID-AB6A7548-E134-4FAB-A7BF-40D5BF3425C5"></a>
+<h2 id="BCSSG-GUID-AB6A7548-E134-4FAB-A7BF-40D5BF3425C5" class="sect2">Removing roles from users in Oracle Monetization Cloud</h2>
+<div>
+<div class="section">
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To remove a role from a user:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span>
+<div>The <span class="bold">Users</span> tab appears.</div>
+</li>
+<li class="stepexpand"><span>Use the <span class="bold">Search</span> fields to find the user whose role you want to remove.</span>
+<div>Users meeting the search criteria are listed in the search results.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">User Login</span> column, select the link of the user from which you want to remove a role.</span>
+<div>
+<p>The <span class="bold">User Details</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Roles</span> tab.</span>
+<div>
+<p>A list of assigned roles is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the role you want to remove, and then select <span class="bold">Remove Roles</span>.</span></li>
+<li class="stepexpand"><span>(Optional) Enter an effective date and a justification.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Submit</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="BCSSG1057"></a>
+<div class="props_rev_3"><a id="GUID-874ABDF8-F2CB-4537-A1A8-15E39FEBFB61"></a>
+<h2 id="BCSSG-GUID-874ABDF8-F2CB-4537-A1A8-15E39FEBFB61" class="sect2">Removing users from Oracle Monetization Cloud</h2>
+<div>
+<p>You can remove users from Oracle Monetization Cloud in either of the following ways:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-2EE11AF9-19BD-4741-9728-643E82E5DAC0">Disabling users in Oracle Monetization Cloud</a>: The user and all related information remain in the system. If necessary, the user can be reenabled.</p>
+</li>
+<li>
+<p><a href="implementing-role-based-application-security1.htm#GUID-0FB75500-5A1D-4640-8864-62F241280186">Deleting users from Oracle Monetization Cloud</a>: The user and all related information are removed from the system. The user can't be reenabled.</p>
+</li>
+</ul>
+</div>
+<a id="BCSSG1111"></a>
+<div class="props_rev_3"><a id="GUID-2EE11AF9-19BD-4741-9728-643E82E5DAC0"></a>
+<h3 id="BCSSG-GUID-2EE11AF9-19BD-4741-9728-643E82E5DAC0" class="sect3">Disabling users in Oracle Monetization Cloud</h3>
+<div>
+<div class="section">
+<p>When you disable (inactivate) a user, the user and all related information remain in the Oracle Monetization Cloud system. If necessary, the user can be reenabled.</p>
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To disable users:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span></li>
+<li class="stepexpand"><span>Use the <span class="bold">Search</span> fields to find the user you want to inactivate.</span>
+<div>
+<p>Users meeting the search criteria are listed in the search results.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the row of the user to inactivate, and select <span class="bold">Disable</span>.</span>
+<div>
+<p>The <span class="bold">Disable Users</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>(Optional) Enter an effective date and a justification.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Submit</span>.</span>
+<div>
+<p>The user is inactivated, and the user's identity status is changed to <span class="bold">Disabled</span>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSSG1112"></a>
+<div class="props_rev_3"><a id="GUID-0FB75500-5A1D-4640-8864-62F241280186"></a>
+<h3 id="BCSSG-GUID-0FB75500-5A1D-4640-8864-62F241280186" class="sect3">Deleting users from Oracle Monetization Cloud</h3>
+<div>
+<div class="section">
+<p>When you delete a user, the user and all related information are removed from the Oracle Monetization Cloud system. The user can't be reenabled.</p>
+<p>Only the default administrative user, <span class="italic">TenantSysAdmin</span>, can perform this task. For background information about <span class="italic">TenantSysAdmin</span>, see <a href="implementing-role-based-application-security1.htm#GUID-FA797519-0DAD-43C5-90A6-F0C515FA724B">About Oracle Monetization Cloud users</a>.</p>
+<p>To delete users:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the User Management application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Oracle Identity Self Service</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Manage</span> button in the top right corner of the page.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Users</span>.</span></li>
+<li class="stepexpand"><span>Use the <span class="bold">Search</span> fields to find the user you want to delete.</span>
+<div>
+<p>Users meeting the search criteria are listed in the search results.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Select the row of the user to delete, and then select <span class="bold">Delete</span>.</span>
+<div>
+<p>The <span class="bold">Delete Users</span> tab appears.</p>
+</div>
+</li>
+<li class="stepexpand"><span>(Optional) Enter an effective date and a justification.</span>
+<div>
+<div class="infobox-note" id="GUID-0FB75500-5A1D-4640-8864-62F241280186__GUID-4C530EEC-5039-4847-B5F0-053A032B238D">
+<p class="notep1">Note:</p>
+<p>Selecting <span class="bold">Submit</span> in the following step permanently removes the user from your system. To cancel this operation, close the <span class="bold">Delete Users</span> tab before selecting <span class="bold">Submit</span>.</p>
+</div>
+</div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Submit</span>.</span>
+<div>
+<p>The user is deleted.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<a id="BCSSG1114"></a>
+<div class="props_rev_3"><a id="GUID-E334E3AF-CFB5-46DD-AF07-CB7818995BA1"></a>
+<h2 id="BCSSG-GUID-E334E3AF-CFB5-46DD-AF07-CB7818995BA1" class="sect2">Setting password policies for Oracle Monetization Cloud</h2>
+<div>
+<p>By default, the password policy for Oracle Monetization Cloud is the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Minimum length: 8 characters</p>
+</li>
+<li>
+<p>Minimum numeric characters: 1</p>
+</li>
+<li>
+<p>Minimum alphabet characters: 2</p>
+</li>
+<li>
+<p>Minimum uppercase characters: 1</p>
+</li>
+<li>
+<p>Minimum lowercase characters: 1</p>
+</li>
+<li>
+<p>Minimum special characters: 1</p>
+</li>
+</ul>
+<p>For information about modifying the policy, see the discussion about managing password policies in <span><cite>Oracle Fusion Middleware Administrator&rsquo;s Guide for Oracle Identity Manager</cite></span>.</p>
+<div class="infobox-note" id="GUID-E334E3AF-CFB5-46DD-AF07-CB7818995BA1__GUID-3E5F516C-C380-4376-9D21-C3BBDA585D4D">
+<p class="notep1">Note:</p>
+<p>The default password policy provides the <span class="italic">minimum</span> level of security. If you modify it, don't weaken it.</p>
+</div>
+</div>
+</div>
+<a id="BCSSG1132"></a>
+<div class="props_rev_3"><a id="GUID-616C4A5E-A52D-435C-B80A-B1D4B61F0484"></a>
+<h2 id="BCSSG-GUID-616C4A5E-A52D-435C-B80A-B1D4B61F0484" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oracle-monetization-cloud-security1.htm#GUID-528BE7BE-8551-425D-AE42-36859B6354BD" title="Oracle Monetization Cloud is secured by you and by Oracle. You protect the service by using roles to control which environments and functionality users can access and by configuring secure integrations with external applications. Oracle protects your data by implementing internal security measures.">About Oracle Monetization Cloud security</a></p>
+</li>
+<li>
+<p><a class="olink BCSIG2206" target="_blank" href="../BCSIG/integrating-your-business-systems1.htm#BCSIG2206">About integrating your business systems</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment12">
+<tr>
+<td class="cellalignment5"><a href="getting-started-user-management1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="data-privacy1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment11">
+<tr>
+<td class="cellalignment5"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

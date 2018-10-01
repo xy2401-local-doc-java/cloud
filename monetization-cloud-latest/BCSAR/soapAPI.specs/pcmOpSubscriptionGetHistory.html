@@ -1,0 +1,2782 @@
+<html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:op="http://www.portal.com/schemas/BusinessOpcodes" lang="en-US">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+	  a:hover {
+	  color:#BB1122;
+	  }
+	  div.copyright {
+	  color:#AAAAAA; font-family:times; font-size:xx-small;
+	  }
+	  div.content {
+	  font-family:arial, helvetica;
+	  }
+	  .shortcuts {
+	  font-size:x-small; background-color: #FFFFCC;
+	  }
+	  .index { 
+	  font-family:arial; font-size:x-small; 
+	  }
+          .fieldgroupindex {
+          font-family:arial;font-size:x-small;font-weight:bold;
+          }
+	  .properties {
+	  font-family:arial; font-size:x-small; 
+	  }
+	  .sectiontitle {
+	  background-color: #99CCFF; font-size: large; 
+	  font-weight: bold; 
+	  }
+	  .fieldtitle {
+	  background-color: #F0F7FF; font-size: medium; font-weight: bold; 
+	  }
+	  .level {
+	  color: #000000; font-weight: bold; width: 18;
+	  }
+	  .indexlinks {
+	  font-weight: normal; font-size: x-small;
+	  }
+	  .propindent {
+	  width:50;
+	  }
+	  .propgap {
+	  width:20;
+	  }
+	  .code {
+	  font-family:monospace; font-size: x-small;
+	  }
+
+	</style>
+<title></title>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<div class="copyright">
+<center>
+ Copyright (c) 1996, 2018, Oracle and/or its affiliates. All rights reserved. 
+        <br>
+</center>
+</div>
+<div class="content">
+<hr>
+<table cellspacing="0" width="100%" summary="Shortcuts table">
+<tbody class="shortcuts">
+<tr align="center">
+<th><a href="#II">Input index</a></th><th><a href="#ID">Input details</a></th><th><a href="#OI">Output index</a></th><th><a href="#OD">Output details</a></th>
+</tr>
+</tbody>
+</table>
+<hr noshade="true">
+<h2>
+<a name="op">pcmOpSubscriptionGetHistory</a>
+</h2>
+<table cellspacing="1" cellpadding="1" border="0" summary="OpProperties table">
+<tbody class="properties">
+<tr>
+<th id="prh1-Component-N10002"></th><th id="prh2-Component-N10002"></th><th id="prh3-Component-N10002"></th><th id="prh4-Component-N10002"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Component-N10002"></td><td headers="prh2-Component-N10002"><i>Component</i></td><td class="propgap" headers="prh3-Component-N10002"></td><td headers="prh4-Component-N10002">subscription</td>
+</tr>
+<tr>
+<th id="prh1-Viibility-N10002"></th><th id="prh2-Viibility-N10002"></th><th id="prh3-Viibility-N10002"></th><th id="prh4-Viibility-N10002"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Viibility-N10002"></td><td headers="prh2-Viibility-N10002"><i>Visibility</i></td><td class="propgap" headers="prh3-Viibility-N10002"></td><td headers="prh4-Viibility-N10002">public</td>
+</tr>
+<tr>
+<th id="prh1-Tranaction-N10002"></th><th id="prh2-Tranaction-N10002"></th><th id="prh3-Tranaction-N10002"></th><th id="prh4-Tranaction-N10002"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Tranaction-N10002"></td><td headers="prh2-Tranaction-N10002"><i>Transaction</i></td><td class="propgap" headers="prh3-Tranaction-N10002"></td><td headers="prh4-Tranaction-N10002">supports</td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<p></p>
+<hr>
+<table class="sectiontitle" width="100%" summary="Description Table">
+<tr>
+<th id="d1"></th>
+</tr>
+<tr>
+<td headers="d1">Description</td>
+</tr>
+</table>
+<p></p>
+    pcmOpSubscriptionGetHistory input and response specifications.
+    The operation returns the event history of a specified service, deal, product or discount of an account.
+  <p></p>
+<hr>
+<a name="II"></a>
+<table class="sectiontitle" width="100%" summary="Input Field Index Table">
+<tr>
+<th id="f1"></th>
+</tr>
+<tr>
+<td headers="f1">Input field index</td>
+</tr>
+</table>
+<p></p>
+<table cellspacing="0" cellpadding="1" hspace="1" border="0" width="100%" summary="Navigation index table">
+<tbody class="index">
+<tr>
+<th id="fih1-POID-N10015"></th><th id="fih2-POID-N10015"></th><th id="fih3-POID-N10015"></th><th id="fih4-POID-N10015"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-POID-N10015">0</td><td align="right" width="3%" headers="fih2-POID-N10015"></td><td align="left" width="20%" headers="fih3-POID-N10015"><b>poid</b></td><td headers="fih4-POID-N10015"><a href="#in.POID"><b>POID</b></a></td>
+</tr>
+<tr>
+<th id="fih1-SERVICE_OBJ-N10022"></th><th id="fih2-SERVICE_OBJ-N10022"></th><th id="fih3-SERVICE_OBJ-N10022"></th><th id="fih4-SERVICE_OBJ-N10022"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-SERVICE_OBJ-N10022">0</td><td align="right" width="3%" headers="fih2-SERVICE_OBJ-N10022"></td><td align="left" width="20%" headers="fih3-SERVICE_OBJ-N10022">poid</td><td headers="fih4-SERVICE_OBJ-N10022"><a href="#in.SERVICE_OBJ">SERVICE_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-DEAL_OBJ-N10039"></th><th id="fih2-DEAL_OBJ-N10039"></th><th id="fih3-DEAL_OBJ-N10039"></th><th id="fih4-DEAL_OBJ-N10039"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-DEAL_OBJ-N10039">0</td><td align="right" width="3%" headers="fih2-DEAL_OBJ-N10039"></td><td align="left" width="20%" headers="fih3-DEAL_OBJ-N10039">poid</td><td headers="fih4-DEAL_OBJ-N10039"><a href="#in.DEAL_OBJ">DEAL_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-PRODUCT_OBJ-N10050"></th><th id="fih2-PRODUCT_OBJ-N10050"></th><th id="fih3-PRODUCT_OBJ-N10050"></th><th id="fih4-PRODUCT_OBJ-N10050"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PRODUCT_OBJ-N10050">0</td><td align="right" width="3%" headers="fih2-PRODUCT_OBJ-N10050"></td><td align="left" width="20%" headers="fih3-PRODUCT_OBJ-N10050">poid</td><td headers="fih4-PRODUCT_OBJ-N10050"><a href="#in.PRODUCT_OBJ">PRODUCT_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-DISCOUNT_OBJ-N10062"></th><th id="fih2-DISCOUNT_OBJ-N10062"></th><th id="fih3-DISCOUNT_OBJ-N10062"></th><th id="fih4-DISCOUNT_OBJ-N10062"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-DISCOUNT_OBJ-N10062">0</td><td align="right" width="3%" headers="fih2-DISCOUNT_OBJ-N10062"></td><td align="left" width="20%" headers="fih3-DISCOUNT_OBJ-N10062">poid</td><td headers="fih4-DISCOUNT_OBJ-N10062"><a href="#in.DISCOUNT_OBJ">DISCOUNT_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-OFFERING_OBJ-N10074"></th><th id="fih2-OFFERING_OBJ-N10074"></th><th id="fih3-OFFERING_OBJ-N10074"></th><th id="fih4-OFFERING_OBJ-N10074"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-OFFERING_OBJ-N10074">0</td><td align="right" width="3%" headers="fih2-OFFERING_OBJ-N10074"></td><td align="left" width="20%" headers="fih3-OFFERING_OBJ-N10074">poid</td><td headers="fih4-OFFERING_OBJ-N10074"><a href="#in.OFFERING_OBJ">OFFERING_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-PACKAGE_ID-N10081"></th><th id="fih2-PACKAGE_ID-N10081"></th><th id="fih3-PACKAGE_ID-N10081"></th><th id="fih4-PACKAGE_ID-N10081"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PACKAGE_ID-N10081">0</td><td align="right" width="3%" headers="fih2-PACKAGE_ID-N10081"></td><td align="left" width="20%" headers="fih3-PACKAGE_ID-N10081">int</td><td headers="fih4-PACKAGE_ID-N10081"><a href="#in.PACKAGE_ID">PACKAGE_ID</a></td>
+</tr>
+<tr>
+<th id="fih1-START_T-N1008F"></th><th id="fih2-START_T-N1008F"></th><th id="fih3-START_T-N1008F"></th><th id="fih4-START_T-N1008F"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-START_T-N1008F">0</td><td align="right" width="3%" headers="fih2-START_T-N1008F"></td><td align="left" width="20%" headers="fih3-START_T-N1008F">timestamp</td><td headers="fih4-START_T-N1008F"><a href="#in.START_T">START_T</a></td>
+</tr>
+<tr>
+<th id="fih1-END_T-N10098"></th><th id="fih2-END_T-N10098"></th><th id="fih3-END_T-N10098"></th><th id="fih4-END_T-N10098"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-END_T-N10098">0</td><td align="right" width="3%" headers="fih2-END_T-N10098"></td><td align="left" width="20%" headers="fih3-END_T-N10098">timestamp</td><td headers="fih4-END_T-N10098"><a href="#in.END_T">END_T</a></td>
+</tr>
+<tr>
+<th id="fih1-RESULTS-N100A1"></th><th id="fih2-RESULTS-N100A1"></th><th id="fih3-RESULTS-N100A1"></th><th id="fih4-RESULTS-N100A1"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-RESULTS-N100A1">0</td><td align="right" width="3%" headers="fih2-RESULTS-N100A1"></td><td align="left" width="20%" headers="fih3-RESULTS-N100A1">array</td><td headers="fih4-RESULTS-N100A1"><a href="#in.RESULTS">RESULTS</a></td>
+</tr>
+<tr>
+<th id="fih1-SOME_EVENT_FLDS-N100AD"></th><th id="fih2-SOME_EVENT_FLDS-N100AD"></th><th id="fih3-SOME_EVENT_FLDS-N100AD"></th><th id="fih4-SOME_EVENT_FLDS-N100AD"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-SOME_EVENT_FLDS-N100AD">1</td><td align="right" width="3%" headers="fih2-SOME_EVENT_FLDS-N100AD"></td><td align="left" width="20%" headers="fih3-SOME_EVENT_FLDS-N100AD"><b>any</b></td><td headers="fih4-SOME_EVENT_FLDS-N100AD"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#in.RESULTS.SOME_EVENT_FLDS"><b>SOME_EVENT_FLDS</b></a></td>
+</tr>
+<tr>
+<th id="fih1-CONTEXT_INFO-N100BA"></th><th id="fih2-CONTEXT_INFO-N100BA"></th><th id="fih3-CONTEXT_INFO-N100BA"></th><th id="fih4-CONTEXT_INFO-N100BA"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CONTEXT_INFO-N100BA">0</td><td align="right" width="3%" headers="fih2-CONTEXT_INFO-N100BA"></td><td align="left" width="20%" headers="fih3-CONTEXT_INFO-N100BA">substruct</td><td headers="fih4-CONTEXT_INFO-N100BA"><a href="#in.CONTEXT_INFO">CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="fih1-CORRELATION_ID-N100C4"></th><th id="fih2-CORRELATION_ID-N100C4"></th><th id="fih3-CORRELATION_ID-N100C4"></th><th id="fih4-CORRELATION_ID-N100C4"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CORRELATION_ID-N100C4">1</td><td align="right" width="3%" headers="fih2-CORRELATION_ID-N100C4"></td><td align="left" width="20%" headers="fih3-CORRELATION_ID-N100C4">string</td><td headers="fih4-CORRELATION_ID-N100C4"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#in.CONTEXT_INFO.CORRELATION_ID">CORRELATION_ID</a></td>
+</tr>
+<tr>
+<th id="fih1-EXTERNAL_USER-N100CE"></th><th id="fih2-EXTERNAL_USER-N100CE"></th><th id="fih3-EXTERNAL_USER-N100CE"></th><th id="fih4-EXTERNAL_USER-N100CE"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-EXTERNAL_USER-N100CE">1</td><td align="right" width="3%" headers="fih2-EXTERNAL_USER-N100CE"></td><td align="left" width="20%" headers="fih3-EXTERNAL_USER-N100CE">string</td><td headers="fih4-EXTERNAL_USER-N100CE"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#in.CONTEXT_INFO.EXTERNAL_USER">EXTERNAL_USER</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<hr>
+<a name="OI"></a>
+<table class="sectiontitle" width="100%" summary="Output field index table">
+<tr>
+<th id="o1"></th>
+</tr>
+<tr>
+<td headers="o1">Output field index</td>
+</tr>
+</table>
+<p></p>
+<table cellspacing="0" cellpadding="1" hspace="1" border="0" width="100%" summary="Navigation index table">
+<tbody class="index">
+<tr>
+<th id="fih1-OFFERING_OBJ-N100E2"></th><th id="fih2-OFFERING_OBJ-N100E2"></th><th id="fih3-OFFERING_OBJ-N100E2"></th><th id="fih4-OFFERING_OBJ-N100E2"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-OFFERING_OBJ-N100E2">0</td><td align="right" width="3%" headers="fih2-OFFERING_OBJ-N100E2"></td><td align="left" width="20%" headers="fih3-OFFERING_OBJ-N100E2">poid</td><td headers="fih4-OFFERING_OBJ-N100E2"><a href="#out.OFFERING_OBJ">OFFERING_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-POID-N100EF"></th><th id="fih2-POID-N100EF"></th><th id="fih3-POID-N100EF"></th><th id="fih4-POID-N100EF"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-POID-N100EF">0</td><td align="right" width="3%" headers="fih2-POID-N100EF"></td><td align="left" width="20%" headers="fih3-POID-N100EF"><b>poid</b></td><td headers="fih4-POID-N100EF"><a href="#out.POID"><b>POID</b></a></td>
+</tr>
+<tr>
+<th id="fih1-PRODUCT_OBJ-N100FB"></th><th id="fih2-PRODUCT_OBJ-N100FB"></th><th id="fih3-PRODUCT_OBJ-N100FB"></th><th id="fih4-PRODUCT_OBJ-N100FB"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PRODUCT_OBJ-N100FB">0</td><td align="right" width="3%" headers="fih2-PRODUCT_OBJ-N100FB"></td><td align="left" width="20%" headers="fih3-PRODUCT_OBJ-N100FB">poid</td><td headers="fih4-PRODUCT_OBJ-N100FB"><a href="#out.PRODUCT_OBJ">PRODUCT_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-DEAL_OBJ-N1010D"></th><th id="fih2-DEAL_OBJ-N1010D"></th><th id="fih3-DEAL_OBJ-N1010D"></th><th id="fih4-DEAL_OBJ-N1010D"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-DEAL_OBJ-N1010D">0</td><td align="right" width="3%" headers="fih2-DEAL_OBJ-N1010D"></td><td align="left" width="20%" headers="fih3-DEAL_OBJ-N1010D">poid</td><td headers="fih4-DEAL_OBJ-N1010D"><a href="#out.DEAL_OBJ">DEAL_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-PACKAGE_ID-N10127"></th><th id="fih2-PACKAGE_ID-N10127"></th><th id="fih3-PACKAGE_ID-N10127"></th><th id="fih4-PACKAGE_ID-N10127"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PACKAGE_ID-N10127">0</td><td align="right" width="3%" headers="fih2-PACKAGE_ID-N10127"></td><td align="left" width="20%" headers="fih3-PACKAGE_ID-N10127">int</td><td headers="fih4-PACKAGE_ID-N10127"><a href="#out.PACKAGE_ID">PACKAGE_ID</a></td>
+</tr>
+<tr>
+<th id="fih1-SERVICE_OBJ-N1011A"></th><th id="fih2-SERVICE_OBJ-N1011A"></th><th id="fih3-SERVICE_OBJ-N1011A"></th><th id="fih4-SERVICE_OBJ-N1011A"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-SERVICE_OBJ-N1011A">0</td><td align="right" width="3%" headers="fih2-SERVICE_OBJ-N1011A"></td><td align="left" width="20%" headers="fih3-SERVICE_OBJ-N1011A">poid</td><td headers="fih4-SERVICE_OBJ-N1011A"><a href="#out.SERVICE_OBJ">SERVICE_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-RESULTS-N10130"></th><th id="fih2-RESULTS-N10130"></th><th id="fih3-RESULTS-N10130"></th><th id="fih4-RESULTS-N10130"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-RESULTS-N10130">0</td><td align="right" width="3%" headers="fih2-RESULTS-N10130"></td><td align="left" width="20%" headers="fih3-RESULTS-N10130">array</td><td headers="fih4-RESULTS-N10130"><a href="#out.RESULTS">RESULTS</a></td>
+</tr>
+<tr>
+<th id="fih1-ACTION_INFO-N1014B"></th><th id="fih2-ACTION_INFO-N1014B"></th><th id="fih3-ACTION_INFO-N1014B"></th><th id="fih4-ACTION_INFO-N1014B"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-ACTION_INFO-N1014B">1</td><td align="right" width="3%" headers="fih2-ACTION_INFO-N1014B"></td><td align="left" width="20%" headers="fih3-ACTION_INFO-N1014B">array</td><td headers="fih4-ACTION_INFO-N1014B"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO">ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="fih1-CREATED_T-N102AD"></th><th id="fih2-CREATED_T-N102AD"></th><th id="fih3-CREATED_T-N102AD"></th><th id="fih4-CREATED_T-N102AD"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CREATED_T-N102AD">2</td><td align="right" width="3%" headers="fih2-CREATED_T-N102AD"></td><td align="left" width="20%" headers="fih3-CREATED_T-N102AD">timestamp</td><td headers="fih4-CREATED_T-N102AD"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CREATED_T">CREATED_T</a></td>
+</tr>
+<tr>
+<th id="fih1-ACCOUNT_OBJ-N1015A"></th><th id="fih2-ACCOUNT_OBJ-N1015A"></th><th id="fih3-ACCOUNT_OBJ-N1015A"></th><th id="fih4-ACCOUNT_OBJ-N1015A"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-ACCOUNT_OBJ-N1015A">2</td><td align="right" width="3%" headers="fih2-ACCOUNT_OBJ-N1015A"></td><td align="left" width="20%" headers="fih3-ACCOUNT_OBJ-N1015A"><b>poid</b></td><td headers="fih4-ACCOUNT_OBJ-N1015A"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.ACCOUNT_OBJ"><b>ACCOUNT_OBJ</b></a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_DISCOUNT-N10265"></th><th id="fih2-CYCLE_DISCOUNT-N10265"></th><th id="fih3-CYCLE_DISCOUNT-N10265"></th><th id="fih4-CYCLE_DISCOUNT-N10265"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_DISCOUNT-N10265">2</td><td align="right" width="3%" headers="fih2-CYCLE_DISCOUNT-N10265"></td><td align="left" width="20%" headers="fih3-CYCLE_DISCOUNT-N10265">decimal</td><td headers="fih4-CYCLE_DISCOUNT-N10265"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_DISCOUNT">CYCLE_DISCOUNT</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_DISC_AMT-N1026E"></th><th id="fih2-CYCLE_DISC_AMT-N1026E"></th><th id="fih3-CYCLE_DISC_AMT-N1026E"></th><th id="fih4-CYCLE_DISC_AMT-N1026E"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_DISC_AMT-N1026E">2</td><td align="right" width="3%" headers="fih2-CYCLE_DISC_AMT-N1026E"></td><td align="left" width="20%" headers="fih3-CYCLE_DISC_AMT-N1026E">decimal</td><td headers="fih4-CYCLE_DISC_AMT-N1026E"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_DISC_AMT">CYCLE_DISC_AMT</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_END_DETAILS-N101B2"></th><th id="fih2-CYCLE_END_DETAILS-N101B2"></th><th id="fih3-CYCLE_END_DETAILS-N101B2"></th><th id="fih4-CYCLE_END_DETAILS-N101B2"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_END_DETAILS-N101B2">2</td><td align="right" width="3%" headers="fih2-CYCLE_END_DETAILS-N101B2"></td><td align="left" width="20%" headers="fih3-CYCLE_END_DETAILS-N101B2">int</td><td headers="fih4-CYCLE_END_DETAILS-N101B2"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_END_DETAILS">CYCLE_END_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_END_T-N102B6"></th><th id="fih2-CYCLE_END_T-N102B6"></th><th id="fih3-CYCLE_END_T-N102B6"></th><th id="fih4-CYCLE_END_T-N102B6"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_END_T-N102B6">2</td><td align="right" width="3%" headers="fih2-CYCLE_END_T-N102B6"></td><td align="left" width="20%" headers="fih3-CYCLE_END_T-N102B6">timestamp</td><td headers="fih4-CYCLE_END_T-N102B6"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_END_T">CYCLE_END_T</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_FEE_AMT-N10277"></th><th id="fih2-CYCLE_FEE_AMT-N10277"></th><th id="fih3-CYCLE_FEE_AMT-N10277"></th><th id="fih4-CYCLE_FEE_AMT-N10277"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_FEE_AMT-N10277">2</td><td align="right" width="3%" headers="fih2-CYCLE_FEE_AMT-N10277"></td><td align="left" width="20%" headers="fih3-CYCLE_FEE_AMT-N10277">decimal</td><td headers="fih4-CYCLE_FEE_AMT-N10277"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_FEE_AMT">CYCLE_FEE_AMT</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_FEE_FLAGS-N101BB"></th><th id="fih2-CYCLE_FEE_FLAGS-N101BB"></th><th id="fih3-CYCLE_FEE_FLAGS-N101BB"></th><th id="fih4-CYCLE_FEE_FLAGS-N101BB"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_FEE_FLAGS-N101BB">2</td><td align="right" width="3%" headers="fih2-CYCLE_FEE_FLAGS-N101BB"></td><td align="left" width="20%" headers="fih3-CYCLE_FEE_FLAGS-N101BB">int</td><td headers="fih4-CYCLE_FEE_FLAGS-N101BB"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_FEE_FLAGS">CYCLE_FEE_FLAGS</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_START_DETAILS-N101C4"></th><th id="fih2-CYCLE_START_DETAILS-N101C4"></th><th id="fih3-CYCLE_START_DETAILS-N101C4"></th><th id="fih4-CYCLE_START_DETAILS-N101C4"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_START_DETAILS-N101C4">2</td><td align="right" width="3%" headers="fih2-CYCLE_START_DETAILS-N101C4"></td><td align="left" width="20%" headers="fih3-CYCLE_START_DETAILS-N101C4">int</td><td headers="fih4-CYCLE_START_DETAILS-N101C4"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_START_DETAILS">CYCLE_START_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-CYCLE_START_T-N102BF"></th><th id="fih2-CYCLE_START_T-N102BF"></th><th id="fih3-CYCLE_START_T-N102BF"></th><th id="fih4-CYCLE_START_T-N102BF"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CYCLE_START_T-N102BF">2</td><td align="right" width="3%" headers="fih2-CYCLE_START_T-N102BF"></td><td align="left" width="20%" headers="fih3-CYCLE_START_T-N102BF">timestamp</td><td headers="fih4-CYCLE_START_T-N102BF"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.CYCLE_START_T">CYCLE_START_T</a></td>
+</tr>
+<tr>
+<th id="fih1-DEAL_OBJ-N10167"></th><th id="fih2-DEAL_OBJ-N10167"></th><th id="fih3-DEAL_OBJ-N10167"></th><th id="fih4-DEAL_OBJ-N10167"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-DEAL_OBJ-N10167">2</td><td align="right" width="3%" headers="fih2-DEAL_OBJ-N10167"></td><td align="left" width="20%" headers="fih3-DEAL_OBJ-N10167">poid</td><td headers="fih4-DEAL_OBJ-N10167"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.DEAL_OBJ">DEAL_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-DESCR-N102F5"></th><th id="fih2-DESCR-N102F5"></th><th id="fih3-DESCR-N102F5"></th><th id="fih4-DESCR-N102F5"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-DESCR-N102F5">2</td><td align="right" width="3%" headers="fih2-DESCR-N102F5"></td><td align="left" width="20%" headers="fih3-DESCR-N102F5">string</td><td headers="fih4-DESCR-N102F5"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.DESCR">DESCR</a></td>
+</tr>
+<tr>
+<th id="fih1-FLAGS-N101CD"></th><th id="fih2-FLAGS-N101CD"></th><th id="fih3-FLAGS-N101CD"></th><th id="fih4-FLAGS-N101CD"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-FLAGS-N101CD">2</td><td align="right" width="3%" headers="fih2-FLAGS-N101CD"></td><td align="left" width="20%" headers="fih3-FLAGS-N101CD">int</td><td headers="fih4-FLAGS-N101CD"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.FLAGS">FLAGS</a></td>
+</tr>
+<tr>
+<th id="fih1-EFFECTIVE_T-N102C8"></th><th id="fih2-EFFECTIVE_T-N102C8"></th><th id="fih3-EFFECTIVE_T-N102C8"></th><th id="fih4-EFFECTIVE_T-N102C8"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-EFFECTIVE_T-N102C8">2</td><td align="right" width="3%" headers="fih2-EFFECTIVE_T-N102C8"></td><td align="left" width="20%" headers="fih3-EFFECTIVE_T-N102C8">timestamp</td><td headers="fih4-EFFECTIVE_T-N102C8"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.EFFECTIVE_T">EFFECTIVE_T</a></td>
+</tr>
+<tr>
+<th id="fih1-TYPE-N1020C"></th><th id="fih2-TYPE-N1020C"></th><th id="fih3-TYPE-N1020C"></th><th id="fih4-TYPE-N1020C"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-TYPE-N1020C">2</td><td align="right" width="3%" headers="fih2-TYPE-N1020C"></td><td align="left" width="20%" headers="fih3-TYPE-N1020C"><b>enum</b></td><td headers="fih4-TYPE-N1020C"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.TYPE"><b>TYPE</b></a></td>
+</tr>
+<tr>
+<th id="fih1-EVENT_TYPE-N102FC"></th><th id="fih2-EVENT_TYPE-N102FC"></th><th id="fih3-EVENT_TYPE-N102FC"></th><th id="fih4-EVENT_TYPE-N102FC"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-EVENT_TYPE-N102FC">2</td><td align="right" width="3%" headers="fih2-EVENT_TYPE-N102FC"></td><td align="left" width="20%" headers="fih3-EVENT_TYPE-N102FC">string</td><td headers="fih4-EVENT_TYPE-N102FC"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.EVENT_TYPE">EVENT_TYPE</a></td>
+</tr>
+<tr>
+<th id="fih1-MMC_TYPE-N101D6"></th><th id="fih2-MMC_TYPE-N101D6"></th><th id="fih3-MMC_TYPE-N101D6"></th><th id="fih4-MMC_TYPE-N101D6"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-MMC_TYPE-N101D6">2</td><td align="right" width="3%" headers="fih2-MMC_TYPE-N101D6"></td><td align="left" width="20%" headers="fih3-MMC_TYPE-N101D6">int</td><td headers="fih4-MMC_TYPE-N101D6"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.MMC_TYPE">MMC_TYPE</a></td>
+</tr>
+<tr>
+<th id="fih1-OFFERING_OBJ-N10174"></th><th id="fih2-OFFERING_OBJ-N10174"></th><th id="fih3-OFFERING_OBJ-N10174"></th><th id="fih4-OFFERING_OBJ-N10174"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-OFFERING_OBJ-N10174">2</td><td align="right" width="3%" headers="fih2-OFFERING_OBJ-N10174"></td><td align="left" width="20%" headers="fih3-OFFERING_OBJ-N10174"><b>poid</b></td><td headers="fih4-OFFERING_OBJ-N10174"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.OFFERING_OBJ"><b>OFFERING_OBJ</b></a></td>
+</tr>
+<tr>
+<th id="fih1-PLAN_OBJ-N1017E"></th><th id="fih2-PLAN_OBJ-N1017E"></th><th id="fih3-PLAN_OBJ-N1017E"></th><th id="fih4-PLAN_OBJ-N1017E"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PLAN_OBJ-N1017E">2</td><td align="right" width="3%" headers="fih2-PLAN_OBJ-N1017E"></td><td align="left" width="20%" headers="fih3-PLAN_OBJ-N1017E"><b>poid</b></td><td headers="fih4-PLAN_OBJ-N1017E"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PLAN_OBJ"><b>PLAN_OBJ</b></a></td>
+</tr>
+<tr>
+<th id="fih1-PRICE_LIST_NAME-N10306"></th><th id="fih2-PRICE_LIST_NAME-N10306"></th><th id="fih3-PRICE_LIST_NAME-N10306"></th><th id="fih4-PRICE_LIST_NAME-N10306"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PRICE_LIST_NAME-N10306">2</td><td align="right" width="3%" headers="fih2-PRICE_LIST_NAME-N10306"></td><td align="left" width="20%" headers="fih3-PRICE_LIST_NAME-N10306">string</td><td headers="fih4-PRICE_LIST_NAME-N10306"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PRICE_LIST_NAME">PRICE_LIST_NAME</a></td>
+</tr>
+<tr>
+<th id="fih1-PRODUCT_OBJ-N1018B"></th><th id="fih2-PRODUCT_OBJ-N1018B"></th><th id="fih3-PRODUCT_OBJ-N1018B"></th><th id="fih4-PRODUCT_OBJ-N1018B"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PRODUCT_OBJ-N1018B">2</td><td align="right" width="3%" headers="fih2-PRODUCT_OBJ-N1018B"></td><td align="left" width="20%" headers="fih3-PRODUCT_OBJ-N1018B"><b>poid</b></td><td headers="fih4-PRODUCT_OBJ-N1018B"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PRODUCT_OBJ"><b>PRODUCT_OBJ</b></a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_DISCOUNT-N10280"></th><th id="fih2-PURCHASE_DISCOUNT-N10280"></th><th id="fih3-PURCHASE_DISCOUNT-N10280"></th><th id="fih4-PURCHASE_DISCOUNT-N10280"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_DISCOUNT-N10280">2</td><td align="right" width="3%" headers="fih2-PURCHASE_DISCOUNT-N10280"></td><td align="left" width="20%" headers="fih3-PURCHASE_DISCOUNT-N10280">decimal</td><td headers="fih4-PURCHASE_DISCOUNT-N10280"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_DISCOUNT">PURCHASE_DISCOUNT</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_DISC_AMT-N10289"></th><th id="fih2-PURCHASE_DISC_AMT-N10289"></th><th id="fih3-PURCHASE_DISC_AMT-N10289"></th><th id="fih4-PURCHASE_DISC_AMT-N10289"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_DISC_AMT-N10289">2</td><td align="right" width="3%" headers="fih2-PURCHASE_DISC_AMT-N10289"></td><td align="left" width="20%" headers="fih3-PURCHASE_DISC_AMT-N10289">decimal</td><td headers="fih4-PURCHASE_DISC_AMT-N10289"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_DISC_AMT">PURCHASE_DISC_AMT</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_END_DETAILS-N101DF"></th><th id="fih2-PURCHASE_END_DETAILS-N101DF"></th><th id="fih3-PURCHASE_END_DETAILS-N101DF"></th><th id="fih4-PURCHASE_END_DETAILS-N101DF"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_END_DETAILS-N101DF">2</td><td align="right" width="3%" headers="fih2-PURCHASE_END_DETAILS-N101DF"></td><td align="left" width="20%" headers="fih3-PURCHASE_END_DETAILS-N101DF">int</td><td headers="fih4-PURCHASE_END_DETAILS-N101DF"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_END_DETAILS">PURCHASE_END_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_END_T-N102D1"></th><th id="fih2-PURCHASE_END_T-N102D1"></th><th id="fih3-PURCHASE_END_T-N102D1"></th><th id="fih4-PURCHASE_END_T-N102D1"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_END_T-N102D1">2</td><td align="right" width="3%" headers="fih2-PURCHASE_END_T-N102D1"></td><td align="left" width="20%" headers="fih3-PURCHASE_END_T-N102D1">timestamp</td><td headers="fih4-PURCHASE_END_T-N102D1"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_END_T">PURCHASE_END_T</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_FEE_AMT-N10292"></th><th id="fih2-PURCHASE_FEE_AMT-N10292"></th><th id="fih3-PURCHASE_FEE_AMT-N10292"></th><th id="fih4-PURCHASE_FEE_AMT-N10292"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_FEE_AMT-N10292">2</td><td align="right" width="3%" headers="fih2-PURCHASE_FEE_AMT-N10292"></td><td align="left" width="20%" headers="fih3-PURCHASE_FEE_AMT-N10292">decimal</td><td headers="fih4-PURCHASE_FEE_AMT-N10292"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_FEE_AMT">PURCHASE_FEE_AMT</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_START_DETAILS-N101E8"></th><th id="fih2-PURCHASE_START_DETAILS-N101E8"></th><th id="fih3-PURCHASE_START_DETAILS-N101E8"></th><th id="fih4-PURCHASE_START_DETAILS-N101E8"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_START_DETAILS-N101E8">2</td><td align="right" width="3%" headers="fih2-PURCHASE_START_DETAILS-N101E8"></td><td align="left" width="20%" headers="fih3-PURCHASE_START_DETAILS-N101E8">int</td><td headers="fih4-PURCHASE_START_DETAILS-N101E8"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_START_DETAILS">PURCHASE_START_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-PURCHASE_START_T-N102DA"></th><th id="fih2-PURCHASE_START_T-N102DA"></th><th id="fih3-PURCHASE_START_T-N102DA"></th><th id="fih4-PURCHASE_START_T-N102DA"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-PURCHASE_START_T-N102DA">2</td><td align="right" width="3%" headers="fih2-PURCHASE_START_T-N102DA"></td><td align="left" width="20%" headers="fih3-PURCHASE_START_T-N102DA">timestamp</td><td headers="fih4-PURCHASE_START_T-N102DA"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.PURCHASE_START_T">PURCHASE_START_T</a></td>
+</tr>
+<tr>
+<th id="fih1-QUANTITY-N1029B"></th><th id="fih2-QUANTITY-N1029B"></th><th id="fih3-QUANTITY-N1029B"></th><th id="fih4-QUANTITY-N1029B"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-QUANTITY-N1029B">2</td><td align="right" width="3%" headers="fih2-QUANTITY-N1029B"></td><td align="left" width="20%" headers="fih3-QUANTITY-N1029B">decimal</td><td headers="fih4-QUANTITY-N1029B"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.QUANTITY">QUANTITY</a></td>
+</tr>
+<tr>
+<th id="fih1-SERVICE_OBJ-N10198"></th><th id="fih2-SERVICE_OBJ-N10198"></th><th id="fih3-SERVICE_OBJ-N10198"></th><th id="fih4-SERVICE_OBJ-N10198"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-SERVICE_OBJ-N10198">2</td><td align="right" width="3%" headers="fih2-SERVICE_OBJ-N10198"></td><td align="left" width="20%" headers="fih3-SERVICE_OBJ-N10198">poid</td><td headers="fih4-SERVICE_OBJ-N10198"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.SERVICE_OBJ">SERVICE_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-SPONSOR_OBJ-N101A5"></th><th id="fih2-SPONSOR_OBJ-N101A5"></th><th id="fih3-SPONSOR_OBJ-N101A5"></th><th id="fih4-SPONSOR_OBJ-N101A5"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-SPONSOR_OBJ-N101A5">2</td><td align="right" width="3%" headers="fih2-SPONSOR_OBJ-N101A5"></td><td align="left" width="20%" headers="fih3-SPONSOR_OBJ-N101A5">poid</td><td headers="fih4-SPONSOR_OBJ-N101A5"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.SPONSOR_OBJ">SPONSOR_OBJ</a></td>
+</tr>
+<tr>
+<th id="fih1-STATUS-N10238"></th><th id="fih2-STATUS-N10238"></th><th id="fih3-STATUS-N10238"></th><th id="fih4-STATUS-N10238"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-STATUS-N10238">2</td><td align="right" width="3%" headers="fih2-STATUS-N10238"></td><td align="left" width="20%" headers="fih3-STATUS-N10238"><b>enum</b></td><td headers="fih4-STATUS-N10238"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.STATUS"><b>STATUS</b></a></td>
+</tr>
+<tr>
+<th id="fih1-STATUS_FLAGS-N101F1"></th><th id="fih2-STATUS_FLAGS-N101F1"></th><th id="fih3-STATUS_FLAGS-N101F1"></th><th id="fih4-STATUS_FLAGS-N101F1"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-STATUS_FLAGS-N101F1">2</td><td align="right" width="3%" headers="fih2-STATUS_FLAGS-N101F1"></td><td align="left" width="20%" headers="fih3-STATUS_FLAGS-N101F1">int</td><td headers="fih4-STATUS_FLAGS-N101F1"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.STATUS_FLAGS">STATUS_FLAGS</a></td>
+</tr>
+<tr>
+<th id="fih1-USAGE_DISCOUNT-N102A4"></th><th id="fih2-USAGE_DISCOUNT-N102A4"></th><th id="fih3-USAGE_DISCOUNT-N102A4"></th><th id="fih4-USAGE_DISCOUNT-N102A4"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-USAGE_DISCOUNT-N102A4">2</td><td align="right" width="3%" headers="fih2-USAGE_DISCOUNT-N102A4"></td><td align="left" width="20%" headers="fih3-USAGE_DISCOUNT-N102A4">decimal</td><td headers="fih4-USAGE_DISCOUNT-N102A4"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.USAGE_DISCOUNT">USAGE_DISCOUNT</a></td>
+</tr>
+<tr>
+<th id="fih1-USAGE_END_DETAILS-N101FA"></th><th id="fih2-USAGE_END_DETAILS-N101FA"></th><th id="fih3-USAGE_END_DETAILS-N101FA"></th><th id="fih4-USAGE_END_DETAILS-N101FA"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-USAGE_END_DETAILS-N101FA">2</td><td align="right" width="3%" headers="fih2-USAGE_END_DETAILS-N101FA"></td><td align="left" width="20%" headers="fih3-USAGE_END_DETAILS-N101FA">int</td><td headers="fih4-USAGE_END_DETAILS-N101FA"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.USAGE_END_DETAILS">USAGE_END_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-USAGE_END_T-N102E3"></th><th id="fih2-USAGE_END_T-N102E3"></th><th id="fih3-USAGE_END_T-N102E3"></th><th id="fih4-USAGE_END_T-N102E3"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-USAGE_END_T-N102E3">2</td><td align="right" width="3%" headers="fih2-USAGE_END_T-N102E3"></td><td align="left" width="20%" headers="fih3-USAGE_END_T-N102E3">timestamp</td><td headers="fih4-USAGE_END_T-N102E3"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.USAGE_END_T">USAGE_END_T</a></td>
+</tr>
+<tr>
+<th id="fih1-USAGE_START_DETAILS-N10203"></th><th id="fih2-USAGE_START_DETAILS-N10203"></th><th id="fih3-USAGE_START_DETAILS-N10203"></th><th id="fih4-USAGE_START_DETAILS-N10203"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-USAGE_START_DETAILS-N10203">2</td><td align="right" width="3%" headers="fih2-USAGE_START_DETAILS-N10203"></td><td align="left" width="20%" headers="fih3-USAGE_START_DETAILS-N10203">int</td><td headers="fih4-USAGE_START_DETAILS-N10203"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.USAGE_START_DETAILS">USAGE_START_DETAILS</a></td>
+</tr>
+<tr>
+<th id="fih1-USAGE_START_T-N102EC"></th><th id="fih2-USAGE_START_T-N102EC"></th><th id="fih3-USAGE_START_T-N102EC"></th><th id="fih4-USAGE_START_T-N102EC"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-USAGE_START_T-N102EC">2</td><td align="right" width="3%" headers="fih2-USAGE_START_T-N102EC"></td><td align="left" width="20%" headers="fih3-USAGE_START_T-N102EC">timestamp</td><td headers="fih4-USAGE_START_T-N102EC"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.ACTION_INFO.USAGE_START_T">USAGE_START_T</a></td>
+</tr>
+<tr>
+<th id="fih1-LINK_OBJECT-N10141"></th><th id="fih2-LINK_OBJECT-N10141"></th><th id="fih3-LINK_OBJECT-N10141"></th><th id="fih4-LINK_OBJECT-N10141"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-LINK_OBJECT-N10141">1</td><td align="right" width="3%" headers="fih2-LINK_OBJECT-N10141"></td><td align="left" width="20%" headers="fih3-LINK_OBJECT-N10141"><b>string</b></td><td headers="fih4-LINK_OBJECT-N10141"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.RESULTS.LINK_OBJECT"><b>LINK_OBJECT</b></a></td>
+</tr>
+<tr>
+<th id="fih1-CONTEXT_INFO-N10314"></th><th id="fih2-CONTEXT_INFO-N10314"></th><th id="fih3-CONTEXT_INFO-N10314"></th><th id="fih4-CONTEXT_INFO-N10314"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CONTEXT_INFO-N10314">0</td><td align="right" width="3%" headers="fih2-CONTEXT_INFO-N10314"></td><td align="left" width="20%" headers="fih3-CONTEXT_INFO-N10314">substruct</td><td headers="fih4-CONTEXT_INFO-N10314"><a href="#out.CONTEXT_INFO">CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="fih1-CORRELATION_ID-N1031E"></th><th id="fih2-CORRELATION_ID-N1031E"></th><th id="fih3-CORRELATION_ID-N1031E"></th><th id="fih4-CORRELATION_ID-N1031E"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-CORRELATION_ID-N1031E">1</td><td align="right" width="3%" headers="fih2-CORRELATION_ID-N1031E"></td><td align="left" width="20%" headers="fih3-CORRELATION_ID-N1031E">string</td><td headers="fih4-CORRELATION_ID-N1031E"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.CONTEXT_INFO.CORRELATION_ID">CORRELATION_ID</a></td>
+</tr>
+<tr>
+<th id="fih1-EXTERNAL_USER-N10328"></th><th id="fih2-EXTERNAL_USER-N10328"></th><th id="fih3-EXTERNAL_USER-N10328"></th><th id="fih4-EXTERNAL_USER-N10328"></th>
+</tr>
+<tr>
+<td align="right" width="3%" headers="fih1-EXTERNAL_USER-N10328">1</td><td align="right" width="3%" headers="fih2-EXTERNAL_USER-N10328"></td><td align="left" width="20%" headers="fih3-EXTERNAL_USER-N10328">string</td><td headers="fih4-EXTERNAL_USER-N10328"><code>
+	  &nbsp;&nbsp;&nbsp;&nbsp;
+	</code><a href="#out.CONTEXT_INFO.EXTERNAL_USER">EXTERNAL_USER</a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<hr>
+<a name="ID"></a>
+<table class="sectiontitle" width="100%" summary="Input details table">
+<tr>
+<th id="id"></th>
+</tr>
+<tr>
+<td headers="id">Input details</td>
+</tr>
+</table>
+<p></p>
+<p></p>
+<a name="in.POID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-POID-N10015"></th><th id="fth2-POID-N10015"></th><th id="fth3-POID-N10015"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-POID-N10015">0</td><td headers="fth2-POID-N10015"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>POID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-POID-N10015"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10015"></th><th id="prh2-Ue-N10015"></th><th id="prh3-Ue-N10015"></th><th id="prh4-Ue-N10015"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10015"></td><td headers="prh2-Ue-N10015"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10015"></td><td headers="prh4-Ue-N10015">required</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N1001E"></th><th id="prh2-Cla-N1001E"></th><th id="prh3-Cla-N1001E"></th><th id="prh4-Cla-N1001E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N1001E"></td><td headers="prh2-Cla-N1001E"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N1001E"></td><td headers="prh4-Cla-N1001E">/account</td>
+</tr>
+</tbody>
+</table>
+<P></P> Account object for which to fetch the history. <hr width="0">
+<P></P>
+<a name="in.SERVICE_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-SERVICE_OBJ-N10022"></th><th id="fth2-SERVICE_OBJ-N10022"></th><th id="fth3-SERVICE_OBJ-N10022"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-SERVICE_OBJ-N10022">0</td><td headers="fth2-SERVICE_OBJ-N10022"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>SERVICE_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-SERVICE_OBJ-N10022"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10022"></th><th id="prh2-Ue-N10022"></th><th id="prh3-Ue-N10022"></th><th id="prh4-Ue-N10022"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10022"></td><td headers="prh2-Ue-N10022"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10022"></td><td headers="prh4-Ue-N10022">optional</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10035"></th><th id="prh2-Cla-N10035"></th><th id="prh3-Cla-N10035"></th><th id="prh4-Cla-N10035"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10035"></td><td headers="prh2-Cla-N10035"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10035"></td><td headers="prh4-Cla-N10035">/service</td>
+</tr>
+</tbody>
+</table>
+<P></P> If it is present, the event history related to login or password for this service instance is fetched. If the deal is also passed, then the history for the deal uniquely identified by this service and package id will be fetched.<hr width="0">
+<P></P>
+<a name="in.DEAL_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-DEAL_OBJ-N10039"></th><th id="fth2-DEAL_OBJ-N10039"></th><th id="fth3-DEAL_OBJ-N10039"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-DEAL_OBJ-N10039">0</td><td headers="fth2-DEAL_OBJ-N10039"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>DEAL_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-DEAL_OBJ-N10039"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10039"></th><th id="prh2-Ue-N10039"></th><th id="prh3-Ue-N10039"></th><th id="prh4-Ue-N10039"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10039"></td><td headers="prh2-Ue-N10039"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10039"></td><td headers="prh4-Ue-N10039">optional</td>
+</tr>
+<tr>
+<th id="prh1-Mode-N10039"></th><th id="prh2-Mode-N10039"></th><th id="prh3-Mode-N10039"></th><th id="prh4-Mode-N10039"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Mode-N10039"></td><td headers="prh2-Mode-N10039"><i>Mode</i></td><td class="propgap" headers="prh3-Mode-N10039"></td><td headers="prh4-Mode-N10039">typeonly</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N1004C"></th><th id="prh2-Cla-N1004C"></th><th id="prh3-Cla-N1004C"></th><th id="prh4-Cla-N1004C"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N1004C"></td><td headers="prh2-Cla-N1004C"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N1004C"></td><td headers="prh4-Cla-N1004C">/deal</td>
+</tr>
+</tbody>
+</table>
+<P></P> Type-only deal poid to indicate that the history is to be fetched for a deal. The deal is uniquely identified by the service and package id.<hr width="0">
+<P></P>
+<a name="in.PRODUCT_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PRODUCT_OBJ-N10050"></th><th id="fth2-PRODUCT_OBJ-N10050"></th><th id="fth3-PRODUCT_OBJ-N10050"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PRODUCT_OBJ-N10050">0</td><td headers="fth2-PRODUCT_OBJ-N10050"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>PRODUCT_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PRODUCT_OBJ-N10050"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10050"></th><th id="prh2-Ue-N10050"></th><th id="prh3-Ue-N10050"></th><th id="prh4-Ue-N10050"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10050"></td><td headers="prh2-Ue-N10050"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10050"></td><td headers="prh4-Ue-N10050">optional</td>
+</tr>
+<tr>
+<th id="prh1-Mode-N10050"></th><th id="prh2-Mode-N10050"></th><th id="prh3-Mode-N10050"></th><th id="prh4-Mode-N10050"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Mode-N10050"></td><td headers="prh2-Mode-N10050"><i>Mode</i></td><td class="propgap" headers="prh3-Mode-N10050"></td><td headers="prh4-Mode-N10050">typeonly</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N1005E"></th><th id="prh2-Cla-N1005E"></th><th id="prh3-Cla-N1005E"></th><th id="prh4-Cla-N1005E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N1005E"></td><td headers="prh2-Cla-N1005E"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N1005E"></td><td headers="prh4-Cla-N1005E">/product</td>
+</tr>
+</tbody>
+</table>
+<P></P> Type-only product poid to indicate that the history is to be fetched for a product. The product is uniquely identified by the product instance poid.<hr width="0">
+<P></P>
+<a name="in.DISCOUNT_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-DISCOUNT_OBJ-N10062"></th><th id="fth2-DISCOUNT_OBJ-N10062"></th><th id="fth3-DISCOUNT_OBJ-N10062"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-DISCOUNT_OBJ-N10062">0</td><td headers="fth2-DISCOUNT_OBJ-N10062"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>DISCOUNT_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-DISCOUNT_OBJ-N10062"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10062"></th><th id="prh2-Ue-N10062"></th><th id="prh3-Ue-N10062"></th><th id="prh4-Ue-N10062"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10062"></td><td headers="prh2-Ue-N10062"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10062"></td><td headers="prh4-Ue-N10062">optional</td>
+</tr>
+<tr>
+<th id="prh1-Mode-N10062"></th><th id="prh2-Mode-N10062"></th><th id="prh3-Mode-N10062"></th><th id="prh4-Mode-N10062"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Mode-N10062"></td><td headers="prh2-Mode-N10062"><i>Mode</i></td><td class="propgap" headers="prh3-Mode-N10062"></td><td headers="prh4-Mode-N10062">typeonly</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10070"></th><th id="prh2-Cla-N10070"></th><th id="prh3-Cla-N10070"></th><th id="prh4-Cla-N10070"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10070"></td><td headers="prh2-Cla-N10070"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10070"></td><td headers="prh4-Cla-N10070">/discount</td>
+</tr>
+</tbody>
+</table>
+<P></P> Type-only discount poid to indicate that the history is to be fetched for a discount. The discount is uniquely identified by the discount instance poid.<hr width="0">
+<P></P>
+<a name="in.OFFERING_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-OFFERING_OBJ-N10074"></th><th id="fth2-OFFERING_OBJ-N10074"></th><th id="fth3-OFFERING_OBJ-N10074"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-OFFERING_OBJ-N10074">0</td><td headers="fth2-OFFERING_OBJ-N10074"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>OFFERING_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-OFFERING_OBJ-N10074"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10074"></th><th id="prh2-Ue-N10074"></th><th id="prh3-Ue-N10074"></th><th id="prh4-Ue-N10074"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10074"></td><td headers="prh2-Ue-N10074"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10074"></td><td headers="prh4-Ue-N10074">optional</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N1007D"></th><th id="prh2-Cla-N1007D"></th><th id="prh3-Cla-N1007D"></th><th id="prh4-Cla-N1007D"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N1007D"></td><td headers="prh2-Cla-N1007D"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N1007D"></td><td headers="prh4-Cla-N1007D">/purchased_product</td>
+</tr>
+</tbody>
+</table>
+<P></P> Uniquely identifies a product or discount in an account, so it is a required field if the history fetch is for a product or discount.<hr width="0">
+<P></P>
+<a name="in.PACKAGE_ID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PACKAGE_ID-N10081"></th><th id="fth2-PACKAGE_ID-N10081"></th><th id="fth3-PACKAGE_ID-N10081"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PACKAGE_ID-N10081">0</td><td headers="fth2-PACKAGE_ID-N10081"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>PACKAGE_ID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PACKAGE_ID-N10081"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10081"></th><th id="prh2-Ue-N10081"></th><th id="prh3-Ue-N10081"></th><th id="prh4-Ue-N10081"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10081"></td><td headers="prh2-Ue-N10081"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10081"></td><td headers="prh4-Ue-N10081">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P> Together with the service, uniquely identifies a deal in an account, so it is a required field if the history fetch is for a deal.<hr width="0">
+<P></P>
+<a name="in.START_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-START_T-N1008F"></th><th id="fth2-START_T-N1008F"></th><th id="fth3-START_T-N1008F"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-START_T-N1008F">0</td><td headers="fth2-START_T-N1008F"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>START_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-START_T-N1008F"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1008F"></th><th id="prh2-Ue-N1008F"></th><th id="prh3-Ue-N1008F"></th><th id="prh4-Ue-N1008F"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1008F"></td><td headers="prh2-Ue-N1008F"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1008F"></td><td headers="prh4-Ue-N1008F">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P> Start date from and including which to retrieve the history. If not specified, defaults to the account creation date.<hr width="0">
+<P></P>
+<a name="in.END_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-END_T-N10098"></th><th id="fth2-END_T-N10098"></th><th id="fth3-END_T-N10098"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-END_T-N10098">0</td><td headers="fth2-END_T-N10098"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>END_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-END_T-N10098"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10098"></th><th id="prh2-Ue-N10098"></th><th id="prh3-Ue-N10098"></th><th id="prh4-Ue-N10098"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10098"></td><td headers="prh2-Ue-N10098"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10098"></td><td headers="prh4-Ue-N10098">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P> End date upto and including which to retrieve the history.  If not specified, defaults to the current date.<hr width="0">
+<P></P>
+<a name="in.RESULTS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-RESULTS-N100A1"></th><th id="fth2-RESULTS-N100A1"></th><th id="fth3-RESULTS-N100A1"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-RESULTS-N100A1">0</td><td headers="fth2-RESULTS-N100A1"><b>array</b>
+	      &nbsp;&nbsp;
+	    <b>RESULTS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-RESULTS-N100A1"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100A1"></th><th id="prh2-Ue-N100A1"></th><th id="prh3-Ue-N100A1"></th><th id="prh4-Ue-N100A1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100A1"></td><td headers="prh2-Ue-N100A1"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100A1"></td><td headers="prh4-Ue-N100A1">optional</td>
+</tr>
+<tr>
+<th id="prh1-ElemIDmode-N100A1"></th><th id="prh2-ElemIDmode-N100A1"></th><th id="prh3-ElemIDmode-N100A1"></th><th id="prh4-ElemIDmode-N100A1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-ElemIDmode-N100A1"></td><td headers="prh2-ElemIDmode-N100A1"><i>ElemID mode</i></td><td class="propgap" headers="prh3-ElemIDmode-N100A1"></td><td headers="prh4-ElemIDmode-N100A1">ignored</td>
+</tr>
+<tr>
+<th id="prh1-Iteration-N100A1"></th><th id="prh2-Iteration-N100A1"></th><th id="prh3-Iteration-N100A1"></th><th id="prh4-Iteration-N100A1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Iteration-N100A1"></td><td headers="prh2-Iteration-N100A1"><i>Iteration</i></td><td class="propgap" headers="prh3-Iteration-N100A1"></td><td headers="prh4-Iteration-N100A1">undefined</td>
+</tr>
+</tbody>
+</table>
+<P></P> Any fields from the event object can be passed under this array, so that only those fields will be returned. If this array is not specified, all the fields for the event will be returned.<hr width="0">
+<P></P>
+<a name="in.RESULTS.SOME_EVENT_FLDS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-SOME_EVENT_FLDS-N100AD"></th><th id="fth2-SOME_EVENT_FLDS-N100AD"></th><th id="fth3-SOME_EVENT_FLDS-N100AD"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-SOME_EVENT_FLDS-N100AD">1</td><td headers="fth2-SOME_EVENT_FLDS-N100AD"><b>any</b>
+	      &nbsp;&nbsp;
+	    <b>SOME_EVENT_FLDS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-SOME_EVENT_FLDS-N100AD"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100AD"></th><th id="prh2-Ue-N100AD"></th><th id="prh3-Ue-N100AD"></th><th id="prh4-Ue-N100AD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100AD"></td><td headers="prh2-Ue-N100AD"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100AD"></td><td headers="prh4-Ue-N100AD">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N100AD"></th><th id="prh2-Parent-N100AD"></th><th id="prh3-Parent-N100AD"></th><th id="prh4-Parent-N100AD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N100AD"></td><td headers="prh2-Parent-N100AD"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N100AD"></td><td headers="prh4-Parent-N100AD"><a href="#in.RESULTS"> in.RESULTS</a></td>
+</tr>
+<tr>
+<th id="prh1-Mode-N100AD"></th><th id="prh2-Mode-N100AD"></th><th id="prh3-Mode-N100AD"></th><th id="prh4-Mode-N100AD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Mode-N100AD"></td><td headers="prh2-Mode-N100AD"><i>Mode</i></td><td class="propgap" headers="prh3-Mode-N100AD"></td><td headers="prh4-Mode-N100AD">other</td>
+</tr>
+</tbody>
+</table>
+<P></P> Any field to be returned in the event object <hr width="0">
+<P></P>
+<a name="in.CONTEXT_INFO"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CONTEXT_INFO-N100BA"></th><th id="fth2-CONTEXT_INFO-N100BA"></th><th id="fth3-CONTEXT_INFO-N100BA"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CONTEXT_INFO-N100BA">0</td><td headers="fth2-CONTEXT_INFO-N100BA"><b>substruct</b>
+	      &nbsp;&nbsp;
+	    <b>CONTEXT_INFO</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CONTEXT_INFO-N100BA"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100BA"></th><th id="prh2-Ue-N100BA"></th><th id="prh3-Ue-N100BA"></th><th id="prh4-Ue-N100BA"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100BA"></td><td headers="prh2-Ue-N100BA"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100BA"></td><td headers="prh4-Ue-N100BA">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P>Substruct to pass information from external clients.<hr width="0">
+<P></P>
+<a name="in.CONTEXT_INFO.CORRELATION_ID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CORRELATION_ID-N100C4"></th><th id="fth2-CORRELATION_ID-N100C4"></th><th id="fth3-CORRELATION_ID-N100C4"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CORRELATION_ID-N100C4">1</td><td headers="fth2-CORRELATION_ID-N100C4"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>CORRELATION_ID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CORRELATION_ID-N100C4"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100C4"></th><th id="prh2-Ue-N100C4"></th><th id="prh3-Ue-N100C4"></th><th id="prh4-Ue-N100C4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100C4"></td><td headers="prh2-Ue-N100C4"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100C4"></td><td headers="prh4-Ue-N100C4">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N100C4"></th><th id="prh2-Parent-N100C4"></th><th id="prh3-Parent-N100C4"></th><th id="prh4-Parent-N100C4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N100C4"></td><td headers="prh2-Parent-N100C4"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N100C4"></td><td headers="prh4-Parent-N100C4"><a href="#in.CONTEXT_INFO"> in.CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N100C4"></th><th id="prh2-Maxlength-N100C4"></th><th id="prh3-Maxlength-N100C4"></th><th id="prh4-Maxlength-N100C4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N100C4"></td><td headers="prh2-Maxlength-N100C4"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N100C4"></td><td headers="prh4-Maxlength-N100C4">128</td>
+</tr>
+</tbody>
+</table>
+<P></P>Correlation id passed by an external system to Oracle Monetization Cloud.<hr width="0">
+<P></P>
+<a name="in.CONTEXT_INFO.EXTERNAL_USER"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-EXTERNAL_USER-N100CE"></th><th id="fth2-EXTERNAL_USER-N100CE"></th><th id="fth3-EXTERNAL_USER-N100CE"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-EXTERNAL_USER-N100CE">1</td><td headers="fth2-EXTERNAL_USER-N100CE"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>EXTERNAL_USER</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-EXTERNAL_USER-N100CE"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100CE"></th><th id="prh2-Ue-N100CE"></th><th id="prh3-Ue-N100CE"></th><th id="prh4-Ue-N100CE"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100CE"></td><td headers="prh2-Ue-N100CE"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100CE"></td><td headers="prh4-Ue-N100CE">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N100CE"></th><th id="prh2-Parent-N100CE"></th><th id="prh3-Parent-N100CE"></th><th id="prh4-Parent-N100CE"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N100CE"></td><td headers="prh2-Parent-N100CE"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N100CE"></td><td headers="prh4-Parent-N100CE"><a href="#in.CONTEXT_INFO"> in.CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N100CE"></th><th id="prh2-Maxlength-N100CE"></th><th id="prh3-Maxlength-N100CE"></th><th id="prh4-Maxlength-N100CE"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N100CE"></td><td headers="prh2-Maxlength-N100CE"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N100CE"></td><td headers="prh4-Maxlength-N100CE">128</td>
+</tr>
+</tbody>
+</table>
+<P></P>User of an external system connecting to Oracle Monetization Cloud.<hr width="0">
+<P></P>
+<p></p>
+<hr>
+<a name="OD"></a>
+<table class="sectiontitle" width="100%" summary="Output details table">
+<tr>
+<th id="od"></th>
+</tr>
+<tr>
+<td headers="od">Output details</td>
+</tr>
+</table>
+<p></p>
+<p></p>
+<a name="out.OFFERING_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-OFFERING_OBJ-N100E2"></th><th id="fth2-OFFERING_OBJ-N100E2"></th><th id="fth3-OFFERING_OBJ-N100E2"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-OFFERING_OBJ-N100E2">0</td><td headers="fth2-OFFERING_OBJ-N100E2"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>OFFERING_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-OFFERING_OBJ-N100E2"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100E2"></th><th id="prh2-Ue-N100E2"></th><th id="prh3-Ue-N100E2"></th><th id="prh4-Ue-N100E2"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100E2"></td><td headers="prh2-Ue-N100E2"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100E2"></td><td headers="prh4-Ue-N100E2">optional</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N100EB"></th><th id="prh2-Cla-N100EB"></th><th id="prh3-Cla-N100EB"></th><th id="prh4-Cla-N100EB"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N100EB"></td><td headers="prh2-Cla-N100EB"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N100EB"></td><td headers="prh4-Cla-N100EB">/purchased_product</td>
+</tr>
+</tbody>
+</table>
+<P></P> Uniquely identifies a product or discount in an account, so it is a required field if the history fetch is for a product or discount.<hr width="0">
+<P></P>
+<a name="out.POID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-POID-N100EF"></th><th id="fth2-POID-N100EF"></th><th id="fth3-POID-N100EF"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-POID-N100EF">0</td><td headers="fth2-POID-N100EF"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>POID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-POID-N100EF"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100EF"></th><th id="prh2-Ue-N100EF"></th><th id="prh3-Ue-N100EF"></th><th id="prh4-Ue-N100EF"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100EF"></td><td headers="prh2-Ue-N100EF"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100EF"></td><td headers="prh4-Ue-N100EF">required</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N100F7"></th><th id="prh2-Cla-N100F7"></th><th id="prh3-Cla-N100F7"></th><th id="prh4-Cla-N100F7"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N100F7"></td><td headers="prh2-Cla-N100F7"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N100F7"></td><td headers="prh4-Cla-N100F7">/search</td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<hr width="0">
+<P></P>
+<a name="out.PRODUCT_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PRODUCT_OBJ-N100FB"></th><th id="fth2-PRODUCT_OBJ-N100FB"></th><th id="fth3-PRODUCT_OBJ-N100FB"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PRODUCT_OBJ-N100FB">0</td><td headers="fth2-PRODUCT_OBJ-N100FB"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>PRODUCT_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PRODUCT_OBJ-N100FB"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N100FB"></th><th id="prh2-Ue-N100FB"></th><th id="prh3-Ue-N100FB"></th><th id="prh4-Ue-N100FB"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N100FB"></td><td headers="prh2-Ue-N100FB"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N100FB"></td><td headers="prh4-Ue-N100FB">optional</td>
+</tr>
+<tr>
+<th id="prh1-Mode-N100FB"></th><th id="prh2-Mode-N100FB"></th><th id="prh3-Mode-N100FB"></th><th id="prh4-Mode-N100FB"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Mode-N100FB"></td><td headers="prh2-Mode-N100FB"><i>Mode</i></td><td class="propgap" headers="prh3-Mode-N100FB"></td><td headers="prh4-Mode-N100FB">typeonly</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10109"></th><th id="prh2-Cla-N10109"></th><th id="prh3-Cla-N10109"></th><th id="prh4-Cla-N10109"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10109"></td><td headers="prh2-Cla-N10109"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10109"></td><td headers="prh4-Cla-N10109">/product</td>
+</tr>
+</tbody>
+</table>
+<P></P> Type-only product poid to indicate that the history is to be fetched for a product. The product is uniquely identified by the product instance poid.<hr width="0">
+<P></P>
+<a name="out.DEAL_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-DEAL_OBJ-N1010D"></th><th id="fth2-DEAL_OBJ-N1010D"></th><th id="fth3-DEAL_OBJ-N1010D"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-DEAL_OBJ-N1010D">0</td><td headers="fth2-DEAL_OBJ-N1010D"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>DEAL_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-DEAL_OBJ-N1010D"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1010D"></th><th id="prh2-Ue-N1010D"></th><th id="prh3-Ue-N1010D"></th><th id="prh4-Ue-N1010D"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1010D"></td><td headers="prh2-Ue-N1010D"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1010D"></td><td headers="prh4-Ue-N1010D">optional</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10116"></th><th id="prh2-Cla-N10116"></th><th id="prh3-Cla-N10116"></th><th id="prh4-Cla-N10116"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10116"></td><td headers="prh2-Cla-N10116"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10116"></td><td headers="prh4-Cla-N10116">/deal</td>
+</tr>
+</tbody>
+</table>
+<P></P> Deal object.<hr width="0">
+<P></P>
+<a name="out.PACKAGE_ID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PACKAGE_ID-N10127"></th><th id="fth2-PACKAGE_ID-N10127"></th><th id="fth3-PACKAGE_ID-N10127"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PACKAGE_ID-N10127">0</td><td headers="fth2-PACKAGE_ID-N10127"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>PACKAGE_ID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PACKAGE_ID-N10127"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10127"></th><th id="prh2-Ue-N10127"></th><th id="prh3-Ue-N10127"></th><th id="prh4-Ue-N10127"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10127"></td><td headers="prh2-Ue-N10127"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10127"></td><td headers="prh4-Ue-N10127">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P> package id.<hr width="0">
+<P></P>
+<a name="out.SERVICE_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-SERVICE_OBJ-N1011A"></th><th id="fth2-SERVICE_OBJ-N1011A"></th><th id="fth3-SERVICE_OBJ-N1011A"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-SERVICE_OBJ-N1011A">0</td><td headers="fth2-SERVICE_OBJ-N1011A"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>SERVICE_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-SERVICE_OBJ-N1011A"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1011A"></th><th id="prh2-Ue-N1011A"></th><th id="prh3-Ue-N1011A"></th><th id="prh4-Ue-N1011A"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1011A"></td><td headers="prh2-Ue-N1011A"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1011A"></td><td headers="prh4-Ue-N1011A">optional</td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10123"></th><th id="prh2-Cla-N10123"></th><th id="prh3-Cla-N10123"></th><th id="prh4-Cla-N10123"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10123"></td><td headers="prh2-Cla-N10123"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10123"></td><td headers="prh4-Cla-N10123">/service</td>
+</tr>
+</tbody>
+</table>
+<P></P>service object poid<hr width="0">
+<P></P>
+<a name="out.RESULTS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-RESULTS-N10130"></th><th id="fth2-RESULTS-N10130"></th><th id="fth3-RESULTS-N10130"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-RESULTS-N10130">0</td><td headers="fth2-RESULTS-N10130"><b>array</b>
+	      &nbsp;&nbsp;
+	    <b>RESULTS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-RESULTS-N10130"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10130"></th><th id="prh2-Ue-N10130"></th><th id="prh3-Ue-N10130"></th><th id="prh4-Ue-N10130"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10130"></td><td headers="prh2-Ue-N10130"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10130"></td><td headers="prh4-Ue-N10130">optional</td>
+</tr>
+<tr>
+<th id="prh1-ElemIDmode-N10130"></th><th id="prh2-ElemIDmode-N10130"></th><th id="prh3-ElemIDmode-N10130"></th><th id="prh4-ElemIDmode-N10130"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-ElemIDmode-N10130"></td><td headers="prh2-ElemIDmode-N10130"><i>ElemID mode</i></td><td class="propgap" headers="prh3-ElemIDmode-N10130"></td><td headers="prh4-ElemIDmode-N10130">ignored</td>
+</tr>
+<tr>
+<th id="prh1-Iteration-N10130"></th><th id="prh2-Iteration-N10130"></th><th id="prh3-Iteration-N10130"></th><th id="prh4-Iteration-N10130"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Iteration-N10130"></td><td headers="prh2-Iteration-N10130"><i>Iteration</i></td><td class="propgap" headers="prh3-Iteration-N10130"></td><td headers="prh4-Iteration-N10130">undefined</td>
+</tr>
+</tbody>
+</table>
+<P></P> All the events associated with the account's Service/Deal/Product/Discount instance for which the history was requested. The fields in the event that will be returned will depend on what is specified in the  input 
+<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-ACTION_INFO-N1014B"></th><th id="fth2-ACTION_INFO-N1014B"></th><th id="fth3-ACTION_INFO-N1014B"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-ACTION_INFO-N1014B">1</td><td headers="fth2-ACTION_INFO-N1014B"><b>array</b>
+	      &nbsp;&nbsp;
+	    <b>ACTION_INFO</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-ACTION_INFO-N1014B"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1014B"></th><th id="prh2-Ue-N1014B"></th><th id="prh3-Ue-N1014B"></th><th id="prh4-Ue-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1014B"></td><td headers="prh2-Ue-N1014B"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1014B"></td><td headers="prh4-Ue-N1014B">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1014B"></th><th id="prh2-Parent-N1014B"></th><th id="prh3-Parent-N1014B"></th><th id="prh4-Parent-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1014B"></td><td headers="prh2-Parent-N1014B"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1014B"></td><td headers="prh4-Parent-N1014B"><a href="#out.RESULTS"> out.RESULTS</a></td>
+</tr>
+<tr>
+<th id="prh1-ElemIDmode-N1014B"></th><th id="prh2-ElemIDmode-N1014B"></th><th id="prh3-ElemIDmode-N1014B"></th><th id="prh4-ElemIDmode-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-ElemIDmode-N1014B"></td><td headers="prh2-ElemIDmode-N1014B"><i>ElemID mode</i></td><td class="propgap" headers="prh3-ElemIDmode-N1014B"></td><td headers="prh4-ElemIDmode-N1014B">index</td>
+</tr>
+<tr>
+<th id="prh1-Iteration-N1014B"></th><th id="prh2-Iteration-N1014B"></th><th id="prh3-Iteration-N1014B"></th><th id="prh4-Iteration-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Iteration-N1014B"></td><td headers="prh2-Iteration-N1014B"><i>Iteration</i></td><td class="propgap" headers="prh3-Iteration-N1014B"></td><td headers="prh4-Iteration-N1014B">undefined</td>
+</tr>
+<tr>
+<th id="prh1-MinnumberofElement-N1014B"></th><th id="prh2-MinnumberofElement-N1014B"></th><th id="prh3-MinnumberofElement-N1014B"></th><th id="prh4-MinnumberofElement-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-MinnumberofElement-N1014B"></td><td headers="prh2-MinnumberofElement-N1014B"><i>Min number of Elements</i></td><td class="propgap" headers="prh3-MinnumberofElement-N1014B"></td><td headers="prh4-MinnumberofElement-N1014B">2</td>
+</tr>
+<tr>
+<th id="prh1-MaxnumberofElement-N1014B"></th><th id="prh2-MaxnumberofElement-N1014B"></th><th id="prh3-MaxnumberofElement-N1014B"></th><th id="prh4-MaxnumberofElement-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-MaxnumberofElement-N1014B"></td><td headers="prh2-MaxnumberofElement-N1014B"><i>Max number of Elements</i></td><td class="propgap" headers="prh3-MaxnumberofElement-N1014B"></td><td headers="prh4-MaxnumberofElement-N1014B">2</td>
+</tr>
+<tr>
+<th id="prh1-MaxID-N1014B"></th><th id="prh2-MaxID-N1014B"></th><th id="prh3-MaxID-N1014B"></th><th id="prh4-MaxID-N1014B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-MaxID-N1014B"></td><td headers="prh2-MaxID-N1014B"><i>Max ID</i></td><td class="propgap" headers="prh3-MaxID-N1014B"></td><td headers="prh4-MaxID-N1014B">1</td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CREATED_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CREATED_T-N102AD"></th><th id="fth2-CREATED_T-N102AD"></th><th id="fth3-CREATED_T-N102AD"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CREATED_T-N102AD">2</td><td headers="fth2-CREATED_T-N102AD"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>CREATED_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CREATED_T-N102AD"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102AD"></th><th id="prh2-Ue-N102AD"></th><th id="prh3-Ue-N102AD"></th><th id="prh4-Ue-N102AD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102AD"></td><td headers="prh2-Ue-N102AD"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102AD"></td><td headers="prh4-Ue-N102AD">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102AD"></th><th id="prh2-Parent-N102AD"></th><th id="prh3-Parent-N102AD"></th><th id="prh4-Parent-N102AD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102AD"></td><td headers="prh2-Parent-N102AD"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102AD"></td><td headers="prh4-Parent-N102AD"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Time this product was purchased and added to array<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.ACCOUNT_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-ACCOUNT_OBJ-N1015A"></th><th id="fth2-ACCOUNT_OBJ-N1015A"></th><th id="fth3-ACCOUNT_OBJ-N1015A"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-ACCOUNT_OBJ-N1015A">2</td><td headers="fth2-ACCOUNT_OBJ-N1015A"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>ACCOUNT_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-ACCOUNT_OBJ-N1015A"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1015A"></th><th id="prh2-Ue-N1015A"></th><th id="prh3-Ue-N1015A"></th><th id="prh4-Ue-N1015A"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1015A"></td><td headers="prh2-Ue-N1015A"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1015A"></td><td headers="prh4-Ue-N1015A">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1015A"></th><th id="prh2-Parent-N1015A"></th><th id="prh3-Parent-N1015A"></th><th id="prh4-Parent-N1015A"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1015A"></td><td headers="prh2-Parent-N1015A"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1015A"></td><td headers="prh4-Parent-N1015A"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10163"></th><th id="prh2-Cla-N10163"></th><th id="prh3-Cla-N10163"></th><th id="prh4-Cla-N10163"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10163"></td><td headers="prh2-Cla-N10163"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10163"></td><td headers="prh4-Cla-N10163">/account</td>
+</tr>
+</tbody>
+</table>
+<P></P>Account object which owns the purchased product<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_DISCOUNT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_DISCOUNT-N10265"></th><th id="fth2-CYCLE_DISCOUNT-N10265"></th><th id="fth3-CYCLE_DISCOUNT-N10265"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_DISCOUNT-N10265">2</td><td headers="fth2-CYCLE_DISCOUNT-N10265"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_DISCOUNT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_DISCOUNT-N10265"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10265"></th><th id="prh2-Ue-N10265"></th><th id="prh3-Ue-N10265"></th><th id="prh4-Ue-N10265"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10265"></td><td headers="prh2-Ue-N10265"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10265"></td><td headers="prh4-Ue-N10265">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10265"></th><th id="prh2-Parent-N10265"></th><th id="prh3-Parent-N10265"></th><th id="prh4-Parent-N10265"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10265"></td><td headers="prh2-Parent-N10265"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10265"></td><td headers="prh4-Parent-N10265"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Percentage discount for cycle fee (range 0..1)<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_DISC_AMT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_DISC_AMT-N1026E"></th><th id="fth2-CYCLE_DISC_AMT-N1026E"></th><th id="fth3-CYCLE_DISC_AMT-N1026E"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_DISC_AMT-N1026E">2</td><td headers="fth2-CYCLE_DISC_AMT-N1026E"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_DISC_AMT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_DISC_AMT-N1026E"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1026E"></th><th id="prh2-Ue-N1026E"></th><th id="prh3-Ue-N1026E"></th><th id="prh4-Ue-N1026E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1026E"></td><td headers="prh2-Ue-N1026E"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1026E"></td><td headers="prh4-Ue-N1026E">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1026E"></th><th id="prh2-Parent-N1026E"></th><th id="prh3-Parent-N1026E"></th><th id="prh4-Parent-N1026E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1026E"></td><td headers="prh2-Parent-N1026E"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1026E"></td><td headers="prh4-Parent-N1026E"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Fixed amount discount for cycle fee<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_END_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_END_DETAILS-N101B2"></th><th id="fth2-CYCLE_END_DETAILS-N101B2"></th><th id="fth3-CYCLE_END_DETAILS-N101B2"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_END_DETAILS-N101B2">2</td><td headers="fth2-CYCLE_END_DETAILS-N101B2"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_END_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_END_DETAILS-N101B2"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101B2"></th><th id="prh2-Ue-N101B2"></th><th id="prh3-Ue-N101B2"></th><th id="prh4-Ue-N101B2"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101B2"></td><td headers="prh2-Ue-N101B2"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101B2"></td><td headers="prh4-Ue-N101B2">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101B2"></th><th id="prh2-Parent-N101B2"></th><th id="prh3-Parent-N101B2"></th><th id="prh4-Parent-N101B2"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101B2"></td><td headers="prh2-Parent-N101B2"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101B2"></td><td headers="prh4-Parent-N101B2"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the cycle start of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_END_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_END_T-N102B6"></th><th id="fth2-CYCLE_END_T-N102B6"></th><th id="fth3-CYCLE_END_T-N102B6"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_END_T-N102B6">2</td><td headers="fth2-CYCLE_END_T-N102B6"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_END_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_END_T-N102B6"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102B6"></th><th id="prh2-Ue-N102B6"></th><th id="prh3-Ue-N102B6"></th><th id="prh4-Ue-N102B6"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102B6"></td><td headers="prh2-Ue-N102B6"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102B6"></td><td headers="prh4-Ue-N102B6">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102B6"></th><th id="prh2-Parent-N102B6"></th><th id="prh3-Parent-N102B6"></th><th id="prh4-Parent-N102B6"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102B6"></td><td headers="prh2-Parent-N102B6"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102B6"></td><td headers="prh4-Parent-N102B6"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date to stop charging cycle fee<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_FEE_AMT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_FEE_AMT-N10277"></th><th id="fth2-CYCLE_FEE_AMT-N10277"></th><th id="fth3-CYCLE_FEE_AMT-N10277"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_FEE_AMT-N10277">2</td><td headers="fth2-CYCLE_FEE_AMT-N10277"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_FEE_AMT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_FEE_AMT-N10277"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10277"></th><th id="prh2-Ue-N10277"></th><th id="prh3-Ue-N10277"></th><th id="prh4-Ue-N10277"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10277"></td><td headers="prh2-Ue-N10277"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10277"></td><td headers="prh4-Ue-N10277">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10277"></th><th id="prh2-Parent-N10277"></th><th id="prh3-Parent-N10277"></th><th id="prh4-Parent-N10277"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10277"></td><td headers="prh2-Parent-N10277"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10277"></td><td headers="prh4-Parent-N10277"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Cycle fee, both forward and arrears<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_FEE_FLAGS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_FEE_FLAGS-N101BB"></th><th id="fth2-CYCLE_FEE_FLAGS-N101BB"></th><th id="fth3-CYCLE_FEE_FLAGS-N101BB"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_FEE_FLAGS-N101BB">2</td><td headers="fth2-CYCLE_FEE_FLAGS-N101BB"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_FEE_FLAGS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_FEE_FLAGS-N101BB"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101BB"></th><th id="prh2-Ue-N101BB"></th><th id="prh3-Ue-N101BB"></th><th id="prh4-Ue-N101BB"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101BB"></td><td headers="prh2-Ue-N101BB"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101BB"></td><td headers="prh4-Ue-N101BB">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101BB"></th><th id="prh2-Parent-N101BB"></th><th id="prh3-Parent-N101BB"></th><th id="prh4-Parent-N101BB"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101BB"></td><td headers="prh2-Parent-N101BB"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101BB"></td><td headers="prh4-Parent-N101BB"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Internal flags to track cycle forward fees<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_START_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_START_DETAILS-N101C4"></th><th id="fth2-CYCLE_START_DETAILS-N101C4"></th><th id="fth3-CYCLE_START_DETAILS-N101C4"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_START_DETAILS-N101C4">2</td><td headers="fth2-CYCLE_START_DETAILS-N101C4"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_START_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_START_DETAILS-N101C4"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101C4"></th><th id="prh2-Ue-N101C4"></th><th id="prh3-Ue-N101C4"></th><th id="prh4-Ue-N101C4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101C4"></td><td headers="prh2-Ue-N101C4"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101C4"></td><td headers="prh4-Ue-N101C4">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101C4"></th><th id="prh2-Parent-N101C4"></th><th id="prh3-Parent-N101C4"></th><th id="prh4-Parent-N101C4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101C4"></td><td headers="prh2-Parent-N101C4"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101C4"></td><td headers="prh4-Parent-N101C4"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the cycle start of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.CYCLE_START_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CYCLE_START_T-N102BF"></th><th id="fth2-CYCLE_START_T-N102BF"></th><th id="fth3-CYCLE_START_T-N102BF"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CYCLE_START_T-N102BF">2</td><td headers="fth2-CYCLE_START_T-N102BF"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>CYCLE_START_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CYCLE_START_T-N102BF"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102BF"></th><th id="prh2-Ue-N102BF"></th><th id="prh3-Ue-N102BF"></th><th id="prh4-Ue-N102BF"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102BF"></td><td headers="prh2-Ue-N102BF"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102BF"></td><td headers="prh4-Ue-N102BF">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102BF"></th><th id="prh2-Parent-N102BF"></th><th id="prh3-Parent-N102BF"></th><th id="prh4-Parent-N102BF"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102BF"></td><td headers="prh2-Parent-N102BF"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102BF"></td><td headers="prh4-Parent-N102BF"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date to start charging cycle fee<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.DEAL_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-DEAL_OBJ-N10167"></th><th id="fth2-DEAL_OBJ-N10167"></th><th id="fth3-DEAL_OBJ-N10167"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-DEAL_OBJ-N10167">2</td><td headers="fth2-DEAL_OBJ-N10167"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>DEAL_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-DEAL_OBJ-N10167"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10167"></th><th id="prh2-Ue-N10167"></th><th id="prh3-Ue-N10167"></th><th id="prh4-Ue-N10167"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10167"></td><td headers="prh2-Ue-N10167"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10167"></td><td headers="prh4-Ue-N10167">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10167"></th><th id="prh2-Parent-N10167"></th><th id="prh3-Parent-N10167"></th><th id="prh4-Parent-N10167"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10167"></td><td headers="prh2-Parent-N10167"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10167"></td><td headers="prh4-Parent-N10167"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10170"></th><th id="prh2-Cla-N10170"></th><th id="prh3-Cla-N10170"></th><th id="prh4-Cla-N10170"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10170"></td><td headers="prh2-Cla-N10170"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10170"></td><td headers="prh4-Cla-N10170">/deal</td>
+</tr>
+</tbody>
+</table>
+<P></P> Link to deal object<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.DESCR"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-DESCR-N102F5"></th><th id="fth2-DESCR-N102F5"></th><th id="fth3-DESCR-N102F5"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-DESCR-N102F5">2</td><td headers="fth2-DESCR-N102F5"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>DESCR</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-DESCR-N102F5"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102F5"></th><th id="prh2-Ue-N102F5"></th><th id="prh3-Ue-N102F5"></th><th id="prh4-Ue-N102F5"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102F5"></td><td headers="prh2-Ue-N102F5"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102F5"></td><td headers="prh4-Ue-N102F5">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102F5"></th><th id="prh2-Parent-N102F5"></th><th id="prh3-Parent-N102F5"></th><th id="prh4-Parent-N102F5"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102F5"></td><td headers="prh2-Parent-N102F5"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102F5"></td><td headers="prh4-Parent-N102F5"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N102F5"></th><th id="prh2-Maxlength-N102F5"></th><th id="prh3-Maxlength-N102F5"></th><th id="prh4-Maxlength-N102F5"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N102F5"></td><td headers="prh2-Maxlength-N102F5"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N102F5"></td><td headers="prh4-Maxlength-N102F5">255</td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.FLAGS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-FLAGS-N101CD"></th><th id="fth2-FLAGS-N101CD"></th><th id="fth3-FLAGS-N101CD"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-FLAGS-N101CD">2</td><td headers="fth2-FLAGS-N101CD"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>FLAGS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-FLAGS-N101CD"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101CD"></th><th id="prh2-Ue-N101CD"></th><th id="prh3-Ue-N101CD"></th><th id="prh4-Ue-N101CD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101CD"></td><td headers="prh2-Ue-N101CD"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101CD"></td><td headers="prh4-Ue-N101CD">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101CD"></th><th id="prh2-Parent-N101CD"></th><th id="prh3-Parent-N101CD"></th><th id="prh4-Parent-N101CD"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101CD"></td><td headers="prh2-Parent-N101CD"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101CD"></td><td headers="prh4-Parent-N101CD"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Internal state flags for tracking delayed fee<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.EFFECTIVE_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-EFFECTIVE_T-N102C8"></th><th id="fth2-EFFECTIVE_T-N102C8"></th><th id="fth3-EFFECTIVE_T-N102C8"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-EFFECTIVE_T-N102C8">2</td><td headers="fth2-EFFECTIVE_T-N102C8"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>EFFECTIVE_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-EFFECTIVE_T-N102C8"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102C8"></th><th id="prh2-Ue-N102C8"></th><th id="prh3-Ue-N102C8"></th><th id="prh4-Ue-N102C8"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102C8"></td><td headers="prh2-Ue-N102C8"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102C8"></td><td headers="prh4-Ue-N102C8">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102C8"></th><th id="prh2-Parent-N102C8"></th><th id="prh3-Parent-N102C8"></th><th id="prh4-Parent-N102C8"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102C8"></td><td headers="prh2-Parent-N102C8"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102C8"></td><td headers="prh4-Parent-N102C8"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Time when this product is effective.<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.TYPE"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-TYPE-N1020C"></th><th id="fth2-TYPE-N1020C"></th><th id="fth3-TYPE-N1020C"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-TYPE-N1020C">2</td><td headers="fth2-TYPE-N1020C"><b>enum</b>
+	      &nbsp;&nbsp;
+	    <b>TYPE</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-TYPE-N1020C"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1020C"></th><th id="prh2-Ue-N1020C"></th><th id="prh3-Ue-N1020C"></th><th id="prh4-Ue-N1020C"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1020C"></td><td headers="prh2-Ue-N1020C"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1020C"></td><td headers="prh4-Ue-N1020C">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1020C"></th><th id="prh2-Parent-N1020C"></th><th id="prh3-Parent-N1020C"></th><th id="prh4-Parent-N1020C"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1020C"></td><td headers="prh2-Parent-N1020C"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1020C"></td><td headers="prh4-Parent-N1020C"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<table cellspacing="10" summary="values table">
+<tr>
+<th id="vh1-0-N10214"></th><th id="vh2-0-N10214"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N10214">0</td><td align="left" headers="vh2-0-N10214"></td>
+</tr>
+<tr>
+<th id="vh1-0-N1021C"></th><th id="vh2-0-N1021C"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N1021C">601</td><td align="left" headers="vh2-0-N1021C">PIN_DISC_TYPE_ITEM</td>
+</tr>
+<tr>
+<th id="vh1-0-N10225"></th><th id="vh2-0-N10225"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N10225">602</td><td align="left" headers="vh2-0-N10225">PIN_DISC_TYPE_ONGOING</td>
+</tr>
+<tr>
+<th id="vh1-0-N1022E"></th><th id="vh2-0-N1022E"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N1022E">603</td><td align="left" headers="vh2-0-N1022E">PIN_DISC_TYPE_SYSTEM</td>
+</tr>
+</table> Product type - products are item(601), subscription/ongoing(602) and  system(603).<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.EVENT_TYPE"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-EVENT_TYPE-N102FC"></th><th id="fth2-EVENT_TYPE-N102FC"></th><th id="fth3-EVENT_TYPE-N102FC"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-EVENT_TYPE-N102FC">2</td><td headers="fth2-EVENT_TYPE-N102FC"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>EVENT_TYPE</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-EVENT_TYPE-N102FC"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102FC"></th><th id="prh2-Ue-N102FC"></th><th id="prh3-Ue-N102FC"></th><th id="prh4-Ue-N102FC"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102FC"></td><td headers="prh2-Ue-N102FC"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102FC"></td><td headers="prh4-Ue-N102FC">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102FC"></th><th id="prh2-Parent-N102FC"></th><th id="prh3-Parent-N102FC"></th><th id="prh4-Parent-N102FC"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102FC"></td><td headers="prh2-Parent-N102FC"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102FC"></td><td headers="prh4-Parent-N102FC"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N102FC"></th><th id="prh2-Maxlength-N102FC"></th><th id="prh3-Maxlength-N102FC"></th><th id="prh4-Maxlength-N102FC"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N102FC"></td><td headers="prh2-Maxlength-N102FC"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N102FC"></td><td headers="prh4-Maxlength-N102FC">255</td>
+</tr>
+</tbody>
+</table>
+<P></P>Type of the event that rating uses for.<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.MMC_TYPE"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-MMC_TYPE-N101D6"></th><th id="fth2-MMC_TYPE-N101D6"></th><th id="fth3-MMC_TYPE-N101D6"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-MMC_TYPE-N101D6">2</td><td headers="fth2-MMC_TYPE-N101D6"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>MMC_TYPE</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-MMC_TYPE-N101D6"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101D6"></th><th id="prh2-Ue-N101D6"></th><th id="prh3-Ue-N101D6"></th><th id="prh4-Ue-N101D6"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101D6"></td><td headers="prh2-Ue-N101D6"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101D6"></td><td headers="prh4-Ue-N101D6">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101D6"></th><th id="prh2-Parent-N101D6"></th><th id="prh3-Parent-N101D6"></th><th id="prh4-Parent-N101D6"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101D6"></td><td headers="prh2-Parent-N101D6"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101D6"></td><td headers="prh4-Parent-N101D6"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Multi Month Cycle (represents number of months, 0 1 2 3 6 and 12)<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.OFFERING_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-OFFERING_OBJ-N10174"></th><th id="fth2-OFFERING_OBJ-N10174"></th><th id="fth3-OFFERING_OBJ-N10174"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-OFFERING_OBJ-N10174">2</td><td headers="fth2-OFFERING_OBJ-N10174"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>OFFERING_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-OFFERING_OBJ-N10174"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10174"></th><th id="prh2-Ue-N10174"></th><th id="prh3-Ue-N10174"></th><th id="prh4-Ue-N10174"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10174"></td><td headers="prh2-Ue-N10174"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10174"></td><td headers="prh4-Ue-N10174">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10174"></th><th id="prh2-Parent-N10174"></th><th id="prh3-Parent-N10174"></th><th id="prh4-Parent-N10174"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10174"></td><td headers="prh2-Parent-N10174"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10174"></td><td headers="prh4-Parent-N10174"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>uniquely identifies product instance of account (deal id and product id)<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PLAN_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PLAN_OBJ-N1017E"></th><th id="fth2-PLAN_OBJ-N1017E"></th><th id="fth3-PLAN_OBJ-N1017E"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PLAN_OBJ-N1017E">2</td><td headers="fth2-PLAN_OBJ-N1017E"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>PLAN_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PLAN_OBJ-N1017E"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1017E"></th><th id="prh2-Ue-N1017E"></th><th id="prh3-Ue-N1017E"></th><th id="prh4-Ue-N1017E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1017E"></td><td headers="prh2-Ue-N1017E"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1017E"></td><td headers="prh4-Ue-N1017E">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1017E"></th><th id="prh2-Parent-N1017E"></th><th id="prh3-Parent-N1017E"></th><th id="prh4-Parent-N1017E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1017E"></td><td headers="prh2-Parent-N1017E"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1017E"></td><td headers="prh4-Parent-N1017E"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10187"></th><th id="prh2-Cla-N10187"></th><th id="prh3-Cla-N10187"></th><th id="prh4-Cla-N10187"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10187"></td><td headers="prh2-Cla-N10187"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10187"></td><td headers="prh4-Cla-N10187">/plan</td>
+</tr>
+</tbody>
+</table>
+<P></P>Link to plan object that was purchased containing this product<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PRICE_LIST_NAME"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PRICE_LIST_NAME-N10306"></th><th id="fth2-PRICE_LIST_NAME-N10306"></th><th id="fth3-PRICE_LIST_NAME-N10306"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PRICE_LIST_NAME-N10306">2</td><td headers="fth2-PRICE_LIST_NAME-N10306"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>PRICE_LIST_NAME</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PRICE_LIST_NAME-N10306"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10306"></th><th id="prh2-Ue-N10306"></th><th id="prh3-Ue-N10306"></th><th id="prh4-Ue-N10306"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10306"></td><td headers="prh2-Ue-N10306"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10306"></td><td headers="prh4-Ue-N10306">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10306"></th><th id="prh2-Parent-N10306"></th><th id="prh3-Parent-N10306"></th><th id="prh4-Parent-N10306"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10306"></td><td headers="prh2-Parent-N10306"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10306"></td><td headers="prh4-Parent-N10306"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N10306"></th><th id="prh2-Maxlength-N10306"></th><th id="prh3-Maxlength-N10306"></th><th id="prh4-Maxlength-N10306"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N10306"></td><td headers="prh2-Maxlength-N10306"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N10306"></td><td headers="prh4-Maxlength-N10306">255</td>
+</tr>
+</tbody>
+</table>
+<P></P>Price list name associated with this offering.<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PRODUCT_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PRODUCT_OBJ-N1018B"></th><th id="fth2-PRODUCT_OBJ-N1018B"></th><th id="fth3-PRODUCT_OBJ-N1018B"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PRODUCT_OBJ-N1018B">2</td><td headers="fth2-PRODUCT_OBJ-N1018B"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>PRODUCT_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PRODUCT_OBJ-N1018B"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1018B"></th><th id="prh2-Ue-N1018B"></th><th id="prh3-Ue-N1018B"></th><th id="prh4-Ue-N1018B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1018B"></td><td headers="prh2-Ue-N1018B"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1018B"></td><td headers="prh4-Ue-N1018B">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1018B"></th><th id="prh2-Parent-N1018B"></th><th id="prh3-Parent-N1018B"></th><th id="prh4-Parent-N1018B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1018B"></td><td headers="prh2-Parent-N1018B"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1018B"></td><td headers="prh4-Parent-N1018B"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N10194"></th><th id="prh2-Cla-N10194"></th><th id="prh3-Cla-N10194"></th><th id="prh4-Cla-N10194"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N10194"></td><td headers="prh2-Cla-N10194"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N10194"></td><td headers="prh4-Cla-N10194">/product</td>
+</tr>
+</tbody>
+</table>
+<P></P>Product object represented by this element<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_DISCOUNT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_DISCOUNT-N10280"></th><th id="fth2-PURCHASE_DISCOUNT-N10280"></th><th id="fth3-PURCHASE_DISCOUNT-N10280"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_DISCOUNT-N10280">2</td><td headers="fth2-PURCHASE_DISCOUNT-N10280"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_DISCOUNT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_DISCOUNT-N10280"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10280"></th><th id="prh2-Ue-N10280"></th><th id="prh3-Ue-N10280"></th><th id="prh4-Ue-N10280"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10280"></td><td headers="prh2-Ue-N10280"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10280"></td><td headers="prh4-Ue-N10280">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10280"></th><th id="prh2-Parent-N10280"></th><th id="prh3-Parent-N10280"></th><th id="prh4-Parent-N10280"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10280"></td><td headers="prh2-Parent-N10280"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10280"></td><td headers="prh4-Parent-N10280"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Percentage discount for purchase and cancellation<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_DISC_AMT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_DISC_AMT-N10289"></th><th id="fth2-PURCHASE_DISC_AMT-N10289"></th><th id="fth3-PURCHASE_DISC_AMT-N10289"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_DISC_AMT-N10289">2</td><td headers="fth2-PURCHASE_DISC_AMT-N10289"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_DISC_AMT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_DISC_AMT-N10289"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10289"></th><th id="prh2-Ue-N10289"></th><th id="prh3-Ue-N10289"></th><th id="prh4-Ue-N10289"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10289"></td><td headers="prh2-Ue-N10289"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10289"></td><td headers="prh4-Ue-N10289">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10289"></th><th id="prh2-Parent-N10289"></th><th id="prh3-Parent-N10289"></th><th id="prh4-Parent-N10289"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10289"></td><td headers="prh2-Parent-N10289"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10289"></td><td headers="prh4-Parent-N10289"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> Fixed amount discount for purchase and cancellation fee<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_END_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_END_DETAILS-N101DF"></th><th id="fth2-PURCHASE_END_DETAILS-N101DF"></th><th id="fth3-PURCHASE_END_DETAILS-N101DF"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_END_DETAILS-N101DF">2</td><td headers="fth2-PURCHASE_END_DETAILS-N101DF"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_END_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_END_DETAILS-N101DF"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101DF"></th><th id="prh2-Ue-N101DF"></th><th id="prh3-Ue-N101DF"></th><th id="prh4-Ue-N101DF"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101DF"></td><td headers="prh2-Ue-N101DF"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101DF"></td><td headers="prh4-Ue-N101DF">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101DF"></th><th id="prh2-Parent-N101DF"></th><th id="prh3-Parent-N101DF"></th><th id="prh4-Parent-N101DF"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101DF"></td><td headers="prh2-Parent-N101DF"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101DF"></td><td headers="prh4-Parent-N101DF"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the purchase end of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_END_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_END_T-N102D1"></th><th id="fth2-PURCHASE_END_T-N102D1"></th><th id="fth3-PURCHASE_END_T-N102D1"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_END_T-N102D1">2</td><td headers="fth2-PURCHASE_END_T-N102D1"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_END_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_END_T-N102D1"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102D1"></th><th id="prh2-Ue-N102D1"></th><th id="prh3-Ue-N102D1"></th><th id="prh4-Ue-N102D1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102D1"></td><td headers="prh2-Ue-N102D1"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102D1"></td><td headers="prh4-Ue-N102D1">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102D1"></th><th id="prh2-Parent-N102D1"></th><th id="prh3-Parent-N102D1"></th><th id="prh4-Parent-N102D1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102D1"></td><td headers="prh2-Parent-N102D1"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102D1"></td><td headers="prh4-Parent-N102D1"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date when product is no longer valid for use<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_FEE_AMT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_FEE_AMT-N10292"></th><th id="fth2-PURCHASE_FEE_AMT-N10292"></th><th id="fth3-PURCHASE_FEE_AMT-N10292"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_FEE_AMT-N10292">2</td><td headers="fth2-PURCHASE_FEE_AMT-N10292"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_FEE_AMT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_FEE_AMT-N10292"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10292"></th><th id="prh2-Ue-N10292"></th><th id="prh3-Ue-N10292"></th><th id="prh4-Ue-N10292"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10292"></td><td headers="prh2-Ue-N10292"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10292"></td><td headers="prh4-Ue-N10292">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10292"></th><th id="prh2-Parent-N10292"></th><th id="prh3-Parent-N10292"></th><th id="prh4-Parent-N10292"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10292"></td><td headers="prh2-Parent-N10292"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10292"></td><td headers="prh4-Parent-N10292"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Purchase fee applied for this product<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_START_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_START_DETAILS-N101E8"></th><th id="fth2-PURCHASE_START_DETAILS-N101E8"></th><th id="fth3-PURCHASE_START_DETAILS-N101E8"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_START_DETAILS-N101E8">2</td><td headers="fth2-PURCHASE_START_DETAILS-N101E8"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_START_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_START_DETAILS-N101E8"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101E8"></th><th id="prh2-Ue-N101E8"></th><th id="prh3-Ue-N101E8"></th><th id="prh4-Ue-N101E8"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101E8"></td><td headers="prh2-Ue-N101E8"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101E8"></td><td headers="prh4-Ue-N101E8">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101E8"></th><th id="prh2-Parent-N101E8"></th><th id="prh3-Parent-N101E8"></th><th id="prh4-Parent-N101E8"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101E8"></td><td headers="prh2-Parent-N101E8"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101E8"></td><td headers="prh4-Parent-N101E8"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the purchase start of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.PURCHASE_START_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-PURCHASE_START_T-N102DA"></th><th id="fth2-PURCHASE_START_T-N102DA"></th><th id="fth3-PURCHASE_START_T-N102DA"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-PURCHASE_START_T-N102DA">2</td><td headers="fth2-PURCHASE_START_T-N102DA"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>PURCHASE_START_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-PURCHASE_START_T-N102DA"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102DA"></th><th id="prh2-Ue-N102DA"></th><th id="prh3-Ue-N102DA"></th><th id="prh4-Ue-N102DA"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102DA"></td><td headers="prh2-Ue-N102DA"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102DA"></td><td headers="prh4-Ue-N102DA">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102DA"></th><th id="prh2-Parent-N102DA"></th><th id="prh3-Parent-N102DA"></th><th id="prh4-Parent-N102DA"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102DA"></td><td headers="prh2-Parent-N102DA"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102DA"></td><td headers="prh4-Parent-N102DA"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date when product is valid for use<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.QUANTITY"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-QUANTITY-N1029B"></th><th id="fth2-QUANTITY-N1029B"></th><th id="fth3-QUANTITY-N1029B"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-QUANTITY-N1029B">2</td><td headers="fth2-QUANTITY-N1029B"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>QUANTITY</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-QUANTITY-N1029B"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1029B"></th><th id="prh2-Ue-N1029B"></th><th id="prh3-Ue-N1029B"></th><th id="prh4-Ue-N1029B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1029B"></td><td headers="prh2-Ue-N1029B"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1029B"></td><td headers="prh4-Ue-N1029B">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1029B"></th><th id="prh2-Parent-N1029B"></th><th id="prh3-Parent-N1029B"></th><th id="prh4-Parent-N1029B"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1029B"></td><td headers="prh2-Parent-N1029B"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1029B"></td><td headers="prh4-Parent-N1029B"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Quantity of product owned, used in accessing purchase, cycle and cancellation<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.SERVICE_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-SERVICE_OBJ-N10198"></th><th id="fth2-SERVICE_OBJ-N10198"></th><th id="fth3-SERVICE_OBJ-N10198"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-SERVICE_OBJ-N10198">2</td><td headers="fth2-SERVICE_OBJ-N10198"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>SERVICE_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-SERVICE_OBJ-N10198"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10198"></th><th id="prh2-Ue-N10198"></th><th id="prh3-Ue-N10198"></th><th id="prh4-Ue-N10198"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10198"></td><td headers="prh2-Ue-N10198"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10198"></td><td headers="prh4-Ue-N10198">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10198"></th><th id="prh2-Parent-N10198"></th><th id="prh3-Parent-N10198"></th><th id="prh4-Parent-N10198"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10198"></td><td headers="prh2-Parent-N10198"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10198"></td><td headers="prh4-Parent-N10198"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N101A1"></th><th id="prh2-Cla-N101A1"></th><th id="prh3-Cla-N101A1"></th><th id="prh4-Cla-N101A1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N101A1"></td><td headers="prh2-Cla-N101A1"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N101A1"></td><td headers="prh4-Cla-N101A1">/service</td>
+</tr>
+</tbody>
+</table>
+<P></P>Link to service object, that owns this product. NULL means /Account<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.SPONSOR_OBJ"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-SPONSOR_OBJ-N101A5"></th><th id="fth2-SPONSOR_OBJ-N101A5"></th><th id="fth3-SPONSOR_OBJ-N101A5"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-SPONSOR_OBJ-N101A5">2</td><td headers="fth2-SPONSOR_OBJ-N101A5"><b>poid</b>
+	      &nbsp;&nbsp;
+	    <b>SPONSOR_OBJ</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-SPONSOR_OBJ-N101A5"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101A5"></th><th id="prh2-Ue-N101A5"></th><th id="prh3-Ue-N101A5"></th><th id="prh4-Ue-N101A5"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101A5"></td><td headers="prh2-Ue-N101A5"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101A5"></td><td headers="prh4-Ue-N101A5">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101A5"></th><th id="prh2-Parent-N101A5"></th><th id="prh3-Parent-N101A5"></th><th id="prh4-Parent-N101A5"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101A5"></td><td headers="prh2-Parent-N101A5"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101A5"></td><td headers="prh4-Parent-N101A5"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Cla-N101AE"></th><th id="prh2-Cla-N101AE"></th><th id="prh3-Cla-N101AE"></th><th id="prh4-Cla-N101AE"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Cla-N101AE"></td><td headers="prh2-Cla-N101AE"><i>Class</i></td><td class="propgap" headers="prh3-Cla-N101AE"></td><td headers="prh4-Cla-N101AE">/sponsorship</td>
+</tr>
+</tbody>
+</table>
+<P></P>Link to Sponsor Group for this product<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.STATUS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-STATUS-N10238"></th><th id="fth2-STATUS-N10238"></th><th id="fth3-STATUS-N10238"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-STATUS-N10238">2</td><td headers="fth2-STATUS-N10238"><b>enum</b>
+	      &nbsp;&nbsp;
+	    <b>STATUS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-STATUS-N10238"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10238"></th><th id="prh2-Ue-N10238"></th><th id="prh3-Ue-N10238"></th><th id="prh4-Ue-N10238"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10238"></td><td headers="prh2-Ue-N10238"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10238"></td><td headers="prh4-Ue-N10238">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10238"></th><th id="prh2-Parent-N10238"></th><th id="prh3-Parent-N10238"></th><th id="prh4-Parent-N10238"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10238"></td><td headers="prh2-Parent-N10238"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10238"></td><td headers="prh4-Parent-N10238"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>
+<table cellspacing="10" summary="values table">
+<tr>
+<th id="vh1-0-N10240"></th><th id="vh2-0-N10240"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N10240">0</td><td align="left" headers="vh2-0-N10240">NOT_SET</td>
+</tr>
+<tr>
+<th id="vh1-0-N10249"></th><th id="vh2-0-N10249"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N10249">1</td><td align="left" headers="vh2-0-N10249">ACTIVE</td>
+</tr>
+<tr>
+<th id="vh1-0-N10252"></th><th id="vh2-0-N10252"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N10252">2</td><td align="left" headers="vh2-0-N10252">INACTIVE</td>
+</tr>
+<tr>
+<th id="vh1-0-N1025B"></th><th id="vh2-0-N1025B"></th>
+</tr>
+<tr>
+<td align="center" headers="vh1-0-N1025B">3</td><td align="left" headers="vh2-0-N1025B">CANCELLED</td>
+</tr>
+</table>Status e.g. NOT_SET(0), ACTIVE(1), INACTIVE(2), CANCELLED(3)<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.STATUS_FLAGS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-STATUS_FLAGS-N101F1"></th><th id="fth2-STATUS_FLAGS-N101F1"></th><th id="fth3-STATUS_FLAGS-N101F1"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-STATUS_FLAGS-N101F1">2</td><td headers="fth2-STATUS_FLAGS-N101F1"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>STATUS_FLAGS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-STATUS_FLAGS-N101F1"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101F1"></th><th id="prh2-Ue-N101F1"></th><th id="prh3-Ue-N101F1"></th><th id="prh4-Ue-N101F1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101F1"></td><td headers="prh2-Ue-N101F1"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101F1"></td><td headers="prh4-Ue-N101F1">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101F1"></th><th id="prh2-Parent-N101F1"></th><th id="prh3-Parent-N101F1"></th><th id="prh4-Parent-N101F1"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101F1"></td><td headers="prh2-Parent-N101F1"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101F1"></td><td headers="prh4-Parent-N101F1"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Modifier flag for product status to track PENDING<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.USAGE_DISCOUNT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-USAGE_DISCOUNT-N102A4"></th><th id="fth2-USAGE_DISCOUNT-N102A4"></th><th id="fth3-USAGE_DISCOUNT-N102A4"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-USAGE_DISCOUNT-N102A4">2</td><td headers="fth2-USAGE_DISCOUNT-N102A4"><b>decimal</b>
+	      &nbsp;&nbsp;
+	    <b>USAGE_DISCOUNT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-USAGE_DISCOUNT-N102A4"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102A4"></th><th id="prh2-Ue-N102A4"></th><th id="prh3-Ue-N102A4"></th><th id="prh4-Ue-N102A4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102A4"></td><td headers="prh2-Ue-N102A4"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102A4"></td><td headers="prh4-Ue-N102A4">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102A4"></th><th id="prh2-Parent-N102A4"></th><th id="prh3-Parent-N102A4"></th><th id="prh4-Parent-N102A4"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102A4"></td><td headers="prh2-Parent-N102A4"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102A4"></td><td headers="prh4-Parent-N102A4"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Percentage discount for usage events rated by this product (range 0..1)<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.USAGE_END_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-USAGE_END_DETAILS-N101FA"></th><th id="fth2-USAGE_END_DETAILS-N101FA"></th><th id="fth3-USAGE_END_DETAILS-N101FA"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-USAGE_END_DETAILS-N101FA">2</td><td headers="fth2-USAGE_END_DETAILS-N101FA"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>USAGE_END_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-USAGE_END_DETAILS-N101FA"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N101FA"></th><th id="prh2-Ue-N101FA"></th><th id="prh3-Ue-N101FA"></th><th id="prh4-Ue-N101FA"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N101FA"></td><td headers="prh2-Ue-N101FA"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N101FA"></td><td headers="prh4-Ue-N101FA">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N101FA"></th><th id="prh2-Parent-N101FA"></th><th id="prh3-Parent-N101FA"></th><th id="prh4-Parent-N101FA"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N101FA"></td><td headers="prh2-Parent-N101FA"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N101FA"></td><td headers="prh4-Parent-N101FA"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the usage end of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.USAGE_END_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-USAGE_END_T-N102E3"></th><th id="fth2-USAGE_END_T-N102E3"></th><th id="fth3-USAGE_END_T-N102E3"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-USAGE_END_T-N102E3">2</td><td headers="fth2-USAGE_END_T-N102E3"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>USAGE_END_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-USAGE_END_T-N102E3"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102E3"></th><th id="prh2-Ue-N102E3"></th><th id="prh3-Ue-N102E3"></th><th id="prh4-Ue-N102E3"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102E3"></td><td headers="prh2-Ue-N102E3"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102E3"></td><td headers="prh4-Ue-N102E3">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102E3"></th><th id="prh2-Parent-N102E3"></th><th id="prh3-Parent-N102E3"></th><th id="prh4-Parent-N102E3"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102E3"></td><td headers="prh2-Parent-N102E3"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102E3"></td><td headers="prh4-Parent-N102E3"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date that this product stops rating usage events<hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.USAGE_START_DETAILS"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-USAGE_START_DETAILS-N10203"></th><th id="fth2-USAGE_START_DETAILS-N10203"></th><th id="fth3-USAGE_START_DETAILS-N10203"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-USAGE_START_DETAILS-N10203">2</td><td headers="fth2-USAGE_START_DETAILS-N10203"><b>int</b>
+	      &nbsp;&nbsp;
+	    <b>USAGE_START_DETAILS</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-USAGE_START_DETAILS-N10203"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10203"></th><th id="prh2-Ue-N10203"></th><th id="prh3-Ue-N10203"></th><th id="prh4-Ue-N10203"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10203"></td><td headers="prh2-Ue-N10203"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10203"></td><td headers="prh4-Ue-N10203">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10203"></th><th id="prh2-Parent-N10203"></th><th id="prh3-Parent-N10203"></th><th id="prh4-Parent-N10203"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10203"></td><td headers="prh2-Parent-N10203"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10203"></td><td headers="prh4-Parent-N10203"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P> 
+				   This field contains the detail about the usage start of the product. 
+				   This field is encoded as (20 bit offset, 4 bit unit and 8 bit mode). 
+				   Mode can be absolute, immediate, never, First Usage, relative. 
+			  <hr width="0">
+<P></P>
+<a name="out.RESULTS.ACTION_INFO.USAGE_START_T"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-USAGE_START_T-N102EC"></th><th id="fth2-USAGE_START_T-N102EC"></th><th id="fth3-USAGE_START_T-N102EC"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-USAGE_START_T-N102EC">2</td><td headers="fth2-USAGE_START_T-N102EC"><b>timestamp</b>
+	      &nbsp;&nbsp;
+	    <b>USAGE_START_T</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-USAGE_START_T-N102EC"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N102EC"></th><th id="prh2-Ue-N102EC"></th><th id="prh3-Ue-N102EC"></th><th id="prh4-Ue-N102EC"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N102EC"></td><td headers="prh2-Ue-N102EC"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N102EC"></td><td headers="prh4-Ue-N102EC">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N102EC"></th><th id="prh2-Parent-N102EC"></th><th id="prh3-Parent-N102EC"></th><th id="prh4-Parent-N102EC"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N102EC"></td><td headers="prh2-Parent-N102EC"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N102EC"></td><td headers="prh4-Parent-N102EC"><a href="#out.RESULTS.ACTION_INFO"> out.RESULTS.ACTION_INFO</a></td>
+</tr>
+</tbody>
+</table>
+<P></P>Date that this product begins rating usage events<hr width="0">
+<P></P>
+<a name="out.RESULTS.LINK_OBJECT"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-LINK_OBJECT-N10141"></th><th id="fth2-LINK_OBJECT-N10141"></th><th id="fth3-LINK_OBJECT-N10141"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-LINK_OBJECT-N10141">1</td><td headers="fth2-LINK_OBJECT-N10141"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>LINK_OBJECT</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-LINK_OBJECT-N10141"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10141"></th><th id="prh2-Ue-N10141"></th><th id="prh3-Ue-N10141"></th><th id="prh4-Ue-N10141"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10141"></td><td headers="prh2-Ue-N10141"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10141"></td><td headers="prh4-Ue-N10141">required</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10141"></th><th id="prh2-Parent-N10141"></th><th id="prh3-Parent-N10141"></th><th id="prh4-Parent-N10141"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10141"></td><td headers="prh2-Parent-N10141"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10141"></td><td headers="prh4-Parent-N10141"><a href="#out.RESULTS"> out.RESULTS</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N10141"></th><th id="prh2-Maxlength-N10141"></th><th id="prh3-Maxlength-N10141"></th><th id="prh4-Maxlength-N10141"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N10141"></td><td headers="prh2-Maxlength-N10141"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N10141"></td><td headers="prh4-Maxlength-N10141">60</td>
+</tr>
+</tbody>
+</table>
+<P></P>Payment item identifier.<hr width="0">
+<P></P>
+<a name="out.CONTEXT_INFO"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CONTEXT_INFO-N10314"></th><th id="fth2-CONTEXT_INFO-N10314"></th><th id="fth3-CONTEXT_INFO-N10314"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CONTEXT_INFO-N10314">0</td><td headers="fth2-CONTEXT_INFO-N10314"><b>substruct</b>
+	      &nbsp;&nbsp;
+	    <b>CONTEXT_INFO</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CONTEXT_INFO-N10314"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10314"></th><th id="prh2-Ue-N10314"></th><th id="prh3-Ue-N10314"></th><th id="prh4-Ue-N10314"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10314"></td><td headers="prh2-Ue-N10314"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10314"></td><td headers="prh4-Ue-N10314">optional</td>
+</tr>
+</tbody>
+</table>
+<P></P>Substruct to pass information from external clients.<hr width="0">
+<P></P>
+<a name="out.CONTEXT_INFO.CORRELATION_ID"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-CORRELATION_ID-N1031E"></th><th id="fth2-CORRELATION_ID-N1031E"></th><th id="fth3-CORRELATION_ID-N1031E"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-CORRELATION_ID-N1031E">1</td><td headers="fth2-CORRELATION_ID-N1031E"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>CORRELATION_ID</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-CORRELATION_ID-N1031E"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N1031E"></th><th id="prh2-Ue-N1031E"></th><th id="prh3-Ue-N1031E"></th><th id="prh4-Ue-N1031E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N1031E"></td><td headers="prh2-Ue-N1031E"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N1031E"></td><td headers="prh4-Ue-N1031E">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N1031E"></th><th id="prh2-Parent-N1031E"></th><th id="prh3-Parent-N1031E"></th><th id="prh4-Parent-N1031E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N1031E"></td><td headers="prh2-Parent-N1031E"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N1031E"></td><td headers="prh4-Parent-N1031E"><a href="#out.CONTEXT_INFO"> out.CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N1031E"></th><th id="prh2-Maxlength-N1031E"></th><th id="prh3-Maxlength-N1031E"></th><th id="prh4-Maxlength-N1031E"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N1031E"></td><td headers="prh2-Maxlength-N1031E"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N1031E"></td><td headers="prh4-Maxlength-N1031E">128</td>
+</tr>
+</tbody>
+</table>
+<P></P>Correlation id passed by an external system to Oracle Monetization Cloud.<hr width="0">
+<P></P>
+<a name="out.CONTEXT_INFO.EXTERNAL_USER"></a>
+<table cellpadding="0" cellspacing="0" class="fieldtitle" width="100%" summary="level table">
+<tr>
+<th id="fth1-EXTERNAL_USER-N10328"></th><th id="fth2-EXTERNAL_USER-N10328"></th><th id="fth3-EXTERNAL_USER-N10328"></th>
+</tr>
+<tr>
+<td class="level" headers="fth1-EXTERNAL_USER-N10328">1</td><td headers="fth2-EXTERNAL_USER-N10328"><b>string</b>
+	      &nbsp;&nbsp;
+	    <b>EXTERNAL_USER</b></td><td class="indexlinks" align="right" width="20%" headers="fth3-EXTERNAL_USER-N10328"><a href="#II">In</a> <a href="#OI">Out</a></td>
+</tr>
+</table>
+<table cellspacing="0" cellpadding="1" border="0" summary="FldProperties">
+<tbody class="properties">
+<tr>
+<th id="prh1-Ue-N10328"></th><th id="prh2-Ue-N10328"></th><th id="prh3-Ue-N10328"></th><th id="prh4-Ue-N10328"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Ue-N10328"></td><td headers="prh2-Ue-N10328"><i>Use</i></td><td class="propgap" headers="prh3-Ue-N10328"></td><td headers="prh4-Ue-N10328">optional</td>
+</tr>
+<tr>
+<th id="prh1-Parent-N10328"></th><th id="prh2-Parent-N10328"></th><th id="prh3-Parent-N10328"></th><th id="prh4-Parent-N10328"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Parent-N10328"></td><td headers="prh2-Parent-N10328"><i>Parent</i></td><td class="propgap" headers="prh3-Parent-N10328"></td><td headers="prh4-Parent-N10328"><a href="#out.CONTEXT_INFO"> out.CONTEXT_INFO</a></td>
+</tr>
+<tr>
+<th id="prh1-Maxlength-N10328"></th><th id="prh2-Maxlength-N10328"></th><th id="prh3-Maxlength-N10328"></th><th id="prh4-Maxlength-N10328"></th>
+</tr>
+<tr>
+<td class="propindent" headers="prh1-Maxlength-N10328"></td><td headers="prh2-Maxlength-N10328"><i>Max length</i></td><td class="propgap" headers="prh3-Maxlength-N10328"></td><td headers="prh4-Maxlength-N10328">128</td>
+</tr>
+</tbody>
+</table>
+<P></P>User of an external system connecting to Oracle Monetization Cloud.<hr width="0">
+<P></P>
+<hr noshade="true">
+<table cellspacing="0" width="100%" summary="Shortcuts table">
+<tbody class="shortcuts">
+<tr align="center">
+<th><a href="#II">Input index</a></th><th><a href="#ID">Input details</a></th><th><a href="#OI">Output index</a></th><th><a href="#OD">Output details</a></th>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

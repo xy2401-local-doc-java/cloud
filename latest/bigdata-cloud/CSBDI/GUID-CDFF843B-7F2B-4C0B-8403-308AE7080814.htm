@@ -1,0 +1,435 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Use bda-oss-admin commands to configure command shell access to your Hadoop cluster and access to storage providers. You can then use odcp and bdm-cli commands to copy data between HDFS and storage.">
+      <meta name="description" content="Use bda-oss-admin commands to configure command shell access to your Hadoop cluster and access to storage providers. You can then use odcp and bdm-cli commands to copy data between HDFS and storage.">
+      <title>Registering Storage Providers with Your Cluster</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Cloud Service">
+      <meta property="og:description" content="Use bda-oss-admin commands to configure command shell access to your Hadoop cluster and access to storage providers. You can then use odcp and bdm-cli commands to copy data between HDFS and storage.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="using-oracle-big-data-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-08-28T05:23:21-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2018">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E62152-39">
+      
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-cloud">
+      
+      <link rel="prev" href="using-bda-oss-admin-manage-storage-resources1.html" title="Previous" type="text/html">
+      <link rel="next" href="bda-oss-admin-command-reference.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"paas","element_name":"Platform as a Service (PaaS)","display_in_url":true},"product_group":{"short_name":"data-management-cloud","element_name":"Data Management","display_in_url":false},"product":{"short_name":"big-data-cloud","element_name":"Big Data Cloud Service","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="CSBDI">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="using-bda-oss-admin-manage-storage-resources1.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="bda-oss-admin-command-reference.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Cloud Service</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="using-bda-oss-admin-manage-storage-resources1.html" property="item" typeof="WebPage"><span property="name">Using bda-oss-admin to Manage Storage Resources</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Registering Storage Providers with Your Cluster</li>
+            </ol>
+            <a id="GUID-E91BE75D-FB9D-4513-9D13-EB56016CEEBB" name="GUID-E91BE75D-FB9D-4513-9D13-EB56016CEEBB"></a>
+            
+            <h2 id="CSBDI-GUID-E91BE75D-FB9D-4513-9D13-EB56016CEEBB" class="sect2">Registering Storage Providers with Your Cluster</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Use <code class="codeph"><span>bda-oss-admin</span></code> commands to configure command shell access to your Hadoop cluster and access to storage providers. You can then use <code class="codeph"><span>odcp</span></code> and <code class="codeph"><span>bdm-cli</span></code> commands to copy data between HDFS and storage.
+               </p>
+               <div class="section">
+                  <p class="subhead1">Topics</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="registering-storage-providers-your-cluster.html#GUID-FCA475A9-4D05-48E6-A140-C19E564719C7" title="Some bda-oss-admin options can be set as environment variables so you don’t have to specify the values every time you run the commands.">Setting bda-oss-admin Environment Variables</a></p>
+                     </li>
+                     <li>
+                        <p><a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814" title="When you create a cluster, you can register with it the credentials of a specific user of a specific instance of Oracle Cloud Infrastructure Object Storage Classic (formerly known as Oracle Storage Cloud Service). That allows that user to copy data to and from that storage instance, without having to reestablish credentials. After the cluster is created, you can register other users and other storage service instances, so those users can copy data to and from those storage service instances.">Registering Storage Credentials with the Cluster</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+            <div class="sect2"><a id="GUID-FCA475A9-4D05-48E6-A140-C19E564719C7" name="GUID-FCA475A9-4D05-48E6-A140-C19E564719C7"></a><h3 id="CSBDI-GUID-FCA475A9-4D05-48E6-A140-C19E564719C7" class="sect3">Setting bda-oss-admin Environment Variables</h3>
+               <div>
+                  <p>Some <code class="codeph">bda-oss-admin</code> options can be set as environment variables so you don’t have to specify the values every time you run the commands. 
+                  </p>
+                  <div class="section">
+                     <p>The following tables show the environment variables that correspond to (and can be substituted for) those <a href="bda-oss-admin-command-reference.html" title="Use the Oracle Big Data Cloud Service command line utility bda-oss-admin to manage users and resources of your cluster."> <code class="codeph">bda-oss-admin</code></a> options.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2"> Options and Environment Variables for All bda-oss-admin Commands</p>
+                     <p>The following values must be set for all <code class="codeph">bda-oss-admin</code> commands, either on the command line as options to the command or as shell environment variables.
+                     </p>
+                     <div class="tblformal" id="GUID-FCA475A9-4D05-48E6-A140-C19E564719C7__GUID-6AD5541C-418E-4BBB-B6A8-321BF3EDA4B6">
+                        <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table shows the command options and their corresponding environment variables for all the bda-oss-admin commands, with descriptions." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="20%" id="d21731e90">Command Option</th>
+                                 <th align="left" valign="bottom" width="20%" id="d21731e92">Environment Variable</th>
+                                 <th align="left" valign="bottom" width="20%" id="d21731e94">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e98" headers="d21731e90 "><code class="codeph">--cm-admin</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e98 d21731e92 "><code class="codeph">CM_ADMIN</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e98 d21731e94 ">Cloudera Manager administrator user name.</td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e107" headers="d21731e90 "><code class="codeph">--cm-passwd</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e107 d21731e92 "><code class="codeph">CM_PASSWORD</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e107 d21731e94 ">Cloudera Manager administrator password. The command will prompt for the password if it is not provided.</td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e116" headers="d21731e90 "><code class="codeph">--cm-url</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e116 d21731e92 "><code class="codeph">CM_URL</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e116 d21731e94 ">Cloudera Manager URL (e.g. <code>https://servername.bigdata.oraclecloud.com:7183</code>)
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" --> 
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Options and Environment Variables for bda-oss-admin Storage Credentials Commands</p>
+                     <div class="p">The <code class="codeph">bda-oss-admin</code> storage credentials commands that require some or all of the following options are: 
+                        <ul style="list-style-type: disc;">
+                           <li>
+                              <p><a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">bda-oss-admin add_swift_cred</code></a></p>
+                           </li>
+                           <li>
+                              <p><a href="bda-oss-admin-change_swift_cred_passwd.html" title="Change an Oracle Storage Cloud service provider stored password."><code class="codeph">bda-oss-admin change_swift_cred_passwd</code></a></p>
+                           </li>
+                           <li>
+                              <p><a href="bda-oss-admin-delete_swift_cred.html" title="Delete one or more Oracle Storage Cloud Service (Swift) credentials, by provider name."><code class="codeph">bda-oss-admin delete_swift_cred</code></a></p>
+                           </li>
+                        </ul>
+                     </div>
+                     <p>See <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814" title="When you create a cluster, you can register with it the credentials of a specific user of a specific instance of Oracle Cloud Infrastructure Object Storage Classic (formerly known as Oracle Storage Cloud Service). That allows that user to copy data to and from that storage instance, without having to reestablish credentials. After the cluster is created, you can register other users and other storage service instances, so those users can copy data to and from those storage service instances.">Registering Storage Credentials with the Cluster</a> for more complete descriptions of the options.
+                     </p>
+                     <div class="tblformal" id="GUID-FCA475A9-4D05-48E6-A140-C19E564719C7__GUID-E3915D28-01D2-43ED-8255-BD532103FBD5">
+                        <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table shows the command options and their corresponding environment variables for the bda-oss-admin storage credentials commands, with descriptions." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="20%" id="d21731e187">Command Option</th>
+                                 <th align="left" valign="bottom" width="20%" id="d21731e189">Environment Variable</th>
+                                 <th align="left" valign="bottom" width="20%" id="d21731e191">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e195" headers="d21731e187 "><code class="codeph">--swift-username</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e195 d21731e189 "><code class="codeph">ST_USER</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e195 d21731e191 ">
+                                    <p><span>Oracle Cloud Infrastructure Object Storage Classic</span> account administrator’s user name in the form <code class="codeph"><span class="codeinlineitalic">Service-IdentityDomain:username</span></code>.
+                                    </p>
+                                    <p>User names must conform to the rules described in <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__NAMINGREQUIREMENTS-880C7B98">Naming Requirements</a>.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e217" headers="d21731e187 "><code class="codeph">--swift-password</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e217 d21731e189 "><code class="codeph">ST_KEY</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e217 d21731e191 ">
+                                    <p>The administrator’s password.</p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e227" headers="d21731e187 "><code class="codeph">--swift-storageurl</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e227 d21731e189 "><code class="codeph">ST_AUTH</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e227 d21731e191 ">
+                                    <p>The <span>Oracle Cloud Infrastructure Object Storage Classic</span> (Swift) authentication URL from which to obtain authentication tokens, for example, <code class="codeph">https://storage.a123456.oraclecloud.com/auth/v1.0</code>.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e243" headers="d21731e187 "><code class="codeph"> --swift-provider</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e243 d21731e189 "><code class="codeph">ST_PROVIDER</code></td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e243 d21731e191 ">
+                                    <p>A user-supplied name for the credentials. This name is provided when using <a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a> to add credentials. The name is used as an alias for the credentials in Hadoop.
+                                    </p>
+                                    <p>Provider names must conform to the rules described in <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__NAMINGREQUIREMENTS-880C7B98">Naming Requirements</a>.
+                                    </p>
+                                    <p><span class="bold">Note:</span> When you create a Hadoop instance by using the <a href="creating-cluster.html" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Service instance.">Create Instance wizard</a>, a default provider name, <code class="codeph">BDCS</code>, is created. If you do not provide a storage provider name using the <code class="codeph">--swift-provider <span class="codeinlineitalic">name</span></code> option, you can use <code class="codeph">BDCS</code> whenever the storage provider name is needed; for example, when using a command like:
+                                    </p><code class="codeph"><code class="codeph">hdfs dfs —cat mycontainer.BDCS/file</code></code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Setting Environment Variables</p>
+                     <p>To set these as environment variables, you can create and run a shell script.</p>
+                     <p>In the following example, a a Linux bash shell script named <code class="codeph">bdcsvars.sh</code> sets the Cloudera Manager credentials required by all <code class="codeph">bda-oss-admin</code> commands:
+                     </p><pre class="pre codeblock"><code>#!/bin/bash
+export CM_ADMIN="my_CM_admin_username"
+export CM_PASSWORD="my_CM_admin_password"
+export CM_URL="https://my_CM_hostname_:7183"</code></pre><p>In the following example, a Linux bash shell script named <code class="codeph">storvars.sh</code> sets the storage credentials :
+                     </p><pre class="pre codeblock"><code>#!/bin/bash
+export ST_USER="MyServiceName-MyIdentityDomain:MyUserName"
+export ST_KEY="Welcome_123"
+export ST_AUTH="http://storage.a123456.oraclecloud.com/auth/v1.0"
+export ST_PROVIDER="MyProviderName"
+</code></pre><p>If you are working with multiple storage providers, it may be convenient to create shell scripts for all of them. Then you only have to run a script to set storage credentials for whichever provider you are using.</p>
+                     <p>To run the above scripts from the directory in which they reside:</p><pre class="pre codeblock"><code># <span class="bold">source ./bdacsvars.sh</span>
+# <span class="bold">source ./storvars.sh</span></code></pre></div>
+                  <!-- class="section" -->
+                  <div class="section" id="GUID-FCA475A9-4D05-48E6-A140-C19E564719C7__REVIEWINGTHECONFIGURATION-4AA96026">
+                     <p class="subhead2">Reviewing the Configuration</p>
+                     <p>Configurations that you set with the <code class="codeph">bda-oss-admin</code> commands, parameters, and environment variables are stored in the Hadoop <code>/etc/hadoop/conf/core-site.xml</code> configuration file. For example:
+                     </p><pre class="pre codeblock"><code>&lt;configuration&gt;
+...
+  &lt;property&gt;
+    &lt;name&gt;fs.swift.service.storageservice3991-bdaoss.username&lt;/name&gt;
+    &lt;value&gt;john.smith@company.com&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.swift.service.storageservice3991-bdaoss.tenant&lt;/name&gt;
+    &lt;value&gt;storageservice3991-bdaoss&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.swift.service.storageservice3991-bdaoss.password&lt;/name&gt;
+    &lt;value&gt;A_password&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.swift.service.storageservice3991-bdaoss.auth.url&lt;/name&gt;
+    &lt;value&gt;https://storageservice3991-bdaoss.storage.oraclecloud.com/auth/v2.0/tokens&lt;/value&gt;
+  &lt;/property&gt;
+  &lt;property&gt;
+    &lt;name&gt;fs.swift.service.storageservice3991-bdaoss.public&lt;/name&gt;
+    &lt;value&gt;true&lt;/value&gt;
+  &lt;/property&gt;
+&lt;/configuration&gt;
+</code></pre><p>You can look in the <code class="codeph">core-site.xml</code> file to see the current configuration, but you shouldn’t edit it directly. Use <code class="codeph">bda-oss-admin</code> instead.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814" name="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814"></a><h3 id="CSBDI-GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814" class="sect3">Registering Storage Credentials with the Cluster</h3>
+               <div>
+                  <p>When you create a cluster, you can register with it the credentials of a specific user of a specific instance of <span>Oracle Cloud Infrastructure Object Storage Classic</span> (formerly known as Oracle Storage Cloud Service). That allows that user to copy data to and from that storage instance, without having to reestablish credentials. After the cluster is created, you can register other users and other storage service instances, so those users can copy data to and from those storage service instances.
+                  </p>
+                  <div class="section">
+                     <p class="subhead2">Prerequisite</p>
+                     <p>You must have access to an <span>Oracle Cloud Infrastructure Object Storage Classic</span> instance. 
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">About Storage Credentials</p>
+                     <p>When you create a cluster using the Create Cluster wizard and you choose to associate it with an <span>Oracle Cloud Infrastructure Object Storage Classic</span> instance, you’re prompted for a user name and a password. (See <a href="creating-cluster.html" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Service instance.">Creating a Cluster</a>.) The user name identifies the storage service instance, its identity domain, and a user with administrator rights to the instance. When the cluster is created, a default storage service <span class="italic">provider </span>, named <span class="italic">BDCS</span>, is also created for that storage server instance. The provider is an alias for all the credentials required for using the storage service instance. Those credentials are: the user name (service instance name, administrrator user name, and administrrator user’s password) and the URL for a server that provides authentication tokens for accessing the service. See <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__STORAGECREDENTIALDETAILS-4AB9855F">Storage Credential Details</a>, below. 
+                     </p>
+                     <p>If this is the only storage service instance that will be used with the Hadoop cluster, you don’t have to register any other credentials. However, if you need to access other storage service instances and if you want to register other credentials for them, you can do so by using <code class="codeph">bda-oss-admin</code> commands. You set the values for the credentials either by entering them as parameters to <code class="codeph">bda-oss-admin</code> commands.  See <a href="copying-data-odcp.html#GUID-62F78D81-A27B-4618-BC28-1D3FAC5B2CB9__COPYINGDATA-4AB86A7C">Using odcp to Copy Data</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section" id="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__STORAGECREDENTIALDETAILS-4AB9855F">
+                     <p class="subhead2">Storage Credential Details</p>
+                     <p> The components of the credentials are described in the following table.</p>
+                     <div class="infoboxnote" id="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__GUID-101D6671-DCF5-4E2F-AE66-6EF29F9118FA">
+                        <p class="notep1">Note:</p><span>Oracle Cloud Infrastructure Object Storage Classic</span> is based on <span class="italic">Swift</span>, the open-source OpenStack Object Store project.<span class="bold"> </span>As a consequence, the <code class="codeph"><a href="bda-oss-admin-command-reference.html" title="Use the Oracle Big Data Cloud Service command line utility bda-oss-admin to manage users and resources of your cluster.">bda-oss-admin</a></code> command line utility contains some subcommands and options that say “swift.” 
+                     </div>
+                     <div class="tblformal" id="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__THISTABLEDESCRIBESTHESTORAGECREDENT-7FE341B4">
+                        <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes the storage credentials." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="20%" id="d21731e447">Storage Credentials, Syntax, and Usage</th>
+                                 <th align="left" valign="bottom" width="20%" id="d21731e449">Description</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e453" headers="d21731e447 ">
+                                    <dl>
+                                       <dt class="dlterm"><a name="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__GUID-58F8F9D6-72A2-4518-A438-12EA3CD5F258">
+                                             <!-- --></a><span class="italic">STORAGE USER NAME</span></dt>
+                                       <dd>
+                                          <p><span class="bold">Option Syntax</span></p><code class="codeph">--swift-username <span class="codeinlineitalic">Service-IdentityDomain:username</span>[.<span class="codeinlineitalic">role</span>]</code><p><span class="bold">Environment Variable</span></p>
+                                          <p><code class="codeph">ST_USER</code></p>
+                                          <p><span class="bold">Required for</span></p>
+                                          <p><a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a></p>
+                                       </dd>
+                                    </dl>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e453 d21731e449 ">
+                                    <p><span>Oracle Cloud Infrastructure Object Storage Classic</span> account administrator’s user name in the form <code class="codeph"><span class="codeinlineitalic">Service-IdentityDomain:username</span></code>, where
+                                    </p>
+                                    <ul style="list-style-type: disc;">
+                                       <li>
+                                          <p><code class="codeph"><span class="codeinlineitalic">Service</span></code></p>
+                                          <p>is the customer-supplied name of the <span>Oracle Cloud Infrastructure Object Storage Classic</span> instance. This name was given when the storage service was provisioned.
+                                          </p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph"><span class="codeinlineitalic">IdentityDomain</span></code></p>
+                                          <p>is the identity domain in which the service instance is provisioned. This name was given when the storage service was provisioned. (In Swift, this is called the tenant ID.)</p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph"><span class="codeinlineitalic">username</span></code></p>
+                                          <p>is the user name for a user with administrative privileges on the account.</p>
+                                       </li>
+                                       <li>
+                                          <p><code class="codeph"><span class="codeinlineitalic">role</span></code> 
+                                          </p>
+                                          <p>is a role defined in an Access Control List (ACL) assigned to a container. See <a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO-GUID-5778ADBB-A0E8-4451-B886-362A3B7237DB">Setting Container Metadata</a> in <cite>Using <span>Oracle Cloud Infrastructure Object Storage Classic</span></cite> for more information. If a role is not defined, this option is not required.
+                                          </p>
+                                       </li>
+                                    </ul>
+                                    <p>You can find the storage details described above on the Service Details page of your <span>Oracle Cloud Infrastructure Object Storage Classic</span> account. See <a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO-GUID-5778ADBB-A0E8-4451-B886-362A3B7237DB">Accessing <span>Oracle Cloud Infrastructure Object Storage Classic</span></a> in <cite>Getting Started with Oracle Cloud</cite>.
+                                    </p>
+                                    <p>User names must conform to the rules described below in <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__NAMINGREQUIREMENTS-880C7B98">Naming Requirements</a>.
+                                    </p>
+                                    <p><span class="bold">Example:</span></p>
+                                    <p> <code class="codeph">WestRegion-nloracle12345:pstuyves</code></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e570" headers="d21731e447 ">
+                                    <dl>
+                                       <dt class="dlterm"><a name="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__GUID-6C8A58B5-4DAD-4667-A9FF-7F6BD8AA9942">
+                                             <!-- --></a><span class="italic">STORAGE PASSWORD</span></dt>
+                                       <dd>
+                                          <p><span class="bold">Option Syntax</span></p><code class="codeph">--swift-password <span class="codeinlineitalic">password</span></code><p><span class="bold">Environment Variable</span></p>
+                                          <p><code class="codeph">ST_KEY</code></p>
+                                          <p><span class="bold">Required for</span></p>
+                                          <p><a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a></p>
+                                          <p><a href="bda-oss-admin-change_swift_cred_passwd.html" title="Change an Oracle Storage Cloud service provider stored password."><code class="codeph">change_swift_cred_passwd</code></a></p>
+                                       </dd>
+                                    </dl>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e570 d21731e449 ">
+                                    <p>Password associated with <code class="codeph"><span class="codeinlineitalic">username</span></code>, described above..
+                                    </p>
+                                    <p>If the password is Base64&#x2013;encoded, use the <code class="codeph">-b</code> flag, for example, <code class="codeph">--swift-password <span class="codeinlineitalic">AnEncodedPassword</span> —b</code>.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e631" headers="d21731e447 ">
+                                    <dl>
+                                       <dt class="dlterm"><a name="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__GUID-D0612BAD-E47A-4A91-BDC2-8B623B481F0D">
+                                             <!-- --></a><span class="italic">STORAGE LOCATION </span></dt>
+                                       <dd>
+                                          <p><span class="bold">Option Syntax</span></p><code class="codeph">--swift-storageurl <span class="codeinlineitalic">url</span></code><p><span class="bold">Environment Variable</span></p>
+                                          <p><code class="codeph">ST_AUTH</code></p>
+                                          <p><span class="bold">Required for</span> 
+                                          </p>
+                                          <p><a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a></p>
+                                       </dd>
+                                    </dl>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e631 d21731e449 ">
+                                    <p>The <span>Oracle Cloud Infrastructure Object Storage Classic</span> (Swift) \ authentication URL for your <span>Oracle Cloud Infrastructure Object Storage Classic</span> data center/region, for example, <code class="codeph">https://storage.us2.oraclecloud.com/auth/v1.0</code>. For an explanation of how those URLs are constructed, see <a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO-GUID-16FFE6D9-C3C0-4027-B5D0-8B88091E6BF9">Authenticating Access When Using REST API</a>.
+                                    </p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d21731e683" headers="d21731e447 ">
+                                    <dl>
+                                       <dt class="dlterm"><a name="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__GUID-D8E8B5DA-322C-445A-8EF9-4B036D4CA3D1">
+                                             <!-- --></a><span class="italic">STORAGE PROVIDER NAME </span></dt>
+                                       <dd>
+                                          <p><span class="bold">Option Syntax</span></p><code class="codeph">--swift-provider <span class="codeinlineitalic">name</span></code><p><span class="bold">Environment Variable</span></p>
+                                          <p><code class="codeph">ST_PROVIDER</code></p>
+                                          <p><span class="bold">Required for</span></p>
+                                          <p><a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a></p>
+                                          <p><a href="bda-oss-admin-change_swift_cred_passwd.html" title="Change an Oracle Storage Cloud service provider stored password."><code class="codeph">change_swift_cred_passwd</code></a></p>
+                                          <p><a href="bda-oss-admin-delete_swift_cred.html" title="Delete one or more Oracle Storage Cloud Service (Swift) credentials, by provider name."><code class="codeph">delete_swift_cred</code></a></p>
+                                       </dd>
+                                    </dl>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d21731e683 d21731e449 ">
+                                    <p>A user-supplied name for the credentials. This name is provided when using <a href="bda-oss-admin-add_swift_cred.html" title="Add a single Oracle Big Data Cloud Service credential."><code class="codeph">add_swift_cred</code></a> to add credentials. The name is used as an alias for the credentials in Hadoop.
+                                    </p>
+                                    <p>Provider names must conform to the rules described below in <a href="registering-storage-providers-your-cluster.html#GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__NAMINGREQUIREMENTS-880C7B98">Naming Requirements</a>.
+                                    </p>
+                                    <p><span class="bold">Note:</span> When you create a Hadoop cluster by using the <a href="creating-cluster.html" title="You can create a single cluster from the resources allocated in an Oracle Big Data Cloud Service instance.">Create Cluster wizard</a>, a default provider name, <code class="codeph">BDCS</code>, is created. If you don’t provide a storage provider name using the <code class="codeph">--swift-provider <span class="codeinlineitalic">name</span></code> option, you can use <code class="codeph">BDCS</code> whenever the storage provider name is needed; for example, when using a command like:
+                                    </p><code class="codeph"><code class="codeph">hdfs dfs —cat mycontainer.BDCS/file</code></code></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section" id="GUID-CDFF843B-7F2B-4C0B-8403-308AE7080814__NAMINGREQUIREMENTS-880C7B98">
+                     <p class="subhead2">Naming Requirements</p>
+                     <p>Provider names and container names must conform to <a href="http://tools.ietf.org/html/rfc952" target="_blank">RFC952 DOD Internet Host Table Specification</a>, for example:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p>A name is a text string of 2 to 24 characters and can contain only: </p>
+                           <ul style="list-style-type: disc;">
+                              <li>
+                                 <p>Letters <span class="italic">A-Z </span>and <span class="italic">a-z</span> (case is not considered) 
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Digits <span class="italic">0&#x2013;9</span></p>
+                              </li>
+                              <li>
+                                 <p>Hyphen (<span class="italic">-</span>)
+                                 </p>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <p>The first character must be an alpha character.</p>
+                        </li>
+                        <li>
+                           <p>The last character cannot be a period or hyphen.</p>
+                        </li>
+                        <li>
+                           <p>Spaces are not allowed.</p>
+                        </li>
+                        <li>
+                           <p>Periods are allowed only to delimit components of domain style names.</p>
+                        </li>
+                     </ul>
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

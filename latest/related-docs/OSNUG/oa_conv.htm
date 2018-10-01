@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Conversations in the Add-In for Outlook</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-04-26T11:27:29Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Social Network" />
+<meta name="dcterms.identifier" content="E85025-01" />
+<meta name="dcterms.isVersionOf" content="OSNUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="oa_flags.htm" title="Previous" type="text/html" />
+<link rel="Next" href="oa_coll.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OSNUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4C0EAA59-6183-4EDC-B402-3A9BC18C5156"></a> <span id="PAGE" style="display:none;">157/367</span> <!-- End Header -->
+<a id="OSNUG2543"></a>
+<h1 id="OSNUG-GUID-4C0EAA59-6183-4EDC-B402-3A9BC18C5156" class="sect1">Using Conversations in the Add-In for Outlook</h1>
+<div>
+<p>This section describes how to use Conversations in the add-in for Outlook:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oa_conv.htm#GUID-8E9AF09D-7B87-40CD-A0B4-1ECD4C33DE94">What Conversation tabs are available?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-09E6D19C-3868-4189-9B2D-A4639AAEF668">How do I view Conversation messages?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-4B8EA42F-A7B2-4C73-8D6C-CE35590CA875">How do I view a list of Conversation documents?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-4A87CD15-F97F-49DD-8767-6985B63C4B28">How do I view a list of Conversation members?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-FD4779AD-F144-44C5-9A37-847D974A17EE">How can I view a list of all Conversations I'm a member of?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-2A8F3A84-9597-41FD-857D-ACF4066E51A5">How can I view a list of Conversations I can join?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-2F84A5BF-2A6A-4763-B7B2-E945888F0EB5">How can I view my list of favorite Conversations?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-5B006E0F-F51F-4B44-8EDD-6FC36576375B">How can I view my list of muted Conversations?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-C14F1978-5422-4FC3-AADB-5620C928B10C">How can I view a list of closed Conversations?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-2523BBDE-98F1-4557-9AC5-08B5DC7D3E0D">How can I view a list of open Conversations?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-AB55B199-84E7-40E2-AED6-8B70753BBBAF">How do I start a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-9BB84700-27EE-4C3E-8021-108F5CB314ED">How do I start a Conversation with a group?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-F33279CA-F477-48A8-AE50-8B47786F240F">How do I join a public Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-647D3494-F8E2-4BC4-AF27-D69E4BD9C521">How do I start a One-on-One Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-492A2913-C1F9-42DB-AE5A-F7112A57743C">How do I add members to a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-15D22C9B-BD60-4ACE-8219-E52F298ACCC9">How do I remove members from a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-88B2B46A-3AA3-42E2-B530-47B23DCDE8AB">How do I make a private Conversation public?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-696BDFCF-CD99-49D3-8E82-85060DBA5084">How do I change a public Conversation to members-only?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-6EC8DAB2-979E-49ED-AA30-234D4AD84C1F">How do I close a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-C0612489-0FD2-48A7-8D16-985ED0034B87">How do I reopen a closed Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-E40433F6-11B1-4D08-9690-23CE17FB00FE">How do I delete a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-C82F26C0-FB9C-4DAF-A0D5-30D8299E2919">How do I change a Conversation name?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-A5CDF5D9-53EE-4AA1-9AEA-1C18B63B3DD2">What are referring items?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-71260A60-573E-408F-8541-C09DC7352E18">How do I add an existing item to a list of referring items?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-8CAFA288-3EA7-45C3-82C7-9B38F507A297">How do I add a new item to a list of referring items?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-B7F3DB9C-FBB5-4124-A5E4-6A7AE925D007">How do I change a Conversation's language?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-69FB67A5-DCF5-4BF1-89B2-CF8E5069984F">How do I mute a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-075A94BD-ACBA-4DEF-8FBD-053F628BB905">How do I copy a Conversation URL to my clipboard?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-026EC7D3-BDC7-4DBD-BBF6-ABB97D2A718D">How do I download an archive of a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-C4C6F809-E2C8-4955-82FC-6C04658C8D3E">How do I view recent messages?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-0B924FD3-F2E7-4158-9E77-EE4EE67AD36E">How do I post messages to a Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-4B0D1A16-3897-4DFE-95EF-06A5D6F1BB25">How do I hide membership messages?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-3FE29F9E-1996-4F37-A0FF-95FDBAE4746F">How do I navigate from a message to its Conversation?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-EE86C37F-2E77-41CA-8FE6-FA0464F153FF">How do I post a message through the note editor?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-DEF1916C-F22E-4F32-884E-6513C269E0BB">How do I edit my messages and replies?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-C2450E52-FC22-4762-B961-D9C0B24BA40F">How can I view earlier versions of an edited message?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-5CA74ECC-8BC0-4FBC-B684-42A383E67D3A">How do I reply to a message?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5">How do I find items in a Conversation or wall?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-96C23568-4726-4882-82E9-FC1E32F817AD">How do I mark a message as read or unread?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-4694BED1-BD30-4A76-82F7-B54B1E1B7881">How do I mark all messages in a Conversation as read?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-A6E7B030-D216-4321-8162-A2EAE7E2E1F5">How do I copy a message URL to my clipboard?</a></p>
+</li>
+<li>
+<p><a href="oa_conv.htm#GUID-7B5434CE-8363-478A-930E-06E3C89BAC71">How do I delete a message?</a></p>
+</li>
+</ul>
+</div>
+<a id="OSNUG1965"></a>
+<div class="props_rev_3"><a id="GUID-8E9AF09D-7B87-40CD-A0B4-1ECD4C33DE94"></a>
+<h2 id="OSNUG-GUID-8E9AF09D-7B87-40CD-A0B4-1ECD4C33DE94" class="sect2">What Conversation tabs are available?</h2>
+<div>
+<p>In a Conversation, use tabs to navigate its views:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Posts</span>&mdash;<img width="24" height="21" src="img/GUID-8487C43C-5727-4A73-8701-43C1CD7BBAB2-default.gif" alt="Messages icon" title="Messages icon" /> View everything added to the Conversation.</p>
+</li>
+<li>
+<p><span class="bold">Documents</span>&mdash;<img width="24" height="21" src="img/GUID-48FFA679-2D1D-49A7-98F0-4A739F2A8D07-default.gif" alt="Documents icon" title="Documents icon" /> View just the documents.</p>
+</li>
+<li>
+<p><span class="bold">Members</span>&mdash;<img width="24" height="21" src="img/GUID-BFDF36D0-667A-43A1-913C-D8BC4B9CCC28-default.gif" alt="Members icon" title="Members icon" /> View and manage the Conversation's membership.</p>
+</li>
+<li>
+<p><span class="bold">Referring Item</span>s&mdash;<img width="24" height="21" src="img/GUID-8027CFBB-A671-4FE8-B971-7408E6B2D6D9-default.gif" alt="Referring items icon" title="Referring items icon" /> Navigate to the items that link to this Conversation.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="OSNUG1982"></a>
+<div class="props_rev_3"><a id="GUID-09E6D19C-3868-4189-9B2D-A4639AAEF668"></a>
+<h2 id="OSNUG-GUID-09E6D19C-3868-4189-9B2D-A4639AAEF668" class="sect2">How do I view Conversation messages?</h2>
+<div>
+<div class="section">
+<p>By default, the add-in for Outlook is configured to show messages in full view. If you like, you can double-click a message or select it and press Enter to see it in a separate dialog. If you posted the message, it opens in an editor.</p>
+<p><span class="bold">Note:</span> People outside your company can sometimes be given limited access to Conversations in the Oracle Social Network. If there are outside users in the Conversation, a banner appears near the top of the page to let you know. All outside users have the same avatar (<img width="51" height="42" src="img/GUID-BF59256C-DBCE-4393-8C5E-A4BE59F4DCB4-default.gif" alt="Outside user avatar" title="Outside user avatar" />) and their names are in purple text. For more information, see <a href="oa_people_groups.htm#GUID-D279F73D-640F-40A0-84C3-8AE78404B14E">What are "outside users"?</a></p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" />, and select a filter to show the types of Conversations you want to see.</span></li>
+<li><span>Double-click a Conversation to open it.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1983"></a>
+<div class="props_rev_3"><a id="GUID-4B8EA42F-A7B2-4C73-8D6C-CE35590CA875"></a>
+<h2 id="OSNUG-GUID-4B8EA42F-A7B2-4C73-8D6C-CE35590CA875" class="sect2">How do I view a list of Conversation documents?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" />, and select a filter to show the types of Conversations you want to see.</span></li>
+<li><span>Double-click a Conversation to open it.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-48FFA679-2D1D-49A7-98F0-4A739F2A8D07-default.gif" alt="Documents tab" title="Documents tab" /> to view the Conversation's list of documents.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1966"></a>
+<div class="props_rev_3"><a id="GUID-4A87CD15-F97F-49DD-8767-6985B63C4B28"></a>
+<h2 id="OSNUG-GUID-4A87CD15-F97F-49DD-8767-6985B63C4B28" class="sect2">How do I view a list of Conversation members?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li class="stepexpand"><span>Open the Conversation with members you want to show.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-BFDF36D0-667A-43A1-913C-D8BC4B9CCC28-default.gif" alt="Members icon" title="Members icon" /> to view the Conversation's list of members.</span>
+<div>
+<p><span class="bold">Note:</span> All outside users show the same avatar (<img width="51" height="42" src="img/GUID-BF59256C-DBCE-4393-8C5E-A4BE59F4DCB4-default.gif" alt="Outside user avatar" title="Outside user avatar" />) and their names are in purple text. For more information, see <a href="oa_people_groups.htm#GUID-D279F73D-640F-40A0-84C3-8AE78404B14E">What are "outside users"?</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1968"></a>
+<div class="props_rev_3"><a id="GUID-FD4779AD-F144-44C5-9A37-847D974A17EE"></a>
+<h2 id="OSNUG-GUID-FD4779AD-F144-44C5-9A37-847D974A17EE" class="sect2">How can I view a list of all Conversations I'm a member of?</h2>
+<div>
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />. The on the Conversations banner, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" /> and select <span class="bold">Yours</span>.</p>
+</div>
+</div>
+<a id="OSNUG1969"></a>
+<div class="props_rev_3"><a id="GUID-2A8F3A84-9597-41FD-857D-ACF4066E51A5"></a>
+<h2 id="OSNUG-GUID-2A8F3A84-9597-41FD-857D-ACF4066E51A5" class="sect2">How can I view a list of Conversations I can join?</h2>
+<div>
+<div class="section">
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />. Then click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" /> and select <span class="bold">Available</span>.</p>
+<p>To join a Conversation, open it, then, at the top of the Conversation, click <span class="bold">Join Conversation</span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1970"></a>
+<div class="props_rev_3"><a id="GUID-2F84A5BF-2A6A-4763-B7B2-E945888F0EB5"></a>
+<h2 id="OSNUG-GUID-2F84A5BF-2A6A-4763-B7B2-E945888F0EB5" class="sect2">How can I view my list of favorite Conversations?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>On the banner above the list of Conversations, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" /> and select <span class="bold">Favorites</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1971"></a>
+<div class="props_rev_3"><a id="GUID-5B006E0F-F51F-4B44-8EDD-6FC36576375B"></a>
+<h2 id="OSNUG-GUID-5B006E0F-F51F-4B44-8EDD-6FC36576375B" class="sect2">How can I view my list of muted Conversations?</h2>
+<div>
+<div class="section">
+<p>When you view a list of muted Conversations, you see only those Conversations you have muted. The Conversations others have muted show only in their views of this list.</p>
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select <span class="bold">Muted</span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1972"></a>
+<div class="props_rev_3"><a id="GUID-C14F1978-5422-4FC3-AADB-5620C928B10C"></a>
+<h2 id="OSNUG-GUID-C14F1978-5422-4FC3-AADB-5620C928B10C" class="sect2">How can I view a list of closed Conversations?</h2>
+<div>
+<div class="section">
+<p>When you view closed Conversations, you see all the Conversations that are closed, no matter who closed them.</p>
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select either <span class="bold">Yours</span>, <span class="bold">Available</span>, <span class="bold">Favorites</span>, or <span class="bold">Muted</span>. Click <span class="bold">Closed</span> to show all closed Conversations included in the selected view.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1973"></a>
+<div class="props_rev_3"><a id="GUID-2523BBDE-98F1-4557-9AC5-08B5DC7D3E0D"></a>
+<h2 id="OSNUG-GUID-2523BBDE-98F1-4557-9AC5-08B5DC7D3E0D" class="sect2">How can I view a list of open Conversations?</h2>
+<div>
+<div class="section">
+<p>When you view open Conversations, you see all open Conversations that you are a member of or that are available to you to join.</p>
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select either <span class="bold">Yours</span>, <span class="bold">Available</span>, <span class="bold">Favorites</span>, or <span class="bold">Muted</span>. Click <span class="bold">Open</span> to show all open Conversations included in the selected view.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1953"></a>
+<div class="props_rev_3"><a id="GUID-AB55B199-84E7-40E2-AED6-8B70753BBBAF"></a>
+<h2 id="OSNUG-GUID-AB55B199-84E7-40E2-AED6-8B70753BBBAF" class="sect2">How do I start a Conversation?</h2>
+<div>
+<div class="section">
+<p>Here's how to start a Conversation from the <span class="bold">Conversations</span> panel. You can also start a Conversation the same way (starting with Step 2) from the Outlook ribbon and from the <span class="bold">Overview</span> panel.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li class="stepexpand"><span>On the Conversations banner, click <img width="20" height="19" src="img/GUID-08C627E7-513C-4BB0-BEB8-DDA15DB056FF-default.gif" alt="New Conversation icon" title="New Conversation icon" />.</span></li>
+<li class="stepexpand"><span>Enter a name for the Conversation in the <span class="bold">Name</span> field.</span></li>
+<li class="stepexpand"><span>Select the options to apply to the new Conversation:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Make publicly available</span>&mdash;Make this Conversation available to all. Anyone with a user name and password can join this Conversation.</p>
+</li>
+<li>
+<p><span class="bold">Add to favorites</span>&mdash;Add this Conversation to your favorites list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to create and open the new Conversation.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1954"></a>
+<div class="props_rev_3"><a id="GUID-9BB84700-27EE-4C3E-8021-108F5CB314ED"></a>
+<h2 id="OSNUG-GUID-9BB84700-27EE-4C3E-8021-108F5CB314ED" class="sect2">How do I start a Conversation with a group?</h2>
+<div>
+<div class="section">
+<p>Starting a Conversation with a group automatically adds all members of the group to the Conversation.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="View People and Groups icon" title="View People and Groups icon" />.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Peopole and Groups tab" title="Peopole and Groups tab" /> to show the list of groups you are a member of.</span></li>
+<li class="stepexpand"><span>Select the group to start a Conversation with.</span></li>
+<li class="stepexpand"><span>Right-click the group, and select <span class="bold">Start New Conversation</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Name</span> field, enter a name for the Conversation.</span></li>
+<li class="stepexpand"><span>Select the options you want to apply to the new Conversation:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Make publicly available</span>&mdash;Make this Conversation available to all to join.</p>
+<p><span class="bold">Note:</span> All members of the group are automatically added to the Conversation, but, when you select this option, anyone with a user name and password can join it.</p>
+</li>
+<li>
+<p><span class="bold">Add to favorites</span>&mdash;Add this Conversation to your favorites list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1955"></a>
+<div class="props_rev_3"><a id="GUID-F33279CA-F477-48A8-AE50-8B47786F240F"></a>
+<h2 id="OSNUG-GUID-F33279CA-F477-48A8-AE50-8B47786F240F" class="sect2">How do I join a public Conversation?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Set the Conversations list to show available Conversations (see <a href="oa_conv.htm#GUID-2A8F3A84-9597-41FD-857D-ACF4066E51A5">How can I view a list of Conversations I can join?</a>).</span></li>
+<li><span>In the list of Conversations, right-click the Conversation you want to join, and select <span class="bold">Join Conversation</span>.</span></li>
+</ol>
+<div class="section">
+<p>Alternatively, open the Conversation, then, at the top of the Conversation, click <span class="bold">Join Conversation</span>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1958"></a>
+<div class="props_rev_3"><a id="GUID-647D3494-F8E2-4BC4-AF27-D69E4BD9C521"></a>
+<h2 id="OSNUG-GUID-647D3494-F8E2-4BC4-AF27-D69E4BD9C521" class="sect2">How do I start a One-on-One Conversation?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>Navigate to the wall of the person you want to converse with.</span>
+<div>
+<p>For example, in a Conversation, right-click the person's profile picture and select <span class="bold">Go To &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;'s Wall</span>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>On the wall, click the <span class="bold">Start One-on-One Conversation</span> icon.</span>
+<div>
+<div class="figure" id="GUID-647D3494-F8E2-4BC4-AF27-D69E4BD9C521__GUID-E295EC8E-0C53-4635-8698-E263C23C88B1"><img width="406" height="81" src="img/GUID-A40406D9-F332-40BD-9AE2-58D3455AA6F5-default.gif" alt="Start One-on-One Conversation icon" title="Start One-on-One Conversation icon" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Add messages as you would to any Conversation.</span>
+<div>
+<p>For more information, see <a href="oa_conv.htm#GUID-0B924FD3-F2E7-4158-9E77-EE4EE67AD36E">How do I post messages to a Conversation?</a></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG10743"></a><a id="OSNUG1959"></a>
+<div class="props_rev_3"><a id="GUID-492A2913-C1F9-42DB-AE5A-F7112A57743C"></a>
+<h2 id="OSNUG-GUID-492A2913-C1F9-42DB-AE5A-F7112A57743C" class="sect2">How do I add members to a Conversation?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li class="stepexpand"><span>Open the Conversation to add members to.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-BFDF36D0-667A-43A1-913C-D8BC4B9CCC28-default.gif" alt="Members tab" title="Members tab" /> to view the Conversation's list of members.</span></li>
+<li class="stepexpand"><span>Click <img width="16" height="17" src="img/GUID-77EB1A96-EB33-47CA-9EF1-B8BA4AE563D1-default.gif" alt="Add Members icon" title="Add Members icon" /> to open the Select Members dialog.</span></li>
+<li class="stepexpand"><span>In the Select Members dialog, select groups and people you want to add as members. Use <span class="bold">Ctrl+Click</span> to select more than one person or group.</span>
+<div>
+<p>Double-click a name to add it to the <span class="bold">Select</span> list at the bottom of the dialog, or select names, then click <span class="bold">Select</span> to add all selections.</p>
+<p>By default, you see a list of contacts. Click a tab to change your view:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Contacts</span>&mdash;View a list of your contacts.</p>
+</li>
+<li>
+<p><span class="bold">Groups</span>&mdash;View a list of your groups.</p>
+</li>
+<li>
+<p><span class="bold">Current Members</span>&mdash;View a list of current members.</p>
+</li>
+</ul>
+<p>Alternatively, you can enter part of a person's or group's name, and select them from the list that pops up.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to add your selections to the Conversation.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1960"></a>
+<div class="props_rev_3"><a id="GUID-15D22C9B-BD60-4ACE-8219-E52F298ACCC9"></a>
+<h2 id="OSNUG-GUID-15D22C9B-BD60-4ACE-8219-E52F298ACCC9" class="sect2">How do I remove members from a Conversation?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Open the Conversation to remove members from.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-BFDF36D0-667A-43A1-913C-D8BC4B9CCC28-default.gif" alt="Members tab" title="Members tab" /> to view the Conversation's list of members.</span></li>
+<li><span>On the list, right-click the person you want to remove, and select <span class="bold">Remove from Membership</span>.</span></li>
+<li><span>In the confirmation dialog, click <span class="bold">Yes</span>.</span></li>
+<li><span>Repeat these steps until you remove everyone you want.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1956"></a>
+<div class="props_rev_3"><a id="GUID-88B2B46A-3AA3-42E2-B530-47B23DCDE8AB"></a>
+<h2 id="OSNUG-GUID-88B2B46A-3AA3-42E2-B530-47B23DCDE8AB" class="sect2">How do I make a private Conversation public?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Right-click the Conversation, then select <span class="bold">Modify</span>.</span></li>
+<li><span>In the dialog, select the <span class="bold">Make publicly available</span> check box.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1957"></a>
+<div class="props_rev_3"><a id="GUID-696BDFCF-CD99-49D3-8E82-85060DBA5084"></a>
+<h2 id="OSNUG-GUID-696BDFCF-CD99-49D3-8E82-85060DBA5084" class="sect2">How do I change a public Conversation to members-only?</h2>
+<div>
+<div class="section">
+<p>Public Conversations that are converted to members-only retain the members who had already joined the public Conversation.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Right-click the Conversation, then select <span class="bold">Modify</span> to open the Modify dialog.</span></li>
+<li><span>In the dialog, clear the <span class="bold">Make publicly available</span> check box.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1961"></a>
+<div class="props_rev_3"><a id="GUID-6EC8DAB2-979E-49ED-AA30-234D4AD84C1F"></a>
+<h2 id="OSNUG-GUID-6EC8DAB2-979E-49ED-AA30-234D4AD84C1F" class="sect2">How do I close a Conversation?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li class="stepexpand"><span>Right-click the Conversation, then select <span class="bold">Modify</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Mark as closed</span> to open the Close Conversation dialog.</span></li>
+<li class="stepexpand"><span>Enter a reason for closing the Conversation, and click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>In the Modify dialog, click <span class="bold">OK</span>.</span>
+<div>
+<p>The <span class="bold">Conversations</span> panel is refreshed to show the list of closed Conversations.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1962"></a>
+<div class="props_rev_3"><a id="GUID-C0612489-0FD2-48A7-8D16-985ED0034B87"></a>
+<h2 id="OSNUG-GUID-C0612489-0FD2-48A7-8D16-985ED0034B87" class="sect2">How do I reopen a closed Conversation?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>From the <span class="bold">Options</span> menu on the <span class="bold">Conversations</span> banner, select <span class="bold">Closed</span> to show a list of closed Conversations.</span></li>
+<li><span>Right-click the closed Conversation, and select <span class="bold">Modify</span>.</span></li>
+<li><span>Clear the <span class="bold">Mark as closed</span> check box.</span></li>
+<li><span>In the confirmation dialog, click <span class="bold">Yes</span>.</span></li>
+<li><span>In the Modify dialog, click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1963"></a>
+<div class="props_rev_3"><a id="GUID-E40433F6-11B1-4D08-9690-23CE17FB00FE"></a>
+<h2 id="OSNUG-GUID-E40433F6-11B1-4D08-9690-23CE17FB00FE" class="sect2">How do I delete a Conversation?</h2>
+<div>
+<div class="section">
+<p>Before you can delete a Conversation, you must remove all members of the Conversation, except you. Once you are the only member of a Conversation, you can delete it. (For information about removing others from a Conversation, see <a href="oa_conv.htm#GUID-15D22C9B-BD60-4ACE-8219-E52F298ACCC9">How do I remove members from a Conversation?</a>)</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Right-click the Conversation to delete, and select <span class="bold">Discard</span>.</span></li>
+<li><span>In the confirmation dialog, click <span class="bold">Yes</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1974"></a>
+<div class="props_rev_3"><a id="GUID-C82F26C0-FB9C-4DAF-A0D5-30D8299E2919"></a>
+<h2 id="OSNUG-GUID-C82F26C0-FB9C-4DAF-A0D5-30D8299E2919" class="sect2">How do I change a Conversation name?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Right-click the Conversation, and select <span class="bold">Modify</span>.</span></li>
+<li><span>Rename the Conversation.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2468"></a>
+<div class="props_rev_3"><a id="GUID-A5CDF5D9-53EE-4AA1-9AEA-1C18B63B3DD2"></a>
+<h2 id="OSNUG-GUID-A5CDF5D9-53EE-4AA1-9AEA-1C18B63B3DD2" class="sect2">What are referring items?</h2>
+<div>
+<p>A Conversation or wall's <span class="bold">Referring</span> list includes links to the Social Objects and collections that link to that Conversation or wall. This provides a convenient way to navigate between a Conversation and a collection of Conversations with related content or a Conversation and a Social Object that it discusses.You can set up these relationships from a Social Object or a collection, or from the Conversation or wall itself.</p>
+</div>
+</div>
+<a id="OSNUG2388"></a>
+<div class="props_rev_3"><a id="GUID-71260A60-573E-408F-8541-C09DC7352E18"></a>
+<h2 id="OSNUG-GUID-71260A60-573E-408F-8541-C09DC7352E18" class="sect2">How do I add an existing item to a list of referring items?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>Go to the Conversation, and click <img width="24" height="21" src="img/GUID-8027CFBB-A671-4FE8-B971-7408E6B2D6D9-default.gif" alt="Referring Items tab" title="Referring Items tab" />.</span></li>
+<li class="stepexpand"><span>On the <span class="bold">Referring Items</span> banner, click <img width="16" height="16" src="img/GUID-9444758F-73E3-4311-B3F9-E1B2CEDF84F4-default.gif" alt="Add existing Social Object icon" title="Add existing Social Object icon" />.</span></li>
+<li class="stepexpand"><span>Select a source for the Social Object:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Recent Social Objects</span>&mdash;Select from a list of Social Objects that you recently viewed.</p>
+</li>
+<li>
+<p><span class="bold">Favorites</span>&mdash;Select from a list of Social Objects that you have marked as a favorite.</p>
+</li>
+<li>
+<p><span class="bold">Search</span>&mdash;Enter a search term, and select from results or click <img width="13" height="15" src="img/GUID-244510E1-B7BE-4750-9C5E-DA264FA044A8-default.gif" alt="Search icon" title="Search icon" />.</p>
+<p>When you click <img width="13" height="15" src="img/GUID-244510E1-B7BE-4750-9C5E-DA264FA044A8-default.gif" alt="Search icon" title="Search icon" />, results appear on this tab.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Select a Social Object, and click <span class="bold">OK</span>.</span></li>
+</ol>
+<div class="section">
+<p><span class="bold">Note:</span> For information about creating a new item to add to a Conversation's list of referring items, see <a href="oa_conv.htm#GUID-8CAFA288-3EA7-45C3-82C7-9B38F507A297">How do I add a new item to a list of referring items?</a></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2389"></a>
+<div class="props_rev_3"><a id="GUID-8CAFA288-3EA7-45C3-82C7-9B38F507A297"></a>
+<h2 id="OSNUG-GUID-8CAFA288-3EA7-45C3-82C7-9B38F507A297" class="sect2">How do I add a new item to a list of referring items?</h2>
+<div>
+<ol>
+<li><span>Go to the Conversation, and click <img width="24" height="21" src="img/GUID-8027CFBB-A671-4FE8-B971-7408E6B2D6D9-default.gif" alt="Referring Items tab" title="Referring Items tab" />.</span></li>
+<li><span>Click <img width="16" height="16" src="img/GUID-CEA3FC48-79F4-4214-B306-4635A4BD7600-default.gif" alt="Add new Social Object icon" title="Add new Social Object icon" />, then select the type of Social Object you want to create.</span></li>
+<li><span>In the <span class="bold">Name</span> field, enter a name for the Social Object.</span></li>
+<li><span>Select or clear the <span class="bold">Add to favorites</span> check box.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+<div class="section">
+<p><span class="bold">Note:</span> For information about adding an existing item, see <a href="oa_conv.htm#GUID-71260A60-573E-408F-8541-C09DC7352E18">How do I add an existing item to a list of referring items?</a></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2470"></a>
+<div class="props_rev_3"><a id="GUID-B7F3DB9C-FBB5-4124-A5E4-6A7AE925D007"></a>
+<h2 id="OSNUG-GUID-B7F3DB9C-FBB5-4124-A5E4-6A7AE925D007" class="sect2">How do I change a Conversation's language?</h2>
+<div>
+<div class="section">
+<p>When you change a Conversation language, new system messages, like <span class="italic">The Conversation attributes changed</span>, appear in the selected language. System messages that were present before the language change continue to appear in the language in place when they were posted. Messages and files posted to the Conversation are unaffected. They appear in the language that was used to write them.</p>
+<p>The language used for user interface elements in the add-in for Outlook, like field labels, button labels, dialog box names, banner headings, and other user interface elements, is determined by your Microsoft Office settings and your Operating System.</p>
+<p>Changing a Conversation language affects everyone's view of the Conversation.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Right-click the Conversation to configure, and select <span class="bold">Modify</span>.</span></li>
+<li><span>Select <span class="bold">Modify</span> to open the Modify dialog.</span></li>
+<li><span>Expand the <span class="bold">Language</span> menu, and select a language</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1977"></a>
+<div class="props_rev_3"><a id="GUID-69FB67A5-DCF5-4BF1-89B2-CF8E5069984F"></a>
+<h2 id="OSNUG-GUID-69FB67A5-DCF5-4BF1-89B2-CF8E5069984F" class="sect2">How do I mute a Conversation?</h2>
+<div>
+<div class="section">
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />, then right-click the Conversation you want to mute, and select <span class="bold">Mute</span>.</p>
+<p>Muting affects only your view of a Conversation. You can mute a Conversation so it does not appear to you in the <span class="bold">Conversations</span> panel when the filter <span class="bold">Yours</span>, <span class="bold">Available</span>, or <span class="bold">Favorites</span> is applied.</p>
+<p>Messages posted to a muted Conversation don't appear on the <span class="bold">Overview</span> panel or in your daily email digest. Flags assigned on a message in a muted Conversation do appear in your daily email digest (for information about the daily email digest, see <a href="oa_settings.htm#GUID-86AC8E69-2F95-48DB-A726-BA9F8DA9F667">How do I set my add-in for Outlook notification options?</a>).</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1978"></a>
+<div class="props_rev_3"><a id="GUID-075A94BD-ACBA-4DEF-8FBD-053F628BB905"></a>
+<h2 id="OSNUG-GUID-075A94BD-ACBA-4DEF-8FBD-053F628BB905" class="sect2">How do I copy a Conversation URL to my clipboard?</h2>
+<div>
+<div class="section">
+<p>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />, then right-click the Conversation, and select <span class="bold">Copy Link</span>. The Conversation URL is added to your clipboard. You can paste it anywhere you like. When clicked, it opens the Conversation in standalone mode in your browser.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG10570"></a>
+<div class="props_rev_3"><a id="GUID-026EC7D3-BDC7-4DBD-BBF6-ABB97D2A718D"></a>
+<h2 id="OSNUG-GUID-026EC7D3-BDC7-4DBD-BBF6-ABB97D2A718D" class="sect2">How do I download an archive of a Conversation?</h2>
+<div>
+<div class="section">
+<p>In the add-in for Outlook, the <span class="bold">Download Archive</span> option saves a Conversation to a .zip file. So, whether you are online or off, you can unzip the file to your local drive to read its messages and replies and view the documents added to it. The .zip file (named after the Conversation) contains the Conversation's list of members, messages, and replies in an HTML file (named by default <code class="codeph">index.html</code>).</p>
+<p>To download and work with an archive of a Conversation:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the Conversation, click <img width="13" height="11" src="img/GUID-9E68129A-C68D-4C25-82FC-A47316BCCB1E-default.gif" alt="Conversation Options icon" title="Conversation Options icon" />, then click <span class="bold">Download Archive</span>.</span></li>
+<li class="stepexpand"><span>Unzip the files to your computer.</span></li>
+<li class="stepexpand"><span>Open <code class="codeph">index.html</code>.</span>
+<div>
+<p>Clicking a document link opens the copy of the document that is included in the .zip file. All other links in <code class="codeph">index.html</code> (user names, like, reply, and so on) open Oracle Social Network in the browser.</p>
+</div>
+</li>
+</ol>
+<div class="section">
+<p><span class="bold">Note:</span> You can't make changes to an archive of a Conversation (though you can click a a link to open the Conversation in a browser and make changes there). <span>If you want to be able to make offline changes, instead download an offline copy of the Conversation (see <a href="oa_offline.htm#GUID-29D729AC-06B8-458A-AC45-6A71CE4D56B6">How do I download an Offline Copy of an item?</a></span></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1913"></a>
+<div class="props_rev_3"><a id="GUID-C4C6F809-E2C8-4955-82FC-6C04658C8D3E"></a>
+<h2 id="OSNUG-GUID-C4C6F809-E2C8-4955-82FC-6C04658C8D3E" class="sect2">How do I view recent messages?</h2>
+<div>
+<div class="section">
+<p>The <span class="bold">Overview</span> panel (<img width="31" height="29" src="img/GUID-6E50930C-0AEC-4BB7-A76B-FE155B14D03C-default.gif" alt="Most Recently Updated Messages icon" title="Most Recently Updated Messages icon" />) shows the latest messages posted to the Conversations and walls you're a member of and public Conversations you've joined.</p>
+<p>A red dot appears on the icon when you have unread messages in any of the listed Conversations.</p>
+<p>To view recent messages, click <img width="31" height="29" src="img/GUID-6E50930C-0AEC-4BB7-A76B-FE155B14D03C-default.gif" alt="Most Recently Updated Messages icon" title="Most Recently Updated Messages icon" />. If tooltips are enabled (see <a href="oa_settings.htm#GUID-B3654C43-9A44-44D3-ACEE-DC2167238D1A">How do I hide message tooltips?</a>), mouse over a message in the list to view its details in a tooltip.</p>
+<p>Double-click a message to view it in the Conversation or wall.</p>
+<p>Click the Conversation or wall name to go to the bottom of the Conversation or the top of the wall.</p>
+<p>Right-click a message to access a menu of useful actions.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1984"></a>
+<div class="props_rev_3"><a id="GUID-0B924FD3-F2E7-4158-9E77-EE4EE67AD36E"></a>
+<h2 id="OSNUG-GUID-0B924FD3-F2E7-4158-9E77-EE4EE67AD36E" class="sect2">How do I post messages to a Conversation?</h2>
+<div>
+<div class="section">
+<p>This describes how to post messages to a Conversation when the default setting to show messages in full view is selected.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" />, and select a filter to show the types of Conversations you want to see.</span></li>
+<li><span>Double-click the Conversation to open it.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-8487C43C-5727-4A73-8701-43C1CD7BBAB2-default.gif" alt="Posts tab icon" title="Posts tab icon" /> to open a view of all of the selected Conversation's messages.</span></li>
+<li><span>Enter a message in the field at the bottom of the panel, and click <span class="bold">Post</span> or press Enter, depending on your Preferences (see <a href="oa_settings.htm#GUID-672D9EC8-2194-4DF1-925D-13F659592891">How do I set up how to post messages?</a>).</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1997"></a>
+<div class="props_rev_3"><a id="GUID-4B0D1A16-3897-4DFE-95EF-06A5D6F1BB25"></a>
+<h2 id="OSNUG-GUID-4B0D1A16-3897-4DFE-95EF-06A5D6F1BB25" class="sect2">How do I hide membership messages?</h2>
+<div>
+<div class="section">
+<p>When a user is added to or removed from a Conversation, collection, group, or Social Object a membership message is posted to the item (for example, <span class="italic">This Conversation is now accessible to: Jane Doe</span>). If you'd prefer not to show those messages in an item, you can hide them.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click the type of object you want to open (for example, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" /> for Conversations).</span></li>
+<li><span>Double-click an item to open it.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" /> in the group banner, and select <span class="bold">Hide Membership Messages</span>.</span></li>
+</ol>
+<div class="section">
+<p>For information about hiding membership messages for all items, see <a href="oa_settings.htm#GUID-448544AF-243A-46BD-845C-B831FB349D10">How do I hide membership messages by default?</a></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1915"></a>
+<div class="props_rev_3"><a id="GUID-3FE29F9E-1996-4F37-A0FF-95FDBAE4746F"></a>
+<h2 id="OSNUG-GUID-3FE29F9E-1996-4F37-A0FF-95FDBAE4746F" class="sect2">How do I navigate from a message to its Conversation?</h2>
+<div>
+<div class="section">
+<p>When you view messages somewhere other than in a Conversation, for example, when you view messages in the <span class="bold">Overview</span> panel, you have a few ways to navigate to its home Conversation:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>Click the link to the Conversation included in the message.</p>
+</li>
+<li>
+<p>Double-click the message.</p>
+</li>
+<li>
+<p>Right-click the message and select <span class="bold">Go To Item</span>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1985"></a>
+<div class="props_rev_3"><a id="GUID-EE86C37F-2E77-41CA-8FE6-FA0464F153FF"></a>
+<h2 id="OSNUG-GUID-EE86C37F-2E77-41CA-8FE6-FA0464F153FF" class="sect2">How do I post a message through the note editor?</h2>
+<div>
+<div class="section">
+<p>The Note Editor provides options for formatting your messages. Use the method described here to post messages to a Conversation when the default setting to show messages in full view is selected.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select a filter to show the types of Conversations you want to see.</span></li>
+<li><span>Double-click the Conversation to open it.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-8487C43C-5727-4A73-8701-43C1CD7BBAB2-default.gif" alt="Posts tab icon" title="Posts tab icon" /> to show all messages posted to this Conversation.</span></li>
+<li><span>At the bottom of the panel, click <img width="25" height="24" src="img/GUID-4F302E91-52D2-487E-BE2D-30FB4F5AD15D-default.gif" alt="Rich Text Editor button" title="Rich Text Editor button" /> to open the Note Editor.</span></li>
+<li><span>Enter and format your message in the editor.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1986"></a>
+<div class="props_rev_3"><a id="GUID-DEF1916C-F22E-4F32-884E-6513C269E0BB"></a>
+<h2 id="OSNUG-GUID-DEF1916C-F22E-4F32-884E-6513C269E0BB" class="sect2">How do I edit my messages and replies?</h2>
+<div>
+<div class="section">
+<p>You can edit the messages you post. You can't edit other people's messages.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Navigate to the message or reply you want to edit.</span></li>
+<li><span>Right-click the message, then select <span class="bold">Edit Message</span> (or <span class="bold">Edit Reply</span>); or click <span class="bold">More</span>, then select <span class="bold">Edit Message</span> (or <span class="bold">Edit Reply</span>).</span></li>
+<li><span>Make your revisions, and click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1987"></a>
+<div class="props_rev_3"><a id="GUID-C2450E52-FC22-4762-B961-D9C0B24BA40F"></a>
+<h2 id="OSNUG-GUID-C2450E52-FC22-4762-B961-D9C0B24BA40F" class="sect2">How can I view earlier versions of an edited message?</h2>
+<div>
+<ol>
+<li><span>Navigate to the message or reply you want to edit.</span></li>
+<li><span>Right-click the message, then select <span class="bold">Edit Message</span> (or <span class="bold">Edit Reply</span>).</span></li>
+<li><span>Select a version to show in the dialog's message area.</span></li>
+<li><span>Click <span class="bold">Cancel</span> to close the dialog.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1990"></a>
+<div class="props_rev_3"><a id="GUID-5CA74ECC-8BC0-4FBC-B684-42A383E67D3A"></a>
+<h2 id="OSNUG-GUID-5CA74ECC-8BC0-4FBC-B684-42A383E67D3A" class="sect2">How do I reply to a message?</h2>
+<div>
+<div class="section">
+<p>In the add-in panel, you can reply to flags and Social Object, wall, and Conversation messages. When your add-in instance is configured to show messages in full view (the default setting), the reply area appears below the currently selected item. When messages are not configured to display in full view, the reply area appears at the bottom of the add-in panel.</p>
+<p>For more information, see <a href="oa_settings.htm#GUID-E2D9260A-F725-441B-8943-86D6219623FE">How do I set my add-in preferences?</a></p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Navigate to the message you want to reply to.</span></li>
+<li><span>Click <img width="21" height="18" src="img/GUID-01D49BA0-FE0A-48E3-A42B-A230E61F66D7-default.gif" alt="Reply icon" title="Reply icon" /> <span class="bold">Reply</span> under the message to open a reply entry field.</span></li>
+<li><span>Enter your reply.</span></li>
+<li><span>Optionally, click <img width="25" height="24" src="img/GUID-4F302E91-52D2-487E-BE2D-30FB4F5AD15D-default.gif" alt="Rich Text Editor button" title="Rich Text Editor button" /> to open the Note Editor to enter and format your reply.</span></li>
+<li><span>Click the <span class="bold">Post</span> button or <span class="bold">OK</span>, whichever applies.</span></li>
+</ol>
+<div class="section">
+<p><span class="bold">Note:</span> If you don't see <img width="50" height="45" src="img/GUID-21DF4DCB-1FC4-4B85-BFE4-E940AC404D06-default.gif" alt="Reply button" title="Reply button" /> <span class="bold">Reply</span> under a personal wall post shown on the Overview panel or on a person's wall, the person doesn't allow other people to reply to his or her wall posts.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1992"></a>
+<div class="props_rev_3"><a id="GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5"></a>
+<h2 id="OSNUG-GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5" class="sect2">How do I find items in a Conversation or wall?</h2>
+<div>
+<div class="section">
+<p>Search and navigation tools enable you to find unread messages, flags assigned to you, or text within the Conversation or wall.</p>
+<p>While viewing a Conversation or a wall, you can use the search and navigation tools:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>To find unread messages, click the unread messages count in the Posts header, and use the up and down arrows to navigate through the unread messages.</p>
+<div class="figure" id="GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5__GUID-BC5A8694-438E-4A32-8A17-8FDD75211256"><img width="338" height="74" src="img/GUID-43A84928-DAE6-42AA-845A-8DBF86E5EB96-default.gif" alt="Find unread messages controls" title="Find unread messages controls" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>To find flags assigned to you, click the flag count in the Posts header, and use the up and down arrows to navigate through your flags.</p>
+<div class="figure" id="GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5__GUID-F17C4561-6F39-4DB4-8F4D-88D33212911B"><img width="339" height="74" src="img/GUID-DABC9786-5CAF-4DAF-AC01-A0AE24E3B427-default.gif" alt="Find flags controls" title="Find flags controls" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>To find messages or documents that include specific text or posted by a particular person, click the search icon in the Posts header, enter the text or poster you want to search for, press Enter, and use the up and down arrows to navigate through the results.</p>
+<div class="figure" id="GUID-B3D04A21-8F82-4079-9191-2F063F4FF4B5__GUID-14BD3D2D-8E75-47DC-AFCD-D8A9DF036570"><img width="339" height="137" src="img/GUID-A0144E9C-B1A0-4401-A5DA-02CC9D745D23-default.gif" alt="Find text controls" title="Find text controls" /></div>
+<!-- class="figure" --></li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1994"></a>
+<div class="props_rev_3"><a id="GUID-96C23568-4726-4882-82E9-FC1E32F817AD"></a>
+<h2 id="OSNUG-GUID-96C23568-4726-4882-82E9-FC1E32F817AD" class="sect2">How do I mark a message as read or unread?</h2>
+<div>
+<div class="section">
+<p>To the left of the message, click the blue bullet to remove it and to mark the message as read; right-click the message, then select <span class="bold">Mark as Read</span>; or click <span class="bold">More</span>, then select <span class="bold">Mark as Read</span>.</p>
+<p><span class="bold">Note:</span> See also, <a href="oa_conv.htm#GUID-4694BED1-BD30-4A76-82F7-B54B1E1B7881">How do I mark all messages in a Conversation as read?</a></p>
+<p>If you want a message status to be unread, but you've already marked it as read, you can return the message to unread by right-clicking it and selecting <span class="bold">Mark as Unread</span>. This works only with messages others have posted and not your own posts.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1995"></a>
+<div class="props_rev_3"><a id="GUID-4694BED1-BD30-4A76-82F7-B54B1E1B7881"></a>
+<h2 id="OSNUG-GUID-4694BED1-BD30-4A76-82F7-B54B1E1B7881" class="sect2">How do I mark all messages in a Conversation as read?</h2>
+<div>
+<div class="section">
+<p>In the list of Conversations or in the Conversation title bar, click the unread message count in the blue box.</p>
+<p><span class="bold">Note:</span> See also, <a href="oa_conv.htm#GUID-96C23568-4726-4882-82E9-FC1E32F817AD">How do I mark a message as read or unread?</a></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1996"></a>
+<div class="props_rev_3"><a id="GUID-A6E7B030-D216-4321-8162-A2EAE7E2E1F5"></a>
+<h2 id="OSNUG-GUID-A6E7B030-D216-4321-8162-A2EAE7E2E1F5" class="sect2">How do I copy a message URL to my clipboard?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-C9181673-B9E8-469D-99E9-DD4ACE5A0D34-default.gif" alt="View Conversation icon" title="View Conversation icon" />.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select a filter to show the types of Conversations you want to see.</span></li>
+<li><span>Double-click the Conversation to open it.</span></li>
+<li><span>Right-click the message, and select <span class="bold">Copy Message Link</span> to add the message's URL to your clipboard.</span></li>
+</ol>
+<div class="section">
+<p>You can paste the URL wherever you like. When clicked, it opens the Conversation in your browser.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG1998"></a>
+<div class="props_rev_3"><a id="GUID-7B5434CE-8363-478A-930E-06E3C89BAC71"></a>
+<h2 id="OSNUG-GUID-7B5434CE-8363-478A-930E-06E3C89BAC71" class="sect2">How do I delete a message?</h2>
+<div>
+<div class="section">
+<p>You can delete messages you posted or messages on your profile wall.</p>
+<p><span class="bold">Note:</span> If you are a service administrator, you can delete any message.</p>
+<p>Right-click the message, then click <span class="bold">Delete Message</span>; or click <span class="bold">More</span>, then select <span class="bold">Delete Message</span>.</p>
+<p>To restore a deleted message, locate the deleted message icon (<img width="21" height="19" src="img/GUID-52F89197-E122-498A-AED6-4B7F23495B6F-default.gif" alt="Deleted Message icon" title="Deleted Message icon" />) where the message used to be, click <img width="21" height="19" src="img/GUID-52F89197-E122-498A-AED6-4B7F23495B6F-default.gif" alt="Deleted Message icon" title="Deleted Message icon" />, then confirm that you want to restore the message.</p>
+<p><span class="bold">Note:</span> Only a service administrator, the person who posted the message, or the person who deleted the message can restore the deleted message.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="oa_flags.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="oa_coll.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

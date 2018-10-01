@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Salesforce Invoke Header Properties</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Enter the Salesforce invoke header values for your integration." />
+<meta name="dcterms.created" content="2016-12-20T08:44:44Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Salesforce Adapter" />
+<meta name="dcterms.identifier" content="E66628-04" />
+<meta name="dcterms.isVersionOf" content="ICSSF" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-13437EA0-C9A6-47C5-9223-1659B3881DB8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-145C308A-96F1-465A-82F2-67CCCDC69EDA.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSF.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSF.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSF.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-27ECEC42-E732-46C2-964A-E872A0078771"></a> <span id="PAGE" style="display:none;">28/33</span> <!-- End Header -->
+<h1 id="ICSSF-GUID-27ECEC42-E732-46C2-964A-E872A0078771" class="sect1">Configuring Salesforce Invoke Header Properties</h1>
+<div>
+<p>Enter the Salesforce invoke header values for your integration.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-27ECEC42-E732-46C2-964A-E872A0078771.htm#GUID-4D02D0F9-9120-4F45-BA92-4117331E11FA" title="You can configure the invoke header properties for Salesforce Cloud.">What You Can Do from the Salesforce Target Headers Page</a></p>
+</li>
+<li>
+<p><a href="GUID-27ECEC42-E732-46C2-964A-E872A0078771.htm#GUID-2C18D53D-CDEA-456A-A584-49355396033E" title="The following table describes the key information on the Salesforce Cloud invoke Headers page.">What You See on the Salesforce Target Headers Page</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-4D02D0F9-9120-4F45-BA92-4117331E11FA"></a>
+<h2 id="ICSSF-GUID-4D02D0F9-9120-4F45-BA92-4117331E11FA" class="sect2">What You Can Do from the Salesforce Cloud Invoke Headers Page</h2>
+<div>
+<p>You can configure the invoke header properties for Salesforce Cloud.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-2C18D53D-CDEA-456A-A584-49355396033E"></a>
+<h2 id="ICSSF-GUID-2C18D53D-CDEA-456A-A584-49355396033E" class="sect2">What You See on the Salesforce Invoke Headers Page</h2>
+<div>
+<p>The following table describes the key information on the Salesforce Cloud invoke Headers page.</p>
+<div class="section">
+<div class="p">The headers available for configuration are based on the operation you selected on the invoke Operations page. There are two types of headers:
+<ul style="list-style-type: disc;">
+<li>
+<p>Request headers are sent with the request message to the Salesforce application.</p>
+</li>
+<li>
+<p>Response headers are received with the response message sent from the Salesforce application.</p>
+</li>
+</ul>
+Visit <a href="http://www.salesforce.com/" target="_blank">www.salesforce.com</a> and specify the specific name of the header property in the search utility.</div>
+<div class="tblformal" id="GUID-2C18D53D-CDEA-456A-A584-49355396033E__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment433" summary="Descriptions and usage of elements on the Headers page.">
+<thead>
+<tr class="cellalignment424">
+<th class="cellalignment435" id="d6293e99">Element</th>
+<th class="cellalignment435" id="d6293e101">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e105" headers="d6293e99">
+<p><span class="bold">AllOrNoneHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e105 d6293e101">
+<p>Specifies the transactional behavior for Salesforce application operations. The behavior of this parameter is based on the version of the integration and is applicable to the create, delete, update, undelete, and upsert operations.</p>
+<ul style="list-style-type: disc;">
+<li>
+<div class="p">Integration flows created before version 16.4.1:
+<ul style="list-style-type: disc;">
+<li>
+<p>If set to <span class="bold">true</span> and the response contains error elements, it maps to <code>UnexpectedErrorFault</code>. This is also the case if <span class="bold">AllOrNoneHeader</span> is set to <span class="bold">false</span> (that is, unselected).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Integration flows created for version 16.4.1 and later:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If set to <span class="bold">true</span> (that is, selected and there are error elements), it maps to <code>UnexpectedErrorFault</code>.</p>
+</li>
+<li>
+<p>If set to <span class="bold">false</span> (that is, unselected), the adapter returns the whole response even if it contains error elements along with success elements in the response.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you want integration flows created before 16.4.1 to use the new behavior, edit the Salesforce Adapter in the Adapter Endpoint Configuration Wizard.</p>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e155" headers="d6293e99">
+<p><span class="bold">AllowFieldTruncationHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e155 d6293e101">
+<div class="p">Specifies the truncation behavior for the following fields (each are string data types):
+<ul style="list-style-type: disc;">
+<li>
+<p><code>anyType</code></p>
+</li>
+<li>
+<p><code>email</code></p>
+</li>
+<li>
+<p><code>picklist</code></p>
+</li>
+<li>
+<p><code>encryptedstring</code></p>
+</li>
+<li>
+<p><code>textarea</code></p>
+</li>
+<li>
+<p><code>mulitpicklist</code></p>
+</li>
+<li>
+<p><code>phone</code></p>
+</li>
+<li>
+<p><code>string</code></p>
+</li>
+</ul>
+</div>
+Set <span class="bold">allowFieldTruncation</span> to one of the following values:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">True</span>: If you enter a value of 25 characters in a field of 20 characters, the first 20 records are inserted into the field and the transaction is successful.</p>
+</li>
+<li>
+<p><span class="bold">False</span>: If you enter a value of 25 characters in a field of 20 characters, an error is thrown and the transaction does not commit.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e216" headers="d6293e99">
+<p><span class="bold">AssignmentRuleHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e216 d6293e101">
+<p>Specifies the assignment rule to use when creating or updating an account, case, or lead. The assignment rule can be active or inactive. The ID is retrieved by querying the <code>AssignmentRule</code> object. If the ID is specified, you do not need to specify the <span class="bold">useDefaultRule</span> value.</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">assignmentRuleId</span>: The ID of the assignment rule to use. The ID is not validated by the Salesforce Cloud application, whether or not it exists. Validation occurs during runtime.</p>
+</li>
+<li>
+<p><span class="bold">useDefaultRule</span>: If set to <span class="bold">true</span>, the default (active) assignment rule is used. If set to <span class="bold">false</span>, the default (active) assignment rule is not used.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e249" headers="d6293e99">
+<p><span class="bold">EmailHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e249 d6293e101">
+<div class="p">Specifies whether or not to send a notification email. You can set the following properties:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">triggerAutoResponseEmail</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">true</span>: Triggers automatic response rules for leads and cases.</p>
+</li>
+<li>
+<p><span class="bold">false</span>: Automatic response rules for leads and cases are not triggered.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">triggerOtherEmail</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">true</span>: The email is triggered outside the organization.</p>
+</li>
+<li>
+<p><span class="bold">false</span>: The email is not triggered outside the organization.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">triggerUserEmail</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">true</span>: The email is triggered and sent to users in the organization. This email is triggered by a number of events such as adding comments to a case or updating a task.</p>
+</li>
+<li>
+<p><span class="bold">false</span>: The email is not triggered and sent to users in the organization.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e304" headers="d6293e99">
+<p><span class="bold">DebuggingHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e304 d6293e101">
+<div class="p">Specify the debugging log level. The following log levels are supported:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">NONE</span> (least verbose)</p>
+</li>
+<li>
+<p><span class="bold">DEBUGONLY</span></p>
+</li>
+<li>
+<p><span class="bold">DB</span></p>
+</li>
+<li>
+<p><span class="bold">PROFILING</span></p>
+</li>
+<li>
+<p><span class="bold">CALLOUT</span></p>
+</li>
+<li>
+<p><span class="bold">DETAIL</span> (most verbose)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e340" headers="d6293e99">
+<p><span class="bold">MruHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e340 d6293e101">
+<div class="p">The Salesforce application shows the most recently used (MRU) items. In API version 7.0 or later, the list is not updated by itself. Use <span class="bold">MruHeader</span> to update the list. Using this header can negatively impact performance. Set <span class="bold">updateMru</span> to one of the following values:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">true</span>: The list of MRU items is updated in the Salesforce application.</p>
+</li>
+<li>
+<p><span class="bold">false</span>: The list of most recently used items is not updated in the Salesforce application.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e366" headers="d6293e99">
+<p><span class="bold">PackageVersionHeader</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e366 d6293e101">
+<p>Specifies the package version for any installed package. The package version identifies the components in a package. The package version follows the format <code>majorNumber.minorNumber.patchNumber</code> (for example, <code>3.4.5</code>, where <code>3</code> refers to <code>majorNumber</code>, <code>4</code> refers to <code>minorNumber</code>, and <code>5</code> refers to <code>patchNumber</code>) .</p>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e400" headers="d6293e99">
+<p><span class="bold">QueryOptions</span> (request header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e400 d6293e101">
+<p>Specifies the batch size for queries. The default value is <code>500</code>, the minimum value is <code>200</code>, and the maximum value is <code>2000</code>.</p>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e418" headers="d6293e99">
+<p><span class="bold">DebuggingInfo</span> (response header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e418 d6293e101">
+<p>This information is only returned if the <span class="bold">debugLevel</span> request header is sent with the request payload to the Salesforce application.</p>
+</td>
+</tr>
+<tr class="cellalignment424">
+<td class="cellalignment436" id="d6293e430" headers="d6293e99">
+<p><span class="bold">LimitInfoHeader</span> (response header)</p>
+</td>
+<td class="cellalignment436" headers="d6293e430 d6293e101">
+<div class="p">Provides information about the limitations of API calls on a per-day basis for the organization.
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">current</span>:</p>
+The number of calls already used in the organization.</li>
+<li>
+<p><span class="bold">Limit</span>:</p>
+The organization&rsquo;s limit for the specified limit type.</li>
+<li>
+<p><span class="bold">Type</span>:</p>
+The limit information type specified in the header <code>API REQUESTS</code> (contains limit information about API calls for the organization).</li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment423">
+<tr>
+<td class="cellalignment430">
+<table class="cellalignment428">
+<tr>
+<td class="cellalignment427"><a href="GUID-13437EA0-C9A6-47C5-9223-1659B3881DB8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment427"><a href="GUID-145C308A-96F1-465A-82F2-67CCCDC69EDA.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment432">
+<table class="cellalignment426">
+<tr>
+<td class="cellalignment427"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment427"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment427"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

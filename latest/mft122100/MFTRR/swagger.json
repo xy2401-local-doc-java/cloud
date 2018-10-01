@@ -1,0 +1,604 @@
+
+{
+    "swagger":"2.0",
+    "info":{
+        "title":"REST API for Oracle Managed File Transfer Cloud Service 12.2.1",
+        "version":"2017.01.27",
+        "description":"Use the REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources. To manage SOA Cloud Service servers and services, see the <a href=\"http://docs.oracle.com/cloud/latest/soacs_gs/SCSAP/index.html\">REST API for Oracle SOA Cloud Service</a>.",
+        "x-summary":"Use the REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources."
+    },
+    "paths":{
+        "/sources":{
+            "get":{
+                "description":" Gets the list of sources active in MFT based on the criteria like application type, binding type, etc. The response contains the list of sources with URLs.",
+                "summary":"Get available active sources",
+                "operationId":"get /sources",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/source"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "sources":[
+                                    {
+                                        "name":"src1",
+                                        "url":"/scratch/demo",
+                                        "bindingType":"File",
+                                        "eventInvokeUrl":"/mftapp/rest/v1/events"
+                                    },
+                                    {
+                                        "name":"src2",
+                                        "url":"/scratch/username",
+                                        "bindingType":"File",
+                                        "eventInvokeUrl":"/mftapp/rest/v1/events"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5403",
+                                "errorKey":"MFT_WS_DISCOVERY_COULD_NOT_QUERY_MFT_SOURCES",
+                                "errorMessage":"Discovery service is unable to query MFT Sources for the given application ODI and search Filter file1."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"searchFilter",
+                        "in":"query",
+                        "description":"Full/partial Name of source(s) to be discovered",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"application",
+                        "in":"query",
+                        "description":"Type of the application binding you want to discover",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"bindingType",
+                        "in":"query",
+                        "description":"Binding type of source you want to discover",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"onlyEventEnabled",
+                        "in":"query",
+                        "description":"Discover only event enabled sources",
+                        "required":false,
+                        "type":"boolean"
+                    }
+                ],
+                "tags":[
+                    "Discover Sources"
+                ],
+                "x-internal-id":"sources-get"
+            }
+        },
+        "/events":{
+            "post":{
+                "description":" Triggers the file transfer from the specified source, submitting the file to MFT for processing. Responds with a unique id called \"eventSessionid\" which is used to track the event status and to get the resulting instance details.",
+                "summary":"Trigger a source",
+                "operationId":"post /events",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/event"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "eventSessionId":"799AE14A-9E37-42B9-9789-8F005039953E"
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5423",
+                                "errorKey":"MFT_WS_EVENT_SERVICE_SOURCE_DONT_EXITS_OR_NOT_DEPLOYED",
+                                "errorMessage":"Error in processing EventService request. The source Source1 either does not exist or not deployed"
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "consumes":[
+                    "application/json"
+                ],
+                "parameters":[
+                    {
+                        "name":"body",
+                        "in":"body",
+                        "description":"",
+                        "required":false,
+                        "schema":{
+                            "$ref":"#/definitions/eventRequest"
+                        },
+                        "x-examples":{
+                            "application/json":{
+                                "sourceName":"src1",
+                                "properties":{
+                                    "entry":[
+                                        {
+                                            "key":"name1",
+                                            "value":"value1"
+                                        },
+                                        {
+                                            "key":"name2",
+                                            "value":"value2"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                ],
+                "tags":[
+                    "Invoke MFT Events"
+                ],
+                "x-internal-id":"events-post"
+            }
+        },
+        "/events/{eventSessionId}":{
+            "get":{
+                "description":" Gets the event status and instances count for various statuses. Requires submitting an eventSessionId as a path parameter.",
+                "summary":"Get the instances summary of an event",
+                "operationId":"get /events/{eventSessionId}",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/eventStatus"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "activeInstanceCount":0,
+                                "completedInstanceCount":5,
+                                "failedInstanceCount":0,
+                                "status":"DONE"
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5436",
+                                "errorKey":"MFT_WS_EVENT_SERVICE_NO_EVENT_FOUND",
+                                "errorMessage":"Error in processing EventService request. No Event found with provided Event Session Id 799AE14A-9E37-42B9-9789-8F005039953."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json"
+                ],
+                "tags":[
+                    "Invoke MFT Events"
+                ],
+                "x-internal-id":"events-{eventSessionId}-get"
+            }
+        },
+        "/events/{eventSessionId}/instances":{
+            "get":{
+                "description":" Retrieves minimal details about the instances created by an event. Requires submitting an eventSessionId as a path parameter.",
+                "summary":"Get the resultant minimal instances details of event",
+                "operationId":"get /events/{eventSessionId}/instances",
+                "responses":{
+                    "200":{
+                        "description":"",
+                        "schema":{
+                            "$ref":"#/definitions/instanceDetails"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "eventSessionId":"ss212020-2139021-122",
+                                "totalInstances":1,
+                                "sourceName":"src1",
+                                "sourceType":"SFTP",
+                                "endpointReference":"srrha1",
+                                "submittedBy":"user1",
+                                "instances":[
+                                    {
+                                        "filename":"file1",
+                                        "status":{
+                                            "status":"COMPLETED",
+                                            "subStatus":"SUCCESSFUL"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Something went wrong",
+                        "schema":{
+                            "$ref":"#/definitions/error"
+                        },
+                        "examples":{
+                            "application/json":{
+                                "errorCode":"MFT-5436",
+                                "errorKey":"MFT_WS_EVENT_SERVICE_NO_EVENT_FOUND",
+                                "errorMessage":"Error in processing EventService request. No Event found with provided Event Session Id 799AE14A-9E37-42B9-9789-8F005039953."
+                            }
+                        }
+                    }
+                },
+                "produces":[
+                    "application/json",
+                    "application/json-detailed"
+                ],
+                "parameters":[
+                    {
+                        "name":"inDetail",
+                        "in":"query",
+                        "description":"Returns complete details of the resultant instances of an event.",
+                        "required":true,
+                        "type":"boolean"
+                    }
+                ],
+                "tags":[
+                    "Invoke MFT Events"
+                ],
+                "x-internal-id":"events-{eventSessionId}-instances-get"
+            }
+        }
+    },
+    "definitions":{
+        "source-xml":{
+        },
+        "source":{
+            "properties":{
+                "sources":{
+                    "type":"array",
+                    "description":"Sources discovered",
+                    "items":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "name":{
+                                    "description":"Name of the source.",
+                                    "type":"string"
+                                },
+                                "url":{
+                                    "description":"URL of the source.",
+                                    "type":"string"
+                                },
+                                "bindingType":{
+                                    "description":"Binding type of the source.",
+                                    "type":"string"
+                                },
+                                "eventInvokeUrl":{
+                                    "description":"URL at which to invoke the event.",
+                                    "type":"string"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "error-xml":{
+        },
+        "error":{
+            "title":"Error information.",
+            "type":"object",
+            "properties":{
+                "errorCode":{
+                    "type":"string",
+                    "description":"The error code that Oracle Managed File Transfer returns."
+                },
+                "errorKey":{
+                    "type":"string",
+                    "description":"The error key that Oracle Managed File Transfer returns."
+                },
+                "errorMessage":{
+                    "type":"string",
+                    "description":"A message describing the error that Oracle Managed File Transfer returns."
+                }
+            }
+        },
+        "eventRequest":{
+            "type":"object",
+            "properties":{
+                "sourceName":{
+                    "type":"string",
+                    "description":"Name of the source to be triggered."
+                },
+                "properties":{
+                    "type":"object",
+                    "description":"Properties passed with the source name.",
+                    "properties":{
+                        "entry":{
+                            "type":"array",
+                            "items":[
+                                {
+                                    "type":"object",
+                                    "properties":{
+                                        "key":{
+                                            "type":"string"
+                                        },
+                                        "value":{
+                                            "type":"string"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        "instanceDetails":{
+            "type":"object",
+            "properties":{
+                "eventSessionId":{
+                    "type":"string",
+                    "description":"Session ID of the event being queried."
+                },
+                "totalInstances":{
+                    "type":"integer",
+                    "description":"Total number of instances created out of this event."
+                },
+                "sourceName":{
+                    "type":"string",
+                    "description":"Name of the source."
+                },
+                "sourceType":{
+                    "type":"string",
+                    "description":"Depicts the source types for which the event was executed (File, FTP, SFTP, etc.)."
+                },
+                "endpointReference":{
+                    "type":"string",
+                    "description":"The source endpoint URL."
+                },
+                "submittedBy":{
+                    "type":"string",
+                    "description":"User who submitted the request."
+                },
+                "instances":{
+                    "type":"array",
+                    "description":"Information about the instances.",
+                    "items":[
+                        {
+                            "type":"object",
+                            "properties":{
+                                "filename":{
+                                    "type":"string",
+                                    "description":"Name of the processed file."
+                                },
+                                "status":{
+                                    "type":"object",
+                                    "description":"String values depicting status of the instance.",
+                                    "properties":{
+                                        "status":{
+                                            "type":"string",
+                                            "description":"Final status of the instance (Active, Completed, or Failed)."
+                                        },
+                                        "subStatus":{
+                                            "type":"string",
+                                            "description":"Substatus of the instance (Pending, Scheduled, Error, etc.)."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "instanceDetailedStatus-xml":{
+        },
+        "event":{
+            "type":"object",
+            "properties":{
+                "eventSessionId":{
+                    "type":"string",
+                    "description":"The ID of the event created."
+                }
+            }
+        },
+        "eventStatus":{
+            "type":"object",
+            "properties":{
+                "activeInstanceCount":{
+                    "type":"integer",
+                    "description":"The number of active instances."
+                },
+                "completedInstanceCount":{
+                    "type":"integer",
+                    "description":"The number of completed instances."
+                },
+                "failedInstanceCount":{
+                    "type":"integer",
+                    "description":"The number of failed instances."
+                },
+                "status":{
+                    "type":"string",
+                    "description":"String value depicting status of the instance."
+                },
+                "comments":{
+                    "type":"string",
+                    "description":"String value describing success or failure reason of the event."
+                }
+            }
+        },
+        "event-xml":{
+        },
+        "instanceDetailedStatus":{
+            "type":"object",
+            "properties":{
+                "eventSessionId":{
+                    "type":"string",
+                    "description":"Session ID of the event being queried."
+                },
+                "totalInstances":{
+                    "type":"integer",
+                    "description":"Total number of instances created out of this event."
+                },
+                "sourceName":{
+                    "type":"string",
+                    "description":"Name of the source."
+                },
+                "sourceType":{
+                    "type":"string",
+                    "description":"Depicts the source types for which the event was executed (File, FTP, SFTP, etc.)."
+                },
+                "endpointReference":{
+                    "type":"string",
+                    "description":"The source endpoint URL."
+                },
+                "submittedBy":{
+                    "type":"string",
+                    "description":"User who submitted the request."
+                },
+                "instances":{
+                    "type":"array",
+                    "description":"Information about the instances.",
+                    "items":{
+                        "type":"object",
+                        "properties":{
+                            "filename":{
+                                "type":"string",
+                                "description":"Name of the processed file."
+                            },
+                            "status":{
+                                "type":"object",
+                                "description":"String values depicting status of the instance.",
+                                "properties":{
+                                    "status":{
+                                        "type":"string",
+                                        "description":"Final status of the instance (Active, Completed, or Failed)."
+                                    },
+                                    "subStatus":{
+                                        "type":"string",
+                                        "description":"Substatus of the instance (Pending, Scheduled, Error, etc.)."
+                                    }
+                                }
+                            },
+                            "details":{
+                                "type":"object",
+                                "description":"Details of the instance.",
+                                "properties":{
+                                    "statusDetail":{
+                                        "type":"string",
+                                        "description":"Consolidated detail about the statuses of the instances related to a particular source."
+                                    },
+                                    "bytesReceived":{
+                                        "type":"string",
+                                        "description":"Bytes received."
+                                    },
+                                    "receivedTime":{
+                                        "type":"string",
+                                        "description":"Time at which the file was picked up from the source."
+                                    },
+                                    "sourceURL":{
+                                        "type":"string",
+                                        "description":"The source endpoint URL."
+                                    },
+                                    "priority":{
+                                        "type":"string",
+                                        "description":"Priority at which file is processed (High, Medium, or Low)."
+                                    },
+                                    "targets":{
+                                        "type":"array",
+                                        "description":"Target associated with the transfer.",
+                                        "items":{
+                                            "type":"object",
+                                            "properties":{
+                                                "targetName":{
+                                                    "type":"string",
+                                                    "description":"Name of the target."
+                                                },
+                                                "status":{
+                                                    "type":"string",
+                                                    "description":"Overall status of the target message process (Active, Completed, or Failed)."
+                                                },
+                                                "deliveryStatus":{
+                                                    "type":"string",
+                                                    "description":"Delivery status of the target message (pending, in progress, paused, etc.)."
+                                                },
+                                                "deliveredFileName":{
+                                                    "type":"string",
+                                                    "description":"Name of the file delivered."
+                                                },
+                                                "bytesTransferred":{
+                                                    "type":"string",
+                                                    "description":"Bytes transferred."
+                                                },
+                                                "completionTime":{
+                                                    "type":"string",
+                                                    "description":"Time of completion."
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "error":{
+                                "type":"object",
+                                "description":"Error information.",
+                                "properties":{
+                                    "errorCode":{
+                                        "type":"string",
+                                        "description":"Error code."
+                                    },
+                                    "errorLevel":{
+                                        "type":"string",
+                                        "description":"Level of the error."
+                                    },
+                                    "errorDescription":{
+                                        "type":"string",
+                                        "description":"Description of the error."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "instanceDetails-xml":{
+        },
+        "eventStatus-xml":{
+        },
+        "eventRequest-xml":{
+        }
+    },
+    "tags":[
+        {
+            "name":"Discover Sources",
+            "description":"Discover available active MFT sources. Click an operation to view method details and examples."
+        },
+        {
+            "name":"Invoke MFT Events",
+            "description":"Trigger sources and get instance details of events. Click an operation to view method details and examples."
+        }
+    ]
+}

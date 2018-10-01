@@ -1,0 +1,566 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="A shape is a resource profile that specifies the number of OCPUs and the amount of memory to be allocated to an instance in Compute Classic. The shape determines the type of disk drive that your instance uses. If you select a general purpose or high-memory shape, a hard-disk drive is used. If you select a high I/O shape, an NVM Express SSD disk is automatically attached to your instance. For general purpose and high-memory shapes, you can select the block storage disk size, but for high I/O shapes, the size of the disk is determined by the shape.">
+      <meta name="description" content="A shape is a resource profile that specifies the number of OCPUs and the amount of memory to be allocated to an instance in Compute Classic. The shape determines the type of disk drive that your instance uses. If you select a general purpose or high-memory shape, a hard-disk drive is used. If you select a high I/O shape, an NVM Express SSD disk is automatically attached to your instance. For general purpose and high-memory shapes, you can select the block storage disk size, but for high I/O shapes, the size of the disk is determined by the shape.">
+      <title>About Shapes</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Cloud Infrastructure Compute Classic">
+      <meta property="og:description" content="A shape is a resource profile that specifies the number of OCPUs and the amount of memory to be allocated to an instance in Compute Classic. The shape determines the type of disk drive that your instance uses. If you select a general purpose or high-memory shape, a hard-disk drive is used. If you select a high I/O shape, an NVM Express SSD disk is automatically attached to your instance. For general purpose and high-memory shapes, you can select the block storage disk size, but for high I/O shapes, the size of the disk is determined by the shape.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Cloud Infrastructure Compute Classic">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-09-07T08:10:26-07:00">
+      <meta name="dcterms.title" content="Using Oracle Cloud Infrastructure Compute Classic">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2018">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63022-37">
+      
+      <meta name="dcterms.product" content="en/cloud/iaas/compute-iaas-cloud">
+      
+      <link rel="prev" href="instances.html" title="Previous" type="text/html">
+      <link rel="next" href="instance-life-cycle.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"iaas","element_name":"Infrastructure Classic","display_in_url":true},"product_group":{"short_name":"not-applicable","element_name":"Not Applicable","display_in_url":false},"product":{"short_name":"compute-iaas-cloud","element_name":"Compute Classic","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="STCSG">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="instances.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="instance-life-cycle.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Cloud Infrastructure Compute Classic</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="creating-instances.html" property="item" typeof="WebPage"><span property="name">Creating Instances</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="instances.html" property="item" typeof="WebPage"><span property="name">About Instances</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">About Shapes</li>
+            </ol>
+            <a id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69" name="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69"></a><a id="OCSUG210"></a>
+            
+            <h2 id="STCSG-GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69" class="sect2">About Shapes</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p><span>A <span class="bold">shape</span> is a resource profile that specifies the number of OCPUs and the amount of memory to be allocated to an instance in <span>Compute Classic</span>. The shape determines the type of disk drive that your instance uses.</span><span> If you select a general purpose or high-memory shape, a hard-disk drive is used. If you select a high I/O shape, an NVM Express SSD disk is automatically attached to your instance. For general purpose and high-memory shapes, you can select the block storage disk size, but for high I/O shapes, the size of the disk is determined by the shape.</span></p>
+               <p>When you select a shape, your instance is created with the corresponding number of Oracle Compute Units (OCPUs). An OCPU provides CPU capacity equivalent to one physical core of a processor with hyper threading enabled. Each OCPU corresponds to two hardware execution threads, known as vCPUs, as shown in the following figure.</p><br><img src="img/ocpu.gif" height="126" width="510" alt="OCPUs on an Intel Xeon processor" title="OCPUs on an Intel Xeon processor"><br><p>A wide range of shapes is available to help you select a combination of processing power and memory for your instances that best suits your business requirement. The smallest general purpose shape provides 7.5 GB memory with a single OCPU. Larger shapes provide more OCPUs with correspondingly higher memory. If you need more memory per OCPU, select a high-memory shape.</p>
+               <p> If you require fast I/O access, select one of the high I/O shapes. An NVMe SSD disk is automatically attached to your instance with the device name <code class="codeph">/dev/xvdz</code>. <span>This is a local, nonpersistent NVMe SSD disk, which provides high I/O access rates. After your instance is created, you can mount this disk and format it as required.</span> The size of this NVMe SSD disk is fixed depending on the selected shape.
+               </p>
+               <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__GUID-287D9017-5EE7-450F-B4CD-78473E34796D">
+                  <p class="notep1">Note:</p>
+                  <p>Remember, when you select a high I/O shape, the NVMe SSD disk that is attached automatically is a nonpersistent disk. If you delete, shut down, or restart the instance or stop the instance orchestration, data stored on this disk is deleted. </p>
+               </div>
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p>While selecting the shape for an instance, consider the nature of the applications that you plan to deploy on the instance, the number of users that you expect to use the applications, and also how you expect the load to scale in the future. Remember to also factor in the CPU and memory resources that are necessary for the operating system.</p>
+                  </li>
+                  <li>
+                     <p>Select a shape that meets the requirements of your workload with a sufficient buffer for intermittent spikes in the load. If you’re not sure what shape is appropriate for an instance, then start small, experiment with a representative workload, and then settle on a shape. This approach may help you achieve an optimal trade-off between resource allocation and performance.</p>
+                  </li>
+               </ul>
+               <p>The following tables list the shapes that are currently available in <span>Compute Classic</span>.
+               </p>
+               <p><span class="bold">General Purpose Shapes</span></p>
+               <div class="tblformal" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__GUID-45A19893-1B74-423E-BFB1-A248DAA9407B">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table lists the general-purpose shapes currently available in Compute Classic." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="25%" id="d11055e75">Shape</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e77">OCPUs</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e79">vCPUs</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e81">Memory (GB)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e85" headers="d11055e75 ">
+                              <p><span class="bold">OC3</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e85 d11055e77 ">
+                              <p>1</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e85 d11055e79 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e85 d11055e81 ">
+                              <p>7.5</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e99" headers="d11055e75 ">
+                              <p><span class="bold">OC4</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e99 d11055e77 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e99 d11055e79 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e99 d11055e81 ">
+                              <p>15</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e113" headers="d11055e75 ">
+                              <p><span class="bold">OC5</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e113 d11055e77 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e113 d11055e79 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e113 d11055e81 ">
+                              <p>30</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e127" headers="d11055e75 ">
+                              <p><span class="bold">OC6</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e127 d11055e77 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e127 d11055e79 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e127 d11055e81 ">
+                              <p>60</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e141" headers="d11055e75 ">
+                              <p><span class="bold">OC7</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e141 d11055e77 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e141 d11055e79 ">
+                              <p>32</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e141 d11055e81 ">
+                              <p>120</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e155" headers="d11055e75 ">
+                              <p><span class="bold">OC8</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e155 d11055e77 ">
+                              <p>24</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e155 d11055e79 ">
+                              <p>48</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e155 d11055e81 ">
+                              <p>180</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e169" headers="d11055e75 ">
+                              <p><span class="bold">OC9</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e169 d11055e77 ">
+                              <p>32</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e169 d11055e79 ">
+                              <p>64</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e169 d11055e81 ">
+                              <p>240</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__NOTALLORACLECOMPUTECLOUDSERVICESITE-A3245D82">
+                  <p class="notep1">Note:</p>
+                  <p>Not all <span>Compute Classic</span> sites include all shapes. To check which shapes are available on your site, start the Create Instance wizard and view the list of shapes on the <span class="wintitle">Shape</span> page. See <a href="creating-instance-instances-page.html" title="You can create a single instance using the Compute Classic web console. While creating an instance, you can specify persistent storage volumes to be associated with your instance. You can also enable access to your instance using SSH, or add your instance to a security list. If you add your instance to a security list, you can use that security list in security rules to control access to your instance.">Creating an Instance from the Instances Page</a>. Alternatively, to get a list of shapes using the API,  use the <code class="codeph">GET /shape/</code> method. For more information, see <span><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/iaas/compute-iaas-cloud/stcsg&amp;id=compute-api-endpoints" target="_blank"><span class="italic">REST API for Oracle Cloud Infrastructure Compute Classic</span></a></span>.
+                  </p>
+               </div>
+               <p><span class="bold">High-Memory Shapes</span></p>
+               <div class="tblformal" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__THISTABLEPROVIDESTHELISTOFSHAPESCUR-8781C969">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table lists the high-memory shapes currently available in Compute Classic." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="25%" id="d11055e238">Shape</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e240">OCPUs</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e242">vCPUs</th>
+                           <th align="left" valign="bottom" width="25%" id="d11055e244">Memory (GB)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e248" headers="d11055e238 ">
+                              <p><span class="bold">OC1M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e248 d11055e240 ">
+                              <p>1</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e248 d11055e242 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e248 d11055e244 ">
+                              <p>15</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e262" headers="d11055e238 ">
+                              <p><span class="bold">OC2M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e262 d11055e240 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e262 d11055e242 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e262 d11055e244 ">
+                              <p>30</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e276" headers="d11055e238 ">
+                              <p><span class="bold">OC3M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e276 d11055e240 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e276 d11055e242 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e276 d11055e244 ">
+                              <p>60</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e290" headers="d11055e238 ">
+                              <p><span class="bold">OC4M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e290 d11055e240 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e290 d11055e242 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e290 d11055e244 ">
+                              <p>120</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e304" headers="d11055e238 ">
+                              <p><span class="bold">OC5M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e304 d11055e240 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e304 d11055e242 ">
+                              <p>32</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e304 d11055e244 ">
+                              <p>240</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e318" headers="d11055e238 ">
+                              <p><span class="bold">OC8M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e318 d11055e240 ">
+                              <p>24</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e318 d11055e242 ">
+                              <p>48</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e318 d11055e244 ">
+                              <p>360</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="25%" id="d11055e332" headers="d11055e238 ">
+                              <p><span class="bold">OC9M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e332 d11055e240 ">
+                              <p>32</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e332 d11055e242 ">
+                              <p>64</p>
+                           </td>
+                           <td align="left" valign="top" width="25%" headers="d11055e332 d11055e244 ">
+                              <p>480</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__NOTALLORACLECOMPUTECLOUDSERVICESITE-A3244407">
+                  <p class="notep1">Note:</p>
+                  <p>Not all <span>Compute Classic</span> sites include all shapes. To check which shapes are available on your site, start the Create Instance wizard and view the list of shapes on the <span class="wintitle">Shape</span> page. See <a href="creating-instance-instances-page.html" title="You can create a single instance using the Compute Classic web console. While creating an instance, you can specify persistent storage volumes to be associated with your instance. You can also enable access to your instance using SSH, or add your instance to a security list. If you add your instance to a security list, you can use that security list in security rules to control access to your instance.">Creating an Instance from the Instances Page</a>. Alternatively, to get a list of shapes using the API,  use the <code class="codeph">GET /shape/</code> method. For more information, see <span><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/iaas/compute-iaas-cloud/stcsg&amp;id=compute-api-endpoints" target="_blank"><span class="italic">REST API for Oracle Cloud Infrastructure Compute Classic</span></a></span>.
+                  </p>
+               </div>
+               <p><span class="bold">High I/O Shapes</span></p>
+               <p>When you select a high I/O shape, an NVM Express solid-state drive (SSD) disk is attached to your instance. The size of the disk is determined by the shape you select.</p>
+               <div class="p">
+                  <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__GUID-37D4BCA1-F99F-414F-84D4-DB45A5797EE9">
+                     <p class="notep1">Note:</p>
+                     <p>Remember, when you select a high I/O shape, the NVMe SSD disk that is attached automatically is a nonpersistent disk. If you delete, shut down, or restart the instance or stop the instance orchestration, data stored on this disk is deleted. </p>
+                  </div>
+               </div>
+               <div class="tblformal" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__THISTABLELISTSTHEHIGH-MEMORYSHAPESC-98D6FBBE">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table lists the high I/O shapes currently available in some Compute Classic sites." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="20%" id="d11055e407">Shape</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e409">OCPUs</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e411">vCPUs</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e413">Memory (GB)</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e415">Size of SSD Disk (GB)</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e419" headers="d11055e407 ">
+                              <p><span class="bold">OCIO1M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e419 d11055e409 ">
+                              <p>1</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e419 d11055e411 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e419 d11055e413 ">
+                              <p>15</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e419 d11055e415 ">
+                              <p>400</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e436" headers="d11055e407 ">
+                              <p><span class="bold">OCIO2M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e436 d11055e409 ">
+                              <p>2</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e436 d11055e411 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e436 d11055e413 ">
+                              <p>30</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e436 d11055e415 ">
+                              <p>800</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e453" headers="d11055e407 ">
+                              <p><span class="bold">OCIO3M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e453 d11055e409 ">
+                              <p>4</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e453 d11055e411 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e453 d11055e413 ">
+                              <p>60</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e453 d11055e415 ">
+                              <p>1600</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e470" headers="d11055e407 ">
+                              <p><span class="bold">OCIO4M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e470 d11055e409 ">
+                              <p>8</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e470 d11055e411 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e470 d11055e413 ">
+                              <p>120</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e470 d11055e415 ">
+                              <p>3200</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e487" headers="d11055e407 ">
+                              <p><span class="bold">OCIO5M</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e487 d11055e409 ">
+                              <p>16</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e487 d11055e411 ">
+                              <p>32</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e487 d11055e413 ">
+                              <p>240</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e487 d11055e415 ">
+                              <p>6400</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__GUID-F4BBA235-C944-4A9F-A27E-7B4F0B902090">
+                  <p class="notep1">Note:</p>
+                  <p>Not all <span>Compute Classic</span> sites include high I/O shapes. <span>To check whether your site offers high I/O shapes, start the Create Instance wizard and view the list of shapes on the <span class="wintitle">Shape</span> page. See <a href="creating-instance-instances-page.html" title="You can create a single instance using the Compute Classic web console. While creating an instance, you can specify persistent storage volumes to be associated with your instance. You can also enable access to your instance using SSH, or add your instance to a security list. If you add your instance to a security list, you can use that security list in security rules to control access to your instance.">Creating an Instance from the Instances Page</a>. Alternatively, to get a list of shapes using the API,  use the <code class="codeph">GET /shape/</code> method. For more information, see <span><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/iaas/compute-iaas-cloud/stcsg&amp;id=compute-api-endpoints" target="_blank"><span class="italic">REST API for Oracle Cloud Infrastructure Compute Classic</span></a></span>.</span></p>
+               </div>
+               <p><span class="bold">GPU Optimized Shapes</span></p>
+               <div class="tblformal" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__THISTABLELISTSTHEHIGH-MEMORYSHAPESC-73B40D63">
+                  <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table lists the GPU optimized  shapes currently available in Compute Classic." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" width="20%" id="d11055e561">Shape</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e563">OCPUs</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e565">vCPUs</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e567">Memory (GB)</th>
+                           <th align="left" valign="bottom" width="20%" id="d11055e569">gpuS</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e573" headers="d11055e561 ">
+                              <p><span class="bold">OCSG1&#x2013;K80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e573 d11055e563 ">
+                              <p>3</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e573 d11055e565 ">
+                              <p>6</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e573 d11055e567 ">
+                              <p>60</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e573 d11055e569 ">
+                              <p>1</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e590" headers="d11055e561 ">
+                              <p><span class="bold">OCSG1&#x2013;M80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e590 d11055e563 ">
+                              <p>3</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e590 d11055e565 ">
+                              <p>6</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e590 d11055e567 ">
+                              <p>60</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e590 d11055e569 ">
+                              <p>1</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e607" headers="d11055e561 ">
+                              <p><span class="bold">OCSG2&#x2013;K80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e607 d11055e563 ">
+                              <p>6</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e607 d11055e565 ">
+                              <p>12</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e607 d11055e567 ">
+                              <p>120</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e607 d11055e569 ">
+                              <p>2</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e624" headers="d11055e561 ">
+                              <p><span class="bold">OCSG2&#x2013;M80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e624 d11055e563 ">
+                              <p>6</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e624 d11055e565 ">
+                              <p>12</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e624 d11055e567 ">
+                              <p>120</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e624 d11055e569 ">
+                              <p>2</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e641" headers="d11055e561 ">
+                              <p><span class="bold">OCSG3&#x2013;K80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e641 d11055e563 ">
+                              <p>12</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e641 d11055e565 ">
+                              <p>24</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e641 d11055e567 ">
+                              <p>240</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e641 d11055e569 ">
+                              <p>4</p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" width="20%" id="d11055e658" headers="d11055e561 ">
+                              <p><span class="bold">OCSG3&#x2013;M80</span></p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e658 d11055e563 ">
+                              <p>12</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e658 d11055e565 ">
+                              <p>24</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e658 d11055e567 ">
+                              <p>240</p>
+                           </td>
+                           <td align="left" valign="top" width="20%" headers="d11055e658 d11055e569 ">
+                              <p>4</p>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+               <div class="infoboxnote" id="GUID-1DD0FA71-AC7B-461C-B8C1-14892725AA69__NOTALLCOMPUTECLASSICSITESINCLUDEALL-73B40D62">
+                  <p class="notep1">Note:</p>
+                  <p>Not all <span>Compute Classic</span> sites include all shapes. To check which shapes are available on your site, start the Create Instance wizard and view the list of shapes on the <span class="wintitle">Shape</span> page. See <a href="creating-instance-instances-page.html" title="You can create a single instance using the Compute Classic web console. While creating an instance, you can specify persistent storage volumes to be associated with your instance. You can also enable access to your instance using SSH, or add your instance to a security list. If you add your instance to a security list, you can use that security list in security rules to control access to your instance.">Creating an Instance from the Instances Page</a>. Alternatively, to get a list of shapes using the API,  use the <code class="codeph">GET /shape/</code> method. For more information, see <span><a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/iaas/compute-iaas-cloud/stcsg&amp;id=compute-api-endpoints" target="_blank"><span class="italic">REST API for Oracle Cloud Infrastructure Compute Classic</span></a></span>.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

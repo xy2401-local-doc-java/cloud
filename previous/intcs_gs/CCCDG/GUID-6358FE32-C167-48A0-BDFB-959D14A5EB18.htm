@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adapter Troubleshooting</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="This section describes common problems and solutions related to installation and configuration of Oracle adapters." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EAD40020-BE95-41A5-975D-EC0967C89764.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-CE5D682D-C249-4101-AD06-C27557653304.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6358FE32-C167-48A0-BDFB-959D14A5EB18"></a> <span id="PAGE" style="display:none;">68/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-6358FE32-C167-48A0-BDFB-959D14A5EB18" class="sect1">Adapter Troubleshooting</h1>
+<div>
+<p>This section describes common problems and solutions related to installation and configuration of Oracle adapters.</p>
+<div class="section">
+<p class="subhead1">Cloud Adapter 12.1.3 Patch installation was unsuccessful</p>
+<p><span class="bold">Solution:</span> Refer to the <a class="olink CCCIG" target="_blank" href="../CCCIG/toc.htm">Cloud Adapter SDK Installation Guide</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Can&rsquo;t see the custom adapter even after registration</p>
+<p><span class="bold">Solution:</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Validate and ensure that the extension ID (in <code>extension.xml</code>) and <code>Bundle-Name</code> (in <code>MANIFEST.MF</code>) match and are unique.</p>
+</li>
+<li>
+<p>Validate and ensure that the <code>adapterPluginID</code> (in <code>cloud-adapter.xml</code>) and <code>ADAPTER_NAME</code> (in <code>SampleCloudAdapterConstants</code>) match and are unique.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Can&rsquo;t create an External Reference or Exposed Service</p>
+<p>An error pops up when a wizard user drags and drops a newly built (<code>samplecloudadapter</code>) adapter onto the External Reference or Exposed Services pane.</p>
+<p><span class="bold">Solution:</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Validate and ensure that the <code>implementation-class</code> property value in the <code>extension.xml</code> file is equivalent to the <code>SampleCloudScaEndpointImpl</code> class in the wizard package.</p>
+</li>
+<li>
+<p>For ICS or Service Bus, validate and ensure that the <code>adapterFactory</code> property value in <code>cloud-adapter.xml</code> is equivalent to the Factory (<code>SampleCloudAdapterFactory</code>) class defined in the plugin package.</p>
+</li>
+<li>
+<p>Validate that the <code>PageID</code> in the <code>UIBinding</code> class matches the <code>PageID</code> in the<code>ICloudAdapterPage</code> .</p>
+</li>
+<li>
+<pre dir="ltr">
+// Adding request config page to wizard in UIBinding class
+editPages.put(SampleCloudAdapterConstants.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_ID, 
+   new SampleInboundRequestConfigPage(context));
+
+// SampleInboundRequestConfigPage uses
+public String getPageId() {
+   return SampleCloudAdapterConstants.SAMPLE_CLOUD_APP_INBOUND_REQ_CONFIG_PAGE_ID;
+}
+</pre></li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Ping is not successful</p>
+<p><span class="bold">Solution:</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Check if any proxy settings are applied. By default, JDeveloper has System Proxy Settings.</p>
+</li>
+<li>
+<p>Verify that the application service URL is up and running.</p>
+</li>
+<li>
+<p>Ensure that the ping method (<code>getAccount</code>) and method namespace match the target service.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Runtime invocation fails</p>
+<p><span class="bold">Solution:</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Ensure that the <code>METAINF.MF</code> file has all the dependency JAR files.</p>
+</li>
+<li>
+<p>Validate that the <code>CONNECTION_FACTORY_CLASS</code> constant value matches the <code>SampleCloudAppConnectionFactory</code> class.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Runtime invocation fails because the JCA Binding invocation of the reference operation failed</p>
+<p>The following message appears:</p>
+<pre dir="ltr">
+Can&rsquo;t find dispatch method for {&lt;NAMESPACE&gt;}&lt;OPERATION_NAME&gt;
+</pre>
+<p><span class="bold">Solution:</span> Print the request payload after the root element normalization.</p>
+<p>Go to <code>SampleCloudAdapterMessageHandler</code>.</p>
+<p>Operation: <code>processRequestHeaders</code></p>
+<p>Statement: <code>this.printXML(doc);</code></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-EAD40020-BE95-41A5-975D-EC0967C89764.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-CE5D682D-C249-4101-AD06-C27557653304.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

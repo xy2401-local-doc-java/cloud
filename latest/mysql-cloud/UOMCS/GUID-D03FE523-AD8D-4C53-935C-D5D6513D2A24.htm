@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a MySQL Server Deployment</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="To create a database deployment on MySQL Cloud Service, use the Create MySQL Cloud Service wizard as described in the following procedure." />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-690CD607-7FF2-44ED-9F7B-C8A7FEDB045D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24"></a> <span id="PAGE" style="display:none;">14/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24" class="sect1">Creating a MySQL Server Deployment</h1>
+<div>
+<p>To create a database deployment on <span id="MYSQLCSHORT">MySQL Cloud Service</span>, use the Create <span>MySQL Cloud Service</span> wizard as described in the following procedure.</p>
+<div class="section">
+<p class="subhead1">Before You Begin</p>
+<p>Before you create a MySQL Server deployment on <span id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__MYSQLCSHORT">MySQL Cloud Service</span>, ensure you have created the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>An SSH public/private key pair</p>
+<p>When creating a MySQL Server deployment, you must associate an SSH public key with the compute infrastructure supporting the deployment. You can upload a file containing the public key value or you can paste in the value of a public key.</p>
+<p>An SSH public key is used for authentication when you use an SSH client to connect to a compute node associated with the deployment. When you connect, you must provide the private key that matches the public key.</p>
+<div class="p">You generate an SSH public/private key pair using a standard SSH key generation tool. For more information, see <a href="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1.htm#GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-2D0A2D2F-A2F9-4D2B-BAE5-0C89B94675FC">
+<p class="notep1">Note:</p>
+It is also possible to create an SSH key pair in the <span class="bold">Create MySQL Cloud Service Instance</span> wizard.</div>
+</div>
+</li>
+<li>
+<p>A cloud storage backup location (Optional)</p>
+<p>If you want to automatically back up your database to cloud storage, you must associate it with a cloud storage backup location. The type of location you specify depends on the infrastructure the deployment is built on:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold"><span>Oracle Cloud Infrastructure</span>:</span> cloud backups are stored in an <span>Oracle Cloud Infrastructure Object Storage</span> bucket. You must create a storage bucket before you create database deployments configured to back up to cloud storage.</p>
+</li>
+<li>
+<p><span class="bold"><span>Oracle Cloud Infrastructure Classic</span></span>: cloud backups are stored in an <span>Oracle Cloud Infrastructure Object Storage Classic</span> container. You can create the container beforehand and provide the wizard with information about it, or you can have the wizard create the container for you.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-1750E8A2-E984-49D9-9A0C-B8067E967285">
+<p class="notep1">Note:</p>
+<p>The <span class="bold">Cloud Storage Container</span> field of the <span class="bold">Create New Instance</span> wizard on <span id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__OCICLASSIC">Oracle Cloud Infrastructure Classic</span> is now populated with a default, valid URL, and a default container name, <span class="bold">MySQLCS</span>. This container is created the first time you create a new instance. To use a different container name, edit the url to remove the default container name, and replace with the desired name.</p>
+</div>
+<p>The container becomes associated with <span>MySQL Cloud Service</span>. Once associated with <span>MySQL Cloud Service</span>, the container becomes part of your subscription (or trial) rather than part of an Oracle IaaS Public Cloud Services subscription (or trial).</p>
+<p>Whether you create the container beforehand or have the wizard do it for you, you are prompted for the following information about the container:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The name of the container</p>
+</li>
+<li>
+<p>The user name and password of a user who has read/write access to the container</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-26956FE6-AE04-4896-B10A-0209BB587D08">
+<p class="notep1">Note:</p>
+Do not use the <span>Oracle Cloud Infrastructure Object Storage Classic</span> container that you are using to back up <span>MySQL Cloud Service</span> databases for any other purpose. For example, do not also use it to back up <span>Oracle Java Cloud Service</span> instances. Using the container for multiple purposes can result in billing errors.</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Procedure</p>
+<p>To create a MySQL Server deployment on <span>MySQL Cloud Service</span>:</p>
+<ol>
+<li>
+<p>Open the <span>MySQL Cloud Service</span> console.</p>
+<p>For detailed instructions, see <a href="GUID-3E097002-8B5C-45EB-AB93-1D6E8AA24433.htm">Accessing MySQL Cloud Service Console</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create Instance</span>.</p>
+<p>The Create <span>MySQL Cloud Service</span> wizard starts and the <span class="bold">Create New Instance</span> page is displayed. The Create New Instance wizard is divided into <span class="bold">Instance</span>, <span class="bold">Service Details</span>, and <span class="bold">Confirm</span> pages</p>
+</li>
+<li>
+<p>On the <span class="bold">Instance</span> section, specify the following information for your MySQL Server deployment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Instance Name</span>&mdash;enter a name for your MySQL Server deployment. This name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must not exceed 50 characters.</p>
+</li>
+<li>
+<p>Must start with a letter.</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or hyphens.</p>
+</li>
+<li>
+<p>Must not contain any other special characters.</p>
+</li>
+<li>
+<p>Must be unique within the identity domain.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Description</span>&mdash;enter a description for your MySQL Server deployment. (Optional)</p>
+</li>
+<li>
+<p><span class="bold">Email Address</span>&mdash;provide an email address for updates on the provisioning status.</p>
+</li>
+<li>
+<p><span class="bold">Metering Frequency</span>&mdash;determines the type of metering used to determine billing for resources used by this instance. Currently, only Hourly is supported by <span>MySQL Cloud Service</span>.</p>
+</li>
+<li>
+<p><span class="bold">Region</span>&mdash;name of the Compute Region. (Available only if your identity domain is enabled for regions.)</p>
+<p>The region for the database deployment. If you choose a region that supports <span>Oracle Cloud Infrastructure</span>, the <span class="bold">Availability Domain</span> and <span class="bold">Subnet</span> fields are displayed, and the deployment will be created on <span>Oracle Cloud Infrastructure</span>. Otherwise, the deployment will be created on <span>Oracle Cloud Infrastructure Classic</span>.</p>
+<p>Choose <span class="bold">No Preference</span> to let <span>MySQL Cloud Service</span> choose an <span>Oracle Cloud Infrastructure Classic</span> region for you. The <span class="bold">Default Data Region</span> you defined when setting up your account is used.</p>
+</li>
+<li>
+<p><span class="bold">Availability Domain</span>&mdash; (Available only on <span>Oracle Cloud Infrastructure</span>) The availability domain, within the selected region, where your deployment is placed.</p>
+</li>
+<li>
+<p><span class="bold">Subnet</span>&mdash; (Available only on <span>Oracle Cloud Infrastructure</span>) The subnet (within the availability domain) which determine network access to the deployment.</p>
+</li>
+<li>
+<p><span class="bold">IP Network</span>&mdash; (Available only on <span>Oracle Cloud Infrastructure</span>)</p>
+<p>(Available only if you selected a region and defined one or more IP networks created in that region using <span>Oracle Cloud Infrastructure Compute Classic</span>.)</p>
+<p>Select the IP network where you want the database deployment placed. Choose <span class="bold">No Preference</span> to use the default shared network provided by <span>Oracle Cloud Infrastructure Compute Classic</span>.</p>
+<p>For more information about IP networks, see these topics in <span id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__STCSG"><cite>Using Oracle Cloud Infrastructure Compute Classic</cite></span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink STCSG-GUID-7299731F-7AEB-41F2-9938-2066CE7648F2" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=STCSG-GUID-7299731F-7AEB-41F2-9938-2066CE7648F2">About IP Networks</a></p>
+</li>
+<li>
+<p><a class="olink STCSG-GUID-9A826000-2728-4837-905A-7835FA775F9B" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=STCSG-GUID-9A826000-2728-4837-905A-7835FA775F9B">Creating an IP Network</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Tags</span>&mdash;metadata used to identify instances. Select the required tags from the drop-down list, or create the required tags. Tags can be defined as a comma-separated list of <span class="bold">keys</span>, or as a <span class="bold">key:value</span> pairs. For example: <span class="bold">productionDB,owner:John,admin:John</span>. You can search and filter on tags from the <span class="bold">Instances</span> page. You can also define tags after the instance is created, from the <span class="bold">Instance Overview</span> page.</p>
+<p>For more information, see <a href="GUID-783F50CB-63B0-443F-9D5A-FA924F04B34E.htm" title="A tag is an arbitrary key or a key-value pair that you can create and assign to your instances. You can use tags to organize and categorize your instances, and to search for them.">Managing Tags</a>.</p>
+</li>
+</ul>
+<p>Then, click <span class="bold">Next</span> to navigate to the <span class="bold">Service Details</span> section.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-CD7A0381-BCF0-418F-910C-2EC9DB7CE2D3">
+<p class="notep1">Note:</p>
+An asterisk adjacent to a field name indicates that the field is required.</div>
+<ol>
+<li>
+<p>In the <span class="bold">Configuration</span> section, select the name, description, and compute shape of your MySQL Server deployment and provide an SSH public key to access the compute infrastructure supporting the deployment.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Shape</span>&mdash;select a compute shape from the list of supported OCPU (Oracle CPU) and RAM combinations. For more information, see <a href="GUID-766E2463-E556-4B9C-8C86-2B51F9BBFC2D.htm#GUID-C7FCD83D-8CE0-44B6-9E60-CB41F30D110C">Computing Power</a>.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-0F6FF3F7-5F26-4FED-809F-625DF328EA52">
+<p class="notep1">Note:</p>
+It is possible to scale the shape up or down, depending on your requirements. For more information, see <a href="GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F.htm" title="If a database deployment on MySQL Cloud Service is performing poorly or is running out of storage, you can scale up the environment supporting the database deployment.">Scaling MySQL Cloud Service</a>.</div>
+</li>
+<li>
+<p><span class="bold">SSH Public Key</span>&mdash;provide the SSH public key to be used for authentication when using an SSH client to connect to a compute node that is associated with your MySQL Server deployment.</p>
+<p>Click <span class="bold">Edit</span> to specify the public key, either by uploading a file containing the public key value or by pasting in the value of a public key.</p>
+<p>If you paste in the value, make sure the value does not contain line breaks or end with a line break.</p>
+<p>Click <span class="bold">Create a New Key</span> and <span class="bold">Enter</span> to generate and download a new SSH key pair.</p>
+</li>
+</ul>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Use High Performance Storage</span>&mdash;select to use high-performance storage for the Data, Redo, and Binlog volumes. This is solid state drive storage.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Reserved IPs</span>&mdash;select the reserved IP address you want to assign to this service. To assign any of the Reserved IP addresses, select <span class="bold">Assign Automatically</span>. For more information on reserved IP addresses, see <a href="GUID-A51C1C2F-8674-4CCC-BCFE-A8528D8D5ACA.htm" title="If your identity domain supports the regional compute infrastructure, you can create and manage IP reservations. You use these reservations when creating MySQL Cloud Service deployments instead of having MySQL Cloud Service assign one for you.">IP Reservations</a></p>
+<p>This field is displayed only if a Region was selected on the preceding screen, and the <span class="bold">IP Network</span> field was set to <span class="bold">No Preference</span>.</p>
+</li>
+<li>
+<p>In the <span class="bold">MySQL Configuration</span> section, select the amount of data storage, administrator user, administrator password, database schema name.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Usable Database Storage (GB)</span>&mdash;enter the amount of storage you want for database data (in GB). The default is 25, the maximum is 1024.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-84E6532C-F8EA-4259-91F2-AA6C762C08BA">
+<p class="notep1">Note:</p>
+If you do not define local backup storage, the maximum available is 2TB.</div>
+</li>
+<li>
+<p><span class="bold">Administration User</span>&mdash;enter the administration user name. The default value is <span class="bold">root</span>. This value must:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must be between 2 and 32 characters.</p>
+</li>
+<li>
+<p>Must start with a letter.</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or this symbol: _ (underscore).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Administration Password</span> and <span class="bold">Confirm Password</span>&mdash;enter and then reenter a password for administrative access to the MySQL Server.</p>
+<p>The password you enter:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must be 8 to 30 characters in length.</p>
+</li>
+<li>
+<p>Must contain at least one lowercase letter</p>
+</li>
+<li>
+<p>Must contain at least one uppercase letter</p>
+</li>
+<li>
+<p>Must contain at least one number</p>
+</li>
+<li>
+<p>Must contain at least one of these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Database Schema Name</span>&mdash;enter a name for the database instance(s). This name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must not exceed 64 characters. Can contain letters, numbers and special characters (_,$).</p>
+</li>
+<li>
+<p>Must start with a letter, underscore (_), or dollar sign ($).</p>
+</li>
+<li>
+<p>Must contain only letters, numbers, or these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Server Character Set</span>&mdash;select the required character set from the drop-down menu.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-FED1AD20-8BAB-42F7-A6B2-A6685A191BE3">
+<p class="notep1">Note:</p>
+Although the default character set for MySQL is latin1, <span>MySQL Cloud Service</span> uses utf8mb4 by default.</div>
+</li>
+<li>
+<p><span class="bold">Timezone</span>&mdash;select the timezone for the MySQL server. The default value, <span class="bold">SYSTEM</span>, sets the timezone to that used by the compute node. See<a href="GUID-B0117047-75FE-46FD-9D4F-F8BF5AD0542D.htm">Supported Timezones</a> for a complete list.</p>
+</li>
+<li>
+<p><span class="bold">MySQL Port</span>&mdash;define the port on which the server listens. The range of available ports is 3200 to 3399. The default is 3306.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Configure Enterprise Monitor</span>&mdash;select <span class="bold">Yes</span> to configure a MySQL Enterprise Monitor installation on this instance. Select <span class="bold">No</span> to carry on without installing MySQL Enterprise Monitor.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-0B41C2E8-DC33-410F-9891-BA54C7E0C2A6">
+<p class="notep1">Note:</p>
+If you intend to install MySQL Enterprise Monitor, it is strongly recommended that you dedicate a single MySQL Cloud Service instance to this installation. It is also recommended that this MySQL Server deployed on that instance is not used for any other purpose than the MySQL Enterprise Monitor&rsquo;s repository. A compute node shape of OC3 is the recommended minimum.</div>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-DDF478B1-E999-4AAF-978D-4A46E91F9C5E">
+<p class="notep1">Note:</p>
+If MySQL Enterprise Monitor is provisioned, you must also enable the default access rule, <span class="bold">ora_p2admin_em</span>. If this access rule is not enabled, it is not possible to access MySQL Enterprise Monitor.</div>
+<p>If you select Yes, the following fields are displayed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Manager User</span>&mdash;enter the name of the MySQL Enterprise Monitor&rsquo;s Manager user. This is the user who configures the installation, adds users, and so on.</p>
+</li>
+<li>
+<p><span class="bold">Manager Password</span>&mdash;enter and confirm a password for the Manager User.</p>
+<p>The password you enter:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Must be 8 to 30 characters in length.</p>
+</li>
+<li>
+<p>Must contain at least one lowercase letter</p>
+</li>
+<li>
+<p>Must contain at least one uppercase letter</p>
+</li>
+<li>
+<p>Must contain at least one number</p>
+</li>
+<li>
+<p>Must contain at least one of these symbols: _ (underscore), # (hash sign), or $ (dollar sign).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Agent User</span>&mdash;enter the name of the Agent User. This user is used by the MySQL Enterprise Agents to connect to the MySQL Service Manager and relay the information collected about the host on which the agent is installed and any MySQL instances installed on that host.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-E234643B-CC40-4507-BFD0-FF2A07718A02">
+<p class="notep1">Note:</p>
+No agent installations are provided at this time. It is currently only possible to install the MySQL Enterprise Service Manager, which can monitor any MySQL instances, local or remote, using a built-in agent.. If you want to monitor MySQL instances installed on other MySQL Cloud Service instances, you can configure the MySQL Service Manager to monitor them, but cannot monitor a remote host&rsquo;s operating system, file system, or network interfaces. Although agent installations are not currently possible, it is mandatory to define an Agent User and Password to properly configure the MySQL Enterprise Monitor. These parameters can be changed later.</div>
+</li>
+<li>
+<p><span class="bold">Agent Password</span>&mdash;enter, and confirm, the agent password.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In the <span class="bold">Backup and Recovery Configuration</span> section, choose a backup option for the database deployment and, depending on your choice, provide information about the Oracle Storage Cloud Service container where cloud backups are to be stored.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-459A7DA8-4DCF-4E4A-A2F5-ABA29065A21D">
+<p class="notep1">Note:</p>
+It is not possible to change the backup location after the service is created.</div>
+<p><span class="bold">Backup Destination</span>&mdash;select how backups are to be configured:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Both Cloud Storage and Local Storage</span>&mdash;backups are configured to be created automatically and stored both on local storage and on an Oracle Storage Cloud Service container.</p>
+</li>
+<li>
+<p><span class="bold">None</span>&mdash;backups are not configured.</p>
+</li>
+<li>
+<p><span class="bold">Cloud Storage Only</span>&mdash;backups are configured to be created automatically and stored in an Oracle Storage Cloud Service container. No local backup is created for this option.</p>
+</li>
+</ul>
+<p>If you select <span class="bold">Cloud Storage Only</span> or <span class="bold">Both Cloud Storage and Local Storage</span>, the Cloud Storage Container, User Name and Password fields are displayed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Cloud Storage Container</span>&mdash;The URL where backups to cloud storage are to be stored:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure</span>, enter the URL of an existing <span>Oracle Cloud Infrastructure Object Storage</span> bucket. The URL is of the form:</p>
+<pre dir="ltr">
+https://swiftobjectstorage.<span class="italic">region</span>.oraclecloud.com/v1/<span class="italic">namespace</span>/<span class="italic">bucket</span>
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+https://swiftobjectstorage.us-phoenix-1.oraclecloud.com/v1/mycompany/mybucket
+</pre>
+<p>You must create this storage bucket before you begin creating the database deployment. See <a href="https://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=oci_api_objectstorage" target="_blank">Object Storage API</a> in <span>Oracle Cloud Infrastructure</span> documentation.</p>
+</li>
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure Classic</span>, the field is populated by default with the URL of an <span>Oracle Cloud Infrastructure Object Storage Classic</span> container. The URL is of the general form:</p>
+<pre dir="ltr">
+https://<span class="italic">storage-instance-specifier</span>/<span class="italic">container</span>
+</pre>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-C7C8088B-DD62-42BA-AA09-46B60E42CBAB">
+<p class="notep1">Note:</p>
+If the account does not include an Object Storage service entitlement or if the region selected is an Oracle Cloud Infrastructure region, the container field is not autopopulated.</div>
+<p>To use a container other than the default, <span class="bold">MySQLCS</span>, replace the default container name with the desired name. The new name can be an existing container, or you can create a new container by adding the new name to the URL, and selecting <span class="bold">Create Cloud Storage Container</span>.</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-4323815D-5467-4F7D-88D8-E2FF4A2D4489">
+<p class="notep1">Note:</p>
+<p>Do not use the storage container that you are using to back up <span>MySQL Cloud Service</span> deployments to cloud storage for any other purpose. For example, do not also use it to back up <span id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__CLOUDJAVASERV">Oracle Java Cloud Service</span> instances to cloud storage. Using the container for multiple purposes can result in billing errors.</p>
+</div>
+<p>To determine the <code class="codeph"><span class="codeinlineitalic">storage-instance-specifier</span></code> value for your account, see <a class="olink CSSTO00707" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO00707">About REST URLs for Oracle Storage Cloud Service Resources</a> in <cite>Using Oracle Cloud Infrastructure Object Storage Classic</cite>. If this container doesn&rsquo;t exist, use the <span class="bold">Create Cloud Storage Container</span> checkbox to create it.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Cloud Storage User Name</span>&mdash;A user with read/write (and creation, if necessary) access to the location specified in <span class="bold">Cloud Storage Container</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure</span>, enter the user name you use to sign in to the <span>Oracle Cloud Infrastructure</span> console.</p>
+</li>
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure Classic</span>, enter the Oracle Cloud user name of the administrator of the <span>Oracle Cloud Infrastructure Object Storage Classic</span> container specified in <span class="bold">Cloud Storage Container</span>. Usually, this is your Oracle Cloud user name.</p>
+</li>
+</ul>
+</li>
+<li>
+<div class="p"><span class="bold">Cloud Storage Password</span>&mdash;The password necessary to access the location specified in <span class="bold">Cloud Storage Container</span>
+<ul style="list-style-type: disc;">
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure</span>, enter the Auth Token generated in&nbsp;Oracle Cloud Infrastructure&nbsp;for the user that you specified. For more information, see <a href="https://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=oci_general_paasprereqs" target="_blank">Prerequisites for Oracle Platform Services on Oracle Cloud Infrastructure</a> in the <span>Oracle Cloud Infrastructure</span> documentation..</p>
+</li>
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure Classic</span>, enter the password of the Oracle Cloud user specified in <span class="bold">Cloud Storage User Name</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><span class="bold">Create Cloud Storage Container</span>&mdash; (Not available on Oracle Cloud Infrastructure) Create a new <span>Oracle Cloud Infrastructure Object Storage Classic</span> container as part of the database deployment creation. Specify the container name and the Cloud Storage user name and password in the preceding fields. Enabled by default.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>To populate, or initialize, the new database with the data stored in an existing backup, in cloud storage, select <span class="bold">Yes</span> in the <span class="bold">Create Instance from Existing Backup</span> field and do the following:</p>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-45FA1F9B-1D64-442E-813F-37E8F51C1469">
+<p class="notep1">Note:</p>
+This process supports MySQL Enterprise Backup Full or TTS, compressed, single-file backups, with the .mbi extension, or mysqldump&rsquo;s logical backups, gzipped (*.sql.gz).</div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Backup File Cloud Storage Path</span>&mdash;enter the path to the backup file. The following path types are permitted:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For deployments in <span>Oracle Cloud Infrastructure</span>, enter the URL of an existing <span>Oracle Cloud Infrastructure Object Storage</span> bucket. The URL is of the form:</p>
+<pre dir="ltr">
+https://swiftobjectstorage.<span class="italic">region</span>.oraclecloud.com/v1/<span class="italic">namespace</span>/<span class="italic">bucket</span>/<span class="italic">backupFileName</span>
+</pre>
+<p>For example:</p>
+<pre dir="ltr">
+https://swiftobjectstorage.us-phoenix-1.oraclecloud.com/v1/mycompany/mybucket
+</pre>
+<p>You must create this storage bucket before you begin creating the database deployment. See <a href="https://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=oci_api_objectstorage" target="_blank">Object Storage API</a> in <span>Oracle Cloud Infrastructure</span> documentation.</p>
+</li>
+<li>
+<p>For database deployments in <span>Oracle Cloud Infrastructure Classic</span>, the URL is of the general form:</p>
+<pre dir="ltr">
+https://<span class="italic">storage-instance-specifier</span>/<span class="italic">container</span>/<span class="italic">backupFileName</span>
+</pre>
+<p>To determine the <code class="codeph"><span class="codeinlineitalic">storage-instance-specifier</span></code> value for your account, see <a class="olink CSSTO00707" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO00707">About REST URLs for Oracle Storage Cloud Service Resources</a> in <cite>Using Oracle Cloud Infrastructure Object Storage Classic</cite>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Username</span>&mdash;username of the user with read access to the container specified.</p>
+</li>
+<li>
+<p><span class="bold">Password</span>&mdash;password of the user specified in <span class="bold">Username</span>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24__GUID-A8AD7F2B-811C-49FC-ADC8-140E601FD2CA">
+<p class="notep1">Note:</p>
+You must define adequate storage space in the <span class="bold">Usable Database Storage</span> field. If the usable storage is less than the size of the backup used, an error is displayed.</div>
+</li>
+<li>
+<p>On the Confirmation page, review the information listed. If you are satisfied with the information, click <span class="bold">Create</span>.</p>
+<p>If you need to change the information, use the navigation bar or <span class="bold">Back</span> button at the top of the wizard to step back through the pages in the wizard. Click <span class="bold">Cancel</span> to cancel out of the wizard without creating a new database deployment.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-690CD607-7FF2-44ED-9F7B-C8A7FEDB045D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

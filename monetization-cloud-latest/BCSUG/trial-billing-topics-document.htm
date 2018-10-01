@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About trial billing</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Trial billing is a process that simulates billing in Oracle Monetization Cloud and creates trial invoices. You use trial billing to validate billing results without impacting customer accounts." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="using-bill-now-create-bill1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="generating-invoices2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DEEAD488-FE24-4BAC-8D14-BF80E1DB2500"></a> <span id="PAGE" style="display:none;">44/67</span> <!-- End Header -->
+<h1 id="BCSUG-GUID-DEEAD488-FE24-4BAC-8D14-BF80E1DB2500" class="sect1"><span class="enumeration_chapter">37</span> About trial billing</h1>
+<div>
+<p>Trial billing is a process that simulates billing in Oracle Monetization Cloud and creates trial invoices. You use trial billing to validate billing results without impacting customer accounts.</p>
+<p>For background information, see <a href="billing2.htm#GUID-0D6FB6F8-633A-43B7-BCF5-21CE09CF043E" title="Billing is a process that calculates the amount each customer owes for the current billing cycle and then stores the information internally in Oracle Monetization Cloud. It doesn't generate invoices or collect payments from your customers.">About billing</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-ECDB1E47-4E82-401E-A020-CD206CA36D74">About trial billing</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-0703B89D-610F-4E03-9579-517CE418F53B">About trial invoices</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-07740D4E-9822-4695-AC7F-70AD6A525DA1">Using trial invoices to validate billing</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-2403685A-B2C3-4509-B686-50A2FB39D42F">Running a trial billing job</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-40E99C8F-4E58-41A2-9523-45F8817FC626">Retrieving trial invoices from the SFTP server</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-8B08BB03-B5E1-442E-9148-176EEBA617B9">Purging trial invoices from the database</a></p>
+</li>
+<li>
+<p><a href="trial-billing-topics-document.htm#GUID-7487878D-C1C8-439E-A366-98E3225A5DCB">Related topics</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2"><a id="GUID-ECDB1E47-4E82-401E-A020-CD206CA36D74"></a>
+<h2 id="BCSUG-GUID-ECDB1E47-4E82-401E-A020-CD206CA36D74" class="sect2">About trial billing</h2>
+<div>
+<p>Before you run billing, you can run trial billing to validate that your product offerings are generating your expected billing results.</p>
+<p>Trial billing calculates the amount owed by customers for any billing cycle without updating customer account balances or creating bills in the database.</p>
+<p>This table summarizes the similarities and differences between regular billing and trial billing.</p>
+<div class="tblformal" id="GUID-ECDB1E47-4E82-401E-A020-CD206CA36D74__GUID-8F29E057-57D0-4693-BF63-18B9AB28B2D0">
+<table class="cellalignment211" summary="This table lists the differences between trial billing and regular billing.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment204" id="d19309e68">Billing</th>
+<th class="cellalignment204" id="d19309e71">Trial billing</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e76" headers="d19309e68">
+<p>Creates cycle forward and usage items, and saves them in the database.</p>
+</td>
+<td class="cellalignment207" headers="d19309e76 d19309e71">
+<p>Creates cycle forward and usage items, but doesn't record them in the database.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e83" headers="d19309e68">
+<p>Creates bills and saves them in the database.</p>
+</td>
+<td class="cellalignment207" headers="d19309e83 d19309e71">
+<p>Creates bills, but doesn't record them in the database.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e90" headers="d19309e68">
+<p>Calculates and totals the balance impacts for the previous billing cycle.</p>
+</td>
+<td class="cellalignment207" headers="d19309e90 d19309e71">
+<p>Calculates and totals the balance impacts for any billing cycle.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e97" headers="d19309e68">
+<p>Calculates and updates account balances.</p>
+</td>
+<td class="cellalignment207" headers="d19309e97 d19309e71">
+<p>Calculates but doesn't update account balances.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e104" headers="d19309e68">
+<p>Doesn't create invoices.</p>
+</td>
+<td class="cellalignment207" headers="d19309e104 d19309e71">
+<p>Creates trial invoices and saves them to the database and your SFTP server.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d19309e111" headers="d19309e68">
+<p>Shows the exact amount that is due in a bill.</p>
+</td>
+<td class="cellalignment207" headers="d19309e111 d19309e71">
+<p>May not show the exact amount that is due in a bill. This is because events that have a balance impact can occur after you run trial billing.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect2"><a id="GUID-0703B89D-610F-4E03-9579-517CE418F53B"></a>
+<h2 id="BCSUG-GUID-0703B89D-610F-4E03-9579-517CE418F53B" class="sect2">About trial invoices</h2>
+<div>
+<p>A trial invoice lists the balance information for a customer's bill, and the amount due. It includes the same content and uses the same invoice template as the regular invoice, except the customer's bill number has a prefix of TRIAL and each page has a Trial Invoice watermark. For example, this figure shows the watermark and bill number on a trial invoice.</p>
+<div class="figure" id="GUID-0703B89D-610F-4E03-9579-517CE418F53B__GUID-B8120305-45B6-40E1-8FAF-B1E793C6A00E"><br />
+<div class="imageleft"><img class="imageleft" width="591" height="258" src="img/usr_trial_invoice.gif" alt="Description of usr_trial_invoice.gif follows" title="Description of usr_trial_invoice.gif follows" /><br />
+<a href="img_text/usr_trial_invoice.htm">Description of the illustration usr_trial_invoice.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>You use trial invoices to validate billing charges before creating the final bills and invoices for your customers. If you find errors in a trial invoice, you can make corrections such as balance adjustments or payment allocations to the customer's account. When you are satisfied with the results from trial billing, you can generate the final bills and invoices.</p>
+<p>Trial invoices are saved to the Oracle Monetization Cloud database and your SFTP server. You can purge the trial invoices from the database at any time to save storage space.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-07740D4E-9822-4695-AC7F-70AD6A525DA1"></a>
+<h2 id="BCSUG-GUID-07740D4E-9822-4695-AC7F-70AD6A525DA1" class="sect2">Using trial invoices to validate billing</h2>
+<div>
+<p>The following examples show how to use trial invoices to validate billing charges:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Verifying your new product offerings.</p>
+<p>You can use trial billing to verify that a new product offering is set up correctly. For example, you can designate a few accounts as test accounts for specified products and then run trial billing against those accounts. The trial invoices can then be reviewed by your billing specialists to verify that charges have been applied correctly based on a predefined output.</p>
+</li>
+<li>
+<p>Verifying miscellaneous charges, such as refunds.</p>
+<p>If your company issues a mass refund to customers, you can run trial billing at any time during the billing cycle to verify that the refunds were applied correctly. Select a few accounts and run trial billing.</p>
+<p>You can perform similar verifications for taxes, late fees, or finance charges; for example, when a new tax rate is introduced, when a late fee changes from $20 to $25, or when the finance rate changes from 6% to 7%. You can run trial billing to verify that the new rates are being applied.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-2403685A-B2C3-4509-B686-50A2FB39D42F"></a>
+<h2 id="BCSUG-GUID-2403685A-B2C3-4509-B686-50A2FB39D42F" class="sect2">Running a trial billing job</h2>
+<div>
+<div class="section">To create trial bills and trial invoices, you run a trial billing job in Business Operations. You can run a trial billing job against all accounts or only accounts with a specified account status, payment method, or billing date. Alternately, you can upload a list of accounts and bill units to run trial billing against.</div>
+<!-- class="section" -->
+<div class="section">
+<p>In Business Operations, select the <span class="bold">Jobs</span> icon, <span class="bold">Trial Billing</span>, and then <span class="bold">New</span>.</p>
+<p>The options for running the job are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Run the job once. You can run it immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Repeat the job.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify how often to run the job: daily, weekly, or monthly.</p>
+</li>
+<li>
+<p>Specify when to start the job: immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Specify when to end the job: never or at a specified date and time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Get an email notification when the job completes.</p>
+</li>
+</ul>
+<p>You can create trial bills and trial invoices based on these attributes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The status of the accounts to bill: active or closed.</p>
+</li>
+<li>
+<p>The payment method: credit and debit cards, or invoices.</p>
+</li>
+<li>
+<p>The account's billing day of the month (DOM). You can run billing for accounts whose billing DOM occurs:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>At any time. The job creates trial bills for accounts with any billing DOM.</p>
+</li>
+<li>
+<p>On or before a specified date. The job creates trial bills for accounts whose billing DOM is any day before midnight of the day that you specify. For example, if you specify June 10, 2018, the job creates trial bills for accounts that have a billing DOM of June 10, 2018 or earlier.</p>
+</li>
+<li>
+<p>Between a range of dates (inclusive). The job creates trial bills for all accounts with a billing DOM that occurs within the date range, have completed a full billing cycle, and haven't been billed already.</p>
+</li>
+<li>
+<p>Within a number of days before and after the job runs. For example, if you specify 3 and the job runs on May 15th, the job creates trial bills for accounts that have a billing DOM from May 12th through May 18th.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The account number. You can upload a list of accounts that you want to create trial bills for. The file must be in XML format and include the account number and bill unit ID. For example:</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;BillRunConfiguration&gt;
+    &lt;BillingList&gt;
+        &lt;Account&gt;71929&lt;/Account&gt;
+        &lt;Billinfo&gt;72457&lt;/Billinfo&gt;
+    &lt;/BillingList&gt;
+&lt;/BillRunConfiguration&gt;
+</pre></li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-40E99C8F-4E58-41A2-9523-45F8817FC626"></a>
+<h2 id="BCSUG-GUID-40E99C8F-4E58-41A2-9523-45F8817FC626" class="sect2">Retrieving trial invoices from the SFTP server</h2>
+<div>
+<p>Trial billing jobs save a copy of your trial invoice files in PDF format to your SFTP server, so you can download and analyze them on other systems.</p>
+<p>You retrieve the trial invoices from the SFTP server's <span class="bold">/u01/sftp/</span><span class="italic">environment</span><span class="bold">_tenant_sftp/outgoing/invoices</span> directory, where <span class="italic">environment</span> is <span class="bold">prod</span> for the production environment or <span class="bold">test</span> for the development environment. The directory will contain both regular invoices and trial invoices.</p>
+<ul style="list-style-type: disc;" id="GUID-40E99C8F-4E58-41A2-9523-45F8817FC626__UL_QDT_4WN_Z2B">
+<li>Trial invoices will have <span class="bold">_65</span> appended to their file names, such as <span class="bold">OMC_Consumer_Invoice_0.0.0.1-10454657_10454401_65.pdf</span>.</li>
+<li>Regular invoices will have <span class="bold">_1</span> appended to their file names, such as <span class="bold">OMC_Consumer_Invoice_0.0.0.1-10454657_10454401_1.pdf</span>.</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-8B08BB03-B5E1-442E-9148-176EEBA617B9"></a>
+<h2 id="BCSUG-GUID-8B08BB03-B5E1-442E-9148-176EEBA617B9" class="sect2">Purging trial invoices from the database</h2>
+<div>
+<div class="p">
+<p>To save space and improve system performance, you can purge trial invoices from the Oracle Monetization Cloud database. You can control whether to delete all trial invoices or a subset of trial invoices.</p>
+<p>To purge trial invoices from the database, you create a purge trial invoices job in Business Operations. The job removes trial invoices from the database only. Trial invoices will continue to remain in BI Publisher and your SFTP server.</p>
+<p>If the job encounters an error, none of the trial invoices are purged from the database. You must fix the problem and run the purge trial invoices job again.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>In Business Operations, select the <span class="bold">Jobs</span> icon, <span class="bold">Purge Trial Invoices</span>, and then <span class="bold">New</span>.</p>
+<p>The options for running the job are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Run the job once. You can run it immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Repeat the job.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify how often to run the job: daily, weekly, or monthly.</p>
+</li>
+<li>
+<p>Specify when to start the job: immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Specify when to end the job: never or at a specified date and time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Get an email notification when the job completes.</p>
+</li>
+</ul>
+<p>You can purge trial bills from the database based on these attributes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The status of the accounts: active or closed.</p>
+</li>
+<li>
+<p>The account's billing DOM. You can purge trial invoices for accounts whose billing DOM is:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>At any time. The job purges trial invoices for accounts with any billing DOM.</p>
+</li>
+<li>
+<p>On or before a specified date. The job purges trial invoices for accounts that have a billing DOM on the specified date or earlier.</p>
+</li>
+<li>
+<p>Between a range of dates (inclusive). The job purges trial invoices for accounts whose billing DOM is from 12:01am of the starting date to midnight of the ending date.</p>
+</li>
+<li>
+<p>Within a number of days before and after the job runs. For example, if you specify 3 and the job runs on May 15th, the job purges trial invoices for accounts that have a billing DOM from May 12th through May 18th.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The account number. You can upload a list of accounts that you want to purge trial invoices for. The file must be in XML format and include the account number. For example:</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;BillRunConfiguration&gt;
+    &lt;BillingList&gt;
+        &lt;Account&gt;71929&lt;/Account&gt;
+    &lt;/BillingList&gt;
+&lt;/BillRunConfiguration&gt;
+</pre></li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-7487878D-C1C8-439E-A366-98E3225A5DCB"></a>
+<h2 id="BCSUG-GUID-7487878D-C1C8-439E-A366-98E3225A5DCB" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="billing2.htm#GUID-0D6FB6F8-633A-43B7-BCF5-21CE09CF043E" title="Billing is a process that calculates the amount each customer owes for the current billing cycle and then stores the information internally in Oracle Monetization Cloud. It doesn't generate invoices or collect payments from your customers.">About billing</a></p>
+</li>
+<li>
+<p><a href="running-business-operations-jobs1.htm#GUID-3E770FFC-9731-42F4-B2EE-6DCAD2CD384E">About running business operations jobs</a></p>
+</li>
+<li>
+<p><a href="getting-started-business-operations1.htm#GUID-FD7EAE77-BEB1-4C31-920E-D2827CDCB6BE" title="Use Business Operations to perform basic business operation tasks such as generating invoices for customers, processing batches of payments from your banks and payment processors, and fixing payments that couldn't be processed. Business Operations is an application in Oracle Monetization Cloud.">Getting started with Business Operations</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-E9959C5B-C706-4B3E-98B1-A0CBCE6B7F7D" title="An invoice lists the balance information for a customer's bill, and the amount due. In Oracle Monetization Cloud, you can assign invoice templates to a customer, view a customer's invoice, and generate a batch of invoices for your customers in PDF format.">Generating invoices</a></p>
+</li>
+<li>
+<p><a class="olink BCSIG2357" target="_blank" href="../BCSIG/transferring-files-securely1.htm#BCSIG2357">Transferring files securely with SFTP</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="using-bill-now-create-bill1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="generating-invoices2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

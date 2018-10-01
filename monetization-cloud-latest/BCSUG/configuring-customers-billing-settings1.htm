@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring a customer's billing settings</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This document describes how to configure a customer's billing settings in Oracle Monetization Cloud. Billing settings, such as billing dates and frequency, invoice settings, billing hierarchies, and accounting types, are stored in bill units." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-accounts1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="managing-customer-tax-settings1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5A9B4167-03AE-4B52-8EBC-49D595346698"></a> <span id="PAGE" style="display:none;">34/67</span> <!-- End Header -->
+<a id="BCSUG847"></a><a id="BCSUG848"></a><a id="BCSUG478"></a>
+<h1 id="BCSUG-GUID-5A9B4167-03AE-4B52-8EBC-49D595346698" class="sect1"><span class="enumeration_chapter">28</span> Configuring a customer's billing settings</h1>
+<div>
+<p>This document describes how to configure a customer's billing settings in Oracle Monetization Cloud. Billing settings, such as billing dates and frequency, invoice settings, billing hierarchies, and accounting types, are stored in bill units.</p>
+<p>For background information, see <a href="billing2.htm#GUID-0D6FB6F8-633A-43B7-BCF5-21CE09CF043E" title="Billing is a process that calculates the amount each customer owes for the current billing cycle and then stores the information internally in Oracle Monetization Cloud. It doesn't generate invoices or collect payments from your customers.">About billing</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="configuring-customers-billing-settings1.htm#GUID-A23072B8-938F-458C-A6AA-B1E7F988C505">Configuring a customer's billing settings</a></p>
+</li>
+<li>
+<p><a href="configuring-customers-billing-settings1.htm#GUID-33502A5D-29CD-4F3F-9323-C1316DACA66D">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG479"></a>
+<div class="props_rev_3"><a id="GUID-A23072B8-938F-458C-A6AA-B1E7F988C505"></a>
+<h2 id="BCSUG-GUID-A23072B8-938F-458C-A6AA-B1E7F988C505" class="sect2">Configuring a customer's billing settings</h2>
+<div>
+<p>To configure a customer's billing settings:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>When you create an account, Subscriber Management automatically opens the <span class="bold">Financial Setup</span> page where you can configure the default bill unit.</p>
+</li>
+<li>
+<p>To change the bill units for an existing account, open the account in Subscriber Management and select <span class="bold">Actions</span>, <span class="bold">Financial Setup</span>, <span class="bold">Bill Unit Setup</span>, and then <span class="bold">Bill Units</span>.</p>
+</li>
+</ul>
+<p>You can do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Add a new bill unit</p>
+</li>
+<li>
+<p>Change the a payment method for an existing bill unit</p>
+</li>
+<li>
+<p>Assign financial responsibility for a bill unit to a different account.</p>
+<p>See <a href="managing-customers1.htm#GUID-6DE30194-4424-46A3-84C4-7FAF6DF450E0">Managing billing hierarchies</a>.</p>
+</li>
+<li>
+<p>Set the customer's billing day of month.</p>
+<p>See <a href="billing2.htm#GUID-D2D112B2-6488-4574-B858-870A26D7FE9B">About running billing</a>.</p>
+</li>
+<li>
+<p>Set the customer's billing frequency:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Monthly</p>
+</li>
+<li>
+<p>Bi-monthly</p>
+</li>
+<li>
+<p>Quarterly</p>
+</li>
+<li>
+<p>Yearly</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Set the bill unit's accounting type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Open item:</span> Typically used for bill units with an invoiced payment method.</p>
+</li>
+<li>
+<p><span class="bold">Balance forward:</span> Used for bill units with a credit card payment method.</p>
+</li>
+</ul>
+<p>See <a href="billing2.htm#GUID-F7C282B0-D978-498F-B5DC-B141AED61397">About accounting types</a>.</p>
+</li>
+<li>
+<p>Choose invoice template options:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Choose a corporate or consumer invoice template.</p>
+</li>
+<li>
+<p>If you're using rerating, you can decide between replacement invoices or corrected invoices. A replacement invoice includes the original charges and the corrected charges. A corrected invoice includes only the corrected charges.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="infobox-tip" id="GUID-A23072B8-938F-458C-A6AA-B1E7F988C505__GUID-46FE9E7A-7A53-46EC-B184-BC1C55930A19">
+<p class="notep1">Tip:</p>
+<p>You can display the different types of invoices in BI Publisher.</p>
+</div>
+</div>
+</div>
+<a id="BCSUG670"></a>
+<div class="props_rev_3"><a id="GUID-33502A5D-29CD-4F3F-9323-C1316DACA66D"></a>
+<h2 id="BCSUG-GUID-33502A5D-29CD-4F3F-9323-C1316DACA66D" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="managing-customers1.htm#GUID-8A87E8C3-529E-4CDB-BF54-E33A25DC9DB8" title="Most customer management tasks are accomplished by CSRs using Oracle Monetization Cloud Subscriber Management or a third-party customer management system. You can also set up a self-service Web application so that your customers can handle their own administration tasks, such as changing login names and passwords.">Managing customers</a></p>
+</li>
+<li>
+<p><a href="billing2.htm#GUID-0D6FB6F8-633A-43B7-BCF5-21CE09CF043E" title="Billing is a process that calculates the amount each customer owes for the current billing cycle and then stores the information internally in Oracle Monetization Cloud. It doesn't generate invoices or collect payments from your customers.">About billing</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-accounts1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="managing-customer-tax-settings1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

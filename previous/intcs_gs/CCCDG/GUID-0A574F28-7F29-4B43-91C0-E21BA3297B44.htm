@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connection Properties and Testing</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The CloudConnection class stores and tests the connection properties used in the Connection page of the wizard." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-463279F2-BBD4-4B69-A727-BBAB76DFC4E6.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44"></a> <span id="PAGE" style="display:none;">27/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44" class="sect1">Connection Properties and Testing</h1>
+<div>
+<p>The <code>CloudConnection</code> class stores and tests the connection properties used in the Connection page of the wizard.</p>
+<p>The abstract class <code>AbstractCloudConnection</code> provides default implementations of methods for retrieving and storing connection properties. You must implement the <code>ping()</code> method. At a minimum, this method must validate the current set of properties in the connection object; see <code>getProperties()</code>, and <code>setProperties(properties)</code>. The <code>ping()</code> method typically calls the application provider using all the information a user has provided. Upon a successful response, the method returns an instance of <code>PingStatus</code> with the success flag set to true, otherwise the success flag should be false and information regarding the failure should be provided using the <code>PingStatus.getFailureMessage()</code> method. No exception should be thrown from this method.</p>
+<p>The following sequence diagram shows how this plugin instance is acquired.</p>
+<p><img width="459" height="188" src="img/GUID-1BB823F3-9D68-4FA2-B3DF-5014D397285D-default.png" alt="media/image32.png" title="media/image32.png" /><br />
+<a href="img_text/GUID-95A125C3-646D-45AA-A058-79B893A74D59.htm">Description of the illustration GUID-1BB823F3-9D68-4FA2-B3DF-5014D397285D-default.png</a></p>
+<p>As the diagram shows, the wizard first looks for a plugin instance by calling <code>getAdapter()</code> on the&nbsp;<code>oracle.cloud.connector.CloudAdapterFactory</code>&nbsp;class at runtime. The <code>getAdapter()</code> method is explained in later sections. Each plugin must provide a unique ID that is passed to the <code>getAdapter()</code> call and always returns an instance (new on first call) of <code>oracle.cloud.connector.CloudAdapter</code>. Once the wizard has a plugin&rsquo;s implementation of <code>CloudAdapter</code>, it acquires the plugin&rsquo;s implementation of the interface<code>oracle.cloud.connector.connection.CloudConnection</code>. An instance of <code>CloudConnection</code> acquires properties for connecting and authenticating to a specific cloud application.</p>
+<p>Refer to the <code>SampleCloudAdapterConnection</code> class.</p>
+<div class="tblformal" id="GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44__GUID-2B84B15C-D017-4EA3-9672-3C5B9EAE41D4">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapterConnection class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d8881e99">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d8881e99">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d8881e112">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.plugin</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d8881e122">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterConnection</code></p>
+</td>
+<td class="cellalignment291" headers="d8881e122">
+<p>This class tests SaaS application endpoint connectivity. It stores connection and authentication properties.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d8881e135">
+<p><span class="bold">Method:</span></p>
+<p><code>ping()</code></p>
+</td>
+<td class="cellalignment291" headers="d8881e135">
+<p>Tests endpoint connectivity.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d8881e151">
+<p><code>createRequestPingMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d8881e151">
+<p>Creates a new SOAP request based on the operation being tested.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d8881e163">
+<p><code>getPingStatusFromResponse()</code></p>
+</td>
+<td class="cellalignment291" headers="d8881e163">
+<p>Gets the status from the ping response.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d8881e175">
+<p><code>getAuthenticationScheme()</code></p>
+</td>
+<td class="cellalignment291" headers="d8881e175">
+<p>Stores security credentials.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="675" height="543" src="img/GUID-9D27E748-F8E6-4B5F-B137-9EDE72107469-default.png" alt="media/image33.png" title="media/image33.png" /><br />
+<a href="img_text/GUID-6ABD7436-7462-4BDC-B15D-BFC6B90357B3.htm">Description of the illustration GUID-9D27E748-F8E6-4B5F-B137-9EDE72107469-default.png</a></p>
+<p>Override the <code>ping()</code> method to test endpoint connectivity. This is a custom implementation, where you can add a <code>SOAPMessage</code> and send a sample request to the operation defined in the <code>Constants</code> class.</p>
+<p>For an outbound adapter:</p>
+<pre dir="ltr">
+// SampleCloudAdapterConstants
+public static final String SAMPLE_CATALOG_SERVICE_OP_NAME="getAccount";
+
+// Gets the WSDL URL 
+String wsdlURL = getConnectionProperties().getProperty(AdapterConstants.SOURCE_WSDL_LOCATION);
+
+// To create a request message
+SOAPMessage message = this.createRequestPingMessage(soapHelper);
+
+// Send SOAP request
+ SOAPMessage response = soapHelper.sendSOAP(message,getConnectionProperties(), endpointURL);                           
+
+// createRequestPingMessage is adding operationname and namespace to SOAP message body
+body.addChildElement(new QName(
+   SampleCloudAdapterConstants.SAMPLE__MESSAGES_NAMESPACE,
+   SampleCloudAdapterConstants.SAMPLE_CATALOG_SERVICE_OP_NAME));
+</pre>
+<p>For an inbound adapter:</p>
+<pre dir="ltr">
+// Gets the WSDL URL
+String wsdlURL = getConnectionProperties().getProperty(AdapterConstants.SOURCE_WSDL_LOCATION);
+
+// Create SOAP Request
+SOAPMessage message = this.createRequestPingMessage(soapHelper);
+
+// Send SOAP request to target
+SOAPMessage response = soapHelper.sendSOAP(message,getConnectionProperties(), endpointURL);
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-463279F2-BBD4-4B69-A727-BBAB76DFC4E6.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

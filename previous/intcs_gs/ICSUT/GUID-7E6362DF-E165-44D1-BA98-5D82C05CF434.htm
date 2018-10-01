@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Choosing an Integration Pattern</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2016-12-04T11:48:08Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Utilities Adapter" />
+<meta name="dcterms.identifier" content="E76820-03" />
+<meta name="dcterms.isVersionOf" content="ICSUT" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BBDD71E7-1BE2-4695-9902-77BDC88D190F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUT.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUT.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUT.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434"></a> <span id="PAGE" style="display:none;">13/20</span> <!-- End Header -->
+<h1 id="ICSUT-GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434" class="sect1">Choosing an Integration Pattern</h1>
+<div>
+<p>Exchange data between on-premises, legacy, and cloud applications using an integration. To create the integration, add adapter connections and define how information is shared between them.</p>
+<div class="p">Choose one of these integration patterns and then complete the procedure for the selected pattern:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Basic Map Data</span>: Creates an integration to which you add a trigger and an invoke connection. You can create a single routing expression, and request and response enrichments, as needed. This pattern doesn&rsquo;t support multiple routing expressions. If your integration requires this feature, then create an Orchestration integration. See <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-39C1CD24-D8F6-4F08-A0C5-B1057A090A55" title="Create a Basic Map Data integration pattern to which you add a trigger (source) and an invoke (target) connection. The trigger connection sends requests to Oracle Integration Cloud Service. You can create a single routing expression as well as request and response enrichments as needed.">Creating a Basic Map Data Integration</a>.</p>
+</li>
+<li>
+<p><span class="bold">Orchestration</span>: Creates a synchronous, asynchronous, or fire-and-forget (no response) orchestrated integration that uses Oracle BPEL Process Manager capabilities. You can include switch activities to create multiple routing expressions, ad hoc mappings on switch branches, callback activities (to end a process and respond back to the sender), and end activities (to end a process without responding back to the sender) in asynchronous integrations. See <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-184A9008-5D4B-412F-9B5F-59EBB6EAF9F6">Creating an Orchestration Integration</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2"><a id="GUID-39C1CD24-D8F6-4F08-A0C5-B1057A090A55"></a>
+<h2 id="ICSUT-GUID-39C1CD24-D8F6-4F08-A0C5-B1057A090A55" class="sect2">Creating a Basic Map Data Integration</h2>
+<div>
+<p>Create a Basic Map Data integration pattern to which you add a trigger (source) and an invoke (target) connection. The trigger connection sends requests to <span>Oracle Integration Cloud Service</span>. You can create a single routing expression as well as request and response enrichments as needed.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-39C1CD24-D8F6-4F08-A0C5-B1057A090A55__GUID-4D2CEB32-999E-4DCD-A848-5DF65B7EB999">
+<p class="notep1">Note:</p>
+If your integration requires multiple routing expressions, create an Orchestration integration. See <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-184A9008-5D4B-412F-9B5F-59EBB6EAF9F6">Creating an Orchestration Integration</a>.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Log in to <span>Oracle Integration Cloud Service</span>, click <span class="bold">Integrations</span>, and then <span class="bold">New Integration</span>.</span></li>
+<li><span>Select the <span class="bold">Basic Map Data</span> integration pattern, complete the required and optional fields, and then click <span class="bold">Create</span>.</span></li>
+<li><span>Add the trigger connection:</span>
+<ol>
+<li><span>From the <span class="bold">Connections</span> or <span class="bold">Technologies</span> panes, drag a connection to the <span class="bold">Drag and Drop a Trigger</span> area on the integration canvas.</span></li>
+<li><span>Complete the <span>Adapter Endpoint Configuration Wizard</span>. For field descriptions, see <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" title="The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">About the Fields in the Adapter Endpoint Configuration Wizard</a>.</span></li>
+<li><span>Click <span class="bold">Save</span>.</span></li>
+</ol>
+</li>
+<li><span>Add the invoke connection:</span>
+<ol>
+<li><span>From the <span class="bold">Connections</span> or <span class="bold">Technologies</span> panes, drag a connection to the <span class="bold">Drag and Drop an Invoke</span> area on the integration canvas.</span></li>
+<li><span>Complete the <span>Adapter Endpoint Configuration Wizard</span>. For field descriptions, see <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" title="The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">About the Fields in the Adapter Endpoint Configuration Wizard</a>.</span></li>
+<li><span>Click <span class="bold">Save</span>.</span></li>
+</ol>
+</li>
+<li><span>Assign the business identifiers for tracking fields:</span>
+<ol>
+<li><span>Click the <span class="bold">Tracking</span> icon in the upper right part of the page.</span></li>
+<li><span>Define the tracking fields.</span></li>
+<li><span>Click <span class="bold">Done</span>.</span></li>
+<li><span>Click <span class="bold">Save</span>, and then click <span class="bold">Exit Integration</span>.</span></li>
+</ol>
+</li>
+<li><span>Map the data. See <a href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm#GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944" title="Create mappings and optional lookups to exchange data between the trigger and invoke connections.">Creating Mappings and Lookups</a>.</span></li>
+<li><span>Activate the integration. See <a href="GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0.htm#GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0" title="After you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100 percent and is eligible for activation only after you&rsquo;ve specified the source (trigger) connection, the target (invoke) connection, the data mappings, and the tracking fields.">Activating an Integration</a>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-184A9008-5D4B-412F-9B5F-59EBB6EAF9F6"></a>
+<h2 id="ICSUT-GUID-184A9008-5D4B-412F-9B5F-59EBB6EAF9F6" class="sect2">Creating an Orchestration Integration</h2>
+<div>
+<div class="section">
+<p>When you design your integration, you can do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Add switch activities to create multiple routing expressions.</p>
+</li>
+<li>
+<p>Create ad hoc mappings on switch branches.</p>
+</li>
+<li>
+<p>Add callback activities (to end an integration and respond back to the sender) and end activities (to end an integration without responding back to the sender) in asynchronous integrations.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Log in to <span>Oracle Integration Cloud Service</span>, click <span class="bold">Integrations</span>, and then <span class="bold">New Integration</span>.</span></li>
+<li><span>Select the <span class="bold">Orchestration</span> integration pattern, complete the required and optional fields, and click <span class="bold">Create</span>.</span></li>
+<li><span>Define the inbound trigger:</span>
+<ol>
+<li><span>On the left side of the integration canvas, click <span class="bold">TRIGGERS</span> to expand the panel.</span></li>
+<li><span>Click the adapter type to display the specific type and number of configured adapters. Synchronous, asynchronous, and fire-and-forget (no response) triggers are supported.</span></li>
+<li><span>Drag the configured adapter to the large plus (<span class="bold">+</span>) symbol within the circle on the integration canvas.</span></li>
+<li><span>Complete the <span>Adapter Endpoint Configuration Wizard</span>. For field descriptions, see <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" title="The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">About the Fields in the Adapter Endpoint Configuration Wizard</a>.</span></li>
+</ol>
+</li>
+<li><span>Define the outbound invoke:</span>
+<ol>
+<li><span>On the left side of the integration canvas, click <span class="bold">INVOKES</span> to expand the panel.</span></li>
+<li><span>Click the adapter type to display the specific type and number of configured adapters.</span></li>
+<li><span>Drag an adapter to the integration canvas and drop it on one of the large plus (<span class="bold">+</span>) symbols.</span></li>
+<li><span>Complete the <span>Adapter Endpoint Configuration Wizard</span>. For field descriptions, see <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" title="The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">About the Fields in the Adapter Endpoint Configuration Wizard</a>.</span></li>
+</ol>
+</li>
+<li><span>Define the switch branches:</span>
+<ol>
+<li><span>On the left side of the canvas, click <span class="bold">ACTIONS</span> to expand the panel.</span></li>
+<li><span>Drag the <span class="bold">SWITCH</span> icon to the integration canvas and drop it on one of the large plus (<span class="bold">+</span>) symbols.</span></li>
+<li><span>Click the <span class="bold">Undefined</span> branch icon.</span></li>
+<li><span>Select the <span class="bold">Edit</span> icon.</span></li>
+<li><span>Define a routing expression, then click <span class="bold">Save</span> and <span class="bold">Exit Expression Builder</span>.</span></li>
+<li><span>On the left side of the canvas click <span class="bold">INVOKES</span> to expand the panel.</span></li>
+<li><span>Drag an adapter to the plus (<span class="bold">+</span>) symbol on the defined branch or the otherwise branch.</span></li>
+<li><span>Complete the <span>Adapter Endpoint Configuration Wizard</span>. For field descriptions, see <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" title="The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">About the Fields in the Adapter Endpoint Configuration Wizard</a>.</span></li>
+</ol>
+</li>
+<li><span>Define the optional ad-hoc mappings:</span>
+<ol>
+<li><span>On the left side of the canvas, click <span class="bold">ACTIONS</span> to expand the panel.</span></li>
+<li><span>Drag a <span class="bold">MAP</span> icon to a branch of the switch activity.</span></li>
+<li><span>Select an endpoint to map.</span></li>
+<li><span>Map the source data structure to the target data structure.</span></li>
+<li><span>Click <span class="bold">Save</span>, and then click <span class="bold">Exit Mapper</span>.</span></li>
+<li><span>Drag a <span class="bold">MAP</span> icon to the otherwise branch of the switch activity.</span></li>
+<li><span>Repeat steps d to f.</span></li>
+</ol>
+</li>
+<li><span>Assign the business identifiers for tracking fields:</span>
+<ol>
+<li><span>Click the <span class="bold">Tracking</span> icon in the upper right part of the page.</span></li>
+<li><span>Define the tracking fields.</span></li>
+<li><span>Click <span class="bold">Done</span>.</span></li>
+<li><span>Click <span class="bold">Save</span>, and then click <span class="bold">Exit Integration</span>.</span></li>
+</ol>
+</li>
+<li><span>Activate the integration. See <a href="GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0.htm#GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0" title="After you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100 percent and is eligible for activation only after you&rsquo;ve specified the source (trigger) connection, the target (invoke) connection, the data mappings, and the tracking fields.">Activating an Integration</a>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B"></a>
+<h2 id="ICSUT-GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B" class="sect2">Refreshing Integration Metadata</h2>
+<div>
+<p>You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the <span class="bold">Refresh Metadata</span> menu option is provided.</p>
+<div class="section">To refresh integration metadata:
+<div class="infobox-note" id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B__GUID-4558664B-C97A-4889-AC51-7DD45B3550ED">
+<p class="notep1">Note:</p>
+The <span class="bold">Refresh Metadata</span> menu option is only available with adapters that have implemented metadata caching.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>In the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Locate the connection to refresh.</span></li>
+<li class="stepexpand"><span>From the menu at the right, select <span class="bold">Refresh Metadata</span>.<br />
+<img width="160" height="129" src="img/GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png" alt="Description of GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png follows" title="Description of GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png follows" /><br />
+<a href="img_text/GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.htm">Description of the illustration GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png</a><br /></span>
+<div>A message is displayed indicating that the refresh was successful.
+<pre dir="ltr">
+Metadata refresh for connection "RightNow" has been initiated successfully.
+</pre></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12"></a>
+<h2 id="ICSUT-GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12" class="sect2">About the Fields in the <span>Adapter Endpoint Configuration Wizard</span></h2>
+<div>
+<p>The following tables provide descriptions of the fields that appear in the <span>Oracle Integration Cloud Service</span> <span>Adapter Endpoint Configuration Wizard</span>. The wizard appears when you create an integration.</p>
+<div class="section">
+<p class="subhead2">Basic Info Page</p>
+<div class="tblformal" id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12__FIELDDESCRIPTIONSFORTHEBASICINFOPAG-631AE7BB">
+<table class="cellalignment331" summary="Field descriptions for the Basic Info page.">
+<thead align="left">
+<tr>
+<th class="cellalignment334" id="d2407e588">Field</th>
+<th class="cellalignment334" id="d2407e590">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment334" id="d2407e594" headers="d2407e588">
+<p><span class="bold">What do you want to call your endpoint?</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e594 d2407e590">
+<div class="p"><span>Provide a meaningful name so that others can understand the purpose of the connection. For example, <code>LinkedInTarget_update_status</code>. You can use English alphabetic characters, numbers, underscores, and dashes in the name. You can&rsquo;t use:</span>
+<ul style="list-style-type: disc;">
+<li>
+<p>Blank spaces (for example, <code>My FTP Connection</code>)</p>
+</li>
+<li>
+<p>Special characters (for example,&nbsp; <code>#;83&amp;</code> or <code>righ(t)now4</code>)</p>
+</li>
+<li>
+<p>Multibyte characters</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e625" headers="d2407e588">
+<p><span class="bold">What does this endpoint do?</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e625 d2407e590"><span>Enter an optional description of connection functionality. For example: <code>This endpoint updates status on a user's LinkedIn timeline.</code></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Trigger Request Page</p>
+<div class="tblformal" id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12__FIELDDESCRIPTIONSFORTHEREQUESTPAGE.-631AD9C1">
+<table class="cellalignment331" summary="Field descriptions for the Request page.">
+<thead align="left">
+<tr>
+<th class="cellalignment334" id="d2407e645">Field</th>
+<th class="cellalignment334" id="d2407e647">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment334" id="d2407e651" headers="d2407e645">
+<p><span class="bold">Browse by</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e651 d2407e647">
+<p>Select the Oracle Utilities application that hosts the business object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e659" headers="d2407e645">
+<p><span class="bold">Select a Business Object</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e659 d2407e647">
+<p>Select the business object from the Oracle Utilities application to receive as a request that starts the integration.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e667" headers="d2407e645">
+<p><span class="bold">Filter by object name</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e667 d2407e647">
+<p>Enter the initial letters to filter the display of business objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Trigger Response Page</p>
+<div class="tblformal" id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12__FIELDDESCRIPTIONSFORTHERESPONSEPAGE-631AF71B">
+<table class="cellalignment331" summary="Field descriptions for the Response page.">
+<thead align="left">
+<tr>
+<th class="cellalignment334" id="d2407e685">Field</th>
+<th class="cellalignment334" id="d2407e687">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment334" id="d2407e691" headers="d2407e685">
+<p><span class="bold">Browse by</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e691 d2407e687">
+<p>Select the Oracle Utilities application that hosts the business object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e699" headers="d2407e685">
+<p><span class="bold">Select a Business Object</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e699 d2407e687">
+<p>Select the business object from the Oracle Utilities application to receive as a request that starts the integration.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e707" headers="d2407e685">
+<p><span class="bold">Filter by object name</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e707 d2407e687">
+<p>Enter the initial letters to filter the display of business objects.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e715" headers="d2407e685">
+<p><span class="bold">Response Type</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e715 d2407e687">
+<p>Select one of these options:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Request-Response</span>: The default. The Oracle Utilities application waits until a response is received from the integration. This is also known as the request and response message exchange pattern.</p>
+</li>
+<li>
+<p><span class="bold">Send Faults</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Invoke Operations Page</p>
+<div class="tblformal" id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12__FIELDDESCRIPTIONSFORTHEOPERATIONSPA-631AFCC3">
+<table class="cellalignment331" summary="Field descriptions for the Operations page.">
+<thead align="left">
+<tr>
+<th class="cellalignment334" id="d2407e743">Field</th>
+<th class="cellalignment334" id="d2407e745">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment334" id="d2407e749" headers="d2407e743">
+<p><span class="bold">Browse by</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e749 d2407e745">
+<p>Select the Oracle Utilities application that hosts the business object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e757" headers="d2407e743">
+<p><span class="bold">Select a Business Service</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e757 d2407e745">
+<p>Select a business service to invoke.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e765" headers="d2407e743">
+<p><span class="bold">Filter by service name</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e765 d2407e745">
+<p>Enter the initial letters to filter the display of business services.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment334" id="d2407e773" headers="d2407e743">
+<p><span class="bold">Select the Operation to Perform on the Service</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e773 d2407e745">
+<p>Select an operation from the published web service.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Summary Page</p>
+<div class="tblformal" id="GUID-25BBFAA3-B7F1-406E-8F58-44EF03753B12__FIELDDESCRIPTIONSFORTHESUMMARYPAGE.-631B03F4">
+<table class="cellalignment331" summary="Field descriptions for the Summary page.">
+<thead align="left">
+<tr>
+<th class="cellalignment334" id="d2407e791">Field</th>
+<th class="cellalignment334" id="d2407e793">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment334" id="d2407e797" headers="d2407e791">
+<p><span class="bold">Summary</span></p>
+</td>
+<td class="cellalignment334" headers="d2407e797 d2407e793"><span>Displays a summary of the trigger (source) or invoke (target) configuration values that you defined on previous pages of the wizard. The information that&rsquo;s displayed can vary by adapter. For some adapters, the selected business objects and operation name are displayed. For adapters for which a generated XSD file is provided, click the <span class="bold">XSD</span> link to view a read-only version of the file. To return to a previous page to update any values, click the appropriate tab in the left panel or click <span class="bold">Back</span>.</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment317">
+<tr>
+<td class="cellalignment324">
+<table class="cellalignment322">
+<tr>
+<td class="cellalignment321"><a href="GUID-BBDD71E7-1BE2-4695-9902-77BDC88D190F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment321"><a href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment326">
+<table class="cellalignment320">
+<tr>
+<td class="cellalignment321"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment321"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment321"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

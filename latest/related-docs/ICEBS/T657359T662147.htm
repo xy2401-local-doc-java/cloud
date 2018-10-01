@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud">
+<meta name="dcterms.identifier" content="E89704-05">
+<meta name="dcterms.isVersionOf" content="ICEBS">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T661088.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T660844.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICEBS.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">11/13</span>
+<!-- End Header -->
+<h1>Sample Payloads</h1><p>This appendix covers the following topics:</p><ul><li><a href="#T662148">Sample XSD for the Oracle E-Business Suite Adapter as a Trigger with a Business Event Example</a></li><li><a href="#T662149">Sample JSON Payloads for the Oracle E-Business Suite Adapter as an Invoke Example for a PL/SQL REST Service</a></li></ul>
+		<H2> <a name="8641970"></a><a id="T662148"></a><B>Sample XSD for the Oracle E-Business Suite Adapter as a Trigger with a Business Event Example</B></H2><a name="d0e7033"></a><A NAME="ics_payloadapp"></A>
+	<p>The following information shows the sample xsd used for the Create Invoice REST service. This service is added through the REST Adapter for the business event example described earlier. For information on how to use this sample xsd in an integration, see: <A HREF="T657359T661088.htm#ics1625_exevent">Adding the Oracle E-Business Suite Adapter (Trigger) and the REST Adapter (Invoke) to the Integration</A>.</p>
+	<pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"&gt;
+&lt;xs:element name="CREATE_SINGLE_INVOICE_Input"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="RESTHeader"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="Responsibility" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="RespApplication" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="SecurityGroup" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="NLSLanguage" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="Org_Id" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name="InputParameters"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="P_API_VERSION" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="P_INIT_MSG_LIST" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="P_COMMIT" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="P_BATCH_SOURCE_REC"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="BATCH_SOURCE_ID" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name="P_TRX_HEADER_TBL"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="P_TRX_HEADER_TBL_ITEM"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="TRX_HEADER_ID" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="TRX_NUMBER" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="CUST_TRX_TYPE_ID" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="BILL_TO_CUSTOMER_ID" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="SHIP_TO_CUSTOMER_ID" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="COMMENTS" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name="P_TRX_LINES_TBL"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="P_TRX_LINES_TBL_ITEM"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="TRX_HEADER_ID" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="TRX_LINE_ID" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="LINE_NUMBER" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="DESCRIPTION" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="QUANTITY_ORDERED" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="QUANTITY_INVOICED" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="UNIT_SELLING_PRICE" type="xs:string"&gt;&lt;/xs:element&gt;
+&lt;xs:element name="LINE_TYPE" type="xs:int"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name="P_TRX_DIST_TBL"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="P_TRX_DIST_TBL_ITEM"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="TRX_DIST_ID"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name="P_TRX_SALESCREDITS_TBL"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="P_TRX_SALESCREDITS_TBL_ITEM"&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name="TRX_SALESCREDIT_ID"&gt;&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre>
+    
+		<H2> <a name="8641971"></a><a id="T662149"></a><B>Sample JSON Payloads for the Oracle E-Business Suite Adapter as an Invoke Example for a PL/SQL REST Service</B></H2><a name="d0e7051"></a><A NAME="ics_jsonapp"></A>
+	<p>This section includes the JSON request and response payloads used in the example of adding the Oracle E-Business Suite Adapter as an invoke (target) connection in an integration. </p>
+	<p>For information on using these payloads, see: <A HREF="T657359T661088.htm#ics_exsource">Adding the REST Adapter as a Trigger (Source) Connection </A>.</p>
+	<p><B>Sample Request Payload for the request.json File</B></p>
+	<pre>{
+  "PROCESS_ORDER_Input": {
+    "RESTHeader": {
+      "Responsibility": "ORDER_MGMT_SUPER_USER",
+      "RespApplication": "ONT",
+      "SecurityGroup": "STANDARD",
+      "NLSLanguage": "AMERICAN",
+      "Org_Id": "204"
+    },
+    "InputParameters": {
+      "P_API_VERSION_NUMBER": "1.0",
+      "P_INIT_MSG_LIST": "T",
+      "P_RETURN_VALUES": "T",
+      "P_ACTION_COMMIT": "T",
+      "P_HEADER_REC": {
+        "BOOKED_FLAG": "N",
+        "ORDER_TYPE_ID": "1430",
+        "ORG_ID": "204",
+        "PAYMENT_TERM_ID": "4",
+        "PRICE_LIST_ID": "1000",
+        "SOLD_TO_ORG_ID": "1002",
+        "TRANSACTIONAL_CURR_CODE": "USD",
+        "OPERATION": "CREATE"
+      },
+      "P_LINE_TBL": {
+        "P_LINE_TBL_ITEM": {
+          "INVENTORY_ITEM_ID": "149",
+          "LINE_TYPE_ID": "1427",
+          "ORDERED_QUANTITY": "1",
+          "PAYMENT_TERM_ID": "4",
+          "PRICE_LIST_ID": "1000",
+          "UNIT_LIST_PRICE": "12.55",
+          "UNIT_SELLING_PRICE": "12.55",
+          "OPERATION": "CREATE"
+        }
+      },
+      "P_RTRIM_DATA": "n"
+    }
+  }
+}
+</pre>
+    
+	<p><B>Sample Response Payload for the response.json File</B></p>
+	<pre>{
+  "OutputParameters" : {
+    "X_RETURN_STATUS" : "S",
+    "X_MESSAGES" : {
+      "X_MESSAGES_ITEM" : [ {
+        "MESSAGE_TEXT" : " Debug File: "
+      } ]
+    },
+    "X_HEADER_REC" : {
+      "ORDER_NUMBER" : 123
+    }
+  }
+}</pre>
+    
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

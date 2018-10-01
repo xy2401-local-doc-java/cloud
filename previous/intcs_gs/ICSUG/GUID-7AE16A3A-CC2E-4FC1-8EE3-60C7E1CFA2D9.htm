@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Downloading and Running the On-Premises Agent Installer</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You must download the agent installer from Oracle Integration Cloud Service and run the installer to install the on-premises agent in your local environment. During installation, you associate the agent with the agent group identifier you generated when creating an agent group in Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-42E01556-191D-4362-BB25-0C6D6DB97EF6.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9"></a> <span id="PAGE" style="display:none;">51/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9" class="sect1">Downloading and Running the On-Premises Agent Installer</h1>
+<div>
+<p>You must download the agent installer from Oracle Integration Cloud Service and run the installer to install the on-premises agent in your local environment. During installation, you associate the agent with the agent group identifier you generated when creating an agent group in Oracle Integration Cloud Service.</p>
+<div class="p">For information about upgrading the on-premises agent to the latest release, see <a href="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A.htm#GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A" title="If you previously installed the on-premises agent on your local host, you must upgrade to release 16.4.5 to communicate with Oracle Integration Cloud Service 16.4.5.">Upgrading the On-Premises Agent to Release 16.4.5</a>.</div>
+<!-- class="section" -->
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__SYSTEMREQUIREMENTSANDRESTRICTIONS-75831A50">System Requirements and Restrictions</a></p>
+</li>
+<li>
+<p><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__INSTALLATION-75832E37">Installing the On-Premises Agent</a></p>
+</li>
+<li>
+<p><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__TROUBLESHOOTINGISSUES-75835433">Troubleshooting Issues</a></p>
+</li>
+<li>
+<p><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__UNINSTALLINGORACLEINTEGRATIONCLOUDS-75845BEF">Deinstalling the On-Premises Agent</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__SYSTEMREQUIREMENTSANDRESTRICTIONS-75831A50">
+<p class="subhead1">System Requirements and Restrictions</p>
+<p>You must satisfy the following prerequisites on your on-premises host before running the agent installer in a production environment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you are using a proxy server, note that proxy server authentication support is <span class="italic">not</span> provided. As a workaround, disable proxy authentication in your proxy server settings for the agent.</p>
+</li>
+<li>
+<p>Ensure that you have created the agent group. You must specify the agent group identifier when installing the on-premises agent. For information, see <a href="GUID-42E01556-191D-4362-BB25-0C6D6DB97EF6.htm" title="You must create an agent group in Oracle Integration Cloud Service before you can run the agent installer. When you install the on-premises agent in your environment, you associate the on-premises agent with the agent group identifier. Only one on-premises agent can be associated with an agent group. For a single Oracle Integration Cloud Service instance, you can create up to five agent groups.">Creating an Agent Group</a>.</p>
+</li>
+<li>
+<p>Install <span class="italic">only</span> Oracle JDK version 1.7 or 1.8. Other JDKs such as Open JDK are <span class="italic">not</span> supported.</p>
+</li>
+<li>
+<p>Set the <code>JAVA_HOME</code> property to the location of the JDK installation. For example:</p>
+<pre dir="ltr">
+JAVA_HOME=/usr/java/jdk1.7.0_79
+</pre></li>
+<li>
+<p>Install the on-premises agent on Linux OEL version 5 or 6 only.</p>
+</li>
+<li>
+<p>Provide a minimum of 8 GB memory with 4 GB of heap size dedicated for the agent JVM. If you want to include any other processes on that host besides the on-premises agent, it is strongly recommended that you increase physical memory to greater than 8 GB.</p>
+</li>
+<li>
+<p>Ensure that a Derby database is not running. See the Troubleshooting section below for details.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__INSTALLATION-75832E37">
+<p class="subhead1">Installing the On-Premises Agent</p>
+<p>To download and run the on-premises agent installer:</p>
+<div class="infobox-note" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__GUID-F3A185DA-7F75-462F-A873-79E23DB84490">
+<p class="notep1">Note:</p>
+It is recommended that you retain a copy of the <code>cloud-connectivity-agent-installer.bsx</code> agent installer file after completing installation.</div>
+<ol>
+<li>
+<p>Log in to Oracle Integration Cloud Service.</p>
+</li>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Agents</span>.</p>
+<p>The Agent Groups page is displayed. This page shows any current agent groups and on-premises agents associated with the agent groups.</p>
+</li>
+<li>
+<p>Click <span class="bold">Download</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Connectivity Agent</span>.</p>
+<p>This selection enables you to integrate Oracle Integration Cloud Service with on-premises environments.</p>
+</li>
+<li>
+<p>Select <span class="bold">Save File</span> when prompted to save the file to a directory location on your on-premises host.</p>
+</li>
+<li>
+<p>Unzip the downloaded file.</p>
+</li>
+<li>
+<p>Locate the <code>cloud-connectivity-agent-installer.bsx</code> agent installer file.</p>
+</li>
+<li>
+<div class="p">Change the file permissions to be executable.
+<pre dir="ltr">
+chmod +x cloud-connectivity-agent-installer.bsx
+</pre></div>
+</li>
+<li>
+<p>Execute the file with the following properties.</p>
+<div class="infobox-note" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__GUID-A11383E0-568F-45EC-BE21-F4721D79F577">
+<p class="notep1">Note:</p>
+Ensure that you understand the following issues:
+<ul style="list-style-type: disc;">
+<li>
+<p>Do <span class="italic">not</span> forget the agent username (<code>-au</code>) and agent password (<code>-ap</code>) if you specify them during installation. The same values are required when upgrading the on-premises agent to newer versions. If you forget the supplied parameters, a re-installation of the on-premises agent may be required because upgrading the on-premises agent is not possible. However, if these parameters are not supplied during installation, the default username is <code>weblogic</code>. Contact Oracle Support Services to obtain the default password for <code>weblogic</code>.</p>
+</li>
+<li>
+<p>Do <span class="italic">not</span> install the on-premises agent in a directory path that includes <code>/tmp</code>.</p>
+</li>
+<li>
+<p>Note the use of the dash (<code>-</code>) when specifying the property value.</p>
+</li>
+<li>
+<p>The output of this command is displayed on-screen. For troubleshooting purposes, the installation logs are generated and available at same location as the <code>BSX</code> file. You can also redirect the output to an output file.</p>
+</li>
+</ul>
+</div>
+<pre dir="ltr">
+./cloud-connectivity-agent-installer.bsx &mdash;h=https://<span class="italic">ICS_host.us.oracle.com</span>:<span class="italic">port</span> &mdash;u=<span class="italic">username</span> &mdash;p=<span class="italic">my_password</span> &mdash;ad=<span class="italic">agent_group_identifier</span> -au=<span class="italic">agent_username</span> -ap=<span class="italic">agent_password</span>
+</pre>
+<div class="p">where:
+<div class="tblformal" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__GUID-B7E33D96-4345-4AA2-9C3D-1819B29838A7">
+<table class="cellalignment926" summary="Parameter descriptions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d28447e242">Parameter</th>
+<th class="cellalignment927" id="d28447e244">Status</th>
+<th class="cellalignment927" id="d28447e246">Description</th>
+<th class="cellalignment927" id="d28447e248">Additional Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d28447e252" headers="d28447e242"><code>-h</code></td>
+<td class="cellalignment927" headers="d28447e252 d28447e244">Required</td>
+<td class="cellalignment927" headers="d28447e252 d28447e246">Specify the Oracle Integration Cloud Service hostname and port. As an example, when installing from your Oracle Integration Cloud Service POD, the host and port you specify are typically the Oracle Integration Cloud Service URL (for example, <code>https://icsapps.integ.dc4.c1234.oraclecorp.com:443</code>).</td>
+<td class="cellalignment927" headers="d28447e252 d28447e248">
+<p>Note the following issues:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Do <span class="italic">not</span> specify <code>/ics</code> after the port number.</p>
+</li>
+<li>
+<p>If you forget to specify a port, you receive the following error:</p>
+<pre dir="ltr">
+Numberformat Exception
+</pre></li>
+<li>
+<p>If you specify port <code>80</code> with the <code>https</code> protocol, you can receive the following error:</p>
+<pre dir="ltr">
+Outbound ProxyHost and ProxyPort as not provided  certPath --- 
+/home/oracle/host/downloads/ics_conn_agent_installer_151110.1158/keystore.jks  
+java.net.SocketTimeoutException: Read timed out                 
+   at java.net.SocketInputStream.socketRead0(Native Method)                 
+   at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)                 
+   at java.net.SocketInputStream.read(SocketInputStream.java:170)                 
+   at java.net.SocketInputStream.read(SocketInputStream.java:141)                 
+   at sun.security.ssl.InputRecord.readFully(InputRecord.java:465)                 
+   at sun.security.ssl.InputRecord.read(InputRecord.java:503) 
+   . . . 
+   . . .
+</pre></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e292" headers="d28447e242"><code>-u</code></td>
+<td class="cellalignment927" headers="d28447e292 d28447e244">Required</td>
+<td class="cellalignment927" headers="d28447e292 d28447e246">Specify the Oracle Integration Cloud Service user name.</td>
+<td class="cellalignment927" headers="d28447e292 d28447e248">&nbsp;</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e301" headers="d28447e242"><code>-p</code></td>
+<td class="cellalignment927" headers="d28447e301 d28447e244">Required</td>
+<td class="cellalignment927" headers="d28447e301 d28447e246">Specify the Oracle Integration Cloud Service password.</td>
+<td class="cellalignment927" headers="d28447e301 d28447e248"><span class="bold">Note</span>:
+<ul style="list-style-type: disc;">
+<li>
+<p>Some special characters must be properly escaped with a backslash (\) character. For example, if your password includes an exclamation character, you must enter the backslash character before the exclamation character (\!).</p>
+</li>
+<li>
+<p>If the password contains a dollar sign (<code>$</code>) character (for example, <code>W$lcome11</code>), the complete password value must be contained in single quotes (for example, <code>-p='W$lcome11'</code>). Otherwise, you receive an <code>Undefined variable</code> error when you run the agent installer command.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e332" headers="d28447e242"><code>-ad</code></td>
+<td class="cellalignment927" headers="d28447e332 d28447e244">Required</td>
+<td class="cellalignment927" headers="d28447e332 d28447e246">Specify the agent group identifier that was generated in the <span class="bold">Identifier</span> field when you created the agent group in the New Agent Group - Information dialog in <a href="GUID-42E01556-191D-4362-BB25-0C6D6DB97EF6.htm" title="You must create an agent group in Oracle Integration Cloud Service before you can run the agent installer. When you install the on-premises agent in your environment, you associate the on-premises agent with the agent group identifier. Only one on-premises agent can be associated with an agent group. For a single Oracle Integration Cloud Service instance, you can create up to five agent groups.">Creating an Agent Group</a>. You must create the agent group before you can install the on-premises agent.</td>
+<td class="cellalignment927" headers="d28447e332 d28447e248">&nbsp;</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e350" headers="d28447e242"><code>-au</code></td>
+<td class="cellalignment927" headers="d28447e350 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e350 d28447e246">Specify a new agent username. This is a new username used to initialize the local installation of the on-premises agent. If not specified, the default username of <code>weblogic</code> is used.</td>
+<td class="cellalignment927" headers="d28447e350 d28447e248">&nbsp;</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e362" headers="d28447e242"><code>-ap</code></td>
+<td class="cellalignment927" headers="d28447e362 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e362 d28447e246">Specify a password for the new agent username. If not specified, the default password is used. You may need to contact Oracle Support Services to obtain the default password for the default user <code>weblogic</code>.</td>
+<td class="cellalignment927" headers="d28447e362 d28447e248">&nbsp;</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e374" headers="d28447e242"><code>&mdash;aport</code></td>
+<td class="cellalignment927" headers="d28447e374 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e374 d28447e246">Specify the agent port (for example, <code>9002</code>). This enables you to specify any available port outside of the default value of <code>7001</code>. If not specified, it defaults to <code>7001</code>. Any free port can be used.</td>
+<td class="cellalignment927" headers="d28447e374 d28447e248">&nbsp;</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e392" headers="d28447e242"><code>-ph</code></td>
+<td class="cellalignment927" headers="d28447e392 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e392 d28447e246">Specify the hostname, or address, of the proxy server.
+<p>A proxy server allows indirect connection to network services and is used mainly for security (to get through firewalls) and performance reasons (proxies often provide caching mechanisms). The <code>-ph</code> and <code>-pp</code> properties are only required if your on-premises environment is set up with a proxy server mandating that all connections be routed through it.</p>
+</td>
+<td class="cellalignment927" headers="d28447e392 d28447e248">If your on-premises host includes a proxy server, you must specify this property. The agent can work with any proxy in the DMZ.</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e410" headers="d28447e242"><code>-pp</code></td>
+<td class="cellalignment927" headers="d28447e410 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e410 d28447e246">Specify the port number of the proxy server.</td>
+<td class="cellalignment927" headers="d28447e410 d28447e248">If your on-premises host includes a proxy server, you must specify this parameter.</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d28447e420" headers="d28447e242"><code>-profile</code></td>
+<td class="cellalignment927" headers="d28447e420 d28447e244">Optional</td>
+<td class="cellalignment927" headers="d28447e420 d28447e246">Set the number of worker threads to a value appropriate to your environment.
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PROD</code>: When <code>-profile PROD</code> is specified, the <code>agentWorkerThreads</code> property value is set to <code>40</code> in the <code>CpiAgent.properties</code> file. This setting is optimal for high-load environments. When <code>-profile &mdash;PROD</code> is not specified, the <code>agentWorkerThreads</code> property value also defaults to <code>40</code>.</p>
+</li>
+<li>
+<p><code>DEMO</code>: When <code>-profile DEMO</code> is specified, the <code>agentWorkerThreads</code> property is set to <code>3</code>.</p>
+</li>
+</ul>
+</td>
+<td class="cellalignment927" headers="d28447e420 d28447e248">A value of <code>3</code> may be sufficient for some low-load environments and most demo environments. However, for high-load environments, the agent instance may need additional tuning. Increase concurrency on the on-premises agent host by specifying the <code>-profile PROD</code> property during installation. This automatically sets the number of worker threads to <code>40</code> (the recommended value for high-load environments).
+<p>You can also specify this value in the <code>CpiAgent.properties</code> file after installation. This change requires an agent restart.</p>
+<pre dir="ltr">
+agentWorkerThreads=40
+</pre>
+<p>For information about editing this file, see <a href="GUID-7728AB97-4A91-4B4F-A182-A91817508E92.htm" title="If you need to change values for properties, edit the CpiAgent.properties file on your on-premises host.">Updating Property Values</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+During installation, the following tasks are performed:
+<ul style="list-style-type: disc;">
+<li>
+<p>All on-premises adapters are registered.</p>
+</li>
+<li>
+<p>A Java database is installed.</p>
+</li>
+<li>
+<p>The JRF domain is created.</p>
+</li>
+<li>
+<p>The on-premises agent is deployed.</p>
+</li>
+</ul>
+<p>Once installation is complete, an agent instance is created for interacting with Oracle Integration Cloud Service. You can verify that the agent instance was created by going to the Agent Groups page and noting that the agent count was increased by one. If you click the number, details about the agent are displayed. For more information, see <a href="GUID-43EAF12C-75E0-421A-9A7B-33171EF5EF1B.htm" title="You can view details about agent groups and their associated on-premises agents and edit the agent group name.">Viewing and Editing Agent Groups</a>.</p>
+</li>
+</ol>
+<div class="p">You are now ready to create an adapter connection in Oracle Integration Cloud Service that uses the on-premises agent. See <a href="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D.htm" title="After you have installed the on-premises agent, you can create a connection that uses the agent group and its associated on-premises agent. Only agent groups whose monitoring status is green on the Agent Monitoring page and which have not yet been associated with an adapter can be selected.">Creating a Connection with an Agent Group</a>.
+<div class="infobox-note" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__GUID-A8A51F3E-671F-4541-9E6E-296BDC92C23E">
+<p class="notep1">Note:</p>
+Do not use <code>startWeblogic.sh</code> and <code>stopWeblogic.sh</code> to start and stop the on-premises agent. Instead, use <code>startAgent.sh</code> and <code>stopAgent.sh</code>, as described in this section.</div>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__TROUBLESHOOTINGISSUES-75835433">
+<p class="subhead1">Troubleshooting Issues</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If there is a Derby database (DB) already in use on the host on which the agent is being installed, you receive the following error:</p>
+<pre dir="ltr">
+2016-01-27 20:48:51,714 FINE  [47] com.oracle.cie.domain.jdbc.DatasourceXBeanAspectHelper - 
+prop str: user=dummy;portNumber=1527;databaseName=dummy;create=true;serverName=localhost 
+url: jdbc:derby://localhost:1527/dummy;ServerName=localhost;databaseName=dummy 
+2016-01-27 20:48:51,714 FINE  [47] com.oracle.cie.domain.jdbc.DatasourceXBeanAspectHelper - 
+Selected DB ID/CAT: DerbyDerby's Driver (Type 4) Versions:Any 2016-01-27 20:48:51,714 FINE  
+[47] com.oracle.cie.domain.jdbc.DatasourceXBeanAspectHelper - Selected DB vendor: Derby 
+2016-01-27 20:48:51,714 FINE  [47] com.oracle.cie.domain.jdbc.DatasourceXBeanAspectHelper - 
+adding normal datasource: opss-data-source 2016-01-27 20:48:51,714 FINE  [47] 
+com.oracle.cie.domain.jdbc.DatasourceXBeanAspectHelper - datasource: opss-data-source component 
+name: OPSS Schema
+. . .
+. . .
+</pre>
+<div class="p">Perform the following steps:
+<ol>
+<li>
+<p>Check if the Derby database is running.</p>
+<pre dir="ltr">
+ps -ef | grep "derby"
+</pre></li>
+<li>
+<p>If any processes are displayed, run the following command to terminate them:</p>
+<pre dir="ltr">
+ps -ef | grep "derby" | awk '{print $2}' | xargs kill -9
+</pre></li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__UNINSTALLINGORACLEINTEGRATIONCLOUDS-75845BEF">
+<p class="subhead1">Deinstalling the On-Premises Agent</p>
+</div>
+<!-- class="section" -->
+<div class="p">If you need to reinstall the on-premises agent, you must first deinstall it. Follow these instructions in the order specified.</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Stop the on-premises agent:</span>
+<div><code>./stopAgent.sh</code></div>
+</li>
+<li class="stepexpand"><span>Delete the directory in which the on-premises agent is installed.</span></li>
+<li class="stepexpand"><span>Go to Oracle Integration Cloud Service.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Agents</span>.</span></li>
+<li class="stepexpand"><span>Find the agent group.</span></li>
+<li class="stepexpand"><span>Click the number representing the agent count. The Agents in this Agent Group dialog is displayed.</span></li>
+<li class="stepexpand"><span>Find the agent to delete, and click <span class="bold">X</span> to delete the agent registration.</span></li>
+<li class="stepexpand"><span>Reinstall the on-premises agent with the agent group specified in the installation parameters, as described in <a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9__INSTALLATION-75832E37">Installing the On-Premises Agent</a>.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-42E01556-191D-4362-BB25-0C6D6DB97EF6.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

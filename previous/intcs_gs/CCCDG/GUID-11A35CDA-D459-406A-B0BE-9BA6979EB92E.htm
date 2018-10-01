@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Metadata Downloading and Caching</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="You can cache and download metadata to improve adapter performance." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-092518BD-941C-4988-B4BF-F6518A7ADFE8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-54792378-79DD-4B3F-9F73-440F01A0E198.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-11A35CDA-D459-406A-B0BE-9BA6979EB92E"></a> <span id="PAGE" style="display:none;">64/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-11A35CDA-D459-406A-B0BE-9BA6979EB92E" class="sect1">Metadata Downloading and Caching</h1>
+<div>
+<p>You can cache and download metadata to improve adapter performance.</p>
+<p>For some ICS adapters (called connections), downloading and processing of application metadata can be a network- and processor-intensive task. In addition, because adapters are shared, the loading delay for a particular adapter is constant. For example, a delay as long as 30 seconds might occur every time a wizard user drags a particular adapter onto a source or target in ICS. Editing an adapter might involve delays as well.</p>
+<p>In JDeveloper, the loading delay is slightly shorter and less of an issue because adapters are cached and not shared.</p>
+<p>This delay has two sources:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Downloading remote metadata artifacts. ICS Connections rely on SaaS application metadata, which typically comes in two forms: static artifacts such as WSDL and JSON files, and dynamic artifacts such as metadata in XML format. Downloading of static artifacts is relatively quick, but downloading of dynamic artifacts can take longer because of an application layer. For example, Oracle RightNow has a web service application to service all metadata calls.</p>
+</li>
+<li>
+<p>Parsing downloaded artifacts. After downloading, artifacts must be parsed. The adapter plugin to which the ICS Connection belongs parses the artifacts. Parsing of standard static artifacts is relatively quick, but parsing of custom metadata can be time-consuming. Some metadata requires many xpath evaluations, for which processing time grows in proportion to the document size.</p>
+</li>
+</ul>
+<p>Downloading and parsing of artifacts produces the Cloud Application Model (CAM). The CAM selects objects, operations, and header properties, and generates runtime artifacts. The CAM can change over time. For example, to save bandwidth, some plugins only download object names. Other details, such as field names, are downloaded during runtime artifact generation. Without caching, the CAM would be created every time a connection is dragged onto a source or target or opened for editing.</p>
+<p>The metadata downloading and caching feature ensures that connection metadata is downloaded and parsed only when the connection is saved. This creates a one-to-one relationship between a connection and its metadata. This feature is optional. Only plugins that can use the performance benefits need to implement the required interfaces. Other plugins are not affected.</p>
+<p>The following diagram shows the details of the metadata downloading and caching feature.</p>
+<p><img width="495" height="419" src="img/GUID-CE2BC0B0-9C50-4825-9CF0-BBFDD5AED67D-default.png" alt="media/image94.png" title="media/image94.png" /><br />
+<a href="img_text/GUID-5B2961FB-34D8-445E-AAE1-38F616DFDA36.htm">Description of the illustration GUID-CE2BC0B0-9C50-4825-9CF0-BBFDD5AED67D-default.png</a></p>
+<p>Here is a more detailed description of the process:</p>
+<ol>
+<li>
+<p>The process begins when the wizard user saves a connection.</p>
+</li>
+<li>
+<p>The connection properties are checked for values. Empty connection properties mean no caching is required and no download is triggered.</p>
+</li>
+<li>
+<p>Valid connection properties trigger the metadata download. Part of the download process (not shown in the diagram) is to check whether the plugin supports metadata downloading.</p>
+</li>
+<li>
+<p>If a download is already in progress for this connection, then no additional download occurs. The save is marked as complete.</p>
+</li>
+<li>
+<p>If a CAM is already cached, the digest of connection properties is checked for changes. Plugins that implement the caching API can optionally mark signature properties. Changes to signature properties indicate that the cached data is invalid. For example, in the RightNow plugin, the WSDL URL, username, and password are signature properties.</p>
+</li>
+<li>
+<p>If the digest has not changed, the cached data might still need to be refreshed. Plugins that implement the caching API can optionally implement the refreshRequired method, which receives the lastModified date of the metadata. If this method returns true, the cache is refreshed.</p>
+</li>
+</ol>
+<p><span class="bold">Note:</span> If the download of cached data fails, the save does NOT fail. Downloading of metadata is not mandatory, and even if it fails or does not exist, the connection still works, though most likely more slowly.</p>
+<p><span class="bold">Implementation Details for Adapter Plugins</span></p>
+<p>To support downloading and caching of metadata in a plugin, follow these steps:</p>
+<ol>
+<li>
+<p>The main class that extends <code>AbstractCloudApplicationAdapter</code> must also implement <code>oracle.tip.tools.ide.adapters.cloud.api.model.HandlesBackgroundMetadataDownload</code>. This interface has one method: <code>getMetadataDownloadHandler()</code>.</p>
+<pre dir="ltr">
+public class RightNowCloudAdapter extends AbstractCloudApplicationAdapter implements HandlesBackgroundMetadataDownload
+</pre></li>
+<li>
+<p>The <code>oracle.tip.tools.ide.adapters.cloud.api.model.MetadataDownloadHandler</code> returned from the <code>getMetadataDownloadHandler()</code> method must be implemented.</p>
+<p><span class="bold">Tip:</span> have your implementation of <code>AbstractMetadataBrowser</code> implement this interface and return a new instance of the metadata browser. The browser should already contain details for downloading and parsing metadata, so you don&rsquo;t need to write a new class.</p>
+<pre dir="ltr">
+@Override
+public MetadataDownloadHandler getMetadataDownloadHandler(AdapterPluginContext context) {
+     return new SampleMetadataBrowser((CloudConnection)context.getContextObject(AdapterConstants.CONNECTION),context);
+}
+</pre></li>
+</ol>
+<p>The following diagram shows the interfaces and classes required to implement caching:</p>
+<p><img width="575" height="282" src="img/GUID-F39DF414-E8AB-4A5C-A7E5-9CC92578EA05-default.png" alt="media/image95.png" title="media/image95.png" /><br />
+<a href="img_text/GUID-A94BC4F2-590B-4ABF-B967-FADE69A09477.htm">Description of the illustration GUID-F39DF414-E8AB-4A5C-A7E5-9CC92578EA05-default.png</a></p>
+<p><span class="bold">The HandlesBackgroundMetadataDownload Interface</span></p>
+<p>This interface must be implemented by the main adapter class of your plugin. The main adapter class is the class that extends <code>oracle.tip.tools.ide.adapters.cloud.impl.plugin.lAbstractCloudApplicationAdapter</code>. An adapter plugin that implements this interface is considered to be supporting the downloading of metadata in a background thread.</p>
+<p><span class="bold">Note:</span> The adapter is not responsible for managing threading. The design-time framework uses a background thread to invoke the main method of this interface, <code>getMetadataDownloadHandler</code>, which must return an implementation of <code>MetadataDownloadHandler</code>.</p>
+<pre dir="ltr">
+public class SampleMetadataBrowser extends AbstractMetadataBrowser implements MetadataDownloadHandler
+
+// Constructor
+public SampleMetadataBrowser(CloudConnection connection,  AdapterPluginContext context) 
+{
+        super(connection, context);
+        String ns = null;
+        CloudApplicationModel model = getModel();
+        if(model != null) {
+                //Try to use the cached WSDL to get the namespace
+                Definition def = (Definition)model.getSourceArtifacts().get(AdapterConstants.WSDL_DEFINITION);
+                if(def != null) {
+                        ns = def.getTargetNamespace();
+                }
+        }
+        if(ns == null){
+                ns = SampleCloudUtil.parseWsdlNamespace(connection, context);
+        }
+        currentVersion = RightNowCloudUtil.getRightNowVersion(ns);
+}
+</pre>
+<p><span class="bold">The MetadataDownloadHandler Interface</span></p>
+<p>This interface represents a handler for the plugin's metadata downloads. The handler is invoked by a background thread that manages the cache. The main artifact of this handler is the <code>CloudApplicationModel</code>.</p>
+<p>The <code>downloadMetadata()</code> method is called when a metadata download is required. The implementation should download and parse metadata and ultimately produce a <code>CloudApplicationModel</code>. The <code>CloudApplicationModel</code> is cached by the framework.</p>
+<p><span class="bold">Note:</span> The CAM does not have to be complete at this point. Incomplete parts of the CAM can be processed later using <code>CompletionHandlers</code>.</p>
+<pre dir="ltr">
+public CloudApplicationModel downloadMetadata() throws CloudApplicationAdapterException{
+     AdapterPluginContext context = getContext();
+
+     List&lt;MetadataParser&gt; parsers = getMetadataParsers(context);
+     for(MetadataParser parser:parsers) {
+             parseMetadata(parser,context);
+     }
+     return (CloudApplicationModel)context.getCloudApplicationModel();
+}
+</pre>
+<p>The <code>requiresRefresh()</code> method is called with the last <code>dateTime</code> of the metadata that was downloaded. The plugin should determine whether the current metadata is still fresh or whether a new download is necessary. Returning <span class="bold">true</span> causes new metadata to be downloaded, while <span class="bold">false</span> keeps the current metadata.</p>
+<pre dir="ltr">
+@Override
+public boolean requiresRefresh(long lastModified)  throws CloudApplicationAdapterException {
+        
+boolean doRefresh = true; 
+        
+try{
+// ping ds and record last modified time. 
+SampleCloudConnection conn = (SampleCloudConnection)getContext().getContextObject(AdapterConstants.CONNECTION);
+PingStatus pingStatus = conn.ping();
+if(pingStatus.isSuccess()){
+     long currentModified = getCurrentModified(getContext());
+     doRefresh = currentModified &gt; lastModified;
+}else{
+      doRefresh = false;
+}
+}catch(Exception e){
+     doRefresh = true; 
+}
+return doRefresh;
+}
+</pre>
+<p>The <code>signatureKeys()</code> method returns a set of properties that form the signature of the cached metadata. When this signature changes, the cache is considered invalid. For example, an adapter plugin might consider the WSDL URL, username, and password properties to be signature keys. If any of these properties change in a connection, the currently cached metadata is considered invalid and new metadata is downloaded.</p>
+<pre dir="ltr">
+@Override
+public Set&lt;String&gt; signatureKeys() {
+        //if any of these properties change then the cache should be invalidated
+        Set&lt;String&gt; keys = new HashSet&lt;String&gt;();
+        keys.add(AdapterConstants.SOURCE_WSDL_LOCATION);
+        keys.add(AdapterConstants.USERNAME);
+        keys.add(AdapterConstants.PASSWORD);
+        return keys;
+}
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-092518BD-941C-4988-B4BF-F6518A7ADFE8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-54792378-79DD-4B3F-9F73-440F01A0E198.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Create transforms to prepare and enrich data. You create a transform based on sample data, and after editing and publishing it, you can apply the transform to an entire data set in a cluster.">
+      <meta name="description" content="Create transforms to prepare and enrich data. You create a transform based on sample data, and after editing and publishing it, you can apply the transform to an entire data set in a cluster.">
+      <title>Creating Transforms</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta property="og:description" content="Create transforms to prepare and enrich data. You create a transform based on sample data, and after editing and publishing it, you can apply the transform to an entire data set in a cluster.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.3.1">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.epub" title="ePub File" type="application/epub+zip">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.mobi" title="Mobi File" type="application/x-mobipocket-ebook">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-05-10T15:12:37-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63106-15">
+      <meta name="dcterms.isVersionOf" content="bdpug">
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-prep-cloud">
+      <meta name="dcterms.release" content="Latest Cloud Release">
+      <link rel="prev" href="task-overview-working-catalog.html" title="Previous" type="text/html">
+      <link rel="next" href="editing-transforms.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"cloud",
+                      "element_name":"Cloud",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"paas",
+                      "element_name":"Platform as a Service (PaaS)",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"business-analytics",
+                      "element_name":"Business Analytics",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"big-data-prep-cloud",
+                      "element_name":"Big Data Preparation Cloud Service",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"latest",
+                      "element_name":"Latest Cloud Release",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="task-overview-working-catalog.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="editing-transforms.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Preparation Cloud Service</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="working-catalog.html" property="item" typeof="WebPage"><span property="name">Working with the Catalog</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Creating Transforms</li>
+            </ol>
+            <a id="GUID-DED0D512-76DF-475E-A6AD-CB9614035385" name="GUID-DED0D512-76DF-475E-A6AD-CB9614035385"></a>
+            
+            <h2 id="BDPUG-GUID-DED0D512-76DF-475E-A6AD-CB9614035385" class="sect2">Creating Transforms</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Create transforms to prepare and enrich data. You create a transform based on sample data, and after editing and publishing it, you can apply the transform to an entire data set in a cluster.</p>
+               <div class="section">
+                  <p>
+                     <div class="video-box">
+                        <div id="13279" class="video-container"></div>
+                     </div>
+                  </p>
+                  <p>To create a transform:</p>
+               </div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span> On the <span class="bold">Home</span> or <span class="bold">Catalog</span> page, click <span class="bold">Create Transform</span>.</span><div>The Create Transform page appears.</div>
+                  </li>
+                  <li class="stepexpand"><span>In the <span class="bold">Name</span> field, enter a name to identify the transform. Use only alpha-numeric and underscore characters to name your transform. Other special characters are not allowed.</span></li>
+                  <li class="stepexpand"><span>In the <span class="bold">Description</span> field, describe the use of this transform.</span></li>
+                  <li class="stepexpand"><span>In the <span class="bold">Source</span> field, click <span class="bold">Select</span>.</span><div> To run a search in the <span class="bold">Search</span> field, enter part of the name or the complete name of the source.
+                     </div>
+                     <div>The Select dialog box appears.</div>
+                  </li>
+                  <li class="stepexpand"><span>From the <span class="bold">Source</span> drop-down list, click the source where your sample or raw data file is located.</span><div>A list of directories for the selected source appears in the Select File dialog.</div>
+                  </li>
+                  <li class="stepexpand"><span>In the Select File dialog, go to the directory where your sample or raw data file is located, select the file, and then click <span class="bold">OK</span>. Alternatively, you can just select the directory, and all the files in that directory will be processed as part of the transform.</span><div>For more information on supported file types, see <a href="understanding-supported-file-types.html" title="Provide your data using different file types. Additionally, you can compress your files using different file compression formats.">Understanding the Supported File Types</a>.
+                     </div>
+                     <div>You can also select a directory. If you select a directory instead of a specific file, you will receive a warning, but all the files in that directory will be processed.<br><img src="img/transform_directory_warning.png" alt="Description of transform_directory_warning.png follows" title="Description of transform_directory_warning.png follows" longdesc="img_text/transform_directory_warning.html"><br><a href="img_text/transform_directory_warning.html">Description of the illustration transform_directory_warning.png</a><br></div>
+                  </li>
+                  <li class="stepexpand"><span>Optionally, select any of the following:</span><ul>
+                        <li><span class="bold">Smart Sample</span>: Allow the processing engine to use a sampling algorithm on the selected file instead of loading and processing the entire set of rows in the source. This shortens the time for data preparation.
+                           <div class="infoboxnote" id="GUID-DED0D512-76DF-475E-A6AD-CB9614035385__GUID-ACA840C6-7D83-457A-9739-333519ED6E01">
+                              <p class="notep1">Note:</p>Smart samples are loaded only for files that contain less than one million rows. Otherwise, the entire data file is automatically loaded in your Hadoop cluster.
+                           </div>
+                        </li>
+                        <li><span class="bold">Contains Headers</span>: This option is selected by default. If your selected source doesn’t contain headers, then deselect this option.
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="stepexpand"><span>Click <span class="bold">Submit</span>.</span><div>You return to the Catalog page where your new transform is listed and it begins processing.<br><img src="img/transform_processing.png" alt="Processing transform" title="Processing transform"><br><p>On the right side of the Catalog page, the Activity Stream provides a status on the data ingestion and profiling for your new transform.<br><img src="img/activitystream.png" alt="Description of activitystream.png follows" title="Description of activitystream.png follows" longdesc="img_text/activitystream.html"><br><a href="img_text/activitystream.html">Description of the illustration activitystream.png</a><br></p>
+                        <p>When the transform is successfully processed, the status changes in the Catalog list.</p><br><img src="img/transform_ready.png" alt="Description of transform_ready.png follows" title="Description of transform_ready.png follows" longdesc="img_text/transform_ready.html"><br><a href="img_text/transform_ready.html">Description of the illustration transform_ready.png</a><br></div>
+                  </li>
+                  <li class="stepexpand"><span>To open the transform and view its contents, click the name of the transform or select <span class="bold">Edit</span> from the <span class="bold">More Actions</span><img src="img/more_actions.png" alt="More Actions" title="More Actions"> menu.</span><div>The main authoring page appears. The transform is created using patterns that the system automatically recognizes. The system also displays recommendations to fix and enrich the data. For more information, see <a href="understanding-recognized-patterns-and-data-enrichments.html" title="When you create a transform, Oracle Big Data Preparation Cloud Service automatically recognizes some patterns in the data. It also suggests enrichments that you can add based on the existing data.">Understanding Recognized Patterns and Data Enrichments</a>.
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Edit the transform script.</span><div>For more information on editing the transform script, see <a href="task-overview-authoring-transform-script.html" title="The transform script contains the actions to apply to your data. When you create a transform, the application automatically creates a basic transform script. Edit this script and add actions to prepare and enrich your data.">Task Overview for Authoring the Transform Script</a>.
+                     </div>
+                  </li>
+                  <li class="stepexpand"><span>Click <span class="bold">Done</span>.</span><div>The changes that you made to the transform are saved.</div>
+                  </li>
+               </ol>
+               <div class="section">The created transform is now part of the Catalog. Use it to prepare and enrich data.</div>
+               <!-- class="section" -->
+               <div class="section">Publish your transform and apply it to other sources. For more information, see <a href="publishing-transforms.html" title="Publish already defined transforms from the Catalog.">Publishing Transforms</a>.
+               </div>
+               <!-- class="section" -->
+               <div class="section">Schedule your transform to run periodically on one or more sources. For more information, see <a href="understanding-policies-and-scheduling.html" title="Oracle Big Data Preparation Cloud Service policies let you schedule transform services to run against specific data files or directories at regular intervals.">Understanding Policies and Scheduling</a>.
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Lookups</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="A lookup associates values used by one application for a specific field to the values used by other applications for the same field. This provides the capability to map values across vocabularies or systems. For example, you can map country codes, city codes, currency codes, and so on." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A834333F-C4C3-4DC0-AC2B-BD393FE58EE0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-BE72843C-275E-40E3-AF9F-2F3D49DFF761.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C"></a> <span id="PAGE" style="display:none;">29/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C" class="sect1">Creating Lookups</h1>
+<div>
+<p>A lookup associates values used by one application for a specific field to the values used by other applications for the same field. This provides the capability to map values across vocabularies or systems. For example, you can map country codes, city codes, currency codes, and so on.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-93229925-06C1-4C08-8BAC-3FCC69722C38" title="Create a lookup to map values between applications.">Creating a Lookup</a></p>
+</li>
+<li>
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-2A699B7F-C477-43CF-A69E-FEC1198B907D" title="Add adapters or domain name to a lookup to map values between connections.">Adding Adapters or Domain Names to a Lookup</a></p>
+</li>
+<li>
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-673B7C11-4CEF-489B-8381-D7011FFAEDE6" title="You can clone a copy of an existing lookup. It is a quick way to create a new lookup with similar information. Lookups with adapters and domain names can be cloned.">Cloning a Lookup</a></p>
+</li>
+<li>
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-2896FCD8-330D-47E3-8FD0-1B494AADFDE9" title="You can delete a connection from the Lookup menu.">Deleting a Lookup</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-93229925-06C1-4C08-8BAC-3FCC69722C38"></a>
+<h2 id="ICSUG-GUID-93229925-06C1-4C08-8BAC-3FCC69722C38" class="sect2">Creating a Lookup</h2>
+<div>
+<p>Create a lookup to map values between applications.</p>
+<ol>
+<li class="stepexpand"><span>From the Designer Portal, select <span class="bold">Lookups</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create New Lookup</span>.</span>
+<div>The New Lookup &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter a name and optional description for the lookup.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span></li>
+</ol>
+<div class="section">The Lookup page is displayed.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-2A699B7F-C477-43CF-A69E-FEC1198B907D"></a>
+<h2 id="ICSUG-GUID-2A699B7F-C477-43CF-A69E-FEC1198B907D" class="sect2">Adding Adapters or Domain Names to a Lookup</h2>
+<div>
+<p>Add adapters or domain name to a lookup to map values between connections.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Domain Name 1</span>.</span>
+<div>A menu with options is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select the type to create:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Select Adapter</span>: This selection invokes the Select Adapter dialog for choosing the adapter to use. You can change your selection:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you want to change your adapter selection, click the selected adapter type, then choose <span class="bold">Select Different Adapter</span>.</p>
+</li>
+<li>
+<p>If you want to change from an adapter to a domain name, click the selected adapter type and choose <span class="bold">Replace with Domain Name</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Enter Domain Name</span>: This selection invokes a dialog for entering the domain name to use. There is a 50 character limit. You can change your selection:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you want to change from a domain name to an adapter, click the domain name, then choose <span class="bold">Replace with Adapter</span>.</p>
+</li>
+<li>
+<p>If you want to change the domain name, click the name, then choose <span class="bold">Edit Domain Name</span>.</p>
+</li>
+</ul>
+<p>The adapter or domain name is displayed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Enter a value in the field below the adapter or domain name. To add more rows for additional values, click the <span class="bold">+</span> sign.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Domain Name 2</span>.</span></li>
+<li class="stepexpand"><span>Repeat Step 2 to add an adapter or domain name.</span></li>
+<li class="stepexpand"><span>Enter a value in the field below the adapter or domain name. To add more rows for additional values, click the <span class="bold">+</span> sign.</span>
+<div><br />
+<img width="494" height="123" src="img/GUID-7E5FD5EC-E339-4705-938A-33D604F3B4C3-default.png" alt="Description of GUID-7E5FD5EC-E339-4705-938A-33D604F3B4C3-default.png follows" title="Description of GUID-7E5FD5EC-E339-4705-938A-33D604F3B4C3-default.png follows" /><br />
+<a href="img_text/GUID-7E5FD5EC-E339-4705-938A-33D604F3B4C3-default.htm">Description of the illustration GUID-7E5FD5EC-E339-4705-938A-33D604F3B4C3-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>If you want to add another column, click <span class="bold">+</span>.</span></li>
+<li class="stepexpand"><span>Repeat to add more adapters and domain names to the lookup.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span> when complete.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-673B7C11-4CEF-489B-8381-D7011FFAEDE6"></a>
+<h2 id="ICSUG-GUID-673B7C11-4CEF-489B-8381-D7011FFAEDE6" class="sect2">Cloning a Lookup</h2>
+<div>
+<p>You can clone a copy of an existing lookup. It is a quick way to create a new lookup with similar information. Lookups with adapters and domain names can be cloned.</p>
+<ol>
+<li class="stepexpand"><span>On the Lookups page, click <span class="bold">Clone</span> from the Lookup menu.<br />
+<img width="273" height="307" src="img/GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png" alt="Description of GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png follows" title="Description of GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png follows" /><br />
+<a href="img_text/GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.htm">Description of the illustration GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png</a><br /></span>
+<div>The Clone Lookup dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the lookup information.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Clone</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Edit</span> to further configure your cloned connection.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-2896FCD8-330D-47E3-8FD0-1B494AADFDE9"></a>
+<h2 id="ICSUG-GUID-2896FCD8-330D-47E3-8FD0-1B494AADFDE9" class="sect2">Deleting a Lookup</h2>
+<div>
+<p>You can delete a connection from the Lookup menu.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Delete</span> from the Lookup menu.<br /></span>
+<div class="imageleft"><img class="imageleft" width="273" height="307" src="img/GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png" alt="Description of GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png follows" title="Description of GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png follows" /><br />
+<a href="img_text/GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.htm">Description of the illustration GUID-BB87952E-D303-4649-90C6-4A4A26DF15DA-default.png</a></div>
+<br />
+<div>The Delete connection dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> to confirm deletion.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-A834333F-C4C3-4DC0-AC2B-BD393FE58EE0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-BE72843C-275E-40E3-AF9F-2F3D49DFF761.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

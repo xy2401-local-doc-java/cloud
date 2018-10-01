@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<title>Oracle Monetization Cloud SOAP API Reference</title>
+<meta name="dcterms.created" content="2017-08-10T9:46:30Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle Monetization Cloud SOAP API Reference" />
+<meta name="dcterms.identifier" content="E76807-01" />
+<meta name="dcterms.isVersionOf" content="BCSAR" />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="toc.htm" title="Previous" type="text/html" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script type="text/javascript">
+
+function getDocHeight(doc) {
+    doc = doc || document;
+    // from http://stackoverflow.com/questions/1145850/get-height-of-entire-document-with-javascript
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+function setIframeHeight(id) {
+    var specframe = document.getElementById(id);
+    var doc = specframe.contentDocument? specframe.contentDocument: specframe.contentWindow.document;
+    specframe.style.visibility = 'hidden';
+    specframe.style.height = "10px"; // reset to minimal height in case going from longer to shorter doc
+    // some IE versions need a bit added or scrollbar appears
+    specframe.style.height = getDocHeight( doc ) + 4 + "px";
+    specframe.style.visibility = 'visible';
+}
+</script>
+<style type="text/css">
+body {
+    font-family: "Helvetica Neue","Neue Helvetica",Arial,sans-serif;
+    font-size: 14px;
+    background: none repeat scroll 0 0 white;
+    color: #222222;
+}
+#header {
+    background-color: #f7f7f7;
+	 border-bottom: 1px solid #fff;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    left: 0;
+    margin: 0;
+    min-height: 55px;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+}
+#container {
+	width:100%; /* or 1000px? */
+	overflow: auto;
+}
+#side {
+	background-color:white; 
+	position:absolute;
+	float:left;
+	white-space:nowrap; 
+	overflow:auto; 
+	max-height:50em;
+	width:25%; 
+	padding:1em;
+	font-size: 12px;
+	line-height: 1.6;
+}
+#content {
+	float:right;
+	<!-- height:62em; -->
+	<!-- padding:0.5em; -->
+	padding-top: 56px;
+	width:71%; 
+}
+h1 {
+   color: #4f4f4f;
+	font-size: 36px;
+   font-weight: 500;
+   line-height: 1.2;
+}
+iframe#specframe {
+    border:0px;
+    <!-- border:1px solid #ccc; -->
+    margin:.6em 0 .6em;
+    width:99%;
+}
+</style>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+
+<body>
+
+<div id="container">
+<noscript>
+<p>Javascript must be enabled in the browser for this page to function properly.</p>
+<br />
+</noscript>
+
+<div id="header" style="min-height: 55px; display: block; margin: 0px; padding: 0px;">
+<div class="oracle-logo">
+<a href="//docs.oracle.com/en/">
+<img width="236" height="22" border="0" alt="Oracle Documentation" src="//docs.oracle.com/en/dcommon/img/oracle-doc-logo.png">
+</a>
+</div>
+
+</div>
+
+<div style="padding-top: 1.5em; padding-bottom: 0.5em; padding-left: 15px;">
+<a href="/">Home</a> / <a href="/en/industries/">Industries</a> / <a href="../index.html">Oracle Monetization Cloud Release 1.1</a>
+</div>
+
+<div class="titleDiv">Oracle Monetization Cloud SOAP API Reference</div>
+
+<div style="margin-left: -20px; height: 38px;">
+<div class="row" style="background: none repeat scroll 0% 0% rgb(247, 247, 247); border-bottom: 1px solid rgb(232, 238, 243); border-top: 1px solid rgb(232, 238, 243); margin-left: 15px; height: 38px;">
+<div id="contnav" class="large-3 medium-4 columns" style="text-align: left; padding-left: 0px; border-right: 1px solid rgb(203, 203, 203); height: 38px;">
+</div>
+<div class="large-5 medium-4 columns" style="padding-left: 20px; border-left: 1px solid rgb(255, 255, 255);">
+<a class="header-home-link" href="../index.html">
+<span class="App-home_24" style="font-size: 24px; position: relative;"></span>
+</a>
+</div>
+</div>
+</div>
+
+<div id="content">
+<!--
+<p class="betadraftsubtitle">Beta Draft</p>
+<br/>
+-->
+
+<iframe src="intro.html" name="specframe" title="SOAP API Operations Parameter Specs" width="100%" frameborder="0" height="680">
+</iframe>
+<hr />
+<!--
+<p class="betadraftsubtitle">ORACLE CONFIDENTIAL. For authorized use only. Do not distribute to third parties.</p>
+-->
+
+</div>
+
+<div id="side">
+<br/>
+<p style="margin-bottom: 6px;"><a target='specframe' href ="intro.html">SOAP API Reference</a></p>
+
+<p style="margin-bottom: 0px; border-bottom: 1px solid rgb(238, 238, 238); font-weight: bold;">Operations</p>
+<p style="font-size: 12px; color: #222222; line-height: 1.6; margin-bottom:4px; text-align:right">
+<a style="color: #222222; text-decoration: underline;" href="#" onClick="collapse_menu_all(0); return false">Expand All</a> &middot; 
+<a style="color: #222222; text-decoration: underline;" href="#" onClick="collapse_menu_all(1); return false">Collapse All</a>
+</p>
+<a href="#" onClick="collapse_menu(menu1, 0); return false">Accounts Receivable Operations</a><br><span id="menu1"></span>
+<a href="#" onClick="collapse_menu(menu2, 1); return false">Activity Operations</a><br><span id="menu2"></span>
+<a href="#" onClick="collapse_menu(menu3, 2); return false">Balance Operations</a><br><span id="menu3"></span>
+<a href="#" onClick="collapse_menu(menu4, 3); return false">Billing Operations</a><br><span id="menu4"></span>
+<a href="#" onClick="collapse_menu(menu5, 4); return false">Customer Operations</a><br><span id="menu5"></span>
+<a href="#" onClick="collapse_menu(menu6, 5); return false">Contracts Management Operations</a><br><span id="menu6"></span>
+<a href="#" onClick="collapse_menu(menu7, 6); return false">Customer Care Operations</a><br><span id="menu7"></span>
+<a href="#" onClick="collapse_menu(menu8, 7); return false">Invoicing Operations</a><br><span id="menu8"></span>
+<a href="#" onClick="collapse_menu(menu9, 8); return false">Payment Operations</a><br><span id="menu9"></span>
+<a href="#" onClick="collapse_menu(menu10, 9); return false">Price List Operations</a><br><span id="menu10"></span>
+<a href="#" onClick="collapse_menu(menu11, 10); return false">Read Operations</a><br><span id="menu11"></span>
+<a href="#" onClick="collapse_menu(menu12, 11); return false">Subscription Operations</a><br><span id="menu12"></span>
+
+
+<script language="javascript">
+var on_off=new Array();
+var menu_code=new Array();
+number_of_menus=12;
+
+menu_code[0]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArAccountAdjustment.html>pcmOpArAccountAdjustment</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArAccountWriteoff.html>pcmOpArAccountWriteoff</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArBillAdjustment.html>pcmOpArBillAdjustment</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArBillDispute.html>pcmOpArBillDispute</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArBillSettlement.html>pcmOpArBillSettlement</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArBillWriteoff.html>pcmOpArBillWriteoff</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArBillinfoWriteoff.html>pcmOpArBillinfoWriteoff</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArEventAdjustment.html>pcmOpArEventAdjustment</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArEventDispute.html>pcmOpArEventDispute</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArEventSettlement.html>pcmOpArEventSettlement</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetAcctActionItems.html>pcmOpArGetAcctActionItems</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetAcctBalSummary.html>pcmOpArGetAcctBalSummary</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetAcctBills.html>pcmOpArGetAcctBills</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetActionItems.html>pcmOpArGetActionItems</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetBalSummary.html>pcmOpArGetBalSummary</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetBillItems.html>pcmOpArGetBillItems</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetBills.html>pcmOpArGetBills</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetDisputeDetails.html>pcmOpArGetDisputeDetails</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetDisputes.html>pcmOpArGetDisputes</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetItemDetail.html>pcmOpArGetItemDetail</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArGetItems.html>pcmOpArGetItems</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArItemAdjustment.html>pcmOpArItemAdjustment</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArItemDispute.html>pcmOpArItemDispute</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArItemSettlement.html>pcmOpArItemSettlement</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArItemWriteoff.html>pcmOpArItemWriteoff</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpArResourceAggregation.html>pcmOpArResourceAggregation</a><br>";
+
+
+menu_code[1]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActActivity.html>pcmOpActActivity</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActCalcMaxUsage.html>pcmOpActCalcMaxUsage</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActFind.html>pcmOpActFind</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActLoadSession.html>pcmOpActLoadSession</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActScheduleCreate.html>pcmOpActScheduleCreate</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActScheduleDelete.html>pcmOpActScheduleDelete</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActScheduleExecute.html>pcmOpActScheduleExecute</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpActScheduleModify.html>pcmOpActScheduleModify</a><br>";
+
+menu_code[2]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBalChangeValidity.html>pcmOpBalChangeValidity</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBalGetAcctBalGrpAndSvc.html>pcmOpBalGetAcctBalGrpAndSvc</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBalGetAcctBillinfo.html>pcmOpBalGetAcctBillinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBalGetBalGrpAndSvc.html>pcmOpBalGetBalGrpAndSvc</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBalGetBalances.html>pcmOpBalGetBalances</a><br>";
+
+menu_code[3]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillFind.html>pcmOpBillFind</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillDebit.html>pcmOpBillDebit</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillGetItemEventChargeDiscount.html>pcmOpBillGetItemEventChargeDiscount</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillGroupGetParent.html>pcmOpBillGroupGetParent</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillGroupMoveMember.html>pcmOpBillGroupMoveMember</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillItemEventSearch.html>pcmOpBillItemEventSearch</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillItemRefund.html>pcmOpBillItemRefund</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillMakeBillNow.html>pcmOpBillMakeBillNow</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillReverse.html>pcmOpBillReverse</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillSetLimitAndCr.html>pcmOpBillSetLimitAndCr</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpBillViewInvoice.html>pcmOpBillViewInvoice</a><br>";
+  
+menu_code[4]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustCommitCustomer.html>pcmOpCustCommitCustomer</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustCreateProfile.html>pcmOpCustCreateProfile</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustDeleteAcct.html>pcmOpCustDeleteAcct</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustDeletePayinfo.html>pcmOpCustDeletePayinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustDeleteProfile.html>pcmOpCustDeleteProfile</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustFind.html>pcmOpCustFind</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustFindPayinfo.html>pcmOpCustFindPayinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustFindProfile.html>pcmOpCustFindProfile</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustGetNote.html>pcmOpCustGetNote</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustModifyCustomer.html>pcmOpCustModifyCustomer</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustModifyProfile.html>pcmOpCustModifyProfile</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustSetNote.html>pcmOpCustSetNote</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustSetTaxinfo.html>pcmOpCustSetTaxinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustUpdateCustomer.html>pcmOpCustUpdateCustomer</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustUpdateServices.html>pcmOpCustUpdateServices</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustPolGetPlans.html>pcmOpCustPolGetPlans</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustPolGetProducts.html>pcmOpCustPolGetProducts</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustPolReadPlan.html>pcmOpCustPolReadPlan</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustSetStatus.html>pcmOpCustSetStatus</a><br>";
+  
+menu_code[5]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpContractCreateContract.html>pcmOpContractCreateContract</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpContractCancelContract.html>pcmOpContractCancelContract</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpContractGetMilestones.html>pcmOpContractGetMilestones</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpContractModifyContract.html>pcmOpContractModifyContract</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpContractProcessMilestone.html>pcmOpContractProcessMilestone</a><br>";
+
+menu_code[6]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpCustcareMoveAcct.html>pcmOpCustcareMoveAcct</a><br>";
+
+menu_code[7]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpInvViewInvoice.html>pcmOpInvViewInvoice</a><br>";
+
+menu_code[8]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpPymtCollect.html>pcmOpPymtCollect</a><br>";
+
+menu_code[9]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpPriceGetDiscountInfo.html>pcmOpPriceGetDiscountInfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpPriceGetPriceList.html>pcmOpPriceGetPriceList</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpPriceGetProductInfo.html>pcmOpPriceGetProductInfo</a><br>";
+
+menu_code[10]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpReadFlds.html>pcmOpReadFlds</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpReadObj.html>pcmOpReadObj</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSearch.html>pcmOpSearch</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpTestLoopback.html>pcmOpTestLoopback</a><br>";
+
+menu_code[11]="&nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionCalcQuote.html>pcmOpSubscriptionCalcQuote</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionCancelDeal.html>pcmOpSubscriptionCancelDeal</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionCancelDiscount.html>pcmOpSubscriptionCancelDiscount</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionCancelProduct.html>pcmOpSubscriptionCancelProduct</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionCancelSubscription.html>pcmOpSubscriptionCancelSubscription</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionChangeDeal.html>pcmOpSubscriptionChangeDeal</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionGetHistory.html>pcmOpSubscriptionGetHistory</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionGetPurchasedOfferings.html>pcmOpSubscriptionGetPurchasedOfferings</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionPurchaseDeal.html>pcmOpSubscriptionPurchaseDeal</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionPurchaseFees.html>pcmOpSubscriptionPurchaseFees</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionReadAcctProducts.html>pcmOpSubscriptionReadAcctProducts</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionServiceBalgrpTransfer.html>pcmOpSubscriptionServiceBalgrpTransfer</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionSetBundle.html>pcmOpSubscriptionSetBundle</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionSetDiscountStatus.html>pcmOpSubscriptionSetDiscountStatus</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionSetDiscountinfo.html>pcmOpSubscriptionSetDiscountinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionSetProdinfo.html>pcmOpSubscriptionSetProdinfo</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionSetProductStatus.html>pcmOpSubscriptionSetProductStatus</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionTransferSubscription.html>pcmOpSubscriptionTransferSubscription</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionTransitionDeal.html>pcmOpSubscriptionTransitionDeal</a><br>\
+  &nbsp;&nbsp;<a target='specframe' href =./soapAPI.specs/pcmOpSubscriptionTransitionPlan.html>pcmOpSubscriptionTransitionPlan</a><br>";
+
+//Everything below this notice is the code that expands and collapses the menus. Do NOT edit.
+for (loop=0; loop<number_of_menus; loop++){
+ on_off[loop]=0;
+}
+
+function collapse_menu(menu_id, menu_number){
+  if (on_off[menu_number]==0){
+    menu_id.innerHTML=menu_code[menu_number];
+    on_off[menu_number]=1;
+  }else{
+    menu_id.innerHTML="";
+    on_off[menu_number]=0;
+  }
+}
+var menuID = new Array(menu1, menu2, menu3, menu4, menu5, menu6, menu7, menu8, menu9, menu10, menu11, menu12);
+
+function collapse_menu_all(number){
+	if(number==0)
+	{
+		for (loop=0; loop<number_of_menus; loop++){
+
+				  if (on_off[loop]==1){
+					on_off[loop]=0;
+				}
+			collapse_menu(menuID[loop], loop);
+			}
+
+	}else
+	{
+			for (loop=0; loop<number_of_menus; loop++){
+				if (on_off[loop]==0){
+					on_off[loop]=1;
+				}
+				collapse_menu(menuID[loop], loop);
+			}
+	}
+}
+</script>
+</div>
+
+</div>
+<footer>
+<div class="footer-container clearboth">
+<div style="max-width: 994px; padding: 10px 0px 0px 17px;">
+<div id="footernav" class="glyph">
+<ul>
+<li>
+<a href="#" style="font-size: 12px;">
+<ul class="shadow">
+</li>
+</ul>
+</div>
+<div class="footer-list">
+<ul>
+<li>
+<a href="http://www.oracle.com/corporate/index.html">About Oracle</a>
+</li>
+<li>
+<a href="http://www.oracle.com/us/corporate/contact/index.html">Contact Us</a>
+</li>
+<li>
+<a href="http://www.oracle.com/us/legal/index.html">Legal Notices</a>
+</li>
+<li>
+<a href="http://www.oracle.com/us/legal/terms/index.html">Terms of Use</a>
+</li>
+<li>
+<a href="http://www.oracle.com/us/legal/privacy/index.html">Your Privacy Rights</a>
+</li>
+</ul>
+</div>
+
+<span class="copyright" class="small">
+<a href="http://www.oracle.com/pls/topic/lookup?ctx=cpyr&amp;id=en">Copyright &#169; 2017, 2018, Oracle and/or its affiliates. All rights reserved.</a>
+</span>
+
+
+</div>
+</div>
+</footer>
+
+</body>
+
+</html>

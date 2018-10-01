@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Creating and Including an Adapter Connection in an Integration</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Follow a workflow to create a connection with an adapter and include the connection in an integration in Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-09-11T11:35:28Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Adobe eSign Adapter" />
+<meta name="dcterms.identifier" content="E71395-04" />
+<meta name="dcterms.isVersionOf" content="ICSAE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-27FDBAE8-5E1E-4820-A27D-A61678178DF1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-78901B3D-96E8-459F-BD67-856C3CB5AC0C.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSAE.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSAE.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSAE.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-34FD9A21-6453-498E-A39B-E0D314C1A662"></a> <span id="PAGE" style="display:none;">11/26</span> <!-- End Header -->
+<h1 id="ICSAE-GUID-34FD9A21-6453-498E-A39B-E0D314C1A662" class="sect1">Typical Workflow for Creating and Including an Adapter Connection in an Integration</h1>
+<div>
+<p>Follow a workflow to create a connection with an adapter and include the connection in an integration in <span>Oracle Integration Cloud Service</span>.</p>
+<div class="tblformal" id="GUID-34FD9A21-6453-498E-A39B-E0D314C1A662__GUID-D2D7CAC7-6220-44D6-9C5C-7B66F038E4A6">
+<table class="cellalignment1022" summary="This table lists adapter and integration tasks and provides links to the task procedures.">
+<thead align="left">
+<tr>
+<th class="cellalignment1019" id="d1487e29">Step</th>
+<th class="cellalignment1019" id="d1487e31">Description</th>
+<th class="cellalignment1019" id="d1487e33">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment1019" id="d1487e37" headers="d1487e29">
+<p>1</p>
+</td>
+<td class="cellalignment1019" headers="d1487e37 d1487e31">
+<p>Create the adapter connections for the applications you want to integrate. The connections can be reused in multiple integrations and are typically created by the administrator.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e37 d1487e33">
+<p><a href="GUID-78901B3D-96E8-459F-BD67-856C3CB5AC0C.htm#GUID-78901B3D-96E8-459F-BD67-856C3CB5AC0C" title="A connection is based on an adapter. You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:">Creating an Adobe eSign Adapter Connection</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e51" headers="d1487e29">
+<p>2</p>
+</td>
+<td class="cellalignment1019" headers="d1487e51 d1487e31">
+<p>Create the integration. When you do this, you add trigger and invoke connections to the integration.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e51 d1487e33">
+<p><a href="GUID-6A3A6DE7-2049-4BF8-9DA8-99C968DF8E9F.htm#GUID-6A3A6DE7-2049-4BF8-9DA8-99C968DF8E9F" title="Integrations use the adapter connections you created to your applications, and define how information is shared between those applications. You can create, import, modify, or delete integrations; create integrations to publish or subscribe to messages; add and remove request and response enrichment triggers; and create routing paths for different invoke endpoints in integrations. Click the following topics for more information.">Creating an Integration</a> and <a href="GUID-5D3CC78B-8304-4BEE-8C6D-B1AB2AA6DEC0.htm#GUID-5D3CC78B-8304-4BEE-8C6D-B1AB2AA6DEC0" title="When you drag the Adobe eSign Adapter into the invoke area of an integration, the Cloud Endpoint Configuration Wizard is invoked. This wizard guides you through configuration of Adobe eSign Adapter endpoint properties.">Adding the Adobe eSign Adapter Connection to an Integration</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e77" headers="d1487e29">
+<p>3</p>
+</td>
+<td class="cellalignment1019" headers="d1487e77 d1487e31">
+<p>Map data between the trigger connection data structure and the invoke connection data structure.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e77 d1487e33">
+<p><a class="olink ICSUG-GUID-268D7A7B-1024-4076-BC50-766E79E218C2" target="_blank" href="../ICSUG/GUID-268D7A7B-1024-4076-BC50-766E79E218C2.htm#ICSUG-GUID-268D7A7B-1024-4076-BC50-766E79E218C2">Mapping Integration Cloud Service Data</a> of <span class="italic">Using Oracle Integration Cloud Service</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e92" headers="d1487e29">
+<p>4</p>
+</td>
+<td class="cellalignment1019" headers="d1487e92 d1487e31">
+<p>(Optional) Create lookups that map the different values used by those applications to identify the same type of object (such as gender codes or country codes).</p>
+</td>
+<td class="cellalignment1019" headers="d1487e92 d1487e33">
+<p><a class="olink ICSUG-GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C" target="_blank" href="../ICSUG/GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#ICSUG-GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C">Creating Lookups</a> of <span class="italic">Using <span>Oracle Integration Cloud Service</span></span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e109" headers="d1487e29">
+<p>5</p>
+</td>
+<td class="cellalignment1019" headers="d1487e109 d1487e31">
+<p>Activate the integration.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e109 d1487e33">
+<p><a class="olink ICSUG-GUID-5A46810A-78EF-4B65-A822-24539C1B97C9" target="_blank" href="../ICSUG/GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#ICSUG-GUID-5A46810A-78EF-4B65-A822-24539C1B97C9">Managing Integrations</a> of <span class="italic">Using <span>Oracle Integration Cloud Service</span></span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e126" headers="d1487e29">
+<p>6</p>
+</td>
+<td class="cellalignment1019" headers="d1487e126 d1487e31">
+<p>Monitor the integration on the dashboard.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e126 d1487e33">
+<p><a class="olink ICSUG-GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E" target="_blank" href="../ICSUG/GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#ICSUG-GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E">Monitoring Integration Cloud Services</a> of <span class="italic">Using <span>Oracle Integration Cloud Service</span></span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e143" headers="d1487e29">
+<p>7</p>
+</td>
+<td class="cellalignment1019" headers="d1487e143 d1487e31">
+<p>Track payload fields in messages during runtime.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e143 d1487e33">
+<p><a class="olink ICSUG-GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D" target="_blank" href="../ICSUG/GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D.htm#ICSUG-GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D">Assigning Business Identifiers for Tracking Fields in Messages</a> and <a class="olink ICSUG-GUID-46A7C0A0-CBE4-4F1B-9B45-62A5AFA89D74" target="_blank" href="../ICSUG/GUID-46A7C0A0-CBE4-4F1B-9B45-62A5AFA89D74.htm#ICSUG-GUID-46A7C0A0-CBE4-4F1B-9B45-62A5AFA89D74">Managing Business Identifiers for Tracking Fields in Messages</a> of <span class="italic">Using <span>Oracle Integration Cloud Service</span></span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment1019" id="d1487e164" headers="d1487e29">
+<p>8</p>
+</td>
+<td class="cellalignment1019" headers="d1487e164 d1487e31">
+<p>Manage errors at the integration level, connection level, or specific integration instance level.</p>
+</td>
+<td class="cellalignment1019" headers="d1487e164 d1487e33">
+<p><a class="olink ICSUG-GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608" target="_blank" href="../ICSUG/GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608.htm#ICSUG-GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608">Managing Errors</a> of <span class="italic">Using <span>Oracle Integration Cloud Service</span></span></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1008">
+<tr>
+<td class="cellalignment1015">
+<table class="cellalignment1013">
+<tr>
+<td class="cellalignment1012"><a href="GUID-27FDBAE8-5E1E-4820-A27D-A61678178DF1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment1012"><a href="GUID-78901B3D-96E8-459F-BD67-856C3CB5AC0C.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment1017">
+<table class="cellalignment1011">
+<tr>
+<td class="cellalignment1012"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment1012"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment1012"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Processing payments in batches</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="processing-payments.htm" title="Previous" type="text/html" />
+<link rel="Next" href="processing-credit-card-and-debit-card-payments1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4085C5F7-659A-42EA-8AA0-76856D195118"></a> <span id="PAGE" style="display:none;">49/67</span> <!-- End Header -->
+<a id="BCSUG879"></a><a id="BCSUG878"></a>
+<h1 id="BCSUG-GUID-4085C5F7-659A-42EA-8AA0-76856D195118" class="sect1"><span class="enumeration_chapter">41</span> Processing payments in batches</h1>
+<div>
+<p>Banks and payment processors collect payments from your customers and then bundle the payment information into a batch file before sending it to you. You upload this batch payment file to the Oracle Monetization Cloud Subscriber Management application, where it's processed and the payments are applied to your customers' bills.</p>
+<p>For background information, see <a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-73A35890-907D-4E1B-B215-666202DB7612">About batch payment files</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-9C527E51-F530-4F1F-A2E9-FF1E2218B1AF">Uploading batch payment files</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-A729EB85-A3FA-4DF6-9130-8E17F6631766">Viewing the status of batch payment files</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-D1C4867E-8019-4CA8-B344-FB24A33A0CD0">Processing batch payments automatically</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-5EAFC9E2-C23B-4C84-8ECB-6691DD0DAED4">Processing batch payments manually</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-3C9D0EC8-2913-48D7-8651-A269E6D10787">About managing batch payments that are suspended</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-009C98B5-E97A-4D77-9A28-15C609A6D883">Reversing failed payments in batches</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-9A5AA2F6-E5A1-4FC7-9644-8A9522A0221A">Resolving failed batches</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-63E9495D-0D93-4C6A-9145-A009781F1D8A">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG880"></a>
+<div class="props_rev_3"><a id="GUID-73A35890-907D-4E1B-B215-666202DB7612"></a>
+<h2 id="BCSUG-GUID-73A35890-907D-4E1B-B215-666202DB7612" class="sect2">About batch payment files</h2>
+<div>
+<p>Batch payment files are text files containing payment information, such as account numbers, payment amounts, and payment dates. In order for Subscriber Management to process batch payment files, their contents must comply with one of these template formats.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Cash payment</p>
+</li>
+<li>
+<p>Check payment</p>
+</li>
+<li>
+<p>Failed payment</p>
+</li>
+<li>
+<p>Interbank pay order</p>
+</li>
+<li>
+<p>Postal order</p>
+</li>
+<li>
+<p>Wire-transfer payment</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG881"></a>
+<div class="props_rev_3"><a id="GUID-9C527E51-F530-4F1F-A2E9-FF1E2218B1AF"></a>
+<h2 id="BCSUG-GUID-9C527E51-F530-4F1F-A2E9-FF1E2218B1AF" class="sect2">Uploading batch payment files</h2>
+<div>
+<p>To have your batch payment files uploaded to Subscriber Management, copy the files to the <span class="italic">Middleware_home/</span><span class="bold">BatchPaymentFiles/unprocessed</span> directory, where <span class="italic">Middleware_home</span> is the directory in which Oracle WebLogic Server was installed on your Subscriber Management server.</p>
+</div>
+</div>
+<a id="BCSUG882"></a>
+<div class="props_rev_3"><a id="GUID-A729EB85-A3FA-4DF6-9130-8E17F6631766"></a>
+<h2 id="BCSUG-GUID-A729EB85-A3FA-4DF6-9130-8E17F6631766" class="sect2">Viewing the status of batch payment files</h2>
+<div>
+<p>Use Subscriber Management to view the status of batch payment files that you've uploaded. From the home page, select <span class="bold">Batch Payment</span> and then select <span class="bold">Active</span>.</p>
+<p>Each file that you've uploaded is displayed in the interface as a payment card with the file's summary and status. The processed files are those that have been processed successfully in the past 24 hours. The unprocessed files are those that haven't been processed yet, that are currently being processed, or that have errors.</p>
+</div>
+</div>
+<a id="BCSUG776"></a>
+<div class="props_rev_3"><a id="GUID-D1C4867E-8019-4CA8-B344-FB24A33A0CD0"></a>
+<h2 id="BCSUG-GUID-D1C4867E-8019-4CA8-B344-FB24A33A0CD0" class="sect2">Processing batch payments automatically</h2>
+<div>
+<p>To have your batch payment files processed automatically, go to the Subscriber Management home page, select <span class="bold">Batch Payment</span>, and then set <span class="bold">Auto Process</span> to <span class="bold">On</span>.</p>
+<p>Subscriber Management will automatically process all batch payment files that are uploaded to the <span class="bold">unprocessed</span> directory.</p>
+</div>
+</div>
+<a id="BCSUG883"></a>
+<div class="props_rev_3"><a id="GUID-5EAFC9E2-C23B-4C84-8ECB-6691DD0DAED4"></a>
+<h2 id="BCSUG-GUID-5EAFC9E2-C23B-4C84-8ECB-6691DD0DAED4" class="sect2">Processing batch payments manually</h2>
+<div>
+<div class="section">
+<p>Use Subscriber Management to process batch payment files manually.</p>
+<p>Ensure that manual processing is enabled. From the Subscriber Management home page, select <span class="bold">Batch Payment</span> and then set <span class="bold">Auto Process</span> to <span class="bold">Off</span>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>From the batch payments page, select <span class="bold">Import</span> and import the batch payment file. The file is then displayed as a payment card.</span></li>
+<li><span>From the payment card, select <span class="bold">View File</span> and then select <span class="bold">Process</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="BCSUG884"></a>
+<div class="props_rev_3"><a id="GUID-3C9D0EC8-2913-48D7-8651-A269E6D10787"></a>
+<h2 id="BCSUG-GUID-3C9D0EC8-2913-48D7-8651-A269E6D10787" class="sect2">About managing batch payments that are suspended</h2>
+<div>
+<p>Oracle Monetization Cloud automatically suspends a payment in a batch file when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The payment can't be applied to a customer account.</p>
+</li>
+<li>
+<p>The payment contains incorrect information, such as an incorrect account number.</p>
+</li>
+</ul>
+<p>To view a list of payments in the batch payment file that were suspended, go to the Subscriber Management home page, select <span class="bold">Batch Payment</span>, and then select <span class="bold">Suspended</span> in the payment card's summary.</p>
+<p>For information about applying suspended payments to bills, see <a href="suspending-and-correcting-payments1.htm#GUID-A0E807AC-5C85-4A7C-958C-E5940C194258">Applying suspended payments to your customers' bills</a>.</p>
+</div>
+</div>
+<a id="BCSUG885"></a>
+<div class="props_rev_3"><a id="GUID-009C98B5-E97A-4D77-9A28-15C609A6D883"></a>
+<h2 id="BCSUG-GUID-009C98B5-E97A-4D77-9A28-15C609A6D883" class="sect2">Reversing failed payments in batches</h2>
+<div>
+<div class="section">
+<p>If you have multiple failed payments that need to be reversed, it's faster to bundle them into a batch payment file rather than reversing them individually.</p>
+<p>Use Subscriber Management to process a batch file that contains only failed payments.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create a batch payment file that lists the failed payments. Ensure that the batch payment file complies with the Failed Payment template format.</span></li>
+<li class="stepexpand"><span>Process the batch payment file.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-D1C4867E-8019-4CA8-B344-FB24A33A0CD0">Processing batch payments automatically</a></p>
+</li>
+<li>
+<p><a href="processing-payments-batches1.htm#GUID-5EAFC9E2-C23B-4C84-8ECB-6691DD0DAED4">Processing batch payments manually</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>Subscriber Management identifies the payments listed in the batch payment file and reverses the amounts in your customers' bills.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG781"></a>
+<div class="props_rev_3"><a id="GUID-9A5AA2F6-E5A1-4FC7-9644-8A9522A0221A"></a>
+<h2 id="BCSUG-GUID-9A5AA2F6-E5A1-4FC7-9644-8A9522A0221A" class="sect2">Resolving failed batches</h2>
+<div>
+<p>A batch of payments is marked as unresolved when Oracle Monetization Cloud doesn't receive confirmation from the payment clearing house that it received or processed those payments.</p>
+<p>To resolve failed batches, use Business Operations. From the home page, select <span class="bold">Failed BRM-initiated Payment Transactions</span>, and then select <span class="bold">Unresolved Batches</span> to see which batches failed.</p>
+<p>Call the payment clearing house to find out whether they received any of the batches.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If they have, select the batch, select <span class="bold">Yes</span>, and then select <span class="bold">Resolve</span>. Oracle Monetization Cloud records the payment batch as having been processed successfully.</p>
+</li>
+<li>
+<p>If they haven't, select the batch, select <span class="bold">No</span>, and then select <span class="bold">Resubmit</span>. Oracle Monetization Cloud resubmits the batch to the payment clearing house for reprocessing.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG886"></a>
+<div class="props_rev_3"><a id="GUID-63E9495D-0D93-4C6A-9145-A009781F1D8A"></a>
+<h2 id="BCSUG-GUID-63E9495D-0D93-4C6A-9145-A009781F1D8A" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C95EA667-EBED-4DC4-9F66-62B881079246" title="Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved.">Suspending and correcting payments</a></p>
+</li>
+<li>
+<p><a href="reversing-payments2.htm#GUID-EBFACF29-E060-4DA6-AC4E-17AAC86E654D" title="You must reverse a payment when it's recorded in Oracle Monetization Cloud, but the payment isn't deposited (for example, when a check doesn't clear). Reversing the payment enables Oracle Monetization Cloud to treat the payment as if it never happened.">Reversing payments</a></p>
+</li>
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-0814EE0D-ADC8-47B1-AE70-64C0867D1060" title="When connections to your payment processor are lost during payment processing, the payment transactions can remain incomplete. You use Oracle Monetization Cloud Business Operations to resolve incomplete transactions due to lost connections.">Resolving incomplete payment transactions</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="processing-payments.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="processing-credit-card-and-debit-card-payments1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Joining data sets</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can join one or more data sets by specifying primary and secondary sources, a join key, a join type, and then running the transform script." />
+<meta name="dcterms.created" content="2016-11-21T17:03:23Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Big Data Discovery Cloud Service Studio User's Guide" />
+<meta name="dcterms.identifier" content="E65365-05" />
+<meta name="dcterms.isVersionOf" content="BDDDE" />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="csu_about_joining_data_sets.htm" title="Previous" type="text/html" />
+<link rel="Next" href="csu_transformations_creating_stub.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDDDE.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDDDE.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDDDE.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="task_372F98374A2D4EF9A3CECD6548BF142C"></a> <span id="PAGE" style="display:none;">199/380</span> <!-- End Header -->
+<h1 id="BDDDE-task_372F98374A2D4EF9A3CECD6548BF142C" class="sect1">Joining data sets</h1>
+<div>
+<p>You can join one or more data sets by specifying primary and secondary sources, a join key, a join type, and then running the transform script.</p>
+<div class="p" id="task_372F98374A2D4EF9A3CECD6548BF142C__prereq_F841BB97B3EB4B7E8B252C3C21B9B604">
+<p>Before performing a join, both data sets must be added to the project. If you are performing a self join, only one data set is required. <a id="d36304e11" class="indexterm-anchor"></a></p>
+</div>
+<!-- class="section" -->
+<div class="section" id="task_372F98374A2D4EF9A3CECD6548BF142C__context_1C97AC3B7F1840169312AEF505AAA172">
+<p><a id="d36304e18" class="indexterm-anchor"></a> To join data sets:</p>
+</div>
+<!-- class="section" -->
+<ol id="task_372F98374A2D4EF9A3CECD6548BF142C__steps_A43459F769834E7DA2C92EC21997EE1C">
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_B0333B4198C44823B98601832E7C4102"><span>In the Catalog, select a project.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_6D5B14BDD74E49D6876D5C49DBEE600F"><span>Select <span class="bold">Transform</span>.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_8AE29870614840BD88523377E5956621"><span>Select a data set tab that you want to be the primary data set.</span>
+<div>
+<p>For example, this project has an employee data set and a sales data set. Selecting Employee makes it the primary data set:<br />
+<span class="imageleft"><img class="imageleft" id="task_372F98374A2D4EF9A3CECD6548BF142C__image_B93744FB79C549378007FAE3BF45ED18" width="578" height="255" src="img/transform_join_left.png" alt="Shows two data set tabs at the bottom of a project with Employee circled." title="Shows two data set tabs at the bottom of a project with Employee circled." /></span><br /></p>
+</div>
+</li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_9CBA39D4985E40C0B1CD94F362696BD1"><span>From the transform menu, select <span class="menucascade"><span class="bold">Shaping</span> &gt; <span class="bold">Join</span></span>.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_F204375F5601418080AA7D77BAB9C345"><span>Confirm that the secondary data set that you want to join is selected.</span>
+<div>For example, this project joins an employee data set to a sales data set:<br />
+<div class="imageleft"><img class="imageleft" id="task_372F98374A2D4EF9A3CECD6548BF142C__image_FAA7BFB2CE5F41F2A7291A46F2C4C8AC" width="586" height="154" src="img/transform_join_select_left.png" alt="Shows a drop down list with the right side of the join." title="Shows a drop down list with the right side of the join." /></div>
+<br /></div>
+</li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_99862E05159448169756E6257E8571E1"><span>Create a unique join key from attributes that are the same data type.</span>
+<ol id="task_372F98374A2D4EF9A3CECD6548BF142C__substeps_6E77D0CC35E146BEADBE97483231205B">
+<li class="substepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__substep_15150156905C470DA262C0A43E5AD7CC"><span>Click an attribute name from the <span class="italic">primary</span> side of the join to highlight it.</span>
+<div>The attribute is added to the <span class="italic">left</span> side of the <span class="bold">Select Keys</span> list. Also note that Studio restricts available attributes on the right side to those of the same data type.</div>
+</li>
+<li class="substepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__substep_1A9B24AAC06845198991DE2D87AE2782"><span>Select a key operator (equals, less than, greater than, etc) to determine how the key is built.</span>
+<div>For example, <kbd class="userinput">employee_fullname</kbd> on the primary side might <span class="italic">equal</span> <kbd class="userinput">sales_employeefullname</kbd> on the secondary side.</div>
+</li>
+<li class="substepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__substep_B2DAFD417A094D958212053ADE9493C7"><span>Click an attribute name from the <span class="italic">secondary</span> side of the join to highlight it</span>
+<div>The attribute is added to the <span class="italic">right</span> side of the <span class="bold">Select Keys</span> list. For example, this key is <kbd class="userinput">employee_fullname</kbd> equals <kbd class="userinput">sales_employeefullname</kbd>:<br />
+<div class="imageleft"><img class="imageleft" id="task_372F98374A2D4EF9A3CECD6548BF142C__image_0A12F2B661DE4917862202F476FD92A3" width="971" height="416" src="img/join_single_key.png" alt="A join with a single key based on full name." title="A join with a single key based on full name." /></div>
+<br /></div>
+</li>
+<li class="substepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__substep_BB46F2FEFDD842B9B95AD30F5780B811"><span>If a single attribute is not sufficient to guarantee uniqueness across the joined record set, click the + icon and repeat the above steps a - c to build a compound key using a second set of attributes.</span></li>
+</ol>
+</li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_BC63874E4F7448489BCF92C2624B7221"><span>Select the join type of Left Outer, Inner, or Full Outer.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_D9321610AF0D4E5C88F276CF4AB2DE35"><span>Optionally, click <span class="bold">Preview</span> to see the results of the join.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_CA9D31BD453749878936681C738C2105"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_6273CA3B4D7F4A7CB84A60BEC0A6829A"><span>Specify which attributes you want in the joined data set by checking the corresponding attribute names. You can filter attributes, sort by data type, and select or deselect all.</span>
+<div>The available attribute list contains all attributes from both the primary and secondary data sets. At the top of the list, there is also a <span class="bold">Source data set</span> attribute. If this attribute is enabled, Studio creates a new multi-assign attribute with values that specify which data sources, by name, contributed to the new records.</div>
+</li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_75D1D87293A247EBB4F47FF8A72FB1F4"><span>Optionally, click an attribute name to edit the name if necessary.</span></li>
+<li class="stepexpand" id="task_372F98374A2D4EF9A3CECD6548BF142C__step_9F39348D0C4043AFA057F1C181BF8926"><span>Click <span class="bold">Add to Script</span> to save the join to the script.</span></li>
+</ol>
+<div class="section" id="task_372F98374A2D4EF9A3CECD6548BF142C__postreq_5FCC4042879D4728844ECD0DD24BB423">
+<p>If you are done making changes to the project data set, you can commit the changes. See <a href="tsu_transform_running_the_script.htm" title="A project's full data set is not affected by the transformations until you run the transformation script against the project's data set. Until that time, Studio commits the transformations to the data sample that is currently associated with the project. Also, if you later change the sample size, the transformations that you have already applied are automatically applied to the sample.">Running the transformation script against a project data set</a>.</p>
+<p>You can monitor the progress of the join from the <span class="bold">Notifications</span> panel.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment79">
+<table class="cellalignment77">
+<tr>
+<td class="cellalignment76"><a href="csu_about_joining_data_sets.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment76"><a href="csu_transformations_creating_stub.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment81">
+<table class="cellalignment75">
+<tr>
+<td class="cellalignment76"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment76"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment76"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment76"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/edocs.css" type="text/css" rel="stylesheet"><title>Configure identity and
+  trust</title>
+<meta content="Oracle WebLogic Server 12.2.1.2.0 Documentation" name="description"><meta content="Oracle WebLogic Server" name="keywords"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="no-cache" http-equiv="pragma"><meta content="en-us" http-equiv="content-language"><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/floatwin.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script opens a new, small, floating window and puts
+            TOC<name>.html and IX<name>.html files in it and
+            sets a generic popup window code to enable the display of
+            some viewlets in the WebLogic Platform Tour.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/banner.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the banner required for edocs
+            documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/breadcrumb.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the product breadcrumb required for
+            edocs documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/footer.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the footer with the correct copyright
+            date and link to copyright page.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/googlesearch4.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the google search form.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/note.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs a note such as a BETA note.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/search.js" language="JavaScript1.1">;
+        </script><!--
+            This script is not for online documents. It is only used by
+            the QuestAgent Java Applet for CD search indexes.
+        -->
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head><body class="base"><a name="WLACH03023" id="WLACH03023"></a>
+<script type="text/javascript" language="Javascript1.1">
+            GoogleURL();
+        </script><noscript>
+            This script outputs the google search URL required for
+            search on edocs documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            Banner();
+        </script><noscript>
+            This script outputs the banner required for edocs
+            documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            GoogleSearchCollection();
+        </script><noscript>
+            This script outputs the google search parameters required
+            for search on edocs documentation.
+        </noscript><div class="breadcrumb"><a href="http://www.oracle.com/technology/index.html">OTN Home</a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/../../../index.html">Oracle WebLogic Server 12.2.1.2.0 Documentation
+            </a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/core/index.html">Administration Console Online Help</a>
+                    &gt;
+                    Configure identity and
+  trust</div><h1 class="booktitle">Administration Console Online Help</h1><table cellspacing="0" cellpadding="2%" align="left" border="0" width="100%"><tr><td>    <img alt="Previous" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_prev_grey1.gif"> <img alt="Next" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_next_grey1.gif"> <img alt="" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_dots.gif"> <a title="Open TOC in new window" onblur="window.status=''; return true" onmouseout="window.status=''; return true" onfocus="window.status='Table of Contents'; return true" onmouseover="window.status='Table of Contents'; return true" href="javascript:OpenWindowEdocsHelpTOC();" accesskey="1"><img border="0" alt="Open TOC in new window" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_contents.gif"></a> </td></tr></table><a title="Content starts here" name="skipnav"><img width="1" height="1" border="0" alt="Content starts here" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/_.gif"></a>
+
+  <h1 class="topictitle1">Configure identity and
+  trust</h1>
+
+  <div><!--topic body-->
+    <div><br>
+      <p><a name="WLACH03023__startstop1198902" id="WLACH03023__startstop1198902"></a>Private keys, digital
+      certificates, and trusted certificate authority certificates establish
+      and verify identity and trust in the WebLogic Server environment.
+      WebLogic Server is configured with a default identity keystore
+      <code>DemoIdentity.jks</code> and a default trust keystore
+      <code>DemoTrust.jks</code>. In addition, WebLogic Server trusts the
+      certificate authorities in the <code>cacerts</code> file in the
+      JDK.</p>
+
+      <p>As described in <a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&id=JISEC9596">Managing Keys and Certificates with the Keystore
+      Service</a>, the OPSS Keystore Service (KSS) provides an alternate
+      mechanism to manage keys and certificates for message security. The OPSS
+      KSS makes using certificates and keys easier by providing central
+      management and storage of keys and certificates for all servers in a
+      domain. You use the OPSS KSS to create and maintain keystores of type
+      KSS. If the Oracle Java Required Files (JRF) template is installed on
+      the WebLogic Server system, you have the option to use KSS keystores.
+      The KSS keystore is available only with the JRF template and is not
+      available with the default WebLogic Server configuration.</p>
+
+      <p>This default demo keystore configuration is appropriate for testing
+      and development purposes. However, these keystores should not be used in
+      a production environment.</p>
+
+      <p><b>Note: </b>If you are using the JKS demo certificates in a
+      multi-server domain, Managed Server instances will fail to boot if you
+      specify the fully-qualified DNS name. For information about this
+      limitation and suggested workarounds, see <a href="http://docs.oracle.com/middleware/12212/wls/SECMG/identity_trust.htm#SECMG450">Limitation on
+      CertGen Usage</a> in <i>Securing Oracle WebLogic Server</i>.</p>
+
+      <p>To configure identity and trust for a server:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="WLACH03023__startstop1204881" id="WLACH03023__startstop1204881"></a>Obtain digital
+        certificates, private keys, and trusted CA certificates from the
+        CertGen utility, Sun Microsystem&rsquo;s keytool utility, OPSS Keystore
+        Service, or a reputable vendor such as Entrust or Verisign. You can
+        also use the digital certificates, private keys, and trusted CA
+        certificates provided by the WebLogic Server kit. The demonstration
+        digital certificates, private keys, and trusted CA certificates should
+        be used in a development environment only.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03023__startstop1208211" id="WLACH03023__startstop1208211"></a>If using KSS,
+        verify whether KSS is properly populated, and note the KSS URIs and
+        aliases of the required certificates and keys. You need the KSS URIs
+        and key aliases when specifying keystores, keys, and
+        certificates.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03023__startstop1208210" id="WLACH03023__startstop1208210"></a>Store the
+        private keys, digital certificates, and trusted CA certificates.
+        Private keys and trusted CA certificates are stored in a keystore. If
+        using KSS, import the required keys and certificates to KSS. See <a href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&id=JISEC9596">Managing Keys and Certificates with the Keystore
+        Service</a> for information on adding keys and certificates to
+        KSS.</span>
+
+         
+          <p><b>Note: </b>This release of WebLogic Server supports private
+          keys and trusted CA certificates stored in files for the purpose of
+          backward compatibility only.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH03023__startstop1202695" id="WLACH03023__startstop1202695"></a>Configure the
+        identity and trust keystores for a WebLogic Server instance on the
+        <span>Configuration: Keystores</span> page.</span>
+
+         
+          <p>See <a href="ConfigureKeystoresAndSSL.html">Configure
+  keystores</a>
+          and <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/pagehelp/Corecoreserverserverconfigkeystoretitle.html#attributes">Configuration Options</a>.</p>
+        
+      </li>
+    </ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>After you configure identity and trust keystores for a WebLogic
+      Server instance, you can configure its SSL attributes. These attributes
+      describe the location of the identity key and certificate in the
+      keystore specified on the <span>Configuration: Keystores</span>
+      page. Use the <span>Configuration: SSL</span> page to specify
+      this information. See <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/pagehelp/Corecoreserverserverconfigssltitle.html#attributes">Configuration Options</a>.</p>
+    </div>
+  </div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Tasks
+   </p><ul><li><a href="SetUpSSL.html">Set up SSL</a></li><li><a href="ConfigureTwowaySSL.html">Configure two-way
+  SSL</a></li><li><a href="VerifyHostNameVerification.html">Verify host name
+  verification is enabled</a></li></ul></div>
+
+  <div class="relatedtopics"><p class="relatedtopics">
+	Related Topics
+   </p><ul><li><a href="http://docs.oracle.com/middleware/12212/wls/SECMG/identity_trust.htm#SECMG369">Obtaining Private Keys, Digital Certificates, and Trusted
+    Certificate Authorities</a></li><li><a href="http://docs.oracle.com/middleware/12212/wls/SECMG/identity_trust.htm#SECMG378">Storing Private Keys, Digital Certificates, and Trusted
+    Certificate Authorities</a></li><li><a href="http://docs.oracle.com/middleware/12212/wls/SECMG/identity_trust.htm#SECMG380">Creating a
+    Keystore and Loading Private Keys and Trusted Certificate Authorities into
+    the Keystore</a></li><li><a href="http://docs.oracle.com/middleware/12212/wls/SECMG/identity_trust.htm#SECMG383">Configuring Keystores for Production</a></li><li><a href="http://docs.oracle.com/middleware/12212/wls/SECMG/kss.htm#SECMG666">Configuring Oracle OPSS Keystore Service</a></li></ul></div>
+
+<br><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td> <a href="#WLACH03023"><img border="0" title="Back to Top" alt="Back to Top" height="25" width="90" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/backtop.gif"></a><script type="text/javascript" language="Javascript1.1">
+                        Copyright();
+                    </script><noscript><a href="http:///middleware//assets/cpyr.htm">
+                            Oracle Legal Notices
+                        </a></noscript></td></tr></table>
+</body></html>

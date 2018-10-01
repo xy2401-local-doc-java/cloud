@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About the DB2 Adapter</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The DB2 Adapter enables you to run stored procedures or SQL statements against an IBM DB2 database as part of an integration in Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-11-28T10:28:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the DB2 Adapter" />
+<meta name="dcterms.identifier" content="E81219-01" />
+<meta name="dcterms.isVersionOf" content="ICSDB" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7643F4D9-2FD8-4F9A-BBC1-36089A130C67.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-FFC10675-ED7C-4EA6-B659-CA1F3969FDF0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSDB.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSDB.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSDB.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-23C703E7-E080-43EE-AE03-C103E21D86E2"></a> <span id="PAGE" style="display:none;">4/27</span> <!-- End Header -->
+<h1 id="ICSDB-GUID-23C703E7-E080-43EE-AE03-C103E21D86E2" class="sect1">About the <span>DB2 Adapter</span></h1>
+<div>
+<p>The <span>DB2 Adapter</span> enables you to run stored procedures or SQL statements against an IBM DB2 database as part of an integration in <span>Oracle Integration Cloud Service</span>.</p>
+<p>The <span>DB2 Adapter</span> provides the following benefits:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>You can run stored procedures.</p>
+</li>
+<li>
+<p>You can run SQL statements.</p>
+</li>
+<li>
+<p>Distributed polling and multithreading support is provided.</p>
+</li>
+</ul>
+<p>The <span>DB2 Adapter</span> is one of many predefined adapters included with <span>Oracle Integration Cloud Service</span>. You can configure the <span>DB2 Adapter</span> as a connection in an integration in <span>Oracle Integration Cloud Service</span>. For information about <span>Oracle Integration Cloud Service</span>, connections, and integrations, see the following sections:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B.htm" title="Oracle Integration Cloud Service is a complete, secure, but lightweight integration solution that enables you to connect your applications in the cloud. It simplifies connectivity between your applications and connects both your applications that live in the cloud and your applications that still live on premises. Oracle Integration Cloud Service provides secure, enterprise-grade connectivity regardless of the applications you are connecting or where they reside.">About Oracle Integration Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C.htm" title="Connections define information about the instances of each configuration you are integrating. Oracle Integration Cloud Service includes a set of predefined adapters, which are the types of applications on which you can base your connections, such as Oracle Sales Cloud, Oracle Eloqua Cloud, Oracle RightNow Cloud, and others. A connection is based on an adapter. A connection includes the additional information required by the adapter to communicate with a specific instance of an application (this can be referred to as metadata or as connection details). For example, to create a connection to a specific RightNow Cloud application instance, you must select the Oracle RightNow adapter and then specify the WSDL URL, security policy, and security credentials to connect to it.">About Oracle Integration Cloud Service Connections</a></p>
+</li>
+<li>
+<p><a href="GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD.htm" title="Integrations are the main ingredient of Oracle Integration Cloud Service. An integration includes at the least a trigger (source) connection (for requests sent to Oracle Integration Cloud Service) and invoke (target) connection (for requests sent from Oracle Integration Cloud Service to the target) and the field mapping between those two connections.">About Oracle Integration Cloud Service Integrations</a></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment829">
+<tr>
+<td class="cellalignment836">
+<table class="cellalignment834">
+<tr>
+<td class="cellalignment833"><a href="GUID-7643F4D9-2FD8-4F9A-BBC1-36089A130C67.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment833"><a href="GUID-FFC10675-ED7C-4EA6-B659-CA1F3969FDF0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment838">
+<table class="cellalignment832">
+<tr>
+<td class="cellalignment833"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment833"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment833"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

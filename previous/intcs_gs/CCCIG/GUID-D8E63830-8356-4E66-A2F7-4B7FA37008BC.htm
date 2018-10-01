@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Installing Cloud Adapter SDK Patches</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="Installing the Oracle Adapter SDK patches involves downloading the installation files and configuring your environment." />
+<meta name="dcterms.created" content="2016-04-01T12:06:20Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Adapter SDK Installation Guide" />
+<meta name="dcterms.identifier" content="E68714-01" />
+<meta name="dcterms.isVersionOf" content="CCCIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-86C1AB78-340A-419A-8D46-D8623F3E30F0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-9469FDDD-65EE-4926-8C8F-BAD427454C49.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D8E63830-8356-4E66-A2F7-4B7FA37008BC"></a> <span id="PAGE" style="display:none;">6/13</span> <!-- End Header -->
+<h1 id="CCCIG-GUID-D8E63830-8356-4E66-A2F7-4B7FA37008BC" class="sect1">Installing Cloud Adapter SDK Patches</h1>
+<div>
+<p>Installing the Oracle Adapter SDK patches involves downloading the installation files and configuring your environment.</p>
+<ol>
+<li class="stepexpand"><span>Go to the <a href="http://www.oracle.com/technetwork/middleware/adapters/downloads/index.html" target="_blank">Release Downloads for Oracle Integration Adapters</a> website.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Accept License Agreement</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">All Platforms - Generic 64Bit JVM</span> from the list under Release 12c (12.1.3.0.0 or 12.1.3.0.1).</span></li>
+<li class="stepexpand"><span>Expand <span class="bold">Prerequisites &amp; Recommended Install Process</span> and click the <span class="bold">Download</span> link for Oracle Cloud Adapters.</span>
+<div><img width="555" height="540" src="img/GUID-B9EED5A7-A211-4CD8-8CF4-21BE18826821-default.png" alt="media/image3.png" title="media/image3.png" /><br />
+<a href="img_text/GUID-80252567-8218-424F-8E14-AB5F2F3D1FE7.htm">Description of the illustration GUID-B9EED5A7-A211-4CD8-8CF4-21BE18826821-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Save the <code>fmw_12.1.3.0.1_cloud_adapters_Disk1_1of1.zip</code> file and extract it to a directory named <code>PATCH_TOP</code>.</span></li>
+<li class="stepexpand"><span>Go to <code>PATCH_TOP</code> and open the <code>README.txt</code> file to view the instructions.</span>
+<div><img width="786" height="586" src="img/GUID-9F6DE8F1-9AE9-4129-B92C-E15925578417-default.png" alt="media/image5.png" title="media/image5.png" /><br />
+<a href="img_text/GUID-D1B7B0B2-6FEC-4AC1-A958-C0F6C32A342B.htm">Description of the illustration GUID-9F6DE8F1-9AE9-4129-B92C-E15925578417-default.png</a></div>
+</li>
+<li class="stepexpand"><span>As described in the Prerequisites section of <code>README.txt</code>, download Patch 19707784 from <a href="http://support.oracle.com" target="_blank">http://support.oracle.com</a>.</span>
+<div><img width="819" height="160" src="img/GUID-7CAFCDE9-3A71-4BEA-9A9B-D18002A8FA6D-default.png" alt="media/image6.png" title="media/image6.png" /><br />
+<a href="img_text/GUID-845D432B-8A9A-492E-B31F-2B1B0F9DB709.htm">Description of the illustration GUID-7CAFCDE9-3A71-4BEA-9A9B-D18002A8FA6D-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Save the <code>p19707784_121300_Generic.zip</code> file and extract it to the <code>PATCH_TOP</code> directory.</span></li>
+<li class="stepexpand"><span>Before applying the patches you downloaded, ensure that the ORACLE_HOME environment variable is set to the Middleware Home directory where you installed Oracle SOA Suite.</span>
+<div><img width="667" height="90" src="img/GUID-B7D5838F-8EC4-4862-ACE6-5FFA2AD7F374-default.png" alt="media/image7.png" title="media/image7.png" /><br />
+<a href="img_text/GUID-15CEBB8F-74CC-48E9-ABE3-B6C8C1C5C203.htm">Description of the illustration GUID-B7D5838F-8EC4-4862-ACE6-5FFA2AD7F374-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Apply the patches in the order given in the Installation Instructions section of the <code>README.txt</code> file.</span>
+<ol>
+<li class="substepexpand"><span>Open the Command Prompt console, go to the <code>PATCH_TOP/19707784</code> directory, and run the following command:</span>
+<div><code>$ORACLE_HOME/OPatch/opatch apply</code></div>
+</li>
+<li class="substepexpand"><span>Ensure that the patch is successfully applied.</span></li>
+<li class="substepexpand"><span>Extract the <code>p20680367_121301_Generic.zip</code> file (included in the Adapter SDK download) to the <code>PATCH_TOP</code> directory.</span></li>
+<li class="substepexpand"><span>Go to the <code>PATCH_TOP/20680367</code> directory, and run the following command:</span>
+<div><code>$ORACLE_HOME/OPatch/opatch apply</code></div>
+</li>
+<li class="substepexpand"><span>Ensure that the patch is successfully applied.</span></li>
+<li class="substepexpand"><span>Extract the <code>p20780464_121301_Generic.zip</code> file (included in the Adapter SDK download) to the <code>PATCH_TOP</code> directory.</span></li>
+<li class="substepexpand"><span>Go to the <code>PATCH_TOP/20780464</code> directory, and run the following command:</span>
+<div><code>$ORACLE_HOME/OPatch/opatch apply</code></div>
+</li>
+<li class="substepexpand"><span>Ensure that the patch is successfully applied.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Start JDeveloper using one of these commands:</span>
+<div>Windows: <code>%ORACLE_HOME%\jdeveloper\jdev\bin\jdev -clean</code></div>
+<div>Linux: <code>./$ORACLE_HOME/jdeveloper/jdev/bin/jdev &ndash;clean</code></div>
+</li>
+</ol>
+<div class="section">You should see the Cloud adapters in the JDeveloper component palette.</div>
+<!-- class="section" -->
+<div class="section">Next, see <a href="GUID-9469FDDD-65EE-4926-8C8F-BAD427454C49.htm" title="After you install the Cloud Adapter SDK, you must perform a few configuration tasks, including deploying the cloudsdk.ear file and granting access permissions.">Performing Post-Installation Configuration</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment65">
+<tr>
+<td class="cellalignment72">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment69"><a href="GUID-86C1AB78-340A-419A-8D46-D8623F3E30F0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment69"><a href="GUID-9469FDDD-65EE-4926-8C8F-BAD427454C49.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment74">
+<table class="cellalignment68">
+<tr>
+<td class="cellalignment69"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment69"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment69"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

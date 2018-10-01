@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Batch and Bulk Operations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="A bulk operation is a single-target operation that can take a heterogeneous list of business objects. A batch operation includes multiple target operations that each can take a homogeneous or heterogeneous list of business objects." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F1301B8B-6A02-4F76-A274-388E831E27D8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-F8103121-6F3B-46D8-8C87-65DC1E0497D5.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"2",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"25170f4",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"25170f4",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-301AC75F-154F-46A6-AF2B-511C86BE7397"></a> <span id="PAGE" style="display:none;">60/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-301AC75F-154F-46A6-AF2B-511C86BE7397" class="sect1">Batch and Bulk Operations</h1>
+<div>
+<p>A bulk operation is a single-target operation that can take a heterogeneous list of business objects. A batch operation includes multiple target operations that each can take a homogeneous or heterogeneous list of business objects.</p>
+<p>Cloud Applications can support multiple ways of receiving large and heterogeneous data sets in a request. Furthermore, the term bulk or batch might be applied to such a process despite differences among application providers. This specification treats bulk and batch as two distinct features, and the terms are not interchangeable.</p>
+<p><span class="bold">Bulk Operations</span></p>
+<p>A bulk operation in the design-time (DT) framework is a single-target operation that can take a heterogeneous list of business objects. For example, a CRUD API might create the business objects Employer, Manager, and Address. A plugin that supports bulk operations permits multiple business objects of different types to be passed as request objects for generating an operation in the integration-friendly WSDL.</p>
+<p>The following diagram shows the execution flow for modeling and generating bulk operations with the DT adapter.</p>
+<p><img width="566" height="261" src="img/GUID-18E0CF08-D899-44DF-A956-FD442E17CB5A-default.png" alt="media/image92.png" title="media/image92.png" /><br />
+<a href="img_text/GUID-21E836E0-B9E2-4AFE-80C5-630E23372B90.htm">Description of the illustration GUID-18E0CF08-D899-44DF-A956-FD442E17CB5A-default.png</a></p>
+<p>One target operation and its business objects are included in the request. With this information as input, the generator produces an integrated WSDL with a single operation that references a single request element. Business objects are represented as complex types in the integration-friendly schema.</p>
+<p>The following non-normative code example shows how a bulk operation might look in the generated integration WSDL.</p>
+<pre dir="ltr">
+&lt;!-- schema types --&gt; 
+&lt;xs:complexType name="Contact&gt;
+&lt;!-- type contents --&gt; 
+  &lt;/xs:complexType&gt;
+  &lt;xs:complexType name="PurchaseOrder"&gt;   
+  &lt;!-- type  contents --&gt; 
+  &lt;/xs:complexType&gt;
+  &lt;!-- Bulk type wrapper --&gt;
+  &lt;xs:complexType name="CreateContactAndPurchaseOrder"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="Contact" type="tns:Contact" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;xs:element name="PurchaseOrder" type="tns:PurchaseOrder" minOccurs="0" maxOccurs="unbounded"/&gt;   
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;  
+&lt;!-- request element --&gt;
+&lt;xs:element name="CreateContactAndPurchaseOrderRequest" type="tns:CreateContactAndPurchaseOrder"/&gt;
+&lt;!-- response element --&gt;
+&lt;xs:element name="CreateContactAndPurchaseOrderResponse" type="tns:CreateContactAndPurchaseOrder"/&gt;
+&lt;!-- WSDL elements --&gt;
+&lt;wsdl:message name="CreateContactAndPurchaseOrderRequestMessage"&gt;
+  &lt;wsdl:part name="parameters" element="types:CreateContactAndPurchaseOrderRequest"/&gt; &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="CreateContactAndPurchaseOrderResponseMessage"&gt;
+  &lt;wsdl:part name="parameters" element="types:CreateContactAndPurchaseOrderResponse"/&gt; &lt;/wsdl:message&gt;  
+&lt;wsdl:portType name="ApplicationPortType"&gt;
+  &lt;wsdl:operation name="CreateContactAndPurchaseOrder"&gt;
+    &lt;wsdl:input message="tns:CreateContactAndPurchaseOrderRequestMessage"/&gt;
+    &lt;wsdl:output message="tns:CreateContactAndPurchaseOrderResponseMessage"/&gt;
+  &lt;/wsdl:operation&gt;
+&lt;/wsdl:portType&gt;
+</pre>
+<p>In the example above, two complex schema types represent the business objects Contact and PurchaseOrder. The operation CreateContactAndPurchaseOrder can take any number of either of these objects in the request. (In this example they must follow a particular order, but the DT framework allows you to change the order.) The default response generated for operations simply echoes the complex types sent in the request. This is customizable using the API in the DT framework.</p>
+<p><span class="bold">Batch Operations</span></p>
+<p>A batch operation in the DT framework includes multiple target operations that each can take a homogeneous or heterogeneous list of business objects. Although batch operations appear to be multiple operations, only a single operation is generated in the integration-friendly WSDL. Each target operation from the application model is converted into a request object in the integration-friendly schema. This way, the single WSDL operation can batch all tasks into one operation. This behavior is the default paradigm for batch operations in Cloud application adapters. However, batch may not be supported by some adapter plugins, or there may be a divergence from this paradigm.</p>
+<p>The following diagram shows the execution flow for modeling and generating batch operations with the DT adapter.</p>
+<p><img width="575" height="293" src="img/GUID-C13AF76C-AB3F-4004-B33E-BA86F4D6CC7C-default.png" alt="media/image93.png" title="media/image93.png" /><br />
+<a href="img_text/GUID-1CDF6A88-06F5-4EEA-ADDE-4AFEBB3397FA.htm">Description of the illustration GUID-C13AF76C-AB3F-4004-B33E-BA86F4D6CC7C-default.png</a></p>
+<p>Multiple target operations and multiple business objects for each operation are included in the request. Operations can share objects. The generator takes this data and produces an integration-friendly WSDL with a single operation. First, a wrapper complex type is created for each selected target operation. Then a single request complex type is created as a container for the wrappers. The following non-normative example shows how a batch operation might look in a generated integration WSDL:</p>
+<pre dir="ltr">
+&lt;!-- schema types --&gt; 
+&lt;xs:complexType name="Contact&gt;   
+&lt;!-- type contents --&gt; 
+&lt;/xs:complexType&gt;  
+&lt;xs:complexType name="PurchaseOrder"&gt;  
+ &lt;!-- type  contents --&gt; &lt;/xs:complexType&gt;  
+&lt;xs:complexType name="Invoice"&gt;  
+ &lt;!-- type contents --&gt; 
+&lt;/xs:complexType&gt;  
+&lt;!--Create operation type wrappers --&gt; 
+&lt;xs:complexType name="CreateContactAndPurchaseOrder"&gt; 
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="Contact" type="tns:Contact" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;xs:element name="PurchaseOrder" type="tns:PurchaseOrder" minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name="c"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="Contact" type="tns:Contact" minOccurs="0" maxOccurs="unbounded"/&gt;
+    &lt;xs:element name="Invoice" type="tns:Invoice" minOccurs="0" maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;  
+&lt;!-- Create Batch Item Wrapper --&gt;
+&lt;xs:complexType name="BatchItem"&gt;
+  &lt;xs:choice&gt;
+    &lt;xs:element name="CreateContactAndPurchaseOrder" type="tns:CreateContactAndPurchaseOrder"/&gt;
+    &lt;xs:element name="UpdateContactAndInvoice" type="tns:CreateContactAndPurchaseOrder"/&gt;
+  &lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;  
+&lt;!-- Batch operation wrapper --&gt; 
+&lt;xs:complexType name="Batch"&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name="BatchItem" type="tns:BatchItem" minOccurs="1" maxOccurs="unbounded"/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt; 
+&lt;!-- request element --&gt;
+&lt;xs:element name="BatchRequest" type="tns:Batch"/&gt;  
+&lt;!-- response element --&gt; 
+&lt;xs:element name="BatchResponse" type="tns:Batch"/&gt;  
+&lt;!-- WSDL elements --&gt;
+&lt;wsdl:message name="BatchRequestMessage"&gt;
+  &lt;wsdl:part name="parameters" element="types:BatchRequest"/&gt; 
+&lt;/wsdl:message&gt;
+&lt;wsdl:message name="BatchResponseMessage"&gt;
+  &lt;wsdl:part name="parameters" element="types:BatchResponse"/&gt;
+&lt;/wsdl:message&gt;
+&lt;wsdl:portType name="ApplicationPortType"&gt;
+  &lt;wsdl:operation name="Batch"&gt;
+    &lt;wsdl:input message="tns:BatchRequestMessage"/&gt; 
+    &lt;wsdl:output message="tns:BatchResponseMessage"/&gt;
+  &lt;/wsdl:operation&gt;
+&lt;/wsdl:portType&gt;
+</pre>
+<p>In the above example, two distinct business CRUD operations, Create and Update, are combined into one batch operation. A container request element combines elements from each business operation. The <code>xs:choice</code> element allows the operations to be mixed. This is handy when interleaving the business operation is necessary, for example, when updating a contact and then creating a new invoice for it.</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-F1301B8B-6A02-4F76-A274-388E831E27D8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-F8103121-6F3B-46D8-8C87-65DC1E0497D5.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

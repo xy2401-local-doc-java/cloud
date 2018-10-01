@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST API Services for CPQ Cloud - All REST Endpoints</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/" >
+		<meta name="dcterms.dateCopyrighted" content="2018" >
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+			
+
+        <meta name="description" content="Oracle Configure, Price and Quote (CPQ) Cloud solution supports complete quote-to-cash process from customer inquiry to order fulfillment.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API Services for CPQ Cloud">
+        <meta property="og:description" content="Oracle Configure, Price and Quote (CPQ) Cloud solution supports complete quote-to-cash process from customer inquiry to order fulfillment.">
+        <meta name="generator" content="Oracle REST API Publisher 1.6.0" >
+		<meta name="date" content="2018-08-31 16:24:03 UTC" >
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API Services for CPQ Cloud">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="index.html" title="Previous" type="text/html">
+        <link rel="next" href="QuickStart.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="QuickStart.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API Services for CPQ Cloud</a></li>
+                    <li class="active">Endpoints</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+                <h2>All REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input id="grouped" type="checkbox" checked> Group by API
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade in active" id="summary-sort-grouped">
+<div class="panel panel-default">
+<div class="panel-heading">Assets</div>
+<div class="panel-body">
+<div>CPQ Cloud exposes asset data through REST APIs. Asset REST APIs support create, read, update, delete, and synchronize. They also provide import and export operations, and operations for external orders.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-assets-get.html">Get All Assets</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/assets</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-get.html">Get an Asset</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/assets/{id}</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-childassets-get.html">Get Child Assets</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/assets/{id}/childAssets</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-descendantassets-get.html">Get Descendant Assets</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/assets/{id}/descendantAssets</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Assets/Actions</div>
+<div class="panel-body">
+<div>These operations provide the ability to maintain CPQ assets through RESTful services. These endpoints provide access to actions to open, create, update, delete, and synchronize assets.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-assets-post.html">Create an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-delete.html">Delete an Asset</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/rest/v6/assets/{id}</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-synchronize-post.html">Synchronize an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/synchronize</code></div></dd>
+<dt><a href="op-rest-v6-assets-actions-synchronize-post.html">Synchronize Assets</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/actions/synchronize</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-post.html">Update an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Assets/External Order Actions</div>
+<div class="panel-body">
+<div>These operations allow external systems to modify, terminate, suspend, resume, renew, reconfigure, and create follow-on orders for assets.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-configbominstance-configid-actions-followonorder-post.html">Follow-On Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/configBomInstance/{configId}/actions/followOnOrder</code></div></dd>
+<dt><a href="op-rest-v6-configbominstance-configid-actions-getconfigbom-post.html">Get Configuration BOM Instance</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/configBomInstance/{configId}/actions/getConfigBom</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-modify-post.html">Modify an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/modify</code></div></dd>
+<dt><a href="op-rest-v6-configbominstance-configid-actions-reconfig-post.html">Reconfigure</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/configBomInstance/{configId}/actions/reconfig</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-renew-post.html">Renew an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/renew</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-resume-post.html">Resume an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/resume</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-suspend-post.html">Suspend an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/suspend</code></div></dd>
+<dt><a href="op-rest-v6-assets-id-actions-terminate-post.html">Terminate an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/terminate</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Assets/Import-Export Actions</div>
+<div class="panel-body">
+<div>Theses opertations provide the ability to export, import, and retrieve assets and asset log files.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-assets-id-actions-export-post.html">Export an Asset</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/{id}/actions/export</code></div></dd>
+<dt><a href="op-rest-v6-assets-actions-export-post.html">Export Assets</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/actions/export</code></div></dd>
+<dt><a href="op-rest-v6-assets-actions-import-post.html">Import Assets</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/assets/actions/import</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Calculate Price</div>
+<div class="panel-body">
+<div>The Calculate Price REST API allows an external application to query CPQ Cloud for pricing information. CPQ Cloud executes contract rules and relevant profiles to calculate and return the final list price.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-pricing-actions-calculateprice-post.html">Calculate Price</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/pricing/actions/calculatePrice</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce</div>
+<div class="panel-body">
+<div>CPQ Cloud exposes transactional objects and transaction data through REST APIs and RESTful standards. The REST APIs provide a new, modern way to access transaction and line item information. With appropriate HTTP Basic authentication, any other third-party system can make use of these services. Additional resources allow credentialed third-party systems to create transactions, and to update transactions by invoking modify, version, submit and approval actions in a Commerce Process through REST APIs.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-get.html">Get a Transaction</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-get.html">Get a Transaction Line</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-get.html">Get All Transaction Lines</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-get.html">Get All Transactions</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce Administration</div>
+<div class="panel-body">
+<div>Transaction Administration services return CPQ transaction desktop layout definitions for UI frameworks to consume. The desktop layout definitions contain: layout parameters and properties for panels, tabs, columns, action strips, and transaction line grids; properties for actions and attributes; and translations for layout items. Metadata Services expose information about the definitions of the Commerce main document, sub document, actions, attributes, and translations.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-layouts-maindocvarname-get.html">Get Document Layout</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/layouts/{mainDocVarName}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-get.html">Get Document Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-get.html">Get Documents Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce Administration/Actions</div>
+<div class="panel-body">
+<div>These services return the action metadata for the specified Commerce main document or sub document. The action metadata is comprised of: defined action properties that are defined on the Admin Action page; possible action states (i.e. visible or enabled); dependencies and possible states (if an action can be altered by a step or rule); and links to the current REST call, parent items, and translations.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-actiondefs-actionvarname-get.html">Get Action Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/actionDefs/{actionVarName}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-actiondefs-get.html">Get Actions Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/actionDefs</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce Administration/Attributes</div>
+<div class="panel-body">
+<div>These services return the attribute metadata for the specified Commerce document. The attribute metadata is comprised of: defined attribute properties that are defined on the Attribute Editor page; possible attribute states, (updatable, required, visible, domain, messages, hasError, hasWarning, or hasContraintViolation); dependencies and possible states, if an attribute can be altered by a formula, step, or rule; and links to the current REST call, parent items, menu items, and translations.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-get.html">Get Attribute Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-get.html">Get Attributes Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce Administration/Menu Items</div>
+<div class="panel-body">
+<div>These services return the menu item metadata for the specified attribute. The menu are returned as composite values containing menu properties and domain items. Links to the current REST call, parent items, and translations are also returned.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-menuitems-menuitemid-get.html">Get Menu Item Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/menuItems/{menuItemId}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-menuitems-get.html">Get Menu Items Metadata</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/menuItems</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce Administration/Translations</div>
+<div class="panel-body">
+<div>The translation services retrieve translations for actions, attributes, and menu items. Translations for all site-supported languages can be retrieved. If a translation is not defined, an empty string is returned for the requested value. The following fields are translatable: Actions (labels and descriptions), Attributes (labels, descriptions, and user defaults), and Menu Items (display values). When translations are requested, translations that have an empty value for all the properties are not returned. Translation data is returned if any of the property values are populated.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-actiondefs-actionvarname-translations-languagecode-get.html">Get Action Translation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/actionDefs/{actionVarName}/translations/{languageCode}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-actiondefs-actionvarname-translations-get.html">Get Action Translations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/actionDefs/{actionVarName}/translations</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-translations-languagecode-get.html">Get Attribute Translation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/translations/{languageCode}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-translations-get.html">Get Attribute Translations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/translations</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-menuitems-menuitemid-translations-languagecode-get.html">Get Menu Item Translation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/menuItems/{menuItemId}/translations/{languageCode}</code></div></dd>
+<dt><a href="op-rest-v6-commerceprocesses-processvarname-documents-docvarname-attributes-attributevarname-menuitems-menuitemid-translations-get.html">Get Menu Item Translations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/commerceProcesses/{processVarName}/documents/{docVarName}/attributes/{attributeVarName}/menuItems/{menuItemId}/translations</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce/Actions</div>
+<div class="panel-body">
+<div>Commerce Actions provide the ability to maintain CPQ Transaction documents through RESTful services. These endpoints provide access to actions to open, create, copy, delete, reconfigure, save, email, and print Transactions. They also provide services for currency management and cache interaction.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-signature_add-post.html">Add Transaction Signature</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/signature_add</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_auto_fill_action-post.html">Auto-fill Accounts Information</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_auto_fill_action</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-back-post.html">Back from Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/back</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_change_currency-post.html">Change Currency</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_change_currency</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_copy_transaction-post.html">Copy Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_copy_transaction</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-post.html">Create a Transaction with Parts</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-versiontransaction_t-post.html">Create Transaction Version</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/versionTransaction_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-deletetransaction_t-post.html">Delete Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/deleteTransaction_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_dropcache-post.html">Drop Cache</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_dropCache</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_action_esig_cancel-post.html">eSignature - Cancel Request</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_action_esig_cancel</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-id-actions-_action_esig_details-post.html">eSignature - Request Details</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{id}/actions/_action_esig_details</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-id-actions-_action_esig_send-post.html">eSignature - Send Request</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{id}/actions/_action_esig_send</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-exportattachment-post.html">Export Attachment</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/exportAttachment</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_interact-post.html">Interact for Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_interact</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_open_transaction-post.html">Open Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_open_transaction</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_print_document-post.html">Print Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_print_document</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_reconfigure_action-post.html">Reconfigure</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_reconfigure_action</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-refresh-post.html">Refresh Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/refresh</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_retrieve_alternate_address-post.html">Retrieve Alternate Address</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_retrieve_alternate_address</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-cleansave_t-post.html">Save Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/cleanSave_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-versionsave_t-post.html">Save Transaction Version</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/versionSave_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_select_alternate_address_action-post.html">Select Alternate Address</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_select_alternate_address_action</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_send_email-post.html">Send Email for Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_send_email</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce/Actions/Document Generation</div>
+<div class="panel-body">
+<div>Commerce Document Generation Actions provide services to generate proposals, and document compare and merge features for Contract Negotiation.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-docxcompare-post.html">DOCX Compare</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/docxCompare</code></div></dd>
+<dt><a href="op-rest-v6-docxmerge-post.html">DOCX Merge</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/docxMerge</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-generateproposal-post.html">Generate Proposal</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/generateProposal</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce/Actions/Order Actions</div>
+<div class="panel-body">
+<div>Commerce Order Actions provide REST services for order fulfillment actions.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_cancel-post.html">Cancel Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_cancel</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_change-post.html">Change Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_change</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_start-post.html">Create Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_start</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_fulfill-post.html">Fulfill Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_fulfill</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_reject-post.html">Order Reject</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_reject</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-order_alternate-post.html">Place Alternate Order</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/order_alternate</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce/Actions/Submit Actions</div>
+<div class="panel-body">
+<div>Commerce Submit Actions provide access to Submit actions to request approval, reject, revise, and approve submitted Transactions.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-approve_submit_t-post.html">Approve Submitted Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/approve_submit_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-reject_submit_t-post.html">Reject Submitted Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/reject_submit_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-request_approval_submit_t-post.html">Request Approval</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/request_approval_submit_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-revise_submit_t-post.html">Revise Submitted Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/revise_submit_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-submit_t-post.html">Submit Transaction for Approval</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/submit_t</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Commerce/Sub Document Actions</div>
+<div class="panel-body">
+<div>Commerce Sub Document Actions provide the ability to maintain CPQ Transaction Line items through RESTful services. These endpoints provide access to actions to open, create, copy, delete, reconfigure, update, save, email and print Transaction Line items. They also provide services for navigation and cache interaction.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-post.html">Add Transaction Lines to a Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-actions-_calculate_price_action-post.html">Calculate Transaction Line Price</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}/actions/_calculate_price_action</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-copylineitems_t-post.html">Copy Transaction Lines</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/copyLineItems_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-addlineitem_t-post.html">Create Transaction Line</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/addLineItem_t</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-delete.html">Delete a Transaction Line</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_remove_transactionline-post.html">Delete Transaction Line(s) from Transaction</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_remove_transactionLine</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-actions-subdocexportattachment-post.html">Export Attachment</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}/actions/subDocExportAttachment</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-actions-back_l-post.html">Navigate Back</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}/actions/back_l</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_open_transactionline-post.html">Open Transaction Line</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_open_transactionLine</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-actions-_reconfigure_action-post.html">Reconfigure</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}/actions/_reconfigure_action</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-transactionline-_document_number-actions-refreshsubdoc-post.html">Refresh Transaction Line</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/transactionLine/{_document_number}/actions/refreshSubDoc</code></div></dd>
+<dt><a href="op-rest-v6-commercedocumentsoraclecpqotransaction-_id-actions-_update_line_items-post.html">Update Transaction Lines</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/commerceDocumentsOraclecpqoTransaction/{_id}/actions/_update_line_items</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Data Table</div>
+<div class="panel-body">
+<div>The custom{DataTable} REST API allows an external system to access deployed data in CPQ Cloud Data Tables. When executed correctly, the external system will receive the CPQ Cloud Data Table???s deployed data in the REST response body. NOTE: Currently only Read operations are supported when interacting with the custom{DataTable} API.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-datatable-id-get.html">custom{DataTable} API</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/{DataTable}/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Document Designer</div>
+<div class="panel-body">
+<div>string</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-documentgenerator-post.html">Create Document Designer Document</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/documentGenerator</code></div></dd>
+<dt><a href="op-rest-v6-documentgenerator-get.html">Get All Document Designer Templates</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/documentGenerator</code></div></dd>
+<dt><a href="op-rest-v6-documentgenerator-id-get.html">Get Document Designer Document</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/documentGenerator/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Eligibility Rules</div>
+<div class="panel-body">
+<div>CPQ Cloud exposes eligibility data through REST APIs. As described in this section, Eligibility APIs allow external applications to create, read, update, delete, and deploy eligibility data.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-eligibilityrule-post.html">Create Eligibility Rule</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/eligibilityRule</code></div></dd>
+<dt><a href="op-eligibilityrule-id-delete.html">Delete Eligibility Rule</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/eligibilityRule/{id}</code></div></dd>
+<dt><a href="op-eligibilityrule-id-actions-delete-post.html">Delete Eligibility Rule</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/eligibilityRule/{id}/actions/delete</code></div></dd>
+<dt><a href="op-eligibilityrule-id-actions-deploy-post.html">Deploy Eligibility Rule</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/eligibilityRule/{id}/actions/deploy</code></div></dd>
+<dt><a href="op-eligibilityrule-actions-deploy-post.html">Deploy Multiple Eligibility Rules</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/eligibilityRule/actions/deploy</code></div></dd>
+<dt><a href="op-eligibilityrule-get.html">Get All Eligibility Rules</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule</code></div></dd>
+<dt><a href="op-eligibilityrule-id-get.html">Get Eligibility Rule</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule/{id}</code></div></dd>
+<dt><a href="op-eligibilityrule-id-post.html">Update Eligibility Rule</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/eligibilityRule/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Eligibility Rules/Conditions and Selections</div>
+<div class="panel-body">
+<div>These operations retrive conditions and selections for Eligibility Rules.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-eligibilityrule-id-condition-get.html">Get All Eligibility Rule Conditions</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule/{id}/condition</code></div></dd>
+<dt><a href="op-eligibilityrule-id-selection-get.html">Get All Eligibility Rule Selections</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule/{id}/selection</code></div></dd>
+<dt><a href="op-eligibilityrule-id-condition-ruleconditionindex-get.html">Get Eligibility Rule Condition</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule/{id}/condition/{ruleConditionIndex}</code></div></dd>
+<dt><a href="op-eligibilityrule-id-selection-ruleselectionindex-get.html">Get Eligibility Rule Selection</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/eligibilityRule/{id}/selection/{ruleSelectionIndex}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Email Designer</div>
+<div class="panel-body">
+<div>string</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-emailgenerator-post.html">Create Email Designer Document</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/emailGenerator</code></div></dd>
+<dt><a href="op-rest-v6-emailgenerator-get.html">Get All Email Designer Templates</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/emailGenerator</code></div></dd>
+<dt><a href="op-rest-v6-emailgenerator-id-get.html">Get Generated Email</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/emailGenerator/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">External Configurator</div>
+<div class="panel-body">
+<div>This REST API provides support for the External Configurator Integration. The REST service invokes the External Configurator Advanced Save function to create a transaction, Add from Catalog, or Reconfigure.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-productfamilies-pfvar-productlines-plvar-models-modelvar-actions-_externalconfigurationsave-post.html">External Configurator</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/productFamilies/{pfVar}/productLines/{plVar}/models/{modelVar}/actions/_externalConfigurationSave</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Performance Logs</div>
+<div class="panel-body">
+<div>The REST API enables retrieving data about a sales user's activities and observed performance or other metrics during their interaction with the application. The information also provides application time as well as category information which can be used by customers to build their benchmark monitoring systems and proactively tackle any performance issues.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-performancelogs-get.html">Get All Performance Log Events</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/performanceLogs</code></div></dd>
+<dt><a href="op-rest-v6-performancelogs-id-get.html">Get Performance Log Event</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/performanceLogs/{id}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Performance Logs/Export</div>
+<div class="panel-body">
+<div>Theses opertations provide the ability to export Performance Log events.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-performancelogs-id-actions-export-post.html">Export Performance Log Event</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/performanceLogs/{id}/actions/export</code></div></dd>
+<dt><a href="op-rest-v6-performancelogs-actions-export-post.html">Export Performance Log Events</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/performanceLogs/actions/export</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Price Books</div>
+<div class="panel-body">
+<div>These actions retrieve the list of price books or the specified pricebook.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-pricebooks-get.html">Get All Price Books</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/priceBooks</code></div></dd>
+<dt><a href="op-rest-v6-pricebooks-variablename-get.html">Get Price Book</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/priceBooks/{variableName}</code></div></dd>
+<dt><a href="op-rest-v6-pricebooks-variablename-translations-get.html">Get Price Book Translation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/rest/v6/priceBooks/{variableName}/translations</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Search Parts</div>
+<div class="panel-body">
+<div>The Search Parts REST API supports customizing the REST response by specifying an advanced query object (i.e. ???q??? criteria) as a request body parameter. This allows administrators to customize the query by specifying various combinations of criteria.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-rest-v6-parts-actions-search-post.html">Search Parts</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/rest/v6/parts/actions/search</code></div></dd>
+
+</dl>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="summary-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-ungrouped"></div>
+</div>
+
+            </section>
+
+        </article>
+    </body>
+</html>

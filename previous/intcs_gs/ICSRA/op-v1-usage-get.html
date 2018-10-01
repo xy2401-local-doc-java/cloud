@@ -1,0 +1,4567 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Integration Cloud Service, Version 1 - Retrieve ICS Usage Information</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, connections, lookups, and packages.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Integration Cloud Service, Version 1">
+        <meta property="og:description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, connections, lookups, and packages.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Integration Cloud Service, Version 1">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="api-usage.html" title="Previous" type="text/html">
+        
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="api-usage.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            
+            <header>
+
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Integration Cloud Service, Version 1</a></li>
+                    <li>Tasks</li>
+                    
+                    <li class="active">
+                        
+                        <a href="api-usage.html">usage</a>
+                        
+                    </li>
+                    
+                </ol>
+                
+                <p class="draftsubtitle"></p>
+                
+                <h2>Retrieve ICS Usage Information</h2>
+                <div>
+                    <div class="label label-get text-uppercase">get</div>
+                    <p style="word-break: break-word;"><strong>/icsapis/v1/usage</strong></p>
+                </div>
+            </header>
+            <section>
+
+                <div class="description">Retrieves metrics about ICS artifacts, such as how many integrations are configured and how many packages they have.</div>
+
+                <div role="tabpanel">
+
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs hidden-print" role="tablist">
+                        <li role="presentation" class="active"><a href="#request" aria-controls="request" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-in" aria-hidden="true"></span> Request</a></li>
+                        <li role="presentation"><a href="#response" aria-controls="response" role="tab" data-toggle="tab"><span class="hidden-xs glyphicon glyphicon-log-out" aria-hidden="true"></span> Response</a></li>
+                        
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="request">
+                            <h3 class="visible-print-block">Request</h3>
+                            
+                            <p>There are no request parameters for this operation.</p>
+                            
+
+
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="response">
+                            <h3 class="visible-print-block">Response</h3>
+
+                            
+                            
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Supported Media Types</div>
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        
+                                        <li class="list-group-item">application/json; charset=UTF-8</li>
+                                        
+                            
+                            
+                                        <li class="list-group-item">application/xml; charset=UTF-8</li>
+                                                    
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+
+
+
+                            
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">200 Response <span class="glyphicon glyphicon-ok-sign response-symbol" data-response-code="200" aria-hidden="true"></span></div>
+                                <div class="panel-body">
+                                    successful operation
+                                </div>
+
+                                
+                                
+
+                                
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading">Body</div>
+                                    <div class="panel-body">
+                                        
+
+                                        <div class="schema-container">
+                                        
+                                        <div id="200-definitions-UsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Root Schema : UsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-UsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-UsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-UsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-UsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-UsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>adapterMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AdapterUsageMetrics" role="button" class="btn btn-default btn-sm">AdapterUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>agentMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AgentUsageMetrics" role="button" class="btn btn-default btn-sm">AgentUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>applicationInstanceUsageMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AppInstanceUsageMetrics" role="button" class="btn btn-default btn-sm">AppInstanceUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>domainValueMapUsageMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-DVMUsageMetrics" role="button" class="btn btn-default btn-sm">DVMUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>integrationUsageMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-IntegrationUsageMetrics" role="button" class="btn btn-default btn-sm">IntegrationUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>links</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-UsageMetrics-properties-links" role="button" class="btn btn-default btn-sm">links</a></div>
+
+
+
+
+
+
+<div>Required: <code>true</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>messageMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-MessageMetrics" role="button" class="btn btn-default btn-sm">MessageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>messageSystemMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-MessageSystemUsage" role="button" class="btn btn-default btn-sm">MessageSystemUsage</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>pkgUsageMetrics</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-PackageUsageMetrics" role="button" class="btn btn-default btn-sm">PackageUsageMetrics</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AdapterUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : AdapterUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AdapterUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AdapterUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AdapterUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AdapterUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AdapterUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>adapterCount</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AdapterCount" role="button" class="btn btn-default btn-sm">AdapterCount</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>marketplace</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>preinstalled</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>privates</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AgentUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : AgentUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AgentUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AgentUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AgentUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>agentsByGroup</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AgentUsageMetrics-properties-agentsByGroup" role="button" class="btn btn-default btn-sm">agentsByGroup</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Additional Properties Allowed: <a href="#200-definitions-AgentUsageMetrics-properties-agentsByGroup-additionalProperties" role="button" class="btn btn-default btn-sm">additionalProperties</a></div>
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>agentsByGroupArray</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-AgentUsageMetrics-properties-agentsByGroupArray" role="button" class="btn btn-default btn-sm">agentsByGroupArray</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>countAgentGroups</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>countConnAgents</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>countExecAgents</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>totalAgents</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AppInstanceUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : AppInstanceUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>active</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>configured</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>inProgress</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>typeNumbers</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-AppInstanceUsageMetrics-properties-typeNumbers" role="button" class="btn btn-default btn-sm">typeNumbers</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Additional Properties Allowed: <a href="#200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additionalProperties" role="button" class="btn btn-default btn-sm">additionalProperties</a></div>
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>typeNumbersArray</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray" role="button" class="btn btn-default btn-sm">typeNumbersArray</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>used</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-DVMUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : DVMUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-DVMUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-DVMUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-DVMUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-DVMUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-DVMUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>numberInUse</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : IntegrationUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-IntegrationUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>activated</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>activeAppInstance</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>activedMEPs</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-activedMEPs" role="button" class="btn btn-default btn-sm">activedMEPs</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Additional Properties Allowed: <a href="#200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additionalProperties" role="button" class="btn btn-default btn-sm">additionalProperties</a></div>
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>activeMEPsArray</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray" role="button" class="btn btn-default btn-sm">activeMEPsArray</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>configured</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>failedActivation</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>inProgress</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>integrationsByAdapters</dt>
+        <dd>
+            
+            <div>Type: <code>object</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters" role="button" class="btn btn-default btn-sm">integrationsByAdapters</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Additional Properties Allowed: <a href="#200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additionalProperties" role="button" class="btn btn-default btn-sm">additionalProperties</a></div>
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>integrationsByAdaptersArray</dt>
+        <dd>
+            
+            <div>Type: <code>array</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray" role="button" class="btn btn-default btn-sm">integrationsByAdaptersArray</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>numberOfMEPTypes</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-UsageMetrics-properties-links" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : links</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-UsageMetrics-properties-links-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-UsageMetrics-properties-links-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-UsageMetrics-properties-links-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-UsageMetrics-properties-links-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-UsageMetrics-properties-links-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-Link" role="button" class="btn btn-default btn-sm">Link</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-MessageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : MessageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-MessageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-MessageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-MessageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-MessageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-MessageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>failed</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>success</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-MessageSystemUsage" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : MessageSystemUsage</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-MessageSystemUsage-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-MessageSystemUsage-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-MessageSystemUsage-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-MessageSystemUsage-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-MessageSystemUsage-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>jmscount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>omscount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-PackageUsageMetrics" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : PackageUsageMetrics</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-PackageUsageMetrics-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-PackageUsageMetrics-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-PackageUsageMetrics-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-PackageUsageMetrics-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-PackageUsageMetrics-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>nonPreBuilt</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>preBuilt</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>total</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int64</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AdapterCount" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : AdapterCount</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AdapterCount-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AdapterCount-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AdapterCount-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AdapterCount-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AdapterCount-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>marketPlaceAdapterCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>preInstalledAdapterCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>privateAdapterCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>totalAdapterCount</dt>
+        <dd>
+            
+            
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AgentUsageMetrics-properties-agentsByGroup" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : agentsByGroup</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties-agentsByGroup-additional">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroup-additional" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroup-additional">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Additional Properties Allowed
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroup-additional" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties-agentsByGroup-additional" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AgentUsageMetrics-properties-agentsByGroupArray" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : agentsByGroupArray</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items" role="button" class="btn btn-default btn-sm">items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AgentUsageMetrics-properties-agentsByGroupArray-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AppInstanceUsageMetrics-properties-typeNumbers" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : typeNumbers</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additional">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additional" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additional">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Additional Properties Allowed
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additional" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties-typeNumbers-additional" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : typeNumbersArray</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items" role="button" class="btn btn-default btn-sm">items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-AppInstanceUsageMetrics-properties-typeNumbersArray-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-activedMEPs" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : activedMEPs</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additional">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additional" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additional">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Additional Properties Allowed
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additional" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-activedMEPs-additional" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : activeMEPsArray</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items" role="button" class="btn btn-default btn-sm">items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : integrationsByAdapters</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additional">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additional" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additional">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Additional Properties Allowed
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additional" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdapters-additional" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        
+<div>Type: <code>integer</code> (<code>int32</code>)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : integrationsByAdaptersArray</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>array</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Items
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items" aria-expanded="false">
+    <ul class="list-group schema-items">
+        
+        <li class="list-group-item">
+        
+        <div>Type: <code>object</code>  <a href="#200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items" role="button" class="btn btn-default btn-sm">items</a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </li>
+        
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-activeMEPsArray-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-IntegrationUsageMetrics-properties-integrationsByAdaptersArray-items" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : items</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        <div id="200-definitions-Link" class="panel panel-default swagger-schema">
+<div class="panel-heading">Nested Schema : Link</div>
+<div class="panel-body">
+
+    
+
+
+<div>Type: <code>object</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel-group" role="tablist" aria-multiselectable="true">
+
+
+
+
+
+
+
+
+<div class="panel panel-default schema-panel">
+  <div class="panel-heading" role="tab" id="collapseListGroupHeading-200-definitions-Link-properties">
+    <a role="button" data-toggle="alt-collapse" href="#collapseListGroup-200-definitions-Link-properties" aria-expanded="false" aria-controls="collapseListGroup-200-definitions-Link-properties">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Properties
+    </a>
+  </div>
+  <div id="collapseListGroup-200-definitions-Link-properties" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseListGroupHeading-200-definitions-Link-properties" aria-expanded="false">
+    <dl class="list-group schema-properties">
+        
+        <dt>href</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+        <dt>rel</dt>
+        <dd>
+            
+            
+<div>Type: <code>string</code></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </dd>
+        
+    </dl>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+                                        
+                                        </div>
+
+                                        
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                            
+
+
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+        </article>
+    </body>
+</html>

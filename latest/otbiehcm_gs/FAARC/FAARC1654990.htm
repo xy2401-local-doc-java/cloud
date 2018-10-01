@@ -1,0 +1,3423 @@
+<!DOCTYPE html ><html lang="en">
+   <head><meta charset="utf-8">
+      
+      <title>Dashboard Components (Chapter 3) R10</title>
+      <meta content="all" name="robots" >
+      <meta content="yes" name="mos_crawl" >
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="dcterms.title">
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="doctitle">
+      <meta content="E61673-02" name="dcterms.identifier">
+      <meta content="E61632-01" name="partno">
+      <meta content="FAARC" name="dcterms.isVersionOf" >
+      <meta content="Fusion Publishing Server, UAE Print Staging" name="generator" >
+      <meta content="Fri Apr 29 11:21:56 PDT 2016" name="dcterms.created">
+      <meta name="relnum" content="Release 10">
+      <meta name="rel_num" content="Release 10">
+      <meta name="keywords" content="dashboard components;">
+      <link type="text/html" title="Home" href="../../index.html" rel="Start" >
+      <link type="text/html" title="Copyright" href="../dcommon/html/cpyr.htm" rel="Copyright">
+      <script src="../dcommon/js/headfoot.js" type="application/javascript"></script>
+      <script src="../nav/js/doccd.js" type="application/javascript"></script>
+      <link type="text/html" title="Contents" href="toc.htm" rel="Contents">
+      <link type="text/html" title="Previous" href="FAARC1654989.htm
+      " rel="Prev">
+      <link type="text/html" title="Next" href="FAARC1654991.htm
+      " rel="Next">
+      <link type="application/pdf" title="PDF version" href="FAARC.pdf" rel="alternate">
+      <link type="application/epub+zip" title="ePub version" href="FAARC.epub" rel="alternate">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+      <link type="text/css" href="../dcommon/css/header.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/footer.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/fonts.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/foundation.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/codemirror.css" rel="stylesheet">
+      <link type="text/css" href="../nav/css/html5.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-480-tablet.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-768-laptop.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-1140-deskop.css" rel="stylesheet">
+      <script src="../dcommon/js/modernizr.js" type="application/javascript"></script>
+      <script src="../dcommon/js/codemirror.js" type="application/javascript"></script>
+      <script src="../dcommon/js/jquery.js" type="application/javascript"></script>
+      <script src="../dcommon/js/foundation.min.js" type="application/javascript"></script>
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5" type="application/javascript"></script>
+      <script src="../dcommon/js/jqfns.js" type="application/javascript"></script>
+      <script src="../dcommon/js/ohc-inline-videos.js" type="application/javascript"></script>
+      <meta class="foundation-mq-topbar">
+      <link type="text/css" href="../dcommon/css/fusionapps.css" rel="stylesheet">
+      
+      <meta name="description" content="Before you create your perspective and detail pages, you create analyses, prompts, and any other dashboard component that
+      must be saved separately in the business intelligence catalog. You later add these components to your dashboard pages. When
+      you create your dashboard components: The following table lists some of the dashboard components that you can create and includes
+      an example of the component on the HR Executive Dashboard."><script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <header></header>
+      <div class="row" id="CONTENT">
+         <div class="IND large-9 medium-8 columns"><span id="PAGE" style="display:none;">6/8</span><div id="FAARC1654990" class="fusiondoc">
+               <h1 class="chapter"><span class="chapter-number">3</span>Dashboard Components
+               </h1>
+               <p class="chapterintro">This chapter contains the following:</p>
+               <ul class="intro">
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1670586">Creating Analyses and Other Dashboard Components: Overview</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1681379">Using Color in Analyses: Points to Consider</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1681113">Creating Charts: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1681238">Creating Tables: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1671249">Using Shared Filters in a Custom Dashboard or Analysis: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1671055">Creating Shared Filters: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1639374">Creating a Performance Tile: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1667619">Creating a Micro Sparkline: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1663905">Creating a Treemap: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1670652">Creating a View Selector: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1676533">Copying and Editing an ETL Refresh Date Banner: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1675481">Creating an Action Link to Drill Into an Organizational Dashboard: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1681296">Creating Dashboard Prompts: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1667555">Setting the Dashboard Prompts: Worked Example</a></p>
+                  </li>
+               </ul>
+               
+               <div class="sect1" id="FAARC1670586">
+                  <h2>Creating Analyses and Other Dashboard Components: Overview</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>Before you create your perspective and detail pages, you create analyses, prompts, and
+                     any other dashboard component that must be saved separately in the business intelligence
+                     catalog. You later add these components to your dashboard pages. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1682393">
+                     <h3 class="topictitle">General Considerations</h3>
+                     
+                     <p>When you create your dashboard components:</p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Keep in mind that the components
+                              don't have their final look until you add them to a dashboard page.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Leave settings in their default
+                              state unless specified otherwise.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Keep titles for analyses as short
+                              as possible.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <div class="infobox-note">
+                        <p class="notep1">Note</p>
+                        
+                        <p>You might not even need to display a title, for example
+                           for tables used in detail pages.
+                        </p>
+                        
+                     </div>
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1682394">
+                     <h3 class="topictitle">Dashboard Components</h3>
+                     
+                     <p>The following table lists some of the dashboard
+                        components that you can create and includes an example of the component
+                        on the HR Executive Dashboard.
+                     </p>
+                     
+                     <div class="infobox-note">
+                        <p class="notep1">Note</p>
+                        
+                        <p>Not all components of the HR Executive Dashboard
+                           are included in this table. The components that are more common, such
+                           as tables and graphs are not included.
+                        </p>
+                        
+                     </div>
+                     
+                     <table summary="List of dashboard components and examples of them&#xA;on the HR Executive Dashboard">
+                        
+                        
+                        <tr class="header">
+                           
+                           <th scope="col">
+                              Dashboard Component
+                              
+                           </th>
+                           
+                           <th scope="col">
+                              Description
+                              
+                           </th>
+                           
+                           <th scope="col">
+                              Example on HR Executive Dashboard
+                              
+                           </th>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Performance tile</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Displays a single aggregate measure value in a manner
+                                 that is both visually simple and prominent, yet it immediately reveals
+                                 summary metrics to the user that will likely be presented in more
+                                 detail within a dashboard view.
+                              </p>
+                              
+                              <p>Performance tiles:</p>
+                              
+                              <ul>
+                                 
+                                 <li>
+                                    <p>Focus the user's attention on simple,
+                                       need-to-know facts directly and prominently on the tile.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>Communicate status through simple
+                                       formatting by using color, labels, and limited styles, or through
+                                       conditional formatting of the background color or measure value to
+                                       make the tile visually prominent. For example, if revenue is not tracking
+                                       to target, the revenue value may appear in red.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>Respond to prompts, filters, and
+                                       user roles and permissions by making them relevant to the user and
+                                       their context.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>Support a single, aggregate or
+                                       calculated value.
+                                    </p>
+                                 </li>
+                                 
+                              </ul>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Headcount tile on the Workforce Health Summary page</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Treemap</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Displays a space-constrained, two-dimensional visualization
+                                 for hierarchical structures with multiple levels.
+                              </p>
+                              
+                              <p>Treemaps:</p>
+                              
+                              <ul>
+                                 
+                                 <li>
+                                    <p>Are limited by a predefined area
+                                       and display two levels of data.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>Contain rectangular tiles. The
+                                       size of the tile is based on a measure, and the color of the tile
+                                       is based on a second measure.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>Are similar to a scatter plot graphs
+                                       in that the map area is constrained, and the graph allows you to visualize
+                                       large quantities of data and quickly identify trends and anomalies
+                                       within that data.
+                                    </p>
+                                 </li>
+                                 
+                              </ul>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Headcount treemap on the Workforce Health Summary
+                                 page
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>View selector</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Adds a view selector in the results. A view selector
+                                 is a drop-down list from which users can select a specific view of
+                                 the results from among the saved views.
+                              </p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>View list for the Workforce Demographics analysis
+                                 on the Demographics page that enables you to view by Gender, Age,
+                                 Ethnicity, and Country
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Narrative</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Displays the results as one or more paragraphs of
+                                 text. You can type in a sentence with placeholders for each column
+                                 in the results, and specify how rows should be separated.
+                              </p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Refresh date banner</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Dashboard prompts</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>A type of filter that applies to all items in a dashboard.
+                                 Dashboard prompts are created outside of a specific dashboard and
+                                 are stored in the catalog as objects, which can then be added to any
+                                 dashboard or dashboard page that contains the columns that are specified
+                                 in the prompt. Dashboard prompts enable you to specify the data values
+                                 that determine the content of all of the analyses and scorecard objects
+                                 contained on the dashboard.
+                              </p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Drop-down lists that appear on the left-side of all
+                                 of the dashboard pages except the Overview and Sample Content pages.
+                                 Examples include; Time, Country, Manager, and Job Family.
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Microchart, sparkline type</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>A text-sized graphic (of similar size to a piece
+                                 of nearby text) that is ideal for showing trend information. 
+                              </p>
+                              
+                              <p>A microchart does not have axes or legends. Like
+                                 larger graphs, a microchart's measure values are rendered as relatively
+                                 sized bars (or lines, or area). Each measure name is displayed in
+                                 its column header. Further details of the measure appear as tooltip
+                                 text when you hover the mouse over a data cell.
+                              </p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Graphs that appear directly below the performance
+                                 tiles on all pages except the Overview and Sample Content pages
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        
+                        
+                     </table>
+                     <p></p>
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1681379">
+                  <h2>Using Color in Analyses: Points to Consider</h2>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <p>Color is usually used in analyses for a purpose,
+                     to convey meaning. 
+                  </p>
+                  
+                  
+                  
+                  <div class="sect2" id="FAARC1681376">
+                     <h3 class="topictitle">Considerations for Color</h3>
+                     
+                     
+                     
+                     <p>When you create your analyses (and even before),
+                        keep in mind the following points.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Use default colors for charts and
+                              tables, unless specified otherwise.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>To be consistent with predefined
+                              analyses, use the following colors to convey severity:
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p><span class="uicontrol">High:</span> <code>#C13E43</code></p>
+                              </li>
+                              
+                              <li>
+                                 <p><span class="uicontrol">Medium:</span> <code>#ED6647</code></p>
+                              </li>
+                              
+                              <li>
+                                 <p><span class="uicontrol">Low:</span> <code>#555555</code></p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>If a default color is something
+                              that already has a special meaning in your analyses, for example to
+                              convey severity, then override the default with a neutral color such
+                              as:
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p><code>#E371B2</code></p>
+                              </li>
+                              
+                              <li>
+                                 <p><code>#47BDEF</code></p>
+                              </li>
+                              
+                              <li>
+                                 <p><code>#009B7C</code></p>
+                              </li>
+                              
+                              <li>
+                                 <p><code>#FAD55C</code></p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>You might have multiple views or
+                              analyses with a graphical element, such as a bar or line, that represents
+                              the same value or category. Use the same color for this element in
+                              all the affected views or analyses, to make it easier for users to
+                              see relationships across multiple charts.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1681113">
+                  <h2>Creating Charts: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>On dashboard pages, especially perspective pages, information
+                     is mostly conveyed using charts. That means you create analyses with views such as Graph, Treemap,
+                     or Funnel. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1681112">
+                     <h3 class="topictitle">Creating Charts for Dashboard Pages</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Analysis</span> under <span class="uicontrol">Analysis and Interactive Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select a subject area.</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Subject Areas pane on the
+                              Criteria tab, double-click the columns to include, or drag them to
+                              the Selected Columns pane. 
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the Results tab.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Edit View</span> icon for the Title view, and enter a short
+                              analysis title.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Views pane, click the <span class="uicontrol">New View</span> icon and select <span class="uicontrol">Static Text</span> under <span class="uicontrol">Other Views</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the short description for
+                              your analysis, and click <span class="uicontrol">Done</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>With static text selected in the
+                              Views pane, click the <span class="uicontrol">Add View</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the Compound Layout, drag the
+                              static text container and drop it below the title.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Remove View from Compound Layout</span> icon for the Table view.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New View</span> icon, and select the type of chart you want.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Click the icon that opens the view
+                              properties.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter a size that doesn't make
+                              users scroll horizontally to see the whole chart.
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Common sizes to use include:</p>
+                                 
+                                 <ul>
+                                    
+                                    <li>
+                                       <p>Width: <span class="uicontrol">850</span> and Height: <span class="uicontrol">350</span></p>
+                                    </li>
+                                    
+                                    <li>
+                                       <p>Width: <span class="uicontrol">850</span> and Height: <span class="uicontrol">330</span></p>
+                                    </li>
+                                    
+                                 </ul>
+                                 
+                              </li>
+                              
+                              <li>
+                                 <p>For larger graphs, such as treemaps,
+                                    the largest you should go is <span class="uicontrol">850</span> for width, <span class="uicontrol">375</span> for height.
+                                 </p>
+                                 
+                              </li>
+                              
+                              <li>
+                                 <p>For shorter graphs, such as timelines,
+                                    you can use <span class="uicontrol">850</span> for width, <span class="uicontrol">250</span> for height.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">Top</span> for the <span class="uicontrol">Legend</span> field, if available.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Make other changes for your chart
+                              as needed, and click <span class="uicontrol">Done</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Views pane, select the view
+                              for your chart, and click the <span class="uicontrol">Add View</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Add more views for your analysis
+                              as needed.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your analysis under <span><span class="uicontrol">Shared Folders</span> - <span class="uicontrol">Custom</span></span>.
+                           </p>
+                           <div class="infobox-tip">
+                              <p class="notep1">Tip</p>
+                              
+                              <p>Take a look at the structure in the catalog for
+                                 predefined analytics, and consider using a similar structure within the Custom folder.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1681238">
+                  <h2>Creating Tables: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>For your dashboard, you use tables mostly
+                     for detail pages, especially show data pages. For tables, you create
+                     analyses with the Table or Pivot Table view. A special type of table
+                     you create would be for the identifiers that you put in the page header
+                     of inspector pages.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1681237">
+                     <h3 class="topictitle">Creating General Tables for Dashboard Pages</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Analysis</span> under <span class="uicontrol">Analysis and Interactive Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select a subject area.</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Subject Areas pane on the
+                              Criteria tab, double-click the columns to include, or drag them to
+                              the Selected Columns pane. 
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the Results tab.</p>
+                        </li>
+                        
+                        <li>
+                           <p>If you want to display a title,
+                              click the <span class="uicontrol">Edit View</span> icon for
+                              the Title view, and enter your text. If not, click the <span class="uicontrol">Remove View from Compound Layout</span> icon.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>If you want to display a short
+                              description below the title:
+                           </p>
+                           
+                           <ol>
+                              
+                              <li>
+                                 <p>In the Views pane, click the <span class="uicontrol">New View</span> icon and select <span class="uicontrol">Static Text</span> under <span class="uicontrol">Other Views</span>.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Enter the short description for
+                                    your analysis, and click <span class="uicontrol">Done</span>.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>With static text selected in the
+                                    Views pane, click the <span class="uicontrol">Add View</span> icon.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>For the Compound Layout, drag the
+                                    static text container and drop it below the title.
+                                 </p>
+                              </li>
+                              
+                           </ol>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">View Properties</span> icon for the Table view.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the <span class="uicontrol">Data Viewing</span> option, select <span class="uicontrol">Fixed headers with scrolling content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the maximum table size:</p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>For show data pages, use <span class="uicontrol">1010</span> for width and <span class="uicontrol">500</span> for height.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>For other pages, use <span class="uicontrol">850</span> for width and <span class="uicontrol">330</span> for height.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Edit View</span> icon for the Table view to make other changes
+                              for your table as needed, and click <span class="uicontrol">Done</span>.
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p> For show data pages, you add the <span class="uicontrol">Export</span> link later, as part of creating the
+                                 show data page.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Save your analysis under <span><span class="uicontrol">Shared Folders</span> - <span class="uicontrol">Custom</span></span>.
+                           </p>
+                           <div class="infobox-tip">
+                              <p class="notep1">Tip</p>
+                              
+                              <p>Take a look at the structure in the catalog for
+                                 predefined analytics, and consider using a similar structure within
+                                 the Custom folder.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1698522">
+                     <h3 class="topictitle">Creating Tables for Identifiers in Inspector Pages</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Analysis</span> under <span class="uicontrol">Analysis and Interactive Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select a subject area.</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Subject Areas pane on the
+                              Criteria tab, double-click the columns to include, or drag them to
+                              the Selected Columns pane. Include the columns that represent each
+                              identifier, as well as one other similar column (which doesn't appear
+                              to users).
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the Results tab.</p>
+                        </li>
+                        
+                        <li>
+                           <p>For the Title view,  click the <span class="uicontrol">Remove View from Compound Layout</span> icon.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>For the Table view, click the <span class="uicontrol">Edit</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Layout section, move each
+                              identifier under Sections in the order you want them to appear as
+                              a column of identifiers. Leave the one additional column under the
+                              Columns and Measures section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Section Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Display Heading</span> check box, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For each identifier under Sections
+                              other than the first, click the <span class="uicontrol">More Options</span> icon, and select <span class="uicontrol">Place Value in New Row</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Columns and Measures section,
+                              click the <span class="uicontrol">Column and Measure Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">Off</span> for <span class="uicontrol">Column Labels</span>, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the single column in the Columns
+                              and Measures section, click the <span class="uicontrol">More Options</span> icon, and select <span class="uicontrol">Format Values</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Custom CSS Style Options
+                              (HTML Only) section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Use Custom CSS Style</span> check box, and enter <code>display:none;</code>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>, then <span class="uicontrol">Done</span>.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Create more table views as needed,
+                              one for each column of identifiers you want on your inspector page.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Save your analysis in an appropriate
+                              folder under <span><span class="uicontrol">Shared Folders</span> - <span class="uicontrol">Custom</span></span>.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1671249">
+                  <h2>Using Shared Filters in a Custom Dashboard or Analysis: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example describes available shared filters
+                     and illustrates how to use a shared filter that is similar to those
+                     on the HR Executive Dashboard.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>Under Catalog, shared filters can be found by expanding <span class="uicontrol">Shared Folders</span> folder, then expanding the<span class="uicontrol">Human Capital Management</span> folder, then expanding
+                        the <span class="uicontrol">Subject Area Contents</span> folder
+                        and then expanding the <span class="uicontrol">Human Resources -
+                           Workforce Deployment</span> folder.
+                     </p>
+                     
+                     <p>The following table lists the shared filters.</p>
+                     
+                     <table summary="Table of available shared filters">
+                        
+                        
+                        <tr class="header">
+                           
+                           <th scope="col">
+                              Filter Name
+                              
+                           </th>
+                           
+                           <th scope="col">
+                              Description
+                              
+                           </th>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>3 Years Ago Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Filters data older than three years</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Age Band Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Age Band Name and Age Band code are prompted</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Current Year Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Filters data older than the current year</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Department Hierarchy Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for department name, department, number,
+                                 and hierarchy information
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Diversity Attribute Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Ethnic Group Name, Gender, Age Band,
+                                 and Disabled Flag
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Employee Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Worker Code is equal to Employee</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Employment Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Worker Type Name, Worker Type Code, Worker
+                                 Subtype Name, Worker Subtype Code, Full Time Flag Code, and Full Time
+                                 Flag 
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>High Performer Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Performance Band Code is equal to or in PERF_BAND_5</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Hire Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Event Group Code is equal to or in HIRE</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Job Attribute Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for a list of job attributes</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Location Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Location Country Name, Location Source
+                                 State Code, Location City, Location Name, and Location Number
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Org &amp; Location Prompt</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Department Name and Location Name</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Person Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Person Number, Assignment Number, and
+                                 Person Display Name
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Supervisor Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Supervisor Name and Supervisor Employee
+                                 Number
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Supervisor Hierarchy Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Top Level Supervisor Name, Level 1 Supervisor
+                                 Name through Level 16 Supervisor Names, Supervisor Display Name and
+                                 Supervisor Number.
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Termination Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Event Group Name is equal to/ is in Termination</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Termination Flag Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Termination Flag Code is equal to/is in Y</p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Trailing Twelve Months</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Month is greater than @{CAL_MONTH_YEAR_AGO} and Month
+                                 is less than or equal to @{CURRENT_MONTH}
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Voluntary Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Event Sub Group Code is equal to /is in TERM~VOLUNTARY;
+                                 TERM_VOLUNTARY
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        <tr>
+                           
+                           <td>
+                              
+                              <p>Year Quarter Month Filter</p>
+                              
+                           </td>
+                           
+                           <td>
+                              
+                              <p>Prompts for Year, Quarter, Month, Year Name, Quarter
+                                 Name, and Month Name
+                              </p>
+                              
+                           </td>
+                           
+                        </tr>
+                        
+                        
+                        
+                     </table>
+                     <p></p>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Using Shared Filters</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Catalog</span> to open the Oracle Business Intelligence Catalog.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">New</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Analysis and Interactive Reporting, select <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the<span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment
+                              Facts</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under <span class="uicontrol">Catalog</span> expand the <span class="uicontrol">Shared Folders</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Human Capital
+                              Management</span> folder. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Subject Area
+                              Contents</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Human Resources
+                              - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Scroll down to see the available filters and select
+                           one from the list.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p> Click <span class="uicontrol">Add More Options</span> and click OK to apply the filter.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1671055">
+                  <h2>Creating Shared Filters: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create a
+                     shared filter that is similar to those on the HR Executive Dashboard.
+                     Use this example to help you create custom shared filters.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>Under Catalog, shared filters can be found by expanding
+                        the <span class="uicontrol">Shared Folders</span> folder, then
+                        expanding the<span class="uicontrol">Human Capital Management</span> folder, and then expanding the <span class="uicontrol">Subject
+                           Area Contents</span> folder.
+                     </p>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Creating Shared Filters</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Create, click <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the<span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment </span>Facts folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span>to use it in the filter.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select an <span class="uicontrol">Operator</span> such as is equal to and enter a <span class="uicontrol">Value</span> such as 200.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Save Filter</span> and navigate to /Shared Folders/Human Capital Management/ Subject
+                           Area Contents/Human Resources - Workforce Deployment.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter a <span class="uicontrol">Name</span> for your filter and enter a <span class="uicontrol">Description</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click OK.</p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1639374">
+                  <h2>Creating a Performance Tile: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create a
+                     performance tile that is similar to the one showing headcount on the
+                     Workforce Health Summary page on the HR Executive Dashboard. Use this
+                     example to help you create a custom performance tile.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create a performance tile:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Specify the criteria.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Add the performance tile view to
+                              the results.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Specifying the Criteria</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Create, click <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the<span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment </span>Facts folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span>to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Adding the Performance Tile View to the Results</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Results</span> tab.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the bottom left corner, click <span class="uicontrol">New View </span>and select <span class="uicontrol">Performance Tile</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the Performance Tile Properties icon.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For the Tile Size, select <span class="uicontrol">Custom</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter <span class="uicontrol">140</span> for
+                           Width.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter <span class="uicontrol">80 </span>for
+                           Height.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the <span class="uicontrol">Utilize Available
+                              Space</span>option.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Leave <span class="uicontrol">Compress Value</span> selected.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Edit Conditional
+                              Formatting</span>.
+                        </p>
+                        
+                        
+                        <p>The next few steps show how to format the headcount
+                           value to appear in a specific color under certain conditions. For
+                           example, the number should appear red when headcount exceeds the target
+                           set by your organization. Follow these recommendations when assigning
+                           colors to the numbers in your performance tile so that colors have
+                           the same meaning across all analyses that you create:
+                        </p>
+                        
+                        <ul>
+                           
+                           <li>
+                              <p>Exceeds target: #68C182</p>
+                           </li>
+                           
+                           <li>
+                              <p>No condition: #000000</p>
+                           </li>
+                           
+                           <li>
+                              <p>Danger of not meeting target: #FFB54D</p>
+                              
+                           </li>
+                           
+                           <li>
+                              <p>Below target: #C13E43</p>
+                           </li>
+                           
+                        </ul>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Conditional Formatting dialog box, click <span class="uicontrol">Add Condition</span> and select <span class="uicontrol">Headcount.</span></p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the New Condition dialog box, select an operator,
+                           such as <span class="uicontrol">Is Greater Than</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Value field, enter a target number, such
+                           as 5,000 for headcount and click<span class="uicontrol"> OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Edit Format dialog box, click the drop down
+                           list in the Background Color field.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Color Selector dialog box, enter the hex
+                           code for the color that represents the condition corresponding to
+                           the operator and target that you entered in steps 11 and 12. For example,
+                           if your target for headcount is 5,000, you want the number to appear
+                           in red when it exceeds the target.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Edit Format dialog box, click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Conditional Formatting dialog box, click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Performance Tile Properties dialog box,
+                           click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Save</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To add the small graph that appears below the Headcount
+                           performance tile, create a micro sparkline.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1667619">
+                  <h2>Creating a Micro Sparkline: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create a
+                     micro sparkline that is similar to the one at the top of the Headcount page on the
+                     HR Executive Dashboard. Use this example to help you create a custom
+                     micro sparkline.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create a micro sparkline:</p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Specify the criteria.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Apply the filter.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Add the sparkline.</p>
+                        </li>
+                        
+                     </ul>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Specifying the Criteria</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Create, click <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the <span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Time</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Gregorian Calendar</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Month Name</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment
+                              Facts</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Applying the Filter</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>To apply a shared filter, in the bottom left corner
+                           in <span class="uicontrol">Catalog</span>, expand the <span class="uicontrol">Shared Folders</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Human Capital
+                              Management</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Subject Area
+                              Contents</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Human Resources
+                              - Workforce Deployment </span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Role Dashboards</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Last 12 Months</span> filter and click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Creating a Micro Sparkline</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Results</span> tab.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the bottom left corner, in <span class="uicontrol">Views</span> select the Title and click <span class="uicontrol">Remove View from Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select <span class="uicontrol">Table</span> and click <span class="uicontrol">Remove View from Analysis</span>.
+                        </p>
+                        
+                        
+                        <p>This step removes the table from the results.</p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Near the center of the screen, under Compound Layout,
+                           click <span class="uicontrol">New View</span> select <span class="uicontrol">Graph</span> and <span class="uicontrol">Line
+                              Graph</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the graph, click <span class="uicontrol">Edit
+                              Graph Properties</span> and enter 100 for <span class="uicontrol">Canvas Width</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter 50 for <span class="uicontrol">Canvas Height</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For <span class="uicontrol">Legend</span> select <span class="uicontrol">None</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Style</span> tab and in Plot Area, click the <span class="uicontrol">Specify</span> button to deselect <span class="uicontrol">Gridlines</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Titles and Labels</span> tab and click the <span class="uicontrol">Title</span> check
+                           box to remove the graph title.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Vertical Axis</span> check box to remove the title on the vertical axis.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Horizontal Axis</span> check box to remove the title on the horizontal axis.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the icon next to <span class="uicontrol">Vertical Axis Labels</span> and select Hide in the <span class="uicontrol">Axis Labels</span> field, then click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Labels, click the icon next to <span class="uicontrol">Horizontal Axis Labels</span> and select Hide in
+                           the <span class="uicontrol">Axis Labels</span> then click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Done</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1663905">
+                  <h2>Creating a Treemap: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create a
+                     tree map that is similar to one showing headcount on the Workforce
+                     Healthy Summary page on the HR Executive Dashboard. Use this example
+                     to help you create a custom treemap.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create a treemap:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Set up the criteria.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Add the treemap to the results.</p>
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Setting up the Criteria</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Create, click <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the<span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment </span>Facts folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span>to move it to the Selected Columns region. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Active Headcount</span> to move it to the Selected Columns Region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Hierarchies</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Department
+                              Hierarchy</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Department
+                              Hierarchy 13</span> to move it to the Selected Columns Region.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  <h4 class="topictitle">Adding the Treemap to the Results</h4>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Results</span> tab.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the bottom left corner, click <span class="uicontrol">New View</span> and select <span class="uicontrol">Treemap</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Drag <span class="uicontrol">Department Hierarchy
+                              13 Name</span> into the <span class="uicontrol">Group By</span> boxes.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For <span class="uicontrol">Size By</span> , select Headcount.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For <span class="uicontrol">Color By</span>, select Active Headcount.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For <span class="uicontrol">Style</span>,
+                           select Percentile Binning.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For <span class="uicontrol">Bins</span>,
+                           select Quartile (4).
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Use the default color values. </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Done</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1670652">
+                  <h2>Creating a View Selector: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create a
+                     view selector that is similar to those on the HR Executive Dashboard.
+                     Use this example to help you create a custom view selctor.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create a view selector:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Set up the criteria.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Add the view selector.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Create views for the view selector.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Add the view selector to the layout.</p>
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Setting Up the Criteria</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under Create, click <span class="uicontrol">Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the<span class="uicontrol"> Human Resources
+                              - Workforce Deployment </span>subject area.
+                        </p>
+                        
+                        
+                        <p>All subject areas for Oracle Transactional Business
+                           Intelligence Enterprise are preceded with Human Resources.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Facts - Human
+                              Resources - Workforce Deployment</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Workforce Deployment
+                              Facts</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Headcount </span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Hierarchies</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Department
+                              Hierarchies</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Department
+                              Hierarchy Name 12</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Worker Dimensions</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Location</span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Location
+                              Country Name</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand the <span class="uicontrol">Employment </span> folder.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Worker Type
+                              Name</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Salary Basis
+                              Name</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Double-click <span class="uicontrol">Employee
+                              Category Name</span> to move it to the Selected Columns region.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Adding a View Selector</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Click the Results tab.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the bottom left corner, click <span class="uicontrol">New View </span> and select <span class="uicontrol">Other Views</span> and <span class="uicontrol">View Selector</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For the <span class="uicontrol">Caption</span> enter View By. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click Done.</p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Creating Views for the View Selector</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>In the bottom left corner, click <span class="uicontrol">New View </span>, select <span class="uicontrol">Graph</span>, and select a graph type such as <span class="uicontrol">Bar </span>and <span class="uicontrol">Horizontal</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the center of the page above the graph click <span class="uicontrol">Rename View</span> and enter Headcount then click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To clean up the appearance, in the <span class="uicontrol">Layout</span> section under <span class="uicontrol">Measures</span>, drag Worker Type Name to <span class="uicontrol">Excluded</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under <span class="uicontrol">Graph Prompts</span> drag Headcount to <span class="uicontrol">Measures</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click Done.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To add a second graph, in the bottom left corner,
+                           click <span class="uicontrol">New View </span>, select <span class="uicontrol">Graph</span>, and select a graph type such as <span class="uicontrol">Bar</span> and <span class="uicontrol">Horizontal</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Above the graph click <span class="uicontrol">Rename View</span> and enter <span class="uicontrol">Worker
+                              Type Name</span> then click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To clean up the appearance, in the Layout section
+                           under <span class="uicontrol">Measures</span>, drag Headcount
+                           to <span class="uicontrol">Excluded.</span></p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Under <span class="uicontrol">Graph Prompts</span> drag Worker Type Name to <span class="uicontrol">Measures</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Done</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Add the View Selector to the Layout</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Under <span class="uicontrol">Views</span> select <span class="uicontrol">Table</span> and click <span class="uicontrol">Remove View from Analysis</span>. 
+                        </p>
+                        
+                        
+                        <p>This step is optional. You perform this step to remove
+                           the table from the final results.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select <span class="uicontrol">View Selector</span> and drag it to the Compound Layout under the Title component until
+                           you see a blue bar and release.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Edit View</span> to edit the View Selector. While holding down the Control key, select <span class="uicontrol">Headcount</span> and <span class="uicontrol">Worker
+                              Type Name </span>and click the right arrow <span class="uicontrol">&gt;</span> to move them to <span class="uicontrol">Views Included</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Done</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1676533">
+                  <h2>Copying and Editing an ETL Refresh Date Banner: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create an
+                     ETL refresh date banner that is similar to those on the HR Executive
+                     Dashboard. The ETL refresh date banner shows the date that the data
+                     was last refreshed. You can copy the existing banner and add it to
+                     your custom dashboard. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create an ETL Refresh Date Banner:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Open the HR Executive Dashboard,
+                              select the ETL refresh date banner, and save a copy to the folder
+                              where your dashboard objects are located.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Place the saved banner into your
+                              dashboard.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>View the banner properties and
+                              edit the banner text.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Copying the ETL Refresh Date Banner</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Catalog</span> to open the catalog.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Dashboards</span> and select the HR Executive Dashboard.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>From the Overview page, click <span class="uicontrol">Page Options</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Edit Dashboard</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Scroll down and select the Banner Compound View
+                           at the bottom of the page.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Properties</span> and click <span class="uicontrol">Edit Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Save As</span> in the upper right corner and navigate to the folder where your
+                           dashboard is located.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click OK.</p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  <h3 class="topictitle">Placing the Banner into a Dashboard</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Open your dashboard. </p>
+                        
+                        
+                        <p>You can click Dashboards and select it from the list.</p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Page Options</span> and select <span class="uicontrol">Edit Dashboard</span>.
+                        </p>
+                        
+                        
+                        <p>If needed, from Dashboard Objects, drag a <span class="uicontrol">Section</span> to the layout to contain the banner.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>From Catalog, expand <span class="uicontrol">Shared
+                              Folders</span> and navigate to where you saved the banner.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Drag the <span class="uicontrol">Banner</span> into the <span class="uicontrol">Section</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the Section and choose <span class="uicontrol">Format Section</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand <span class="uicontrol">Custom CSS Style
+                              Options (HTML Only)</span> and make sure Use Custom CSS Class
+                           app_status is checked or enter app_status in the field if needed. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click OK.</p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Save</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  <h4 class="topictitle">Viewing the Banner Properties</h4>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Select the <span class="uicontrol">Banner</span>, click <span class="uicontrol">Properties</span> and click <span class="uicontrol">Edit Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Narrative</span> object and click <span class="uicontrol">Edit View</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Criteria</span> tab.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>For each of the fields in the <span class="uicontrol">Selected Columns</span>, click the <span class="uicontrol">drop-down</span> next to the field name and select <span class="uicontrol">Edit Formula</span> to view the formula used for
+                           that field.
+                        </p>
+                        
+                        
+                        <p>Edit these formulas with caution. You can change
+                           the text that displays in the banner.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>If you made any changes, click <span class="uicontrol">Save Analysis</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1675481">
+                  <h2>Creating an Action Link to Drill Into an Organizational Dashboard: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to create an
+                     action link that is similar to those on the HR Executive Dashboard. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>To create an action link:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Open the dashboard you want to
+                              use.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Identify the analysis that you
+                              want to add an action to.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Identify the destination where
+                              you want the action to go to.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Add the action link.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Creating an Action Link</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Catalog</span> to open the Oracle Business Intelligence Catalog.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Open the dashboard you want to use.</p>
+                        
+                        
+                        <p>You can click <span class="uicontrol">Dashboards</span> and select it from the list, or you can click <span class="uicontrol">Open</span> and select it from the list.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Page Options</span> and select <span class="uicontrol">Edit Dashboard</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the analysis you want to add an action to,
+                           click <span class="uicontrol">Properties</span>, and select <span class="uicontrol">Edit Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the <span class="uicontrol">Criteria</span> tab.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Select the column (dimension or metric, or both),
+                           then click <span class="uicontrol">Column Properties</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click the Interaction tab and select <span class="uicontrol">Action Links</span>, then click the <span class="uicontrol">Add Action Link</span> button above the table.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Create a New Action</span> and select <span class="uicontrol">Navigate to BI Content</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Navigate to the folder that contains the content
+                           you want to link to and select that object.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Create New Action dialog box, click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the New Action Link dialog box, click <span class="uicontrol">OK</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the Column Properties dialog box, click <span class="uicontrol">OK</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Save</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1681296">
+                  <h2>Creating Dashboard Prompts: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>In most cases, you use the same prompts in
+                     the left column of every perspective and detail pages in your dashboard.
+                     That means you create only one prompts object in the catalog,
+                     and reuse it for every page. For exceptions, you create additional
+                     prompts and use them only in select pages. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1681295">
+                     <h3 class="topictitle">Creating Prompts for Dashboard Pages</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Dashboard
+                                 Prompt</span> under <span class="uicontrol">Analysis and Interactive
+                                 Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select a subject area.</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Definition section, click
+                              the <span class="uicontrol">New</span> icon and select <span class="uicontrol">Column Prompt</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select a column and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Specify settings for the prompt,
+                              and click  <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 3 through 5 for each
+                              prompt you want.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Display section, click the <span class="uicontrol">Edit</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Delete the value in the <span class="uicontrol">Title</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the <span class="uicontrol">Prompt Display</span> field, select <span class="uicontrol">Place label above prompt</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Set width of all prompts to</span> check box, and leave the
+                              value at <span class="uicontrol">120</span> pixels.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Deselect the <span class="uicontrol">Show Apply button</span> check box.
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>You can reselect this option later, if leaving out
+                                 the <span class="uicontrol">Apply</span> button causes performance
+                                 issues.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Make other changes for your prompts,
+                              as needed.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your prompts under <span><span class="uicontrol">Shared Folders</span> - <span class="uicontrol">Custom</span></span>.
+                           </p>
+                           <div class="infobox-tip">
+                              <p class="notep1">Tip</p>
+                              
+                              <p>Take a look at the structure in the catalog for predefined
+                                 analytics, and consider using a similar structure within the Custom
+                                 folder.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1667555">
+                  <h2>Setting the Dashboard Prompts: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>This example illustrates how to set up the
+                     dashboard prompts that you use when viewing the HR Executive Dashboard.
+                     You can set the prompts on any of the pages other than the Overview
+                     Page. You can save the prompts for global use or for your own use.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="">
+                     
+                     <p>The prompt values that you set are then applied to
+                        all of the other pages in the HR Executive Dashboard, including the
+                        Overview page.
+                     </p>
+                     
+                  </div>
+                  
+                  
+                  <h3 class="topictitle">Setting the Dashboard Prompts</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>From the HR Executive Dashboard click one of the
+                           tabs such as <span class="uicontrol">Workforce Health Summary</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the left column, select the criteria you want
+                           to use such as <span class="uicontrol">Time</span>, <span class="uicontrol">Country</span>, <span class="uicontrol">Manager</span>, and so on. For example, set <span class="uicontrol">Time</span> to 2013/01.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the upper right corner click <span class="uicontrol">Page Options</span> and select <span class="uicontrol">Save Current Customization</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter a name for the customization such as Year
+                           2013. 
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To save the customization for your own use, click <span class="uicontrol">Me</span>. To save it for global use, click <span class="uicontrol">Others</span> and click <span class="uicontrol">Set Permissions</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Search for users,
+                              roles, or groups</span> to browse available roles or groups or
+                           you can search for specific roles or groups.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Add Roles/Groups</span> and use <span class="uicontrol">Name</span> to enter part
+                           of the name of a role or group then click <span class="uicontrol">Search</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click a single result to select it and click <span class="uicontrol">&gt;</span> to move it to <span class="uicontrol">Selected Rows/Groups</span>. 
+                        </p>
+                        
+                        
+                        <p>Or, click <span class="uicontrol">&gt;&gt;</span> to select all of the accounts.
+                        </p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Make this my default
+                              for this page</span> to set this as a default.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>. 
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer></footer>
+      <noscript>
+         <p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+      </noscript>
+      <!-- Start SiteCatalyst code -->
+      <script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+      <!-- End SiteCatalyst code -->
+      </body>
+</html>

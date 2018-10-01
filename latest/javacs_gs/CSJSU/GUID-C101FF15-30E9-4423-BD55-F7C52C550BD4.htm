@@ -1,0 +1,104 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Deploy applications from the Applications page, which you can access from the Oracle Java Cloud Service - SaaS Extension Administration Console. Upon deployment, the application undergoes a series of security checks before it is actually deployed.">
+      <meta name="description" content="Deploy applications from the Applications page, which you can access from the Oracle Java Cloud Service - SaaS Extension Administration Console. Upon deployment, the application undergoes a series of security checks before it is actually deployed.">
+      <title>Deploying an Application</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Java Cloud Service - SaaS Extension">
+      <meta property="og:description" content="Deploy applications from the Applications page, which you can access from the Oracle Java Cloud Service - SaaS Extension Administration Console. Upon deployment, the application undergoes a series of security checks before it is actually deployed.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Java Cloud Service - SaaS Extension">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="using-oracle-java-cloud-service-saas-extension.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-08-03T14:58:14-07:00">
+      <meta name="dcterms.title" content="Using Oracle Java Cloud Service - SaaS Extension">
+      <meta name="dcterms.dateCopyrighted" content="2014, 2018">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E41172-47">
+      
+      <meta name="dcterms.product" content="en/cloud/paas/javase-cloud">
+      
+      <link rel="prev" href="managing-applications-jcs-saas-extension-administration-console.html" title="Previous" type="text/html">
+      <link rel="next" href="deleting-application.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"paas","element_name":"Platform as a Service (PaaS)","display_in_url":true},"product_group":{"short_name":"app-dev","element_name":"Application Development","display_in_url":false},"product":{"short_name":"javase-cloud","element_name":"Java Cloud Service - SaaS Extension","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="CSJSU">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="managing-applications-jcs-saas-extension-administration-console.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="deleting-application.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Java Cloud Service - SaaS Extension</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="administering-instances-jcs-saas-extension-administration-console.html" property="item" typeof="WebPage"><span property="name">Administering Instances with the JCS-SaaS Extension Administration Console</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="managing-applications-jcs-saas-extension-administration-console.html" property="item" typeof="WebPage"><span property="name">Managing Applications with the JCS-SaaS Extension Administration Console</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Deploying an Application</li>
+            </ol>
+            <a id="GUID-C101FF15-30E9-4423-BD55-F7C52C550BD4" name="GUID-C101FF15-30E9-4423-BD55-F7C52C550BD4"></a><a id="CSJSU7252"></a><a id="CSJSU7253"></a><a id="CSJSU7080"></a>
+            
+            <h2 id="CSJSU-GUID-C101FF15-30E9-4423-BD55-F7C52C550BD4" class="sect2">Deploying an Application</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Deploy applications from the Applications page, which you can access from the Oracle Java Cloud Service - SaaS Extension Administration Console. Upon deployment, the application undergoes a series of security checks before it is actually deployed.</p>
+               <p>To deploy an application:</p>
+               <ol>
+                  <li>
+                     <div class="p">Open the Applications page in the Oracle Java Cloud Service - SaaS Extension Administration Console and click <span class="bold">Deploy New</span>. The Deploy Application page appears.
+                        <div class="figure" id="GUID-C101FF15-30E9-4423-BD55-F7C52C550BD4__GUID-FA60A924-0249-413E-B6F6-695167AABA9A"><img src="img/res_ui_deploy_applications.png" alt="Description of res_ui_deploy_applications.png follows" title="Description of res_ui_deploy_applications.png follows" longdesc="img_text/res_ui_deploy_applications.html"><br><a href="img_text/res_ui_deploy_applications.html">Description of the illustration res_ui_deploy_applications.png</a></div>
+                        <!-- class="figure" -->
+                     </div>
+                  </li>
+                  <li>
+                     <p>Enter a name for the application you are deploying, and then click <span class="bold">Choose File</span> to search your local file steam for the application archive to be deployed. After locating the archive, click <span class="bold">OK</span>.
+                     </p>
+                     <p>Oracle Java Cloud Service - SaaS Extension Control uploads and deploys the selected WAR (Web Application Archive) file or EAR (Enterprise Archive) file.</p>
+                  </li>
+               </ol>
+               <div class="section">
+                  <p class="subhead1">Validating Deployed Applications</p>
+               </div>
+               <!-- class="section" -->
+               <p>Once deployed, each application undergoes a series of security checks before it is actually deployed. These checks include a virus scan and a whitelist validation. For technical and security reasons, a small number of specific APIs are prevented from executing in Oracle Cloud. Once the application passes these tests, deployment of the application begins. See <a href="considerations-when-developing-applications-oracle-java-cloud-service-saas-extension.html#GUID-C3185480-AC21-476B-9810-A8788609C36D" title="During the Oracle Java Cloud Service - SaaS Extension deployment process, every application or library undergoes a series of security checks before that application or library is actually deployed. For technical and security reasons, a small number of specific APIs are prevented from executing in Oracle Cloud.">About the Application Deployment Validation Process and Run-time Security</a>. 
+               </p>
+               <div class="section">
+                  <p class="subhead1">Verifying Deployment Status</p>
+               </div>
+               <!-- class="section" -->
+               <p>When deployment is successful, the application appears on the list of applications with a <span class="wintitle">Status</span> of Active..
+               </p>
+               <p>If a deploy job fails, the best course of action is to view the logs for the job. Depending on the different job logs available, you can determine where the failure occurred. See <a href="viewing-activity-logs-jcs-saas-extension-control.html" title="Activity logs show the status and progress of activities, such as application deployment and service restarts.">Viewing the Activity Logs</a>.
+               </p>
+               <p>If whitelist validation fails, deploy is never run and so there will be no deploy log.</p>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

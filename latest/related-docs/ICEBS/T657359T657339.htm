@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud">
+<meta name="dcterms.identifier" content="E89704-05">
+<meta name="dcterms.isVersionOf" content="ICEBS">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T657338.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T671567.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICEBS.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">6/13</span>
+<!-- End Header -->
+<h1>Setting Up and Enabling the Oracle E-Business Suite Adapter for Integrations</h1>
+		<H2> <a name="8641853"></a><a id="T660983"></a><B>Setup Overview</B></H2><a name="d0e497"></a><A NAME="ics_setupover"></A>
+	<p>Before creating an Oracle E-Business Suite connection with the Oracle E-Business Suite Adapter, you must perform the setup tasks to ensure it works properly. </p>
+	<p>This chapter includes the following topics:</p>
+  <ul>
+  <li>
+	<p><A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business Suite Adapter</A></p>
+	<p>If your Oracle E-Business Suite environment is TLS enabled, perform the setup tasks to enable TLS. See: <A HREF="T657359T657339.htm#ics_ssl">Setup Tasks for a TLS-Enabled Oracle E-Business Suite Environment</A>.</p>
+  </li><li>
+	<p><A HREF="T657359T657339.htm#ics_setupevent">Setup Tasks for Using the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A></p></li></ul>
+
+	<p>If an XML Gateway message is used as a trigger (source) in an integration, you must perform additional post activation tasks once you activate the integration to ensure the message works properly in Oracle Integration Cloud. See: <A HREF="T657359T661673.htm#ics_setupmap">Post Activation Manual Steps for XML Gateway Messages as a Trigger</A>.</p>
+		<H2> <a name="8641854"></a><a id="T657346"></a><B>Setup Tasks for Enabling the Oracle E-Business Suite Adapter</B></H2><a name="d0e531"></a><A NAME="ics_setup"></A>
+	<p>Perform the following steps to set up the Oracle E-Business Suite Adapter:</p>
+  <ol>
+  <li>
+	<p>Configure Oracle E-Business Suite Integrated SOA Gateway REST services.</p>
+	<p>Oracle E-Business Suite Integrated SOA Gateway is an essential component for the Oracle E-Business Suite Adapter in Oracle Integration Cloud. It is the path to access all Oracle E-Business Suite REST services that you can use in integrations in Oracle Integration Cloud. </p>
+	<p>If you have not configured Oracle E-Business Suite Integrated SOA Gateway, perform the setup and configuration steps as described in the following documents:</p>
+  <ul>
+  <li>
+	<p>For Oracle E-Business Suite 12.2</p>
+	<p>Refer to Section B: Configuring Oracle E-Business Suite REST Services, <I>Installing Oracle E-Business Suite Integrated SOA Gateway, Release 12.2</I>, My Oracle Support Knowledge Document 1311068.1.</p>
+	<p>Ensure that you apply the latest patches for REST services in Document 1311068.1.</p>
+  </li><li>
+	<p>For Oracle E-Business Suite 12.1.3</p>
+	<p>Ensure that you configure Oracle E-Business Suite Integrated SOA Gateway to enable the REST service features. If Oracle E-Business Suite Integrated SOA Gateway is not configured, follow the setup tasks as described in My Oracle Support Knowledge Document 556540.1 to configure Oracle E-Business Suite Integrated SOA Gateway Release 12.1.3.</p>
+	<p>If Oracle E-Business Suite Integrated SOA Gateway is already configured in your instance, then apply these REST service patches in the sequence as described in My Oracle Support Knowledge Document 1998019.1 to enable the REST service features.</p></li></ul>
+
+  </li><li>
+	<p>Configure access to Oracle E-Business Suite services.</p>
+	<p>To access Oracle E-Business Suite services from Oracle Integration Cloud, Oracle E-Business Suite services must be accessible in either of the following ways:</p>
+  <ul>
+  <li>
+	<p>These services are deployed in an environment set up in a DMZ (DeMilitarized Zone) configuration so that Oracle E-Business Suite REST services are publicly accessible through the Internet. </p>
+	<p>For DMZ configuration instructions in Oracle E-Business Suite, see <I>Oracle E-Business Suite Release 12.2 Configuration in a DMZ</I>, My Oracle Support Knowledge Document 1375670.1.</p>
+  </li><li>
+	<p>If your Oracle E-Business Suite is not set up in a DMZ configuration, these services must be accessible through Oracle Integration Cloud agent framework. </p>
+	<p>For information about agents, see <I>Using Integrations in Oracle Integration Cloud</I>.</p>
+	<p>Please note that the on-premises agent should not be installed in an Oracle E-Business Suite instance. Instead, it should be installed in a separate machine.</p></li></ul>
+
+  </li><li>
+	<p>Deploy the required REST services in Oracle E-Business Suite.</p>
+	<p>To use Oracle E-Business Suite REST services for integrations, ensure that you have performed the following tasks:</p>
+  <ul>
+  <li>
+	<p>Deploy the Metadata Provider/Integration Repository service</p>
+	<p>The Metadata Provider/Integration Repository service is an API that fetches a list of services available for integration. To integrate these Oracle E-Business Suite services, you must deploy the "Metadata Provider" API as a REST service. </p>
+	<p>You can search the "Metadata Provider" API from the Integration Repository, and then select the Metadata Provider API from the search results to display the interface details page. </p>
+	<p>Please note that you must enter "<code><B>provider</B></code>" as the service alias name for the Metadata Provider API and select the <B>GET</B> HTTP method check boxes for <B>ALL</B> the methods contained in the API before deploying it as a REST service.</p>
+  <P><p><STRONG><span>Important: 
+  </span></STRONG>If the Metadata Provider API is not deployed as a REST service with <B>GET</B> HTTP method and "<code><B>provider</B></code>" as the service alias, the Oracle E-Business Suite Adapter in Oracle Integration Cloud will not work as expected.</p></P>
+  </li><li>
+	<p>Deploy the Event Manager service</p>
+	<p>To use business events from Oracle E-Business Suite as a trigger (source) in an integration in Oracle Integration Cloud, you must deploy the Event Manager API as a REST service. </p>
+	<p>Similar to the Metadata Provider service, you can search the "Event Manager" API from the Integration Repository, and then deploy it as a REST service. Before the deployment, you must enter "<code><B>subscription</B></code>" as the service alias name and select the <B>POST</B> HTTP method check boxes for <B>ALL</B> the methods contained in the API.</p>
+  </li><li>
+	<p>Deploy business function related APIs as Oracle E-Business Suite REST services</p>
+	<p>If you want to integrate or use Oracle E-Business Suite integration interfaces in Oracle Integration Cloud, you must first deploy these interface definitions as Oracle E-Business Suite REST services. </p>
+	<p>For example, to process a sales order in Oracle E-Business Suite, you must deploy the Sales Order Service (OE_INBOUND_INT) API as a REST service first before you can use this deployed Sales Order Service REST service from Oracle Integration Cloud through the Oracle E-Business Suite Adapter.</p></li></ul>
+
+	<p>For information on deploying REST services, see Deploying REST Web Services, Administering Native Integration Interfaces and Services chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+  </li><li>
+	<p>Grant the required user privileges.</p>
+	<p>To use Oracle E-Business Suite REST services through the Oracle E-Business Suite Adapter in Oracle Integration Cloud, ensure that an Oracle E-Business Suite user has the privileges to:</p>
+  <ul>
+  <li>
+	<p>Access the Metadata Provider/Integration Repository service</p>
+	<p>Allowing the access of the "Metadata Provider" API enables the user to browse Oracle E-Business Suite services in Oracle Integration Cloud through the Oracle E-Business Suite Adapter.</p>
+  </li><li>
+	<p>Access the Event Manager service</p>
+	<p>This enables the user to use business events as a trigger in Oracle Integration Cloud when adding the Oracle E-Business Suite Adapter as a trigger (source) in an integration.</p>
+  </li><li>
+	<p>Access or execute desired Oracle E-Business Suite APIs and services</p>
+	<p>To protect application data from unauthorized access or execution, you must grant the user the interface access privileges for the REST services provided through Oracle E-Business Suite Integrated SOA Gateway.</p></li></ul>
+
+	<p>The Oracle E-Business Suite user credentials should be used to create an Oracle E-Business Suite connection in Oracle Integration Cloud. For example, if you plan to use an Oracle E-Business Suite user <code><B>hrmanager</B></code> from Oracle Integration Cloud to "create employee" in Oracle E-Business Suite, you need to:</p>
+  <ul>
+  <li>
+	<p>Create a security grant on all the methods contained in the Metadata Provider API to the <code><B>hrmanager</B></code> Oracle E-Business Suite user.</p>
+  </li><li>
+	<p>Create a security grant on all the methods contained in the Event Manager API to the <code><B>hrmanager</B></code> Oracle E-Business Suite user.</p>
+  </li><li>
+	<p>Create a security grant on the "Create Employee" method in the Employee API to the <code><B>hrmanager</B></code> Oracle E-Business Suite user.</p>
+  </li><li>
+	<p>Use the <code><B>hrmanager</B></code> user credentials while creating an Oracle E-Business Suite connection in Oracle Integration Cloud.</p></li></ul>
+
+	<p>At runtime, the username and password information provided through the Oracle E-Business Suite Adapter connection will be passed to Oracle E-Business Suite for user authentication for the service being invoked in an integration.</p>
+	<p>For information on creating security grants for REST services, see Managing Grants for Interfaces with Support for SOAP and REST Web Services, Administering Native Integration Interfaces and Services chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+	<p>For information on creating a connection with Oracle E-Business Suite Adapter, see: <A HREF="T657359T660986.htm#ics_accessing">Creating an Oracle E-Business Suite Connection with Oracle E-Business Suite Adapter</A>.</p></li></ol>
+
+		<H2> <a name="8641855"></a><a id="T660985"></a><B>Setup Tasks for a TLS-Enabled Oracle E-Business Suite Environment</B></H2><a name="d0e726"></a><A NAME="ics_ssl"></A>
+	<p>If your Oracle E-Business Suite instance is TLS enabled, to access the Oracle E-Business Suite instance in Oracle Integration Cloud, import additional certificates into Oracle Integration Cloud. </p>
+	<p>Perform the following setup tasks for your TLS-Enabled Oracle E-Business Suite environment:</p>
+  <ol>
+  <li>
+	<p>Export the Oracle E-Business Suite Certificates.</p>
+	<p>If Oracle E-Business Suite server certificate is not in the Oracle Integration Cloud trusted certificate list, perform the following steps to export the Oracle E-Business Suite certificates: </p>
+  <ol>
+  <li>
+	<p>Access the Oracle E-Business Suite instance with the HTTPS URL from a web browser.</p>
+  </li><li>
+	<p>After the Oracle E-Business Suite page has been successfully loaded in a browser, use the following steps to export the certificates from your web browser menu:</p>
+  <ol>
+  <li>
+	<p>In Internet Explorer, select <B>Internet Options</B> from the <B>Tools</B> drop-down menu to open the Internet Options pop-up window.</p>
+  </li><li>
+	<p>In the Content tab, click <B>Certificates</B>.</p>
+  </li><li>
+	<p>In the Personal (or Other People) tab, select your certificates and click <B>Export</B>.</p></li></ol>
+
+  </li><li>
+	<p>You can export or save the certificates either in DER encoded binary X.509 (<code>.crt</code>) or in Base64 encoded. For example, the exported certificate is named as <code>rootCA.crt</code>.</p>
+  </li><li>
+	<p>If the intermediate certificates mentioned in certificate chain is not present in the Oracle Integration Cloud trusted certificate list, you have to export the intermediate certificates in the sequence of <code>intCA1.crt</code>, <code>intCA2.crt</code>, . . . <code>intCAn.crt</code>.</p></li></ol>
+
+  </li><li>
+	<p>Import the Oracle E-Business Suite Certificates to Oracle Integration Cloud.</p>
+  <ol>
+  <li>
+	<p>Log in to the Oracle Integration Cloud home page, select the <B>Designer</B> option from the navigation pane, and then <B>Integrations</B>.</p>
+  </li><li>
+	<p>Click <B>Settings</B> and then <B>Certificates</B>.</p>
+  </li><li>
+	<p>Click <B>Upload</B> at the top of the page.  </p>
+  </li><li>
+	<p>In the Upload Certificate dialog box, select the certificate type as "Trust Certificate".</p>
+  </li><li>
+	<p>Enter a unique alias for the certificate.   </p>
+  </li><li>
+	<p>Click <B>Browse</B> and then select the trust file (for example, <code>.cer</code> or <code>.crt</code>) to upload. </p>
+  </li><li>
+	<p>Click <B>Upload</B>.</p>
+	<p>Please note that you need to import the root CA certificate first, and then followed by intermediate certificates in sequence.</p></li></ol>
+</li></ol>
+
+	<p>Additionally, refer to the following documents for more information:</p>
+  <ul>
+  <li>
+	<p>For information on uploading certificates, see Managing Security Certificates subsection in Creating Connections chapter, <I>Using Integrations in Oracle Integration Cloud</I>.</p>
+  </li><li>
+	<p>If your Oracle E-Business Suite environment is TLS enabled and if the Oracle E-Business Suite Adapter connection is configured to use the connectivity agent in Oracle Integration Cloud, you would have to import Oracle E-Business Suite certificates to the connectivity agent. </p>
+	<p>See: Downloading and Installing the Agent, Downloading and Running the Connectivity Agent Installer subsection in Managing the Agent Group and the On-Premises Connectivity Agent chapter, <I>Using Integrations in Oracle Integration Cloud</I>.</p></li></ul>
+
+
+		<H2> <a name="8641856"></a><a id="T660984"></a><B>Setup Tasks for Using the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</B></H2><a name="d0e869"></a><A NAME="ics_setupevent"></A>
+	<p>To successfully use business events and XML Gateway messages as inbound integrations in Oracle Integration Cloud through the Oracle E-Business Suite Adapter, you must perform the following one-time setup tasks in Oracle E-Business Suite to enable the feature:</p>
+  <ol>
+  <li>
+	<p>Store the Oracle Integration Cloud (OIC) user credentials in Oracle E-Business Suite FND vault.</p>
+	<p>Execute the PL/SQL script <code>$FND_TOP/sql/afvltput.sql</code> from Oracle E-Business Suite backend to upload and store the user credentials in Oracle E-Business Suite FND vault.</p>
+  <ol>
+  <li>
+	<p>Connect to an Oracle E-Business Suite database: </p>
+	<p><code>sqlplus apps/<I>apps_password</I></code></p>
+  </li><li>
+	<p>Execute the script to upload the IC username: </p>
+	<p><code>@$FND_TOP/sql/afvltput.sql FND REST_USERNAME &lt;OIC Username&gt;</code></p>
+	<p>Replace <code>&lt;OIC Username&gt;</code> with the username used to log in to Oracle Integration Cloud, such as <code>oicuser</code>.</p>
+	<p>Ensure that this IC user has a necessary Oracle Integration Cloud user role to execute integrations in Oracle Integration Cloud.</p>
+  </li><li>
+	<p>Execute the script to upload the associated OIC password:</p>
+	<p><code>@$FND_TOP/sql/afvltput.sql FND REST_PASSWORD <I>OIC_Password</I></code></p>
+	<p>Replace <code><I>OIC_password</I></code> with the actual password value of the associated OIC username. </p></li></ol>
+
+	<p>At runtime, the user credentials are retrieved from Oracle E-Business Suite FND vault and are embedded in the HTTP request along with business event data to Oracle Integration Cloud. It is included based on the HTTP Basic Authentication scheme. Oracle Integration Cloud then authenticates the user credentials based on the HTTP Basic Authentication method and accepts the business event data.</p>
+  </li><li>
+	<p>Configure proxy host and port for XML Gateway messages.</p>
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business Suite as a user who has the System Administrator responsibility. </p>
+	<p>Select <B>Oracle Applications Manager</B> from the navigation menu. Navigate to the <B>Site Map</B>.</p>
+  </li><li>
+	<p>Click <B>AutoConfig</B>.</p>
+  </li><li>
+	<p>In the Context Files page, click the <B>Edit Parameters</B> icon for the Applications tier context file.</p>
+  </li><li>
+	<p>In the Context File Parameters page, select the System tab. </p>
+	<p>Expand the <code>oa_web_server</code> node and update the values for the following AutoConfig variables:</p> 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0"><th SCOPE="col"><B>Name</B>
+   	</th><th SCOPE="col"><B>Variable</B>
+   	</th><th SCOPE="col"><B>Value</B>
+   	
+	<TR VALIGN="TOP"><td >OXTAOutUseProxy
+    		<td >s_oxta_proxy
+    		<td >true
+	<TR VALIGN="TOP"><td >OXTAOutProxyHost
+    		<td >s_oxta_proxyhost
+    		<td >&lt;proxy host&gt;
+	<TR VALIGN="TOP"><td >OXTAOutProxyPort
+    		<td >s_oxta_proxyport
+    		<td >&lt;proxy port&gt;</TABLE>
+	<p>Save your work.</p>
+  </li><li>
+	<p>Run AutoConfig from the application tier. </p>
+	<p>Refer to <I>Using AutoConfig to Manage System Configurations in Oracle E-Business Suite Release 12</I>, My Oracle Support Knowledge Document 387859.1.</p>
+	<p>Refer to the <I>Oracle E-Business Suite Setup Guide Release 12.2</I> for information on changing AutoConfig variables and executing AutoConfig in the application tier. </p></li></ol>
+
+  </li><li>
+	<p>Configure proxy host and port at Concurrent Manger Tier JVM.</p>
+	<p>To access Oracle Integration Cloud from Oracle E-Business Suite on-premise which is behind the firewall, all outbound requests from Oracle E-Business Suite need to be routed through proxy host and port. Therefore, you need to configure and set up the proxy appropriately at the Concurrent Manger Tier JVM.</p>
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business Suite as a user who has the System Administrator responsibility. </p>
+	<p>Select <B>Oracle Applications Manager</B> from the navigation menu. Navigate to the <B>Site Map</B>.</p>
+  </li><li>
+	<p>Click <B>AutoConfig</B>.</p>
+  </li><li>
+	<p>In the Context Files page, click the <B>Edit Parameters</B> icon for the Applications tier context file.</p>
+  </li><li>
+	<p>In the Context File Parameters page, select the Environments tab. Expand the <code>oa_environments:adovars</code> node to locate the APPSJREOPTS (AutoConfig variable or OA_VAR "<code>s_appsjreopts</code>").</p>
+  </li><li>
+	<p>Enter the following additional JVM parameters:</p>
+	<p><code>-Dhttp.proxyHost=&lt;http proxy host&gt;</code></p>
+	<p><code>-Dhttp.proxyPort=&lt;http proxy port&gt;</code></p>
+	<p><code>-Dhttps.proxyHost=&lt;ssl proxy host&gt;</code></p>
+	<p><code>-Dhttps.proxyPort=&lt;ssl proxy port&gt;</code></p>
+	<p>Save your work.</p>
+  </li><li>
+	<p>Run AutoConfig from the application tier. </p>
+	<p>Refer to <I>Using AutoConfig to Manage System Configurations in Oracle E-Business Suite Release 12</I>, My Oracle Support Knowledge Document 387859.1.</p>
+	<p>Refer to the <I>Oracle E-Business Suite Setup Guide Release 12.2</I> for information on changing AutoConfig variables and executing AutoConfig in the application tier. </p></li></ol>
+
+  </li><li>
+	<p>Apply patches and configure the environment for communication over TLS 1.2.</p>
+  <ol>
+  <li>
+	<p>Apply the following patches for your Oracle E-Business Suite environment.</p>
+  <ul>
+  <li>
+	<p>For Oracle E-Business Suite 12.2, apply patch 22612527 with prerequisite patch 13866584 to the FMW home.</p>
+  </li><li>
+	<p>For Oracle E-Business Suite 12.1.3, apply patch 22612527  to the 10.1.3.5 home.</p></li></ul>
+
+  </li><li>
+	<p>Update Java.</p>
+	<p>Update JDK 7 under <code>$AF_JRE_TOP</code> with the Java Cryptography Extension (JCE) updates from the Oracle Technology Network page (http://www.oracle.com/technetwork/java/javase/downloads/jce-7-download-432124.html). If you have a JAN-2016 Java version that already includes JCE, you can skip this step.</p>
+  <P><p><STRONG><span>Note: </span></STRONG><code>JDK 1.7.0_131</code> and <code>JDK 1.6.0_141</code> are minimum required versions for JDK 7 and JDK 6 respectively in Oracle E-Business Suite. For AIX platform, minimum required versions are <code>JDK 1.7 SR10 FP1</code> and <code>JDK 6 SR16 FP45</code> respectively. </p></P>
+  </li><li>
+	<p>Update the Oracle E-Business Suite context variables using Oracle Applications Manager.</p>
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business Suite as a user who has the <B>Workflow Administrator Web Applications</B> responsibility. </p>
+  </li><li>
+	<p>Select the <B>Oracle Applications Manager</B> link from the Navigator, and then select <B>AutoConfig</B>.</p>
+  </li><li>
+	<p>Select the application tier context file, and choose <B>Edit Parameters</B>.</p>
+  </li><li>
+	<p>Update the following context variables:</p>
+  <ul>
+  <li>
+	<p><code>s_afjsmarg =</code> <code><I>-Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2 or -Dhttps.protocols=TLSv1.2</I></code> </p>
+  <ul>
+  <li>
+	<p>To enable TLS 1.2 with backward compatibility, add the following:</p>
+	<p><code>s_afjsmarg = -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2</code></p>
+  </li><li>
+	<p>To enable TLS 1.2 only, add the following:</p>
+	<p><code>s_afjsmarg = -Dhttps.protocols=TLSv1.2</code></p></li></ul>
+</li></ul>
+</li></ol>
+
+  </li><li>
+	<p>Run AutoConfig using the <code>adautocfg.sh</code> script in the application tier <code>$ADMIN_SCRIPTS_HOME</code> directory.</p>
+  </li><li>
+	<p>Use the <code>adstpall.sh/adstrtal.sh</code> script in the <code>$ADMIN_SCRIPTS_HOME</code> directory to stop and restart all services.</p></li></ol>
+
+  </li><li>
+	<p>(Optional) Import the TLS certificates to <code>cacerts</code> in Oracle E-Business Suite.</p>
+	<p>This step is required only if Oracle Integration Cloud server certificate is not in the Oracle E-Business Suite trusted certificate list.</p>
+	<p><B>Exporting the Oracle Integration Cloud Certificates</B></p>
+	<p>Perform the following steps to export the Oracle Integration Cloud certificates: </p>
+  <ol>
+  <li>
+	<p>Access the Oracle Integration Cloud instance with the HTTPS URL from a web browser.</p>
+  </li><li>
+	<p>After the Oracle Integration Cloud UI page has been successfully loaded in a browser, double click the <B>Lock</B> icon in the bottom right corner of the browser and export the certificates. </p>
+  <P><p><STRONG><span>Note: </span></STRONG>Different browser versions may have different steps to export the TLS certificates.</p></P>
+  <ul>
+  <li>
+	<p>In Internet Explorer, double click the <B>Lock</B> icon, then select <B>Certificate Path</B>. Select the topmost CA and click <B>View Certificate</B>. Then select <B>Details</B>, and then <B>Copy to File</B>.</p>
+  </li><li>
+	<p>In Mozilla Firefox, double click the <B>Lock</B> icon and then select <B>More Information</B> next to IC's secure connection information. Select the Security tab in Page Info pop-up window. Click <B>View Certificate</B> and then the Details tab. Select the topmost CA and then click <B>Export</B>.</p></li></ul>
+
+	<p>Alternatively, you can use the browser menu to export the certificates using the following steps:</p>
+  <ol>
+  <li>
+	<p>In Internet Explorer, select <B>Internet Options</B> from the <B>Tools</B> drop-down menu to open the Internet Options pop-up window.</p>
+  </li><li>
+	<p>In the Content tab, click <B>Certificates</B>.</p>
+  </li><li>
+	<p>In the Personal (or Other People) tab, select your certificates and click <B>Export</B>.</p></li></ol>
+
+  </li><li>
+	<p>You can export or save the certificates either in DER encoded binary X.509 (<code>.crt</code>) or in Base64 encoded. For example, the exported certificate is named as <code>rootCA.crt</code>.</p>
+  </li><li>
+	<p>If the intermediate certificates mentioned in certificate chain is not present in the Oracle E-Business Suite trusted certificate list, you have to export the intermediate certificates in the sequence of <code>intCA1.crt</code>, <code>intCA2.crt</code>, . . . <code>intCAn.crt</code>.</p></li></ol>
+
+	<p><B>Importing the Oracle Integration Cloud Certificates to Oracle E-Business Suite</B></p>
+	<p>Perform the following steps to import the Oracle Integration Cloud certificates to Oracle E-Business Suite:</p>
+  <ol>
+  <li>
+	<p>Navigate to the <code>$AF_JRE_TOP/lib/security</code> directory. </p>
+  </li><li>
+	<p>Back up the existing <code>cacerts</code> file.</p>
+  </li><li>
+	<p>Copy the Oracle Integration Cloud server's root certificate <code>rootCA.crt</code> imported earlier to the <code>security</code> directory.</p>
+  </li><li>
+	<p>Execute the following command to ensure that <code>cacerts</code> has the <B>write</B> permissions: </p>
+	<p><code>$ chmod u+w cacerts</code></p>
+  </li><li>
+	<p>Add the server's root certificate <code>rootCA.crt</code> to the <code>cacerts</code> file: </p>
+	<p><code>$ keytool -importcert -keystore cacerts -storepass -alias rootCA -file rootCA.crt -v</code></p>
+	<p>Enter the keystore password when prompted. If the certificate already exists in the <code>cacerts</code> file, <I>keytool</I> will warn you and will allow you to cancel the import. Cancel the import. </p>
+  <P><p><STRONG><span>Note: </span></STRONG>If the intermediate certificates need to be imported to the <code>cacerts</code> file, import them in the following sequence after importing the root certificate <code>rootCA.crt</code>:</p>
+	<pre>$ keytool -importcert -keystore cacerts -storepass -alias intCA1 -file intCA1.crt -v     
+$ keytool -importcert -keystore cacerts -storepass -alias intCA1 -file intCA2.crt -v    
+ ...     
+$ keytool -importcert -keystore cacerts -storepass -alias intCA1 -file intCAn.crt -v</pre>
+    </P>
+  </li><li>
+	<p>When you have completed the modifications to the <code>cacerts</code> file, reset the permissions: </p>
+	<p><code>$ chmod u-w cacerts</code></p>
+  </li><li>
+	<p>Restart Oracle E-Business Suite application tier services. Use the <code>adstpall.sh</code> and <code>adstrtal.sh</code> scripts in the $ADMIN_SCRIPTS_HOME directory to stop and restart all services.</p></li></ol>
+</li></ol>
+
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

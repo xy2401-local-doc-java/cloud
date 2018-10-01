@@ -1,0 +1,991 @@
+<!DOCTYPE html ><html lang="en">
+   <head><meta charset="utf-8">
+      
+      <title>Design Plan (Chapter 2) R10</title>
+      <meta content="all" name="robots" >
+      <meta content="yes" name="mos_crawl" >
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="dcterms.title">
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="doctitle">
+      <meta content="E61673-02" name="dcterms.identifier">
+      <meta content="E61632-01" name="partno">
+      <meta content="FAARC" name="dcterms.isVersionOf" >
+      <meta content="Fusion Publishing Server, UAE Print Staging" name="generator" >
+      <meta content="Fri Apr 29 11:21:56 PDT 2016" name="dcterms.created">
+      <meta name="relnum" content="Release 10">
+      <meta name="rel_num" content="Release 10">
+      <meta name="keywords" content="OTBI Enterprise;">
+      <link type="text/html" title="Home" href="../../index.html" rel="Start" >
+      <link type="text/html" title="Copyright" href="../dcommon/html/cpyr.htm" rel="Copyright">
+      <script src="../dcommon/js/headfoot.js" type="application/javascript"></script>
+      <script src="../nav/js/doccd.js" type="application/javascript"></script>
+      <link type="text/html" title="Contents" href="toc.htm" rel="Contents">
+      <link type="text/html" title="Previous" href="FAARC1654953.htm
+      " rel="Prev">
+      <link type="text/html" title="Next" href="FAARC1654990.htm
+      " rel="Next">
+      <link type="application/pdf" title="PDF version" href="FAARC.pdf" rel="alternate">
+      <link type="application/epub+zip" title="ePub version" href="FAARC.epub" rel="alternate">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+      <link type="text/css" href="../dcommon/css/header.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/footer.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/fonts.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/foundation.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/codemirror.css" rel="stylesheet">
+      <link type="text/css" href="../nav/css/html5.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-480-tablet.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-768-laptop.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-1140-deskop.css" rel="stylesheet">
+      <script src="../dcommon/js/modernizr.js" type="application/javascript"></script>
+      <script src="../dcommon/js/codemirror.js" type="application/javascript"></script>
+      <script src="../dcommon/js/jquery.js" type="application/javascript"></script>
+      <script src="../dcommon/js/foundation.min.js" type="application/javascript"></script>
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5" type="application/javascript"></script>
+      <script src="../dcommon/js/jqfns.js" type="application/javascript"></script>
+      <script src="../dcommon/js/ohc-inline-videos.js" type="application/javascript"></script>
+      <meta class="foundation-mq-topbar">
+      <link type="text/css" href="../dcommon/css/fusionapps.css" rel="stylesheet">
+      
+      <meta name="description" content="Before you start creating your dashboards and what goes on the dashboard pages, you must plan everything out. If not, you
+      might spend a lot of extra time reworking, especially if you have many pages. To plan your dashboard: Predefined dashboards
+      follow certain design principles. Your custom dashboard should look and behave like predefined dashboards, so that you follow
+      these principles and also give users a consistent experience. The information in the rest of this guide helps you create custom
+      content that's in line with these design goals:"><script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <header></header>
+      <div class="row" id="CONTENT">
+         <div class="IND large-9 medium-8 columns"><span id="PAGE" style="display:none;">5/8</span><div id="FAARC1654989" class="fusiondoc">
+               <h1 class="chapter"><span class="chapter-number">2</span>Design Plan
+               </h1>
+               <p class="chapterintro">This chapter contains the following:</p>
+               <ul class="intro">
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1678414">Planning Your Dashboard: Overview</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1678502">Dashboard Pages and Navigation: Explained</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1678606">Designing Perspective Pages: Points to Consider</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1678644">General Patterns for Linking to Detail Pages: Explained</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1678659">Designing Detail Pages: Points to Consider</a></p>
+                  </li>
+               </ul>
+               
+               <div class="sect1" id="FAARC1678414">
+                  <h2>Planning Your Dashboard: Overview</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>Before you start creating your dashboards and what goes
+                     on the dashboard pages, you must plan everything out. If not, you
+                     might spend a lot of extra time reworking, especially if you have
+                     many pages.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1678390">
+                     <h3 class="topictitle">Process Overview</h3>
+                     
+                     <p>To plan your dashboard:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Decide whom the dashboard is for,
+                              what information the users need, and what they need to achieve.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Based on that, determine the types
+                              of dashboard pages to build, what each page contains, and how users
+                              navigate between pages, all the while keeping in mind key design goals.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Plan out the specific details of
+                              every page in your dashboard, so that you know what components to
+                              create first before putting everything together on dashboard pages.
+                           </p>
+                           
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678391">
+                     <h3 class="topictitle">Key Design Goals</h3>
+                     
+                     <p>Predefined dashboards follow certain design
+                        principles. Your custom dashboard should look and behave like predefined
+                        dashboards, so that you follow these principles and also give users
+                        a consistent experience. The information in the rest of this guide
+                        helps you create custom content that's in line with these design goals:
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Build something that works equally
+                              well on mobile devices.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Show the most important information
+                              first, at the top of the page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Always make it clear to users where
+                              they are in the dashboard and how to navigate to other pages for the
+                              information they want.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Create analyses that convey the key information
+                              your users need, using the most appropriate visualization.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1678502">
+                  <h2>Dashboard Pages and Navigation: Explained</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>Predefined dashboards have four types of
+                     pages: overview, perspective, detail, and sample content. But, when
+                     you create your own custom dashboard, you usually plan for only perspective
+                     and detail pages. You might not find overview pages necessary, and
+                     the predefined sample content pages are there only to help you with
+                     customization.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1678498">
+                     <h3 class="topictitle">Overview Page</h3>
+                     
+                     <p>The overview page is the landing page for a dashboard,
+                        and it orients users regarding what the dashboard is about.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>On the left side of the page are
+                              common business analysis questions that the target users might have.
+                              These links take them to specific analyses.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>On the right are analyses that
+                              give essential, overview information about the various business objects
+                              that the dashboard covers.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>Users can find all of the overview page content on
+                        other pages too. 
+                     </p>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678499">
+                     <h3 class="topictitle">Perspective Pages</h3>
+                     
+                     <p>Most of the tabs on the dashboard are perspective
+                        pages.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Perspectives provide an intuitive,
+                              top level of organization for your dashboard.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Each perspective page maps to a
+                              specific business point of view, and the analyses on the page support
+                              that view.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>A perspective should be immediately
+                              familiar to your users as something relevant to their work.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>For your own dashboard, decide on a limited number
+                        of perspectives and what each perspective covers. Consider having
+                        the first, leftmost perspective page provide summary information for
+                        your dashboard and navigation to other, more specific perspective
+                        pages. 
+                     </p>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678500">
+                     <h3 class="topictitle">Detail Pages</h3>
+                     
+                     <p>For your dashboard, determine what detail pages you
+                        need for each perspective. Detail pages:
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Give an in-depth view of a particular
+                              content area that your users care about.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Provide content similar to perspective
+                              pages, but with richer and more granular information.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Reduce the complexity of perspective
+                              pages so that users can easily digest the summary information on perspective
+                              pages.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Help you avoid performance issues
+                              that can occur if you put too much on your perspective pages.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>Consider creating these special types of detail pages,
+                        if needed:
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p><span class="uicontrol">Show data
+                                 pages:</span> Provide all the same information as a specific
+                              analysis from a perspective page, but in a table that users can export.
+                              Users open these pages using <span class="uicontrol">Show data</span> links on perspective pages.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Inspector
+                                 pages:</span> Provide essential summary information about a specific
+                              business object, for example a person, which can be relevant to many
+                              perspectives. Choose only the most important, fundamental business
+                              objects in your dashboard to inspect.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>All other, regular detail pages are referred to as
+                        standard detail pages.
+                     </p>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678501">
+                     <h3 class="topictitle">Navigation </h3>
+                     
+                     <p>As part of planning your perspective and detail pages,
+                        determine the navigation within your dashboard.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Decide on the order of tabs across
+                              the top of the dashboard. Users can open the overview page (if any)
+                              and all perspective pages using these tabs. 
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Determine how users access detail
+                              pages, and how they return from those pages.
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Users typically go from perspective
+                                    pages to specific detail pages for more information.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>The overview page can also link
+                                    to detail pages.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>After users open a standard detail
+                                    page or show data page, they generally go right back to the relevant
+                                    perspective page. 
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Since an inspector page can be
+                                    relevant to multiple perspectives, you can have multiple perspective
+                                    pages that link to the same inspector page.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>You can also link from standard
+                                    detail pages and show data pages to inspector pages.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Inspector pages should open in
+                                    a new window. Users just close the window when they're done, and return
+                                    to where they opened the inspector page from.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                           <p>The following diagram shows an example of pages in
+                              a dashboard and how users navigate between them. This example includes
+                              the special types of detail pages, as well as standard detail pages.
+                           </p>
+                           
+                        </li>
+                        
+                     </ul>
+                     <img src="img/com_otbie_naviga_05_20051493.png" alt="Pages in a dashboard and how users navigate between&#xA;them" class="fusappimg">
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1678606">
+                  <h2>Designing Perspective Pages: Points to Consider</h2>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <p>After you have a general plan for the perspective pages you want in your dashboard, you design the details of the pages before building them in the
+                     application. Aside from planning out the layout and content of the
+                     page, as illustrated in the following diagram, also keep in mind that
+                     users can view the page on mobile devices.
+                  </p>
+                  
+                  <img src="img/com_otbie_perspe_02_20051306.png" alt="Layout and content of a perspective page" class="fusappimg">
+                  
+                  
+                  <div class="sect2" id="FAARC1678597">
+                     <h3 class="topictitle">Page Layout</h3>
+                     
+                     
+                     
+                     <p>Your perspective page should have two columns:</p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>A narrow one on the left side,
+                              containing prompts
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>The main body of the page on the
+                              right, containing analyses and links to detail
+                              pages
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678598">
+                     <h3 class="topictitle">Main Page Content</h3>
+                     
+                     
+                     
+                     <p>For the right column, plan out these page
+                        components from top to bottom:
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p><span class="uicontrol">Title:</span> A page title that summarizes the perspective you're capturing, but
+                              in as few words as possible. 
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>The page title doesn't have to match the tab label.
+                                 Keep the tab label even shorter.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Description:</span> A brief sentence or two to describe what the page is all about.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Performance
+                                 Tiles:</span>A row of performance tiles to orient
+                              users with essential, aggregated KPIs. 
+                           </p>
+                           <div class="infobox-tip">
+                              <p class="notep1">Tip</p>
+                              
+                              <ul>
+                                 
+                                 <li>
+                                    <p>Don't have more than six tiles
+                                       in the row, and you might consider having two rows if needed.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>You can plan for a sparkline to appear for each tile.</p>
+                                    
+                                 </li>
+                                 
+                              </ul>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Primary
+                                 Analysis:</span> A single analysis that shows the most crucial
+                              information for this perspective. 
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Additional
+                                 Sections:</span> One or more sections with other analyses that
+                              support the perspective. 
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Put the more important sections
+                                    higher up on the page.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>A section can have multiple analyses.
+                                    If so, you can put them side by side, or have a single primary analysis
+                                    first, followed by other analyses.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Don't put so many sizable views
+                                    or analyses side by side in the same section that content is cramped
+                                    and users need to scroll horizontally. 
+                                 </p>
+                                 <div class="infobox-note">
+                                    <p class="notep1">Note</p>
+                                    
+                                    <p>You can find some recommended sizes for analyses
+                                       in the next chapter.
+                                    </p>
+                                    
+                                 </div>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                     </ul>
+                     
+                     <p>Each analysis, including the primary one, should
+                        display a short title and description. It's recommended that each
+                        description has a sentence that starts with a verb, and optionally
+                        a second sentence that summarizes how the user can interact with the
+                        analysis. 
+                     </p>
+                     
+                     <div class="infobox-note">
+                        <p class="notep1">Note</p>
+                        
+                        <p>As you design your main page content, consider some
+                           general patterns to follow for providing access to detail pages.
+                        </p>
+                        
+                     </div>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678599">
+                     <h3 class="topictitle">Prompts</h3>
+                     
+                     
+                     
+                     <p>After you plan out the analyses to include
+                        on the page, determine what prompts to put in the left column. Each
+                        prompt affects all the analyses on the page.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Use the same prompts for every
+                              perspective page in your dashboard, as much as possible. 
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put what you think are the more
+                              helpful or frequently used prompts at the top.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Don't include too many prompts,
+                              for example more than ten.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678600">
+                     <h3 class="topictitle">Mobile Devices</h3>
+                     
+                     
+                     
+                     <p>On mobile devices such as tablets, users
+                        see only the main page content (the right column), without the prompts
+                        on the left. If you design your page as described above, you ensure
+                        that:
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>The content is optimized for vertical
+                              scrolling only.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>The most important content (the
+                              performance tiles and primary analysis) is available on the screen
+                              without scrolling.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     <div class="infobox-tip">
+                        <p class="notep1">Tip</p>
+                        
+                        <p>If possible, make a small portion of the additional
+                           sections also visible without scrolling, as illustrated in the following
+                           diagram. This way, users can easily tell that there's more on the
+                           page.
+                        </p>
+                        
+                     </div>
+                     <img src="img/com_otibe_mobile_03_20051300.png" alt="Area of perspective pages to make visible on mobile&#xA;devices without scrolling" class="fusappimg">
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1678644">
+                  <h2>General Patterns for Linking to Detail Pages: Explained</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>In most cases, users navigate to detail pages
+                     from perspective pages. For your own dashboard, consider general patterns
+                     used to provide links from perspective to detail pages. You can link
+                     to inspector pages not only from perspective pages, but also other
+                     types of pages, for example standard detail pages.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1678642">
+                     <h3 class="topictitle">More Information Section</h3>
+                     
+                     <p>On your perspective page, you have at least one section
+                        displaying one or more analyses. If you have detail pages related
+                        to the analyses in a specific section, then you can put another section
+                        right below. This second section is a collapsible region that contains
+                        one or more links to detail pages. 
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>The section title is the same as
+                              the title for the first section, but with More added to the front.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Phrase each link as a question
+                              that the information from the detail page would answer.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678643">
+                     <h3 class="topictitle">Show Data Link</h3>
+                     
+                     <p>On a perspective page, you present an analysis, for
+                        example, only in a chart view. You might decide that users need to
+                        have detailed data from that analysis in a table format, especially
+                        for export. So, you plan for a show data page.
+                     </p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>In your design for the parent perspective
+                              page, plan for a section to display the chart.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>At the bottom of that section,
+                              put a Show data link to open the show data page.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1698415">
+                     <h3 class="topictitle">Inspector Page Navigation</h3>
+                     
+                     <p>For one or more key business objects in your dashboard,
+                        you might plan for inspector pages to help users get more insight.
+                        You link to inspector pages from within the chart or table in an analysis. 
+                     </p>
+                     
+                     
+                     <p>For example, you have a table with a column displaying
+                        person names, and you want an inspector page for persons. So you plan
+                        for each cell in that column to be a link to the inspector page, so
+                        that when users click on Jane Smith, for example, they open an inspector
+                        page with information only about Jane Smith.
+                     </p>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1678659">
+                  <h2>Designing Detail Pages: Points to Consider</h2>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <p>After you have a general plan for the detail pages you want,
+                     determine the specifics of each page before building them in the application.
+                     Aside from planning out the layout and content of the page, as illustrated
+                     in the following diagram, also keep in mind additional or different
+                     considerations for show data and inspector pages.
+                  </p>
+                  
+                  <img src="img/com_otbie_detail_20051307.png" alt="Layout and content of a standard detail page" class="fusappimg">
+                  
+                  
+                  <div class="sect2" id="FAARC1678656">
+                     <h3 class="topictitle">Page Layout</h3>
+                     
+                     
+                     
+                     <p>The layout for detail pages is the same as perspective pages, with prompts in
+                        the left column and the main page content in the right.
+                     </p>
+                     
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678677">
+                     <h3 class="topictitle">Page Content</h3>
+                     
+                     
+                     
+                     <p>Plan out your page, from top to bottom:</p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p><span class="uicontrol">Parent
+                                 Page Title:</span> The same title as the parent perspective page,
+                              immediately followed by a link that takes you back to the parent page. 
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Detail
+                                 Page Title:</span> The title of the detail page. Consider using
+                              the name of the analysis or section on the perspective page that is
+                              associated with this detail page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Sections:</span> Typically, a section with one analysis, but you might need multiple
+                              analyses in the same section, or even multiple sections.
+                           </p>
+                           <div class="infobox-important">
+                              <p class="notep1">Important</p>
+                              
+                              <p>If you have more than one section, put the most important
+                                 one first so that users don't need to scroll to see it on mobile devices.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678719">
+                     <h3 class="topictitle">Prompts</h3>
+                     
+                     
+                     
+                     <p>The prompts for a detail page should be exactly
+                        the same as the ones on its parent perspective page.
+                     </p>
+                     
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678720">
+                     <h3 class="topictitle">Show Data Pages</h3>
+                     
+                     
+                     
+                     <p>If you're building a show data page, then
+                        generally follow the same layout and content considerations above,
+                        except that you:
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Don't have a detail page title.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Plan for just one section to house
+                              the table showing the data, and not have any other analyses or views.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Put an <span class="uicontrol">Export</span> link below the table.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                     <p>This diagram shows the layout and content of a show
+                        data page.
+                     </p>
+                     <img src="img/com_otbie_showda_02_20051588.png" alt="Layout and content of a show data page" class="fusappimg">
+                     
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1678721">
+                     <h3 class="topictitle">Inspector Pages</h3>
+                     
+                     
+                     
+                     <p>If you're building an inspector page, then
+                        you have different page layout and content, as illustrated in the
+                        following diagram.
+                     </p>
+                     <img src="img/com_otbie_inspec_03_20051380.png" alt="Layout and content of an inspector page" class="fusappimg">
+                     
+                     
+                     
+                     <p>Plan your page from top to bottom:</p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p><span class="uicontrol">Title:</span> The business object, followed by the specific business object value
+                              and the category selected from the left column. For example, if the
+                              object is a person and the category is <span class="uicontrol">Overview</span>, then the title can be <span class="uicontrol">Person: Jane Smith
+                                 Overview</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Description:</span> A brief description of the inspector page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Identifiers:</span> Some attributes to identify the business object, for example the
+                              date of birth and address for a person.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p><span class="uicontrol">Categories
+                                 and Analyses:</span> A column on the left with links, each opening
+                              up one or more analyses in the right column. 
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>A link represents a category of
+                                    information relevant to the business object.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Each analysis shows information
+                                    specific to the business object, for a given category. 
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <ul>
+                                 
+                                 <li>
+                                    <p>As always, put the more important
+                                       analyses at the top of the page.
+                                    </p>
+                                 </li>
+                                 
+                                 <li>
+                                    <p>If you have just one category for
+                                       your business object, then you don't even need categories. Just present
+                                       your analyses below the title and identifiers. 
+                                    </p>
+                                 </li>
+                                 
+                              </ul>
+                              
+                           </div>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer></footer>
+      <noscript>
+         <p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+      </noscript>
+      <!-- Start SiteCatalyst code -->
+      <script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+      <!-- End SiteCatalyst code -->
+      </body>
+</html>

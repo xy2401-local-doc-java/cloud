@@ -1,0 +1,504 @@
+<!DOCTYPE html >
+<html lang="en">
+   <head><meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- saved from url=(0023)https://docs.oracle.com -->
+      
+      <title>Getting Started with a Procurement Rapid Implementation (Chapter 2) R13 (update 17D)</title>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      		 <script>
+      
+      document.write('<style type="text/css">');
+      
+      document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+      
+      document.write('</style>');
+      
+      </script>
+      
+      		<script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      		 <script>
+      
+      		 if (window.require === undefined) {
+      
+      document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+      
+      document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+      
+      }
+      
+      			
+      </script>
+      
+      		<meta name="description" content="Use the procurement rapid implementation task list to implement the Procurement offering if your organization has simple setup
+      requirements. The task list reduces the number of tasks to those which are required or commonly used.">
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Implementing Procurement">
+      <meta property="og:description" content="Use the procurement rapid implementation task list to implement the Procurement offering if your organization has simple setup
+      requirements. The task list reduces the number of tasks to those which are required or commonly used.">
+      <meta content="Fusion Publishing Server, UAE Print Staging" name="generator" >
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Implementing Procurement">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/" >
+      <meta content="Fri Oct 13 10:50:06 PDT 2017" name="dcterms.created">
+      <meta name="dcterms.dateCopyrighted" content="2011, 2017" >
+      <meta property="dcterms:title" content="Implementing Procurement">
+      <meta name="dcterms.category" content="cloud" >
+      <meta content="E89290-01" name="dcterms.identifier">
+      <meta content="OAPRO" name="dcterms.isVersionOf" >
+      <meta name="dcterms.product" content="en/cloud/saas/procurement/r13-update17d">
+      <meta name="dcterms.release" content="Release 13 (update 17D)">
+      <link rel="Prev" href="overview.html" title="Previous" type="text/html" >
+      <link rel="Next" href="synchronization-of-users-and-roles-from-ldap.html" title="Next" type="text/html" >
+      <link type="application/pdf" title="PDF" href="procurement-cloud-implementing-procurement.pdf" rel="alternate">
+      <link type="application/epub+zip" title="ePub" href="procurement-cloud-implementing-procurement.epub" rel="alternate">
+      <meta content="all" name="robots" >
+      <meta content="yes" name="mos_crawl" >
+      <meta content="Implementing Procurement" name="dcterms.title">
+      <meta content="Implementing Procurement" name="doctitle">
+      <meta content="E89290-01" name="partno">
+      <meta name="rel_num" content="Release 13 (update 17D)">
+      <meta name="keywords" content="procurement rapid implementation; procurement implementation; rapid implementation; procurement offering; procurement setup;">
+      <script type="application/json" id="ssot-metadata">
+         
+      		 {
+      					"primary":
+      					{
+      						"category":{
+      						  "short_name":"cloud",
+      						  "element_name":"Cloud",
+      						  "display_in_url":true
+      						},
+      						"suite":{
+      						  "short_name":"saas",
+      						  "element_name":"Software as a Service (SaaS)",
+      						  "display_in_url":true
+      						},
+      						"product_group":{
+      						  "short_name":"enterprise-resource-planning",
+      						  "element_name":"Enterprise Resource Planning",
+      						  "display_in_url":false
+      						},
+      						"product":{
+      						  "short_name":"procurement",
+      						  "element_name":"Procurement",
+      						  "display_in_url":true
+      						},
+      						"release":{
+      						  "short_name":"r13-update17d",
+      						  "element_name":"Release 13 (update 17D)",
+      						  "display_in_url":true
+      						}
+      					}
+      }</script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert"><a href="overview.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a><a href="synchronization-of-users-and-roles-from-ldap.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+         		
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Implementing Procurement</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Getting Started with a Procurement Rapid Implementation</li>
+            </ol>
+            <h1 class="fa-chapter"><span class="fa-chapter-number">2</span>Getting Started with a Procurement Rapid Implementation
+            </h1>
+         </header>
+         <div id="OAPRO2477678" class="fusiondoc">
+            <p class="chapterintro">This chapter contains the following:</p>
+            <ul class="intro">
+               <li>
+                  <p class="guidemap_sub_chapter"><a href="#OAPRO1860584">Getting Started with Your Procurement Rapid Implementation: Procedure</a></p>
+               </li>
+               <li>
+                  <p class="guidemap_sub_chapter"><a href="#OAPRO1863115">Define Enterprise Structure for Procurement Rapid Implementation: Overview</a></p>
+               </li>
+               <li>
+                  <p class="guidemap_sub_chapter"><a href="#OAPRO1863387">Configure Basic Enterprise Structure for Procurement: Overview</a></p>
+               </li>
+            </ul>
+            <div class="sect1" id="OAPRO1860584">
+               <h2>Getting Started with Your Procurement Rapid Implementation: Procedure</h2>
+               <p>Use the procurement rapid implementation
+                  task list to implement the Procurement offering if your organization
+                  has simple setup requirements. The task list reduces the number of
+                  tasks to those which are required or commonly used. 
+               </p>
+               <p>You can use procurement rapid implementation task
+                  list for many types of procurement offering configurations. For example,
+                  to implement a Procure to Pay process, or for standalone implementations
+                  of Oracle Fusion Sourcing or Oracle Fusion Supplier Qualification.
+               </p>
+               <p>Information covered in this topic includes:</p>
+               <ul>
+                  <li>
+                     <p>Creating a procurement rapid implementation
+                        task list.
+                     </p>
+                  </li>
+                  <li>
+                     <p>Using the tasks in the rapid implementation
+                        task list.
+                     </p>
+                  </li>
+               </ul>
+               <p></p>
+               <p>To create a procurement rapid implementation task
+                  list:
+               </p>
+               <ol>
+                  <li>
+                     <p>From the Setup and Maintenance
+                        work area, click the Tasks tab and select Manage Implementation Projects.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Implementation Projects
+                        page, in the Search Results section, click the Create icon.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Create Implementation Project
+                        page, enter the basic information for the project, then click the
+                        Next button.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Create Implementation Project:
+                        Select Offerings to Implement page, do not select an offering. 
+                     </p>
+                  </li>
+                  <li>
+                     <p>Click the Save and Open Project
+                        button.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Implement Project page,
+                        in the Task Lists and Tasks section, click the Select and Add icon.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Select and Add: Task Lists
+                        and Tasks page, search for and apply the Define Procurement Configuration
+                        for Rapid Implementation task list. Then click Done.
+                     </p>
+                  </li>
+                  <li>
+                     <p>On the Implementation Project page,
+                        expand the Define Procurement Configuration for Rapid Implementation
+                        folder. 
+                     </p>
+                  </li>
+                  <li>
+                     <p>Review the included task lists
+                        and tasks.
+                     </p>
+                  </li>
+                  <li>
+                     <p>Remove task lists from the project
+                        for any optional modules or features not in your implementation. You
+                        can also remove or add individual tasks to meet the specific requirements
+                        of your implementation.
+                     </p>
+                  </li>
+               </ol>
+               <p>This table lists and describes the main rapid implementation
+                  task lists and tasks for setting up enterprise structures and common
+                  procurement configuration.
+               </p>
+               <div class="simpletable-margin">
+                  <table class="customlayout" summary="Table listing and describing the main rapid implementation task lists and tasks for setting up enterprise structures and common procurement configuration.">
+                     <tr class="header">
+                        <th scope="col">Task List or Task Name</th>
+                        <th scope="col">Description</th>
+                     </tr>
+                     <tr>
+                        <th scope="row" class="row">
+                           <p>Define Enterprise Structure for Procurement Rapid
+                              Implementation
+                           </p>
+                        </th>
+                        <td>
+                           <p>Two versions of this task list are provided. One
+                              is for rapid implementations where the Purchasing optional module
+                              is included. The other is for implementations when Purchasing is excluded.
+                              Select the one which applies for your implementation, and remove the
+                              version which does not apply.
+                           </p>
+                           <p>In the version including Purchasing, you can use
+                              spreadsheet upload utilities for business units, legal entities, chart
+                              of accounts, banking structures, and more.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <th scope="row" class="row">
+                           <p>Define Common Procurement Configuration for Rapid
+                              Implementation
+                           </p>
+                        </th>
+                        <td>
+                           <p>Use this task list for all rapid implementations.
+                              It includes setup tasks used across all the Oracle Fusion Procurement
+                              applications.
+                           </p>
+                           <p>Use this task list to perform the following tasks,
+                              and more:
+                           </p>
+                           <ul>
+                              <li>
+                                 <p>Configure Basic Enterprise Structure
+                                    for Procurement
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Define Supplier Configuration for
+                                    Rapid Implementation
+                                 </p>
+                              </li>
+                              <li>
+                                 <p>Define Basic Catalogs for Procurement
+                                    Rapid Implementation
+                                 </p>
+                              </li>
+                           </ul>
+                        </td>
+                     </tr>
+                     <tr>
+                        <th scope="row" class="row">
+                           <p>Configure Basic Enterprise Structure for Procurement</p>
+                        </th>
+                        <td>
+                           <p>Use this task to run an automated process that performs
+                              several enterprise structure setup tasks.
+                           </p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <th scope="row" class="row">
+                           <p>Define Procurement Security Configuration for Rapid
+                              Implementation
+                           </p>
+                        </th>
+                        <td>
+                           <p>Use this task list for all rapid implementations.
+                              Use it to define application users, assign them roles, and define
+                              procurement agents.
+                           </p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+               <p></p>
+               <p>Use the following task lists to configure the applicable
+                  optional modules for your rapid implementation:
+               </p>
+               <ul>
+                  <li>
+                     <p>Define Purchasing Configuration
+                        for Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Self-Service Procurement
+                        Configuration for Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Supplier Portal Configuration
+                        for Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Sourcing Configuration for
+                        Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Supplier Qualification Configuration
+                        for Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Procurement Contract Terms
+                        Configuration for Rapid Implementation
+                     </p>
+                  </li>
+                  <li>
+                     <p>Define Invoicing and Payments Configuration
+                        for Rapid Implementation
+                     </p>
+                  </li>
+               </ul>
+            </div>
+            <div class="sect1" id="OAPRO1863115">
+               <h2>Define Enterprise Structure for Procurement Rapid Implementation: Overview</h2>
+               <p>When you perform a procurement rapid implementation,
+                  there are two task lists to select from for configuring enterprise
+                  structures. The two versions vary by either including or excluding
+                  purchasing-related tasks. Use the version that is most suitable for
+                  your implementation, depending on whether you are including or excluding
+                  the Purchasing optional module.
+               </p>
+               <div class="sect2" id="OAPRO1863138"><h3 class="topictitle">Task List: Define Enterprise Structure for Procurement
+                  Rapid Implementation, including Purchasing</h3>
+                  <p>Select this task list when your organization
+                     is implementing the Purchasing optional module. Use it to complete
+                     tasks for configuring legal and financial reporting structures to
+                     support procurement processes. The task list includes spreadsheet
+                     upload tasks to help define these enterprise structure configurations.
+                  </p>
+                  <p>This table lists the spreadsheet upload tasks you
+                     can use to define enterprise structures in your rapid implementation.
+                  </p>
+                  <div class="simpletable-margin">
+                     <table class="customlayout" summary="The task list Define Enterprise Structure for Procurement Rapid Implementation Including Purchasing includes spreadsheet uploads for creating enterprise structures in your rapid implementation.">
+                        <tr class="header">
+                           <th scope="col">Task</th>
+                           <th scope="col">Structures</th>
+                        </tr>
+                        <tr>
+                           <th scope="row" class="row">
+                              <p>Create Chart of Accounts, Ledger, Legal Entities,
+                                 and Business Units in Spreadsheet
+                              </p>
+                           </th>
+                           <td>
+                              <p>Chart of accounts, accounting calendar, ledgers and
+                                 ledger configuration. 
+                              </p>
+                              <p>Legal addresses, legal entity and legal entity registrations,
+                                 assigning legal entities to ledgers. 
+                              </p>
+                              <p>Business units, assigning business functions to business
+                                 units, and more.
+                              </p>
+                           </td>
+                        </tr>
+                        <tr>
+                           <th scope="row" class="row">
+                              <p>Create Banks, Branches, and Accounts in Spreadsheet</p>
+                           </th>
+                           <td>
+                              <p>Banks, bank branches, and accounts.</p>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <p></p>
+               </div>
+               <div class="sect2" id="OAPRO1863139"><h3 class="topictitle">Task List: Define Enterprise Structure for Procurement
+                  Rapid Implementation, excluding Purchasing</h3>
+                  <p>Select this task list when your organization
+                     is not implementing the Purchasing optional module. For example, when
+                     you are performing standalone implementations of Oracle Fusion Sourcing
+                     or Oracle Fusion Supplier Qualification. Such implementations may
+                     not require you to configure financial reporting structures, but still
+                     require you to define legal entities with tasks such as:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Manage Legal Addresses</p>
+                     </li>
+                     <li>
+                        <p>Manage Legal Entities</p>
+                     </li>
+                     <li>
+                        <p>Manage Legal Entity Registrations</p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Find the two versions of the Define Enterprise Structure
+                  for Procurement Rapid Implementation task lists in the Setup and Maintenance
+                  work area. They are under the Define Procurement Configuration for
+                  Rapid Implementation task list. To create a procurement rapid implementation
+                  task list, see the topic: Getting Started with Your Procurement Rapid
+                  Implementation: Procedure.
+               </p>
+            </div>
+            <div class="sect1" id="OAPRO1863387">
+               <h2>Configure Basic Enterprise Structure for Procurement: Overview</h2>
+               <p>When you perform a procurement rapid implementation,
+                  you have the option to use the Configure Basic Enterprise Structure
+                  for Procurement task. Use it for implementations of small and medium-sized
+                  organizations, to create a centralized procurement system for indirect,
+                  expense-type purchasing. 
+               </p>
+               <div class="sect2" id="OAPRO1863391"><h3 class="topictitle">Task: Configure Basic Enterprise Structure for
+                  Procurement</h3>
+                  <p>To perform this setup task you run an automated
+                     program, the Enterprise Scheduler Service (ESS) scheduled process
+                     Configure Basic Enterprise Structure for Procurement. 
+                  </p>
+                  <p>To submit the process, first enter two input parameters:
+                     Centralized Procurement Business Unit Name, and Currency.
+                  </p>
+                  <p>When you submit the process, the following enterprise
+                     structure setup tasks are configured automatically, based on existing
+                     enterprise structures set up for the organization:
+                  </p>
+                  <ul>
+                     <li>
+                        <p>Creates a new business unit with
+                           the procurement business function, and configures it as a service
+                           provider for all other business units in the organization.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Configures each business unit with
+                           the requisitioning business function.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates an item organization, which
+                           is the master inventory organization.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates one inventory organization
+                           for each of the other business units.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Configures the inventory organization
+                           parameters and receiving parameters for each inventory organization
+                           created.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates a workday shift, pattern
+                           and schedule.
+                        </p>
+                     </li>
+                     <li>
+                        <p>For the procurement business unit,
+                           creates a common content zone and catalog. Provides users in all requisitioning
+                           business units access to all agreements and master items while creating
+                           requisitions.
+                        </p>
+                     </li>
+                     <li>
+                        <p>Creates most commonly used units
+                           of measure and their standard conversions.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+               <p>Find the Configure Basic Enterprise Structure for
+                  Procurement task in the Setup and Maintenance work area. The task
+                  is under the Define Common Procurement Configuration Rapid Implementation
+                  task list. To create a procurement rapid implementation task list,
+                  see the topic: Getting Started with Your Procurement Rapid Implementation:
+                  Procedure.
+               </p>
+            </div>
+         </div>
+      </article>
+      <!-- Start SiteCatalyst code -->
+      <script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+      <!-- End SiteCatalyst code -->
+      </body>
+</html>

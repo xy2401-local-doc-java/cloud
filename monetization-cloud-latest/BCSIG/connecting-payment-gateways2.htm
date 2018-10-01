@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connecting to payment gateways</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-08-31T10:19:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Integration Guide" />
+<meta name="dcterms.identifier" content="E92624-02" />
+<meta name="dcterms.isVersionOf" content="BCSIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="gateways.htm" title="Previous" type="text/html" />
+<link rel="Next" href="connecting-taxation-gateways1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92624-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92624-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92624-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FCD596AE-36FF-47AA-80BA-042E2D6B96BE"></a> <span id="PAGE" style="display:none;">18/42</span> <!-- End Header -->
+<a id="BCSIG2316"></a><a id="BCSIG964"></a>
+<h1 id="BCSIG-GUID-FCD596AE-36FF-47AA-80BA-042E2D6B96BE" class="sect1"><span class="enumeration_chapter">12</span> Connecting to payment gateways</h1>
+<div>
+<p>This document explains how to configure the connection between Oracle Monetization Cloud and external payment gateways.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="connecting-payment-gateways2.htm#GUID-0F374952-9019-44ED-A515-580C33DC1630">About connecting to payment gateways</a></p>
+</li>
+<li>
+<p><a href="connecting-payment-gateways2.htm#GUID-6BC40A8B-991C-47A6-981D-872139DCCB32">Configuring the Chase Orbital gateway connection</a></p>
+</li>
+<li>
+<p><a href="connecting-payment-gateways2.htm#GUID-F320A69E-EFDD-4587-B3AF-7B98A8E89E16">Configuring the Chase Paymentech gateway connection</a></p>
+</li>
+<li>
+<p><a href="connecting-payment-gateways2.htm#GUID-D8868A01-7978-449C-B577-01FA78E4EABC">Configuring the Cielo or PayPal gateway connection</a></p>
+</li>
+<li>
+<p><a href="connecting-payment-gateways2.htm#GUID-5FEC2339-27EB-4087-AE18-C2BEBE4050DA">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSIG2109"></a>
+<div class="props_rev_3"><a id="GUID-0F374952-9019-44ED-A515-580C33DC1630"></a>
+<h2 id="BCSIG-GUID-0F374952-9019-44ED-A515-580C33DC1630" class="sect2">About connecting to payment gateways</h2>
+<div>
+<p>To process credit and debit card authorizations and payments, you can connect Oracle Monetization Cloud to the payment gateways provided by the following payment processing services:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Chase Paymentech</p>
+</li>
+<li>
+<p>Chase Paymentech Orbital</p>
+</li>
+<li>
+<p>Cielo</p>
+</li>
+<li>
+<p>PayPal</p>
+</li>
+</ul>
+<p>You can connect to one payment gateway at a time. Notify Oracle which gateway you want to use when we're setting up your Oracle Monetization Cloud instance. You must have a merchant agreement with a payment processor before connecting it to Oracle Monetization Cloud.</p>
+<p>To configure payment gateway connections, you must have an Oracle Monetization Cloud administrative role.</p>
+<div class="infobox-note" id="GUID-0F374952-9019-44ED-A515-580C33DC1630__GUID-0B9E5993-9704-4310-A6FE-CDE2C58560E8">
+<p class="notep1">Note:</p>
+<p>You are responsible for understanding how your payment gateway implements data privacy and security, especially with regard to important data privacy regulations. Oracle Monetization Cloud doesn't communicate with payment gateways about data retention schedules or removing personal data.</p>
+</div>
+</div>
+</div>
+<a id="BCSIG111"></a>
+<div class="props_rev_3"><a id="GUID-6BC40A8B-991C-47A6-981D-872139DCCB32"></a>
+<h2 id="BCSIG-GUID-6BC40A8B-991C-47A6-981D-872139DCCB32" class="sect2">Configuring the Chase Orbital gateway connection</h2>
+<div>
+<div class="section">To configure the Chase Orbital gateway connection:</div>
+<!-- class="section" -->
+<ol>
+<li><span>Upload the SSL certificate. See <a href="using-ssl-secure-connections-service-providers1.htm#GUID-88E3102F-DE93-4E15-AB8B-141B81E2A549" title="You secure connections between Oracle Monetization Cloud and external service providers, such as payment processors and tax calculators, by using Secure Sockets Layer (SSL) certificates.">Using SSL to secure connections to service providers</a>.</span></li>
+<li><span>Confirm that you've enabled server certificate validation and host name verification in your SSL library.</span></li>
+<li><span>Confirm that your Orbital XML API app uses name resolution to resolve host names to IP addresses, and that it trusts the VeriSign root certification authority.</span></li>
+<li><span>Use System Configuration to configure the connection values. On the Payment Gateway page, enter the information described in <a href="connecting-payment-gateways2.htm#GUID-9EA653EA-78DE-488F-ADE3-5448EEE32C47">Chase Orbital gateway information</a>.</span></li>
+</ol>
+</div>
+<a id="BCSIG112"></a>
+<div class="props_rev_3"><a id="GUID-9EA653EA-78DE-488F-ADE3-5448EEE32C47"></a>
+<h3 id="BCSIG-GUID-9EA653EA-78DE-488F-ADE3-5448EEE32C47" class="sect3">Chase Orbital gateway information</h3>
+<div>
+<div class="tblformal" id="GUID-9EA653EA-78DE-488F-ADE3-5448EEE32C47__GUID-0712F9A5-2B49-4262-B4BB-BCAA0CFF92A4">
+<table class="cellalignment86" summary="Contains information required to configure Oracle Monetization Cloud with the Chase Paymentech Orbital payment gateway.">
+<thead>
+<tr class="cellalignment77">
+<th class="cellalignment159" id="d36031e115">Field</th>
+<th class="cellalignment160" id="d36031e118">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e123" headers="d36031e115">
+<p>Online XML API Base URL</p>
+</td>
+<td class="cellalignment162" headers="d36031e123 d36031e118">
+<p>The URL for your Orbital XML API app.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e130" headers="d36031e115">
+<p>Online XML API Username</p>
+</td>
+<td class="cellalignment162" headers="d36031e130 d36031e118">
+<p>The user name for your Orbital XML API app account.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e137" headers="d36031e115">
+<p>Online XML API Password</p>
+</td>
+<td class="cellalignment162" headers="d36031e137 d36031e118">
+<p>The password for your Orbital XML API app account.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e144" headers="d36031e115">
+<p>Merchant ID</p>
+</td>
+<td class="cellalignment162" headers="d36031e144 d36031e118">
+<p>Your merchant identifier, as assigned in the Orbital XML API app.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e151" headers="d36031e115">
+<p>Batch SFTP Host</p>
+</td>
+<td class="cellalignment162" headers="d36031e151 d36031e118">
+<p>The SFTP host used for batch payments.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e158" headers="d36031e115">
+<p>Batch SFTP Username</p>
+</td>
+<td class="cellalignment162" headers="d36031e158 d36031e118">
+<p>The user name for connecting to the batch SFTP host.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e165" headers="d36031e115">
+<p>Batch SFTP Password</p>
+</td>
+<td class="cellalignment162" headers="d36031e165 d36031e118">
+<p>The password for connecting to the batch SFTP host.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<a id="BCSIG113"></a>
+<div class="props_rev_3"><a id="GUID-F320A69E-EFDD-4587-B3AF-7B98A8E89E16"></a>
+<h2 id="BCSIG-GUID-F320A69E-EFDD-4587-B3AF-7B98A8E89E16" class="sect2">Configuring the Chase Paymentech gateway connection</h2>
+<div>
+<p>If you want to connect to the Chase Paymentech gateway, notify Oracle when we're setting up your Oracle Monetization Cloud instance. To configure the Chase Paymentech gateway connection, use System Configuration. On the Payment Gateway page, upload a configuration file that contains the information described in <a href="connecting-payment-gateways2.htm#GUID-13D9186B-6BC2-4B0A-B948-B8966B1C16A3">Paymentech gateway information</a>.</p>
+</div>
+<a id="BCSIG114"></a>
+<div class="props_rev_3"><a id="GUID-13D9186B-6BC2-4B0A-B948-B8966B1C16A3"></a>
+<h3 id="BCSIG-GUID-13D9186B-6BC2-4B0A-B948-B8966B1C16A3" class="sect3">Paymentech gateway information</h3>
+<div>
+<div class="section">
+<p>As shown in <a href="connecting-payment-gateways2.htm#GUID-09402201-C5C1-4578-BD30-EC0C939B55AA">Sample Chase Paymentech configuration file</a>, the gateway configuration file must be in JSON format and contain the following information:</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-13D9186B-6BC2-4B0A-B948-B8966B1C16A3__GUID-8E6E30B5-A520-440A-8AD5-A8FE01112907">
+<table class="cellalignment86" summary="Contains the Payment Gateway configuration fields in System Configuration card.">
+<thead>
+<tr class="cellalignment77">
+<th class="cellalignment111" id="d36031e209">Field</th>
+<th class="cellalignment153" id="d36031e211">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment77">
+<td class="cellalignment113" id="d36031e215" headers="d36031e209">server_information</td>
+<td class="cellalignment154" headers="d36031e215 d36031e211">Contains the following payment gateway server connection fields:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">batch_port:</span> The port number used for connections for processing batch payments through the payment gateway.</p>
+</li>
+<li>
+<p><span class="bold">batch_host_ip:</span> The IP address or host name for connections for processing batch payments through the payment gateway.</p>
+</li>
+<li>
+<p><span class="bold">batch_connection:</span> The status of the link to the connection for processing batch payments.</p>
+</li>
+<li>
+<p><span class="bold">online_port:</span> The port number for online connections to the payment gateway.</p>
+</li>
+<li>
+<p><span class="bold">online_host_ip:</span> The IP address or host name for online connections to the payment gateway.</p>
+</li>
+<li>
+<p><span class="bold">online_connection:</span> The status of the online link to the payment gateway provider.</p>
+</li>
+<li>
+<p><span class="bold">presenter_password:</span> The payment gateway presenter's password.</p>
+</li>
+<li>
+<p><span class="bold">submitter_password:</span> The payment gateway submitter's password.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment113" id="d36031e261" headers="d36031e209">merchant</td>
+<td class="cellalignment154" headers="d36031e261 d36031e211">Contains the merchant currency associations for your payment gateway account.</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment113" id="d36031e266" headers="d36031e209">identifiers</td>
+<td class="cellalignment154" headers="d36031e266 d36031e211">Contains the following payment gateway account identifiers:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">presenter_id:</span> The payment gateway presenter ID.</p>
+</li>
+<li>
+<p><span class="bold">submitter_id:</span> The payment gateway submitter ID.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment113" id="d36031e282" headers="d36031e209">soft_descriptor</td>
+<td class="cellalignment154" headers="d36031e282 d36031e211">Contains the following descriptive fields:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">dba:</span> The company name shown on customers' statements.</p>
+</li>
+<li>
+<p><span class="bold">product:</span> The product or service shown on customers' statements.</p>
+</li>
+<li>
+<p><span class="bold">support_phone:</span> The support phone number shown on customers' statements.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSIG115"></a>
+<div class="props_rev_3"><a id="GUID-09402201-C5C1-4578-BD30-EC0C939B55AA"></a>
+<h3 id="BCSIG-GUID-09402201-C5C1-4578-BD30-EC0C939B55AA" class="sect3">Sample Chase Paymentech configuration file</h3>
+<div>
+<div class="section">
+<pre dir="ltr">
+{
+"server_information": {
+"batch_port": 7777,
+"batch_host_ip": "example.com",
+"batch_connection": "example_status",
+"online_port": 7778,
+"online_host_ip": "192.0.2.1",
+"online_connection": "example_status",
+"presenter_password": "<span class="italic">password</span>",
+"submitter_password": "<span class="italic">password</span>"
+},
+"merchant": {
+"us_dollar": 1234, 
+"canadian_dollar": 1235, 
+"euro": 1236 
+},
+"identifiers": {
+"presenter_id": p_id, 
+"submitter_id": s_id  
+},
+"soft_descriptor": {
+"dba": "example_company", 
+"product": "example_product", 
+"support_phone": "408-555-0100" 
+}
+}
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<a id="BCSIG116"></a>
+<div class="props_rev_3"><a id="GUID-D8868A01-7978-449C-B577-01FA78E4EABC"></a>
+<h2 id="BCSIG-GUID-D8868A01-7978-449C-B577-01FA78E4EABC" class="sect2">Configuring the Cielo or PayPal gateway connection</h2>
+<div>
+<p>Use System Configuration to configure the Cielo or PayPal payment gateway connection. On the Payment Gateway page, enter the gateway information. See <a href="connecting-payment-gateways2.htm#GUID-FF824DB6-CE1B-4F52-924D-A7BD72180211">Cielo gateway information</a> or <a href="connecting-payment-gateways2.htm#GUID-277B926A-D37C-453D-85ED-15D5AA910959">PayPal gateway information</a>.</p>
+</div>
+<a id="BCSIG117"></a>
+<div class="props_rev_3"><a id="GUID-FF824DB6-CE1B-4F52-924D-A7BD72180211"></a>
+<h3 id="BCSIG-GUID-FF824DB6-CE1B-4F52-924D-A7BD72180211" class="sect3">Cielo gateway information</h3>
+<div>
+<div class="tblformal" id="GUID-FF824DB6-CE1B-4F52-924D-A7BD72180211__GUID-B0B087D4-494D-4804-BBFC-AEA910E32F02">
+<table class="cellalignment86" summary="Contains information required to configure Oracle Monetization Cloud with the Cielo payment gateway.">
+<thead>
+<tr class="cellalignment77">
+<th class="cellalignment159" id="d36031e354">Field</th>
+<th class="cellalignment160" id="d36031e357">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e362" headers="d36031e354">
+<p>Base URL</p>
+</td>
+<td class="cellalignment162" headers="d36031e362 d36031e357">
+<p>The URL for the Cielo API.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e369" headers="d36031e354">
+<p>Username</p>
+</td>
+<td class="cellalignment162" headers="d36031e369 d36031e357">
+<p>The user name for your Cielo account.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e376" headers="d36031e354">
+<p>Password</p>
+</td>
+<td class="cellalignment162" headers="d36031e376 d36031e357">
+<p>The password for your Cielo account.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e383" headers="d36031e354">
+<p>Merchant ID</p>
+</td>
+<td class="cellalignment162" headers="d36031e383 d36031e357">
+<p>Your merchant identifier, as assigned in by Cielo.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment161" id="d36031e390" headers="d36031e354">
+<p>API Key</p>
+</td>
+<td class="cellalignment162" headers="d36031e390 d36031e357">
+<p>The API key for securely accessing the Cielo API.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSIG118"></a>
+<div class="props_rev_3"><a id="GUID-277B926A-D37C-453D-85ED-15D5AA910959"></a>
+<h3 id="BCSIG-GUID-277B926A-D37C-453D-85ED-15D5AA910959" class="sect3">PayPal gateway information</h3>
+<div>
+<div class="tblformal" id="GUID-277B926A-D37C-453D-85ED-15D5AA910959__GUID-4DCE4403-72FB-4962-8F95-A0607A450020">
+<table class="cellalignment86" summary="Contains information required to configure Oracle Monetization Cloud with the PayPal payment gateway.">
+<thead>
+<tr class="cellalignment77">
+<th class="cellalignment123" id="d36031e413">Field</th>
+<th class="cellalignment97" id="d36031e416">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment77">
+<td class="cellalignment124" id="d36031e421" headers="d36031e413">
+<p>API Base URL</p>
+</td>
+<td class="cellalignment100" headers="d36031e421 d36031e416">
+<p>The URL for the PayPal REST API app</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment124" id="d36031e428" headers="d36031e413">
+<p>Client ID</p>
+</td>
+<td class="cellalignment100" headers="d36031e428 d36031e416">
+<p>The 80-character OAuth key assigned in your PayPal REST API app.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment124" id="d36031e435" headers="d36031e413">
+<p>Client Secret</p>
+</td>
+<td class="cellalignment100" headers="d36031e435 d36031e416">
+<p>The 80-character OAuth secret key assigned in your PayPal REST API app.</p>
+<p>Together, the Client ID and Client Secret values generate a PayPal access token.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<a id="BCSIG2220"></a>
+<div class="props_rev_3"><a id="GUID-5FEC2339-27EB-4087-AE18-C2BEBE4050DA"></a>
+<h2 id="BCSIG-GUID-5FEC2339-27EB-4087-AE18-C2BEBE4050DA" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="integrating-your-business-systems1.htm#GUID-60243463-3A48-49E1-B841-A10F134A08A6">About integrating your business systems</a></p>
+</li>
+<li>
+<p><a class="olink BCSUG520" target="_blank" href="../BCSUG/processing-payments.htm#BCSUG520">About payments</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment76">
+<tr>
+<td class="cellalignment83">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment80"><a href="gateways.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment80"><a href="connecting-taxation-gateways1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment85">
+<table class="cellalignment79">
+<tr>
+<td class="cellalignment80"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment80"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment80"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

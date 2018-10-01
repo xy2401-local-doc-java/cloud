@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Microsoft SQL Server Adapter Polling Properties</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Import the Microsoft SQL Server Adapter tables and select the root database table for the service query." />
+<meta name="dcterms.created" content="2016-11-27T14:38:09Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Microsoft SQL Server Adapter" />
+<meta name="dcterms.identifier" content="E71394-05" />
+<meta name="dcterms.isVersionOf" content="ICSSS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B3AB46B9-61B3-4EF3-BB60-550352967869.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5905C148-D616-420B-B880-5A91826A12E2"></a> <span id="PAGE" style="display:none;">23/26</span> <!-- End Header -->
+<h1 id="ICSSS-GUID-5905C148-D616-420B-B880-5A91826A12E2" class="sect1">Configuring <span>Microsoft SQL Server Adapter</span> Polling Properties</h1>
+<div>
+<p>Import the <span>Microsoft SQL Server Adapter</span> tables and select the root database table for the service query.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-5905C148-D616-420B-B880-5A91826A12E2.htm#GUID-7469721F-E156-4BAB-AB8E-D0703E83F900" title="You can import root database tables on the Polling page.">What You Can Do from the Polling Page</a></p>
+</li>
+<li>
+<p><a href="GUID-5905C148-D616-420B-B880-5A91826A12E2.htm#GUID-D9C5FE49-2405-4B66-B148-6C2D5E35C3C3" title="The following table describes the key information on the Polling page.">What You See on the Polling Page</a></p>
+</li>
+<li>
+<p><a href="GUID-5905C148-D616-420B-B880-5A91826A12E2.htm#GUID-4FC062C4-DADC-4595-94CB-5D878188467F" title="The following table describes the key information on the Manage Tables page. The Manage Tables page appears when you select Schema on the Microsoft SQL Server Adapter Manage Tables page.">What You See on the Manage Tables Page</a></p>
+</li>
+<li>
+<p><a href="GUID-5905C148-D616-420B-B880-5A91826A12E2.htm#GUID-BF1EB586-D9DE-43D3-9F78-3584FD7A6419" title="The following table describes the key information on the Relations page. The Relations page appears when you select Edit for the Review and Manage relationships reachable from the root database table option on the Microsoft SQL Server Adapter Poll for a New or Changed Records page.">What You See on the Relations Page</a></p>
+</li>
+<li>
+<p><a href="GUID-5905C148-D616-420B-B880-5A91826A12E2.htm#GUID-27124644-AA7A-4D52-8D8B-1DDEFEC591C7" title="The following table describes the key information on the Polling Strategy and Options page. The Polling Strategy and Options page appears when you select Edit for Polling Strategy and Options on the Microsoft SQL Server Adapter Poll for a New or Changed Records page.">What You See on the Polling Strategy and Options Page</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7469721F-E156-4BAB-AB8E-D0703E83F900"></a>
+<h2 id="ICSSS-GUID-7469721F-E156-4BAB-AB8E-D0703E83F900" class="sect2">What You Can Do from the Polling Page</h2>
+<p>You can import root database tables on the Polling page.</p>
+</div>
+<div class="sect2"><a id="GUID-D9C5FE49-2405-4B66-B148-6C2D5E35C3C3"></a>
+<h2 id="ICSSS-GUID-D9C5FE49-2405-4B66-B148-6C2D5E35C3C3" class="sect2">What You See on the Polling Page</h2>
+<div>
+<p>The following table describes the key information on the Polling page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-D9C5FE49-2405-4B66-B148-6C2D5E35C3C3__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment43" summary="Descriptions of the available fields and functions on the Polling page.">
+<thead align="left">
+<tr>
+<th class="cellalignment40" id="d4503e127">Element</th>
+<th class="cellalignment40" id="d4503e129">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment40" id="d4503e133" headers="d4503e127">
+<p><span class="bold">Import Tables</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e133 d4503e129">
+<p>Imports tables and the root database table for the service query.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e141" headers="d4503e127">
+<p><span class="bold">Remove Tables</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e141 d4503e129">
+<p>Removes tables. Select <span class="bold">Remove Tables</span>, clear the checkbox to the right of the table you want to remove, and click <span class="bold">Ok</span>. You cannot remove the root database table.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e155" headers="d4503e127">
+<p><span class="bold">Review and Manage relationships reachable from the root database table.</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e155 d4503e129">
+<p>Appears after importing tables. Select <span class="bold">Edit</span> to open the Relations page where you can view, create, and remove relationships between tables.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e166" headers="d4503e127">
+<p><span class="bold">Review and verify the attributes created from the imported tables and relationships.</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e166 d4503e129">
+<p>Appears after importing tables. Select <span class="bold">Edit</span> to open the Attributes Filtering page where you can review, verify, select or deselect the attributes in the object model created from the imported tables and the defined relationships.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e177" headers="d4503e127">
+<p><span class="bold">Polling Strategy and Options</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e177 d4503e129">
+<p>Appears after importing tables. Select <span class="bold">Edit</span> to open the Polling Strategy and Options page where you can define the polling strategy and specify polling options.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-4FC062C4-DADC-4595-94CB-5D878188467F"></a>
+<h2 id="ICSSS-GUID-4FC062C4-DADC-4595-94CB-5D878188467F" class="sect2">What You See on the Manage Tables Page</h2>
+<div>
+<p>The following table describes the key information on the Manage Tables page. The Manage Tables page appears when you select <span class="bold">Schema</span> on the <span>Microsoft SQL Server Adapter</span> Manage Tables page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-4FC062C4-DADC-4595-94CB-5D878188467F__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment43" summary="Descriptions of the available fields and functions on the Manage Tables page.">
+<thead align="left">
+<tr>
+<th class="cellalignment40" id="d4503e221">Element</th>
+<th class="cellalignment40" id="d4503e223">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment40" id="d4503e227" headers="d4503e221">
+<p><span class="bold">Schema</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e227 d4503e223">
+<p>Selects the schema for the tables and views you are importing.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e235" headers="d4503e221">
+<p><span class="bold">Tables</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e235 d4503e223">
+<p>The name of the table to which the schema or view is applied. The list next to the <span class="bold">Tables</span> field allows these selections:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>All &mdash; selects all available tables and views.</p>
+</li>
+<li>
+<p>Table &mdash; selects tables.</p>
+</li>
+<li>
+<p>View &mdash; selects views.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e256" headers="d4503e221">
+<p><span class="bold">Available Tables</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e256 d4503e223">
+<p>Lists the tables that meet the selection criteria.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e264" headers="d4503e221">
+<p><span class="bold">Selected Tables</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e264 d4503e223">
+<p>Lists your table selection.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e272" headers="d4503e221">
+<p><span class="bold">Primary Keys</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e272 d4503e223">
+<p>Appears when you select tables without a primary key defined. Selects the virtual primary key for the table.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-BF1EB586-D9DE-43D3-9F78-3584FD7A6419"></a>
+<h2 id="ICSSS-GUID-BF1EB586-D9DE-43D3-9F78-3584FD7A6419" class="sect2">What You See on the Relations Page</h2>
+<div>
+<p>The following table describes the key information on the Relations page. The Relations page appears when you select <span class="bold">Edit</span> for the Review and Manage relationships reachable from the root database table option on the <span>Microsoft SQL Server Adapter</span> Poll for a New or Changed Records page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-BF1EB586-D9DE-43D3-9F78-3584FD7A6419__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment43" summary="Descriptions of the available fields and functions on the Relations page.">
+<thead align="left">
+<tr>
+<th class="cellalignment40" id="d4503e313">Element</th>
+<th class="cellalignment40" id="d4503e315">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment40" id="d4503e319" headers="d4503e313">
+<p><span class="bold">Create New</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e319 d4503e315">
+<p>Opens the Create Relation page with these options:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Parent Table &mdash; selects the parent table for the relationship between tables.</p>
+</li>
+<li>
+<p>Child Table &mdash; selects the child table for the relationship between tables.</p>
+</li>
+<li>
+<p>Relationship &mdash; defines the relationship between the parent and child tables.</p>
+</li>
+<li>
+<p>Attribute Name &mdash; Applies attributes to the table relationship.</p>
+</li>
+<li>
+<p>Mapping &mdash; Displays the mapping for the table relationship.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e343" headers="d4503e313">
+<p><span class="bold">Detach</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e343 d4503e315">
+<p>Opens the Relationships list in a new window.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-27124644-AA7A-4D52-8D8B-1DDEFEC591C7"></a>
+<h2 id="ICSSS-GUID-27124644-AA7A-4D52-8D8B-1DDEFEC591C7" class="sect2">What You See on the Polling Strategy and Options Page</h2>
+<div>
+<p>The following table describes the key information on the Polling Strategy and Options page. The Polling Strategy and Options page appears when you select <span class="bold">Edit</span> for Polling Strategy and Options on the <span>Microsoft SQL Server Adapter</span> Poll for a New or Changed Records page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-27124644-AA7A-4D52-8D8B-1DDEFEC591C7__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment43" summary="Descriptions of the available fields and functions on the Polling Strategy and Options page.">
+<thead align="left">
+<tr>
+<th class="cellalignment40" id="d4503e385">Element</th>
+<th class="cellalignment40" id="d4503e387">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment40" id="d4503e391" headers="d4503e385">
+<p><span class="bold">Logical Delete Field</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e391 d4503e387">
+<p>Selects a field in the root database table. To allow the selection, polling must be enabled in the Status column.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e399" headers="d4503e385">
+<p><span class="bold">Read Value</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e399 d4503e387">
+<p>Identifies the value that is used to indicate a row has been read. For example, PROCESSED. Surrounding quotes are not required.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e407" headers="d4503e385">
+<p><span class="bold">Unread Value</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e407 d4503e387">
+<p>Indicates the rows to process. Only rows with Logical Delete Field and column values that match the UnRead Value are read.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e415" headers="d4503e385">
+<p><span class="bold">Polling Frequency (Sec)</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e415 d4503e387">
+<p>Specifies the polling frequency for new records or events.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment40" id="d4503e423" headers="d4503e385">
+<p><span class="bold">Batch Size</span></p>
+</td>
+<td class="cellalignment40" headers="d4503e423 d4503e387">
+<p>Specifies the number of table rows to process during a transaction.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment29">
+<tr>
+<td class="cellalignment36">
+<table class="cellalignment34">
+<tr>
+<td class="cellalignment33"><a href="GUID-B3AB46B9-61B3-4EF3-BB60-550352967869.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment33"><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment38">
+<table class="cellalignment32">
+<tr>
+<td class="cellalignment33"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment33"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment33"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

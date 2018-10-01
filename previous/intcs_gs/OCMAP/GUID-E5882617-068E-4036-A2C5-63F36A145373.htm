@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Building Expressions with the Mapping Builder</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Use the Mapping Builder to create and modify advanced mappings. For example, you can loop through repeating elements, create conditional statements, use XPath functions, and reference lookups. The Mapping Builder is displayed when you click a field in the target data structure of the mapper." />
+<meta name="dcterms.created" content="2016-11-27T09:27:43Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Mapper" />
+<meta name="dcterms.identifier" content="E64409-09" />
+<meta name="dcterms.isVersionOf" content="OCMAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-32592530-9D34-4D31-9609-14610DD5901C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OCMAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="OCMAP.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="OCMAP.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E5882617-068E-4036-A2C5-63F36A145373"></a> <span id="PAGE" style="display:none;">7/29</span> <!-- End Header -->
+<h1 id="OCMAP-GUID-E5882617-068E-4036-A2C5-63F36A145373" class="sect1">Building Expressions with the Mapping Builder</h1>
+<div>
+<p>Use the Mapping Builder to create and modify advanced mappings. For example, you can loop through repeating elements, create conditional statements, use XPath functions, and reference lookups. The Mapping Builder is displayed when you click a field in the target data structure of the mapper.<br />
+<span class="imageleft"><img class="imageleft" width="1388" height="614" src="img/GUID-1B22A230-EF96-4910-A9D8-0092EC368AB8-default.png" alt="Description of GUID-1B22A230-EF96-4910-A9D8-0092EC368AB8-default.png follows" title="Description of GUID-1B22A230-EF96-4910-A9D8-0092EC368AB8-default.png follows" /><br />
+<a href="img_text/GUID-1B22A230-EF96-4910-A9D8-0092EC368AB8-default.htm">Description of the illustration GUID-1B22A230-EF96-4910-A9D8-0092EC368AB8-default.png</a></span><br /></p>
+<div class="section">For more information, see <a href="GUID-3A994D18-9435-4820-AF11-AD567A26352C.htm" title="Use the Mapping Builder to create and modify advanced mappings. For example, you can loop through repeating elements, create conditional statements, use XPath functions, and reference lookups.">Building Expressions</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment116">
+<tr>
+<td class="cellalignment123">
+<table class="cellalignment126">
+<tr>
+<td class="cellalignment120"><a href="GUID-32592530-9D34-4D31-9609-14610DD5901C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment120"><a href="GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment125">
+<table class="cellalignment119">
+<tr>
+<td class="cellalignment120"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment120"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment120"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

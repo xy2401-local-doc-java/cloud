@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Sending data to external applications</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This document describes how Oracle Monetization Cloud publishes data from internal events to external endpoints." />
+<meta name="dcterms.created" content="2018-08-31T10:19:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Integration Guide" />
+<meta name="dcterms.identifier" content="E92624-02" />
+<meta name="dcterms.isVersionOf" content="BCSIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="sending-messages-customers1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="sending-pricing-data-external-client-applications1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92624-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92624-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92624-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-44724203-42B7-4E11-8B4A-D4B20A7E3703"></a> <span id="PAGE" style="display:none;">14/42</span> <!-- End Header -->
+<a id="BCSIG107"></a><a id="BCSIG2314"></a><a id="BCSIG2112"></a>
+<h1 id="BCSIG-GUID-44724203-42B7-4E11-8B4A-D4B20A7E3703" class="sect1"><span class="enumeration_chapter">9</span> Sending data to external applications</h1>
+<div>
+<p>This document describes how Oracle Monetization Cloud publishes data from internal events to external endpoints.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="sending-data-external-applications2.htm#GUID-34589476-A2BD-4E4F-A0AB-F1DFAD88374D">About publishing event data</a></p>
+</li>
+<li>
+<p><a href="sending-data-external-applications2.htm#GUID-1BB28984-08C1-429C-AF6C-6D194B9E5F24">Configuring event publishing endpoints</a></p>
+</li>
+<li>
+<p><a href="sending-data-external-applications2.htm#GUID-024F83A4-7545-4D6C-92C8-052A164965C5">Choosing which events to publish</a></p>
+</li>
+<li>
+<p><a href="sending-data-external-applications2.htm#GUID-F49EE3BA-1FB8-47AD-9F5D-87A9141822DE">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSIG2113"></a>
+<div class="props_rev_3"><a id="GUID-34589476-A2BD-4E4F-A0AB-F1DFAD88374D"></a>
+<h2 id="BCSIG-GUID-34589476-A2BD-4E4F-A0AB-F1DFAD88374D" class="sect2">About publishing event data</h2>
+<div>
+<p>You publish event data to automatically notify external systems when specified triggering events happen in Oracle Monetization Cloud.</p>
+<p>For example, when an account is successfully created or when a subscriber purchases a product, Oracle Monetization Cloud can automatically send the event data to your customer relationship management (CRM) system.</p>
+<p>Oracle Monetization Cloud can automatically publish events when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A customer's account is created</p>
+</li>
+<li>
+<p>A customer's account status is changed</p>
+</li>
+<li>
+<p>A customer's contract is created, modified, canceled, or ended</p>
+</li>
+<li>
+<p>A phase of a customer's contract starts, is about to end, or ends</p>
+</li>
+<li>
+<p>A customer's credit card will expire in two months</p>
+</li>
+<li>
+<p>A customer's payment is processed successfully or fails</p>
+</li>
+<li>
+<p>A customer's balance cross a certain threshold</p>
+</li>
+<li>
+<p>A customer's currency balance is too low to pay a new cycle forward fee</p>
+</li>
+<li>
+<p>A customer's invoice is created</p>
+</li>
+<li>
+<p>A customer's bill is created</p>
+</li>
+<li>
+<p>A cycle forward fee is applied to a customer's account</p>
+</li>
+<li>
+<p>A customer purchases a product</p>
+</li>
+<li>
+<p>A service is added to a customer's account</p>
+</li>
+<li>
+<p>A bundle, charge offer, discount offer, package, or package list is published from offer design</p>
+</li>
+</ul>
+<p>Event publishing automatically sends an XML or JSON payload to REST endpoints. For details about the payloads, including samples, see <a href="event-publishing-reference1.htm#GUID-AB805DE0-4C9E-452A-9FB3-F0D9C4B4A004" title="This document describes the internal events that Oracle Monetization Cloud can automatically publish to external endpoints.">Event publishing reference</a>.</p>
+</div>
+</div>
+<a id="BCSIG2251"></a>
+<div class="props_rev_3"><a id="GUID-1BB28984-08C1-429C-AF6C-6D194B9E5F24"></a>
+<h2 id="BCSIG-GUID-1BB28984-08C1-429C-AF6C-6D194B9E5F24" class="sect2">Configuring event publishing endpoints</h2>
+<div>
+<p>To configure event publishing endpoints, use System Configuration.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To create a new endpoint, on the Event Publishing page, select <span class="bold">New Endpoint</span>, and enter the required information described in <a href="sending-data-external-applications2.htm#GUID-C740F4C3-42C1-4C7F-91B2-ED60F50DC639">Endpoint information</a>.</p>
+</li>
+<li>
+<p>To update an existing endpoint, on the Event Publishing page, select the name of endpoint and update the information.</p>
+</li>
+</ul>
+</div>
+<a id="BCSIG108"></a>
+<div class="sect3"><a id="GUID-C740F4C3-42C1-4C7F-91B2-ED60F50DC639"></a>
+<h3 id="BCSIG-GUID-C740F4C3-42C1-4C7F-91B2-ED60F50DC639" class="sect3">Endpoint information</h3>
+<div>
+<div class="tblformal" id="GUID-C740F4C3-42C1-4C7F-91B2-ED60F50DC639__GUID-A5F2A30C-9531-4C42-80AA-CBB2536CE0F5">
+<table class="cellalignment86" summary="This table lists the information required to create an event publishing endpoint.">
+<thead>
+<tr class="cellalignment77">
+<th class="cellalignment163" id="d6018e140">Field</th>
+<th class="cellalignment164" id="d6018e143">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e148" headers="d6018e140">
+<p>Name</p>
+</td>
+<td class="cellalignment166" headers="d6018e148 d6018e143">
+<p>The name of your endpoint.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e155" headers="d6018e140">
+<p>Authentication Type</p>
+</td>
+<td class="cellalignment166" headers="d6018e155 d6018e143">
+<p>The authentication type that your endpoint requires. Choose from:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Basic Auth</p>
+</li>
+<li>
+<p>OAuth (password grant)</p>
+</li>
+<li>
+<p>OAuth (authorization code grant)</p>
+</li>
+</ul>
+<p>The type you select determines which authentication credentials appear below.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e174" headers="d6018e140">
+<p>Payload Format</p>
+</td>
+<td class="cellalignment166" headers="d6018e174 d6018e143">
+<p>The format of the message payload, either XML or JSON. REST endpoints typically use JSON.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e181" headers="d6018e140">
+<p>Content Type</p>
+</td>
+<td class="cellalignment166" headers="d6018e181 d6018e143">
+<p>The content type your endpoint expects. For example, <span class="bold">application/json</span> or <span class="bold">application/xml</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e194" headers="d6018e140">
+<p>Location (URI)</p>
+</td>
+<td class="cellalignment166" headers="d6018e194 d6018e143">
+<p>The URI for the endpoint.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e201" headers="d6018e140">
+<p>Username</p>
+</td>
+<td class="cellalignment166" headers="d6018e201 d6018e143">
+<p>The user name for accessing the endpoint.</p>
+<p>Required for the Basic Auth and OAuth (password grant) authentication types.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e210" headers="d6018e140">
+<p>Password</p>
+</td>
+<td class="cellalignment166" headers="d6018e210 d6018e143">
+<p>The password for accessing the endpoint.</p>
+<p>Required for Basic Auth and OAuth (password grant).</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e219" headers="d6018e140">
+<p>Token URI</p>
+</td>
+<td class="cellalignment166" headers="d6018e219 d6018e143">
+<p>The URI from which Oracle Monetization Cloud retrieves a token.</p>
+<p>Required for both OAuth authentication types.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e228" headers="d6018e140">
+<p>Client ID</p>
+</td>
+<td class="cellalignment166" headers="d6018e228 d6018e143">
+<p>The client ID your authorization server assigns to Oracle Monetization Cloud.</p>
+<p>Required for both OAuth authentication types.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e237" headers="d6018e140">
+<p>Secret</p>
+</td>
+<td class="cellalignment166" headers="d6018e237 d6018e143">
+<p>The client secret assigned to Oracle Monetization Cloud and used to retrieve an authorization token.</p>
+<p>Required for both OAuth authentication types.</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e246" headers="d6018e140">
+<p>Authorization URI</p>
+</td>
+<td class="cellalignment166" headers="d6018e246 d6018e143">
+<p>The URI from which Oracle Monetization Cloud requests authorization when publishing messages containing a valid token. After entering values here and for Token URI, generate an access code by selecting <span class="bold">Obtain Access Code</span>.</p>
+<p>Required for OAuth (authorization code grant).</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e259" headers="d6018e140">
+<p>Scope</p>
+</td>
+<td class="cellalignment166" headers="d6018e259 d6018e143">
+<p>The OAuth scope that Oracle Monetization Cloud requests access to and that is granted with the token.</p>
+<p>Appears for OAuth (authorization code grant).</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e268" headers="d6018e140">
+<p>State</p>
+</td>
+<td class="cellalignment166" headers="d6018e268 d6018e143">
+<p>The unique string Oracle Monetization Cloud submits when publishing to an endpoint, guaranteeing Oracle Monetization Cloud as the origin of the message.</p>
+<p>Appears for OAuth (authorization code grant).</p>
+</td>
+</tr>
+<tr class="cellalignment77">
+<td class="cellalignment165" id="d6018e277" headers="d6018e140">
+<p>Redirect URI</p>
+</td>
+<td class="cellalignment166" headers="d6018e277 d6018e143">
+<p>The redirect URI destination for the Oracle Monetization Cloud message after the request is authenticated and authorized.</p>
+<p>Required for OAuth (authorization code grant).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<a id="BCSIG109"></a>
+<div class="sect2"><a id="GUID-024F83A4-7545-4D6C-92C8-052A164965C5"></a>
+<h2 id="BCSIG-GUID-024F83A4-7545-4D6C-92C8-052A164965C5" class="sect2">Choosing which events to publish</h2>
+<div>
+<p>Use System Configuration to choose which events to publish. Select <span class="bold">Event Publishing</span>, select <span class="bold">Configure Notification Events</span>, and then select the events to publish.</p>
+<p>You can publish any events with the cloud icon:</p>
+<div class="figure" id="GUID-024F83A4-7545-4D6C-92C8-052A164965C5__GUID-681762E7-22F6-464F-8D15-8994E41B9CC5"><br />
+<div class="imageleft"><img class="imageleft" width="60" height="80" src="img/cloud_icon.gif" alt="Icon representing external event publication endpoints." title="Icon representing external event publication endpoints." /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>The events with the email icon send emails to customers. See <a href="sending-messages-customers1.htm#GUID-05AE8F83-4BD2-4F6E-B4B7-428EF7C1CA39" title="This document describes how Oracle Monetization Cloud automatically sends email messages to customers when triggering events occur.">Sending messages to customers</a>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To change the endpoint an event is published to, select the pencil icon for the event and select the new endpoint.</p>
+</li>
+<li>
+<p>To stop publishing an event, deselect it.</p>
+</li>
+</ul>
+<p>When you're done managing the events, select <span class="bold">Save</span> at the top of the page.</p>
+</div>
+</div>
+<a id="BCSIG2214"></a>
+<div class="props_rev_3"><a id="GUID-F49EE3BA-1FB8-47AD-9F5D-87A9141822DE"></a>
+<h2 id="BCSIG-GUID-F49EE3BA-1FB8-47AD-9F5D-87A9141822DE" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-05AE8F83-4BD2-4F6E-B4B7-428EF7C1CA39" title="This document describes how Oracle Monetization Cloud automatically sends email messages to customers when triggering events occur.">Sending messages to customers</a></p>
+</li>
+<li>
+<p><a href="event-publishing-reference1.htm#GUID-AB805DE0-4C9E-452A-9FB3-F0D9C4B4A004" title="This document describes the internal events that Oracle Monetization Cloud can automatically publish to external endpoints.">Event publishing reference</a></p>
+</li>
+<li>
+<p><a href="integrating-your-business-systems1.htm#GUID-60243463-3A48-49E1-B841-A10F134A08A6">About integrating your business systems</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment76">
+<tr>
+<td class="cellalignment83">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment80"><a href="sending-messages-customers1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment80"><a href="sending-pricing-data-external-client-applications1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment85">
+<table class="cellalignment79">
+<tr>
+<td class="cellalignment80"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment80"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment80"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

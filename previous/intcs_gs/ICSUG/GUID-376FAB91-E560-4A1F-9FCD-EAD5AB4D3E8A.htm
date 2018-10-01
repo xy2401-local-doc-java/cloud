@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Upgrading the On-Premises Agent to Release 16.4.5</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="If you previously installed the on-premises agent on your local host, you must upgrade to release 16.4.5 to communicate with Oracle Integration Cloud Service 16.4.5." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7728AB97-4A91-4B4F-A182-A91817508E92.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A"></a> <span id="PAGE" style="display:none;">56/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A" class="sect1">Upgrading the On-Premises Agent to Release 16.4.5</h1>
+<div>
+<p>If you previously installed the on-premises agent on your local host, you must upgrade to release 16.4.5 to communicate with Oracle Integration Cloud Service 16.4.5.</p>
+<div class="p">To upgrade the on&ndash;premises agent to release 16.4.5:</div>
+<!-- class="section" -->
+<div class="section">
+<div class="infobox-note" id="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A__GUID-1F79E140-D7B6-4FE6-A171-2D5F6F170D1C">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For the on-premises agent upgrade to work, you must set the <code>JAVA_HOME</code> parameter. Only Oracle JDK version 1.7 and 1.8 are supported. Any other JDK such as Open JDK does not work. If not set, on-premises agent upgrade fails. For information on setting this parameter, see <a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9" title="You must download the agent installer from Oracle Integration Cloud Service and run the installer to install the on-premises agent in your local environment. During installation, you associate the agent with the agent group identifier you generated when creating an agent group in Oracle Integration Cloud Service.">Downloading and Running the On-Premises Agent Installer</a>.</p>
+</li>
+<li>
+<div class="p">You can run the following command to obtain online help for upgrading the on-premises agent. This file is available in step 1g below.
+<pre dir="ltr">
+</pre>
+<code>./cloud-connectivity-agent-patcher.sh -help</code></div>
+</li>
+</ul>
+</div>
+<ol>
+<li>
+<p>Download the patch ZIP file and perform the following steps.</p>
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Agents</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Download Agent Installer</span> to download the 16.4.5 ZIP file.</p>
+</li>
+<li>
+<p>Select <span class="bold">Connectivity Agent</span>. This initiates the patch ZIP file download.</p>
+</li>
+<li>
+<p>Save the ZIP file to the file system.</p>
+</li>
+<li>
+<p>Unzip the ZIP file and note the following files.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>cloud-connectivity-agent-installer.bsx</code></p>
+</li>
+<li>
+<p><code>cloud-connectivity-agent-patcher.zip</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Extract the <code>cloud-connectivity-agent-patcher.zip</code> and notice the following files.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>cloud-connectivity-agent-ics.properties</code></p>
+</li>
+<li>
+<p><code>cloud-connectivity-agent-patcher.jar</code></p>
+</li>
+<li>
+<p><code>cloud-connectivity-agent-patcher.sh</code></p>
+</li>
+<li>
+<p><code>cloud-connectivity-agent-patching-scripts.zip</code></p>
+</li>
+</ul>
+</li>
+<li>
+<div class="p">Run <code>cloud-connectivity-agent-patcher.sh</code>.
+<div class="infobox-note" id="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A__GUID-E70EE713-A69E-4876-B6EB-1D41C8DAC988">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Ensure that you specify <code>-</code> (shorter hyphen) in front of each parameter and not <code>&mdash;</code> (longer hyphen). For example, <code>-au</code> and <span class="italic">not</span> <code>&mdash;au</code>.</p>
+</li>
+<li>
+<p>While supplying the <code>-patchZipFile</code>, ensure that you supply the file with pattern <code>ics_conn_agent_installer_</code><code><span class="codeinlineitalic">XXXXXX</span></code><code>.</code><code><span class="codeinlineitalic">YYYY</span>.zip</code>. This is the actual zip file of the connectivity agent installer downloaded from Oracle Integration Cloud Service.</p>
+</li>
+</ul>
+</div>
+</div>
+<p>During upgrade, use the <code>-patchZipFile</code> parameter to specify the complete path of the patch zip file that includes the <code>BSX</code> file.</p>
+<pre dir="ltr">
+./cloud-connectivity-agent-patcher.sh -agentInstallDir=<span class="italic">AGENT_INSTALL_DIR</span> -icsUn=<span class="italic">ICS_username</span> -icsPwd=<span class="italic">ICS_password</span> -patchZipFile=<span class="italic">file_name</span>.zip 
+</pre>
+<div class="p">Where:
+<div class="tblformal" id="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A__GUID-131CB311-017E-4854-ABFD-797C6BCB8B0E">
+<table class="cellalignment926" summary="Parameter status and descriptions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d30532e188">Parameter</th>
+<th class="cellalignment927" id="d30532e190">Status</th>
+<th class="cellalignment927" id="d30532e192">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d30532e196" headers="d30532e188"><code>-agentInstallDir</code></td>
+<td class="cellalignment927" headers="d30532e196 d30532e190">Mandatory</td>
+<td class="cellalignment927" headers="d30532e196 d30532e192">The installation directory of the existing agent (<code><span class="codeinlineitalic">AGENT_INSTALL_DIR</span></code> under which <code>agenthome</code> should be present).</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d30532e211" headers="d30532e188"><code>&ndash;icsUn</code></td>
+<td class="cellalignment927" headers="d30532e211 d30532e190">Mandatory</td>
+<td class="cellalignment927" headers="d30532e211 d30532e192">The Oracle Integration Cloud Service username for running the upgrade (for example, <code>weblogic</code>).</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d30532e222" headers="d30532e188"><code>&ndash;icsPwd</code></td>
+<td class="cellalignment927" headers="d30532e222 d30532e190">Mandatory</td>
+<td class="cellalignment927" headers="d30532e222 d30532e192">The password of the Oracle Integration Cloud Service username for running the upgrade.</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d30532e230" headers="d30532e188"><code>-patchZipFile</code></td>
+<td class="cellalignment927" headers="d30532e230 d30532e190">Optional</td>
+<td class="cellalignment927" headers="d30532e230 d30532e192">The complete path of the already downloaded patch ZIP file in which the <code>BSX</code> file is available. If you do not specify this parameter, the ZIP file is automatically downloaded from Oracle Integration Cloud Service.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+</ol>
+</li>
+<li>
+<pre dir="ltr">
+</pre>
+<div class="p">For example, in the following command, the <code>/scratch/myuser/agents/agent1</code> directory includes the <code>agenthome</code> directory and the <code>/scratch/myname/agents/patch/</code> directory includes the ZIP file that contains the <code>cloud-connectivity-agent-installer.bsx</code> file.
+<pre dir="ltr">
+./cloud-connectivity-agent-patcher.sh -agentInstallDir=/scratch/myuser/agents/agent1 &ndash;icsUn=weblogic -icsPwd=mypassword -patchZipFile=/scratch/myname/agents/patch/cloud-connectivity-agent-installer-1234.5678.zip
+</pre></div>
+For this example, the patch ZIP file was manually downloaded from <span>Oracle Integration Cloud Service</span>. Therefore, it is good to use that same patch file. If the <code>-patchZipFile</code> parameter is not specified, the application connects to <span>Oracle Integration Cloud Service</span>, downloads the same patch ZIP file, and proceeds with patching.
+<p>The patching process begins. The security certificate is downloaded if not already available and added to the keystore. If you go to the Agent Groups page in Oracle Integration Cloud Service during the upgrade process and expand the agent group name, various messages are displayed, including Upgrade in Progress, Restart Pending, and Up to Date. The on-premises agent is automatically restarted after the patch is applied. Once the patch ZIP file is available for extraction (either through the <code>-patchZipFile</code> parameter or through download from Oracle Integration Cloud Service), the remaining process takes around 10 to 15 minutes to complete. This time period includes restarting the on-premise agent.</p>
+</li>
+<li>
+<p>Verify that upgrade is complete by looking under the <code>agenthome</code> directory. You see that the <code>soa</code>, <code>osb</code>, and <code>lib</code> directories are upgraded and backups of these directories have occurred. The backups are identified by a <code>_BAK_PRE_NEW-VERSION</code> suffix in the <code>agenthome</code> directory.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-7728AB97-4A91-4B4F-A182-A91817508E92.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using the FTP Adapter - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This guide describes how to configure and add the FTP Adapter to an integration in Oracle Integration Cloud ServiceOracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-11-28T09:42:30Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the FTP Adapter" />
+<meta name="dcterms.identifier" content="E66632-11" />
+<meta name="dcterms.isVersionOf" content="ICSFT" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSFT.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSFT.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSFT.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/34</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-0D5FD05A-9B01-42DF-B22B-F8DEF6639F33.htm">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-473C7851-3B7D-4006-96CE-D78061503772.htm">Audience</a></li>
+<li><a href="GUID-53B67CB3-533D-4137-9E0F-0C2F90D0C799.htm">Related Resources</a></li>
+<li><a href="GUID-4B673234-EF4E-4CFE-8699-BF84A24DE685.htm">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0.htm"><span class="secnum">1</span> Getting Started with the FTP Adapter</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-59194DED-31DC-4E3D-893C-0064D7CC65A0.htm#GUID-59194DED-31DC-4E3D-893C-0064D7CC65A0">About the FTP Adapter</a></li>
+<li><a href="GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B.htm#GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B">About Oracle Integration Cloud Service</a></li>
+<li><a href="GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C.htm#GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C">About Oracle Integration Cloud Service Connections</a></li>
+<li><a href="GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD.htm#GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD">About Oracle Integration Cloud Service Integrations</a></li>
+<li><a href="GUID-A0C7B73B-3731-4393-A42B-BB6468D06DB2.htm#GUID-A0C7B73B-3731-4393-A42B-BB6468D06DB2">Typical Workflow for Creating and Including an Adapter Connection in an Integration</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-254FF873-214C-436E-A32D-ADA30F0750A2.htm"><span class="secnum">2</span> Creating an FTP Adapter Connection</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-3A15F16C-7FE6-4924-9232-07889A2D5CBF.htm#GUID-3A15F16C-7FE6-4924-9232-07889A2D5CBF">Prerequisites for Creating a Connection</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Creating a Connection</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE">Adding a Contact Email</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-662EF1FD-2841-4A9A-87B3-FD8B8796510D">Configuring Connection Properties</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6BD410FC-061C-4F5B-B900-A586638710CA">Configuring Connection Security</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22">Testing the Connection</a></li>
+</ul>
+</li>
+<li><a href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm">Editing a Connection</a></li>
+<li><a href="GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0.htm">Cloning a Connection</a></li>
+<li><a href="GUID-39E653C5-6506-427B-923E-45BD965D1F69.htm">Deleting a Connection</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-DBF2E565-8970-46F7-B4A4-23C813C2C4CF.htm"><span class="secnum">3</span> Creating an Integration</a></h2>
+<h2 class="tocheader"><a href="GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE.htm"><span class="secnum">4</span> Adding the FTP Adapter Connection to a Basic Map Data Integration</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-F08D86BD-44E9-4D78-8ECC-6FBB529C6CDF.htm#GUID-F08D86BD-44E9-4D78-8ECC-6FBB529C6CDF">Configuring Basic Information Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-F08D86BD-44E9-4D78-8ECC-6FBB529C6CDF.htm#GUID-FBBE113D-FDF4-48F3-A164-8338B07CA66A">What You Can Do from the Basic Info Page</a></li>
+<li><a href="GUID-F08D86BD-44E9-4D78-8ECC-6FBB529C6CDF.htm#GUID-8D48A83E-6376-4B16-93C8-0FB4751A855C">What You See on the Basic Info Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-2E87616E-14E6-4963-B827-763654993B95.htm#GUID-2E87616E-14E6-4963-B827-763654993B95">Configuring FTP Adapter Trigger Configure File Read Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-2E87616E-14E6-4963-B827-763654993B95.htm#GUID-BF7CDE82-6582-459F-9FF6-CCEBA8869A41">What You Can Do from the FTP Adapter Configure File Read Page</a></li>
+<li><a href="GUID-2E87616E-14E6-4963-B827-763654993B95.htm#GUID-CDF92ACF-DA4F-414D-8B34-81FC78C4F6DC">What You See on the FTP Adapter Configure File Read Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510.htm#GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510">Configuring FTP Adapter Format Definition Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510.htm#GUID-7C3B3BC1-6FE4-4548-9BDE-41583A9C6ADE">What You Can Do from the FTP Adapter Format Definition Page</a></li>
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510.htm#GUID-4460DEBE-6BC5-4E5D-AAB5-C5A1FBDA22AB">What You See on the FTP Adapter Format Definition Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-5DFDBA62-C9BF-407A-9720-E8875545DE04.htm#GUID-5DFDBA62-C9BF-407A-9720-E8875545DE04">Configuring FTP Adapter Invoke Configure File Write Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-5DFDBA62-C9BF-407A-9720-E8875545DE04.htm#GUID-F44F0D93-0907-4308-81FD-1AFFEB215041">What You Can Do from the FTP Adapter Configure File Write Page</a></li>
+<li><a href="GUID-5DFDBA62-C9BF-407A-9720-E8875545DE04.htm#GUID-2DA91597-6499-4F36-AA3D-D6829FB7D016">What You See on the FTP Adapter Configure File Write Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-A19C9D03-2D86-426E-8952-A221AFFF10E8.htm#GUID-A19C9D03-2D86-426E-8952-A221AFFF10E8">Configuring FTP Adapter Invoke PGP Configuration Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-A19C9D03-2D86-426E-8952-A221AFFF10E8.htm#GUID-11AC219D-6A25-45AF-99E5-F6DAAC426800">What You Can Do from the FTP Adapter PGP Configuration Page</a></li>
+<li><a href="GUID-A19C9D03-2D86-426E-8952-A221AFFF10E8.htm#GUID-9C2B92CB-DE30-4E94-BA2F-E75F723ED4B0">What You See on the FTP Adapter PGP Configuration Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-B4590C36-078F-41A9-A670-345D21197835">Reviewing Configuration Values on the Summary Page</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-5F667FCE-08B6-4335-B29F-479B0D2B148C">What You Can Do from the Summary Page</a></li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-FC2783A0-8CC9-4498-906F-3562FCCD5726">What You See on the Summary Page</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-FC1BD751-B17E-4B00-A415-B3452B185E0A.htm"><span class="secnum">5</span> Adding the FTP Adapter Connection to an Orchestrated Integration</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F">Configuring Basic Information Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-B73E6866-6766-4BA3-BC66-213F6854C2D0">What You Can Do from the Basic Info Page</a></li>
+<li><a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD">What You See on the Basic Info Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-314D1E6C-80E0-49BD-803B-A31BA99C53EA.htm#GUID-314D1E6C-80E0-49BD-803B-A31BA99C53EA">Configuring FTP Adapter Invoke Operations Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-314D1E6C-80E0-49BD-803B-A31BA99C53EA.htm#GUID-8B3EC8BE-1927-43CE-9A46-4C7B77E8644A">What You Can Do from the FTP Adapter Invoke Operations Properties Page</a></li>
+<li><a href="GUID-314D1E6C-80E0-49BD-803B-A31BA99C53EA.htm#GUID-E43FFA5D-F921-43E0-99B2-40352120AEFE">What You See on the FTP Adapter Invoke Operations Properties Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-C1D02E83-CC12-403A-993C-B55D01BDFF93.htm#GUID-C1D02E83-CC12-403A-993C-B55D01BDFF93">Configuring FTP Adapter Invoke Schema Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-C1D02E83-CC12-403A-993C-B55D01BDFF93.htm#GUID-106B71D3-7873-4F09-97E5-C9AD2FBDF570">What You Can Do from the FTP Adapter Invoke Schema Properties Page</a></li>
+<li><a href="GUID-C1D02E83-CC12-403A-993C-B55D01BDFF93.htm#GUID-119C75C4-80E4-4B3A-BD64-BD14935E7849">What You See on the FTP Adapter Invoke Schema Properties Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510-01.htm#GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510">Configuring FTP Adapter Format Definition Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510-01.htm#GUID-7C3B3BC1-6FE4-4548-9BDE-41583A9C6ADE">What You Can Do from the FTP Adapter Format Definition Page</a></li>
+<li><a href="GUID-CA0953D5-0C20-4A84-88E3-3C7F27092510-01.htm#GUID-901E8CA5-A53C-4F2A-8721-2350212010B2">What You See on the FTP Adapter Invoke Format Definition Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835-01.htm#GUID-B4590C36-078F-41A9-A670-345D21197835">Reviewing Configuration Values on the Summary Page</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835-01.htm#GUID-5F667FCE-08B6-4335-B29F-479B0D2B148C">What You Can Do from the Summary Page</a></li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835-01.htm#GUID-FC2783A0-8CC9-4498-906F-3562FCCD5726">What You See on the Summary Page</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-668DFC75-8A5A-4E60-87B6-E76BE6FD25BA.htm"><span class="secnum">6</span> Creating Mappings and Lookups in Integrations</a></h2>
+<h2 class="tocheader"><a href="GUID-520D5D67-D92B-4903-A56D-77565F77F482.htm"><span class="secnum">7</span> Administering Integrations</a></h2>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment753">
+<tr>
+<td class="cellalignment760">
+<table class="cellalignment766">
+<tr>
+<td class="cellalignment757"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment762">
+<table class="cellalignment765">
+<tr>
+<td class="cellalignment757"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment757"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

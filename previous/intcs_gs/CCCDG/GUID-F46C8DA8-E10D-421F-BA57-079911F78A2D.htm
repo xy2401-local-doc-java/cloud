@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding an Exposed Service and Using the Adapter Wizard</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="In JDeveloper, you add an inbound adapter to an application as an exposed service." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-68C2B838-5D49-4074-90AB-34D9E85473FE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-63ECB358-57D0-42D2-878C-4F44096F6C09.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F46C8DA8-E10D-421F-BA57-079911F78A2D"></a> <span id="PAGE" style="display:none;">54/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-F46C8DA8-E10D-421F-BA57-079911F78A2D" class="sect1">Adding an Exposed Service and Using the Adapter Wizard</h1>
+<div>
+<p>In JDeveloper, you add an inbound adapter to an application as an exposed service.</p>
+<ol>
+<li class="stepexpand"><span>Drag and drop the SampleCloudAdapter from the component palette (Cloud Category) to the Exposed Services section.</span>
+<div><img width="1409" height="508" src="img/GUID-DCD44826-0E0F-4535-9587-FCE7AF798274-default.png" alt="media/image74.png" title="media/image74.png" /><br />
+<a href="img_text/GUID-FB22208A-94DF-434B-8F07-C28EC1124F8B.htm">Description of the illustration GUID-DCD44826-0E0F-4535-9587-FCE7AF798274-default.png</a></div>
+</li>
+<li class="stepexpand"><span>The wizard pops up and asks you to configure inbound-related information. The wizard starts with the Welcome page, which asks you to type a SampleCloudAdapter reference name.</span>
+<div><img width="996" height="750" src="img/GUID-29DD2838-0006-45BE-9F65-6725242B84D7-default.png" alt="media/image75.png" title="media/image75.png" /><br />
+<a href="img_text/GUID-71EAA7F9-089E-43CA-B254-1854BAAF16B8.htm">Description of the illustration GUID-29DD2838-0006-45BE-9F65-6725242B84D7-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>. The Connection page appears and asks you to provide the source WSDL reference.</span>
+<div>You can also enter security credentials using an Authentication Key.</div>
+<div><img width="1004" height="752" src="img/GUID-189B007E-D91F-4562-9C5C-E4C8F1E3246B-default.png" alt="media/image76.png" title="media/image76.png" /><br />
+<a href="img_text/GUID-377C5B80-F503-492A-BF5D-E99E887F91CF.htm">Description of the illustration GUID-189B007E-D91F-4562-9C5C-E4C8F1E3246B-default.png</a></div>
+</li>
+<li class="stepexpand"><span>To test connectivity to the service, click <span class="bold">Test</span>.</span>
+<div>
+<p>A success or failure message is displayed in the Text area.</p>
+<img width="1001" height="752" src="img/GUID-11F20EDF-2ED2-4DBC-9BAA-F7010BB7343B-default.png" alt="media/image77.png" title="media/image77.png" /><br />
+<a href="img_text/GUID-8B53D34D-35F2-4834-9360-9134383D6A9D.htm">Description of the illustration GUID-11F20EDF-2ED2-4DBC-9BAA-F7010BB7343B-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>. Choose the business object you would like to receive from the Oracle Sample Cloud Service as the request for this integration flow.</span>
+<div><img width="1003" height="752" src="img/GUID-BE3C3CE1-B55F-4374-AFDD-606C32034532-default.png" alt="media/image78.png" title="media/image78.png" /><br />
+<a href="img_text/GUID-DB2EA26D-55EB-454E-A0B4-77B565775536.htm">Description of the illustration GUID-BE3C3CE1-B55F-4374-AFDD-606C32034532-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Choose the business object you would like to receive from Oracle Sample Cloud Service as the response from this integration flow.</span></li>
+<li class="stepexpand"><span>Choose <span class="bold">Immediate</span> for the synchronous integration pattern.</span>
+<div>The Immediate response mode specifies a conversational, synchronous response, while the Delayed mode specifies an asynchronous response.</div>
+<div><img width="998" height="752" src="img/GUID-19D719FC-CBC6-4A80-9E37-B867EEEA61E2-default.png" alt="media/image79.png" title="media/image79.png" /><br />
+<a href="img_text/GUID-EBF4E07A-C5EA-4215-839A-476163400EC7.htm">Description of the illustration GUID-19D719FC-CBC6-4A80-9E37-B867EEEA61E2-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>. The Summary page appears and displays the items selected during configuration.</span>
+<div><img width="1000" height="754" src="img/GUID-C8C6C055-C832-4994-A766-21762AC42E87-default.png" alt="media/image30.png" title="media/image30.png" /><br />
+<a href="img_text/GUID-C5867404-2530-4DA0-999C-E9596C89DBDE.htm">Description of the illustration GUID-C8C6C055-C832-4994-A766-21762AC42E87-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span> to generate the runtime artifacts and references.</span>
+<div><span class="bold">Note:</span> If clicking <span class="bold">Finish</span> results in a <code>NullPointerException</code> in the UI thread, it means that you didn&rsquo;t implement the <code>updateBackEndModel()</code> method for one or more of your wizard pages.</div>
+<div><img width="645" height="525" src="img/GUID-446B40BE-2962-4B82-9EAF-B824A8F47C6B-default.png" alt="media/image81.png" title="media/image81.png" /><br />
+<a href="img_text/GUID-7DEEEA3B-AC28-455A-877D-91E73F38D4FD.htm">Description of the illustration GUID-446B40BE-2962-4B82-9EAF-B824A8F47C6B-default.png</a></div>
+</li>
+</ol>
+<div class="section">
+<p>These files are generated:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SampleService_REQUEST.jca</code> (Cloud Application Configuration File)</p>
+</li>
+<li>
+<p><code>SampleService_REQUEST.WSDL</code> (Integration WSDL)</p>
+</li>
+<li>
+<p>One of the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SampleService_ENDPOINT.WSDL</code> (SOAP WSDL &ndash; exposed as service)</p>
+</li>
+<li>
+<p><code>SampleService_ENDPOINT.WADL</code> (REST WADL &ndash; exposed as service)</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">See <a href="GUID-63ECB358-57D0-42D2-878C-4F44096F6C09.htm" title="Within the adapter testing application, a BPEL process receives data from the adapter and replies with a response.">Creating a BPEL Process to Consume the Adapter</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-68C2B838-5D49-4074-90AB-34D9E85473FE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-63ECB358-57D0-42D2-878C-4F44096F6C09.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

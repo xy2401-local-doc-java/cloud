@@ -1,0 +1,412 @@
+@namespace MadCap url(http://www.madcapsoftware.com/Schemas/MadCap.xsd);
+/*<meta />*/
+/* OMC DOCUMENTATION STYLES Alta.css is the main style for all OMC Flare Projects. Project specific css files should all begin by inheriting this file. To do so, begin the file with: @import 'Alta.css';
+ */
+/* ------------------ Header Styles ------------------ */
+ h1, h2, h3, h4, h5, h6 {
+     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+     font-style: normal;
+     font-weight: normal;
+     color: inherit;
+     text-rendering: optimizeLegibility;
+}
+ h2 {
+     line-height: 2.4rem;
+    /* steph added to fix space between text and underline */
+     border-bottom: solid 1px #c0c0c0;
+     margin-top: 2.6rem;
+     margin-bottom: 1.8rem;
+}
+ h2.ExcludeFromTOC {
+     mc-auto-number-format: '{ =0}';
+     mc-heading-level: 0;
+}
+ h2.glossarydivision {
+     padding-top: 30px;
+     mc-auto-number-format: '{ =0}';
+     mc-heading-level: 0;
+}
+ h3 {
+     margin-top:1.8rem;
+     margin-bottom:0.8rem;
+}
+ h4 {
+     color:#a9a9a9;
+    /* grey */
+     margin-top:1.7rem;
+     margin-bottom:0.7rem;
+}
+ h5 {
+     font-weight:bold;
+     margin-top:1.7rem;
+     margin-bottom:0.7rem;
+}
+ h6 {
+     font-weight:bold;
+     margin-top:1.7rem;
+     margin-bottom:0.7rem;
+}
+/* Moved from foundation. Media queries to alter the size of our headings. */
+ @media screen and (min-width: 40em) {
+     h1 {
+         font-size:3rem;
+    }
+     h2 {
+         font-size: 2.5rem;
+    }
+     h3 {
+         font-size: 1.9375rem;
+    }
+     h4 {
+         font-size: 1.5625rem;
+    }
+     h5 {
+         font-size: 1.25rem;
+    }
+     h6 {
+         font-size: 1rem;
+    }
+}
+/* ------------------ Body and Paragraph Styles ------------------ */
+ body {
+     font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+     mc-hyphenate:never;
+}
+ p {
+     font-size:1rem;
+     line-height:1.5rem;
+}
+ p.task_intro {
+     font-weight:bold;
+     font-size:1rem;
+     padding-top:1.5rem;
+     padding-bottom:0.75rem;
+}
+ p.glossaryterm {
+     padding-top:0px;
+     padding-bottom:0px;
+     margin-top:0px;
+}
+ p.faq_question {
+     font-weight:bold;
+     font-size:1.25rem;
+     padding-top:1.5rem;
+     padding-bottom:0rem;
+}
+ p.faq_answer {
+     padding-top:0rem;
+     padding-bottom:0rem;
+     margin-top:0rem;
+}
+/* ------------------ List Styles ------------------ */
+ li {
+     margin-top:0pt;
+     margin-bottom:0pt;
+     padding-bottom:5px;
+     padding-top:0px;
+     font-size:0.875rem;
+     line-height:1.9;
+     margin-bottom:0.5rem;
+}
+/* ------------------ Link Styles ------------------ */
+ xref {
+     color: #2ba6cb;
+     text-decoration: none;
+     mc-format: '{paratext}';
+}
+/* ------------------ Custom Styles ------------------ */
+ .example {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#c5e2f6;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .example:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f02d ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .tip {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#d9c4de;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .tip:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f0a4 ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .learnMore {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#fcf2fb;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .learnMore:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f040 ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .note {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#c7e4de;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .note:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f0eb ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .important {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#fff8ce;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .important:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f05a ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .warning {
+     -moz-border-radius:6px;
+     -webkit-border-radius:6px;
+     border-radius:6px;
+     padding:14px 20px;
+     background-color:#f6cdc7;
+     color:#454545;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ .warning:before {
+     font:normal normal normal 20px / 1 FontAwesome;
+     content:"\f071 ";
+     top:0;
+     text-align:center;
+     padding:0em 0.5em 0em 0em;
+}
+ .keywordsHidden {
+     display: none;
+     mc-heading-level: 0;
+     mc-auto-number-format: '{ =0}';
+}
+ .miniTOC {
+     color:#A55858;
+}
+
+ .prettyprint {
+	
+}
+/* ------------------ Code Styles ------------------ */
+ code {
+     font-family:Consolas, "Liberation Mono", Courier, monospace;
+     font-weight:normal;
+     font-size:1em;
+     background-color:#e6e6e6;
+     border:1px solid #cacaca;
+     line-height:30px;
+     margin-top:2.5rem;
+     margin-bottom:3rem;
+}
+ p code, li code, ol code {
+     line-height:1.5rem;
+}
+ .highlight {
+     background:#eeeeee;
+     font-family:monospace;
+     padding:10px;
+	 margin: 0 0 20px 0;
+}
+ .highlightscroll {
+     background:#eeeeee;
+     overflow-x:scroll;
+     font-family:monospace;
+     padding:10px;
+	 margin: 0 0 20px 0;
+}
+/* ------------------ Image Styles ------------------ */
+ img {
+     border:none;
+     margin-top:3px;
+     margin-bottom:3px;
+}
+ img.screenshot_Large_Popup {
+     mc-thumbnail:popup;
+     max-width:7in;
+     mc-thumbnail-max-width:800px;
+     mc-thumbnail-max-height:600px;
+}
+ img.screenshot_Medium_Popup {
+     mc-thumbnail:popup;
+     max-width:7in;
+     mc-thumbnail-max-width:400px;
+     mc-thumbnail-max-height:300px;
+}
+ img.screenshot_Small_Popup {
+     mc-thumbnail:popup;
+     max-width:7in;
+     mc-thumbnail-max-width:200px;
+     mc-thumbnail-max-height:150px;
+}
+ img.icon_Inline_XSmall_NoAction {
+     mc-thumbnail-max-width:auto;
+     mc-thumbnail-max-height:24px;
+     mc-thumbnail:none;
+     max-height:30px;
+     vertical-align:bottom;
+}
+ img.screenshot_Video {
+     max-width:7in;
+     mc-thumbnail-max-width:400px;
+     mc-thumbnail-max-height:300px;
+     width:400px;
+     height:175px;
+     z-index:0;
+     position:relative;
+}
+/* ------------------ Madcap Styles ------------------ */
+ html.welcome_html {
+     mc-master-page:url('../MasterPages/OMC_welcomepage.flmsp');
+}
+ html.video_html {
+     mc-master-page:url('../MasterPages/OMC_video.flmsp');
+}
+ html.topic {
+     mc-master-page:url('../MasterPages/OMC_web.flmsp');
+}
+ html.task {
+     mc-master-page:url('../MasterPages/OMC_web.flmsp');
+}
+ html.reference {
+     mc-master-page:url('../MasterPages/OMC_web.flmsp');
+}
+ html.concept {
+     mc-master-page:url('../MasterPages/OMC_web.flmsp');
+}
+ html {
+     mc-master-page:url('../MasterPages/OMC_web.flmsp');
+}
+/* ------------ Font Declarations --------------- */
+ @font-face {
+     font-family:'FontAwesome';
+     src:url('../Fonts/fontawesome-webfont.eot?v=4.7.0');
+     src:url('../Fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../Fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../Fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../Fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../Fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+     font-weight:normal;
+     font-style:normal;
+}
+ @font-face {
+     font-family:'Alta';
+     src:url('../Fonts/Alta.eot');
+     src:url('../Fonts/Alta.eot') format('embedded-opentype'), url('../Fonts/Alta.ttf') format('truetype'), url('../Fonts/Alta.woff') format('woff'), url('../Fonts/Alta.svg') format('svg');
+     font-weight:normal;
+     font-style:normal;
+}
+/* ------------ Styles for the Print Output Only --------------- */
+ @media print {
+     p.glossaryterm {
+         padding-top:18px;
+         margin-bottom:1.0rem;
+    }
+     img.screenshot_Medium_Popup {
+         max-width:5in;
+    }
+     img.screenshot_Large_Popup {
+         max-width:6.5in;
+    }
+     img.screenshot_Small_Popup {
+         max-width:4in;
+    }
+     img.icon_Inline_XSmall_NoAction {
+         vertical-align:inherit;
+    }
+     img {
+         max-width:6.5in;
+    }
+     MadCap|slideshow {
+         background-color:#ffffff;
+    }
+     ul li a, ol li a, p a, td a {
+         color: #2ba6cb;
+         text-decoration: none;
+    }
+     h1.ExcludeFromTOC {
+         mc-auto-number-format:'{ =0}';
+         mc-heading-level:0;
+    }
+     h1.TitlePageTitle {
+         font-size:36px;
+         mc-auto-number-format:'{ =0}';
+         mc-heading-level:0;
+    }
+     h3.TitlePageDocType {
+         font-size:26px;
+         mc-auto-number-format:'{ =0}';
+         mc-heading-level:0;
+         color:#a9a9a9;
+         padding-top:20px;
+    }
+     h1 {
+         mc-auto-number-format:'GH:{n+} ';
+         page-break-before:always;
+         margin-bottom:25px;
+    }
+     h2 {
+         mc-auto-number-format:'GH:{n}.{n+} ';
+         margin-top:50px;
+         margin-bottom:25px;
+         line-height:0rem;
+         border-bottom: 0;
+    }
+     h3 {
+         mc-auto-number-format:'GH:{n}.{n}.{n+} ';
+         margin-top:25px;
+         margin-bottom:15px;
+    }
+     h4, h5, h6 {
+         mc-heading-level:0;
+         margin-top:20px;
+         margin-bottom:10px;
+    }
+     p code, li code, ol code, td code, span code, body code {
+         line-height:0;
+    }
+     code em, code i, code strong, code b, code a {
+         background-color:#e6e6e6;
+    }
+     code a, a code {
+         color:#0000EE;
+    }
+}
+ 

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter">
+<meta name="dcterms.identifier" content="E66534-07">
+<meta name="dcterms.isVersionOf" content="ICSEA">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T657337.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T657339.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICSEA.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">5/17</span>
+<!-- End Header -->
+<h1>Getting Started with the Oracle
+E-Business Suite Adapter</h1>
+
+<p>This chapter covers the following topics:</p><ul><li><a href="#T662114">Getting Started with the Oracle E-Business Suite Adapter</a></li><li><a href="#T660215">Common Terminologies</a></li><li><a href="#T657344">Concepts and Features</a></li><li><a href="#T657348">Typical Task Flow for Using
+the Oracle E-Business Suite Adapter</a></li></ul>
+		<H2> <a name="8354415"></a><a id="T662114"></a><B>Getting Started with the Oracle E-Business Suite Adapter</B></H2><a name="d0e172"></a><A NAME="ics_about"></A>
+	<p>The Oracle E-Business Suite Adapter is one of many predefined adapters included with Oracle Integration Cloud Service allowing you to securely connect and use Oracle E-Business Suite services in integrations in Oracle Integration Cloud Service. It not only provides the connectivity between Oracle E-Business Suite and other cloud-based applications, but also significantly simplifies the complexity of typical integration experiences. Through the Oracle E-Business Suite Adapter, you can quickly integrate your systems with desired Oracle E-Business Suite services in the cloud, as well as monitor and manage the integrations when needed.</p>
+	<p>The Oracle E-Business Suite Adapter in Oracle Integration Cloud Service leverages the functionality of Oracle E-Business Suite Integrated SOA Gateway (ISG) to provide the access of Oracle E-Business Suite REST services. </p>
+  <P><p><STRONG><span>Note: </span></STRONG>The Oracle E-Business Suite Adapter in Oracle Integration Cloud Service allows you to connect to Oracle E-Business Suite Release 12.1.3 as well as Release 12.2.3 and onwards. </p></P>
+	<p><B>Supporting Inbound and Outbound Integrations</B></p><p><img width="775" height="332" src="./img/icsnew_diagram1633.gif" alt="the picture is described in the document text" ></p>
+	<p>In this diagram, Business Events and XML Gateway messages are available for inbound integrations in Oracle Integration Cloud Service when adding the Oracle E-Business Suite Adapter as a trigger (source) connection in an integration. If the Oracle E-Business Suite Adapter is added as an invoke (target) connection, PL/SQL APIs and Concurrent Programs are available as REST services for invocation from Oracle Integration Cloud Service. </p>
+	<p>To access these REST services or interfaces in Oracle E-Business Suite on-premise which is behind the firewall, Oracle Integration Cloud Service agents can be used if your Oracle E-Business Suite is not set up in a DMZ configuration.</p>
+	<p>Please note that an outbound integration from Oracle E-Business Suite into Oracle Integration Cloud Service is also referred as an inbound (trigger or source) integration in Oracle Integration Cloud Service.</p>
+
+		<H2> <a name="8277809"></a><a id="T660215"></a><B>Common Terminologies</B></H2><a name="d0e203"></a><A NAME="ics_commont"></A>
+	<p>To better understand the Oracle E-Business Suite Adapter, the following common terminologies are explained in this section.</p>
+	<p><B>Oracle E-Business Suite Integrated SOA Gateway (ISG)</B></p>
+	<p>Oracle E-Business Suite Integrated SOA Gateway provides the functionality to expose integration interfaces published in the Integration Repository as SOAP and REST based web services. </p>
+	<p>Oracle E-Business Suite users with appropriate privileges can deploy these integration interfaces as REST services and manage the service lifecycle activities through the Integration Repository. The Oracle E-Business Suite Adapter in turn provides the access to these REST services that you can use for creating integrations in Oracle Integration Cloud Service. </p>
+	<p><B>Integration Repository</B></p>
+	<p>Integration Repository is an essential component in Oracle E-Business Suite Integrated SOA Gateway. It is the centralized repository that contains numerous interface endpoints within Oracle E-Business Suite.</p>
+	<p>When the connection to Oracle E-Business Suite is successfully established, Oracle E-Business Suite service metadata will be retrieved from the Integration Repository and imported to Oracle Integration Cloud Service. You can then create an integration by selecting a desired Oracle E-Business Suite service. The supported interface types for integrations in Oracle Integration Cloud Service through the Oracle E-Business Suite Adapter are:</p>
+  <ul>
+  <li>
+	<p><B>PL/SQL API</B></p>
+	<p>A business interface can be based on a PL/SQL package from which you invoke procedures and functions appropriate to an integration. </p>
+	<p>When you add the Oracle E-Business Suite Adapter as invoke (target) connections, PL/SQL REST services are available for outbound integrations from Oracle Integration Cloud Service.</p>
+  </li><li>
+	<p><B>Concurrent Program </B></p>
+	<p>A concurrent program runs as a concurrent process that executes multiple programs running in the background. Functions performed by concurrent programs are normally data-intensive and long-running, such as posting a journal. </p>
+	<p>The Oracle E-Business Suite Adapter supports outbound integrations with concurrent programs from Oracle Integration Cloud Service when adding the Oracle E-Business Suite Adapter as invoke (target) connections.</p>
+  </li><li>
+	<p><B>Business Event </B></p>
+	<p>A business event is an occurrence in Oracle E-Business Suite that might be significant to other objects in a system or to external agents. An example of a business event can be the creation of a new sales order or changes to an existing order. </p>
+	<p>When you add the Oracle E-Business Suite Adapter as trigger (source) connections, business events are available for inbound integrations in Oracle Integration Cloud Service.</p>
+  </li><li>
+	<p><B>XML Gateway Message Map </B></p>
+	<p>Oracle XML Gateway comprises a set of services that allows easy integration with Oracle E-Business Suite to support XML messaging. It uses the message propagation feature of Oracle Advanced Queuing to integrate with Oracle Transport Agent to deliver messages to and receive messages from business partners.</p>
+	<p>Similar to business events, XML Gateway messages are available for inbound integrations in Oracle Integration Cloud Service when adding the Oracle E-Business Suite Adapter as trigger (source) connections.</p>
+	<p>For more information about Oracle XML Gateway, see the <I>Oracle XML Gateway User's Guide</I>.</p></li></ul>
+
+	<p><B>Representational State Transfer (REST) </B></p>
+	<p>REST is an architecture principle in which the web services are viewed as resources and can be uniquely identified by their URLs. The key characteristic of a REST service is through the use of HTTP methods (GET, POST, PUT, and DELETE) to denote the invocation of different operations. </p>
+	<p>Please note that POST is the only supported method for PL/SQL REST services.</p>
+	<p><B>HTTP Basic Authentication Security</B></p>
+	<p>HTTP Basic Authentication security is the only supported security for REST services in this release. </p>
+	<p>When an HTTP client application tries to access an Oracle E-Business Suite REST service, user credentials (username/password) should be provided as input data in HTTP header as part of the REST request message. The username and password will be used for authentication and authorization.</p>
+	<p>From the perspective of the Oracle E-Business Suite Adapter in Oracle Integration Cloud Service, the username and password information is provided when creating an Oracle E-Business Suite connection. This credential information is then passed from Oracle Integration Cloud Service to Oracle E-Business Suite at runtime.</p>
+
+		<H2> <a name="8204994"></a><a id="T657344"></a><B>Concepts and Features</B></H2><a name="d0e285"></a><A NAME="ics_concept"></A>
+	<p><B>Key Features</B></p>
+	<p>The Oracle E-Business Suite Adapter in Oracle Integration Cloud Service (ICS) serves as a connection tool for you to access Oracle E-Business Suite services in the cloud. It has the following key features:</p>
+  <ul>
+  <li>
+	<p>It provides seamless connection between Oracle E-Business Suite and Oracle Integration Cloud Service. </p>
+  </li><li>
+	<p>It leverages Oracle E-Business Suite Integrated SOA Gateway to provide Oracle E-Business Suite REST services.</p>
+  </li><li>
+	<p>It supports business events and XML Gateway messages for inbound integrations in Oracle Integration Cloud Service when using the Oracle E-Business Suite Adapter as <B>trigger (source)</B> connections. </p>
+  </li><li>
+	<p>It provides Oracle E-Business Suite services (PL/SQL APIs and concurrent programs) for outbound integrations from Oracle Integration Cloud Service when adding the Oracle E-Business Suite Adapter as <B>invoke (target)</B> connections.</p>
+  </li><li>
+	<p>It supports Oracle seeded and custom interfaces for integrations.</p>
+  </li><li>
+	<p>It supports HTTP Basic Authentication security for REST services.</p>
+  </li><li>
+	<p>It allows you to access and use Oracle E-Business Suite deployed REST-based services. </p>
+  <P><p><STRONG><span>Note: </span></STRONG>If a REST service is not deployed, it cannot be used for integration. When such a service is selected for an integration, "Not Deployed" is shown as the service status and a warning message appears indicating that you need to contact an Integration Administrator in Oracle E-Business Suite to deploy the service through Oracle Integration Repository before using it.</p></P>
+  </li><li>
+	<p>It allows you to monitor and manage integration activities with Oracle E-Business Suite services.</p></li></ul>
+
+
+
+
+
+		<H2> <a name="8205004"></a><a id="T657348"></a><B>Typical Task Flow for Using
+the Oracle E-Business Suite Adapter</B></H2>
+
+<a name="d0e339"></a><A NAME="ics_wf"></A>
+
+
+
+	<p>The following table describes
+the typical task flow of using the Oracle E-Business Suite Adapter
+in Oracle Integration Cloud Service:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+
+<th SCOPE="col"><B>
+Task
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Description
+</B>
+   	</th>
+<th SCOPE="col"><B>
+More Information
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+<B>Prerequisites</B>
+
+    		
+<td >
+Before using the Oracle E-Business
+Suite Adapter, you must perform setup tasks to ensure the appropriate
+user privileges and required features are in place and the Oracle
+E-Business Suite Adapter is ready for creating integrations in Oracle
+Integration Cloud Service.
+
+    		
+<td >
+<A HREF="T657359T657339.htm#ics_setupover">Setting Up and Creating an Oracle E-Business
+Suite Adapter Connection</A>
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+1
+
+    		
+<td >
+Create an Oracle E-Business Suite
+connection.
+<BR> Establish the connection between
+Oracle E-Business Suite and Oracle Integration Cloud Service through
+the Oracle E-Business Suite Adapter.
+
+    		
+<td >
+<A HREF="T657359T660986.htm#ics_accessing">Creating an Oracle E-Business Suite Connection
+with the Oracle E-Business Suite Adapter</A>
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+2
+
+    		
+<td >
+Test the Oracle E-Business Suite
+connection.
+<BR> Ensure that you can successfully
+connect to the Oracle E-Business Suite instance you specified.
+
+    		
+<td >
+<A HREF="T657359T660986.htm#ics_test">Testing an Oracle E-Business Suite Connection</A>
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+3
+
+    		
+<td >
+Create the integration. 
+<BR> Add the Oracle E-Business Suite
+Adapter as a trigger (source) or an invoke (target) connection while
+creating the integration. 
+
+    		
+<td >
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T657340.htm#ics_excreateinte">Creating an Integration with the Oracle
+E-Business Suite Adapter</A></p>
+  </li><li>
+	<p><A HREF="T657359T661673.htm#ics_source1">Adding the Oracle E-Business Suite Adapter as
+a Trigger (Source) Connection</A></p>
+  </li><li>
+	<p><A HREF="T657359T661673.htm#ics_sourcetarg">Adding the Oracle E-Business Suite Adapter
+as an Invoke (Target) Connection</A></p></li></ul>
+
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+4
+
+    		
+<td >
+Create mappings between the source
+and target data structures in the integration. 
+<BR> (Optional) Create lookups that
+map the different values used by those applications to identify the
+same type of object (such as gender codes or country codes).
+
+    		
+<td >
+<A HREF="T657359T660884.htm#ics_nap">Creating Mappings and Lookups</A>
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+5
+
+    		
+<td >
+Activate the integration.
+<BR> Once an integration is created
+with the required data mappings between the source and target connections,
+you can activate the integration to use it at runtime. 
+
+    		
+<td >
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T660885.htm#ics_activate">Activating an Integration</A></p>
+
+  </li><li>
+	<p>If an XML Gateway message
+is used in an integration, you must perform post activation steps
+to ensure the integration works properly. See: <A HREF="T657359T661673.htm#ics_setupmap">Post Activation Manual Steps for XML Gateway
+Messages as a Trigger</A></p></li></ul>
+
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+6
+
+    		
+<td >
+Monitor the integration on the
+dashboard.
+
+    		
+<td >
+<A HREF="T657359T660885.htm#ics_mon">Monitoring and Managing Integrations</A>
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+7
+
+    		
+<td >
+Track payload fields in messages
+during runtime.
+
+    		
+<td >
+
+  <ul>
+  <li>
+	<p>Assigning Business
+Identifiers for Tracking Fields in Messages, Developing Integration
+Cloud Services chapter, <I>Oracle Cloud Using
+Oracle Integration Cloud Service</I></p>
+  </li><li>
+	<p>Managing Business Identifiers
+for Tracking Fields in Messages, Administering Integration Cloud Service
+chapter, <I>Oracle Cloud Using Oracle Integration
+Cloud Service</I></p></li></ul>
+
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+8
+
+    		
+<td >
+Manage errors at the integration
+level, connection level, or specific integration instance level.
+
+    		
+<td >
+
+  <ul>
+  <li>
+	<p>Managing Errors, Administering
+Integration Cloud Service chapter, <I>Oracle
+Cloud Using Oracle Integration Cloud Service</I></p>
+
+  </li><li>
+	<p><A HREF="T657359T660844.htm#ics_apperr">Error Messages</A> - error messages while
+testing the connection and creating the integration with the Oracle
+E-Business Suite Adapter at the design time</p></li></ul>
+
+
+    		
+
+
+</TABLE>
+
+	<p>To better understand how to use
+the Oracle E-Business Suite Adapter in an integration, see:</p>
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T661088.htm#ics_exsourceover">An Example of Using a Business Event as
+a Trigger (Source) in an Integration</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics1625_examlover">An Example of Using an XML Gateway Message
+as a Trigger (Source) in an Integration</A></p>
+  </li><li>
+	<p><A HREF="T657359T657341.htm#ics_example">An Example of Using the Oracle E-Business Suite
+Adapter as an Invoke (Target) in an Integration</A></p></li></ul>
+
+
+	<p>Additionally, refer to the following
+documents for more information about the Oracle E-Business Suite Adapter:</p>
+
+  <ul>
+  <li>
+	<p><I>Oracle E-Business Suite Adapter in Oracle Integrated Cloud Service
+Frequently Asked Questions (FAQ)</I>, My Oracle Support Knowledge
+Document 110687.1</p>
+  </li><li>
+	<p><I>Oracle Cloud Known Issues for Oracle Integration Cloud Service</I></p>
+  </li><li>
+	<p><I>What's New for Oracle Integration Cloud Service</I></p>
+</li></ul>
+
+
+
+
+
+
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

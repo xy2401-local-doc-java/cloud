@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Salesforce Trigger Outbound Messaging Properties</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Enter the Salesforce trigger outbound messaging values for your integration." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-98A86B44-73EE-40C5-A25B-B41A3D59FCDF.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-CC9782CC-64E8-47B4-91F0-39507EA7E56D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF"></a> <span id="PAGE" style="display:none;">80/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF" class="sect1">Configuring Salesforce Trigger Outbound Messaging Properties</h1>
+<div>
+<p>Enter the Salesforce trigger outbound messaging values for your integration.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF.htm#GUID-4784E2FB-5F4C-4859-B3A5-238E4B0FF7D9" title="You can configure the trigger outbound messaging WSDL for the Salesforce Cloud adapter.">What You Can Do from the Salesforce Cloud Trigger Outbound Messaging Properties Page</a></p>
+</li>
+<li>
+<p><a href="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF.htm#GUID-34086AA2-F5C1-4645-9B2A-20CE2B6BA9F4" title="The following table describes the key information on the trigger Outbound Messaging page.">What You See on the Salesforce Cloud Trigger Outbound Messaging Properties</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-4784E2FB-5F4C-4859-B3A5-238E4B0FF7D9"></a>
+<h2 id="ICSUG-GUID-4784E2FB-5F4C-4859-B3A5-238E4B0FF7D9" class="sect2">What You Can Do from the Salesforce Cloud Trigger Outbound Messaging Properties Page</h2>
+<div>
+<p>You can configure the trigger outbound messaging WSDL for the Salesforce Cloud adapter.</p>
+<div class="p">This process consists of several steps:</div>
+<!-- class="section" -->
+<ul>
+<li class="stepexpand"><span>The outbound message consists of a workflow, approval, or milestone action that sends your specified information to your specified endpoint. You configure outbound messaging in the Salesforce setup menu. Afterward, you configure the endpoint.</span>
+<div>
+<p>To create a workflow rule:</p>
+<ol>
+<li>
+<p>Log in to your Salesforce account and go to <span class="bold">Setup</span>.</p>
+</li>
+<li>
+<p>Under the <span class="bold">App Setup</span> menu, expand <span class="bold">Create</span>, followed by <span class="bold">Workflow &amp; Approvals</span>.</p>
+</li>
+<li>
+<p>Select a workflow rule or approval process as per your integration requirement.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create New</span>, provide the required information in the following wizards, and click <span class="bold">Save</span>.</p>
+<ol>
+<li>
+<p>For the workflow rule, click <span class="bold">Edit</span> under the <span class="bold">Workflow Action</span> menu followed by <span class="bold">Add Workflow Action</span>, and then <span class="bold">New Outbound Message</span>.</p>
+</li>
+<li>
+<p>For the approval process, click <span class="bold">Add New</span> (you can select for one or more actions including <span class="bold">Submission</span>, <span class="bold">Approval</span>, <span class="bold">Rejection</span>, and <span class="bold">Recall</span>) followed by <span class="bold">New Outbound Message</span>.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>Outbound messaging WSDLs associated with approval processes or entitlement processes are also supported and consumed by the adapter.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Generate the Salesforce outbound messaging WSDL at <a href="http://www.salesforce.com/" target="_blank">www.salesforce.com</a>, then select the invoke outbound messaging WSDL you created to receive outbound message notifications from the Salesforce application. For instructions, see <a href="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF.htm#GUID-34086AA2-F5C1-4645-9B2A-20CE2B6BA9F4" title="The following table describes the key information on the trigger Outbound Messaging page.">What You See on the Salesforce Cloud Trigger Outbound Messaging Properties</a>.</span></li>
+</ul>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-34086AA2-F5C1-4645-9B2A-20CE2B6BA9F4"></a>
+<h2 id="ICSUG-GUID-34086AA2-F5C1-4645-9B2A-20CE2B6BA9F4" class="sect2">What You See on the Salesforce Cloud Trigger Outbound Messaging Properties</h2>
+<div>
+<p>The following table describes the key information on the trigger Outbound Messaging page.</p>
+<div class="section">
+<div class="tblformal" id="GUID-34086AA2-F5C1-4645-9B2A-20CE2B6BA9F4__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment928" summary="Descriptions and usage of elements on the trigger Outbound Messaging page.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d39422e189">Element</th>
+<th class="cellalignment927" id="d39422e191">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d39422e195" headers="d39422e189">
+<p><span class="bold">Select the Outbound Messaging WSDL</span></p>
+</td>
+<td class="cellalignment927" headers="d39422e195 d39422e191">
+<p>Generate and then select the invoke Salesforce outbound messaging WSDL to receive outbound message notifications from the Salesforce application.</p>
+<p><span class="bold">Note</span>: You must first create a workflow rule as described in <a href="GUID-90FC9CE0-5D34-47FA-96F1-8C6E47ACAEDF.htm#GUID-4784E2FB-5F4C-4859-B3A5-238E4B0FF7D9" title="You can configure the trigger outbound messaging WSDL for the Salesforce Cloud adapter.">What You Can Do from the Salesforce Cloud Trigger Outbound Messaging Properties Page</a>. Outbound messaging WSDLs associated with approval processes or entitlement processes are also supported and consumed by the adapter.</p>
+<p>To generate and then select the invoke Salesforce outbound messaging WSDL:</p>
+<ol>
+<li>
+<p>Log in to your Salesforce account and go to <span class="bold">Setup</span> &gt; <span class="bold">Outbound Messages</span>.</p>
+</li>
+<li>
+<p>Select the required object, and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter other required details (in the <span class="bold">Endpoint URL</span> field, enter a dummy URL), and click <span class="bold">Save</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Generate WSDL</span> to download the WSDL.</p>
+</li>
+<li>
+<p>Return to this wizard page and browse for the generated WSDL.</p>
+</li>
+<li>
+<p>Activate the integration and copy the endpoint URL from the integration information icon.</p>
+</li>
+<li>
+<p>Go to the <span class="bold">Outbound Messaging</span> section at <a href="http://www.salesforce.com/" target="_blank">www.salesforce.com</a> and replace the dummy URL you entered in Step 3 with the real endpoint URL.</p>
+</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-98A86B44-73EE-40C5-A25B-B41A3D59FCDF.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-CC9782CC-64E8-47B4-91F0-39507EA7E56D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

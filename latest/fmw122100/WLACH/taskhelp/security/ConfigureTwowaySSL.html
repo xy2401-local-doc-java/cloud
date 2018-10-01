@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/edocs.css" type="text/css" rel="stylesheet"><title>Configure two-way
+  SSL</title>
+<meta content="Oracle WebLogic Server 12.2.1.2.0 Documentation" name="description"><meta content="Oracle WebLogic Server" name="keywords"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="no-cache" http-equiv="pragma"><meta content="en-us" http-equiv="content-language"><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/floatwin.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script opens a new, small, floating window and puts
+            TOC<name>.html and IX<name>.html files in it and
+            sets a generic popup window code to enable the display of
+            some viewlets in the WebLogic Platform Tour.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/banner.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the banner required for edocs
+            documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/breadcrumb.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the product breadcrumb required for
+            edocs documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/footer.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the footer with the correct copyright
+            date and link to copyright page.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/googlesearch4.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the google search form.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/note.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs a note such as a BETA note.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/search.js" language="JavaScript1.1">;
+        </script><!--
+            This script is not for online documents. It is only used by
+            the QuestAgent Java Applet for CD search indexes.
+        -->
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head><body class="base"><a name="WLACH03038" id="WLACH03038"></a>
+<script type="text/javascript" language="Javascript1.1">
+            GoogleURL();
+        </script><noscript>
+            This script outputs the google search URL required for
+            search on edocs documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            Banner();
+        </script><noscript>
+            This script outputs the banner required for edocs
+            documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            GoogleSearchCollection();
+        </script><noscript>
+            This script outputs the google search parameters required
+            for search on edocs documentation.
+        </noscript><div class="breadcrumb"><a href="http://www.oracle.com/technology/index.html">OTN Home</a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/../../../index.html">Oracle WebLogic Server 12.2.1.2.0 Documentation
+            </a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/core/index.html">Administration Console Online Help</a>
+                    &gt;
+                    Configure two-way
+  SSL</div><h1 class="booktitle">Administration Console Online Help</h1><table cellspacing="0" cellpadding="2%" align="left" border="0" width="100%"><tr><td>    <img alt="Previous" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_prev_grey1.gif"> <img alt="Next" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_next_grey1.gif"> <img alt="" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_dots.gif"> <a title="Open TOC in new window" onblur="window.status=''; return true" onmouseout="window.status=''; return true" onfocus="window.status='Table of Contents'; return true" onmouseover="window.status='Table of Contents'; return true" href="javascript:OpenWindowEdocsHelpTOC();" accesskey="1"><img border="0" alt="Open TOC in new window" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_contents.gif"></a> </td></tr></table><a title="Content starts here" name="skipnav"><img width="1" height="1" border="0" alt="Content starts here" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/_.gif"></a>
+
+  <h1 class="topictitle1">Configure two-way
+  SSL</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <div><ul>
+          <li>Before configuring two-way SSL, ensure that the trust keystore
+          for the server includes the certificate for the trusted certificate
+          authority that signed the certificate for the client. See <a href="ConfigureIdentityAndTrust.html">Configure identity and
+  trust</a>.</li>
+
+          <li>If automatic realm restart is enabled in the default realm, you
+          do not need to restart WebLogic Server after activating non-dynamic
+          changes to the SSL configuration. See <a href="ConfigureAutomaticRealmRestart.html">Enable automatic realm
+  restart</a> and
+          <a href="http://docs.oracle.com/middleware/12212/wls/SECMG/realm.htm#SECMG825">Using Automatic
+          Realm Restart</a>.</li>
+        </ul></div>
+    </div>
+
+    <div><br>
+      <p><a name="WLACH03038__security_7x1187592" id="WLACH03038__security_7x1187592"></a>By default, WebLogic
+      Server is configured to use one-way SSL (the server passes its identity
+      to the client). When the server needs to authenticate the client, you
+      use two-way SSL. In a two-way SSL connection, the client verifies the
+      identity of the server and then passes its identity certificate to the
+      server. The server then validates the identity certificate of the client
+      before completing the SSL handshake. The server determines whether or
+      not two-way SSL is used.</p>
+
+      <p><a name="WLACH03038__security_7x1187669" id="WLACH03038__security_7x1187669"></a>To configure two-way
+      SSL:</p>
+    </div>
+
+    <ol><li>If you have not already done so, in the Change Center of the Administration Console, click <b>Lock &amp; Edit</b> (see <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/taskhelp/console/UseTheChangeCenter.html">Use the Change Center</a>).</li>
+      <li>
+        <span><a name="WLACH03038__security_7x1187777" id="WLACH03038__security_7x1187777"></a>In the left
+        pane of the Console, expand <b>Environment</b> and
+        select <b>Servers</b>.</span>
+      </li>
+
+      <li>
+        <span>Click the name of the server for which you want to configure
+        SSL.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03038__security_7x1187778" id="WLACH03038__security_7x1187778"></a>Select
+        <b>Configuration &gt; SSL</b>, and click
+        <b>Advanced</b> at the bottom of the page.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03038__security_7x1187802" id="WLACH03038__security_7x1187802"></a>Set the
+        <b>Two Way Client Cert</b><b>
+        Behavior</b> attribute. The following options are
+        available:</span>
+
+         
+          <ul>
+            <li><b>Client Certs Not Requested</b>: The default
+            (meaning one-way SSL).</li>
+
+            <li><b>Client Certs Requested But Not
+            Enforced</b>: Requires a client to present a certificate.
+            If a certificate is not presented, the SSL connection
+            continues.</li>
+
+            <li><b>Client Certs Requested And Enforced</b>:
+            Requires a client to present a certificate. If a certificate is
+            not presented, the SSL connection is terminated.</li>
+          </ul>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH03038__security_7x1187809" id="WLACH03038__security_7x1187809"></a>Click
+        <b>Save</b>.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Change Center</b>, click
+        <b>Activate Changes</b>.</span>
+      </li>
+    </ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <p>All the server SSL attributes are dynamic; when modified via the
+      Console, they cause the corresponding SSL server or channel SSL server
+      to restart and use the new settings for new connections. Old connections
+      will continue to run with the old configuration. If automatic realm
+      restart is not enabled in the default realm, you must reboot WebLogic
+      Server to ensure that all the SSL connections exist according to the
+      specified configuration.</p>
+    </div>
+  </div>
+
+<br><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td> <a href="#WLACH03038"><img border="0" title="Back to Top" alt="Back to Top" height="25" width="90" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/backtop.gif"></a><script type="text/javascript" language="Javascript1.1">
+                        Copyright();
+                    </script><noscript><a href="http:///middleware//assets/cpyr.htm">
+                            Oracle Legal Notices
+                        </a></noscript></td></tr></table>
+</body></html>

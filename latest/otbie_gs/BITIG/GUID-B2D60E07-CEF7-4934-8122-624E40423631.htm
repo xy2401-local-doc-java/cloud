@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Synchronizing Deletes for a Cloud Extract</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="If you are loading data into a Cloud Storage Service using a Cloud Extract, you use BI Cloud Connector Console to synchronize deletes in the source system with deletes in the Cloud Extract data." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-2354B54D-CCAF-4B69-B77E-99145C43B466.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-B2D60E07-CEF7-4934-8122-624E40423631"></a> <span id="PAGE" style="display:none;">16/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-B2D60E07-CEF7-4934-8122-624E40423631" class="sect1">Synchronizing Deletes for a Cloud Extract</h1>
+<div>
+<p>If you are loading data into a Cloud Storage Service using a Cloud Extract, you use BI Cloud Connector Console to synchronize deletes in the source system with deletes in the Cloud Extract data.</p>
+<div class="section">Before you start, log into BI Cloud Connector Console using the Web link and user name supplied to you by Oracle Cloud Support. You can also start BI Cloud Connector Console using a HTTP URL based on the following format: http://&lt;<span class="italic">FA OHS Host</span>&gt;:&lt;<span class="italic">FA OHS Port</span>&gt;/biacm.</div>
+<!-- class="section" -->
+<div class="section">To synchronize your Cloud Extract data:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Select the <span class="bold">Configure Cloud Extract</span> link on the Tasks pane.</span></li>
+<li class="stepexpand"><span>Click the Manage Extract Schedules icon (<img width="34" height="29" src="img/GUID-DC8A2A2F-7AD5-406B-B7BD-90A7B433141B-default.gif" alt="Manage Extract Schedules" title="Manage Extract Schedules" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-DC8A2A2F-7AD5-406B-B7BD-90A7B433141B-default.gif</a>) to display the Schedules dialog.<br />
+<img alt="img/GUID-750FB9D7-8C43-462A-A8CB-724C1C1D77C9-default.gif" width="474" height="492" src="img/GUID-750FB9D7-8C43-462A-A8CB-724C1C1D77C9-default.gif" /><br /></span></li>
+<li class="stepexpand"><span>Click the Add icon (<img width="31" height="27" src="img/GUID-85DC9562-19E8-4AB1-AF89-2B2423F64131-default.gif" alt="Add icon" title="Add icon" />) to create a new schedule.</span></li>
+<li class="stepexpand"><span>Use the <span class="bold">Name</span> field to specify a short name to identify this schedule in BI Cloud Connector Console.<br />
+<img width="732" height="354" src="img/GUID-70A2258F-37D7-4BBF-A19C-76F381D67AF9-default.gif" alt="Schedule dialog in BI Cloud Connector Console." title="Schedule dialog in BI Cloud Connector Console." /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-70A2258F-37D7-4BBF-A19C-76F381D67AF9-default.gif</a><br /></span></li>
+<li class="stepexpand"><span>Select &lsquo;Deleted Record Extract&rsquo; from the <span class="bold">Job Type</span> drop down.</span></li>
+<li class="stepexpand"><span>Use the <span class="bold">Recurrence</span> drop down to specify when you want to synchronize the data.</span>
+<div>You typically schedule the synchronization to run at a time when the load on the Fusion Applications source system is low, for example, during off-peak hours. In addition, you must schedule the synchronization so that it does not conflict with the Cloud Extract or the data load into the OTBI-Enterprise data warehouse.</div>
+</li>
+<li class="stepexpand"><span>Save the details.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-2354B54D-CCAF-4B69-B77E-99145C43B466.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

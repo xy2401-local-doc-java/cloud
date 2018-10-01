@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Connection</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The first step in creating an integration is to create the connections to the applications with which you want to share data." />
+<meta name="dcterms.created" content="2016-09-11T09:23:09Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Microsoft Email Adapter" />
+<meta name="dcterms.identifier" content="E70297-04" />
+<meta name="dcterms.isVersionOf" content="ICSME" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-9F6A7704-A8DE-484E-8D8A-06D51AD9D13C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSME.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSME.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSME.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"1591e24",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"1591e24",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"></a> <span id="PAGE" style="display:none;">15/27</span> <!-- End Header -->
+<h1 id="ICSME-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" class="sect1">Creating a Connection</h1>
+<div>
+<p>The first step in creating an integration is to create the connections to the applications with which you want to share data.</p>
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">New Connection</span>.</span>
+<div>The Create Connection &mdash; Select Adapter dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select an adapter from the dialog. You can also search for the type of adapter to use by entering a partial or full name in the Search field, and clicking <span class="bold">Search</span>.</span>
+<div>The New Connection &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the information to describe the connection.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a meaningful name to help others find your connection when they begin to create their own integrations. The name you enter is automatically added in capital letters to the <span class="bold">Identifier</span> field.</p>
+</li>
+<li>
+<p>Select the role (direction) in which to use this connection (trigger, invoke, or both). Only the roles supported by this adapter are displayed for selection. When you select a role, only the connection properties and security policies appropriate to that role are displayed on the Connections page. If you select an adapter that supports both invoke and trigger, but select only one of those roles, then try to drag the adapter into the section you did not select, you receive an error (for example, configure an <span>Oracle RightNow Cloud Adapter</span> as only an invoke, but drag the adapter to the trigger section).</p>
+</li>
+<li>
+<p>Enter an optional description of the connection.</p>
+</li>
+</ul>
+<br />
+<img width="550" height="326" src="img/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png" alt="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" title="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" /><br />
+<a href="img_text/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.htm">Description of the illustration GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>Your connection is created and you are now ready to configure connection details, such as email contact, connection properties, security policies, and connection login credentials.</div>
+</li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE"></a>
+<h2 id="ICSME-GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" class="sect2">Adding a Contact Email</h2>
+<div>
+<p>From the Connection Administrator section of the connection, you can add a contact email address for notifications.</p>
+<ol>
+<li><span>In the <span class="bold">Email Address</span> field, enter an email address to receive email notifications when problems occur.</span></li>
+<li><span>In the upper right corner, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274"></a>
+<h2 id="ICSME-GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274" class="sect2">Configuring Connection Security</h2>
+<div>
+<p>Enter connection information so your application can process requests.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Credentials</span>.</span>
+<div>The Credentials dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Security Policy</span> field, note that <span class="bold">Microsoft Mail Authorization Code Credentials</span> is displayed by default and cannot be deselected. This security policy supports OAuth 2.0 authorization code flow credentials.</span></li>
+<li class="stepexpand"><span>Enter the client ID (Microsoft application ID) and client secret (Microsoft private key) values you recorded when you added your application to your Microsoft Email account.</span>
+<div>See <a href="GUID-3F6587E6-8954-465F-A07C-0334E7CF8AB6.htm#GUID-3F6587E6-8954-465F-A07C-0334E7CF8AB6" title="These are the prerequisites for creating a connection with the Microsoft Email Adapter.">Prerequisites for Creating a Connection</a>.</div>
+</li>
+<li class="stepexpand"><span>Enter the scope URLs in the <span class="bold">Scope</span> field.</span>
+<div>A scope is a list of authorization permissions for the target application.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Provide Consent</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22"></a>
+<h2 id="ICSME-GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" class="sect2">Testing the Connection</h2>
+<div>
+<p>Test your connection to ensure that it is successfully configured.</p>
+<ol>
+<li class="stepexpand"><span>In the upper right corner of the page, click <span class="bold">Test</span>.</span>
+<div>If successful, the following message is displayed and the progress indicator shows 100%.
+<p><code>The connection test was successful!</code></p>
+</div>
+</li>
+<li class="stepexpand"><span>If your connection was unsuccessful, an error message is displayed with details. Verify that the configuration details you entered are correct.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment169">
+<tr>
+<td class="cellalignment176">
+<table class="cellalignment174">
+<tr>
+<td class="cellalignment173"><a href="GUID-9F6A7704-A8DE-484E-8D8A-06D51AD9D13C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment173"><a href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment178">
+<table class="cellalignment172">
+<tr>
+<td class="cellalignment173"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment173"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment173"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

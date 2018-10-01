@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding the Oracle Database Adapter Connection to an Integration</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When you drag the Oracle Database Adapter into an integration, the Adapter Endpoint Configuration Wizard appears. This wizard guides you through configuration of Oracle Database Adapter endpoint properties." />
+<meta name="dcterms.created" content="2016-11-27T15:37:00Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Database Adapter" />
+<meta name="dcterms.identifier" content="E67145-09" />
+<meta name="dcterms.isVersionOf" content="ICSSB" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-29667C34-744F-4E61-B3EA-3A72F48BBA34.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D0DB3390-D5E4-4D12-A68B-8865C4D949A3.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSB.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSB.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSB.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-914298EF-BDAF-499A-8D1E-68725000D173"></a> <span id="PAGE" style="display:none;">19/26</span> <!-- End Header -->
+<h1 id="ICSSB-GUID-914298EF-BDAF-499A-8D1E-68725000D173" class="sect1"><span class="enumeration_chapter">4</span> Adding the <span>Oracle Database Adapter</span> Connection to an Integration</h1>
+<div>
+<p>When you drag the <span>Oracle Database Adapter</span> into an integration, the <span>Adapter Endpoint Configuration Wizard</span> appears. This wizard guides you through configuration of <span>Oracle Database Adapter</span> endpoint properties.</p>
+<p>The following sections describe the wizard pages that guide you through configuration of the <span>Oracle Database Adapter</span> as a trigger and an invoke in an integration.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D0DB3390-D5E4-4D12-A68B-8865C4D949A3.htm#GUID-D0DB3390-D5E4-4D12-A68B-8865C4D949A3" title="You can enter a name and description on the Basic Info page of each trigger and invoke adapter in your integration.">Configuring Basic Information Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-FE30DFA9-8226-4B87-8295-AE94418BAA40.htm#GUID-FE30DFA9-8226-4B87-8295-AE94418BAA40" title="Enter the Oracle Database Adapter invoke a a stored procedure properies.">Configuring Oracle Database Adapter Invoke Stored Procedure Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-DCCC9C50-AC6C-44B1-89F7-FECBEA3FC34F.htm#GUID-DCCC9C50-AC6C-44B1-89F7-FECBEA3FC34F" title="Enter the Oracle Database Adapter SQL statement properties.">Configuring Oracle Database Adapter Invoke SQL Statement Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-D8B69750-5820-45D9-871F-56D855C9E2D3.htm#GUID-D8B69750-5820-45D9-871F-56D855C9E2D3" title="Select the root database table for the service query.">Configuring Oracle Database Adapter Trigger Polling Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-B4590C36-078F-41A9-A670-345D21197835" title="You can review the specified adapter configuration values on the Summary page.">Reviewing Configuration Values on the Summary Page</a></p>
+</li>
+</ul>
+<div class="p">For general information about the <span>Oracle Database Adapter</span>, see <a href="GUID-4E02E9C6-4156-4BDF-8B72-049F07B07AD8.htm" title="The Oracle Database Adapter enables you to run stored procedures or SQL statements on a database as part of an integration in Oracle Integration Cloud Service.">About the Oracle Database Adapter</a>.
+<div class="infobox-note" id="GUID-914298EF-BDAF-499A-8D1E-68725000D173__GUID-1A365508-83BA-4246-AC1D-178DBC903CD8">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span>Oracle Database Adapter</span> does not support the regeneration of WSDL artifacts. For more information about regeneration, see <a class="olink GUID-A834333F-C4C3-4DC0-AC2B-BD393FE58EE0" target="_blank" href="../ICSUG/GUID-A834333F-C4C3-4DC0-AC2B-BD393FE58EE0.htm#GUID-A834333F-C4C3-4DC0-AC2B-BD393FE58EE0">Regenerating a WSDL File for Integrations</a> (in <span class="italic">Using <span>Oracle Integration Cloud Service</span></span>).</p>
+</li>
+<li>
+<p>You cannot edit the existing trigger <span>Oracle Database Adapter</span> settings or delete or re-import the previously configured <span>Oracle Database Adapter</span> tables. To modify an existing integration, delete the connection, drag the <span>Oracle Database Adapter</span> to the trigger or invoke area of the integration, and reconfigure the <span>Oracle Database Adapter</span> endpoint properties.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment678">
+<tr>
+<td class="cellalignment685">
+<table class="cellalignment683">
+<tr>
+<td class="cellalignment682"><a href="GUID-29667C34-744F-4E61-B3EA-3A72F48BBA34.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment682"><a href="GUID-D0DB3390-D5E4-4D12-A68B-8865C4D949A3.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment687">
+<table class="cellalignment681">
+<tr>
+<td class="cellalignment682"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment682"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment682"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

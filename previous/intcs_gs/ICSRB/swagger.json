@@ -1,0 +1,2911 @@
+
+{
+    "swagger":"2.0",
+    "info":{
+        "description":"Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.",
+        "version":"2016.11.23",
+        "title":"REST API for Oracle Integration Cloud Service, Version 2",
+        "x-summary":"Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages."
+    },
+    "basePath":"/icsapis",
+    "tags":[
+        {
+            "name":"adapters",
+            "description":"Retrieve a list of adapters or details about a single adapter."
+        },
+        {
+            "name":"connections",
+            "description":"Retrieve, update, and delete connections."
+        },
+        {
+            "name":"integrations",
+            "description":"Retrieve, delete, export, import, activate, deactivate, and run integrations."
+        },
+        {
+            "name":"lookups",
+            "description":"Retrieve a list of lookups or details about a single lookup."
+        },
+        {
+            "name":"monitoring",
+            "description":"Retrieve integration metrics and error instances and view or export the monitoring log."
+        },
+        {
+            "name":"packages",
+            "description":"Retrieve, delete, export, and import packages."
+        }
+    ],
+    "schemes":[
+        "https"
+    ],
+    "paths":{
+        "/v2/connections":{
+            "get":{
+                "tags":[
+                    "connections"
+                ],
+                "summary":"Retrieve Connections",
+                "description":"Retrieves a list of connections.",
+                "operationId":"getConnections",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=utf-8",
+                    "application/xml; charset=utf-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filters results by name and status.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"orderBy",
+                        "in":"query",
+                        "description":"Orders results by name, last updated time, or type.",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ConnectionsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-connections-get"
+            }
+        },
+        "/v2/connections/{id}":{
+            "get":{
+                "tags":[
+                    "connections"
+                ],
+                "summary":"Retrieve a Connection",
+                "description":"Retrieves a connection. The response includes only the data visible in the ICS console.",
+                "operationId":"getConnection",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=utf-8",
+                    "application/xml; charset=utf-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Connection identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ConnectionResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Connection not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-connections-{id}-get"
+            },
+            "post":{
+                "tags":[
+                    "connections"
+                ],
+                "summary":"Update a Connection",
+                "description":"Updates a connection's security and connection properties (only wsdl, username, and password).",
+                "operationId":"updateConnection",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=utf-8",
+                    "application/xml; charset=utf-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Connection identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"X-HTTP-Method-Override",
+                        "in":"header",
+                        "description":"HTTP Method override in the header",
+                        "required":true,
+                        "type":"string",
+                        "default":""
+                    },
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "required":false,
+                        "schema":{
+                            "$ref":"#/definitions/ConnectionResource"
+                        }
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ConnectionResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Connection not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-connections-{id}-post"
+            },
+            "delete":{
+                "tags":[
+                    "connections"
+                ],
+                "summary":"Delete a connection",
+                "description":"Deletes a connection.",
+                "operationId":"deleteConnection",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=utf-8",
+                    "application/xml; charset=utf-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Connection identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation"
+                    },
+                    "404":{
+                        "description":"Connection not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-connections-{id}-delete"
+            }
+        },
+        "/v2/integrations":{
+            "get":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Retrieve Integrations",
+                "description":"Retrieves a list of integrations.",
+                "operationId":"getIntegrations",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filters results by name, status, and type.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"orderBy",
+                        "in":"query",
+                        "description":"Orders results by name or last updated time.",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-get"
+            }
+        },
+        "/v2/integrations/archive":{
+            "post":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Import (Add) an Integration",
+                "description":"Imports (adds) an integration that was exported previously. Importing an integration under a different user name or version that was exported is not supported. If you are using cURL, use the -F option to specify the file to import.",
+                "operationId":"importAsNewIntegration",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"file",
+                        "in":"formData",
+                        "description":"Previously exported integration file",
+                        "required":true,
+                        "type":"file"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Incomplete or invalid integration"
+                    },
+                    "409":{
+                        "description":"Integration already exists"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-archive-post"
+            },
+            "put":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Import (Replace) an Integration",
+                "description":"Imports (replaces) an integration with the same name that was exported previously. If you are using cURL, use the -F option to specify the file to import.",
+                "operationId":"importAsUpdateIntegration",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"file",
+                        "in":"formData",
+                        "description":"Previously exported integration file",
+                        "required":true,
+                        "type":"file"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Incomplete or invalid integration"
+                    },
+                    "409":{
+                        "description":"Integration already exists"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-archive-put"
+            }
+        },
+        "/v2/integrations/{id}":{
+            "get":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Retrieve an Integration",
+                "description":"Retrieves the current version of an integration by ID.",
+                "operationId":"getIntegrationVersionsWithId",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationIdResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-get"
+            }
+        },
+        "/v2/integrations/{id}/versions":{
+            "get":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Retrieve All Integration Versions",
+                "description":"Retrieves all versions of an integration by ID.",
+                "operationId":"getIntegrationVersions",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationVersionsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-versions-get"
+            }
+        },
+        "/v2/integrations/{id}/versions/{version}":{
+            "get":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Retrieve an Integration Version",
+                "description":"Retrieves a single integration specified by the ID and version.",
+                "operationId":"getIntegration",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"version",
+                        "in":"path",
+                        "description":"Integration version",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-versions-{version}-get"
+            },
+            "delete":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Delete an Integration Version",
+                "description":"Deletes a single integration specified by the ID and version.",
+                "operationId":"deleteIntegration",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"version",
+                        "in":"path",
+                        "description":"Integration version",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationVersionsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-versions-{version}-delete"
+            }
+        },
+        "/v2/integrations/{id}/versions/{version}/archive":{
+            "get":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Export an Integration",
+                "description":"Exports an integration. This operation returns a byte stream that is output to the display by default. If you are using cURL, use the -o option to save the response to a file.",
+                "operationId":"exportIntegration",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/octet-stream"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"version",
+                        "in":"path",
+                        "description":"Integration version",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string",
+                                "format":"byte"
+                            }
+                        }
+                    },
+                    "404":{
+                        "description":"Integration not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-versions-{version}-archive-get"
+            }
+        },
+        "/v2/integrations/{id}/versions/{version}/status":{
+            "post":{
+                "tags":[
+                    "integrations"
+                ],
+                "summary":"Update Integration Status",
+                "description":"Updates an integration's status.",
+                "operationId":"updateIntegrationStatus",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"version",
+                        "in":"path",
+                        "description":"Integration version",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "in":"body",
+                        "name":"body",
+                        "required":false,
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationResource"
+                        }
+                    },
+                    {
+                        "name":"X-HTTP-Method-Override",
+                        "in":"header",
+                        "description":"HTTP Method override in the header",
+                        "required":true,
+                        "type":"string",
+                        "default":""
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/IntegrationResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Incomplete or invalid integration"
+                    },
+                    "404":{
+                        "description":"Integration not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-integrations-{id}-versions-{version}-status-post"
+            }
+        },
+        "/v2/monitoring/errors":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Error Instances",
+                "description":"Retrieves a list of error instances.",
+                "operationId":"getErrors",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filter parameter",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ErrorsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-errors-get"
+            }
+        },
+        "/v2/monitoring/errors/{id}":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve an Error Instance",
+                "description":"Retrieves an error instance.",
+                "operationId":"getErrorInstance",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"ErrorInstance identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ErrorResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-errors-{id}-get"
+            }
+        },
+        "/v2/monitoring/instances":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Instances",
+                "description":"Retrieves a list of flow instances.",
+                "operationId":"getInstances",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filter parameter",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/InstancesResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-instances-get"
+            }
+        },
+        "/v2/monitoring/instances/{id}":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve an Instance",
+                "description":"Retrieves a flow instance.",
+                "operationId":"getInstance",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Instance identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/InstanceResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-instances-{id}-get"
+            }
+        },
+        "/v2/monitoring/integrations":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Monitoring Metrics for All Integrations",
+                "description":"Retrieves monitoring metrics (statistics) for all integrations.",
+                "operationId":"getMonitoringIntegrations",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/MonitoringIntegrationsResource"
+                        }
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-integrations-get"
+            }
+        },
+        "/v2/monitoring/integrations/{id}":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Monitoring Metrics for an Integration",
+                "description":"Retrieves monitoring metrics for the current version of an integration.",
+                "operationId":"getMonitoringIntegrationVersionsById",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/MonitoringIntegrationVerResource"
+                        }
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-integrations-{id}-get"
+            }
+        },
+        "/v2/monitoring/integrations/{id}/versions":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Monitoring Metrics for All Integration Versions",
+                "description":"Retrieves monitoring metrics for all versions of an integration.",
+                "operationId":"getMonitoringIntegrationVersions",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/MonitoringIntegrationVerResource"
+                        }
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-integrations-{id}-versions-get"
+            }
+        },
+        "/v2/monitoring/integrations/{id}/versions/{version}":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Monitoring Metrics for an Integration Version",
+                "description":"Retrieves monitoring metrics for a single version of an integration.",
+                "operationId":"getMonitoringIntegration",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    },
+                    {
+                        "name":"version",
+                        "in":"path",
+                        "description":"Integration version",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/MonitoringIntegrationResource"
+                        }
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-integrations-{id}-versions-{version}-get"
+            }
+        },
+        "/v2/monitoring/logs":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve Monitoring Log Files",
+                "description":"Retrieves a list of monitoring log files.",
+                "operationId":"getMonitoringLogs",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/LogFilesResource"
+                        }
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-logs-get"
+            }
+        },
+        "/v2/monitoring/logs/{id}":{
+            "get":{
+                "tags":[
+                    "monitoring"
+                ],
+                "summary":"Retrieve a Monitoring Log File",
+                "description":"Retrieves a monitoring log file by ID.",
+                "operationId":"getMonitoringLog",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/bin"
+                ],
+                "parameters":[
+                    {
+                        "name":"id",
+                        "in":"path",
+                        "description":"Log file identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string",
+                                "format":"byte"
+                            }
+                        }
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-monitoring-logs-{id}-get"
+            }
+        },
+        "/v2/lookups":{
+            "get":{
+                "tags":[
+                    "lookups"
+                ],
+                "summary":"Retrieve Lookups",
+                "description":"Retrieves a list of lookups.",
+                "operationId":"getLookups",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filters results by name.",
+                        "required":false,
+                        "type":"string"
+                    },
+                    {
+                        "name":"orderBy",
+                        "in":"query",
+                        "description":"Orders results by name or last updated time.",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/LookupsResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-lookups-get"
+            }
+        },
+        "/v2/lookups/{name}":{
+            "get":{
+                "tags":[
+                    "lookups"
+                ],
+                "summary":"Retrieve a Lookup",
+                "description":"Retrieves a lookup by ID.",
+                "operationId":"getLookup",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"name",
+                        "in":"path",
+                        "description":"Integration identifier",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/LookupResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-lookups-{name}-get"
+            }
+        },
+        "/v2/adapters":{
+            "get":{
+                "tags":[
+                    "adapters"
+                ],
+                "summary":"Retrieve Adapters",
+                "description":"Retrieves a list of adapters.",
+                "operationId":"getAdapters",
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filters results by name and source.",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/AdaptersResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-adapters-get"
+            }
+        },
+        "/v2/adapters/{name}":{
+            "get":{
+                "tags":[
+                    "adapters"
+                ],
+                "summary":"Retrieve an Adapter",
+                "description":"Retrieves an adapter by name and lists details.",
+                "operationId":"getAdapter",
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"name",
+                        "in":"path",
+                        "description":"Adapter name",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/AdapterTypeResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Adapter not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-adapters-{name}-get"
+            }
+        },
+        "/v2/packages":{
+            "get":{
+                "tags":[
+                    "packages"
+                ],
+                "summary":"Retrieve Packages",
+                "description":"Retrieves a list of packages.",
+                "operationId":"getPackages",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"q",
+                        "in":"query",
+                        "description":"Filters results by name.",
+                        "required":false,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/PackagesResource"
+                        }
+                    },
+                    "400":{
+                        "description":"Malformed parameters"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-packages-get"
+            }
+        },
+        "/v2/packages/archive":{
+            "post":{
+                "tags":[
+                    "packages"
+                ],
+                "summary":"Import (Add) a Package",
+                "description":"Imports (adds) a package that was exported previously. If you are using cURL, use the -F option to specify the file to import.",
+                "operationId":"importPackage",
+                "consumes":[
+                    "multipart/form-data"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"file",
+                        "in":"formData",
+                        "description":"Previously exported package file",
+                        "required":true,
+                        "type":"file"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/ICSPackages"
+                        }
+                    },
+                    "400":{
+                        "description":"Incomplete or invalid Package"
+                    },
+                    "409":{
+                        "description":"Package already exists"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-packages-archive-post"
+            }
+        },
+        "/v2/packages/{packagename}":{
+            "get":{
+                "tags":[
+                    "packages"
+                ],
+                "summary":"Retrieve a Package",
+                "description":"Retrieves a package by name.",
+                "operationId":"getPackage",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"packagename",
+                        "in":"path",
+                        "description":"Package name",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/PackageResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Not found"
+                    },
+                    "500":{
+                        "description":"Server error"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-packages-{packagename}-get"
+            },
+            "delete":{
+                "tags":[
+                    "packages"
+                ],
+                "summary":"Delete a Package",
+                "description":"Deletes a package.",
+                "operationId":"deletePackage",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/json; charset=UTF-8",
+                    "application/xml; charset=UTF-8"
+                ],
+                "parameters":[
+                    {
+                        "name":"packagename",
+                        "in":"path",
+                        "description":"Package name",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "$ref":"#/definitions/PackageResource"
+                        }
+                    },
+                    "404":{
+                        "description":"Not found"
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-packages-{packagename}-delete"
+            }
+        },
+        "/v2/packages/{packagename}/archive":{
+            "get":{
+                "tags":[
+                    "packages"
+                ],
+                "summary":"Export a Package",
+                "description":"Exports a package. This operation returns a byte stream that is output to the display by default. If you are using cURL, use the -o option to save the response to a file.",
+                "operationId":"exportPackage",
+                "consumes":[
+                    "application/xml",
+                    "application/json"
+                ],
+                "produces":[
+                    "application/octet-stream"
+                ],
+                "parameters":[
+                    {
+                        "name":"packagename",
+                        "in":"path",
+                        "description":"Package name",
+                        "required":true,
+                        "type":"string"
+                    }
+                ],
+                "responses":{
+                    "200":{
+                        "description":"Successful operation",
+                        "schema":{
+                            "type":"array",
+                            "items":{
+                                "type":"string",
+                                "format":"byte"
+                            }
+                        }
+                    }
+                },
+                "security":[
+                    {
+                        "integrationservicedeveloper Role":[
+                        ]
+                    }
+                ],
+                "x-internal-id":"v2-packages-{packagename}-archive-get"
+            }
+        }
+    },
+    "definitions":{
+        "AdapterTypeBaseResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "name":{
+                    "type":"string"
+                },
+                "displayName":{
+                    "type":"string"
+                },
+                "source":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"adapterbase"
+            }
+        },
+        "ConnectionPropertyResource":{
+            "type":"object",
+            "properties":{
+                "propertyName":{
+                    "type":"string"
+                },
+                "propertyValue":{
+                    "type":"string"
+                },
+                "displayName":{
+                    "type":"string"
+                },
+                "requiredFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "propertyType":{
+                    "type":"string",
+                    "enum":[
+                        "STRING",
+                        "NUMBER",
+                        "URL",
+                        "WSDL_URL",
+                        "XSD_URL",
+                        "WADL_URL",
+                        "FILE",
+                        "PASSWORD",
+                        "URL_OR_FILE",
+                        "LIST",
+                        "MAP",
+                        "TEXT",
+                        "CHOICE"
+                    ]
+                },
+                "propertyGroup":{
+                    "type":"string",
+                    "enum":[
+                        "CREDENTIALS",
+                        "SOURCE_ARTIFACTS",
+                        "CONNECTION_PROPS",
+                        "OTHER"
+                    ]
+                },
+                "integrationRole":{
+                    "type":"string",
+                    "enum":[
+                        "SOURCE",
+                        "TARGET",
+                        "SOURCE_AND_TARGET"
+                    ]
+                }
+            },
+            "xml":{
+                "name":"connectionproperty"
+            }
+        },
+        "ConnectionResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "securityPolicy":{
+                    "type":"string",
+                    "enum":[
+                        "BASIC_AUTH",
+                        "USERNAME_PASSWORD_TOKEN",
+                        "USERNAME_PASSWORD_IGNORE_TIMESTAMP",
+                        "OAUTH_CLIENT_CREDENTIALS",
+                        "OAUTH_RESOURCE_OWNER_PASSWORD_CREDENTIALS",
+                        "SAML",
+                        "OAUTH",
+                        "CUSTOM",
+                        "TOKEN_BASED",
+                        "NONE",
+                        "OAUTH_AUTHORIZATION_CODE_CREDENTIALS",
+                        "CUSTOM_THREE_LEGGED",
+                        "CUSTOM_TWO_LEGGED",
+                        "PAAS_INTEGRATION_USING_OWSM_OAUTH20"
+                    ]
+                },
+                "name":{
+                    "type":"string"
+                },
+                "percentageComplete":{
+                    "type":"number",
+                    "format":"double"
+                },
+                "status":{
+                    "type":"string"
+                },
+                "lastUpdatedBy":{
+                    "type":"string"
+                },
+                "lastUpdated":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "adapterType":{
+                    "$ref":"#/definitions/AdapterTypeBaseResource"
+                },
+                "connectionProperties":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ConnectionPropertyResource"
+                    }
+                },
+                "securityProperties":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ConnectionPropertyResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"connection"
+            }
+        },
+        "ConnectionsResource":{
+            "type":"object",
+            "required":[
+                "links"
+            ],
+            "properties":{
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ConnectionResource"
+                    }
+                },
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int32"
+                }
+            },
+            "xml":{
+                "name":"connections"
+            }
+        },
+        "Link":{
+            "type":"object",
+            "properties":{
+                "rel":{
+                    "type":"string"
+                },
+                "href":{
+                    "type":"string"
+                }
+            }
+        },
+        "ConnectionBaseResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            }
+        },
+        "EndPointResource":{
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "role":{
+                    "type":"string"
+                },
+                "connection":{
+                    "$ref":"#/definitions/ConnectionBaseResource"
+                }
+            }
+        },
+        "IntegrationIdResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "versions":{
+                    "$ref":"#/definitions/IntegrationVersionsResource"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"integrationsidversions"
+            }
+        },
+        "IntegrationResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "version":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "endPoints":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/EndPointResource"
+                    }
+                },
+                "status":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "createdBy":{
+                    "type":"string"
+                },
+                "created":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "lastUpdatedBy":{
+                    "type":"string"
+                },
+                "lastUpdated":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "percentageComplete":{
+                    "type":"number",
+                    "format":"double"
+                },
+                "lockedBy":{
+                    "type":"string"
+                },
+                "lockedDate":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "endPointURI":{
+                    "type":"string"
+                },
+                "proxyWSDL":{
+                    "type":"string"
+                },
+                "tracingEnabledFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "packageName":{
+                    "type":"string"
+                },
+                "projectType":{
+                    "type":"string"
+                },
+                "modelType":{
+                    "type":"string"
+                },
+                "modelTypeDescription":{
+                    "type":"string"
+                },
+                "mepType":{
+                    "type":"string"
+                },
+                "mepTypeDescription":{
+                    "type":"string"
+                },
+                "trackingInstanceName":{
+                    "type":"string"
+                },
+                "trackingVariables":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/TrackingVariableType"
+                    }
+                },
+                "scheduleApplicableFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "scheduleDefinedFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "projectModelVersion":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"integration"
+            }
+        },
+        "IntegrationVersionResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "version":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            }
+        },
+        "IntegrationVersionsResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/IntegrationVersionResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"integrationversions"
+            }
+        },
+        "IntegrationsResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/IntegrationIdResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"integrations"
+            }
+        },
+        "PropertyType":{
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "value":{
+                    "type":"string"
+                }
+            }
+        },
+        "ReferenceType":{
+            "type":"object",
+            "properties":{
+                "role":{
+                    "type":"string"
+                },
+                "subRole":{
+                    "type":"string"
+                },
+                "property":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/PropertyType"
+                    }
+                },
+                "refUri":{
+                    "type":"string"
+                }
+            }
+        },
+        "TrackingVariableType":{
+            "type":"object",
+            "required":[
+                "messageContextRef",
+                "name",
+                "xpath"
+            ],
+            "properties":{
+                "role":{
+                    "type":"string"
+                },
+                "subRole":{
+                    "type":"string"
+                },
+                "primary":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "name":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "xpath":{
+                    "type":"string"
+                },
+                "messageContextRef":{
+                    "$ref":"#/definitions/ReferenceType"
+                },
+                "property":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/PropertyType"
+                    }
+                }
+            }
+        },
+        "ErrorResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "integrationName":{
+                    "type":"string"
+                },
+                "integrationId":{
+                    "type":"string"
+                },
+                "integrationVersion":{
+                    "type":"string"
+                },
+                "pkName":{
+                    "type":"string"
+                },
+                "pkValue":{
+                    "type":"string"
+                },
+                "secondaryTrackingName":{
+                    "type":"string"
+                },
+                "secondaryTrackingValue":{
+                    "type":"string"
+                },
+                "tertiaryTrackingName":{
+                    "type":"string"
+                },
+                "tertiaryTrackingValue":{
+                    "type":"string"
+                },
+                "faults":{
+                    "$ref":"#/definitions/Faults"
+                },
+                "actionable":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"error"
+            }
+        },
+        "ErrorsResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ErrorResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "timeWindow":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"errors"
+            }
+        },
+        "FaultDetail":{
+            "type":"object",
+            "properties":{
+                "connectionName":{
+                    "type":"string"
+                },
+                "errordateTime":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "retryCount":{
+                    "type":"string"
+                },
+                "state":{
+                    "type":"string"
+                },
+                "faultId":{
+                    "type":"string"
+                },
+                "errorMessage":{
+                    "type":"string"
+                },
+                "detailErrorMessage":{
+                    "type":"string"
+                }
+            }
+        },
+        "Faults":{
+            "type":"object",
+            "properties":{
+                "fault":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/FaultDetail"
+                    }
+                }
+            }
+        },
+        "InstanceResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "integrationId":{
+                    "type":"string"
+                },
+                "integrationVersion":{
+                    "type":"string"
+                },
+                "status":{
+                    "type":"string",
+                    "enum":[
+                        "IN_PROGRESS",
+                        "FAILED",
+                        "COMPLETED",
+                        "PARTIAL_COMPLETION",
+                        "ABORTED",
+                        "RECOVERING",
+                        "RESUBMITTED"
+                    ]
+                },
+                "pkName":{
+                    "type":"string"
+                },
+                "pkValue":{
+                    "type":"string"
+                },
+                "date":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "trackings":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/TrackingDataResource"
+                    }
+                },
+                "secondaryTrackingName":{
+                    "type":"string"
+                },
+                "secondaryTrackingValue":{
+                    "type":"string"
+                },
+                "tertiaryTrackingName":{
+                    "type":"string"
+                },
+                "tertiaryTrackingValue":{
+                    "type":"string"
+                },
+                "integrationName":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"instance"
+            }
+        },
+        "InstancesResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/InstanceResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "timeWindow":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"instances"
+            }
+        },
+        "IntegrationBaseResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "version":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            }
+        },
+        "LogFileResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"logfile"
+            }
+        },
+        "LogFilesResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/LogFileResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"logfiles"
+            }
+        },
+        "MonitoringIntegrationResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "flowId":{
+                    "type":"string"
+                },
+                "version":{
+                    "type":"string"
+                },
+                "optimizedVersion":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "noOfMsgsReceived":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "noOfMsgsProcessed":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "noOfErrors":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "noOfSuccess":{
+                    "type":"integer",
+                    "format":"int64"
+                },
+                "successRate":{
+                    "type":"number",
+                    "format":"double"
+                },
+                "avgRespTime":{
+                    "type":"number",
+                    "format":"double"
+                },
+                "endPointURI":{
+                    "type":"string"
+                },
+                "proxyWSDL":{
+                    "type":"string"
+                },
+                "scheduleApplicableFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "scheduleDefinedFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "mepType":{
+                    "type":"string"
+                },
+                "lastUpdatedBy":{
+                    "type":"string"
+                },
+                "lastUpdated":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"monitoringintegration"
+            }
+        },
+        "MonitoringIntegrationVerResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "versions":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/IntegrationBaseResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"monitoringintegrationsversion"
+            }
+        },
+        "MonitoringIntegrationsResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/IntegrationBaseResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"monitoringintegrations"
+            }
+        },
+        "TrackingDataResource":{
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "value":{
+                    "type":"string"
+                }
+            }
+        },
+        "LookupResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "rowCount":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "status":{
+                    "type":"string"
+                },
+                "lastUpdatedBy":{
+                    "type":"string"
+                },
+                "lastUpdated":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "lockedBy":{
+                    "type":"string"
+                },
+                "lockedDate":{
+                    "type":"string",
+                    "format":"date-time"
+                },
+                "lockedDVMFlag":{
+                    "type":"boolean",
+                    "default":false
+                },
+                "columns":{
+                    "type":"array",
+                    "items":{
+                        "type":"string"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"lookup"
+            }
+        },
+        "LookupsResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/LookupResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"lookups"
+            }
+        },
+        "AdapterTypeResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "name":{
+                    "type":"string"
+                },
+                "displayName":{
+                    "type":"string"
+                },
+                "source":{
+                    "type":"string"
+                },
+                "supportedSecurityPolicies":{
+                    "type":"string"
+                },
+                "defaultSecurityPolicies":{
+                    "type":"string"
+                },
+                "features":{
+                    "type":"string"
+                },
+                "version":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "integrationRole":{
+                    "type":"string",
+                    "enum":[
+                        "SOURCE",
+                        "TARGET",
+                        "SOURCE_AND_TARGET"
+                    ]
+                },
+                "vendorInfo":{
+                    "$ref":"#/definitions/VendorInfo"
+                },
+                "connectionProperties":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ConnectionPropertyResource"
+                    }
+                },
+                "credentialProperties":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/ConnectionPropertyResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"adapter"
+            }
+        },
+        "AdaptersResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "id":{
+                    "type":"string"
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/AdapterTypeResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"adapters"
+            }
+        },
+        "VendorInfo":{
+            "type":"object",
+            "properties":{
+                "supportURL":{
+                    "type":"string"
+                },
+                "name":{
+                    "type":"string"
+                },
+                "description":{
+                    "type":"string"
+                },
+                "contactUS":{
+                    "type":"string"
+                },
+                "documentationURL":{
+                    "type":"string"
+                },
+                "releaseNotes":{
+                    "type":"string"
+                }
+            }
+        },
+        "ICSPackages":{
+            "type":"object",
+            "required":[
+                "links"
+            ],
+            "properties":{
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/PackageItem"
+                    }
+                },
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "itemSize":{
+                    "type":"integer",
+                    "format":"int32"
+                }
+            }
+        },
+        "PackageBaseResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "name":{
+                    "type":"string"
+                },
+                "countOfIntegrations":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"packages_item"
+            }
+        },
+        "PackageItem":{
+            "type":"object",
+            "required":[
+                "items",
+                "links"
+            ],
+            "properties":{
+                "packageName":{
+                    "type":"string"
+                },
+                "items":{
+                    "type":"array",
+                    "xml":{
+                        "name":"packageContent"
+                    },
+                    "items":{
+                        "$ref":"#/definitions/PackageItemContent"
+                    }
+                },
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "itemSize":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "exportPackageName":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"packageitem"
+            }
+        },
+        "PackageItemContent":{
+            "type":"object",
+            "required":[
+                "links"
+            ],
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "code":{
+                    "type":"string"
+                },
+                "version":{
+                    "type":"string"
+                },
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                }
+            }
+        },
+        "PackageResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "name":{
+                    "type":"string"
+                },
+                "countOfIntegrations":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "integrations":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/IntegrationBaseResource"
+                    }
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"package"
+            }
+        },
+        "PackagesResource":{
+            "type":"object",
+            "properties":{
+                "links":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/Link"
+                    }
+                },
+                "items":{
+                    "type":"array",
+                    "items":{
+                        "$ref":"#/definitions/PackageBaseResource"
+                    }
+                },
+                "totalResults":{
+                    "type":"integer",
+                    "format":"int32"
+                },
+                "selfLink":{
+                    "type":"string"
+                }
+            },
+            "xml":{
+                "name":"packages"
+            }
+        }
+    }
+}

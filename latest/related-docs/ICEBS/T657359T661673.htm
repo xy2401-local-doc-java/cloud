@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter with Oracle Integration Cloud">
+<meta name="dcterms.identifier" content="E89704-05">
+<meta name="dcterms.isVersionOf" content="ICEBS">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T660986.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T661088.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICEBS.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">9/13</span>
+<!-- End Header -->
+<h1>Adding the Oracle E-Business Suite Adapter Connection to an Integration</h1>
+		<H2> <a name="8641873"></a><a id="T661674"></a><B>Overview</B></H2><a name="d0e1856"></a><A NAME="ics_addingover"></A>
+	<p>When you drag the Oracle E-Business Suite Adapter into the trigger or invoke area of an integration, the Adapter Endpoint Configuration Wizard appears. This wizard guides you through configuration of Oracle E-Business Suite Adapter endpoint properties.  </p>
+	<p>The following sections describe the wizard pages that guide you through configuration of the Oracle E-Business Suite Adapter as a trigger or an invoke in an integration.</p>
+  <ul>
+  <li>
+	<p><A HREF="T657359T661673.htm#ics_source1">Adding the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A></p>
+  <ul>
+  <li>
+	<p><A HREF="T657359T661673.htm#ics_sourcevent">Configuring an Oracle E-Business Suite Business Event in an Integration</A></p>
+  </li><li>
+	<p><A HREF="T657359T661673.htm#ics_sourcexml">Configuring an Oracle E-Business Suite XML Gateway Message in an Integration</A></p></li></ul>
+
+  </li><li>
+	<p><A HREF="T657359T661673.htm#ics_sourcetarg">Adding the Oracle E-Business Suite Adapter as an Invoke (Target) Connection</A></p></li></ul>
+
+		<H2> <a name="8641874"></a><a id="T661675"></a><B>Adding the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</B></H2><a name="d0e1889"></a><A NAME="ics_source1"></A>
+	<p>When you use the Oracle E-Business Suite Adapter as a trigger in an integration, you can have an option to use either a business event or an XML Gateway message as an inbound integration in Oracle Integration Cloud.</p>
+  <P><p><STRONG><span>Important: 
+  </span></STRONG>Before adding the Oracle E-Business Suite Adapter as a trigger (source) connection for an inbound integration, ensure that you have performed the required setup tasks to enable this feature. See <A HREF="T657359T657339.htm#ics_setupevent">Setup Tasks for Using the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p></P>
+	<p>For information about error messages if occur while adding the Oracle E-Business Suite Adapter as a trigger (source) connection in an integration, see <A HREF="T657359T660844.htm#ics25_errsource">Error Messages While Creating an Integration with Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p>
+	<p>Perform the following steps to add the Oracle E-Business Suite Adapter as a trigger (source) connection in your integration:</p>
+  <ol>
+  <li>
+	<p>In the Integration Designer, drag <B>Oracle E-Business Suite</B> from the Connections panel on the right to the Trigger (Source) area on the canvas.</p>
+	<p>The Configure Oracle E-Business Suite Adapter Endpoint wizard appears.</p>
+  </li><li>
+	<p>In the Basic Info page, enter the following information for the Oracle E-Business Suite Adapter Endpoint that you are creating: </p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Basic Information Page</B></p><p><img width="922" height="697" src="./img/ics1625basic2.gif" alt="the picture is described in the document text" ></p>
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Provide a meaningful name so that others can understand the responsibilities of this connection, such as "EBS_Source_event" or "EBS_Source_XML".</p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter an optional description of the connection's responsibilities, such as "Raise a business event" or "Use XML Gateway message".</p>
+  </li><li>
+	<p><B>What do you want to configure the endpoint for?</B> - Select either one of the interface types that you want to configure in your integration:</p>
+  <ul>
+  <li>
+	<p><B>Business Event</B></p>
+	<p>To configure the endpoint for business events, see: <A HREF="T657359T661673.htm#ics_sourcevent">Configuring an Oracle E-Business Suite Business Event in an Integration</A>.</p>
+  </li><li>
+	<p><B>XML Gateway Map</B></p>
+	<p>To configure the endpoint for XML Gateway message maps, see: <A HREF="T657359T661673.htm#ics_sourcexml">Configuring an Oracle E-Business Suite XML Gateway Message in an Integration</A>.</p></li></ul>
+</li></ul>
+
+	<p>Click <B>Next</B> to proceed with the rest of the configuration for your integration.</p></li></ol>
+
+		<H2> <a name="8641876"></a><a id="T661678"></a><B>Configuring an Oracle E-Business Suite Business Event in an Integration</B></H2><a name="d0e1974"></a><A NAME="ics_sourcevent"></A>
+	<p><B>Publishing Business Events from Oracle E-Business Suite to Oracle Integration Cloud</B></p>
+	<p>When <B>Business Event</B> is selected in the Basic Info page in an integration, you need to specify a desired business event in the Business Events page. </p>
+	<p>When a business event is raised in Oracle E-Business Suite at runtime, the Oracle E-Business Suite Adapter will propagate the event information from Oracle E-Business Suite to Oracle Integration Cloud.</p>
+	<p>Perform the following steps to configure a business event in an integration:</p>
+  <ol>
+  <li>
+	<p>After adding the Oracle E-Business Suite Adapter as a trigger (source) connection in an integration, select <B>Business Event</B> in the Basic Info page.</p>
+	<p>See: <A HREF="T657359T661673.htm#ics_source1">Adding the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p>
+  </li><li>
+	<p>In the Business Events page, specify the following information:</p>
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select a desired Oracle E-Business Suite application family that you want to use for your integration, for example, Applications Technology. </p>
+	<p>The available Oracle E-Business Suite application families from the drop-down list are based on the Oracle E-Business Suite instance you are connecting. </p>
+  </li><li>
+	<p><B>Product:</B> Select a desired product name available from the selected product family, for example, XML Gateway. </p>
+	<p>Once you select a desired product, a list of business events including Oracle seeded events and custom ones contained in the selected product is populated for further selection.</p>
+  <P><p><STRONG><span>Note: </span></STRONG>You can define custom business events to meet your needs if required, annotate the custom events, and then upload them to the Integration Repository. Additionally, make sure that these custom events are enabled (with "Enabled" event status) in Oracle Workflow Business Event System with the <B>Workflow Administrator Web Applications</B> responsibility. To use these custom events for integrations, you need to log in to Oracle Integration Cloud and locate the Oracle E-Business Suite connection you plan to use for integrations. Click the <B>Actions</B> menu icon and then select <B>Refresh Metadata</B>. </p>
+	<p>For information on creating custom business events, see Creating Custom Integration Interfaces, Creating and Using Custom Integration Interfaces chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Developer's Guide</I>.</p>
+	<p>For information on uploading custom interfaces to Oracle Integration Repository resided in Oracle E-Business Suite Integrated SOA Gateway, see Generating and Uploading iLDT Files, and Uploading ILDT Files to Integration Repository, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p></P>
+  </li><li>
+	<p><B>Business Event:</B> Locate a desired business event through either of the following ways:</p>
+  <ul>
+  <li>
+	<p>Select a desired event name from the drop-down list. For example, select "CLN: Event for Notification Processing".</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Business Events Page</B></p><p><img width="923" height="694" src="./img/ics1625_event.gif" alt="the picture is described in the document text" ></p>
+  </li><li>
+	<p>Use the <B>Filter by name</B> field to find your desired event. For example, enter "CLN" in this field to find the event names starting with "CLN".</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Business Events Page to Locate an Event</B></p><p><img width="922" height="693" src="./img/ics1625basic2filer.gif" alt="the picture is described in the document text" ></p></li></ul>
+
+	<p>After you select a business event, the corresponding event information is automatically populated in this page. This includes the event internal name (<code>oracle.apps.cln.np.processnotification</code>) and its description information.</p></li></ul>
+
+	<p>Click <B>Next</B>. </p>
+  </li><li>
+	<p>The Summary page appears with the selected business event information. </p>
+	<p>The Oracle E-Business Suite Adapter Source Endpoint configuration is successfully created with the selected event.</p>
+	<p>Click <B>Done</B>. </p>
+	<p>The connection for Oracle E-Businses Suite now appears in the Trigger (Source) area on the canvas.</p></li></ol>
+
+	<p>For more information on using business events in integrations, see <A HREF="T657359T661088.htm#ics_exsourceover">An Example of Using a Business Event as a Trigger (Source) in an Integration</A>.</p>
+		<H2> <a name="8641879"></a><a id="T661679"></a><B>Configuring an Oracle E-Business Suite XML Gateway Message in an Integration</B></H2><a name="d0e2105"></a><A NAME="ics_sourcexml"></A>
+	<p>When <B>XML Gateway Map</B> is selected in the Basic Info page in an integration, you need to specify a desired XML Gateway message in the XML Gateway Message page. </p>
+	<p>When an XML Gateway outbound transaction occurs in Oracle E-Business Suite at runtime, this message will be enqueued to the ECX_OUTBOUND queue as an existing XML Gateway processing. Oracle Transport Agent (OTA) from Oracle XML Gateway will fetch the message from the queue and post it to Oracle Integration Cloud.</p>
+	<p>Perform the following steps to configure an XML Gateway message in an integration:</p>
+  <ol>
+  <li>
+	<p>After adding the Oracle E-Business Suite Adapter as a trigger (source) connection in an integration, select <B>XML Gateway Map</B> in the Basic Info page.</p>
+	<p>See: <A HREF="T657359T661673.htm#ics_source1">Adding the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p>
+  </li><li>
+	<p>In the XML Gateway Message page, specify the following information for your source connection:</p>
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select a desired Oracle E-Business Suite application family that you want to use for your integration, for example, Service Suite. </p>
+	<p>The available Oracle E-Business Suite application families from the drop-down list are based on the Oracle E-Business Suite instance you are connecting. </p>
+  </li><li>
+	<p><B>Product:</B> Select a desired product name available from the selected product family, for example, Telecommunications Billing Integrator. </p>
+	<p>Once you select a desired product, a list of XML Gateway message maps including Oracle seeded message maps and custom ones contained in the selected product is populated for further selection.</p>
+  <P><p><STRONG><span>Note: </span></STRONG>You can define custom XML Gateway message maps to meet your needs if required, annotate the custom message maps, and then upload them to the Integration Repository.</p>
+	<p>For information on creating custom XML Gateway messages, see XML Gateway Annotations, Integration Repository Annotation Standards, <I>Oracle E-Business Suite Integrated SOA Gateway Developer's Guide</I>.</p>
+	<p>For information on uploading custom interfaces to Oracle Integration Repository resided in Oracle E-Business Suite Integrated SOA Gateway, see Generating and Uploading iLDT Files, and Uploading ILDT Files to Integration Repository, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p></P>
+  </li><li>
+	<p><B>XML Gateway Message:</B> Locate a desired message map through either of the following ways:</p>
+  <ul>
+  <li>
+	<p>Select a desired message map name from the drop-down list. For example, select "Add Salesorder".</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - XML Gateway Message Page</B></p><p><img width="917" height="696" src="./img/ics1625_restxmlservicenew.gif" alt="the picture is described in the document text" ></p>
+  </li><li>
+	<p>Use the <B>Filter by name</B> field to find your desired map. For example, enter  "add" in this field to find the message map names starting with "add".</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - XML Gateway Message Page to Locate an XML Gateway Message Map</B></p><p><img width="925" height="694" src="./img/ics1625_restxmlservice2.gif" alt="the picture is described in the document text" ></p></li></ul>
+
+	<p>After you select a desired message map, the corresponding information is automatically populated in this page. This includes the Integration Repository name (<code>XNB:SOO</code>), internal name (<code>XNB_OM_SALESORDER_OAG72_OUT</code>), integration standard (<code>OAG 7.2</code>) and the message map description.</p></li></ul>
+
+	<p>Click <B>Next</B>. </p>
+  </li><li>
+	<p>The Summary page appears with the selected XML Gateway message information that you specified earlier. This includes the XML Gateway message name <code>XNB_OM_SALESORDER_OAG72_OUT</code>from the selected "Service Suite" product family and "Telecommunications Billing Integrator" product, as well as the "Request Only" interaction pattern.</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Summary Page</B></p><p><img width="924" height="693" src="./img/ics25_xmlusage.gif" alt="the picture is described in the document text" ></p>
+	<p>The Oracle E-Business Suite Adapter Source Endpoint configuration is successfully created with the selected message map.</p>
+  <P><p><STRONG><span>Important: 
+  </span></STRONG>To successfully use the selected message map in Oracle Integration Cloud, you must perform required manual tasks after you activate the integration. These manual steps are included in the <B>Instructions</B> section as part of the Summary page. See: <A HREF="T657359T661673.htm#ics_setupmap">Post Activation Manual Steps for XML Gateway Messages as a Trigger</A>.</p></P>
+  </li><li>
+	<p>Click <B>Done</B>. </p>
+	<p>The connection for Oracle E-Businses Suite now appears in the Trigger (Source) area on the canvas.</p></li></ol>
+
+	<p>For more information on using XML Gateway messages in integrations, see <A HREF="T657359T661088.htm#ics1625_examlover">An Example of Using an XML Gateway Message as a Trigger (Source) in an Integration</A>.</p>
+		<H2> <a name="8641883"></a><a id="T661740"></a><B>Post Activation Manual Steps for XML Gateway Messages as a Trigger</B></H2><a name="d0e2250"></a><A NAME="ics_setupmap"></A>
+	<p>After you create an integration with an XML Gateway message from Oracle E-Business Suite in Oracle Integration Cloud, you must manually perform the following tasks:</p>
+  <ol>
+  <li>
+	<p>Activate the integration.</p>
+  </li><li>
+	<p>Obtain the integration endpoint URL.</p>
+	<p>In the Integrations page, click the Integration Details icon ("<B>i</B>") for a desired integration. The endpoint URL should be displayed in a pop-up window with the following format: </p>
+	<p><code>https://&lt;IC host&gt;:&lt;Port&gt;/ic/api/integration/v1/flows/ebusiness/&lt;integration&gt;/1.0/metadata</code>.</p>
+	<p>The URL will be used later as the protocol address when configuring a trading partner in Oracle XML Gateway.</p>
+  <P><p><STRONG><span>Note: </span></STRONG><code>&lt;integration&gt;</code> indicates the alias name for a deployed REST service, such as "PROCESS_PO" in this sample.</p></P>
+  </li><li>
+	<p>Configure a desired trading partner in Oracle E-Business Suite by specifying the communication protocol and address as well as the user credentials for the XML message specified in an integration.</p>
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business Suite as a user (such as <code>sysadmin</code>) who has the XML Gateway responsibility.</p>
+  </li><li>
+	<p>Select the XML Gateway responsibility and then select <B>Define Trading Partners</B> from the navigator. The Define Trading Partner Setup form appears.</p>
+  </li><li>
+	<p>Search and locate a desired trading partner to be configured. </p>
+  </li><li>
+	<p>In the Trading Partner Details region, add the following information for the trading partner: </p>
+  <ul>
+  <li>
+	<p>Transaction Type: A desired transaction type for your XML Gateway message, such as PO</p>
+  </li><li>
+	<p>Transaction Subtype: A desired subtype for your XML Gateway message, such as PRO	</p>
+  </li><li>
+	<p>Map: A desired XML Gateway message, such as <code>itg_process_po_007_out</code>	</p>
+  </li><li>
+	<p>Connection/Hub: DIRECT</p>
+  </li><li>
+	<p>Protocol: HTTPS</p>
+  </li><li>
+	<p>Protocol address: <code>https://&lt;IC host&gt;:&lt;Port&gt;/ic/api/integration/v1/flows/ebusiness/&lt;integration&gt;/1.0/</code></p>
+	<p>Enter the integration endpoint URL (without <code>metadata</code> at the end) you recorded earlier.</p>
+  </li><li>
+	<p>Username: <code>&lt;IC Username&gt;</code></p>
+	<p>Enter the Oracle Integration Cloud user credentials used to execute integrations in Oracle Integration Cloud.</p>
+  </li><li>
+	<p>Password: <code>&lt;IC Password&gt;</code></p></li></ul>
+
+	<p><B> Trading Partner Setup Page</B></p><p><img width="858" height="599" src="./img/ics_exxmlpo5.gif" alt="the picture is described in the document text" ></p>
+  </li><li>
+	<p>Save your work.</p></li></ol>
+
+	<p>For more information on setting up trading partners, see Trading Partner Setup, <I>Oracle XML Gateway User's Guide</I>.</p></li></ol>
+
+
+
+		<H2> <a name="8641885"></a><a id="T659457"></a><B>Adding the Oracle E-Business Suite Adapter as an Invoke (Target) Connection</B></H2><A NAME="ics_sourcetarg"></A>
+	<p>Perform the following steps to add the Oracle E-Business Suite Adapter as an invoke (target) connection in an integration:</p>
+  <ol>
+  <li>
+	<p>In the Integration Designer, drag <B>Oracle E-Business Suite</B> from the Connections panel on the right to the Invoke (Target) area on the canvas.</p>
+	<p>The Configure Oracle E-Business Suite Adapter Endpoint wizard appears.</p>
+  </li><li>
+	<p><B>Entering Information in the Basic Info page</B></p>
+	<p>In the Basic Info page, enter the following information for the Oracle E-Business Suite Adapter target endpoint:</p>
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Provide a meaningful name so that others can understand the responsibilities of this connection, such as "EBS_CreateOrder".  </p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter an optional description of the connection's responsibilities, such as "Create a Sales Order in Oracle E-Business Suite".</p></li></ul>
+
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Basic Information Page</B></p><p><img width="829" height="292" src="./img/ics1633_target1.gif" alt="the picture is described in the document text" ></p>
+	<p>Click <B>Next</B>. </p>
+  </li><li>
+	<p><B>Selecting an Interface in the Web Services page</B></p>
+	<p>In the Web Services page, specify the following information for your target connection:</p>
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select a desired Oracle E-Business Suite application family that you want to use for your integration, for example, Order Management Suite. </p>
+	<p>The available Oracle E-Business Suite application families from the drop-down list are based on the Oracle E-Business Suite instance you are connecting. </p>
+  </li><li>
+	<p><B>Product:</B> Select a desired product name available from the selected product family, for example, Order Management. </p>
+	<p>Once you select a desired product family and a product, a list of the supported interfaces including Oracle seeded and custom interfaces contained in the selected product is populated for further selection.</p>
+  </li><li>
+	<p><B>API:</B> Select a desired interface through either of the following ways:</p>
+  <P><p><STRONG><span>Note: </span></STRONG>You can define custom PL/SQL APIs and concurrent programs to meet your needs if required, annotate the custom integration interfaces, and then upload them to the Integration Repository. You can deploy the custom PL/SQL APIs and concurrent programs as REST services from Oracle E-Business Suite Integrated SOA Gateway. These REST services will then be available to use for integrations in Oracle Integration Cloud. </p>
+	<p>For information on creating custom PL/SQL APIs and concurrent programs, see Creating Custom Integration Interfaces, Creating and Using Custom Integration Interfaces chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Developer's Guide</I>.</p>
+	<p>For information on uploading custom interfaces to Oracle Integration Repository resided in Oracle E-Business Suite Integrated SOA Gateway, see Generating and Uploading iLDT Files, and Uploading ILDT Files to Integration Repository, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p></P>
+  <ul>
+  <li>
+	<p>Select a desired interface name from the drop-down list. For example, select the "Sales Order Services" PL/SQL API.</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Web Services Page to Select a PL/SQL API</B></p><p><img width="827" height="622" src="./img/ics1633_target2.gif" alt="the picture is described in the document text" ></p>
+	<p>The corresponding interface information is automatically populated. This includes the interface internal name (OE_INBOUND_INT) and description.</p>
+  <P><p><STRONG><span>Note: </span></STRONG>Other than selecting a PL/SQL API, you can select a desired concurrent program in your integration. For example, select a concurrent program "Claim Settlement Fetcher Program" from the Marketing Suite product family and the Trade Management product.</p>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Web Services Page to Select a Concurrent Program</B></p><p><img width="827" height="622" src="./img/ics1633_cpintegr.gif" alt="the picture is described in the document text" ></p></P>
+  </li><li>
+	<p>Use the <B>Filter by name</B> field to find your desired interface. For example, enter "sales" in this field to find the interface names starting with "sales".</p></li></ul>
+
+  <P><p><STRONG><span>Note: </span></STRONG>If one ore more methods contained in the selected interface are deployed as REST service operations, after you click <B>Next</B>, the Operations page appears. </p>
+	<p>If none of the methods within the selected interface is deployed as a REST service operation, then an error message is shown instead, indicating that the associated REST service is not available. You must deploy the selected interface as a REST service in Oracle E-Business Suite first.</p>
+	<p>After deploying the service, you need to log in to Oracle Integration Cloud and then locate the Oracle E-Business Suite connection you plan to use for integrations. From the <B>Actions</B> menu, click <B>Refresh Metadata</B>.  You can then use the newly-deployed REST service for integrations in Oracle Integration Cloud.</p>
+	<p><B>Error for a Not Available API</B></p><p><img width="827" height="622" src="./img/ics1633_error.gif" alt="the picture is described in the document text" ></p></P></li></ul>
+
+	<p>Click <B>Next</B>. </p>
+  </li><li>
+	<p><B>Configuring the Operations Page for the Selected Interface</B></p>
+	<p>In the Operations page, the selected interface internal name OE_INBOUND_INT is automatically populated.</p>
+	<p>Specify the following information for your target connection:</p>
+  <ul>
+  <li>
+	<p><B>Methods</B>: Choose a desired method name contained in the selected interface for this target connection. For example, select "PROCESS_ORDER". </p>
+  <P><p><STRONG><span>Note: </span></STRONG>The list of methods displayed for your selection corresponds to the "resource" element of the deployed interface's WADL description that you can view it through Oracle E-Business Suite Integrated SOA Gateway.</p></P>
+	<p><B>Configure Oracle E-Business Suite Adapter Endpoint - Operations Page</B></p><p><img width="828" height="492" src="./img/ics1633target4.gif" alt="the picture is described in the document text" ></p>
+  <p><ul>
+  <li>
+	<p>If you select a concurrent program in your integration, such as "Claim Settlement Fetcher Program" as shown below, you can select "Process" in the Operations page.</p>
+	<p><B>Concurrent Program Method Selected in the Operations Page</B></p><p><img width="829" height="626" src="./img/ics1633_cpintegr2.gif" alt="the picture is described in the document text" ></p></li></ul>
+</P></li></ul>
+
+	<p>Once the desired method is selected, its corresponding REST service status is displayed in the Service Status field. </p>
+  <ul>
+  <li>
+	<p><B>Ready to Use</B> </p>
+	<p>This indicates that the selected method is deployed as a REST service operation and it is ready to use in your integration. </p>
+  </li><li>
+	<p><B>Not Deployed</B></p>
+	<p>If the selected method is not deployed as a REST service operation, then "Not Deployed" is shown as the service status instead. A warning message also appears, indicating that you must deploy the method as a REST service operation first before using it in your integration. </p>
+	<p><B>Method with "Not Deployed" Service Status</B></p><p><img width="828" height="624" src="./img/ics1633_notdeployed.gif" alt="the picture is described in the document text" ></p>
+	<p>To deploy the selected method as a REST service operation, you need to log in to Oracle E-Business Suite as a user who has the Integration Administrator role. Select the <B>Integrated SOA Gateway</B> responsibility and the <B>Integration Repository</B> link from the navigation menu. Search and locate the selected interface from the Integration Repository, and then deploy it as a REST service. Only when the REST service is available in Oracle E-Business Suite, you can proceed and complete the process of adding Oracle E-Business Suite as an invoke (target) connection. </p>
+	<p>For information on deploying REST services, see Deploying REST Web Services, Administering Native Integration Interfaces and Services chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>. </p></li></ul>
+
+	<p>Click <B>Next</B>. </p>
+  </li><li>
+	<p>The Summary page appears with the selected interface information. The Oracle E-Business Suite Adapter Target Endpoint configuration is successfully created.</p>
+	<p>Click <B>Done</B>. </p>
+	<p>The connection for Oracle E-Businses Suite now appears in the Invoke (Target) area on the canvas.</p></li></ol>
+
+	<p>Once the Oracle E-Businses Suite invoke (target) connection is created, you can add an application adapter as a trigger (source) connection to complete your integration creation. For information on adding a trigger (source) connection, see Developing Integrations with Oracle Integration Cloud, <I>Using Integrations in Oracle Integration Cloud</I>.</p>
+	<p>For information about error messages if occur while creating an integration with the Oracle E-Business Suite Adapter as an invoke (target) connection in Oracle Integration Cloud, see <A HREF="T657359T660844.htm#ics_Adesign">Error Messages While Creating an Integration with the Oracle E-Business Suite Adapter as an Invoke (Target) Connection</A>.</p>
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

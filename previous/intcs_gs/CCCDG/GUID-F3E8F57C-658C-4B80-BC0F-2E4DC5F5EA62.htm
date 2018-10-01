@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Design-Time Components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The design-time components consist of the User Interface Module and the Plugin Module. These components create the wizard. The runtime components use the data accepted by the wizard to connect to the target application and perform selected operations or request/response tasks." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5FDE4D65-C82B-4F12-9E3F-DB2F5090FF5D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F3E8F57C-658C-4B80-BC0F-2E4DC5F5EA62"></a> <span id="PAGE" style="display:none;">17/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-F3E8F57C-658C-4B80-BC0F-2E4DC5F5EA62" class="sect1">Design-Time Components</h1>
+<div>
+<p>The design-time components consist of the User Interface Module and the Plugin Module. These components create the wizard. The runtime components use the data accepted by the wizard to connect to the target application and perform selected operations or request/response tasks.</p>
+<p>You build the design-time components using the Adapter SDK APIs listed in the following table.</p>
+<div class="tblformalwide" id="GUID-F3E8F57C-658C-4B80-BC0F-2E4DC5F5EA62__GUID-19F0D71D-9361-4B81-98CC-FAED617AE04C">
+<table class="cellalignment294" summary="This table shows the relationships between wizard steps, User Interface Module actions, and Plugin Module actions.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d5009e32">
+<p>Wizard Step</p>
+</td>
+<td class="cellalignment291" headers="d5009e32">
+<p>User Interface Module Actions</p>
+</td>
+<td class="cellalignment291" headers="d5009e32">
+<p>Plugin Module Actions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5009e48">
+<p>1. Wizard Initialization</p>
+</td>
+<td class="cellalignment291" headers="d5009e48">
+<p>Wizard is initialized based on values defined in <code>extension.xml</code> or <code>cloud-adapter.xml</code>. Examples:</p>
+<p>JDeveloper &mdash; <code>extension.xml</code>, param: <code>implementation-class</code></p>
+<p>ICS or SB &mdash; <code>cloud-adapter.xml</code>, param: <code>UIProviderClass</code></p>
+</td>
+<td class="cellalignment291" headers="d5009e48">
+<p>None</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5009e86">
+<p>2. Connection page</p>
+</td>
+<td class="cellalignment291" headers="d5009e86">
+<p>i) Create a new instance of the plugin.</p>
+<p>ii) Get <code>CloudConnection</code> interface from the plugin.</p>
+<p>iii) Request user input for connection properties (such as username, password, WSDL URL, and so on).</p>
+<p>iv) Invoke the <code>ping()</code> function on the <code>CloudConnection</code> interface (from the plugin).</p>
+<p>Note: You don&rsquo;t have to write a completely new connection page for each adapter. You can use <code>CloudConnectionPage</code> from the SDK, and page controls can be derived from the <code>cloud-adapter.xml</code> file.</p>
+</td>
+<td class="cellalignment291" headers="d5009e86">
+<p>i) Instantiate the plugin with information passed in from <code>AdapterPluginContext</code></p>
+<p>ii) Return an instance of the <code>CloudConnection</code> interface.</p>
+<p>iii) Facilitate invocation of the <code>ping()</code> function (using <code>Connection</code> interface).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5009e146">
+<p>3. Metadata browsing page</p>
+</td>
+<td class="cellalignment291" headers="d5009e146">
+<p>i) Get an instance of <code>CloudMetadataBrowser</code> from the plugin.</p>
+<p>ii) Invoke the <code>loadMetadata()</code> function on the <code>CloudMetadataBrowser</code> instance.</p>
+<p>iii) Display a dropdown of APIs from the <code>CloudMetadataBrowser</code> instance.</p>
+<p>iv) Display a list of operations from the <code>CloudMetadataBrowser</code> instance based on the selected API.</p>
+<p>v) Display a list of business objects from the <code>CloudMetadataBrowser</code> instance based on the selected operation.</p>
+<p>vi) Facilitate the setting of header and processing options based on the selected operation from the <code>CloudMetadataBrowser</code>.</p>
+</td>
+<td class="cellalignment291" headers="d5009e146">
+<p>i) Return an instance of <code>CloudMetadataBrowser</code>.</p>
+<p>ii) When the <code>load()</code> function is invoked, any custom metadata parsers should process the necessary artifacts. In the simplest case, metadata is parsed from source artifacts such as WSDL files. The plugin framework already has parsers for these artifacts.</p>
+<p>iii) Store all objects (operations, objects, faults, and so on) in the <code>CloudApplicationModel</code>, which is wrapped by the <code>CloudMetadataBrowser</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5009e209">
+<p>4. Query support (optional)</p>
+</td>
+<td class="cellalignment291" headers="d5009e209">
+<p>i) If the user selected a Query operation in #3, provide a UI for user to enter a query string, plus contextual help.</p>
+<p>ii) Provide a test button for the wizard user to test a query.</p>
+<p>ii) Provide a UI for the wizard user to enter values for bind variables.</p>
+</td>
+<td class="cellalignment291" headers="d5009e209">
+<p>i) Provide an instance of <code>QueryBuilderHelper</code> for contextual help.</p>
+<p>ii) Provide support for parsing bind variables. A default implementation of <code>QuerySupport</code>, which can be extended, provides basic support for this feature.</p>
+<p>iii) Provide support for testing queries.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d5009e241">
+<p>5. Artifact generation</p>
+</td>
+<td class="cellalignment291" headers="d5009e241">
+<p>i) Create an instance of the Transformation Model, which contains all selected objects and changes ("transformations") that need to take place during generation.</p>
+<p>ii) Create file system abstractions for where generated files need to be written.</p>
+<p>iii) Get an instance of <code>RuntimeMetadataGenerator</code> from the plugin.</p>
+<p>iv) Set the <code>TransformationModel</code> on the <code>RuntimeMetadataGenerator</code> instance and invoke the <code>generate()</code> method.</p>
+</td>
+<td class="cellalignment291" headers="d5009e241">
+<p>i) Return an instance of <code>RuntimeMetadataGenerator</code>.</p>
+<p>ii) Generate artifacts when the <code>generate()</code> function of <code>RuntimeMetadataGenerator</code> is invoked. There are built-in artifact generators for the integration WSDL and cloud application configuration (CAC) file. Any additional files can also be generated here if necessary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-5FDE4D65-C82B-4F12-9E3F-DB2F5090FF5D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

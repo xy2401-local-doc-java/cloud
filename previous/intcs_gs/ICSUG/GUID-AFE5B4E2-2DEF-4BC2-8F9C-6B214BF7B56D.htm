@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Downloading and Running the On-Premises Oracle Integration Cloud Service Installer</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You must download an execution agent installer from the Agent Groups page of Oracle Integration Cloud Service to your on-premises host and run the installer to install on-premises Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-28DED387-A06E-4C98-8E10-15F12038CA54.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-9DD848EC-294C-4AA5-B689-D7B66A733FF2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D"></a> <span id="PAGE" style="display:none;">91/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D" class="sect1">Downloading and Running the On-Premises Oracle Integration Cloud Service Installer</h1>
+<div>
+<p>You must download an execution agent installer from the Agent Groups page of Oracle Integration Cloud Service to your on-premises host and run the installer to install on-premises Oracle Integration Cloud Service.</p>
+<div class="section">
+<p class="subhead1">Restrictions</p>
+<div class="p">The File Adapter is <span class="italic">not</span> supported with on-premises Oracle Integration Cloud Service. When creating a connection, do not select this adapter in the Create Connection - Select Adapter dialog.
+<div class="infobox-note" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__GUID-55AD40FA-9591-4086-940F-74B5E473BF07">
+<p class="notep1">Note:</p>
+For Oracle CPQ Cloud Adapter to work, you must open up a port for external clients to call the services hosted on on-premises Oracle Integration Cloud Service.</div>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">System Requirements</p>
+<p>Ensure that you satisfy the following prerequisites on your on-premises host before installing on-premises Oracle Integration Cloud Service:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Operating system: Oracle Enterprise Linux 6 UC4 or above</p>
+</li>
+<li>
+<p>CPUs: 2</p>
+</li>
+<li>
+<p>Physical memory: 8 GB</p>
+</li>
+<li>
+<p>Hard disk space: 100 GB</p>
+</li>
+<li>
+<div class="p">Database:
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Database (XE or Standard). If you select this database option during installation, you are prompted to provide specific Oracle Database details, which are described below.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Hostname on which to perform the installation must be entered in the <code>/etc/hosts</code> file. Without this entry, you receive an error during installation.</p>
+</li>
+<li>
+<p>User performing the installation must be a member of the <code>sudoers</code> file. If the user is not, the chef client portion of the on-premises Oracle Integration Cloud Service installation fails.</p>
+</li>
+<li>
+<p>The chef client must <span class="italic">not</span> already be installed on the host and must <span class="italic">not</span> be manually installed.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__GUID-F1130285-D4D4-467C-8D33-2BEFAD30F3A0">
+<p class="notep1">Note:</p>
+If you previously installed and used on-premises Oracle Integration Cloud Service, you must export your integrations and lookups and import them into Oracle Integration Cloud Service 16.2.1 after completing installation.</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Downloading and Running the On-Premises Oracle Integration Cloud Service Installer</p>
+<div class="p">This is the first upgrade to on-premises Oracle Integration Cloud Service since release 16.1.1. If you previously installed on-premises Oracle Integration Cloud Service, you must perform the following steps:
+<ul style="list-style-type: disc;">
+<li>
+<p>Stop the Oracle WebLogic Server before installing the 16.2.1 execution agent from the <code>agenthome/userprojects/domains/agent-domain/bin</code> directory.</p>
+<pre dir="ltr">
+./stopWebLogic.sh
+</pre></li>
+<li>
+<p>Specify a new directory location during installation. The 16.2.1 installation must be done in a new location and <span class="italic">not</span> over the previous installation.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">To download and run the on-premises Oracle Integration Cloud Service installer.
+<div class="infobox-note" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__GUID-07216F99-0569-48F2-A00B-E655220D9225">
+<p class="notep1">Note:</p>
+The user installing the execution agent must be configured for <code>sudo</code> access to run the <code>rpm</code> command.</div>
+<ol>
+<li>
+<p>Log in to the instance of Oracle Integration Cloud Service to which you are subscribed.</p>
+</li>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Agents</span>.</p>
+<p>The Agent Groups page is displayed.</p>
+</li>
+<li>
+<p>Click <span class="bold">Download Agent Installer</span>.</p>
+</li>
+<li>
+<p>Select <span class="bold">Execution Agent</span>. The execution agent is used for on-premise installations of Oracle Integration Cloud Service.</p>
+</li>
+<li>
+<p>Select <span class="bold">Save File</span> when prompted to save the ZIP file to a directory location on your on-premises host.</p>
+</li>
+<li>
+<p>Unzip the ZIP file. The <code>ics-executionagent-installer.bsx</code> execution agent file is included in the ZIP file.</p>
+</li>
+<li>
+<div class="p">Change the file permissions of the <code>ics-executionagent-installer.bsx</code> file to be executable.
+<pre dir="ltr">
+chmod 755 ics-executionagent-installer.bsx
+</pre></div>
+</li>
+<li>
+<div class="p">Execute the installer.
+<pre dir="ltr">
+./ics-executionagent-installer.bsx
+</pre></div>
+<p>This starts the authentication part of the installation. During authentication, you are prompted to specify configuration details.</p>
+</li>
+<li>
+<div class="p">Enter the following authentication information when prompted:
+<div class="tblformal" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__GUID-558656AE-26BC-4083-A368-AF7569EEF585">
+<table class="cellalignment926" summary="Authentication prompt descriptions and actions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d43297e179">When Prompted With the Following...</th>
+<th class="cellalignment927" id="d43297e181">Enter...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d43297e185" headers="d43297e179">
+<p><span class="bold">Enter your ICS subscription URL for authentication</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e185 d43297e181">Enter the URL for the Oracle Integration Cloud Service instance to which you are subscribed. For example:
+<pre dir="ltr">
+https://podserver.us.oracle.com:7002/ics
+</pre>
+<p>Ensure that you specify the correct URL. During installation, files are downloaded from this host instance. Specifying an incorrect URL causes authentication to fail.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e196" headers="d43297e179">
+<p><span class="bold">Enter ICS subscription Username</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e196 d43297e181">
+<p>Enter the user name for the Oracle Integration Cloud Service instance to which you are subscribed. For example:</p>
+<pre dir="ltr">
+weblogic
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e206" headers="d43297e179">
+<p><span class="bold">Enter ICS subscription Password</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e206 d43297e181">
+<p>Enter the password for the user name of the Oracle Integration Cloud Service instance to which you are subscribed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e214" headers="d43297e179">
+<p><span class="bold">Enter HTTPS Proxy Server Host Name</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e214 d43297e181">
+<p>If you have a proxy server configured in your local environment, enter the server URL. For example:</p>
+<pre dir="ltr">
+www-myproxy.us.mycompany.com
+</pre>
+<p>If you do not have a proxy server, press <span class="bold">Enter</span> without entering a value to bypass this step.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e229" headers="d43297e179">
+<p><span class="bold">Enter HTTPS Proxy Server Port Number</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e229 d43297e181">
+<p>If you have a proxy server configured in your host environment, enter the port value. For example:</p>
+<pre dir="ltr">
+80
+</pre>
+<p>If you do not have a proxy server, press <span class="bold">Enter</span> without entering a value to bypass this step.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<div class="p">If the information you enter is correct, the following message is displayed.
+<pre dir="ltr">
+Authentication Successful. Starting ICS On Premise Install!!
+</pre></div>
+<p>If authentication was not successful, review the log file in the directory path shown on-screen to identify which information was incorrect.</p>
+</li>
+<li>
+<p>Enter the following installation information when prompted:</p>
+<div class="tblformal" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__INSTALLATIONPROMPTDESCRIPTIONSANDAC-69BB778D">
+<table class="cellalignment926" summary="Installation prompt descriptions and actions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d43297e261">When Prompted With the Following...</th>
+<th class="cellalignment927" id="d43297e263">Enter...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d43297e267" headers="d43297e261">
+<p><span class="bold">What Do You Want to call this Execution Agent?</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e267 d43297e263">
+<p>Enter a name that you want to use for the agent ID.</p>
+<p>Ensure that you specify the correct value. Specifying an incorrect value causes installation to fail.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e277" headers="d43297e261">
+<p><span class="bold">Press enter to accept the default path or enter a new install path</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e277 d43297e263">
+<p>Accept the default path or enter a different directory location in which to install the on-premises Oracle Integration Cloud Server. If you enter a different directory path, it must already exist.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e285" headers="d43297e261">
+<p><span class="bold">Enter the user name (cannot be root) to be used for install</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e285 d43297e263">
+<p>Enter the UNIX user name to use for performing this installation. For example:</p>
+<pre dir="ltr">
+builder
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e295" headers="d43297e261">
+<p><span class="bold">Enter the group (groups &lt;user&gt; will list the groups of a user) of the user to be used for install</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e295 d43297e263">
+<p>Enter the group of the user who is performing this installation. For example:</p>
+<pre dir="ltr">
+dba
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e305" headers="d43297e261">
+<p><span class="bold">Press enter to accept the default value or enter a new port number</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e305 d43297e263">Press <span class="bold">Enter</span> to accept the default non-SSL port value. Do <span class="italic">not</span> enter a new value. By default, the following message is displayed.
+<pre dir="ltr">
+Default HTTP Port for ICS Execution Agent: 7001
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e320" headers="d43297e261">
+<p><span class="bold">Press enter to accept the default value or enter a new port number</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e320 d43297e263">Press <span class="bold">Enter</span> to accept the default SSL port value. Do <span class="italic">not</span> enter a new value. By default, the following message is displayed.
+<pre dir="ltr">
+Default HTTPS Port for ICS Execution Agent: 7002
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d43297e335" headers="d43297e261">
+<p><span class="bold">Enter the password for the default user weblogic</span></p>
+</td>
+<td class="cellalignment927" headers="d43297e335 d43297e263">
+<p>Enter the password for the weblogic user. After installation, you use this user name and password combination to log in to Integration Cloud Service for the first time to create additional users and assign roles to those users under the <span class="bold">Users</span> tab.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></li>
+<li>
+<div class="p">Provide the following information for the Oracle Database:
+<div class="tblformal" id="GUID-AFE5B4E2-2DEF-4BC2-8F9C-6B214BF7B56D__GUID-C570C7BE-C1AA-4B82-920C-9914D98FB9C0">
+<table class="cellalignment926" summary="Oracle Database prompt descriptions and actions.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d43297e357">When Prompted With the Following...</th>
+<th class="cellalignment929" id="d43297e359">Enter...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d43297e363" headers="d43297e357">
+<p><span class="bold">Database host name</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e363 d43297e359">
+<p>Enter the host name for the server on which the Oracle Database is installed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d43297e371" headers="d43297e357">
+<p><span class="bold">Database Port</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e371 d43297e359">
+<p>Enter the port number of the host.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d43297e379" headers="d43297e357">
+<p><span class="bold">Database user name with the SYSDBA role</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e379 d43297e359">
+<p>Enter the database user name. This user is used by the Repository Creation Utility (RCU) to create the necessary schemas.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d43297e387" headers="d43297e357">
+<p><span class="bold">Database user password</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e387 d43297e359">
+<p>Enter the password for the database user name.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d43297e395" headers="d43297e357">
+<p><span class="bold">Password for on-premises Integration Cloud Service schemas</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e395 d43297e359">
+<p>Enter the password for the on-premises Oracle Integration Cloud Service schemas created by the RCU.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d43297e403" headers="d43297e357">
+<p><span class="bold">Database SID/service name</span></p>
+</td>
+<td class="cellalignment929" headers="d43297e403 d43297e359">
+<p>Enter the database system identifier (SID)/service name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<p>The installer connects to the Oracle Integration Cloud Server instance you specified during the authentication part of installation to verify installation details, identify heartbeat information, download files, and install components, including Oracle WebLogic Server and Oracle Integration Cloud Service. Messages are displayed on-screen.</p>
+<p>If installation is not successful, review the log file in the directory path shown on-screen to identify the issue.</p>
+<div class="p">If installation completes successfully, the following message is displayed. The installation log file location is also displayed.
+<pre dir="ltr">
+Chef Client finished
+</pre></div>
+<p>The on-premises installation submits a heartbeat message to the cloud version of Oracle Integration Cloud Service every five minutes to indicate that the on-premises installation is running.</p>
+</li>
+<li>
+<p>Log in to on-premises Oracle Integration Cloud Service with the Oracle Integration Cloud Service subscription username and password you entered in Step 10 of the installation process.</p>
+<p>Note that there is a <span class="bold">Users</span> tab on the home page for creating users and assigning roles to these users. For more information, see <a href="GUID-4C943C27-7EA2-4ABD-A015-CF19C544B2D5.htm" title="On-premises Oracle Integration Cloud Service provides a Users page on which you can create users and assign roles to these users. You can also update the roles, password, and other information assigned to existing users. The Users page is only available with on-premises Oracle Integration Cloud Service.">Creating Users and Assigning Roles</a>. Unlike the cloud version of Oracle Integration Cloud Service, there is no <span class="bold">Agents</span> box for managing agents on the home page. Those management tasks are not required in on-premises Oracle Integration Cloud Service.</p>
+</li>
+<li>
+<p>Log in to the cloud version of the Oracle Integration Cloud Service that you specified during the authentication part of installation. This is the host from which you downloaded the execution agent at the beginning of these instructions.</p>
+</li>
+<li>
+<p>Click <span class="bold">Agents</span>.</p>
+</li>
+<li>
+<p>Note that <span class="bold">Execution Agent Group</span> is displayed. The number of agents is <span class="bold">1</span> to identify the on-premises installation of Oracle Integration Cloud Service.<br />
+<img width="844" height="111" src="img/GUID-39C8D8DB-41FB-4272-895C-AE826EDB6F77-default.png" alt="Description of GUID-39C8D8DB-41FB-4272-895C-AE826EDB6F77-default.png follows" title="Description of GUID-39C8D8DB-41FB-4272-895C-AE826EDB6F77-default.png follows" /><br />
+<a href="img_text/GUID-39C8D8DB-41FB-4272-895C-AE826EDB6F77-default.htm">Description of the illustration GUID-39C8D8DB-41FB-4272-895C-AE826EDB6F77-default.png</a><br /></p>
+</li>
+<li>
+<p>Click the number above <span class="bold">Number of Agents</span> to display the agent ID that you specified during installation. This is the agent ID of your on-premises installation.</p>
+</li>
+<li>
+<p>Click <span class="bold">Monitor</span>, then click <span class="bold">Agents</span> to also see details about agent health based on the heartbeat.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Troubleshooting Execution Agent Installation</p>
+<p>If the following error is displayed when reading any binary files or unzipping files during execution agent installation, you must remove the <code>ics_generic.zip</code> file from the <code>ICSOPInstall\tmp</code> directory and restart the installation.</p>
+<pre dir="ltr">
+Error executing action `run` on resource 'execute[Unzipping /&lt;PATH&gt;/ics_generic.zip to: /&lt;PATH&gt;/ICSOPInstall/tmp]' 
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-28DED387-A06E-4C98-8E10-15F12038CA54.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-9DD848EC-294C-4AA5-B689-D7B66A733FF2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating packages</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="In Oracle Monetization Cloud, you use packages to offer multiple services to your customers. For example, you could create an Internet package that includes the Wifi, email, and fax services." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-bundles1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-package-lists1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-19C29957-A507-4279-B7AB-1BFDE6C14176"></a> <span id="PAGE" style="display:none;">27/67</span> <!-- End Header -->
+<a id="BCSUG833"></a><a id="BCSUG834"></a><a id="BCSUG447"></a>
+<h1 id="BCSUG-GUID-19C29957-A507-4279-B7AB-1BFDE6C14176" class="sect1"><span class="enumeration_chapter">22</span> Creating packages</h1>
+<div>
+<p>In Oracle Monetization Cloud, you use packages to offer multiple services to your customers. For example, you could create an Internet package that includes the Wifi, email, and fax services.</p>
+<p>For background information, see <a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-packages1.htm#GUID-9548249D-1359-4C40-9512-4FB72F3EE0E5">Creating packages</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-1CC68E6E-048D-4C8E-A8B2-A43F001D2AB7">Setting credit limits in a package</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-659E64D5-D2A0-4B8B-94DC-77564FD32671">Defining the order in which balances are consumed</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-73AB40FD-A21B-41B5-BCD9-CA539C901E88">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG448"></a>
+<div class="props_rev_3"><a id="GUID-9548249D-1359-4C40-9512-4FB72F3EE0E5"></a>
+<h2 id="BCSUG-GUID-9548249D-1359-4C40-9512-4FB72F3EE0E5" class="sect2">Creating packages</h2>
+<div>
+<div class="section">
+<p>A package consists of one or more bundles. You can include bundles that are associated with different services in a single package.</p>
+<p>Use Offer Design to create packages. From the Pricing navigation section, select <span class="bold">Create Package</span>. When you create a package, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Specify general information for the package:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Name and description.</p>
+</li>
+<li>
+<p>Whether to create a bill for the package when it's purchased. Usually, you bill a customer at the end of the customer's billing cycle. If <span class="bold">Bill on Purchase</span> is enabled, when a customer purchases the package, a bill is generated immediately for the purchase fees associated with the package.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Choose which terms to associate with the package. These terms apply to all required bundles in the package.</span></li>
+<li class="stepexpand"><span>Add services to the package.</span></li>
+<li class="stepexpand"><span>Add bundles to each service and specify which ones are optional. Optional bundles can be purchased with the package or at a later time. They are governed by the preset terms selected for them instead of the package terms.</span>
+<div>
+<p>Only one bundle can be added to <span class="bold">Account</span>.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Optionally, add member services to each service. This creates a service group.</span>
+<div>A service group consists of one subscription service and one or more member services. For example, if the subscription service is Mobile, the member services could be Voice and SMS.</div>
+</li>
+<li class="stepexpand"><span>Add balance groups.</span>
+<div>
+<p>By default, balances for all services are tracked in the account balance group. To track balances for specific services in the package, you associate the services with their own balance groups.</p>
+<p>For each balance group, you can set the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Credit limits and thresholds. See <a href="creating-packages1.htm#GUID-1CC68E6E-048D-4C8E-A8B2-A43F001D2AB7">Setting credit limits in a package</a>.</p>
+</li>
+<li>
+<p>The order in which to consume balances in a balance group. See <a href="creating-packages1.htm#GUID-659E64D5-D2A0-4B8B-94DC-77564FD32671">Defining the order in which balances are consumed</a>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-9548249D-1359-4C40-9512-4FB72F3EE0E5__GUID-22AA2642-6D13-4A40-9B9F-A27D2AFE281D">
+<p class="notep1">Note:</p>
+After it's created, a balance group continues to exist even when there are no services associated with it. You must explicitly delete unwanted balance groups.</div>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>To make a package available to your customers, you must add it to a package list. See <a href="creating-package-lists1.htm#GUID-912C17D9-0875-4DFB-B0FC-1E387B6EB2D8" title="This document describes how to create package lists in Oracle Monetization Cloud.">Creating package lists</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG451"></a>
+<div class="props_rev_3"><a id="GUID-1CC68E6E-048D-4C8E-A8B2-A43F001D2AB7"></a>
+<h2 id="BCSUG-GUID-1CC68E6E-048D-4C8E-A8B2-A43F001D2AB7" class="sect2">Setting credit limits in a package</h2>
+<div>
+<p>You can control how much a customer can owe by setting credit limits for each balance element in a balance group. For example, you can specify that:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Customers can't have a balance of more than $100 for a service.</p>
+</li>
+<li>
+<p>Customers can't download more than 200 movies in a month.</p>
+</li>
+</ul>
+<p>You can notify customers when they're getting close to their credit limit by specifying a usage threshold that, when reached, triggers a notification. The threshold options are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Fixed Threshold:</span> The value or values at which you want notifications to be sent.</p>
+<p>For example, if you want to notify the customer when 30 minutes of usage remains and again when 5 minutes of usage remains, enter 30 and 5.</p>
+</li>
+<li>
+<p><span class="bold">Percentage Threshold:</span> The percentage of the balance element used when the customer should be notified of the usage balance.</p>
+<p>For example, if you want to notify the customer when 90% of the balance element is used, select 90%.</p>
+</li>
+<li>
+<p><span class="bold">Credit Floor:</span> When you use a percentage threshold for a non-currency element, you must enter a credit floor. For example, suppose you grant 100 minutes and set the credit limit to 0. When the credit limit is reached, the customer has no minutes remaining and cannot use the service. To notify the customer when only 10 minutes remain, set the percentage credit threshold and the credit floor as follows:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Set the credit floor to -100. This number indicates none of the balance has been used.</p>
+</li>
+<li>
+<p>Set the credit threshold to 90%. The threshold is reached at 90% of -100 minutes (that is, when the customer has 10 minutes left).</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG661"></a>
+<div class="props_rev_3"><a id="GUID-659E64D5-D2A0-4B8B-94DC-77564FD32671"></a>
+<h2 id="BCSUG-GUID-659E64D5-D2A0-4B8B-94DC-77564FD32671" class="sect2">Defining the order in which balances are consumed</h2>
+<div>
+<p>A balance group can contain multiple balance elements of the same type. For example, a customer might receive two grants of minutes. In that case, there are two balances of minutes.</p>
+<p>You can assign a consumption rule to each balance. Consumption rules specify the order in which balance elements are consumed. The rules are based on the start time and expiration time of the balance elements.</p>
+<p>For example, a customer might have two balances of minutes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>50 Minutes that are valid February 1 to March 30</p>
+</li>
+<li>
+<p>100 Minutes that are valid March 1 to April 30</p>
+</li>
+</ul>
+<p>In this case, you might specify that the minutes that expire first (March 30) should be consumed before the minutes that expire on April 30.</p>
+<p>Select one of the following consumption rules for the balance element.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">EST</span>: Earliest start time</p>
+</li>
+<li>
+<p><span class="bold">LST</span>: Latest start time</p>
+</li>
+<li>
+<p><span class="bold">EET</span>: Earliest expiration time</p>
+</li>
+<li>
+<p><span class="bold">LET</span>: Latest expiration time</p>
+</li>
+<li>
+<p><span class="bold">ESTLET</span>: Earliest start time and latest expiration time</p>
+</li>
+<li>
+<p><span class="bold">ESTEET</span>: Earliest start time and earliest expiration time</p>
+</li>
+<li>
+<p><span class="bold">LSTEET</span>: Latest start time and earliest expiration time</p>
+</li>
+<li>
+<p><span class="bold">LSTLET</span>: Latest start time and latest expiration time</p>
+</li>
+<li>
+<p><span class="bold">EETEST</span>: Earliest expiration time and earliest start time</p>
+</li>
+<li>
+<p><span class="bold">EETLST</span>: Earliest expiration time and latest start time</p>
+</li>
+<li>
+<p><span class="bold">LETEST</span>: Latest expiration time and earliest start time</p>
+</li>
+<li>
+<p><span class="bold">LETLST</span>: Latest expiration time and latest start time</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG453"></a>
+<div class="props_rev_3"><a id="GUID-45318B56-F539-424C-AE0E-D5BFFF2B37FB"></a>
+<h2 id="BCSUG-GUID-45318B56-F539-424C-AE0E-D5BFFF2B37FB" class="sect2">Defining package transition rules</h2>
+<div>
+<p>You can specify which packages a customer can purchase as an upgrade or downgrade.</p>
+<p>To define package transition rules, select <span class="bold">Transitions</span> and add packages.</p>
+<p>Package transition rules have the following properties:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Transition Type:</span></p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Upgrade</span>: Upgrade to a package that's typically more expensive and has more features.</p>
+</li>
+<li>
+<p><span class="bold">Downgrade</span>: Downgrade to a package that's typically less expensive and has fewer features.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Validity Period:</span> The start and end dates when the transition rule is in effect.</p>
+</li>
+<li>
+<p><span class="bold">Waive Fees:</span> You can specify to waive purchase and cancellation fees when the transition occurs.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG454"></a>
+<div class="sect2"><a id="GUID-B5D5F078-6B09-48CD-8FBC-858339A4CC54"></a>
+<h2 id="BCSUG-GUID-B5D5F078-6B09-48CD-8FBC-858339A4CC54" class="sect2">Defining generation change rules</h2>
+<div>
+<p>Generation change rules allow transitions between packages for different generations of wireless technology.</p>
+<p>To create package generation change rules, select <span class="bold">Generation Change</span> and add packages.</p>
+<p>Generation change rules have the following properties:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Validity Period:</span> The start and end dates when the transition rule is in effect.</p>
+</li>
+<li>
+<p><span class="bold">Waive Fees:</span> You can specify to waive purchase and cancellation fees when the transition occurs.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG455"></a>
+<div class="sect2"><a id="GUID-713C2AC8-9194-432D-A98F-7D4C133E8009"></a>
+<h2 id="BCSUG-GUID-713C2AC8-9194-432D-A98F-7D4C133E8009" class="sect2">Restricting discounts in packages</h2>
+<div>
+<p>Discount offer restrictions specify the discount offers that can't be used with the package.</p>
+<p>To exclude discount offers from a package, select <span class="bold">Discount Restrictions</span> and add discount offers. If you add a bundle that includes a restricted discount, the package won't validate.</p>
+</div>
+</div>
+<a id="BCSUG662"></a>
+<div class="props_rev_3"><a id="GUID-73AB40FD-A21B-41B5-BCD9-CA539C901E88"></a>
+<h2 id="BCSUG-GUID-73AB40FD-A21B-41B5-BCD9-CA539C901E88" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-package-lists1.htm#GUID-912C17D9-0875-4DFB-B0FC-1E387B6EB2D8" title="This document describes how to create package lists in Oracle Monetization Cloud.">Creating package lists</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-D90FC10C-D984-4318-992C-E2529084E201" title="Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles.">Creating discount offers</a></p>
+</li>
+<li>
+<p><a href="creating-subscription-terms1.htm#GUID-6491E10D-2723-4097-A5D0-3E37219AD346" title="Create subscription terms to define the commitment periods and options for canceling and renewing the services you offer. Use Oracle Monetization Cloud Offer Design to create terms and associate them with packages.">Creating subscription terms</a></p>
+</li>
+<li>
+<p><a href="creating-bundles1.htm#GUID-3838CAC0-56BB-42A4-BA5F-FE69B44CE895" title="In Oracle Monetization Cloud, you use bundles to group offers that you want to sell together. After you create bundles, you add them to your packages.">Creating bundles</a></p>
+</li>
+<li>
+<p><a href="pricing-scenarios1.htm#GUID-E3143009-C6D6-42B8-865D-E7A46B39E13F" title="This document describes how to configure common pricing scenarios in Oracle Monetization Cloud.">Pricing scenarios</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-bundles1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-package-lists1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

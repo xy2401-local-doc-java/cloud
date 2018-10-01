@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Deploying MyCloudApplication</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The MyCloudAdapter is an adapter for MyCloudApplication, so before you can use MyCloudAdapter, MyCloudApplication must be deployed." />
+<meta name="dcterms.created" content="2016-04-01T12:06:20Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Adapter SDK Installation Guide" />
+<meta name="dcterms.identifier" content="E68714-01" />
+<meta name="dcterms.isVersionOf" content="CCCIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-ABB7CA2B-586A-48D0-8181-342F06694C05.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7DE9B662-6A9A-43E8-A0B2-137EF66DCD38.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6A34F616-14D7-4A18-84C3-C0D2D4415F0F"></a> <span id="PAGE" style="display:none;">10/13</span> <!-- End Header -->
+<h1 id="CCCIG-GUID-6A34F616-14D7-4A18-84C3-C0D2D4415F0F" class="sect1">Deploying MyCloudApplication</h1>
+<div>
+<p>The MyCloudAdapter is an adapter for MyCloudApplication, so before you can use MyCloudAdapter, MyCloudApplication must be deployed.</p>
+<ol>
+<li class="stepexpand"><span>Go to the WebLogic Administration Console:</span>
+<div><code>http://<span class="variable">hostname</span>:<span class="variable">port</span>/console</code></div>
+</li>
+<li class="stepexpand"><span>Under Domain Structure, select <span class="bold">Deployments</span>.</span>
+<div><img width="258" height="373" src="img/GUID-C74D614D-2DEE-4ED6-9224-0C0EF51EC8EF-default.png" alt="media/image14.png" title="media/image14.png" /><br />
+<a href="img_text/GUID-9ACEA1F1-31D9-4842-B813-ADC640296950.htm">Description of the illustration GUID-C74D614D-2DEE-4ED6-9224-0C0EF51EC8EF-default.png</a></div>
+</li>
+<li class="stepexpand"><span>On the Summary of Deployments page, click <span class="bold">Install</span>.</span>
+<div><img width="451" height="325" src="img/GUID-3D9FDE2B-C25C-420D-AD1B-9EA356F21253-default.png" alt="media/image15.png" title="media/image15.png" /><br />
+<a href="img_text/GUID-94F4D98E-6AA3-48B6-84FC-7334CFB873B5.htm">Description of the illustration GUID-3D9FDE2B-C25C-420D-AD1B-9EA356F21253-default.png</a></div>
+</li>
+<li class="stepexpand"><span>In the Install Application Assistant, click <span class="bold">upload your file(s)</span>.</span>
+<div><img width="861" height="289" src="img/GUID-55560520-B49E-482D-9048-3E89BE4A4D3A-default.png" alt="media/image16.png" title="media/image16.png" /><br />
+<a href="img_text/GUID-3453D574-4522-45EC-9FD2-FA56A093F393.htm">Description of the illustration GUID-55560520-B49E-482D-9048-3E89BE4A4D3A-default.png</a></div>
+</li>
+<li class="stepexpand"><span>For Deployment Archive, click <span class="bold">Browse</span> and select <code>MyCloudApplication.war</code>.</span>
+<div><img width="772" height="528" src="img/GUID-1FF45345-A48F-4561-85F8-814549103FC1-default.png" alt="media/image17.png" title="media/image17.png" /><br />
+<a href="img_text/GUID-950CC3BD-04DE-4128-9F58-95BAF48B3F70.htm">Description of the illustration GUID-1FF45345-A48F-4561-85F8-814549103FC1-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Make sure the WAR file is uploaded successfully.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Under Choose Targeting Style, click <span class="bold">Install this deployment as an application</span>.</span>
+<div><img width="628" height="473" src="img/GUID-ECCAA079-3E53-468F-86FF-552DDD742122-default.png" alt="media/image18.png" title="media/image18.png" /><br />
+<a href="img_text/GUID-71A0725D-0C77-4762-8F11-2EE5E35EDD7C.htm">Description of the illustration GUID-ECCAA079-3E53-468F-86FF-552DDD742122-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>Use default values for the optional settings.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span>.</span>
+<div><img width="1187" height="332" src="img/GUID-EE1E8E55-C822-4BB5-AD95-2009C7DC51AC-default.png" alt="media/image19.png" title="media/image19.png" /><br />
+<a href="img_text/GUID-9A7742F0-9627-4462-8BDF-F9E07F3AC34D.htm">Description of the illustration GUID-EE1E8E55-C822-4BB5-AD95-2009C7DC51AC-default.png</a></div>
+</li>
+</ol>
+<div class="section">
+<p>After deployment, the WSDL file is located here:</p>
+<pre dir="ltr">
+http://<span class="variable">hostname</span>:<span class="variable">port</span>/MyCloudApplication/MyCloudAppService?WSDL
+</pre></div>
+<!-- class="section" -->
+<div class="section">Next, see <a href="GUID-7DE9B662-6A9A-43E8-A0B2-137EF66DCD38.htm" title="To make MyCloudAdapter available in the JDeveloper component palette, you must register it.">Registering MyCloudAdapter with Jdeveloper</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment65">
+<tr>
+<td class="cellalignment72">
+<table class="cellalignment70">
+<tr>
+<td class="cellalignment69"><a href="GUID-ABB7CA2B-586A-48D0-8181-342F06694C05.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment69"><a href="GUID-7DE9B662-6A9A-43E8-A0B2-137EF66DCD38.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment74">
+<table class="cellalignment68">
+<tr>
+<td class="cellalignment69"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment69"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment69"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

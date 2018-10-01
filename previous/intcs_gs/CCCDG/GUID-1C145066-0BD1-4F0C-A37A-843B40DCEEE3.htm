@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a cloud-adapter.xml File for a REST Cloud Adapter</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="To enable adapter registration, a REST-based adapter plugin MUST contain an XML file named cloud-adapter.xml in the META-INF folder of the plugin JAR file." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-6101E682-E91F-46D2-BBB7-43CD617764BA.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1C145066-0BD1-4F0C-A37A-843B40DCEEE3"></a> <span id="PAGE" style="display:none;">38/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-1C145066-0BD1-4F0C-A37A-843B40DCEEE3" class="sect1">Creating a cloud-adapter.xml File for a REST Cloud Adapter</h1>
+<div>
+<p>To enable adapter registration, a REST-based adapter plugin MUST contain an XML file named <code>cloud-adapter.xml</code> in the <code>META-INF</code> folder of the plugin JAR file.</p>
+<p>To create a project for a REST Cloud adapter, follow the steps in <a href="GUID-1718B773-3F38-43FC-BA9A-79B8C484626A.htm" title="Follow these steps to create a project for the Sample Cloud Adapter. These steps are the same for an outbound or inbound adapter.">Creating the Adapter Project</a>, then see <a href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm" title="To enable adapter registration, an adapter plugin MUST contain an XML file named cloud-adapter.xml in the META-INF folder of the plugin JAR file.">Creating a cloud-adapter.xml File for a Cloud Adapter</a>. However, note that the <code>cloud-adapter.xml</code> file for a REST adapter is slightly different. The main differences are in the <code>adapterFactory</code>, <code>UIProviderClass</code>, and <code>resourceBundle</code> values. Here is the <code>cloud-adapter.xml</code> file for the Sample REST Adapter:</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="windows-1252" ?&gt;
+&lt;tns:AdapterPluginConfig xmlns:tns="http://xmlns.oracle.com/adapters/cloud"&gt;
+     &lt;adapterPluginID&gt;RESTADAPTERPLUGINID&lt;/adapterPluginID&gt;
+     &lt;displayName&gt;${nls.plugin.displayName}&lt;/displayName&gt;
+     &lt;description&gt;${nls.plugin.description}&lt;/description&gt;
+     &lt;adapterFactory&gt;oracle.tip.tools.ide.adapters.cloud.rest.sample.plugin.SampleRestAdapterFactory&lt;/adapterFactory&gt;
+     &lt;messageExchangePatterns&gt;
+     &lt;messageExchangePattern&gt;REQUEST_RESPONSE&lt;/messageExchangePattern&gt;
+     &lt;/messageExchangePatterns&gt;
+     &lt;supportedSecurityPolicies&gt;
+          &lt;policy&gt;USERNAME_PASSWORD_TOKEN&lt;/policy&gt;
+          &lt;policy&gt;NONE&lt;/policy&gt;
+     &lt;/supportedSecurityPolicies&gt;
+     &lt;defaultSecurityPolicy&gt;USERNAME_PASSWORD_TOKEN&lt;/defaultSecurityPolicy&gt;
+     &lt;propertyDefinitions&gt;
+          &lt;propertyDefinition&gt;
+               &lt;propertyName&gt;connectionUrl&lt;/propertyName&gt;
+               &lt;propertyType&gt;URL&lt;/propertyType&gt;
+               &lt;propertyGroup&gt;CONNECTION_PROPS&lt;/propertyGroup&gt;
+               &lt;required&gt;true&lt;/required&gt;
+               &lt;persistent&gt;true&lt;/persistent&gt;
+               &lt;displayName&gt;${nls.plugin.connectionUrl}&lt;/displayName&gt;
+          &lt;/propertyDefinition&gt;
+     &lt;/propertyDefinitions&gt;
+     &lt;UIProviderClass&gt;oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard.SampleRestAdapterProvider&lt;/UIProviderClass&gt;
+     &lt;resourceBundle&gt;oracle.tip.tools.ide.adapters.cloud.rest.sample.l10n.SampleRestAdapterCloudBundle&lt;/resourceBundle&gt;
+     &lt;sdkVersion&gt;2.1.0&lt;/sdkVersion&gt;
+&lt;/tns:AdapterPluginConfig&gt;
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-6101E682-E91F-46D2-BBB7-43CD617764BA.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

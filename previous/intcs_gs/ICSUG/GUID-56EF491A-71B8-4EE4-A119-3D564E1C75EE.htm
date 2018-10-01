@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Creating Integration Cloud Services</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You follow a very simple workflow to develop integrations in Integration Cloud Service. The only prerequisites for creating an integration are that the application connections you need are in place and that any lookups you want to use to map information between applications are created." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4FA71ACA-564B-447F-B37C-15753B5A5A6D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE"></a> <span id="PAGE" style="display:none;">17/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE" class="sect1">Typical Workflow for Creating Integration Cloud Services</h1>
+<div>
+<p>You follow a very simple workflow to develop integrations in Integration Cloud Service. The only prerequisites for creating an integration are that the application connections you need are in place and that any lookups you want to use to map information between applications are created.</p>
+<div class="tblformal" id="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE__GUID-D2D7CAC7-6220-44D6-9C5C-7B66F038E4A6">
+<table class="cellalignment926" summary="This table lists the workflow steps for integrations, and provides links to instructions for each step.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d7329e30">Step</th>
+<th class="cellalignment927" id="d7329e32">Description</th>
+<th class="cellalignment927" id="d7329e34">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d7329e38" headers="d7329e30">
+<p>1</p>
+</td>
+<td class="cellalignment927" headers="d7329e38 d7329e32">
+<p>Create the connections for the applications you want to integrate. The connections can be reused in multiple integrations and are typically created by the administrator.</p>
+</td>
+<td class="cellalignment927" headers="d7329e38 d7329e34">
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" title="The first step in creating an integration is to create the connections to the applications with which you want to share data.">Creating a Connection</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e53" headers="d7329e30">
+<p>2</p>
+</td>
+<td class="cellalignment927" headers="d7329e53 d7329e32">
+<p>(Optional) Create lookups that map the different values used by those applications to identify the same type of object (such as gender codes or country codes).</p>
+</td>
+<td class="cellalignment927" headers="d7329e53 d7329e34">
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-93229925-06C1-4C08-8BAC-3FCC69722C38" title="Create a lookup to map values between applications.">Creating a Lookup</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e68" headers="d7329e30">
+<p>3</p>
+</td>
+<td class="cellalignment927" headers="d7329e68 d7329e32">
+<p>Create the integration. When you do this, you add trigger and invoke connections, and then map the data between the two.</p>
+</td>
+<td class="cellalignment927" headers="d7329e68 d7329e34">
+<div class="p">
+<ol>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D" title="The trigger (source) connection sends requests to Integration Cloud Service. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the incoming data.">Adding a Source Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2" title="Integration Cloud Service sends requests or information to the invoke (target) connection. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the data.">Adding a Target Connection</a></p>
+</li>
+<li>
+<p><a class="olink GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span></p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e110" headers="d7329e30">
+<p>4</p>
+</td>
+<td class="cellalignment927" headers="d7329e110 d7329e32">
+<p>Activate the integration.</p>
+</td>
+<td class="cellalignment927" headers="d7329e110 d7329e34">
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e125" headers="d7329e30">
+<p>5</p>
+</td>
+<td class="cellalignment927" headers="d7329e125 d7329e32">
+<p>Monitor the integration on the dashboard.</p>
+</td>
+<td class="cellalignment927" headers="d7329e125 d7329e34">
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A" title="You can view information about how your integrations are performing on the Dashboard page.">Viewing the Dashboard</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e140" headers="d7329e30">
+<p>6</p>
+</td>
+<td class="cellalignment927" headers="d7329e140 d7329e32">
+<p>Track payload fields in messages during runtime.</p>
+</td>
+<td class="cellalignment927" headers="d7329e140 d7329e34">
+<p><a href="GUID-2FF39F4B-C2DC-4AAC-8F12-55DD0CBC6BD1.htm" title="Business identifiers enable you to track payload fields in messages during runtime. You can specify up to three business identifier fields for tracking during design time. One of these fields must be selected as the primary business identifier field. The primary business identifier enables you to track fields across integration flows during runtime, and is always available. At runtime, the status of business identifiers is visible on the Tracking page and (if integration errors have occurred) the Errors page.">Assigning Business Identifiers</a> and <a href="GUID-02C9A46A-9069-464B-A9CC-A2995A0E14D5.htm" title="You can track fields in messages on which you have defined business identifiers on the Tracking page during runtime. These fields are only available for tracking on the Tracking page if you defined a primary business identifier in the Business Identifiers for Tracking dialog during design time.">Tracking Business Identifiers in Integrations During Runtime</a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d7329e160" headers="d7329e30">
+<p>7</p>
+</td>
+<td class="cellalignment927" headers="d7329e160 d7329e32">
+<p>Manage errors at the integration level, connection level, or specific integration instance level.</p>
+</td>
+<td class="cellalignment927" headers="d7329e160 d7329e34">
+<p><a href="GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608.htm" title="You can manage errors from the Errors pages in Integration Cloud Service at the integration level, connection level, or specific integration instance level.">Managing Errors</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-4FA71ACA-564B-447F-B37C-15753B5A5A6D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

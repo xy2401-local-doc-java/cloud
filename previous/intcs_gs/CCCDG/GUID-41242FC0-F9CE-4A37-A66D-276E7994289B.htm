@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Testing the Outbound Adapter Using the EM Console</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="After the application that uses the adapter is deployed, you can run it in the Enterprise Manager (EM) Console." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-A78D4602-08E8-4A7B-B8BA-C3958FA1AB99.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-F4609E4F-4FA1-4773-9F0F-3AB5B56A23B6.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-41242FC0-F9CE-4A37-A66D-276E7994289B"></a> <span id="PAGE" style="display:none;">51/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-41242FC0-F9CE-4A37-A66D-276E7994289B" class="sect1">Testing the Outbound Adapter Using the EM Console</h1>
+<div>
+<p>After the application that uses the adapter is deployed, you can run it in the Enterprise Manager (EM) Console.</p>
+<ol>
+<li class="stepexpand"><span>Open the EM Console after successful deployment.</span>
+<div>The URL is <code>http://<span class="variable">hostname</span>:<span class="variable">port</span>/em</code>.</div>
+</li>
+<li class="stepexpand"><span>Enter your credentials and log into the EM Console.</span></li>
+<li class="stepexpand"><span>Expand the <span class="bold">soa-infra</span> node and expand the default domain.</span>
+<div><img width="1579" height="525" src="img/GUID-BC549237-5A4C-4359-9005-A389DC23B6FB-default.png" alt="media/image70.png" title="media/image70.png" /><br />
+<a href="img_text/GUID-348F4E85-CC0A-44BC-9925-52BD9F4AA436.htm">Description of the illustration GUID-BC549237-5A4C-4359-9005-A389DC23B6FB-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Select the adapter testing application and click the <span class="bold">Test</span> button.</span></li>
+<li class="stepexpand"><span>Expand the Request Payload and enter the OrganizationName value.</span>
+<div><img width="1046" height="631" src="img/GUID-69122DB4-39BC-444D-A86E-8A46B6502BBD-default.png" alt="media/image71.png" title="media/image71.png" /><br />
+<a href="img_text/GUID-A214142C-DA92-49EA-960D-58D8BF8390CC.htm">Description of the illustration GUID-69122DB4-39BC-444D-A86E-8A46B6502BBD-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Test Web Service</span> (in the top right corner).</span>
+<div><img width="972" height="657" src="img/GUID-2ED21F36-4191-48AD-A8CA-3F63458722F8-default.png" alt="media/image72.png" title="media/image72.png" /><br />
+<a href="img_text/GUID-4BDDA032-FA22-4C27-B45C-D166D8B8C5F1.htm">Description of the illustration GUID-2ED21F36-4191-48AD-A8CA-3F63458722F8-default.png</a></div>
+</li>
+</ol>
+<div class="section">The PartID is returned from the Cloud Service. You mapped the PartID unique reference number from the response payload in <a href="GUID-CE84D739-2787-4555-931A-95EF5FC4BA3A.htm" title="Within the adapter testing application, a BPEL client invokes the adapter.">Creating a BPEL Client to Invoke the Adapter</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-A78D4602-08E8-4A7B-B8BA-C3958FA1AB99.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-F4609E4F-4FA1-4773-9F0F-3AB5B56A23B6.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

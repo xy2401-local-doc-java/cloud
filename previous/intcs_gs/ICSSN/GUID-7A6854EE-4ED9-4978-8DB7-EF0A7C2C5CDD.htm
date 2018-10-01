@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Connection</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The first step in creating an integration is to create the connections to the applications with which you want to share data." />
+<meta name="dcterms.created" content="2016-07-28T17:17:02Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the ServiceNow Adapter" />
+<meta name="dcterms.identifier" content="E70919-04" />
+<meta name="dcterms.isVersionOf" content="ICSSN" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-CCA932E2-7E41-4A6B-8553-F778C6D6408E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSN.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"></a> <span id="PAGE" style="display:none;">14/29</span> <!-- End Header -->
+<h1 id="ICSSN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" class="sect1">Creating a Connection</h1>
+<div>
+<p>The first step in creating an integration is to create the connections to the applications with which you want to share data.</p>
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.<br /></span>
+<div class="imageleft"><img class="imageleft" width="248" height="272" src="img/GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png" alt="Description of GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png follows" title="Description of GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png follows" /><br />
+<a href="img_text/GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.htm">Description of the illustration GUID-DE718BE5-071A-4E11-AD6E-AA6F48EA01AC-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Click <span class="bold">Create New Connection</span>.</span>
+<div>The Create Connection &mdash; Select Adapter dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select an adapter from the dialog. You can also search for the type of adapter to use by entering a partial or full name in the Search field, and clicking <span class="bold">Search</span>.</span>
+<div>The New Connection &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the information to describe the connection.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a meaningful name to help others find your connection when they begin to create their own integrations. The name you enter is automatically added in capital letters to the <span class="bold">Identifier</span> field.</p>
+</li>
+<li>
+<p>Select the role (direction) in which to use this connection (trigger, invoke, or both). Only the roles supported by this adapter are displayed for selection. When you select a role, only the connection properties and security policies appropriate to that role are displayed on the Connections page. If you select an adapter that supports both invoke and trigger, but select only one of those roles, then try to drag the adapter into the section you did not select, you receive an error (for example, configure an <span>Oracle RightNow Cloud Adapter</span> as only an invoke, but drag the adapter to the trigger section).</p>
+</li>
+<li>
+<p>Enter an optional description of the connection.</p>
+</li>
+</ul>
+<br />
+<img width="550" height="326" src="img/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png" alt="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" title="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" /><br />
+<a href="img_text/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.htm">Description of the illustration GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>Your connection is created and you are now ready to configure connection details, such as email contact, connection properties, security policies, and connection login credentials.</div>
+</li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE"></a>
+<h2 id="ICSSN-GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" class="sect2">Adding a Contact Email</h2>
+<div>
+<p>From the Connection Administrator section of the connection, you can add a contact email address for notifications.</p>
+<ol>
+<li><span>In the <span class="bold">Email Address</span> field, enter an email address to receive email notifications when problems occur.</span></li>
+<li><span>In the upper right corner, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5D3FA3DB-201F-4C46-A944-808730A14AC3"></a>
+<h2 id="ICSSN-GUID-5D3FA3DB-201F-4C46-A944-808730A14AC3" class="sect2">Configuring Connection Properties</h2>
+<div>
+<p>Enter connection information so your application can process requests.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Connectivity</span>.</span>
+<div>The Connection Properties dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">ServiceNow Instance Name</span> field, enter the instance name URL (for example, <code>https://<span class="codeinlineitalic">host_name</span>.service-now.com</code>). You receive the instance name URL after you purchase a ServiceNow subscription.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>You are now ready to configure connection security.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-57C91F74-D82B-4FB6-89D0-A08B0B9E3322"></a>
+<h2 id="ICSSN-GUID-57C91F74-D82B-4FB6-89D0-A08B0B9E3322" class="sect2">Configuring Connection Security</h2>
+<div>
+<p>Configure security for your <span>ServiceNow Adapter</span> connection by selecting the security policy and security token.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Credentials</span>.</span></li>
+<li class="stepexpand"><span>Enter your login credentials.</span>
+<ol>
+<li><span>Select the security policy. Only the Basic Authentication policy is supported. It cannot be deselected.</span></li>
+<li><span>Enter a username and password to connect to the ServiceNow instance. You receive the username and password after you purchase a ServiceNow subscription.</span></li>
+<li><span>Reenter the password a second time.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>You are now ready to test your connection.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22"></a>
+<h2 id="ICSSN-GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" class="sect2">Testing the Connection</h2>
+<div>
+<p>Test your connection to ensure that it is successfully configured.</p>
+<ol>
+<li class="stepexpand"><span>In the upper right corner of the page, click <span class="bold">Test</span>.</span>
+<div>If successful, the following message is displayed and the progress indicator shows 100%.
+<p><code>The connection test was successful!</code></p>
+</div>
+</li>
+<li class="stepexpand"><span>If your connection was unsuccessful, an error message is displayed with details. Verify that the configuration details you entered are correct.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment954">
+<tr>
+<td class="cellalignment961">
+<table class="cellalignment959">
+<tr>
+<td class="cellalignment958"><a href="GUID-CCA932E2-7E41-4A6B-8553-F778C6D6408E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment958"><a href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment963">
+<table class="cellalignment957">
+<tr>
+<td class="cellalignment958"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment958"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment958"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

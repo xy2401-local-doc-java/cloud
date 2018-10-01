@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using XPath Functions</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can use a variety of XPath functions in your data mappings to transform the data you transfer between applications." />
+<meta name="dcterms.created" content="2016-11-27T09:27:43Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Mapper" />
+<meta name="dcterms.identifier" content="E64409-09" />
+<meta name="dcterms.isVersionOf" content="OCMAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FDD7AD24-7C8B-4633-9D09-149A24151C58.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OCMAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="OCMAP.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="OCMAP.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-441D907C-54C7-4725-9316-F513718E3C57"></a> <span id="PAGE" style="display:none;">21/29</span> <!-- End Header -->
+<h1 id="OCMAP-GUID-441D907C-54C7-4725-9316-F513718E3C57" class="sect1">Using XPath Functions</h1>
+<div>
+<p>You can use a variety of XPath functions in your data mappings to transform the data you transfer between applications.</p>
+<div class="section">To use an XPath function:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Drag a source to a target to create a mapping.</span></li>
+<li class="stepexpand"><span>Click the target node to launch the Mapping Builder.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Mapping Components</span>.</span>
+<div>You can either find or browse for the function:</div>
+<ul>
+<li>To find the function, type the full or partial name of the function in the <span class="bold">Find</span> field, and click the <span class="bold">Find</span> icon.</li>
+</ul>
+<ul>
+<li>To browse for the function, expand the <span class="bold">Functions</span> folder and subcategory folders to locate the function.<br />
+<img width="623" height="447" src="img/GUID-514DBE49-DBBC-4B93-BDEE-47F4B216C0AA-default.png" alt="Description of GUID-514DBE49-DBBC-4B93-BDEE-47F4B216C0AA-default.png follows" title="Description of GUID-514DBE49-DBBC-4B93-BDEE-47F4B216C0AA-default.png follows" /><br />
+<a href="img_text/GUID-514DBE49-DBBC-4B93-BDEE-47F4B216C0AA-default.htm">Description of the illustration GUID-514DBE49-DBBC-4B93-BDEE-47F4B216C0AA-default.png</a><br /></li>
+</ul>
+</li>
+<li class="stepexpand"><span>Drag the function onto the mapping statement.</span>
+<div>If the function has a single parameter, it automatically inserts the existing mapping expression into the parameter.</div>
+<div>If the function has multiple parameters, it prompts you to select which parameter into which to insert the existing mapping expression.</div>
+</li>
+<li class="stepexpand"><span>Select a parameter or <span class="bold">None</span> if you want to remove the existing mapping expression, and click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span> and <span class="bold">Close</span>.</span></li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-B62FDA0C-C9B6-4217-A09B-2B3E87088920"></a>
+<h2 id="OCMAP-GUID-B62FDA0C-C9B6-4217-A09B-2B3E87088920" class="sect2">Support for BPEL XPath Extension Functions</h2>
+<div>
+<p>The mapper supports some BPEL XPath extension functions that you can include in your data mappings. The functions are available in both orchestrated integrations and basic map data integrations.</p>
+<div class="section">
+<p>In the <span class="bold">Source</span> tree, expand the following categories under <span class="bold">Functions</span>. Place your cursor over a specific function to invoke a message that describes the syntax to use.</p>
+<div class="tblformal" id="GUID-B62FDA0C-C9B6-4217-A09B-2B3E87088920__GUID-DF5C26A5-7EA8-4126-BFAD-EE0A11FD18A6">
+<table class="cellalignment132" summary="Available BPEL XPath Extension Functions">
+<thead align="left">
+<tr>
+<th class="cellalignment133" id="d3849e112">Under Functions...</th>
+<th class="cellalignment133" id="d3849e114">Available BPEL XPath Extension Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment133" id="d3849e118" headers="d3849e112">
+<p>Expand <span class="bold">Functions</span> &gt; <span class="bold">Advanced</span></p>
+</td>
+<td class="cellalignment133" headers="d3849e118 d3849e114">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>create-nodeset-from-delimited-string</code></p>
+</li>
+<li>
+<p><code>generate-guid</code></p>
+</li>
+<li>
+<p><code>lookup-xml</code></p>
+</li>
+<li>
+<p><code>parseEscapedXML</code></p>
+</li>
+<li>
+<p><code>parseXML</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment133" id="d3849e149" headers="d3849e112">
+<p>Expand <span class="bold">Functions</span> &gt; <span class="bold">Mathematical</span></p>
+</td>
+<td class="cellalignment133" headers="d3849e149 d3849e114">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>max-value-among-nodeset</code></p>
+</li>
+<li>
+<p><code>min-value-among-nodeset</code></p>
+</li>
+<li>
+<p><code>square-root</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment133" id="d3849e172" headers="d3849e112">
+<p>Expand <span class="bold">Functions</span> &gt; <span class="bold">String</span></p>
+</td>
+<td class="cellalignment133" headers="d3849e172 d3849e114">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>compare-ignore-case</code></p>
+</li>
+<li>
+<p><code>create-delimited-string</code></p>
+</li>
+<li>
+<p><code>format-string</code></p>
+</li>
+<li>
+<p><code>get-content-as-string</code></p>
+</li>
+<li>
+<p><code>get-localized-string</code></p>
+</li>
+<li>
+<p><code>index-within-string</code></p>
+</li>
+<li>
+<p><code>last-index-within-string</code></p>
+</li>
+<li>
+<p><code>left-trim</code></p>
+</li>
+<li>
+<p><code>right-trim</code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-E8D83096-1D6C-4F9A-8ACA-B8D159B5BF61"></a>
+<h2 id="OCMAP-GUID-E8D83096-1D6C-4F9A-8ACA-B8D159B5BF61" class="sect2">Using the length Parameter in the Substring Function in the Mapper</h2>
+<div>
+<p>When you drag the <span class="bold">substring</span> function into the mapper, it may appear that you cannot add a value to the third parameter <span class="bold">length</span>. This is not the case. This is an optional parameter.</p>
+<p>To add a value to the <span class="bold">length</span> parameter, perform the following steps:</p>
+<ol>
+<li>
+<p>Drag and drop the <span class="bold">substring</span> function into the mapper. Only required parameters are automatically dropped.</p>
+</li>
+<li>
+<p>Right-click <span class="bold">substring</span>, and select <span class="bold">Insert Child</span> to add an empty row for the optional parameter.</p>
+</li>
+<li>
+<p>Once the third row is available, you can drag and drop or type into the field to complete the optional parameter.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment116">
+<tr>
+<td class="cellalignment123">
+<table class="cellalignment126">
+<tr>
+<td class="cellalignment120"><a href="GUID-FDD7AD24-7C8B-4633-9D09-149A24151C58.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment120"><a href="GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment125">
+<table class="cellalignment119">
+<tr>
+<td class="cellalignment120"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment120"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment120"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

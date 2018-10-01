@@ -1,0 +1,467 @@
+<!DOCTYPE html><html prefix="og: http://ogp.me/ns#"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Local API testing with Dredd | Apiary Help</title>
+  <link rel="stylesheet" href="../../../css/main.css?8d147e3a37768b440f679294bd9bc305">
+
+  
+    
+    <meta property="og:title" content="Local API testing with Dredd">
+    <meta property="og:site_name" content="Apiary.io">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://help.apiary.io/tools/automated-testing/testing-local/">
+    <meta property="og:image" content="https://help.apiary.io/images/apiary_sharing.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    
+
+    <meta property="og:site_name" content="Apiary Help">
+
+    
+      <meta property="og:see_also" content="https://help.apiary.io/tools/automated-testing/testing-ci/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/dredd-tutorial/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/enhancing-apiary-workflow/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/understanding-apiary/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/bitbucket-integration/">
+    
+
+    <meta property="twitter:account_id" content="183960592">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@apiaryio">
+    <meta name="twitter:creator" content="@apiaryio">
+    <meta name="twitter:title" content="Local API testing with Dredd">
+
+    
+
+    <meta name="twitter:image" content="https://help.apiary.io/images/apiary_sharing.png">
+    <meta name="twitter:url" content="https://help.apiary.io/tools/automated-testing/testing-local/">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="index.html">
+    <link rel="dns-prefetch" href="//jsapi.apiary.io">
+  
+
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="../../../sitemap.xml">
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+
+
+  <body vocab="http://schema.org/" typeof="WebPage">
+    <div class="pageWrap">
+      <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="https://apiary.io">
+      <img src="../../../images/oracleapiarylogo.png" alt="Apiary logo">
+      <span>Apiary Help</span>
+    </a>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="https://apiary.io/how-it-works">How It Works</a></li>
+<li><a href="https://apiary.io/plans">Plans</a></li>
+<li><a href="https://apiary.io/products">Product</a></li>
+<li><a href="../../../">Help</a></li>
+<li class="hide-sm"><a href="https://apiary.io/company">Company</a></li>
+<li><a href="https://login.apiary.io/login">Sign In</a></li>
+<li><a class="site-nav-signup" href="https://login.apiary.io/login">Sign Up</a></li>
+
+        <li><a href="javascript:;" class="openMobileNav">&#x2630; Menu</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+      <div class="layout-content">
+        <div class="layout-content-inner">
+          <div class="page">
+  
+  <nav class="page-breadcrumbs">
+    <ul class="breadcrumbs">
+        
+        
+          <li>
+            
+              <a href="../../../">Apiary Help</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="../../">Tools</a>
+            
+          </li>
+        
+          <li class="active">
+            
+              Local API testing with Dredd
+            
+          </li>
+        
+    </ul>
+  </nav>
+
+
+
+  <aside class="page-aside" property="hasPart" typeof="WPSideBar">
+    <aside>
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../" class="category-link">Apiary Tools</a></h2>
+    <ul class="aside-category-page-list">
+      
+      
+        <li><a href="../../apiary-editor/">Apiary Editor</a></li>
+      
+        <li><a href="../../interactive-documentation/">Interactive Documentation</a></li>
+      
+        <li><a href="../../mock-server/">Mock Server</a></li>
+      
+        <li><a href="../../api-inspector/">API Inspector</a></li>
+      
+        <li><a href="../../github-sync/">GitHub Sync</a></li>
+      
+        <li><a href="../../github-integration/">GitHub Integration</a></li>
+      
+        <li><a href="../">Automated Testing</a></li>
+      
+        <li><a href="../../apiary-cli/">Apiary CLI</a></li>
+      
+        <li><a href="../../github-enterprise-integration/">GitHub Enterprise (GHE) Integration</a></li>
+      
+        <li><a href="../../code-examples/">Integrated Code Examples</a></li>
+      
+        <li><a href="../../embed/">Embed documentation</a></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <li><a href="../../style-guide/">API Style Guide</a></li>
+      
+        <li><a href="../../troubleshooting-github/">Troubleshooting GitHub Sync and Integration</a></li>
+      
+        <li><a href="../../version-history/">Version history</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../../faq/" class="category-link">FAQs</a></h2>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title">Resources</h2>
+    <ul class="aside-category-page-list">
+      <li><a href="../../../api_101/api_blueprint_tutorial/" class="category-link-resources">API Blueprint Tutorial</a></li>
+      <li><a href="http://support.apiary.io/forums/120125-general" class="category-link-resources" target="blank">Feedback</a></li>
+      <li><a href="https://apiary.io/support" class="category-link-resources" target="blank">Support</a></li>
+    </ul>
+  </div>
+</aside>
+
+  </aside>
+
+  <article class="page-content" role="main" property="mainEntityOfPage" typeof="Article">
+    <header class="page-header">
+      <h1 class="page-title" property="headline">Local API testing with Dredd</h1>
+    </header>
+    <div property="text" class="entry-content">
+      <p>First step to get testing running is usually to start with local tests during development. This article serves as a brief introduction to our open source project <a href="http://dredd.readthedocs.org/en/latest/">Dredd</a> which serves this purpose. If you are looking how to setup automated test on your CI please look at the <a href="../testing-ci">Continuous API testing</a> article.</p>
+
+<h2 id="local-development-testing">Local development testing</h2>
+
+<p><a href="http://dredd.readthedocs.org/en/latest/">Dredd</a> is a language agnostic command-line tool for testing API documentation against its back-end implementation. It allows
+you to write testing hooks in <a href="https://dredd.readthedocs.io/en/latest/hooks/">various languages</a>. It also allows to write hooks in any other language but this topic is covered in detail in official <a href="http://dredd.readthedocs.org/en/latest/hooks-new-language/">Dredd documentation</a>. Dredd is a backbone of our testing service.</p>
+
+<h3 id="installation">Installation</h3>
+
+<p>Dredd is based on <a href="http://nodejs.org">Node.js</a> so before you start, make sure you have Node.js and <a href="https://www.npmjs.com/">npm</a> installed. Dredd is a <a href="https://www.npmjs.com/package/dredd">npm package</a> so installation is straight forward just run</p>
+
+<pre><code class="language-sh">$ npm install -g dredd
+</code></pre>
+
+<p>and you are set.</p>
+
+<h3 id="setup-and-configuration">Setup and configuration</h3>
+
+<p>Assuming you have your project and API description document ready, the only step need to start testing is issue a <code>dredd init</code> command in the root of you project directory. Dredd will ask you couple of questions and set up the configuration file <code>dredd.yml</code> for you.</p>
+
+<pre><code class="language-sh">$ dredd init
+? Location of the API description: apiary.apib
+? Command to start API backend server e.g. (bundle exec rails server):
+? URL of tested API endpoint: (http://localhost:3000)
+? Programming language of hooks:
+  ruby
+  python
+&#x276F; nodejs
+? Do you want to use Apiary test inspector? (Y/n)
+? Dredd is best served with Continuous Integration. Create CircleCI config for Dredd? (Y/n)
+
+Configuration saved to dredd.yml
+
+Run test now, with:
+
+  $ dredd
+
+$
+</code></pre>
+
+<p>Let&#x2019;s go through these questions. Location of the API description is obvious. Second is a command how the server should be started before the test run&#x2014;this can be any command. Third question is the URL you want to test. If you are going to need to change the test behavior and you will need the test hooks, choose the language you are going to use. Fourth question asks if Dredd should send the test results to <a href="../testing-reporter">Apiary test inspector</a>. We suggest to use it as the output of complex HTTP responses and expectations can be hard to read and <a href="../testing-reporter">the test inspector</a> provides an interface for browsing them easily. Reports are anonymous by default, but you can let Apiary save them under your API following the steps described in the tutorial section of <code>Tests Tab</code> when you open your API description where you get also your API Key and API Name.</p>
+
+<p><img src="../../../images/tools/testing/tests_tab_tutorial.png" alt="Tests tab"></p>
+
+<p>Last question asks if you want to add support for Continuous Integration provided by <a href="https://circleci.com/">Circle CI</a>. <a href="https://travis-ci.org/">Travis CI</a> support is under way but can easily be made by hand. See <a href="../testing-ci">Continuous API testing</a> for more details.</p>
+
+<p>For more details on what are the options in <code>dredd.yml</code> file please see the <a href="https://dredd.readthedocs.org/en/latest/usage-cli/#dredd-configuration-file">Dredd documentation</a></p>
+
+<h3 id="running-a-test">Running a test</h3>
+
+<p>Running a test is just a simple command in the root directory of your project.</p>
+
+<pre><code class="language-sh">$ dredd
+</code></pre>
+
+<p>When the dredd is finished a link to the test report is provided.</p>
+
+<p><img src="../../../images/tools/testing/local_test_result.png" alt="Local test result"></p>
+
+<p>For real-life usage you usually need to prepare the environment or modify the requests made by Dredd. This can be achieved using Dredd Hooks.</p>
+
+<h3 id="dredd-hooks">Dredd Hooks</h3>
+
+<p>Similar to any other testing framework, Dredd supports executing code around each test step.  Hooks are code blocks executed in defined stage of <a href="https://dredd.readthedocs.org/en/latest/usage-cli/#dredd-execution-lifecycle">execution life cycle</a>. In the hooks code you have an access to compiled HTTP <a href="http://dredd.readthedocs.org/en/latest/hooks/#transaction-object-structure">transaction object</a> which you can modify or run anything you need.</p>
+
+<p>Hooks are usually used for:</p>
+
+<ul>
+  <li>Loading db fixtures</li>
+  <li>Cleanup after test step or steps</li>
+  <li>Handling authentication and sessions</li>
+  <li>Passing data between transactions (saving state from responses to stash)</li>
+  <li>Modifying request generated from blueprint</li>
+  <li>Changing generated expectations</li>
+  <li>Custom expectations</li>
+  <li>Debugging via logging stuff</li>
+</ul>
+
+<p>Hooks are supported in a number of languages: native Node.js, Ruby, Python, PHP and possibly others. For a complete list of supported language please see <a href="http://dredd.readthedocs.org/en/latest/hooks/">official documentation</a> as it changes quite often.</p>
+
+    </div>
+
+    <div class="pageFeedback">
+  <div class="pageFeedback--initial">
+    <div class="pageFeedback--question">
+      Was this page useful?
+    </div>
+    <div class="pageFeedback--yes"></div>
+    <div class="pageFeedback--no"></div>
+  </div>
+  <div class="pageFeedback--thankYouBlock">
+    Thank you for the feedback!
+  </div>
+  <div class="pageFeedback--whatWentWrong">
+    <div class="pageFeedback--whatWentWrongTitle">What went wrong?</div>
+    <label><input type="checkbox" id="droids" value="droids"> It&#x2019;s not what I was looking for</label>
+    <label><input type="checkbox" id="simplify" value="simplify"> It was hard to understand</label>
+    <label><input type="checkbox" id="else" value="else"> Something else</label>
+  </div>
+</div>
+
+    
+  <div class="relatedTopics">
+    <h2 class="relatedTopics__title">Related topics</h2>
+    <ul class="relatedTopics__list">
+      
+        <li><a href="../testing-ci/">Continuous API testing</a><br></li>
+      
+        <li><a href="../../../api_101/dredd-tutorial/">Dredd Tutorial</a><br></li>
+      
+        <li><a href="../../../api_101/enhancing-apiary-workflow/">Enhancing Apiary Workflow</a><br></li>
+      
+        <li><a href="../../../api_101/understanding-apiary/">Understanding Apiary</a><br></li>
+      
+        <li><a href="../../../api_101/bitbucket-integration/">Using Apiary with Bitbucket</a><br></li>
+      
+    </ul>
+  </div>
+
+
+  </article>
+</div>
+
+        </div>
+      </div>
+
+      <footer>
+  <div class="footerRow">
+    <div class="footerColumns">
+      <div class="footerColumn">
+        <h4 class="footerTitle">Platform</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://apiary.io/how-it-works">How It Works</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/products">Product</a></li>
+          <li><a class="footerListLink" href="https://enterprise.apiary.io/">Enterprise</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/plans">Plans</a></li>
+          <li><a class="footerListLink" href="../../../">Help</a></li>
+        </ul>
+      </div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Company</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="http://blog.apiary.io/">Blog</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/company">Team</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/jobs">Jobs</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/contact">Contact</a></li>
+          <li><a class="footerListLink" href="https://static.apiary.io/assets/29b1ca7e9b4668542aa05ccd5f9338a6.zip">Press Kit</a></li>
+        </ul>
+      </div>
+      <div class="mobileBreak"></div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Open Source</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://apiblueprint.org">API Blueprint</a></li>
+          <li><a class="footerListLink" href="https://github.com/apiaryio/snowcrash">Snow Crash</a></li>
+          <li><a class="footerListLink" href="https://github.com/apiaryio/gavel">Gavel</a></li>
+          <li><a class="footerListLink" href="http://dredd.readthedocs.org/">Dredd</a></li>
+          <li><a class="footerListLink" href="../../apiary-cli/">Apiary CLI</a></li>
+        </ul>
+      </div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Social</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://github.com/apiaryio">GitHub</a></li>
+          <li><a class="footerListLink" href="https://twitter.com/apiaryio">Twitter</a></li>
+          <li><a class="footerListLink" href="https://facebook.com/apiary.io">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footerRow">
+    <p class="footerCopyright">Copyright &#xA9; 2017, Oracle and/or its affiliates. All rights reserved. Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners. <span class="footerCopyrightLinks">&#x2022; <a href="https://apiary.io/tos" class="footerCopyrightLink">Terms</a> &#x2022; <a href="https://apiary.io/privacy" class="footerCopyrightLink">Privacy</a></span></p>
+  </div>
+</footer>
+
+    </div>
+    <nav class="mobileNav">
+  <div class="mobileNav-inner">
+    <a href="javascript:;" class="closeMobileNav">&#x2715; Close menu</a>
+    <ul class="mobileNav-list">
+      <li><a href="../../../">Docs home</a></li>
+      <li><a href="https://apiary.io">Back to Apiary.io</a></li>
+      <li><a href="https://apiary.io/how-it-works">How It Works</a></li>
+<li><a href="https://apiary.io/plans">Plans</a></li>
+<li><a href="https://apiary.io/products">Product</a></li>
+<li><a href="../../../">Help</a></li>
+<li class="hide-sm"><a href="https://apiary.io/company">Company</a></li>
+<li><a href="https://login.apiary.io/login">Sign In</a></li>
+<li><a class="site-nav-signup" href="https://login.apiary.io/login">Sign Up</a></li>
+
+    </ul>
+    <aside>
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../" class="category-link">Apiary Tools</a></h2>
+    <ul class="aside-category-page-list">
+      
+      
+        <li><a href="../../apiary-editor/">Apiary Editor</a></li>
+      
+        <li><a href="../../interactive-documentation/">Interactive Documentation</a></li>
+      
+        <li><a href="../../mock-server/">Mock Server</a></li>
+      
+        <li><a href="../../api-inspector/">API Inspector</a></li>
+      
+        <li><a href="../../github-sync/">GitHub Sync</a></li>
+      
+        <li><a href="../../github-integration/">GitHub Integration</a></li>
+      
+        <li><a href="../">Automated Testing</a></li>
+      
+        <li><a href="../../apiary-cli/">Apiary CLI</a></li>
+      
+        <li><a href="../../github-enterprise-integration/">GitHub Enterprise (GHE) Integration</a></li>
+      
+        <li><a href="../../code-examples/">Integrated Code Examples</a></li>
+      
+        <li><a href="../../embed/">Embed documentation</a></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <li><a href="../../style-guide/">API Style Guide</a></li>
+      
+        <li><a href="../../troubleshooting-github/">Troubleshooting GitHub Sync and Integration</a></li>
+      
+        <li><a href="../../version-history/">Version history</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../../faq/" class="category-link">FAQs</a></h2>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title">Resources</h2>
+    <ul class="aside-category-page-list">
+      <li><a href="../../../api_101/api_blueprint_tutorial/" class="category-link-resources">API Blueprint Tutorial</a></li>
+      <li><a href="http://support.apiary.io/forums/120125-general" class="category-link-resources" target="blank">Feedback</a></li>
+      <li><a href="https://apiary.io/support" class="category-link-resources" target="blank">Support</a></li>
+    </ul>
+  </div>
+</aside>
+
+  </div>
+</nav>
+
+    
+  <script>
+    window._trackJs = {
+      token: '60775d2a4c124659ba6585cf31909f85',
+      application: 'docs-portal'
+    };
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18252923-8', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+
+
+
+<script type="text/javascript" src="../../../assets/main-9de9a2eabd0d23c2aefea3d1fee69cd4bb776643ddb27cfeb7da88d5371bc1cb.js?8d147e3a37768b440f679294bd9bc305"></script>
+
+
+
+  
+
+
+</body></html>

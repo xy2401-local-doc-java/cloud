@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About MySQL Cloud Service Deployments in Oracle Cloud Infrastructure</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984"></a> <span id="PAGE" style="display:none;">12/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984" class="sect1">About MySQL Cloud Service Deployments in Oracle Cloud Infrastructure</h1>
+<div>
+<p>You can create <span id="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984__MYSQLCS">Oracle MySQL Cloud Service</span> database deployments in <span>Oracle Cloud Infrastructure</span> and in <span>Oracle Cloud Infrastructure Classic</span>.</p>
+<p>The environment that your database deployment provides in either type of infrastructure is substantially the same. A few differences exist in the underlying infrastructure components and in the supported capabilities. Awareness of these differences will help you choose an appropriate infrastructure when creating a database deployment.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Prerequisite steps before creating your first database deployment:</span> In <span>Oracle Cloud Infrastructure</span>, you must perform the steps described in <a href="https://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=oci_general_paasprereqs" target="_blank">Prerequisites for Oracle Platform Services on Oracle Cloud Infrastructure</a> in the <span>Oracle Cloud Infrastructure</span> documentation. In <span>Oracle Cloud Infrastructure Classic</span>, you must set the replication policy in <span>Oracle Cloud Infrastructure Object Storage Classic</span> before you create database deployments with backups to cloud storage, as described in <a class="olink CSSTO-GUID-5D53C11F-3D9E-43E4-8D1D-DDBB95DEC715" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSSTO-GUID-5D53C11F-3D9E-43E4-8D1D-DDBB95DEC715">Selecting a Replication Policy for Your Service Instance</a> in <cite>Using Oracle Cloud Infrastructure Object Storage Classic</cite>.</p>
+</li>
+<li>
+<p><span class="bold">Regions and availability domains:</span> While creating a database deployment, you select a region in <span>Oracle Cloud Infrastructure Classic</span> or <span>Oracle Cloud Infrastructure</span>. If you select a region in <span>Oracle Cloud Infrastructure</span>, then you also select an <span class="italic">Availability Domain</span>. A region in <span>Oracle Cloud Infrastructure</span> has multiple isolated availability domains, each with separate power and cooling. The availability domains within a region are interconnected using a low-latency network.</p>
+</li>
+<li>
+<p><span class="bold">Subnets and IP networks:</span> In <span>Oracle Cloud Infrastructure Classic</span>, you can optionally attach a database deployment to an IP network that you define beforehand. In <span>Oracle Cloud Infrastructure</span>, you must attach each database deployment to a subnet, which is a part of a virtual cloud network that you create in <span>Oracle Cloud Infrastructure</span>.</p>
+</li>
+<li>
+<p><span class="bold">Compute shapes:</span> The range of compute shapes that you can select from when creating a database deployment is different for <span>Oracle Cloud Infrastructure</span> and <span>Oracle Cloud Infrastructure Classic</span>. For more information, see <a href="GUID-766E2463-E556-4B9C-8C86-2B51F9BBFC2D.htm#GUID-C7FCD83D-8CE0-44B6-9E60-CB41F30D110C">Computing Power</a>.</p>
+</li>
+<li>
+<p><span class="bold">Backups to cloud storage:</span> In <span>Oracle Cloud Infrastructure</span>, an <span>Oracle Cloud Infrastructure Object Storage</span> <span class="italic">bucket</span> is used to store backups to cloud storage. You must create a storage bucket before you create database deployments configured to back up to cloud storage. In <span>Oracle Cloud Infrastructure Classic</span>, an <span>Oracle Cloud Infrastructure Object Storage Classic</span> <span class="italic">container</span> is used to store backups to cloud storage. You can create a storage container before you create database deployments configured to back up to cloud storage, or you can have a storage container created at the same time as a database deployment.</p>
+</li>
+<li>
+<p><span class="bold">IP reservations:</span> Currently, <span>Oracle Cloud Infrastructure</span> does not support IP reservations.</p>
+</li>
+<li>
+<p><span class="bold">Network access to database deployments:</span> Regardless of the infrastructure that you create your database deployment in, the rules to provide network access to the deployment are preconfigured for you. The interfaces that you use to manage these rules depend on the infrastructure that the deployment is created in:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For deployments in <span>Oracle Cloud Infrastructure</span>, you configure the rules, called <span class="italic">security rules</span>, in the <span>Oracle Cloud Infrastructure</span> interfaces.</p>
+</li>
+<li>
+<p>For deployments in <span>Oracle Cloud Infrastructure Classic</span>, you configure the rules, called <span class="italic">access rules</span>, in the <span>Oracle MySQL Cloud Service</span> interfaces. Note that these access rules prohibit access by default (with the exception of SSH access on port 22), and you must enable them to provide access to other ports.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Scaling database deployments:</span> In <span>Oracle Cloud Infrastructure</span>, you cannot scale the shape of a database deployment&rsquo;s compute nodes; you can scale only the storage. The minimum size of a new storage volume in <span>Oracle Cloud Infrastructure</span> is 50 GB.</p>
+</li>
+<li>
+<p><span class="bold">Snapshots and deployments cloned from snapshots:</span> Currently, <span>Oracle Cloud Infrastructure</span> does not support creating storage snapshots of single-instance database deployments and then creating cloned deployments from the snapshots.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

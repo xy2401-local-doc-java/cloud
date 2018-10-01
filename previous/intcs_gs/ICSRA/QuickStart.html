@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Integration Cloud Service, Version 1</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, connections, lookups, and packages.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Integration Cloud Service, Version 1">
+        <meta property="og:description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, connections, lookups, and packages.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Integration Cloud Service, Version 1">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="rest-endpoints.html" title="Previous" type="text/html">
+        <link rel="next" href="SendRequests.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="rest-endpoints.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="SendRequests.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Integration Cloud Service, Version 1</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Quick Start</h2> 
+<div class="body conbody">
+ <p class="shortdesc">Set up your environment and retrieve your first list of integrations for Oracle Integration Cloud Service using the REST API by performing the following tasks.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">Step 1: Obtain Account Information</h3>
+  <div class="p">
+   From your account administrator, obtain the appropriate account credentials to enable you to administer Oracle Integration Cloud Service. Specifically, you will need:
+   <ul class="ul">
+    <li class="li"><p class="p">Username and password</p> </li> 
+    <li class="li"><p class="p">The Service URL of your Oracle Integration Cloud Service instance, which is listed in the welcome email you receive with your trial or purchased subscription.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Step 2: Install cURL</h3>
+  <p class="p">The examples within this document use the cURL command-line tool to demonstrate how to access the Oracle Integration Cloud Service REST API. </p> 
+  <p class="p">To connect securely to the server, you must install a version of cURL that supports SSL and provide an SSL certificate authority (CA) certificate file or bundle to authenticate against the Verisign CA certificate. For more information about:</p> 
+  <ul class="ul">
+   <li class="li"><p class="p">Using cURL, see<a class="xref" href="Use%20cURL.html" title="The examples within this document use cURL to demonstrate how to access the Oracle Integration Cloud Service REST API."> Use cURL</a>.</p> </li> 
+   <li class="li"><p class="p">Authentication, see <a class="xref" href="Authentication.html">Authentication</a>.</p> </li> 
+  </ul> 
+  <div class="p">
+   The following procedure demonstrates how to install cURL on a Windows 64-bit system.
+   <ol class="ol">
+    <li class="li"><p class="p">In your browser, navigate to the cURL home page at <a class="xref" href="http://curl.haxx.se/download.html" target="_blank">http://curl.haxx.se</a> and click <strong class="ph b">Download</strong> in the left navigation menu.</p> </li> 
+    <li class="li"><p class="p">On the cURL Releases and Downloads page, locate the SSL-enabled version of the cURL software that corresponds to your operating system, click the link to download the ZIP file, and install the software.</p> </li> 
+    <li class="li"><p class="p">Navigate to the cURL CA Certs page at <a class="xref" href="http://curl.haxx.se/docs/caextract.html" target="_blank">http://curl.haxx.se/docs/caextract.html</a> and download the <strong class="ph b">cacert.pem</strong> SSL CA certificate bundle in the folder where you installed cURL.</p> </li> 
+    <li class="li"><p class="p">Open a command window, navigate to the directory where you installed cURL, and set the cURL environment variable, <samp class="ph codeph">CURL_CA_BUNDLE</samp>, to the location of an SSL certificate authority (CA) certificate bundle. For example:</p> <p class="p"><samp class="ph codeph">C:\curl&gt; set CURL_CA_BUNDLE=cacert.pem</samp></p> </li> 
+   </ol> 
+  </div> 
+  <p class="p">You are now ready to send requests to the Oracle Integration Cloud Service using cURL.</p> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Step 3: Retrieve Your First List of Integrations</h3>
+  <p class="p">Use a cURL command such as the following to retrieve a list of existing integrations. Change <samp class="ph codeph">example.com</samp> to the host in your Service URL as described in <a class="xref" href="SendRequests.html">Send Requests</a>.</p> 
+  <pre class="pre">curl -u jstein:welcome1
+ -H "Content-Type:application/json"
+ -H "Accept:application/json"
+ -X GET
+ https://example.com/icsapis/v1/integrations</pre> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

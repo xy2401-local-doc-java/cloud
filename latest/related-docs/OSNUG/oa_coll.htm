@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using Collections in the Add-In for Outlook</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-04-26T11:27:29Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Social Network" />
+<meta name="dcterms.identifier" content="E85025-01" />
+<meta name="dcterms.isVersionOf" content="OSNUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="oa_conv.htm" title="Previous" type="text/html" />
+<link rel="Next" href="oa_dandf.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OSNUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A1887254-5269-46F7-9844-4083B4FD89FE"></a> <span id="PAGE" style="display:none;">158/367</span> <!-- End Header -->
+<a id="OSNUG2008"></a>
+<h1 id="OSNUG-GUID-A1887254-5269-46F7-9844-4083B4FD89FE" class="sect1">Using Collections in the Add-In for Outlook</h1>
+<div>
+<p>This section describes how to use collections in the add-in for Outlook:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oa_coll.htm#GUID-01C28517-EF58-42E4-9D3A-B5959005A995">What are collections?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-CA6B5AA2-88E1-437F-833A-E27F46AAED0A">How do I create a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-27D4AD47-DF4B-4A39-9433-4AB6F05D483F">How do I add members to a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-1EF1EF15-9FD7-44CE-895C-0CED291756A2">How do I remove members from a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-9C49493C-F0C5-4D24-A137-7A540AA2DAE8">How do I add an existing item to a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-AAD12618-176A-4D70-A824-5FFFAEF9530C">How do I add a new item to a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-607E4B1F-64EA-4DE1-81EC-E7C78232D62C">How do I remove an item from a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-DE63765D-E47C-4DFF-89C4-682BA65BD72F">How can I rearrange a list of collections?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-02946A28-5694-4951-B527-C82D55598E5E">How do I hide membership messages in a collection?</a></p>
+</li>
+<li>
+<p><a href="oa_coll.htm#GUID-E1FC5F07-7B93-4794-996B-AD051BA63B93">How do I rename a collection?</a></p>
+</li>
+</ul>
+</div>
+<a id="OSNUG2009"></a>
+<div class="props_rev_3"><a id="GUID-01C28517-EF58-42E4-9D3A-B5959005A995"></a>
+<h2 id="OSNUG-GUID-01C28517-EF58-42E4-9D3A-B5959005A995" class="sect2">What are collections?</h2>
+<div>
+<p>As your lists of Conversations, Social Objects, people, and groups grow, it might be useful to organize those that focus on a common topic, project, or issue into an easy-access list, called a <span class="italic">collection</span>. Use collections to create your own lists of related Conversations, collections, profile and group walls, and Social Objects.</p>
+<p>You can give the collection a meaningful name so it's easy to identify its purpose. You can add Conversations and walls (including people's walls and group walls) to a collection. You can also add Social Objects and other collections to a collection to create a hierarchy. There is no limit to the levels of hierarchy you can create.</p>
+<p>In the add-in for Outlook navigation bar, click the <span class="bold">Collections</span> icon to open the list of collections.</p>
+<div class="figure" id="GUID-01C28517-EF58-42E4-9D3A-B5959005A995__GUID-586DFA0F-B96D-4F5B-94C9-3180C8EA4964"><img width="342" height="55" src="img/GUID-A4587EC3-B50F-4061-9068-E7D90C223CA3-default.gif" alt="Collections icon on navigation bar" title="Collections icon on navigation bar" /></div>
+<!-- class="figure" -->
+<p>For more information, see <a href="oa_coll.htm#GUID-CA6B5AA2-88E1-437F-833A-E27F46AAED0A">How do I create a collection?</a></p>
+</div>
+</div>
+<a id="OSNUG2012"></a>
+<div class="props_rev_3"><a id="GUID-CA6B5AA2-88E1-437F-833A-E27F46AAED0A"></a>
+<h2 id="OSNUG-GUID-CA6B5AA2-88E1-437F-833A-E27F46AAED0A" class="sect2">How do I create a collection?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li class="stepexpand"><span>Click <img width="16" height="15" src="img/GUID-ADAE0A34-74AA-4E9C-AB3B-F6DAFE389C20-default.gif" alt="Create a new Collection icon" title="Create a new Collection icon" /> to open the New Collection dialog.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Name</span> field, enter a name for the collection.</span></li>
+<li class="stepexpand"><span>Select check boxes to enable collection options:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Make publicly available</span>&mdash;Make this a public collection that anyone with an Oracle Social Network account can join.</p>
+</li>
+<li>
+<p><span class="bold">Add to favorites</span>&mdash;Add this collection to your <span class="bold">Favorites</span> list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2015"></a>
+<div class="props_rev_3"><a id="GUID-27D4AD47-DF4B-4A39-9433-4AB6F05D483F"></a>
+<h2 id="OSNUG-GUID-27D4AD47-DF4B-4A39-9433-4AB6F05D483F" class="sect2">How do I add members to a collection?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a listed collection to open it.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-7FBC24E6-1EF6-4799-BE9C-50924C7AE257-default.gif" alt="Members tab" title="Members tab" /> to open the collection's list of members.</span>
+<div>
+<p><span class="bold">Tip:</span> To see how many members a collection has, mouse over the <span class="bold">Members</span> tab.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <img width="16" height="17" src="img/GUID-77EB1A96-EB33-47CA-9EF1-B8BA4AE563D1-default.gif" alt="Add Members icon" title="Add Members icon" /> to open the Select Members dialog.</span></li>
+<li class="stepexpand"><span>In the Select Members dialog, select groups and people you want to add as members. Use <span class="bold">Ctrl+Click</span> to select more than one person or group.</span>
+<div>
+<p>Double-click a name to add it to the <span class="bold">Select</span> list at the bottom of the dialog, or select names, then click <span class="bold">Select</span> to add all selections.</p>
+<p>By default, you see a list of contacts. Click a tab to change your view:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Contacts</span>&mdash;View a list of your contacts.</p>
+</li>
+<li>
+<p><span class="bold">Groups</span>&mdash;View a list of your groups.</p>
+</li>
+<li>
+<p><span class="bold">Current Members</span>&mdash;View a list of current members.</p>
+</li>
+</ul>
+<p>Alternatively, you can enter part of a person's or group's name, and select them from the list that pops up.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to add your selection to the collection's membership.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2016"></a>
+<div class="props_rev_3"><a id="GUID-1EF1EF15-9FD7-44CE-895C-0CED291756A2"></a>
+<h2 id="OSNUG-GUID-1EF1EF15-9FD7-44CE-895C-0CED291756A2" class="sect2">How do I remove members from a collection?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li><span>Double-click a listed collection to open it.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-7FBC24E6-1EF6-4799-BE9C-50924C7AE257-default.gif" alt="Members tab" title="Members tab" /> to open the collection's list of members.</span></li>
+<li><span>Right-click the person or group, and select <span class="bold">Remove from Membership</span>.</span></li>
+<li><span>In the confirmation dialog, click <span class="bold">Yes</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2013"></a>
+<div class="props_rev_3"><a id="GUID-9C49493C-F0C5-4D24-A137-7A540AA2DAE8"></a>
+<h2 id="OSNUG-GUID-9C49493C-F0C5-4D24-A137-7A540AA2DAE8" class="sect2">How do I add an existing item to a collection?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a listed collection to open it.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-8FD3FF29-20A6-4869-BDCE-915AEA08B503-default.gif" alt="Related Items tab" title="Related Items tab" /> to show the items in this collection.</span></li>
+<li class="stepexpand"><span>Click <img width="16" height="16" src="img/GUID-9444758F-73E3-4311-B3F9-E1B2CEDF84F4-default.gif" alt="Add Existing Item icon" title="Add Existing Item icon" /></span></li>
+<li class="stepexpand"><span>In the Browse Items dialog, select one or more items to add to the collection, then click <span class="bold">OK</span>. Use <span class="bold">Ctrl+Click</span> to select more than one item.</span>
+<div>
+<p>By default, you see a list of recent items. Click a tab to change your view:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Recent Items</span>&mdash;Select from items you have visited recently.</p>
+</li>
+<li>
+<p><span class="bold">Favorites</span>&mdash;Select from items you have marked as a favorite.</p>
+</li>
+</ul>
+<p>Alternatively, you can enter part of a item's name, and select it from the list that pops up. When you select from the search's pop-up results, the dialog closes and your selection is added to the collection.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2014"></a>
+<div class="props_rev_3"><a id="GUID-AAD12618-176A-4D70-A824-5FFFAEF9530C"></a>
+<h2 id="OSNUG-GUID-AAD12618-176A-4D70-A824-5FFFAEF9530C" class="sect2">How do I add a new item to a collection?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a listed collection to open it.</span></li>
+<li class="stepexpand"><span>Click <img width="24" height="21" src="img/GUID-8FD3FF29-20A6-4869-BDCE-915AEA08B503-default.gif" alt="Related Items tab" title="Related Items tab" /> to show the related items in this collection.</span></li>
+<li class="stepexpand"><span>Click <img width="16" height="16" src="img/GUID-CEA3FC48-79F4-4214-B306-4635A4BD7600-default.gif" alt="Add New Items icon" title="Add New Items icon" />, and select:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Add New Conversation</span>&mdash;To create a new Conversation and add it to the collection.</p>
+</li>
+<li>
+<p><span class="bold">New Collection</span>&mdash;To create a new collection and add it to the current collection.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Enter a name for the item in the <span class="bold">Name</span> field.</span></li>
+<li class="stepexpand"><span>Select the options you want to apply to the new item:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Make publicly available</span>&mdash;Make this a publicly available item that anyone with an Oracle Social Network account can join.</p>
+</li>
+<li>
+<p><span class="bold">Add to favorites</span>&mdash;Add this item to your favorites list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to add the new item to the collection.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2017"></a>
+<div class="props_rev_3"><a id="GUID-607E4B1F-64EA-4DE1-81EC-E7C78232D62C"></a>
+<h2 id="OSNUG-GUID-607E4B1F-64EA-4DE1-81EC-E7C78232D62C" class="sect2">How do I remove an item from a collection?</h2>
+<div>
+<div class="section">
+<p>When you remove an item from a collection, there's no confirmation dialog&mdash;the item is simply removed. If you decide removal was a mistake, you can always add it back (see <a href="oa_coll.htm#GUID-9C49493C-F0C5-4D24-A137-7A540AA2DAE8">How do I add an existing item to a collection?</a>).</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li><span>Double-click a listed collection to open it.</span></li>
+<li><span>Click <img width="24" height="21" src="img/GUID-8FD3FF29-20A6-4869-BDCE-915AEA08B503-default.gif" alt="Related Items tab" title="Related Items tab" />to show the related items in this collection.</span></li>
+<li><span>Right-click the item, and select <span class="bold">Remove Item from the Collection</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2010"></a>
+<div class="props_rev_3"><a id="GUID-DE63765D-E47C-4DFF-89C4-682BA65BD72F"></a>
+<h2 id="OSNUG-GUID-DE63765D-E47C-4DFF-89C4-682BA65BD72F" class="sect2">How can I rearrange a list of collections?</h2>
+<div>
+<div class="section">
+<p>You can select the type of collections you want to appear on the collections list (<span class="bold">Yours</span>, <span class="bold">Available</span>, <span class="bold">Favorites</span>, <span class="bold">Muted</span>), then arrange that view so that it appears in the order you find the most useful.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li><span>On the <span class="bold">Collections</span> banner, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu" title="Options menu" />, then select the type of collection you want to see.</span></li>
+<li><span>Click <span class="bold">Arrange By</span>, then select your preferred sort order.</span></li>
+</ol>
+<div class="section">
+<p><span class="bold">Tip:</span> In a collection, you can choose to see different types of content in the panel. Use the tabs at the top of a collection to navigate to each type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Posts</span>&mdash;<img width="24" height="21" src="img/GUID-8487C43C-5727-4A73-8701-43C1CD7BBAB2-default.gif" alt="Posts tab icon" title="Posts tab icon" /> View all messages and documents added to the collection's wall.</p>
+</li>
+<li>
+<p><span class="bold">Documents</span>&mdash;<img width="24" height="21" src="img/GUID-48FFA679-2D1D-49A7-98F0-4A739F2A8D07-default.gif" alt="Documents tab icon" title="Documents tab icon" /> View just the documents added to the collection's wall.</p>
+</li>
+<li>
+<p><span class="bold">Members</span>&mdash;<img width="24" height="21" src="img/GUID-7FBC24E6-1EF6-4799-BE9C-50924C7AE257-default.gif" alt="Members tab icon" title="Members tab icon" /> View and manage the collection's membership.</p>
+</li>
+<li>
+<p><span class="bold">Related Items</span>&mdash;<img width="24" height="21" src="img/GUID-8FD3FF29-20A6-4869-BDCE-915AEA08B503-default.gif" alt="Related Items tab icon" title="Related Items tab icon" /> View a list of the Conversations, profile and group walls, Social Objects, and other collections in this collection.</p>
+</li>
+<li>
+<p><span class="bold">Referring Items</span>&mdash;<img width="24" height="21" src="img/GUID-8027CFBB-A671-4FE8-B971-7408E6B2D6D9-default.gif" alt="Referring Items tab icon" title="Referring Items tab icon" /> View the Social Objects that include this collection in their lists of related items.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG10915"></a>
+<div class="props_rev_3"><a id="GUID-02946A28-5694-4951-B527-C82D55598E5E"></a>
+<h2 id="OSNUG-GUID-02946A28-5694-4951-B527-C82D55598E5E" class="sect2">How do I hide membership messages in a collection?</h2>
+<div>
+<p>When a user is added to or removed from an item a membership message is posted to the item (for example, <span class="italic">This wall is now accessible to: Jane Doe</span>). If you'd prefer not to show those messages, you can hide them. See <a href="oa_conv.htm#GUID-4B0D1A16-3897-4DFE-95EF-06A5D6F1BB25">How do I hide membership messages?</a></p>
+</div>
+</div>
+<a id="OSNUG2018"></a>
+<div class="props_rev_3"><a id="GUID-E1FC5F07-7B93-4794-996B-AD051BA63B93"></a>
+<h2 id="OSNUG-GUID-E1FC5F07-7B93-4794-996B-AD051BA63B93" class="sect2">How do I rename a collection?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="31" height="29" src="img/GUID-64716153-330F-445D-812F-B175B033CB6F-default.gif" alt="Collections icon" title="Collections icon" />.</span></li>
+<li><span>Right-click a listed collection, and select <span class="bold">Modify</span>.</span></li>
+<li><span>In the Modify dialog, rename the collection and click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="oa_conv.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="oa_dandf.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

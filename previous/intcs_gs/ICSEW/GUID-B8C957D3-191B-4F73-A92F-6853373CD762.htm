@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Configuring Oracle E-Business Suite Adapter Trigger Properties</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Follow the information in these sections to configure the Oracle E-Business Suite Adapter in an integration with the Adapter Endpoint Configuration Wizard in Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-10-21T13:42:03Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle E-Business Suite Adapter Endpoint Configuration Wizard" />
+<meta name="dcterms.identifier" content="E70281-05" />
+<meta name="dcterms.isVersionOf" content="ICSEW" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-E2DF924F-BBB3-43CF-8E7B-D2E5DB82E536.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-DDFC47C0-DE03-4117-B38D-8D7B668F06AA.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSEW.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSEW.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSEW.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B8C957D3-191B-4F73-A92F-6853373CD762"></a> <span id="PAGE" style="display:none;">4/13</span> <!-- End Header -->
+<h1 id="ICSEW-GUID-B8C957D3-191B-4F73-A92F-6853373CD762" class="sect1"><span class="enumeration_chapter">1</span> Configuring Oracle E-Business Suite Adapter Trigger Properties</h1>
+<div>
+<p>Follow the information in these sections to configure the <span>Oracle E-Business Suite Adapter</span> in an integration with the <span>Adapter Endpoint Configuration Wizard</span> in <span>Oracle Integration Cloud Service</span>.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-DDFC47C0-DE03-4117-B38D-8D7B668F06AA.htm#GUID-DDFC47C0-DE03-4117-B38D-8D7B668F06AA" title="When adding the Oracle E-Business Suite Adapter as a trigger (source) connection, in the Basic Info page you can enter a name and description, as well as select an endpoint.">Configuring Basic Information Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-D2134607-4940-418D-BA52-B05DC0BE7CA5.htm#GUID-D2134607-4940-418D-BA52-B05DC0BE7CA5" title="Enter the Oracle E-Business Suite trigger business event property values for your integration.">Configuring Oracle E-Business Suite Business Event Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-FF6C68AB-2095-45DB-91E2-0EA0F418B285.htm#GUID-FF6C68AB-2095-45DB-91E2-0EA0F418B285" title="Enter the Oracle E-Business Suite trigger XML gateway message properties for your integration.">Configuring Oracle E-Business Suite XML Gateway Message Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-B4590C36-078F-41A9-A670-345D21197835" title="You can review the specified adapter configuration values on the Summary page.">Reviewing Configuration Values on the Summary Page</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment735">
+<tr>
+<td class="cellalignment742">
+<table class="cellalignment740">
+<tr>
+<td class="cellalignment739"><a href="GUID-E2DF924F-BBB3-43CF-8E7B-D2E5DB82E536.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment739"><a href="GUID-DDFC47C0-DE03-4117-B38D-8D7B668F06AA.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment744">
+<table class="cellalignment738">
+<tr>
+<td class="cellalignment739"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment739"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment739"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html >
+<html lang="en">
+   <head><meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- saved from url=(0023)https://docs.oracle.com -->
+      
+      <title>Oracle Sales Cloud Getting Started with Your Implementation R13 (update 17D)</title>
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      		 <script>
+      
+      document.write('<style type="text/css">');
+      
+      document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+      
+      document.write('</style>');
+      
+      </script>
+      
+      		<script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      		 <script>
+      
+      		 if (window.require === undefined) {
+      
+      document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+      
+      document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+      
+      }
+      
+      			
+      </script>
+      
+      		<meta name="description" content="Speed up cloud sales force automation implementations using a sample case study that leverages import templates, sales methods,
+      and other key setups.">
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Getting Started with Your Sales Cloud Implementation">
+      <meta property="og:description" content="Speed up cloud sales force automation implementations using a sample case study that leverages import templates, sales methods,
+      and other key setups.">
+      <meta content="Fusion Publishing Server, UAE Print Staging" name="generator">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Getting Started with Your Sales Cloud Implementation">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta content="Fri Dec 01 11:33:09 PST 2017" name="dcterms.created">
+      <meta name="dcterms.dateCopyrighted" content="2011, 2017">
+      <meta property="dcterms:title" content="Getting Started with Your Sales Cloud Implementation">
+      <meta name="dcterms.category" content="cloud">
+      <meta content="E89094-02" name="dcterms.identifier">
+      <meta content="FASMC" name="dcterms.isVersionOf">
+      <meta name="dcterms.product" content="en/cloud/saas/sales/r13-update17d">
+      <meta name="dcterms.release" content="Release 13 (update 17D)">
+      <link rel="Next" href="index.html" title="Next" type="text/html">
+      <link type="application/pdf" title="PDF" href="sales-cloud-getting-started-with-your-implementation.pdf" rel="alternate">
+      <link type="application/epub+zip" title="ePub" href="sales-cloud-getting-started-with-your-implementation.epub" rel="alternate">
+      <meta content="all" name="robots">
+      <meta content="yes" name="mos_crawl">
+      
+      <meta content="Getting Started with Your Sales Cloud Implementation" name="doctitle">
+      <meta content="E89094-02" name="partno">
+      <meta name="rel_num" content="Release 13 (update 17D)">
+      <script type="application/json" id="ssot-metadata">
+         
+      		 {
+      					"primary":
+      					{
+      						"category":{
+      						  "short_name":"cloud",
+      						  "element_name":"Cloud",
+      						  "display_in_url":true
+      						},
+      						"suite":{
+      						  "short_name":"saas",
+      						  "element_name":"Software as a Service (SaaS)",
+      						  "display_in_url":true
+      						},
+      						"product_group":{
+      						  "short_name":"customer-experience",
+      						  "element_name":"Customer Experience",
+      						  "display_in_url":false
+      						},
+      						"product":{
+      						  "short_name":"sales",
+      						  "element_name":"Sales",
+      						  "display_in_url":true
+      						},
+      						"release":{
+      						  "short_name":"r13-update17d",
+      						  "element_name":"Release 13 (update 17D)",
+      						  "display_in_url":true
+      						}
+      					}
+      }</script>
+      <meta name="keywords" content="users;creating;users;importing;resources;importing;sales;CRM;customer relationship management;SaaS;sales catalog;importing;accounts;importing;contacts;importing;product groups;importing;">
+    <meta content="Sales Cloud Getting Started with Your Implementation" name="dcterms.title">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert"><a href="index.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a><span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+         
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Getting Started with Your Sales Cloud Implementation</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Contents</li>
+            </ol>
+            <h1 class="sect1">Contents</h1>
+         </header>
+         <ul>
+            <li><a href="index.html">Title and Copyright Information</a></li>
+            <li><a href="preface.html">Preface</a></li><li><a href="about-this-guide.html">1 About This Guide</a>
+            <ul class="contents">
+               <li><a href="about-this-guide.html#FASMC1271023">Audience and Scope</a></li>
+               <li><a href="about-this-guide.html#FASMC2452115">How to Use This Guide</a></li>
+               <li><a href="about-this-guide.html#FASMC2465478">What Your Sales Organization Can Do After Setup</a></li>
+               <li><a href="about-this-guide.html#FASMC1271107">Prerequisites</a></li>
+               <li><a href="about-this-guide.html#FASMC1271279">Case Study</a></li>
+               <li><a href="about-this-guide.html#FASMC2260889">Related Guides</a></li>
+            </ul></li><li><a href="reviewing-company-information-and-getting-ready.html">2 Reviewing Company Information and Getting Ready</a>
+            <ul class="contents">
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2461274">Preliminary Tasks Setup Overview</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2418771">Useful Toolbar Icons</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC1223344">Signing In for the First Time</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2420273">Enabling the Sales Offering for Implementation</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2417934">About Accessing Setup Tasks</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2462615">Enabling Quick Access to Setup Tasks Using an Implementation Project</a><ul class="contents">
+                  <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2432871">Video</a></li>
+                  <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2432989">Downloading the Implementation Project to Your Desktop</a></li>
+                  <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2433067">Installing the Implementation Project You Downloaded</a></li>
+                  <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2433331">Using the Implementation Project as a Launchpad for Your Tasks</a></li></ul>
+               </li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC2451993">Reviewing Your Company Information and Specifying Your Corporate Currency</a></li>
+               <li><a href="reviewing-company-information-and-getting-ready.html#FASMC1851037">Speeding Up Import Using Excel Macros Provided by Oracle</a></li>
+            </ul></li><li><a href="setting-up-user-account-preferences.html">3 Setting Up User Account Preferences</a>
+            <ul class="contents">
+               <li><a href="setting-up-user-account-preferences.html#FASMC2211328">Setup Overview</a></li>
+               <li><a href="setting-up-user-account-preferences.html#FASMC2266525">Initializing the Security Console</a></li>
+               <li><a href="setting-up-user-account-preferences.html#FASMC2462616">Setting Up Preferences for User Names, Passwords, and Notifications</a><ul class="contents">
+                  <li><a href="setting-up-user-account-preferences.html#FASMC2253691">Video</a></li>
+                  <li><a href="setting-up-user-account-preferences.html#FASMC2205696">Procedures</a></li></ul>
+               </li>
+               <li><a href="setting-up-user-account-preferences.html#FASMC2207757">About Using the Security Console in Oracle Sales Cloud Initial Setup</a></li>
+            </ul></li><li><a href="creating-setup-users.html">4  Creating Setup  Users</a>
+            <ul class="contents">
+               <li><a href="creating-setup-users.html#FASMC2429399">Setup Overview</a></li>
+               <li><a href="creating-setup-users.html#FASMC2421358">About Creating Setup Users</a></li>
+               <li><a href="creating-setup-users.html#FASMC2427642">Creating Setup Users</a></li>
+               <li><a href="creating-setup-users.html#FASMC2429181">Granting the Initial User the Same Privileges as Other Setup Users</a></li>
+               <li><a href="creating-setup-users.html#FASMC2462617">Resetting User Passwords and Updating E-Mail Addresses</a><ul class="contents">
+                  <li><a href="creating-setup-users.html#FASMC2205506">Resetting User Passwords</a></li>
+                  <li><a href="creating-setup-users.html#FASMC2210475">Changing a User's E-mail Address</a></li>
+                  <li><a href="creating-setup-users.html#FASMC1543439">How can I change or reset my password?</a></li></ul>
+               </li>
+            </ul></li><li><a href="setting-up-the-accounting-calendar.html">5 Setting Up the Accounting Calendar</a>
+            <ul class="contents">
+               <li><a href="setting-up-the-accounting-calendar.html#FASMC2429295">Setup Overview</a></li>
+               <li><a href="setting-up-the-accounting-calendar.html#FASMC1471121">About Setting Up the Accounting Calendar in Oracle Sales Cloud</a></li>
+               <li><a href="setting-up-the-accounting-calendar.html#FASMC1471194">Creating the Accounting Calendar</a></li>
+               <li><a href="setting-up-the-accounting-calendar.html#FASMC1471232">Enabling the Accounting Calendar You Created</a></li>
+               <li><a href="setting-up-the-accounting-calendar.html#FASMC1716173">Enabling the Time Periods You Generated for Analytics and Reports</a></li>
+            </ul></li><li><a href="setting-up-geography-data.html">6 Setting Up Geography Data</a>
+            <ul class="contents">
+               <li><a href="setting-up-geography-data.html#FASMC2461566">Setup Overview</a></li>
+               <li><a href="setting-up-geography-data.html#FASMC1265026">Importing Nokia Geography Reference Data</a></li>
+               <li><a href="setting-up-geography-data.html#FASMC1689294">Countries Available for Import of Nokia Geography Reference Data</a></li>
+               <li><a href="setting-up-geography-data.html#FASMC1418861">Setting Up Geography Validation</a></li>
+            </ul></li><li><a href="configuring-search.html">7 Configuring Search</a>
+            <ul class="contents">
+               <li><a href="configuring-search.html#FASMC2462010">Setup Overview</a></li>
+               <li><a href="configuring-search.html#FASMC2462168">Scheduling Work Area Search Processes</a></li>
+               <li><a href="configuring-search.html#FASMC1563879">Enabling the Global Search Profile Option</a></li>
+               <li><a href="configuring-search.html#FASMC1664250">Deactivating Global Search on Application Objects</a></li>
+            </ul></li><li><a href="getting-ready-to-create-sales-users.html">8 Getting Ready to Create Sales Users</a>
+            <ul class="contents">
+               <li><a href="getting-ready-to-create-sales-users.html#FASMC2461698">Preparing to Create Sales Users Setup Overview</a></li>
+               <li><a href="getting-ready-to-create-sales-users.html#FASMC2461887">What You Must Do Before Creating Sales Users</a></li>
+               <li><a href="getting-ready-to-create-sales-users.html#FASMC2465673">Creating Additional Resource Roles</a></li>
+               <li><a href="getting-ready-to-create-sales-users.html#FASMC2465729">Creating Rules to Automatically Provision Job Roles to Sales Users</a></li>
+            </ul></li><li><a href="creating-sales-users-in-the-ui.html">9 Creating Sales Users in the UI</a>
+            <ul class="contents">
+               <li><a href="creating-sales-users-in-the-ui.html#FASMC1264446">Setup Overview</a></li>
+               <li><a href="creating-sales-users-in-the-ui.html#FASMC1982515">About Creating the Vision Corp. Sales Organization Hierarchy</a></li>
+               <li><a href="creating-sales-users-in-the-ui.html#FASMC2462618">Creating Sales Users in the UI</a><ul class="contents">
+                  <li><a href="creating-sales-users-in-the-ui.html#FASMC1774304">Video</a></li>
+                  <li><a href="creating-sales-users-in-the-ui.html#FASMC2465897">Procedure</a></li></ul>
+               </li>
+               <li><a href="creating-sales-users-in-the-ui.html#FASMC2205506_2">Resetting User Passwords</a></li>
+            </ul></li><li><a href="importing-users.html">10 Importing Users</a>
+            <ul class="contents">
+               <li><a href="importing-users.html#FASMC2395481">Importing Users Overview</a></li>
+               <li><a href="importing-users.html#FASMC2650999">Downloading and Using the User Import Macro</a><ul class="contents">
+                  <li><a href="importing-users.html#FASMC2650442">Video</a></li>
+                  <li><a href="importing-users.html#FASMC2399654">Downloading the Macro for Importing Users</a></li>
+                  <li><a href="importing-users.html#FASMC2463598">Entering Data into the Sales User Import Macro and Importing</a></li>
+                  <li><a href="importing-users.html#FASMC1765374">Reviewing the Resource Hierarchy You Created</a></li></ul>
+               </li>
+               <li><a href="importing-users.html#FASMC2274256">How can I update the sales organization hierarchy?</a></li>
+            </ul></li><li><a href="setting-up-the-sales-catalog.html">11 Setting Up the Sales Catalog</a>
+            <ul class="contents">
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2363583">Setup Overview</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2022330">About the Sales Catalog</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2373610">Creating the Root Product Group</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2462619">Prerequisite Setups for Products</a><ul class="contents">
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2037693">Setting Up Units of Measure for Products</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2382797">Creating a Location</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2380156">Creating the Item Master Organization</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2380102">Specifying the Item Master Organization Used in Oracle Sales Cloud</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2512362">Identifying the Item Master Organization as the Source of Import Data</a></li></ul>
+               </li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2462620">Importing Products and Product Groups</a><ul class="contents">
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2463352">Downloading the Macros for Importing Products and Product Groups</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2463305">Entering Data into the Product Import Macro and Importing</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2373729">Adding Product Images</a></li>
+                  <li><a href="setting-up-the-sales-catalog.html#FASMC2463126">Entering Data into the Product Group Import Macro and Importing</a></li></ul>
+               </li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC1813134">Publishing the Sales Catalog</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC1813224">Making Your Sales Catalog Available for Use</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC1813264">Validating the Sales Catalog in the Application</a></li>
+               <li><a href="setting-up-the-sales-catalog.html#FASMC2014258">Enabling Sales Catalog Browsing in Opportunities</a></li>
+            </ul></li><li><a href="importing-accounts-and-contacts.html">12 Importing Accounts and Contacts</a>
+            <ul class="contents">
+               <li><a href="importing-accounts-and-contacts.html#FASMC2464508">Importing Accounts and Contacts Overview</a></li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC2462621">Account and Contact Import Concepts</a><ul class="contents">
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2382214">About Importing Accounts and Contacts</a></li>
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2381979">About Importing Addresses for Accounts and Contacts</a></li>
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2362941">About Account Hierarchies</a></li></ul>
+               </li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC2464420">Downloading Macros and Mapping Files for Account and Contact Import</a></li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC2363420">Uploading Mapping Files and Recording Their Numbers</a></li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC1633975">Specifying the Industry Classification for Accounts</a></li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC2392921">Viewing Classification Categories for Accounts</a></li>
+               <li><a href="importing-accounts-and-contacts.html#FASMC2462622">Entering Data and Importing</a><ul class="contents">
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2464060">Entering Data into the Account Import Macro and Importing</a></li>
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2464327">Entering Data into the Contact Import Macro and Importing</a></li>
+                  <li><a href="importing-accounts-and-contacts.html#FASMC2463810">Entering Data into the Account Hierarchy Import Macro and Importing</a></li></ul>
+               </li>
+            </ul></li><li><a href="setting-up-sales-campaigns.html">13 Setting Up Sales Campaigns</a>
+            <ul class="contents">
+               <li><a href="setting-up-sales-campaigns.html#FASMC2215315">About Sales Campaigns</a></li>
+               <li><a href="setting-up-sales-campaigns.html#FASMC2250005">Setup Overview</a></li>
+               <li><a href="setting-up-sales-campaigns.html#FASMC2215303">Creating a Sales Campaign Template</a></li>
+               <li><a href="setting-up-sales-campaigns.html#FASMC2462623">Template Editing Options</a><ul class="contents">
+                  <li><a href="setting-up-sales-campaigns.html#FASMC2240719">Inserting Links for a Call Back, for More Information, and for Forwarding to Others</a></li>
+                  <li><a href="setting-up-sales-campaigns.html#FASMC2242102">Inserting Personalized Text and Other Merge Fields</a></li>
+                  <li><a href="setting-up-sales-campaigns.html#FASMC2269033">Inserting URLs Into Sales Campaign Templates</a></li>
+                  <li><a href="setting-up-sales-campaigns.html#FASMC2242577">Adding Conditional Content</a></li></ul>
+               </li>
+               <li><a href="setting-up-sales-campaigns.html#FASMC2233462">Specifying the Default Sales Campaign Template</a></li>
+               <li><a href="setting-up-sales-campaigns.html#FASMC2245025">Testing Sales Campaign Setup</a></li>
+            </ul></li><li><a href="setting-up-sales-territories-and-assignment.html">14 Setting Up Sales Territories and Assignment</a>
+            <ul class="contents">
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2758312">Setup Overview</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2739128">About Sales Territories and Assignment</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2740033">How Sales Territories Support Assignment and Forecasting</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2647455">Two Sales Territory UIs for Different Users</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2781059">Sales Territory Use Cases</a><ul class="contents">
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2740290">Overview</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2740668">Territory Boundaries by Product: Salespeople in a Region Sell Different Products to the Same Customers</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2741477">Territories by Geography: Salespeople Sell All Products to Customers in Their Region</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2742123">Salespeople in Each Region Manage Their Own Accounts and Sell All Products to Those Accounts</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2749660">Handling Territory Hierarchies with Coverage That Doesn't Roll Up Properly</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2743359">Assigning Others to Help with Individual Sales: Explained</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2753075">Setting Up Sales Territories When You Use Forecasting Only or Don't Have a License for Sales Territories</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2752939">What to Do When You Don't Want Executives Handling Catchall Territories</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2753792">Ignoring the Owner Field and Relying on Territory Assignment Exclusively</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2787134">Providing Managers with Access to All the Accounts and Opportunities in a Multilayered Organization</a></li></ul>
+               </li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2735717">Sales Territory and Assignment Setup for the Vision Corp. Use Case</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2781060">Preparing to Create Territories</a><ul class="contents">
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1417443">Specifying Geography Elements for Territory Setup</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1419163">Enabling Sales Territory Dimensions</a></li></ul>
+               </li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2781061">Creating the Sales Territory Hierarchy</a><ul class="contents">
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2605760">Creating a Territory Proposal</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2756587">Creating the Sales Territory Hierarchy</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1420260">Activating the Territory Proposal</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2745356">Creating a Territory with No Coverage</a></li></ul>
+               </li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1421303">Making Opportunity Assignment Automatic</a></li>
+               <li><a href="setting-up-sales-territories-and-assignment.html#FASMC2781062">Running Assignment Processes</a><ul class="contents">
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1428055">Running the Account Assignments Process</a></li>
+                  <li><a href="setting-up-sales-territories-and-assignment.html#FASMC1429511">Running the Opportunity Assignment Process</a></li></ul>
+               </li>
+            </ul></li><li><a href="setting-up-leads.html">15 Setting Up Leads</a>
+            <ul class="contents">
+               <li><a href="setting-up-leads.html#FASMC2312375">About Leads and Lead Types</a></li>
+               <li><a href="setting-up-leads.html#FASMC2313451">Leads Use Case Covered in This Chapter</a></li>
+               <li><a href="setting-up-leads.html#FASMC2314728">Setup Overview</a></li>
+               <li><a href="setting-up-leads.html#FASMC2315532">Setting Up the Assignment Rule for Assigning Leads</a></li>
+               <li><a href="setting-up-leads.html#FASMC2316321">Enabling Lead Assignment</a></li>
+               <li><a href="setting-up-leads.html#FASMC2327123">Changing the Values for Lead Rank and Lead Channel</a></li>
+               <li><a href="setting-up-leads.html#FASMC2462628">Importing Leads</a><ul class="contents">
+                  <li><a href="setting-up-leads.html#FASMC2334134">Overview</a></li>
+                  <li><a href="setting-up-leads.html#FASMC2508110">Getting Ready to Use the Lead Import Macro</a><ul class="contents">
+                     <li><a href="setting-up-leads.html#FASMC2378252">Video</a></li>
+                     <li><a href="setting-up-leads.html#FASMC2464556">Downloading the Mapping and Macro for Importing Leads</a></li>
+                     <li><a href="setting-up-leads.html#FASMC2464586">Uploading the Mapping for Lead Import</a></li></ul>
+                  </li>
+                  <li><a href="setting-up-leads.html#FASMC2508111">Entering Lead Data into the Macro and Importing</a><ul class="contents">
+                     <li><a href="setting-up-leads.html#FASMC2378450">Video: Entering the Data</a></li>
+                     <li><a href="setting-up-leads.html#FASMC2378546">Video: Importing</a></li>
+                     <li><a href="setting-up-leads.html#FASMC2462985">Entering Lead Data into the Import Macro and Importing</a></li></ul>
+                  </li></ul>
+               </li>
+               <li><a href="setting-up-leads.html#FASMC2316384">Running the Lead Assignment Process</a></li>
+               <li><a href="setting-up-leads.html#FASMC2316941">Creating a List of Unaccepted Leads</a></li>
+               <li><a href="setting-up-leads.html#FASMC2321261">Creating a Lead Qualification Template</a></li>
+               <li><a href="setting-up-leads.html#FASMC2321996">Selecting the Default Lead Qualification Template</a></li>
+               <li><a href="setting-up-leads.html#FASMC2465386">Testing Your Leads Setup</a></li>
+            </ul></li><li><a href="setting-up-competitors.html">16 Setting Up Competitors</a>
+            <ul class="contents">
+               <li><a href="setting-up-competitors.html#FASMC1907334">About Setting Up Competitors</a></li>
+               <li><a href="setting-up-competitors.html#FASMC1907943">Creating the List of Competitors</a></li>
+            </ul></li><li><a href="setting-up-opportunities.html">17 Setting Up Opportunities</a>
+            <ul class="contents">
+               <li><a href="setting-up-opportunities.html#FASMC2468656">Setup Overview</a></li>
+               <li><a href="setting-up-opportunities.html#FASMC2462629">Configuring Sales Methods and Sales Coach</a><ul class="contents">
+                  <li><a href="setting-up-opportunities.html#FASMC1620191">Video</a></li>
+                  <li><a href="setting-up-opportunities.html#FASMC1727181">About Setting Up Your Sales Methodology for Opportunities</a></li>
+                  <li><a href="setting-up-opportunities.html#FASMC1787347">Creating and Editing Sales Methods and Stages</a></li></ul>
+               </li>
+               <li><a href="setting-up-opportunities.html#FASMC2462630">Configuring Opportunity Behavior</a><ul class="contents">
+                  <li><a href="setting-up-opportunities.html#FASMC2468804">About the Default Opportunity Closing Behavior</a></li>
+                  <li><a href="setting-up-opportunities.html#FASMC2462676">Specifying the Default Sales Process and Configuring Opportunity Closing Behavior</a></li></ul>
+               </li>
+               <li><a href="setting-up-opportunities.html#FASMC2398095">Modifying Opportunity Statuses</a></li>
+               <li><a href="setting-up-opportunities.html#FASMC2398510">Modifying the List of Win/Loss Reasons</a></li>
+               <li><a href="setting-up-opportunities.html#FASMC2464946">Importing Opportunities</a></li>
+            </ul></li><li><a href="setting-up-oracle-social-network.html">18 Setting Up Oracle Social Network</a>
+            <ul class="contents">
+               <li><a href="setting-up-oracle-social-network.html#FASMC1272689">About Setting Up Oracle Social Network</a></li>
+               <li><a href="setting-up-oracle-social-network.html#FASMC2556745">Enabling Objects for Sharing on Oracle Social Network</a></li>
+            </ul></li><li><a href="setting-up-sales-quotas.html">19 Setting Up Sales Quotas</a>
+            <ul class="contents">
+               <li><a href="setting-up-sales-quotas.html#FASMC1634578">About Setting Up Sales Quotas</a></li>
+               <li><a href="setting-up-sales-quotas.html#FASMC1634759">Setting Up Sales Quotas</a></li>
+               <li><a href="setting-up-sales-quotas.html#FASMC1757777">Scheduling Quota Processes</a></li>
+            </ul></li><li><a href="setting-up-forecasting.html">20 Setting Up Forecasting</a>
+            <ul class="contents">
+               <li><a href="setting-up-forecasting.html#FASMC1985365">Setup Overview</a></li>
+               <li><a href="setting-up-forecasting.html#FASMC1790848">About Forecasting</a></li>
+               <li><a href="setting-up-forecasting.html#FASMC2323426">Enabling Forecasting</a></li>
+               <li><a href="setting-up-forecasting.html#FASMC1911512">Enabling Forecast Adjustments By Product Quantity</a></li>
+            </ul></li><li><a href="getting-started-with-sales-prediction.html">21 Getting Started with Sales Prediction</a>
+            <ul class="contents">
+               <li><a href="getting-started-with-sales-prediction.html#FASMC1642737">About Sales Prediction</a></li>
+               <li><a href="getting-started-with-sales-prediction.html#FASMC1606358">Setting Up Sales Prediction Rules</a></li>
+               <li><a href="getting-started-with-sales-prediction.html#FASMC1617905">Generating Leads from Sales Prediction Rules</a></li>
+            </ul></li><li><a href="integrating-google-gmail-and-calendar.html">22 Integrating Google Gmail and Calendar</a>
+            <ul class="contents">
+               <li><a href="integrating-google-gmail-and-calendar.html#FASMC2445429">Setup Overview</a></li>
+               <li><a href="integrating-google-gmail-and-calendar.html#FASMC2441918">About Integrating Google Gmail and Calendar with Oracle Sales Cloud</a></li>
+               <li><a href="integrating-google-gmail-and-calendar.html#FASMC2448480">Turning On the Synchronization of Contacts and Calendar Appointments</a></li>
+               <li><a href="integrating-google-gmail-and-calendar.html#FASMC2448926">Running the Contact and Activity Synchronization Process</a></li>
+               <li><a href="integrating-google-gmail-and-calendar.html#FASMC2445550">Installing the Oracle Sales Cloud for Gmail Extension</a></li>
+            </ul></li><li><a href="setting-up-microsoft-outlook.html">23 Setting Up Microsoft Outlook</a>
+            <ul class="contents">
+               <li><a href="setting-up-microsoft-outlook.html#FASMC883790">Overview of Oracle Sales Cloud for Outlook</a></li>
+               <li><a href="setting-up-microsoft-outlook.html#FASMC902940">Overview of Oracle Sales Cloud for Outlook Installation</a></li>
+               <li><a href="setting-up-microsoft-outlook.html#FASMC902669">Installing the Oracle Sales Cloud for Outlook Application</a></li>
+            </ul></li><li><a href="setting-up-mobile-applications.html">24 Setting Up Mobile Applications </a>
+            <ul class="contents">
+               <li><a href="setting-up-mobile-applications.html#FASMC1623982">About Setting Up Mobile Applications</a></li>
+               <li><a href="setting-up-mobile-applications.html#FASMC2462631">Oracle CX Cloud Mobile</a><ul class="contents">
+                  <li><a href="setting-up-mobile-applications.html#FASMC2131931">Oracle CX Cloud Mobile: Overview</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2140057">Installing the iPhone Application: Procedure</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2141991">Installing the Android Application: Procedure</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2265001">Implementing Oracle CX Cloud Mobile: Overview</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2144654">Finding Your Company's Host URL: Worked Example</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2147274">How can I automatically populate the host, port number, SSO and SSL setting for users?</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC2207159">Configuring Oracle CX Cloud Mobile: Explained</a></li></ul>
+               </li>
+               <li><a href="setting-up-mobile-applications.html#FASMC2462632">Oracle Sales Cloud Mobile</a><ul class="contents">
+                  <li><a href="setting-up-mobile-applications.html#FASMC381945">Oracle Sales Cloud Mobile: Overview</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1090867">Finding Your Company's Host URL for Oracle Sales Cloud Mobile: Worked Example</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC988239">Installing the Oracle Sales Cloud Mobile iPhone Application: Procedure</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1090782">Installing the Oracle Sales Cloud Mobile Android Application: Worked Example</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1284107">Configuring Your Mobile Springboard</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1624022">Enabling Automatic Password Save on Mobile Devices</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1958029">How can I automatically populate the host and port information for Oracle Sales Cloud Mobile users?</a></li></ul>
+               </li>
+               <li><a href="setting-up-mobile-applications.html#FASMC2462633">Oracle Mobilytics</a><ul class="contents">
+                  <li><a href="setting-up-mobile-applications.html#FASMC1685486">Oracle Sales Cloud Mobilytics: Overview</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1686551">Setting up Oracle Sales Cloud Mobilytics: Explained</a></li>
+                  <li><a href="setting-up-mobile-applications.html#FASMC1686747">Configuring Oracle Sales Cloud Mobilytics: Explained</a></li></ul>
+               </li>
+            </ul></li>
+            <li><a href="glossary.html">Glossary</a></li>
+         </ul>
+      </article>
+      <!-- Start SiteCatalyst code -->
+      <script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+      <!-- End SiteCatalyst code -->
+      </body>
+</html>

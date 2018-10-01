@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Setting Up Flexfields</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="To load Flexfield data from Fusion Applications into the OTBI-Enterprise data warehouse, you must perform the following configuration steps in the Fusion Applications SaaS environment." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-73F92489-4831-4927-8D13-8C89EB36D607.htm" title="Previous" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-0430D4CC-D589-4D00-8C83-74F8CC71C21F"></a> <span id="PAGE" style="display:none;">42/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-0430D4CC-D589-4D00-8C83-74F8CC71C21F" class="sect1"><span class="bold">Setting Up Flexfields</span></h1>
+<p>To load Flexfield data from Fusion Applications into the OTBI-Enterprise data warehouse, you must perform the following configuration steps in the Fusion Applications SaaS environment.</p>
+<div class="sect2"><a id="TASK-14-5BAE0115"></a>
+<h2 id="BITIG-TASK-14-5BAE0115" class="sect2">How to Set Up Flexfields to Display in BI Dashboards and Reports</h2>
+<div>
+<div class="section">In the Fusion Applications SaaS environment, do the following:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Enable DFF extensions.</span>
+<div>For information on how to enable DFF extensions, refer to the following two documents on My Oracle Support:</div>
+<div><span class="bold">Note</span>: You do not need to run BI Extender again.</div>
+<div>&mdash; How To Expose Descriptive Flexfields In Relevant OTBI Subject Areas After They Have Been Configured In Fusion Applications (Doc ID 1478273.1)</div>
+<div>&mdash; Fusion Applications Business Intelligence - List of Descriptive Flex Field Mappings (Doc ID 1509316.1)</div>
+</li>
+<li class="stepexpand"><span>Use BI Cloud Connector Console to load the View Objects (VOs) listed in the &lsquo;Supported View Objects&rsquo; table below:</span>
+<ol>
+<li><span>On the Fusion Applications pod, start BI Cloud Connector Console using a HTTP URL based on the following format: <code>http://&lt;<span class="codeinlineitalic">FA OHS Host</span>&gt;:&lt;<span class="codeinlineitalic">FA OHS Port</span>&gt;/biacm</code>.</span></li>
+<li><span>In BI Cloud Connector Console, select the <span class="bold">Configure Cloud Extract</span> link on the Tasks pane to display the Configure Cloud Extract dialog.<br />
+<img width="517" height="536" src="img/GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif" alt="Description of GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif follows" title="Description of GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif</a><br /></span></li>
+<li><span>Scroll down to the Data Store area.</span></li>
+<li><span>For each of the View Objects (VOs) listed in the &lsquo;Supported View Objects&rsquo; table below, click the Add icon (<img width="31" height="27" src="img/GUID-85DC9562-19E8-4AB1-AF89-2B2423F64131-default.gif" alt="Add icon" title="Add icon" />) to display the Add Data Store dialog and create a new data store.<br />
+<img width="382" height="257" src="img/GUID-8E77FA4F-9103-4820-ACBA-25BD594C3A48-default.gif" alt="Description of GUID-8E77FA4F-9103-4820-ACBA-25BD594C3A48-default.gif follows" title="Description of GUID-8E77FA4F-9103-4820-ACBA-25BD594C3A48-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-8E77FA4F-9103-4820-ACBA-25BD594C3A48-default.gif</a><br /></span></li>
+</ol>
+</li>
+</ol>
+<div class="section">The next scheduled Cloud Extract executed by BI Cloud Connector Console will extract these VOs and generate files as required by OTBI Enterprise.</div>
+<!-- class="section" -->
+<div class="example" id="TASK-14-5BAE0115__GUID-67A19109-0DA3-49C3-8044-CAEBA15FD462">Then, the next scheduled OTBI-E load plan executed by Configuration Manager will download the newly generated FLEX files and load the flexfield changes into the OTBI-Enterprise data warehouse.</div>
+<!-- class="example" -->
+<div class="example" id="TASK-14-5BAE0115__GUID-EBD4A378-D954-48CB-BD4E-18CAE8769018"><span class="bold">Supported View Objects</span></div>
+<!-- class="example" -->
+<div class="section">
+<div class="tblformal" id="TASK-14-5BAE0115__GUID-6B7CC516-80FA-4099-A691-0A89DC3D0F92">
+<table class="cellalignment15">
+<tbody>
+<tr>
+<td class="cellalignment16">Presentation Table Name in Fusion Applications</td>
+<td class="cellalignment16">Target Table</td>
+<td class="cellalignment16">Model Name</td>
+<td class="cellalignment16">VO Name</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Assignment Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_HR_ASSIGNMENT_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; HR Assignment</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.BaseWorkerAsgDFFBIAM.FLEX_BI_BaseWorkerAsgDFF_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Person Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_HR_PERSON_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; HR Person</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.PersonsDFFBIAM.FLEX_BI_PersonsDFF_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Person Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_HR_PERSON_LEG_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; HR Person Legislation</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.PersonLegislativeInfoDFFBIAM.FLEX_BI_PersonLegislativeInfoDFF_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Position Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_HR_POSITION_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; HR Position</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.PositionCustomerFlexBIAM.FLEX_BI_PositionCustomerFlex_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Pay Grade Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_PAY_GRADE_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; Pay Grade</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.GradeCustomerFlexBIAM.FLEX_BI_GradeCustomerFlex_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Job Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_JOB_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim &ndash; Job</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.JobCustomerFlexBIAM.FLEX_BI_JobCustomerFlex_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Location Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_BUSN_LOCATION_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim - Worker Location</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.LocationCustomerFlexBIAM.FLEX_BI_LocationCustomerFlex_VI</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment16">
+<p>Department Extensible Attributes</p>
+</td>
+<td class="cellalignment16">
+<p>W_INT_ORG_DS/D</p>
+</td>
+<td class="cellalignment16">
+<p>Dim - Department</p>
+</td>
+<td class="cellalignment16">
+<p>HcmTopModelAnalyticsGlobalAM.OrgAttributesDFFDFFBIAM.FLEX_BI_OrgAttributesDFF_VI</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment14">
+<tr>
+<td class="cellalignment5"><a href="GUID-73F92489-4831-4927-8D13-8C89EB36D607.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

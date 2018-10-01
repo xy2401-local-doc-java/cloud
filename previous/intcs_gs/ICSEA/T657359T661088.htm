@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter">
+<meta name="dcterms.identifier" content="E66534-06">
+<meta name="dcterms.isVersionOf" content="ICSEA">
+<meta name="partno" content="E81424-01">
+<link rel="Start" href="../../index.html" title="Home" type="text/html">
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T660885.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T661816.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICSEA.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">12/17</span>
+<!-- End Header -->
+<h1>An Example of Using
+a Business Event as a Trigger (Source) in an Integration</h1>
+
+
+
+
+		<H2> <a name="8334950"></a><a id="T661089"></a><B>Overview</B></H2>
+
+<a name="d0e3195"></a><A NAME="ics_exsourceover"></A>
+
+
+
+	<p><B>Sample
+Business Scenario</B></p>
+
+	<p>A business event "Event for OIP
+status update notification" (oracle.apps.ont.oip.statuschange.update) is used in this example to explain using the Oracle E-Business
+Suite Adapter to trigger an integration in Oracle Integration Cloud
+Service. </p>
+
+	<p>In this example, when a sales
+order is booked as part of the business flow, Oracle Order Management
+raises the event oracle.apps.ont.oip.statuschange.update, and a draft invoice is created in Oracle Accounts
+Receivables.</p>
+
+	<p>At the design time, you need
+to create an integration called "Order to Invoice" with Oracle E-Business
+Suite Order Management as a trigger (source) connected through the
+Oracle E-Business Suite Adapter and Oracle E-Business Suite Accounts
+Receivables as an invoke (target) connected through a generic REST
+Adapter. The "Order to Invoice" integration will subscribe to this
+business event. </p>
+
+	<p>During the runtime, when the
+status of the sales order is changed in the order header, the business
+event oracle.apps.ont.oip.statuschange.update is
+raised in Oracle E-Business Suite Order Management which triggers
+the integration. If the status of the sales order is "Booked", the
+order details information is fetched from Oracle E-Business Suite
+Order Management. The Oracle E-Business Suite Adapter prepares and
+propagates the order details as event payload from Order Management
+to invoke the integration endpoint in Oracle Integration Cloud Service.
+As a result, the draft invoice is created in Oracle Accounts Receivables. </p>
+
+	<p><B>Assumption</B></p>
+
+  <ul>
+  <li>
+	<p>Assume that REST services
+are directly accessible from Oracle Integration Cloud Service; therefore,
+ICS Connectivity Agent is not used in this example. 	</p>
+
+  </li><li>
+	<p>Oracle E-Business Suite
+Order Management and Oracle E-Business Suite Accounts Receivables
+are two different instances used in this example.</p></li></ul>
+
+
+	<p><B>Using Business
+Events for Integrations in Oracle Integration Cloud Service </B></p>
+
+	<p>Based on the integration scenario,
+the following tasks are included in this section:</p>
+
+  <ol>
+  <li>
+	<p><A HREF="T657359T661088.htm#ics_exbeebs">Preparing the Oracle E-Business Suite Instances</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics_exsource1">Establishing Oracle E-Businss Suite Connections</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics1625_excreateinteg">Creating an Integration</A></p>
+
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics1625_exevent">Adding the Oracle E-Business Suite Adapter
+(Trigger) and the REST Adapter (Invoke) to the Integration</A></p>
+
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics_exbetracking">Assigning Business Identifier for Tracking</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics1625_exevetest">Activating and Testing the Integration</A></p></li></ol>
+
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352205"></a><a id="T661957"></a><B>Preparing the Oracle E-Business
+Suite Instances</B></H2>
+
+<a name="d0e3302"></a><A NAME="ics_exbeebs"></A>
+
+
+
+	<p>Before adding Oracle E-Business
+Suite connections, you must prepare the following Oracle E-Business
+Suite instances to ensure the required setup or configuration is in
+place. </p>
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T661088.htm#ics_exbeom">Preparing the Order Management Instance</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics_exbere">Preparing the Oracle Accounts Receivables Instance</A></p></li></ul>
+
+
+		<H2> <a name="8352206"></a><a id="T661958"></a><B>Preparing the Order Management Instance</B></H2><a name="d0e3332"></a><A NAME="ics_exbeom"></A>
+	<p>Perform the following tasks to ensure the required setup and configuration for Oracle E-Business Suite Order Management is ready for integrations in Oracle Integration Cloud Service:</p>
+  <ol>
+  <li>
+	<p>Ensure that you perform the required setup tasks to enable the Oracle E-Business Suite Adapter. </p>
+	<p>These tasks include configuring Oracle E-Business Suite REST services, configuring the access to these services, deploying required REST services in Oracle E-Business Suite, and granting the user privileges to these services.</p>
+	<p>Specifically, ensure that you deploy the following REST services and have grants for the <B>operations</B> user:</p>
+  <ul>
+  <li>
+	<p>Metadata Provider REST service</p>
+  <ul>
+  <li>
+	<p>Deploy the Metadata Provider API with "<B>provider</B>" as the service alias name</p>
+  </li><li>
+	<p>Deploy the Metadata Provider API with <B>GET</B> HTTP method for <B>all</B> the methods contained in the API</p>
+  </li><li>
+	<p>Grant the access privileges for <B>all</B> the methods contained in the API to the <B>operations</B> user</p></li></ul>
+
+  </li><li>
+	<p>Event Manager REST service </p>
+  <ul>
+  <li>
+	<p>Deploy the Event Manager API with "<B>subscription</B>" as the service alias name</p>
+  </li><li>
+	<p>Deploy the Event Manager API with <B>POST</B> HTTP method for <B>all</B> the methods contained in the API</p>
+  </li><li>
+	<p>Grant the access privileges for <B>all</B> the methods contained in the API to the <B>operations</B> user</p></li></ul>
+</li></ul>
+
+	<p>For detailed instructions on these tasks, see: <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business Suite Adapter</A>.</p>
+  </li><li>
+	<p>Ensure that you perform the required setup tasks to enable the inbound (trigger or source) integrations. </p>
+	<p>These tasks include storing the ICS user credentials in Oracle E-Business Suite FND vault, setting up proxy URLs in Oracle E-Business Suite, and importing SSL certificates to Oracle E-Business Suite. For detailed instructions, see: <A HREF="T657359T657339.htm#ics_setupevent">Setup Tasks for Using the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p>
+  </li><li>
+	<p>Deploy the Order Management API, OE_ORDER_PUB (Process Order), as a REST service and grant the method access privileges to the <B>operations</B> user.</p>
+	<p>In this example, only grant the "Get Order" method contained in the API to the <B>operations</B> user.</p>
+  </li><li>
+	<p>Ensure that the profile option "OM: Raise Status Change Business Event" is set to Yes.</p></li></ol>
+
+
+
+
+
+
+		<H2> <a name="8352207"></a><a id="T661959"></a><B>Preparing the Oracle Accounts
+Receivables Instance</B></H2>
+
+<a name="d0e3460"></a><A NAME="ics_exbere"></A>
+
+
+
+	<p>Perform the following tasks to
+ensure the required setup and configuration for Oracle E-Business
+Suite Accounts Receivables is ready to use in an integration in Oracle
+Integration Cloud Service:</p>
+
+  <ol>
+  <li>
+	<p>Configure Oracle E-Business
+Suite Integrated SOA Gateway REST services.</p>
+	<p>Follow the setup tasks as described in My Oracle Support
+Knowledge Document 556540.1 to configure Oracle E-Business Suite Integrated
+SOA Gateway Release 12.1.3 and apply the REST service patches to enable
+the REST service feature. For more information, see step 1, as described
+in <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business
+Suite Adapter</A>.</p>
+
+  </li><li>
+	<p>Deploy the Invoice
+Creation API as a REST service with the following requirements and
+grant the desired method access privilege to the <B>operations</B> user:</p>
+
+  <ul>
+  <li>
+	<p>Deploy the Invoice
+Creation API with "<B>invoice</B>" as the service alias name</p>
+  </li><li>
+	<p>Deploy the Invoice
+Creation API with <B>POST</B> HTTP method only for the "Create Single Invoice" method contained in the API</p>
+
+  <P><p><STRONG><span>Note: </span></STRONG>PL/SQL APIs
+can be exposed as REST services only with POST HTTP method.</p>
+</P>
+
+  </li><li>
+	<p>Grant the access privilege
+only for the Create Single Invoice method contained
+in the API to the <B>operations</B> user</p></li></ul>
+
+
+	<p>For information on deploying
+REST services, see Deploying REST Web Services, Administering Native
+Integration Interfaces and Services chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+
+	<p>For information on creating security
+grants for REST services, see Managing Grants for Interfaces with
+Support for SOAP and REST Web Services, Administering Native Integration
+Interfaces and Services chapter, <I>Oracle E-Business
+Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8334951"></a><a id="T661090"></a><B>Establishing Oracle E-Business
+Suite Connections</B></H2>
+
+<a name="d0e3557"></a><A NAME="ics_exsource1"></A>
+
+
+
+	<p>Before creating an integration,
+you need to establish the following connections that will be used
+later in this example:</p>
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T661088.htm#ics_exbeomcon">Creating the Connection for Oracle E-Business
+Suite Order Management</A></p>
+  </li><li>
+	<p><A HREF="T657359T661088.htm#ics_exberecon">Creating the Connection for Oracle E-Business
+Suite Accounts Receivables</A></p></li></ul>
+
+
+
+
+
+
+		<H2> <a name="8352273"></a><a id="T661960"></a><B>Creating the Connection for
+Oracle E-Business Suite Order Management</B></H2>
+
+<a name="d0e3591"></a><A NAME="ics_exbeomcon"></A>
+
+
+
+	<p>This section describes how to
+create a connection for the Oracle E-Business Suite Order Management
+instance by using the Oracle E-Business Suite Adapter. This connection
+will be added later as a trigger (source) in an integration.</p>
+
+	<p>Perform the following steps to
+establish the connection for Oracle E-Businss Suite Order Management
+in Oracle Integration Cloud Service:</p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle Integration
+Cloud Service.</p>
+  </li><li>
+	<p>Click <B>Connections</B> in the Oracle Integration Cloud
+Service home page.</p>
+  </li><li>
+	<p>Click <B>Create New Connection</B>.</p>
+  </li><li>
+	<p>In the Create Connection
+- Select Adapter dialog appears. </p>
+	<p>You can locate the Oracle E-Business Suite Adapter by
+entering a full or partial name to locate "Oracle E-Business Suite"
+from the dialog. </p>
+
+	<p>For example, enter  "Oracle E-Business
+Suite" in the Search field. The Oracle E-Business Suite Adapter is
+filtered from the list of adapters. </p>
+
+	<p>Click the <B>Select</B> button for "Oracle E-Business Suite" to use the
+Oracle E-Business Suite Adapter. The New Connection - Information
+dialog appears. </p>
+
+  </li><li>
+	<p>Enter the following
+information for the Oracle E-Business Suite Order Management connection:</p>
+
+	<p><B>Creating the Order Management
+Connection </B></p><p><img width="679" height="361" src="./img/ics_exbecon1.gif" alt="the picture is described in the document text" ></p>
+
+  <ul>
+  <li>
+	<p><B>Connection Name:</B> Enter "Order Management".</p>
+  </li><li>
+	<p><B>Identifier:</B> Accept the default populated identifier such
+as, ORDER_MANAGEMENT".</p>
+  </li><li>
+	<p><B>Connection Role:</B> Select "Trigger and Invoke" role for
+this connection.</p>
+  </li><li>
+	<p><B>Description:</B> Enter "Create an Oracle E-Business Suite
+Order Management connection" as the description.</p></li></ul>
+
+
+	<p>Click <B>Create</B> to create the connection. </p>
+
+  </li><li>
+	<p>The Connection Details
+page is displayed for the "Order Management" connection you just created.
+Enter additional connection details by specifying the following information:</p>
+
+  <ul>
+  <li>
+	<p>Email Address: Enter
+an administrator's email address to receive  notifications if problems
+or changes occur in this connection.</p>
+  </li><li>
+	<p>Connection Properties:
+Click <B>Configure Connectivity</B> to open
+the Connection Properties dialog where you enter a URL (http://&lt;ebs
+host name&gt;:&lt;port&gt;) to connect to an Oracle E-Business
+Suite Order Management instance.</p>
+	<p>Click <B>OK</B> to save your
+work.</p>
+
+  </li><li>
+	<p>Security: Click <B>Configure Security</B> to open the Credentials
+dialog. </p>
+	<p>Enter <B>operations</B> as the username
+and its associated password in the Credentials dialog to access the
+Oracle E-Business Suite Order Management instance you specified earlier
+in the Connection Properties dialog.</p>
+
+	<p>Click <B>OK</B> to save your work.</p>
+</li></ul>
+
+
+	<p>After you specify the required
+connection information, the "Order Management" connection detail page
+appears.</p>
+
+  </li><li>
+	<p>Click <B>Test</B> to test the "Order Management" connection
+you just specified.</p>
+  </li><li>
+	<p>Click <B>Save</B> to save your connection. </p>
+	<p>Click <B>Exit Connection</B>.</p>
+</li></ol>
+
+
+	<p>Oracle E-Business Suite connection
+"Order Management" now appears in the Connections page.</p>
+
+	<p><B>Showing the Order Management
+Connection in the Connections Page</B></p><p><img width="1014" height="155" src="./img/ics_exbeconom.gif" alt="the picture is described in the document text" ></p>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352301"></a><a id="T661962"></a><B>Creating the Connection for
+Oracle E-Business Suite Accounts Receivables</B></H2>
+
+<a name="d0e3798"></a><A NAME="ics_exberecon"></A>
+
+
+
+	<p>As described earlier that Oracle
+E-Business Suite Order Management and Accounts Receivables are two
+different instances used in this example, you need to create a connection
+for the Oracle Accounts Receivables instance by using the REST Adapter.
+This connection will be added later as an invoke (target) to an integration.</p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle Integration
+Cloud Service.</p>
+  </li><li>
+	<p>Click <B>Connections</B> in the Oracle Integration Cloud
+Service home page.</p>
+  </li><li>
+	<p>Click <B>Create New Connection</B>.</p>
+  </li><li>
+	<p>In the Create Connection
+- Select Adapter dialog appears. </p>
+	<p>Enter "REST" in the Search field. The REST Adapter is
+filtered from the list of adapters. </p>
+
+	<p><B>Searching REST Adapter in the
+Create Connection - Select Adapter Dialog</B></p><p><img width="719" height="620" src="./img/ics_exberestcon.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click the <B>Select</B> button for "REST" to use the REST
+Adapter. The New Connection - Information dialog appears. </p>
+
+  </li><li>
+	<p>Enter the following
+information for the Oracle E-Business Suite Accounts Receivables connection:</p>
+
+	<p><B>Creating the Accounts Receivables
+Connection</B></p><p><img width="680" height="357" src="./img/ics_exberestconnew3.gif" alt="the picture is described in the document text" ></p>
+
+  <ul>
+  <li>
+	<p><B>Connection Name:</B> Enter "Receivables" as the connection
+name.</p>
+  </li><li>
+	<p><B>Identifier:</B> Accept the default populated identifier such
+as "RECEIVABLES".</p>
+  </li><li>
+	<p><B>Connection Role:</B> Select "Trigger and Invoke" role for
+this connection.</p>
+  </li><li>
+	<p><B>Description:</B> Enter "Create a connection for Oracle E-Business
+Suite Receivables" as the description.</p></li></ul>
+
+
+	<p>Click <B>Create</B> to create the connection. </p>
+
+  </li><li>
+	<p>The Connection Details
+page is displayed for the "Receivables" connection you just created.
+Enter additional connection details by specifying the following information:</p>
+
+  <ul>
+  <li>
+	<p>Email Address: Enter
+an administrator's email address to receive  notifications if problems
+or changes occur in this connection.</p>
+  </li><li>
+	<p>Click <B>Configure Connectivity</B> to open the Connection
+Properties dialog. Enter the following information:</p>
+
+  <ul>
+  <li>
+	<p><B>Connection Type:</B> Select "REST API Base URL".</p>
+
+  </li><li>
+	<p><B>Connection URL:</B> Enter a connection URL (http://&lt;ebs
+host name&gt;:&lt;port&gt;/webservices/rest/invoice) for the Invoice
+Creation REST service with invoice alias name that
+you deployed earlier while preparing the Receivables instance. </p>
+
+	<p><B>Entering the Connection Properties
+through the REST Adapter </B></p><p><img width="865" height="269" src="./img/ics_exberestconurl.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>OK</B> to save your work.</p>
+
+  </li><li>
+	<p>Security: Click <B>Configure Security</B> to open the Credentials
+dialog.</p>
+	<p>Accept the "Basic
+Authentication" as the default security policy.</p>
+
+	<p>Enter <B>operations</B> as the username and its associated
+password in the Credentials dialog to access the Invoice Creation
+REST service you specified earlier in the Connection Properties dialog.</p>
+
+	<p><B>Entering User Credentials in
+the Credentials Dialog</B></p><p><img width="737" height="348" src="./img/ics1625_prop4.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>OK</B> to save your work.</p>
+</li></ul>
+
+</li></ul>
+
+
+  </li><li>
+	<p>Click <B>Test</B> to test the connection you just specified
+for Oracle E-Business Suite Accounts Receivables.</p>
+  </li><li>
+	<p>Click <B>Save</B> to save your connection. </p>
+	<p>Click <B>Exit Connection</B></p>
+</li></ol>
+
+
+	<p>Oracle E-Business Suite connection
+"Receivables" now appears in the Connections page.</p>
+<p><img width="775" height="313" src="./img/ics_exberestcon2.gif" alt="the picture is described in the document text" ></p>
+
+
+
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8350227"></a><a id="T661813"></a><B>Creating an Integration</B></H2>
+
+<a name="d0e4065"></a><A NAME="ics1625_excreateinteg"></A>
+
+
+
+	<p>Based on the business scenario
+described earlier, you need to create an integration called "Order
+to Invoice" with the Orchestration pattern. This pattern allows you
+to orchestrate trigger, invoke, and switch activities if required
+into a process diagram in an integration. You can also add mappings
+on switch branches later if needed. </p>
+
+	<p>This section describes how to
+create an integration with the Orchestration pattern. Information
+on adding each activity in the diagram is explained later in this
+chapter.</p>
+
+	<p>Perform the following steps to
+create an integration:</p>
+
+  <ol>
+  <li>
+	<p>In the Integration
+Cloud Service toolbar, click <B>Designer</B>.</p>
+  </li><li>
+	<p>In the Designer Portal,
+click <B>Integrations</B>.</p>
+  </li><li>
+	<p>In the Integrations
+page, click <B>Create New Integration</B>.</p>
+	<p>The Create Integration
+- Select a Style/Pattern dialog appears.</p>
+
+	<p>Click <B>Select</B> for the "Orchestration" integration pattern that is used in this
+example. </p>
+
+	<p><B>Creating the Integration with
+the Orchestration Pattern</B></p><p><img width="698" height="315" src="./img/ics_exbeorch2.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>The New Integration
+- Information dialog appears. Enter the following information:</p>
+
+  <ul>
+  <li>
+	<p><B>What do you want to call your integration?</B> Enter a meaningful
+name for your integration, such as "Order to Invoice".</p>
+  </li><li>
+	<p><B>Identifier</B>: Accept the default identifier value "ORDER_TO_INVOICE".</p>
+
+  </li><li>
+	<p><B>Version</B>: Accept the default version number. </p>
+
+  </li><li>
+	<p><B>What does this integration do?</B> Enter "Create an integration
+for order to invoice" as the description for this integration. </p>
+
+  </li><li>
+	<p><B>Which package does this integration belong to?</B> Leave
+it blank.</p></li></ul>
+
+
+	<p><B>Entering Integration Information
+in the New Integration - Information Dialog</B></p><p><img width="875" height="522" src="./img/ics1633_integBE.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click <B>Create</B> and <B>Save</B>. </p></li></ol>
+
+
+	<p>To complete the integration,
+you need to add the following tasks that are described in the next
+few sections:</p>
+
+  <ul>
+  <li>
+	<p>Add the desired connections
+to the integration you just created.</p>
+	<p>See: <A HREF="T657359T661088.htm#ics1625_exevent">Adding the Oracle E-Business Suite Adapter
+(Trigger) and the REST Adapter (Invoke) to the Integration</A>.</p>
+
+  </li><li>
+	<p>Add mappings in the
+integration.</p>
+	<p>See: <A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A>.</p>
+
+  </li><li>
+	<p>Assign business identifiers
+for tracking. </p>
+	<p>See: <A HREF="T657359T661088.htm#ics_exbetracking">Assigning Business Identifier for Tracking</A>.</p>
+</li></ul>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8350228"></a><a id="T661814"></a><B>Adding the Oracle E-Business
+Suite Adapter (Trigger) and the REST Adapter (Invoke) to the Integration</B></H2>
+
+<a name="d0e4246"></a><A NAME="ics1625_exevent"></A>
+
+
+
+	<p>In this example, you need to
+add the following activities in the integration:</p>
+
+  <ul>
+  <li>
+	<p>Add the Oracle E-Business
+Suite Adapter as a trigger activity called "Order_Status_Update" for
+the Oracle E-Business Suite Order Management instance.</p>
+	<p>This trigger activity uses the business
+event oracle.apps.ont.oip.statuschange.update through
+the Oracle E-Business Suite Adapter. When the status of a sales order
+is updated, Oracle Order Management raises this event.</p>
+
+  </li><li>
+	<p>Add a switch with two
+branches. The defined branch is called "Booked Order" which contains
+the major orchestration flow for the integration, the other branch
+is the otherwise branch which is not used in this example.</p>
+
+  </li><li>
+	<p>Define mappings for
+"Get_Order".</p>
+	<p>It allows
+you to map and pass the order related parameters to the "Get_Order"
+activity to invoke the GET_ORDER REST Service.</p>
+
+	<p>See: <A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A>.</p>
+
+  </li><li>
+	<p>Add the Oracle E-Business
+Suite Adapter as an invoke activity called "Get_Order" for the Oracle
+E-Business Suite Order Management instance.</p>
+	<p>This invoke activity uses the GET_ORDER operation of
+the Process Order (OE_ORDER_PUB) REST service when adding the Oracle
+E-Business Suite Adapter as an invoke. This service retrieves the
+sales order information.</p>
+
+  </li><li>
+	<p>Define mappings for
+"Create_Invoice".</p>
+	<p>This
+activity assigns the sales order related elements from the "Get_Order"
+activity to the Invoice related elements in the "Create_Invoice" activity.</p>
+
+	<p>See: <A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A>.</p>
+
+  </li><li>
+	<p>Add the REST Adapter
+as an invoke activity called "Create_Invoice" for the Oracle E-Business
+Suite Accounts Receivables instance.</p>
+	<p>This activity configures a request payload using the
+XML schema file type and then creates an invoice in Oracle Accounts
+Receivables through the invocation of the CREATE_SINGLE_INVOICE REST
+service.</p>
+</li></ul>
+
+
+	<p><B>Adding
+the Oracle E-Business Suite Adapter as a Trigger with a Business Event </B></p>
+
+	<p>Perform the following steps to
+add the first activity called "Order_Status_Update" for the Oracle
+E-Business Suite Order Management connection:</p>
+
+  <ol>
+  <li>
+	<p>In the "Order to Invoice"
+integration page, drag and drop the Oracle E-Business Suite connection
+called "Order Management" from the TRIGGERS toolbar on the left to
+the large <B>+</B> section within the circle
+in the integration canvas.</p>
+
+	<p><B>Dragging the Order Management
+Connection to the Center to Start the Integration</B></p><p><img width="781" height="362" src="./img/ics_exbeadd1.gif" alt="the picture is described in the document text" ></p>
+
+	<p>The Configure Oracle E-Business
+Suite Adapter Endpoint wizard appears.</p>
+
+  </li><li>
+	<p>Enter the following
+information In the Basic Info page:</p>
+
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Enter "Order_Status_Update"
+as the endpoint name.</p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter the description of
+this integration endpoint. </p>
+  </li><li>
+	<p><B>What do you want to configure the endpoint for?</B> - Select <B>Business Event</B>.</p></li></ul>
+
+
+	<p><B>Entering the Basic Information
+for the Adapter Endpoint with Business Event</B></p><p><img width="782" height="361" src="./img/ics_exbeadd2.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B> to proceed with the rest of the configuration.</p>
+
+  </li><li>
+	<p>In the Business Events
+page, specify the following information for your connection:</p>
+
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select "Order Management Suite" from the
+drop-down list.</p>
+  </li><li>
+	<p><B>Product:</B> Select "Order Management" from the drop-down
+list.</p>
+  </li><li>
+	<p><B>Business Event:</B> Select "Event for OIP status update notification"
+from the populated list. </p>
+	<p>After you select an event name, the corresponding event information,
+including internal name (oracle.apps.ont.oip.statuschange.update) and description, is automatically populated in this page.</p>
+</li></ul>
+
+
+	<p><B>Selecting a Desired Business
+Event</B></p><p><img width="781" height="515" src="./img/ics_exbeadd3.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B>. </p>
+
+  </li><li>
+	<p>The Summary page appears
+with the selected event information. </p>
+	<p>The Oracle E-Business Suite Adapter Source Endpoint
+configuration is successfully created with the selected event.</p>
+
+	<p>Click <B>Done</B>. </p>
+
+	<p>The "Order_Status_Update" endpoint
+now appears as TRIGGER in the integration flow.</p>
+</li></ol>
+
+
+	<p><B>Adding
+a SWITCH with Two Branch Rules</B></p>
+
+	<p>Perform the following steps to
+add a SWITCH:</p>
+
+  <ol>
+  <li>
+	<p>Drag and drop the SWITCH
+action from the ACTIONS section on the left to the integration right
+after the Order_Status_Update activity. </p>
+
+	<p><B>Adding the SWITCH Action After
+the Order_Status_Update Activity</B></p><p><img width="354" height="406" src="./img/ics_exbeadd5.gif" alt="the picture is described in the document text" ></p>
+
+	<p>This action adds two rules allowing
+you to define routing expression branches for your integration.</p>
+
+	<p><B>Adding Two Branches to the Integration
+Flow</B></p><p><img width="457" height="438" src="./img/ics_exbeswitch1.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click <B>edit</B> on the first rule. The Condition Builder
+page appears.</p>
+  </li><li>
+	<p>In the Condition Builder,
+enter the following information to create the condition: All of Name = 'STATUS_CODE' and Value =
+'BOOKED':</p>
+
+  <ul>
+  <li>
+	<p>Enter "Booked Order"
+as the Expression Name.</p>
+  </li><li>
+	<p>In the Match field,
+select "All of" from the list.</p>
+  </li><li>
+	<p>In Source section,
+expand the <B>BusinessEvent_Input</B> node,
+then the <B>InputParameters</B> node, then
+the <B>BusinessEvent</B> node, then the <B>ParameterList</B> node, and then the <B>Parameter</B> node.</p>
+
+  <ol>
+  <li>
+	<p>Drag and drop the <B>Name</B> element to the right top under the New
+Condition section. </p>
+
+  <ul>
+  <li>
+	<p>Select = from the drop-down list.</p>
+  </li><li>
+	<p>Enter 'STATUS_CODE' in the text box as the condition value.</p></li></ul>
+
+
+	<p>Click the <B>Add Condition</B> (<B>+</B>) icon.</p>
+
+  </li><li>
+	<p>Drag and drop the <B>Value</B> element to the right top under the New
+Condition section. </p>
+
+  <ul>
+  <li>
+	<p>Select = from the drop-down list.</p>
+  </li><li>
+	<p>Enter 'BOOKED' in the text box as the condition value.</p></li></ul>
+
+
+	<p>Click the <B>Add Condition</B> (<B>+</B>) icon.</p>
+</li></ol>
+
+</li></ul>
+
+
+	<p><B>Editing the First Rule (Booked
+Order) with Required Condition</B></p><p><img width="852" height="384" src="./img/ics_exbeswitch2.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Save your work. Click <B>Exit Condition Builder</B> to return to the integration.</p>
+</li></ol>
+
+
+	<p><B>Adding
+the Oracle E-Business Suite Adapter as an Invoke for the "Get_Order"
+Activity</B></p>
+
+	<p>Perform the following steps to
+add the Oracle E-Business Suite Adapter as an invoke connection:</p>
+
+  <ol>
+  <li>
+	<p>Drag and drop the Oracle
+E-Business Suite connection "Order Management" from the INVOKES toolbar
+on the left to the integration right after the Booked Order rule. </p>
+
+	<p>The Configure Oracle E-Business
+Suite Adapter Endpoint wizard appears.</p>
+
+  </li><li>
+	<p>In the Basic Info page,
+enter the following information:</p>
+
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Enter "Get_Order"
+as the endpoint name.</p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter the description of
+this integration endpoint, such as "Get an order in Oracle E-Business
+Suite".</p></li></ul>
+
+
+	<p>Click <B>Next</B>.</p>
+
+  </li><li>
+	<p>In the Web Services
+page, specify the following information for your target connection: </p>
+
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select "Order Management Suite" from the
+drop-down list.</p>
+  </li><li>
+	<p><B>Product:</B> Select "Order Management".</p>
+  </li><li>
+	<p><B>API:</B> Select "Process Order API" from the populated list
+for this example. </p>
+	<p>The
+corresponding API internal name (OE_ORDER_PUB) and description are
+automatically populated.</p>
+</li></ul>
+
+
+	<p><B>Selecting an API in the Web
+Services Page</B></p><p><img width="771" height="421" src="./img/ics_exbegetorder2new.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B>.</p>
+
+  </li><li>
+	<p>The selected API internal
+name OE_ORDER_PUB appears in the Operations page.</p>
+	<p>In the Methods field, select a desired
+method name contained in the API. For example, select "GET_ORDER".
+The corresponding service status value is displayed in the Operations
+page, along with the description information.</p>
+
+  <P><p><STRONG><span>Note: </span></STRONG>The Service
+Status of the selected method GET_ORDER should be "Ready to Use".</p>
+</P>
+
+	<p><B>Selecting a Method as the Target
+Endpoint for the Integration</B></p><p><img width="780" height="417" src="./img/ics_exbegetorder3new.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B>.</p>
+
+  </li><li>
+	<p>The Summary page displays
+the selected API information. This includes the selected product family
+name (Order Management Suite), product name (Order Management), web
+service name (OE_ORDER_PUB), integration pattern (Synchronous), operation
+name (GET_ORDER), and the operation status (Ready to Use).</p>
+
+	<p><B>Displaying the Selected API
+Details in the Summary Page</B></p><p><img width="779" height="334" src="./img/ics_exbegetorder4.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Done</B>. </p>
+
+	<p>The "Get_Order" activity for
+Order Management now appears as part of the integration flow, along
+with the "Get_Order" map icon where you can define the mapping later.
+See: <A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A>.</p>
+</li></ol>
+
+
+	<p><B>Adding
+the REST Adapter as an Invoke for the "Receivables" Activity</B></p>
+
+	<p>Perform the following steps to
+add the REST Adapter as an invoke connection:</p>
+
+  <ol>
+  <li>
+	<p>Drag and drop the Oracle
+E-Business Suite connection "Receivables" from the INVOKES toolbar
+on the left to the integration, after the Get_Order activity in the
+Booked Order route. </p>
+	<p>The
+Configure Oracle REST Endpoint wizard appears. Enter the following
+information in the Basic Info page: </p>
+
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Enter the name
+of this endpoint, such as "Create_Invoice".</p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter the usage of this
+endpoint, such as "Provide REST endpoint with input payload for invoice
+creation".</p>
+  </li><li>
+	<p><B>What is the endpoint's relative resource URI?</B> - Enter
+"/create_single_invoice/". </p>
+  </li><li>
+	<p><B>What action does the endpoint perform?</B> - Select "POST"
+from the drop-down list.</p>
+  </li><li>
+	<p><B>Configure a request payload for this endpoint</B> - Select
+this check box indicating that a request payload is required in this
+activity. </p></li></ul>
+
+
+	<p><B>Entering the Basic REST Endpoint
+Information</B></p><p><img width="778" height="625" src="./img/ics_exbeinvoice1.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B>.</p>
+
+  </li><li>
+	<p>In the Request page,
+perform the following tasks:</p>
+
+  <ul>
+  <li>
+	<p>In the "Select the
+request payload file" section, select the <B>XML
+schema</B> radio button.</p>
+	<p>Please note that the request payload file type can be
+either XML schema or JSON format.</p>
+
+  </li><li>
+	<p>Browse and select the
+sample XSD for the Create Invoice REST service. </p>
+	<p>For the sample XSD information, see <A HREF="T657359T662147.htm#ics_payloadapp">Sample XSD for the Create_Invoice Activity
+Used in the Business Event Example</A>.</p>
+
+  </li><li>
+	<p>In the Element field,
+select "CREATE_SINGLE_INVOICE_Input" from the drop-down list. </p>
+
+  </li><li>
+	<p>In the "Select the
+type of payload with which you want the endpoint to receive" section,
+select the <B>XML</B> button as the payload
+type. </p></li></ul>
+
+<p><img width="779" height="572" src="./img/ics_exbeinvoice2.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B> and <B>Next</B>.</p>
+
+	<p>In this example, we do not need
+to configure this endpoint to receive Response. </p>
+
+  </li><li>
+	<p>Click <B>Next</B>. This displays the Summary page with the
+following REST service information that you specified earlier:</p>
+
+  <ul>
+  <li>
+	<p>REST Service URL: http://&lt;host name&gt;:&lt;port&gt;/webservices/rest/invoice/create_single_invoice/.</p>
+  </li><li>
+	<p>Method: POST</p>
+
+  </li><li>
+	<p>Request Media Type: application/xml</p></li></ul>
+
+
+	<p>Click <B>Done</B>.</p>
+
+	<p>The Create_Invoice activity appears in the integration flow, listed as the last activity
+in the Booked Order rule.</p>
+
+	<p>Similar to the "Get_Order" activity,
+the "Create_Invoice" map icon also appears (along with the Create_Invoice activity) where you can define the mapping
+later. See: <A HREF="T657359T661088.htm#ics_exbemap">Creating Mappings</A></p>
+
+	<p>Save the integration. </p>
+</li></ol>
+
+
+	<p>At the end of this step, the
+integration flow contains the activities added in this section.</p>
+
+	<p><B>The "Order to Invoice" Integration
+Flow Diagram</B></p><p><img width="855" height="406" src="./img/ics_exbegetordermapflow.gif" alt="the picture is described in the document text" ></p>
+
+
+
+
+
+
+
+
+		<H2> <a name="8352402"></a><a id="T661974"></a><B>Creating Mappings</B></H2>
+
+<a name="d0e5050"></a>
+<A NAME="ics_exbemap"></A>
+
+
+
+	<p>Oracle E-Business Suite Business
+Event is defined by the WF_EVENT_T data structure.
+After adding the required connections to the integration, you need
+to create the following mappings to pass the required parameter values
+to the subsequent REST services:</p>
+
+  <ul>
+  <li>
+	<p>Define mapping for Get_Order </p>
+  </li><li>
+	<p>Define mapping for Create_Invoice</p></li></ul>
+
+
+	<p><B>Creating
+Mappings for the </B><B>Get_Order</B><B> Map</B></p>
+
+	<p>In this example, a sales order
+Header Id is available as one of the business event parameters. In WF_EVENT_T, event parameters are available as Name-Value pair in repeating Parameter element. To obtain
+the value of the Header Id parameter and pass it to the subsequent
+Get_Order service call, you need to create mappings for the Get_Order map.</p>
+
+  <ol>
+  <li>
+	<p>In the Order_Status_Update
+integration flow, click <B>edit</B> for
+the Get_Order map icon.</p>
+
+	<p><B>Selecting the Get_Order Map
+for Mapping</B></p><p><img width="855" height="406" src="./img/ics_exbegetordermap.gif" alt="the picture is described in the document text" ></p>
+
+	<p>The Mapper page is displayed.</p>
+
+  </li><li>
+	<p>In the Mapper page,
+the business event related elements are displayed in the Source section,
+whereas the Get_Order related parameters are listed
+in the Target area. To obtain the value of the sales order Header
+Id (P_HEADER_ID) included as part of the event parameters and pass
+it to the subsequent Get_Order REST service, you need to define the
+XSL expression for the P_HEADER_ID parameter.</p>
+  </li><li>
+	<p>Define the XSL expression
+for the P_HEADER_ID parameter by performing the following tasks:</p>
+
+  <ol>
+  <li>
+	<p>In the Target section,
+expand the <B>GET_ORDER_Input</B> node,
+and then the <B>InputParameters</B> node.
+Click the <B>P_HEADER_ID</B> element to
+open the Build Mappings page.</p>
+  </li><li>
+	<p>In the Mapping area
+of the Build Mappings page, notice that the<B> P_HEADER_ID</B> element is displayed as the Target element. </p>
+  </li><li>
+	<p>In Source section of
+the Build Mappings page, expand the <B>BusinessEvent_Input</B> node, then the <B>InputParameters</B> node,
+then the <B>BusinessEvent</B> node, then
+the <B>ParameterList</B> node, and then
+the <B>Parameter</B> node.</p>
+  </li><li>
+	<p>Drag and drop the <B>Value</B> element from the Source section to the
+Mapping section as the value for the <B>P_HEADER_ID</B> element.</p>
+  </li><li>
+	<p>Similarly, drag and
+drop the XSL element "if" and the Name element
+from the Source section to the Mapping section to define the XSL expression &lt;xsl:if test="nssrcmpr:Name='HEADER_ID'"&gt;.</p>
+
+  </li><li>
+	<p>Drag and drop the XSL
+element "for-each" from the Source section to the
+Mapping section to define the XSL expression &lt;xsl:for-each
+select="/nssrcmpr:BusinessEvent_Input/nssrcmpr:InputParameters/nssrcmpr:BusinessEvent/nssrcmpr:ParameterList/nssrcmpr:Parameter"&gt;.</p>
+
+	<p><B>Displaying the Mappings for
+the P_HEADER_ID Parameter</B></p><p><img width="1089" height="418" src="./img/ics_exbemap1.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Save your work. </p>
+
+	<p>Expand the nodes to ensure that
+the P_HEADER_ID parameter is included as part of the structure.</p>
+</li></ol>
+
+
+  </li><li>
+	<p>Perform the following
+tasks to assign constant values to the target elements:</p>
+
+  <ol>
+  <li>
+	<p>In the Target section,
+expand the <B>GET_ORDER_Input</B> node,
+and then the <B>RESTHeader</B> node. </p>
+
+	<p>Click the <B>Responsibility</B> element to open the Build Mappings page.</p>
+
+  </li><li>
+	<p>Enter "ORDER_MGMT_SUPER_USER"
+in the text box as the value for the <B>Responsibility</B> element.</p></li></ol>
+
+
+	<p>Similarly, use the same approach
+to assign appropriate values to the target elements listed in the
+following table:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+Path
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Element
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Value
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/RESTHeader
+
+    		
+<td >
+RespApplication
+
+    		
+<td >
+ONT
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/RESTHeader
+
+    		
+<td >
+SecurityGroup
+
+    		
+<td >
+STANDARD
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/RESTHeader
+
+    		
+<td >
+NLSLanguage
+
+    		
+<td >
+AMERICAN
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/RESTHeader
+
+    		
+<td >
+Org_Id
+
+    		
+<td >
+204
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/InputParameters
+
+    		
+<td >
+P_API_VERSION_NUMBER
+
+    		
+<td >
+1.0
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/InputParameters
+
+    		
+<td >
+P_INIT_MSG_LIST
+
+    		
+<td >
+F
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+GET_ORDER_Input/InputParameters
+
+    		
+<td >
+P_ORG_ID
+
+    		
+<td >
+204
+
+    		
+
+
+</TABLE>
+
+	<p>After you complete the mappings
+for Get_Order, the mapped source values should
+appear in the Mapping column of the Target section.</p>
+
+	<p><B>Displaying the Mappings for
+the Get_Order Activity</B></p><p><img width="1013" height="435" src="./img/ics_exbemapgetorder3.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click <B>Save</B> to save your work.</p></li></ol>
+
+
+	<p><B>Creating
+Mappings for the </B> <B>Create_Invoice</B> <B> Map</B></p>
+
+	<p>Perform the following steps to
+create the mappings:</p>
+
+  <ol>
+  <li>
+	<p>In the Order_Status_Update
+integration flow, click <B>edit</B> for
+the <B>Create_Invoice</B> map icon.</p>
+	<p>The Mapper
+page appears.</p>
+
+  </li><li>
+	<p>Assign constant values
+to the target elements.</p>
+
+  <ol>
+  <li>
+	<p>In the Target section,
+expand the <B>execute</B> node, then the <B>CREATE_SINGLE_INVOICE_Input</B> node, and then
+the <B>RESTHeader</B> node. </p>
+	<p>Click the <B>Responsibility</B> element to open the Build Mappings page.</p>
+
+  </li><li>
+	<p>Enter "RECEIVABLES_VISION_OPERATIONS"
+in the text box as the value for the <B>Responsibility</B> element.</p></li></ol>
+
+
+	<p>Similarly, use the same approach
+to assign appropriate values to the target elements listed in the
+following table:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+Path
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Element
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Value
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/RESTHeader
+
+    		
+<td >
+RespApplication
+
+    		
+<td >
+AR
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/RESTHeader
+
+    		
+<td >
+SecurityGroup
+
+    		
+<td >
+STANDARD
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/RESTHeader
+
+    		
+<td >
+NLSLanguage
+
+    		
+<td >
+AMERICAN
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/RESTHeader
+
+    		
+<td >
+Org_Id
+
+    		
+<td >
+204
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters
+
+    		
+<td >
+P_API_VERSION
+
+    		
+<td >
+1.0
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters
+
+    		
+<td >
+P_INIT_MSG_LIST
+
+    		
+<td >
+T
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters
+
+    		
+<td >
+P_COMMIT
+
+    		
+<td >
+T
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_BATCH_SOURCE_REC
+
+    		
+<td >
+BATCH_SOURCE_ID
+
+    		
+<td >
+1188
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_HEADER_TBL/P_TRX_HEADER_TBL_ITEM
+
+    		
+<td >
+TRX_HEADER_ID
+
+    		
+<td >
+101
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_HEADER_TBL/P_TRX_HEADER_TBL_ITEM
+
+    		
+<td >
+CUST_TRX_TYPE_ID
+
+    		
+<td >
+1684
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_HEADER_TBL/P_TRX_HEADER_TBL_ITEM
+
+    		
+<td >
+BILL_TO_CUSTOMER_ID
+
+    		
+<td >
+1290
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_HEADER_TBL/P_TRX_HEADER_TBL_ITEM
+
+    		
+<td >
+SHIP_TO_CUSTOMER_ID
+
+    		
+<td >
+1290
+
+    		
+
+
+	<TR VALIGN="TOP">
+
+<td >
+CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_HEADER_TBL/P_TRX_HEADER_TBL_ITEM
+
+    		
+<td >
+COMMENTS
+
+    		
+<td >
+Invoice created via ICS integration
+for booked Sales Order in Order Management
+
+    		
+
+
+</TABLE>
+
+	<p>After you complete this step,
+the mapped source values should appear in the Mapping column of the
+Target section.</p>
+
+	<p><B>Displaying the Mappings with
+Constant Values</B></p><p><img width="1016" height="477" src="./img/ics_exbeinvoicemap0.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Add the following mapping
+for the header:</p>
+
+  <ul>
+  <li>
+	<p>In the Source section,
+enter "HEADER_ID" in the Search field to locate this parameter. </p>
+
+	<p>Select the <B>HEADER_ID</B> element from the <B>X_HEADER_REC</B> node.</p>
+
+  </li><li>
+	<p>In the Target section,
+expand the <B>execute</B> node, then the <B>CREATE_SINGLE_INVOICE_Input</B> node, then the <B>InputParameters</B> node, then the <B>P_TRX_HEADER_TBL</B> node, and then the <B>P_TRX_HEADER_TBL_ITEM</B> node.</p>
+	<p>Select the <B>TRX_NUMBER</B> element.</p>
+</li></ul>
+
+
+	<p>Drag the <B>HEADER_ID</B> element from the Source section to the <B>TRX_NUMBER</B> element in the Target section to
+map the data. </p>
+
+	<p>After the mapping, the source
+element <B>HEADER_ID</B> should appear in
+the Mapping column next to the <B>TRX_NUMBER</B> element in the Target section.</p>
+
+	<p><B>Mapping the Source HEADER_ID
+to the Target TRX_NUMBER</B></p><p><img width="1168" height="597" src="./img/ics_exbeinvoicemap1.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Use the same approach,
+as described in the previous step, to add the following sets of mappings
+for the line items:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+Source Path
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Source Element
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Target Path
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Target Element
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+BusinessEvent_Input/InputParameters/BusinessEvent/X_LINE_TBL/X_LINE_TBL_ITEM
+
+    		
+<td >
+LINE_NUMBER
+
+    		
+<td >
+execute/CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_LINES_TBL/P_TRX_LINES_TBL_ITEM
+
+    		
+<td >
+LINE_NUMBER
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+BusinessEvent_Input/InputParameters/BusinessEvent/X_LINE_TBL/X_LINE_TBL_ITEM
+
+    		
+<td >
+ORDERED_ITEM
+
+    		
+<td >
+execute/CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_LINES_TBL/P_TRX_LINES_TBL_ITEM
+
+    		
+<td >
+DESCRIPTION
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+BusinessEvent_Input/InputParameters/BusinessEvent/X_LINE_TBL/X_LINE_TBL_ITEM
+
+    		
+<td >
+ORDERED_QUANTITY
+
+    		
+<td >
+execute/CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_LINES_TBL/P_TRX_LINES_TBL_ITEM
+
+    		
+<td >
+QUANTITY_ORDERED
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+BusinessEvent_Input/InputParameters/BusinessEvent/X_LINE_TBL/X_LINE_TBL_ITEM
+
+    		
+<td >
+ORDERED_QUANTITY
+
+    		
+<td >
+execute/CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_LINES_TBL/P_TRX_LINES_TBL_ITEM
+
+    		
+<td >
+QUANTITY_INVOICED
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+BusinessEvent_Input/InputParameters/BusinessEvent/X_LINE_TBL/X_LINE_TBL_ITEM
+
+    		
+<td >
+UNIT_SELLING_PRICE
+
+    		
+<td >
+execute/CREATE_SINGLE_INVOICE_Input/InputParameters/P_TRX_LINES_TBL/P_TRX_LINES_TBL_ITEM
+
+    		
+<td >
+UNIT_SELLING_PRICE
+
+    		
+
+
+</TABLE>
+
+	<p>Once you complete this step,
+the mapped source values should appear next to the corresponding target
+elements with the green check mark icons:</p>
+
+	<p><B>Displaying the Mappings for
+the Line Items</B></p><p><img width="562" height="384" src="./img/ics_exbeinvoicemap2.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Assign the following
+values:</p>
+
+  <ul>
+  <li>
+	<p>In the Target section,
+expand the <B>execute</B> node, then the <B>CREATE_SINGLE_INVOICE_Input</B> node, then the <B>InputParameters</B> node, and then the <B>P_TRX_DIST_TBL</B> node. </p>
+	<p>Click the <B>P_TRX_DIST_TBL_ITEM</B> element to open the Build Mappings page.</p>
+
+	<p>In the Mapping section, enter
+the following information:</p>
+
+	<p>&lt;nsmpr1:P_TRX_DIST_ID/&gt;.</p>
+
+  </li><li>
+	<p>In the Target section,
+expand the <B>execute</B> node, then the <B>CREATE_SINGLE_INVOICE_Input</B> node, then the <B>InputParameters</B> node, and then the <B>P_TRX_SALESCREDITS_TBL</B> node.</p>
+	<p>Click the <B>P_TRX_SALESCREDITS_TBL_ITEM</B> element to open the Build Mappings page.</p>
+
+	<p>In the Mapping area, enter the
+following information:</p>
+
+	<p>&lt;nsmpr1:P_TRX_SALESCREDITS_ID/&gt;.</p>
+</li></ul>
+
+
+	<p>The newly assigned mapping values
+should appear next to the corresponding elements in the Target section.</p>
+
+	<p><B>Displaying the Mappings</B></p><p><img width="616" height="158" src="./img/ics_exbeinvoicemap3.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Save your work.</p>
+
+  </li><li>
+	<p>Click <B>Exit Mapper</B>. </p>
+  </li><li>
+	<p>Save the integration. </p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352581"></a><a id="T661989"></a><B>Assigning Business Identifier
+for Tracking</B></H2>
+
+<a name="d0e6284"></a><A NAME="ics_exbetracking"></A>
+
+
+
+	<p>Perform the following steps to
+track payload fields in messages during runtime:</p>
+
+  <ol>
+  <li>
+	<p>In the Create Order
+Integration page, click <B>Tracking</B>.</p>
+
+	<p>The Business Identifiers For
+Tracking dialog appears.</p>
+
+  </li><li>
+	<p>From the Available
+Source Fields section, expand the <B>BusinessEvent_Input</B> node, then the <B>InputParameters</B> node,
+and then the <B>BusinessEvent</B> node. </p>
+
+	<p>Drag and drop the <B>Event Key</B> element to the Tracking Field column
+in the table as the primary Tracking field.</p>
+
+  </li><li>
+	<p>Click <B>Done</B>. </p>
+  </li><li>
+	<p>Save your work and
+then click <B>Exit Integration</B>.</p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8350229"></a><a id="T661815"></a><B>Activating and Testing the Integration</B></H2>
+
+<a name="d0e6355"></a><A NAME="ics1625_exevetest"></A>
+
+
+
+	<p>Perform the following steps to
+activate the integration: </p>
+
+  <ol>
+  <li>
+	<p>In the Integrations
+page, click <B>Activate</B> for the "Order
+to Invoice" integration that you created earlier.</p>
+  </li><li>
+	<p>The Confirmation dialog
+appears. Click <B>Activate</B> to confirm
+this action.</p>
+	<p>The status
+of the "Order to Invoice" integration is now changed to <B>ACTIVE</B> with a green check mark icon.</p>
+</li></ol>
+
+
+	<p><B>Testing
+the Integration at Runtime</B></p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business
+Suite as the operations user who has the Order
+Management Super User, Vision Operations (USA) responsibility.</p>
+
+  </li><li>
+	<p>Select <B>Order, Returns</B> and then <B>Sales Order</B> from the navigation menu to open the Sales
+Orders form.</p>
+  </li><li>
+	<p>In the Sales Orders
+form, select the Order Information tab.</p>
+  </li><li>
+	<p>Create a new Sales
+Order for customer "A.C. Networks" with the following information:</p>
+
+  <ul>
+  <li>
+	<p>Customer: A.C. Networks</p>
+
+  </li><li>
+	<p>Operation Unit: Vision
+Operations</p>
+  </li><li>
+	<p>Order Type: Mixed</p>
+
+  </li><li>
+	<p>Ship To Location: Provo
+(OPS) 3405 East Bay Blvd. Provo, UT 84606, US</p>
+  </li><li>
+	<p>Bill To Location: Provo
+(OPS) 3405 East Bay Blvd. Provo, UT 84606, US</p>
+  </li><li>
+	<p>Price List: Corporate</p>
+
+  </li><li>
+	<p>Currency: USD</p>
+</li></ul>
+
+
+	<p><B>Creating a Sales Order in the
+Sales Orders Form</B></p><p><img width="780" height="517" src="./img/ics_exberun1.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Select the Line Items
+tab to add the following line item:</p>
+
+  <ul>
+  <li>
+	<p>Ordered Item: AS54888</p>
+
+  </li><li>
+	<p>Quantity: 1</p>
+
+  </li><li>
+	<p>Item Type: STANDARD</p>
+
+  </li><li>
+	<p>UOM: Each</p>
+
+  </li><li>
+	<p>Unit Price: Accept
+the populated unit price.</p>
+  </li><li>
+	<p>Request Date: Accept
+the populated date (such as 14-MAY-2016)</p></li></ul>
+
+
+	<p><B>Adding Line Items for the Sales
+Order</B></p><p><img width="784" height="514" src="./img/ics_exberun2.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Save this new order.</p>
+
+	<p>This order is created with "Entered"
+status. </p>
+
+  </li><li>
+	<p>Click <B>Book Order</B>.</p>
+	<p>The order status is now updated to "Booked". It internally
+raises a business event oracle.apps.ont.oip.statuschange.update which will trigger the integration. </p>
+</li></ol>
+
+
+	<p>In the design time, the "Order
+to Invoice" integration created earlier in Oracle Integration Cloud
+Service will subscribe to this business event. At runtime, since the
+order status is changed to "Booked", Oracle Order Management will
+raise the business event which triggers the integration in Oracle
+Integration Cloud Service. The order details information is fetched
+from Oracle E-Business Suite Order Management and passed as event
+payload to create the invoice in Oracle Accounts Receivables.</p>
+
+	<p><B>Monitoring
+the Result in Oracle Integration Cloud Service</B></p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle Integration
+Cloud Service. </p>
+	<p>On the
+Integration Cloud Service toolbar, click <B>Monitoring</B>.</p>
+
+  </li><li>
+	<p>In the navigation pane,
+click <B>Tracking</B>. </p>
+	<p>The Tracking page appears. </p>
+
+  </li><li>
+	<p>Click the instance
+created for the "Order to Invoice" integration.</p>
+
+	<p><B>Displaying the Tracking Page
+for the Order to Invoice Integration </B></p><p><img width="933" height="230" src="./img/ics_exberun3.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click "Event Key" to
+display the flow diagram of the integration instance.</p>
+	<p>This page provides the instance tracking
+information. Notice that the status of this instance is "Completed"
+indicating that the integration is executed successfully. You can
+verify if there is any error occurred if desired.</p>
+
+	<p><B>Viewing and Tracking the Orchestration
+Flow of the Instance</B></p><p><img width="941" height="513" src="./img/ics_exberun4.gif" alt="the picture is described in the document text" ></p>
+</li></ol>
+
+
+	<p><B>Validating
+the Result in Oracle E-Business Suite Accounts Receivables</B></p>
+
+	<p>Log in to Oracle Accounts Receivables
+as the operations user who has the Receivables,
+Vision Operations (USA) responsibility. Select <B>Transactions</B> and then <B>Transactions</B> from the navigation menu. </p>
+
+	<p>Locate the invoice transaction
+for the "A.C. Networks" customer by selecting <B>Query for Transaction</B>. The invoice should be created in
+Oracle Accounts Receivables.</p>
+
+
+
+
+
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

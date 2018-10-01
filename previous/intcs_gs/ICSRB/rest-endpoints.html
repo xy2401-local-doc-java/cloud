@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Integration Cloud Service, Version 2 - All REST Endpoints</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <meta property="og:description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="index.html" title="Previous" type="text/html">
+        <link rel="next" href="QuickStart.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="QuickStart.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>               
+        <article>
+
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Integration Cloud Service, Version 2</a></li>
+                    <li class="active">Endpoints</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+                <h2>All REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input id="grouped" type="checkbox" checked> Group by API
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="summary-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">adapters</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of adapters or details about a single adapter.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">connections</div>
+                            <div class="panel-body">
+                                <div>Retrieve, update, and delete connections.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">integrations</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, import, activate, deactivate, and run integrations.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">lookups</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of lookups or details about a single lookup.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">monitoring</div>
+                            <div class="panel-body">
+                                <div>Retrieve integration metrics and error instances and view or export the monitoring log.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">packages</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, and import packages.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="summary-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="path-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">adapters</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of adapters or details about a single adapter.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">connections</div>
+                            <div class="panel-body">
+                                <div>Retrieve, update, and delete connections.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">integrations</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, import, activate, deactivate, and run integrations.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">lookups</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of lookups or details about a single lookup.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">monitoring</div>
+                            <div class="panel-body">
+                                <div>Retrieve integration metrics and error instances and view or export the monitoring log.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">packages</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, and import packages.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="path-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="method-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">adapters</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of adapters or details about a single adapter.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">connections</div>
+                            <div class="panel-body">
+                                <div>Retrieve, update, and delete connections.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">integrations</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, import, activate, deactivate, and run integrations.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">lookups</div>
+                            <div class="panel-body">
+                                <div>Retrieve a list of lookups or details about a single lookup.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">monitoring</div>
+                            <div class="panel-body">
+                                <div>Retrieve integration metrics and error instances and view or export the monitoring log.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">packages</div>
+                            <div class="panel-body">
+                                <div>Retrieve, delete, export, and import packages.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="method-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-delete.html">Delete a connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-delete.html">Delete an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-delete.html">Delete a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-delete text-uppercase">delete</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-get.html">Retrieve Adapters</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-adapters-%7Bname%7D-get.html">Retrieve an Adapter</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/adapters/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-get.html">Retrieve Connections</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-get.html">Retrieve a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-get.html">Retrieve Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-get.html">Retrieve an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-get.html">Retrieve All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-archive-get.html">Export an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-get.html">Retrieve Lookups</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-lookups-%7Bname%7D-get.html">Retrieve a Lookup</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/lookups/{name}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-get.html">Retrieve Error Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-errors-%7Bid%7D-get.html">Retrieve an Error Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/errors/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-get.html">Retrieve Instances</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-instances-%7Bid%7D-get.html">Retrieve an Instance</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/instances/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-get.html">Retrieve Monitoring Metrics for All Integrations</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-get.html">Retrieve Monitoring Metrics for an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-get.html">Retrieve Monitoring Metrics for All Integration Versions</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-integrations-%7Bid%7D-versions-%7Bversion%7D-get.html">Retrieve Monitoring Metrics for an Integration Version</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/integrations/{id}/versions/{version}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-get.html">Retrieve Monitoring Log Files</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-monitoring-logs-%7Bid%7D-get.html">Retrieve a Monitoring Log File</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/monitoring/logs/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-get.html">Retrieve Packages</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-get.html">Retrieve a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-%7Bpackagename%7D-archive-get.html">Export a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/{packagename}/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-connections-%7Bid%7D-post.html">Update a Connection</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/connections/{id}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-post.html">Import (Add) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-%7Bid%7D-versions-%7Bversion%7D-status-post.html">Update Integration Status</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/{id}/versions/{version}/status</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-packages-archive-post.html">Import (Add) a Package</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/packages/archive</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-v2-integrations-archive-put.html">Import (Replace) an Integration</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-put text-uppercase">put</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/v2/integrations/archive</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </article>
+    </body>
+</html>

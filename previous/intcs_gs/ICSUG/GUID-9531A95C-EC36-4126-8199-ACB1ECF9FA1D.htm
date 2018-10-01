@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Connection with an Agent Group</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="After you have installed the on-premises agent, you can create a connection that uses the agent group and its associated on-premises agent. Only agent groups whose monitoring status is green on the Agent Monitoring page and which have not yet been associated with an adapter can be selected." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-43EAF12C-75E0-421A-9A7B-33171EF5EF1B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D"></a> <span id="PAGE" style="display:none;">52/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D" class="sect1">Creating a Connection with an Agent Group</h1>
+<div>
+<p>After you have installed the on-premises agent, you can create a connection that uses the agent group and its associated on-premises agent. Only agent groups whose monitoring status is green on the Agent Monitoring page and which have not yet been associated with an adapter can be selected.</p>
+<div class="p">To create a connection with an agent group:</div>
+<!-- class="section" -->
+<div class="section">
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Connections</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">New Connection</span>.</p>
+For specific details about connection creation, see <a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E" title="You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:">Creating Connections</a>.</li>
+<li>
+<p>Select the adapter to configure as a target endpoint. For information about supported adapters, see <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905" title="Oracle Integration Cloud Service provides an agent framework that enables you to create integrations and exchange messages between on-premises applications and Oracle Integration Cloud Service. Message payloads of up to 5 MB are supported through the use of compression, which may bring the payload down to 512 KB in size. The on-premises agent provides multithreading support, which allows for multiple executors to perform downstream message processing.">About Agents and Integrations Between On-Premises Applications and Oracle Integration Cloud Service</a>.</p>
+</li>
+<li>
+<p>Configure the connection properties and security.</p>
+</li>
+<li>
+<p>In the <span class="bold">Agent Group</span> section, click <span class="bold">Configure Agents</span> to select the agent group to associate with the adapter. This enables you to access your on-premises applications.<br />
+<img width="1348" height="145" src="img/GUID-E89421A5-9066-424B-B407-D3337F14503D-default.png" alt="Description of GUID-E89421A5-9066-424B-B407-D3337F14503D-default.png follows" title="Description of GUID-E89421A5-9066-424B-B407-D3337F14503D-default.png follows" /><br />
+<a href="img_text/GUID-E89421A5-9066-424B-B407-D3337F14503D-default.htm">Description of the illustration GUID-E89421A5-9066-424B-B407-D3337F14503D-default.png</a><br /></p>
+</li>
+<li>
+<p>Select the agent group to use with this adapter, and click <span class="bold">Use</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Test</span>. This test executes the ping command on the on-premises instance when the connection is associated with an agent.</p>
+</li>
+<li>
+<p>Click <span class="bold">Save</span>, then click <span class="bold">Exit Connection</span>.</p>
+</li>
+<li>
+<p>Create an integration in which you drag the adapter to the target side for configuration. Only the target side is supported. For this example, an Oracle Siebel adapter is configured as the target connection in the integration.<br />
+<img width="1323" height="257" src="img/GUID-29C557F4-1002-4CC3-90E6-285739B6937F-default.png" alt="Description of GUID-29C557F4-1002-4CC3-90E6-285739B6937F-default.png follows" title="Description of GUID-29C557F4-1002-4CC3-90E6-285739B6937F-default.png follows" /><br />
+<a href="img_text/GUID-29C557F4-1002-4CC3-90E6-285739B6937F-default.htm">Description of the illustration GUID-29C557F4-1002-4CC3-90E6-285739B6937F-default.png</a><br /></p>
+</li>
+<li>
+<p>Activate the integration, as described in <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a>.</p>
+</li>
+<li>
+<p>Invoke the integration.</p>
+<div class="infobox-note" id="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D__GUID-0694D5BD-C2D2-45D6-A385-204C514416FA">
+<p class="notep1">Note:</p>
+If you receive the following error, a connection time out has occurred. The request may be slow, in which case the request must be executed again. You can also view the agent logs to see what may be causing the request to not be processed.
+<pre dir="ltr">
+CASDK-0005 A connector specific exception was raised by the application. oracle.cloud.cpi.omcs.api.CpiOmcsException.
+No response received within response time out window of 60000.
+</pre></div>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-43EAF12C-75E0-421A-9A7B-33171EF5EF1B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

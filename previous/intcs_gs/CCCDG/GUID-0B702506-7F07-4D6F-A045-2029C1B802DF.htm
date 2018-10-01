@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Metadata Browser</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The Metadata Browser retrieves and parses metadata from the source or target application so the wizard user can choose business objects." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF"></a> <span id="PAGE" style="display:none;">28/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-0B702506-7F07-4D6F-A045-2029C1B802DF" class="sect1">Metadata Browser</h1>
+<div>
+<p>The Metadata Browser retrieves and parses metadata from the source or target application so the wizard user can choose business objects.</p>
+<p>The <code>CloudMetadataBrowser</code> interface retrieves and displays application metadata: operations, objects, faults, and so on. Instead of implementing the entire <code>CloudMetadataBrowser</code> interface, you can extend the abstract class <code>AbstractMetadataBrowser</code>. This class has some initialization code and built-in features such as parsing the service interface or schema and building the Cloud Application Model (CAM). The CAM consists of APIs, Operations, Objects, and Faults (if any). You only need to implement the few methods in this class that are pure abstract methods, while many tasks are already handled by the abstract class. Refer to the <code>SampleMetadataBrowser</code> source file for the abstract class implementation.</p>
+<p>A returned instance of <code>CloudMetadataBrowser</code> must be capable of:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Parsing metadata from source artifacts such as WSDL or XML schemas (schemas may be embedded within WSDLs).</p>
+</li>
+<li>
+<p>Downloading and parsing metadata from other sources such as a metadata API or a metadata repository within the application.</p>
+</li>
+<li>
+<p>Creating the Cloud Application Model from parsed metadata.</p>
+</li>
+</ul>
+<div class="section">
+<p class="subhead1">Parsing Source Metadata</p>
+<p>Metadata from a data source in the source or target application is parsed into the Cloud Application Model (CAM) for use in the adapter.</p>
+<p>Metadata parsing implements the interface <code>oracle.tip.tools.ide.adapters.cloud.api.metadata.MetadataParser</code>. This interface parses a resource identified by a <code>javax.activation.DataSource</code> into the <code>CloudApplicationModel</code>. The <code>CloudApplicationModel</code> is an in-memory metadata store. The following objects are stored in the <code>CloudApplicationModel</code>. All of these objects are in the package <code>oracle.tip.tools.ide.adapters.cloud.api.model</code>.</p>
+<ul style="list-style-type: disc;">
+<li><code>CloudAPINode</code> &mdash; This optional, outbound-only object represents an API that groups operations into logical categories, such as CRUD.</li>
+<li><code>CloudOperationNode</code> &mdash; This object represents an operation in a cloud application. Operation nodes contain the following child objects:</li>
+<li><code>OperationResponse</code> &mdash; The Response from an operation.</li>
+<li><code>OperationFault</code> &mdash; A fault or exception that may be raised as a result of invoking this operation.</li>
+<li><code>RequestParameter</code> &mdash; Represents each request parameter. For SOAP-based services using document literal, there is typically only one operation parameter. However, for REST based applications there may be several.</li>
+<li><code>Header</code> &mdash; Represents request header information.</li>
+<li><code>CloudDataObjectNode</code> &mdash; Represents an application business object. For example, in a CRM application, metadata for a Contact is represented.</li>
+</ul>
+<p>For parsing metadata, the <code>AbstractMetadataParser</code> class provides two abstract methods:</p>
+<pre dir="ltr">
+protected abstract List&lt;MetadataParser&gt; getMetadataParsers()
+</pre>
+<p>This method must return a list of parsers that are invoked when metadata parsing is required.</p>
+<pre dir="ltr">
+protected abstract void parseMetadata(MetadataParser parser, AdapterPluginContext context)
+</pre>
+<p>This method invokes the actual parse method on the MetadataParser, passing in any required parameters from the AdapterPluginContext.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Parsing Source Metadata from a WSDL File</p>
+<p>For SOAP-based cloud applications, metadata can be parsed from a WSDL file.</p>
+<p>The plugin can return an instance of the <code>oracle.tip.tools.ide.adapters.cloud.impl.metadata.wsdl.WSDLMetadataParser in the getMetadataParsers()</code> method.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Parsing Source Data from an API Call</p>
+<p>Some cloud applications have metadata that is accessible from an API within the application. This metadata is usually extracted as XML content and then parsed into the Cloud Application Model. You must take care of parsing custom or external metadata.</p>
+<p>Refer to the <code>SampleMetadataBrowser</code> class under the <code>plugin.metadata</code> package.</p>
+<div class="tblformal" id="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF__GUID-1988E7FF-A463-4D11-A485-E5BB6ED7819F">
+<table class="cellalignment290" summary="This table describes the SampleMetadataBrowser class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d9286e155">
+<p><span class="bold">Package, Class and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d9286e155">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d9286e168">
+<p><span class="bold">Package:</span></p>
+<pre dir="ltr">
+oracle.tip.tools.ide.adapters.samplecloudadapter.plugin.metadata
+</pre></td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e178">
+<p><span class="bold">Class:</span></p>
+<pre dir="ltr">
+SampleMetadataBrowser
+</pre></td>
+<td class="cellalignment291" headers="d9286e178">
+<p>This class parses metadata information such as operations or business objects.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e190">
+<p><span class="bold">Method:</span></p>
+<pre dir="ltr">
+loadMetadata()
+</pre></td>
+<td class="cellalignment291" headers="d9286e190">
+<p>Loads metadata information such as business objects and operations.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e204">
+<pre dir="ltr">
+getMetadataParsers()
+</pre></td>
+<td class="cellalignment291" headers="d9286e204">
+<p>Gets the list of parsers, such as WSDL and SOAP parsers.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e215">
+<pre dir="ltr">
+parseMetadata()
+</pre></td>
+<td class="cellalignment291" headers="d9286e215">
+<p>Parses the metadata information.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e226">
+<pre dir="ltr">
+getDataObjects()
+</pre></td>
+<td class="cellalignment291" headers="d9286e226">
+<p>Gets data objects. Required for an inbound service definition in which the wizard user can select any data objects as request/reply parameters. A data object is a schema type defined in the XSD file for a business object in the service catalog.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9286e237">
+<pre dir="ltr">
+parseWSDLMetadata()
+</pre></td>
+<td class="cellalignment291" headers="d9286e237">
+<p>Parses WSDL metadata.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="650" height="674" src="img/GUID-5CFF1F7B-BD63-4D66-848A-5D48D98C3AFA-default.png" alt="media/image34.png" title="media/image34.png" /><br />
+<a href="img_text/GUID-E8CECF3C-8232-4E91-A3DE-410C829EB22A.htm">Description of the illustration GUID-5CFF1F7B-BD63-4D66-848A-5D48D98C3AFA-default.png</a></p>
+<p>For an outbound adapter, a sample adapter uses CRUD as an API, which groups operations into a logical category.</p>
+<pre dir="ltr">
+private static final String CRUD = "CRUD";
+
+// Place to create custom API (CRUD) and assign operations to API
+   public void processAPINodes() {
+
+      String namespace = SampleCloudAdapterConstants.SAMPLE_SERVICE_NAMESPACE;
+      Set&lt;String&gt; operationNames = new HashSet&lt;String&gt;();
+
+      // Gets the list of operations from CAM
+      List&lt;CloudOperationNode&gt; opNodes = getModel().getOperations();
+
+      for(int i=0;i&lt;opNodes.size();i++){
+         CloudOperationNode opNode = opNodes.get(i);
+
+         // Add operations to API node
+         operationNames.add(opNode.getName());
+      }
+
+      CloudAPINode api = new CloudAPINodeImpl(CRUD, namespace, getVersion(), operationNames);
+
+      // Add API to Cloud Application Model
+      getModel().addAPI(api);               
+        
+   }
+</pre>
+<p>For an inbound adapter, the metadata browser can hold the complete CAM details (APIs, Operations, Data objects, and so on). However, the <code>SampleCloudAdapter</code> Request and Response Configuration Pages display only business objects regardless of any application operations.</p>
+<p>Return the same class (<code>SampleMetadataBrowser</code>) in the <code>SampleCloudAdapter.Java</code> file.</p>
+<pre dir="ltr">
+@Override
+public CloudMetadataBrowser getMetadataBrowser(CloudConnection connection) {
+                
+   AdapterPluginContext context = getPluginContext();           
+   return new SampleMetadataBrowser(connection,context);
+}
+</pre>
+<p><span class="bold">Showing APIs</span></p>
+<p>Each <code>CloudAPINode</code> instance has a name and version property that can be displayed.</p>
+<pre dir="ltr">
+List&lt;CloudAPINode&gt; apis = browser.getAPIs();
+</pre>
+<p><span class="bold">Showing Operations</span></p>
+<p>If there are no APIs returned in <code>getAPIs()</code>, then it's safe to assume that operations are not categorized by APIs.</p>
+<pre dir="ltr">
+List&lt;CloudOperationNode&gt; operations = browser.getOperations();
+</pre>
+<p>If, however, there are APIs returned, then you may want to filter the operations by API.</p>
+<pre dir="ltr">
+//pass in the CloudAPINode instance that was selected by the end user
+List&lt;CloudOperationNode&gt; operations = browser.getOperations(selectedAPINode);
+//or
+Set&lt;String&gt; operationNames = selectedAPINode.getOperationNames();
+</pre>
+<p><span class="bold">Showing Data Objects</span></p>
+<p>After selecting an operation, users will typically want to select the data objects that can be submitted to that operation. This list is filtered based on the selected operation. It does not include all objects in the cloud application, only those that are appropriate for use with the selected operation:</p>
+<pre dir="ltr">
+List&lt;CloudDataObjectNode&gt; dataObjects = browser.getDataObjectNodes(selectedOperationNode);
+</pre>
+<p>Each data object has a name, as well as several other properties useful for display.</p>
+<p><span class="bold">Request Headers and Operation Properties</span></p>
+<p>Some cloud applications declare and expect headers in their request messages. For SOAP applications, headers are transmitted in a <code>SOAPHeader</code> element, whereas REST applications tend to rely on the HTTP headers. In both cases, access to this header information is the same from the standpoint of the UI:</p>
+<pre dir="ltr">
+List&lt;Header&gt; headers = selectedOperation.getRequestHeaders();
+</pre>
+<p>The headers have a hierarchical structure, and the UI represents the structure to the wizard user. Ultimately the user must set values on the leaf nodes (for example, the Field elements) and these must be provided during generation.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

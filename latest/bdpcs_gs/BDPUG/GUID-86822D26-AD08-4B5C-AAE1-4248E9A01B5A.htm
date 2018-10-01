@@ -1,0 +1,128 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Run an analysis on your data set to find records with duplicate values. Select which values to use as the matching criteria and specify the precision of the analysis.">
+      <meta name="description" content="Run an analysis on your data set to find records with duplicate values. Select which values to use as the matching criteria and specify the precision of the analysis.">
+      <title>Finding Duplicates in Your Data</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta property="og:description" content="Run an analysis on your data set to find records with duplicate values. Select which values to use as the matching criteria and specify the precision of the analysis.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.3.1">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.epub" title="ePub File" type="application/epub+zip">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.mobi" title="Mobi File" type="application/x-mobipocket-ebook">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-05-10T15:12:37-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63106-15">
+      <meta name="dcterms.isVersionOf" content="bdpug">
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-prep-cloud">
+      <meta name="dcterms.release" content="Latest Cloud Release">
+      <link rel="prev" href="replacing-data-using-regular-expressions.html" title="Previous" type="text/html">
+      <link rel="next" href="checking-null-data.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"cloud",
+                      "element_name":"Cloud",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"paas",
+                      "element_name":"Platform as a Service (PaaS)",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"business-analytics",
+                      "element_name":"Business Analytics",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"big-data-prep-cloud",
+                      "element_name":"Big Data Preparation Cloud Service",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"latest",
+                      "element_name":"Latest Cloud Release",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="replacing-data-using-regular-expressions.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="checking-null-data.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Preparation Cloud Service</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="authoring-transform-script.html" property="item" typeof="WebPage"><span property="name">Authoring the Transform Script</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Finding Duplicates in Your Data</li>
+            </ol>
+            <a id="GUID-86822D26-AD08-4B5C-AAE1-4248E9A01B5A" name="GUID-86822D26-AD08-4B5C-AAE1-4248E9A01B5A"></a>
+            
+            <h2 id="BDPUG-GUID-86822D26-AD08-4B5C-AAE1-4248E9A01B5A" class="sect2">Finding Duplicates in Your Data</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Run an analysis on your data set to find records with duplicate values. Select which values to use as the matching criteria and specify the precision of the analysis.</p>
+               <div class="section">To find duplicates in your data:</div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>On the main authoring page, click the <span class="bold">Duplicate Analysis</span> <img src="img/duplicate_analysis.png" alt="Duplicate Analysis" title="Duplicate Analysis"> icon.</span><div>The Duplicate Analysis dialog box appears.</div>
+                  </li>
+                  <li class="stepexpand"><span>From the <span class="bold">Available Columns</span> list, select the columns that you want to compare to find duplicates.</span><div>For example, you may want to find all the people with the same first name and last name.</div>
+                     <div>You can select multiple columns by pressing the Ctrl key as you select the columns.</div>
+                  </li>
+                  <li class="stepexpand"><span>Click the <span class="bold">Push Selected</span> <img src="img/pushselected.png" alt="Push Selected" title="Push Selected"> icon.</span><div>To use all the available columns, click the <span class="bold">Push All</span> <img src="img/pushall.png" alt="Push All" title="Push All"> icon.
+                     </div>
+                     <div>The selected columns appear in the Selected Columns list.</div>
+                  </li>
+                  <li class="stepexpand"><span>Move the <span class="bold">Match Precision</span> slider to adjust the precision used to find duplicates.</span><div>The highest precision is Exact, and the lowest precision value is Fuzzy.</div>
+                  </li>
+                  <li class="stepexpand"><span>Click <span class="bold">Apply</span>.</span><div>The Profile Results drawer expands and displays the Duplicate Analysis page. The page displays the duplicate values, the number or records with the same value, and the percentage that they represent for the columns that you selected.</div>
+                  </li>
+                  <li class="stepexpand"><span>If there are any duplicates, then click the <span class="bold">Count</span> column for the <span class="bold">Duplicate Rows</span> row.</span></li>
+                  <li class="stepexpand"><span>To view the records for a duplicate value, click the <span class="bold">Value</span> column for that row.</span></li>
+               </ol>
+               <div class="section"></div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

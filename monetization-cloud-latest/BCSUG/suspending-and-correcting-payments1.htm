@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Suspending and correcting payments</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="reversing-payments2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="resolving-incomplete-payment-transactions1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C95EA667-EBED-4DC4-9F66-62B881079246"></a> <span id="PAGE" style="display:none;">53/67</span> <!-- End Header -->
+<a id="BCSUG889"></a><a id="BCSUG890"></a><a id="BCSUG532"></a>
+<h1 id="BCSUG-GUID-C95EA667-EBED-4DC4-9F66-62B881079246" class="sect1"><span class="enumeration_chapter">45</span> Suspending and correcting payments</h1>
+<div>
+<p>Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved.</p>
+<p>For background information, see <a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-800D6AC7-09BC-4F5B-B1B3-8077EA2A9DD1">About suspended payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C5D2B514-4A2D-4DDD-A014-45BE02413A71">Suspending existing payments manually</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-A42AEB37-A52A-479C-8111-8799B78960B2">Creating suspended payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-A0E807AC-5C85-4A7C-958C-E5940C194258">Applying suspended payments to your customers' bills</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-304890AF-5519-4416-9196-42C66E43BCC6">Distributing a payment among multiple accounts</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-A422D155-A3E9-42C9-8A2B-BFA90167B727">Assigning suspended payments to an employee</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-EC536A0B-6E3D-4AF5-B3C9-FAC91528F4D3">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG533"></a>
+<div class="props_rev_3"><a id="GUID-800D6AC7-09BC-4F5B-B1B3-8077EA2A9DD1"></a>
+<h2 id="BCSUG-GUID-800D6AC7-09BC-4F5B-B1B3-8077EA2A9DD1" class="sect2">About suspended payments</h2>
+<div>
+<p>Payments can be suspended for a variety of reasons.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Oracle Monetization Cloud automatically suspends a payment when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>It can't be validated; for example, because the account number is wrong.</p>
+</li>
+<li>
+<p>The associated account is closed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>You might manually suspend a payment when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>It's allocated to the wrong account.</p>
+</li>
+<li>
+<p>You need to apply a payment to multiple accounts.</p>
+<p>If the payment has already been applied to an account, you suspend the payment and then redistribute it.</p>
+<p>If the payment hasn't been applied to an account, you create a suspended payment and then distribute that payment.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>When a payment is suspended, you use Subscriber Management to apply the payment correctly.</p>
+</div>
+</div>
+<a id="BCSUG534"></a>
+<div class="props_rev_3"><a id="GUID-C5D2B514-4A2D-4DDD-A014-45BE02413A71"></a>
+<h2 id="BCSUG-GUID-C5D2B514-4A2D-4DDD-A014-45BE02413A71" class="sect2">Suspending existing payments manually</h2>
+<div>
+<div class="section">Use Subscriber Management to manually suspend a payment that's already been applied to an account.</div>
+<!-- class="section" -->
+<ol>
+<li><span>Open an account and then select the <span class="bold">Bills</span> tab.</span></li>
+<li><span>Select a bill.</span></li>
+<li><span>In the <span class="bold">Bills</span> section, select <span class="bold">Actions</span> and then <span class="bold">Move Payment to Suspense</span>.</span></li>
+<li><span>Select a payment and then <span class="bold">Payment Details</span>.</span></li>
+<li><span>Select <span class="bold">Move to Suspended Payments</span>.</span></li>
+<li><span>Specify a reason for suspending the payment and select <span class="bold">Move</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="BCSUG891"></a>
+<div class="props_rev_3"><a id="GUID-A42AEB37-A52A-479C-8111-8799B78960B2"></a>
+<h2 id="BCSUG-GUID-A42AEB37-A52A-479C-8111-8799B78960B2" class="sect2">Creating suspended payments</h2>
+<div>
+<p>You can create a suspended payment; for example, if your customer makes an offline payment to a closed account or if you need to distribute a payment among multiple accounts.</p>
+<p>Use Subscriber Management to create a suspended payment. Select <span class="bold">Payment Suspense</span> and then <span class="bold">Make Payment</span>.</p>
+<p>When you create a suspended payment, you specify the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The payment method.</p>
+</li>
+<li>
+<p>The payment amount and currency.</p>
+</li>
+<li>
+<p>The payment details, which depend on the payment method. For example, you'd enter the date and order ID for a postal order, and you'd enter the date and receipt number for cash.</p>
+</li>
+<li>
+<p>The reason for the suspended payment; for example, to distribute it among multiple accounts, or because the account is closed.</p>
+</li>
+</ul>
+<p>After the suspended payment is created, you can apply it to your customer's bills.</p>
+</div>
+</div>
+<a id="BCSUG535"></a>
+<div class="props_rev_3"><a id="GUID-A0E807AC-5C85-4A7C-958C-E5940C194258"></a>
+<h2 id="BCSUG-GUID-A0E807AC-5C85-4A7C-958C-E5940C194258" class="sect2">Applying suspended payments to your customers' bills</h2>
+<div>
+<p>Use Subscriber Management to apply a suspended payment to your customers' bills. Select <span class="bold">Payment Suspense</span> and then select the payment you'd like to apply to a customer's bill.</p>
+<p>When applying the payment, you specify the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The account to apply the payment to. You can add or search for an account if one isn't displayed.</p>
+</li>
+<li>
+<p>The payment amount to apply.</p>
+</li>
+<li>
+<p>The reason why the payment is valid now.</p>
+</li>
+<li>
+<p>Whether to allocate the payment to bills in the account manually or automatically.</p>
+<p>If you select automatically, the payment is allocated based on the amount due for each bill. If the allocation amount is greater than all of the bills, or if the allocation amount is made to accounts with no balance due, the remaining balance is assigned a status of Awaiting Allocation and is available when a future payment is due.</p>
+</li>
+</ul>
+<p>After you allocate a payment amount to an account, you can add more accounts if you want to distribute any remaining amounts to other accounts.</p>
+</div>
+</div>
+<a id="BCSUG892"></a>
+<div class="props_rev_3"><a id="GUID-304890AF-5519-4416-9196-42C66E43BCC6"></a>
+<h2 id="BCSUG-GUID-304890AF-5519-4416-9196-42C66E43BCC6" class="sect2">Distributing a payment among multiple accounts</h2>
+<div>
+<div class="section">
+<p>You can distribute a suspended payment among multiple accounts; for example, when a customer wants to make one large payment for all of their accounts. If your customer has already made the payment for distribution, you must first suspend it. If the customer hasn't made the payment, you must first create the payment as a suspended payment.</p>
+<p>Use Subscriber Management to distribute a payment among multiple accounts.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create a suspended payment for your customer or suspend your customer's existing payment. Ensure that the suspension reason is set to <span class="bold">Multiple Account Distribution</span>.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-A42AEB37-A52A-479C-8111-8799B78960B2">Creating suspended payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C5D2B514-4A2D-4DDD-A014-45BE02413A71">Suspending existing payments manually</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>From the Subscriber Management home page, select <span class="bold">Payment Suspense</span> and then select the payment to distribute.</span></li>
+<li class="stepexpand"><span>Add the first account and apply part of the payment to the account.</span>
+<div>
+<div class="infobox-note" id="GUID-304890AF-5519-4416-9196-42C66E43BCC6__GUID-D3F458D2-B566-4F3B-977B-27184D6B544B">
+<p class="notep1">Note:</p>
+You must apply the payment to the first account before you can add more accounts.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Add one or more accounts and apply payment amounts to each account.</span></li>
+</ol>
+</div>
+</div>
+<a id="BCSUG893"></a>
+<div class="props_rev_3"><a id="GUID-A422D155-A3E9-42C9-8A2B-BFA90167B727"></a>
+<h2 id="BCSUG-GUID-A422D155-A3E9-42C9-8A2B-BFA90167B727" class="sect2">Assigning suspended payments to an employee</h2>
+<div>
+<p>By default, suspended payments aren't assigned to anyone in your organization. You can assign an authorized handler to manage the payment.</p>
+<p>Use Subscriber Management to assign a suspended payment to an employee. Select <span class="bold">Payment Suspense</span>, open the payment, and in the <span class="bold">Assigned to</span> list, select the user you want to assign the suspended payment to.</p>
+</div>
+</div>
+<a id="BCSUG686"></a>
+<div class="props_rev_3"><a id="GUID-EC536A0B-6E3D-4AF5-B3C9-FAC91528F4D3"></a>
+<h2 id="BCSUG-GUID-EC536A0B-6E3D-4AF5-B3C9-FAC91528F4D3" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="reversing-payments2.htm#GUID-EBFACF29-E060-4DA6-AC4E-17AAC86E654D" title="You must reverse a payment when it's recorded in Oracle Monetization Cloud, but the payment isn't deposited (for example, when a check doesn't clear). Reversing the payment enables Oracle Monetization Cloud to treat the payment as if it never happened.">Reversing payments</a></p>
+</li>
+<li>
+<p><a href="processing-offline-payments1.htm#GUID-A2448FEC-DA43-4C44-82F5-E52C36B691DE" title="You can process offline payments, such as checks, by using the Oracle Monetization Cloud Subscriber Management application.">Processing offline payments</a></p>
+</li>
+<li>
+<p><a href="managing-customers1.htm#GUID-908E6B30-93D2-462D-A754-87FE600AD4D1">Displaying bill and balance information</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="reversing-payments2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="resolving-incomplete-payment-transactions1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

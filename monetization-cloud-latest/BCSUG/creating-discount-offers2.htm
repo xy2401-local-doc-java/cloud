@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating discount offers</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-charge-selectors1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-trackers2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D90FC10C-D984-4318-992C-E2529084E201"></a> <span id="PAGE" style="display:none;">23/67</span> <!-- End Header -->
+<a id="BCSUG1031"></a><a id="BCSUG824"></a><a id="BCSUG437"></a>
+<h1 id="BCSUG-GUID-D90FC10C-D984-4318-992C-E2529084E201" class="sect1"><span class="enumeration_chapter">18</span> Creating discount offers</h1>
+<div>
+<p>Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles.</p>
+<p>For background information, see <a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-8C9D0BE8-2F7C-4936-89EF-3ABA30A0F7F8">About discount offers and discounts</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-EF1A3A3F-6F09-4A5F-B492-A85AF55E2FB9">Applying multiple discount offers to an event</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-ECD06E81-01E1-45CF-B1A6-9C25BE7E50E5">About discount types</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-70610DC5-CE6B-4572-B6C5-B3A2343763FA">About using temporary balances in discounts</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-B373866B-6A98-4305-AC78-C385F777C5EA">Creating discount offers</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-D694DBE6-922E-4389-89C7-8C2B5D3150F7">Defining a discount offer's general properties</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-E003DD5C-DC2C-4C2C-BE0D-96EBFBBEF432">Creating discounts</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-59C2E661-D042-4D88-813A-3C10F2A22CB8">Applying taxes to billing-time discounts</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B">Discounting based on quantity</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-F4E30565-2FDA-4C05-B1B9-943D9AD4220F">Adding counters to track balances</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-1A059FFC-F396-436C-B6EA-4B7B800576E3">Defining eligibility criteria for discounts and counters</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-F77E14D8-9F11-43B6-8B1F-A1561153B177">Defining trigger conditions for discounts and counters</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-F8C61E41-7D6D-412C-AEF1-EDEC363BFCC3">Using allowances to discount charges</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-9BA96D20-9A39-4096-8BC9-91C6A263E59F">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG1097"></a>
+<div class="props_rev_3"><a id="GUID-8C9D0BE8-2F7C-4936-89EF-3ABA30A0F7F8"></a>
+<h2 id="BCSUG-GUID-8C9D0BE8-2F7C-4936-89EF-3ABA30A0F7F8" class="sect2">About discount offers and discounts</h2>
+<div>
+<p>Discount offers define rules for applying discounts to charges, such as apply a 50% discount to the first six months of a newspaper subscription or provide the first 500 minutes of a service for free.</p>
+<p>Discount offers allow you to:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Reduce charges, such as by 10%, $20, or $10 for every $100 spent.</p>
+</li>
+<li>
+<p>Track usage or spending by using counters. You can then discount a charge based on the value of the counter. For example, a discount can track usage and apply a 25% discount to a charge when over 1,000 minutes have been used.</p>
+</li>
+<li>
+<p>Consume an allowance, such as minutes or gigabytes.</p>
+</li>
+<li>
+<p>Credit balances, such as one free download for every fifth song downloaded.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG1098"></a>
+<div class="props_rev_3"><a id="GUID-EF1A3A3F-6F09-4A5F-B492-A85AF55E2FB9"></a>
+<h2 id="BCSUG-GUID-EF1A3A3F-6F09-4A5F-B492-A85AF55E2FB9" class="sect2">Applying multiple discount offers to an event</h2>
+<div>
+<p>A charge can be eligible for multiple discount offers. When this occurs, Oracle Monetization Cloud uses the discount offer priority and charging mode to determine how to apply the discount offers to the charge.</p>
+<p>The priority specifies the order in which discount offers are applied, with a higher number indicating a higher priority. For example, if a customer has two discount offers, offer A with priority 10 and offer B with priority 8, offer A is applied first and offer B is applied second.</p>
+<p>The charging mode specifies whether discounts are applied to an entire charge, to the remaining charge after previous discounts have been applied, or to the portion of a charge that hasn't been considered for a discount.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Original charge:</span> The discount offer is applied to the original charge amount, regardless of whether that amount was reduced by previous discount offers.</p>
+</li>
+<li>
+<p><span class="bold">The remaining charge:</span> The discount offer is applied to whatever charge amount remains after previous discount offers are applied.</p>
+</li>
+<li>
+<p><span class="bold">The remaining charge and quantity:</span> The discount offer is applied only to the part of the charge and quantity that hasn't been used as the basis for a previous discount offer.</p>
+</li>
+</ul>
+<p>For example, if a bundle includes discount offer A for 10% off and discount offer B for 20% off, a $50 charge would receive these discounts based on the charging mode:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Using the original charge:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Discount offer A: 10% off of $50 = $5 discount</p>
+</li>
+<li>
+<p>Discount offer B: 20% off of $50 = $10 discount</p>
+</li>
+<li>
+<p>Total discount = $15</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Using the remaining charge:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Discount offer A: 10% off of $50 = $5 discount</p>
+</li>
+<li>
+<p>Discount offer B: 20% off of $45 = $9 discount</p>
+</li>
+<li>
+<p>Total discount = $14</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Using the remaining charge and quantity:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Discount offer A: 10% off of $50 = $5 discount</p>
+</li>
+<li>
+<p>Discount offer B: A discount isn't applied because the entire charge was already discounted.</p>
+</li>
+<li>
+<p>Total discount = $5</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-ECD06E81-01E1-45CF-B1A6-9C25BE7E50E5"></a>
+<h2 id="BCSUG-GUID-ECD06E81-01E1-45CF-B1A6-9C25BE7E50E5" class="sect2">About discount types</h2>
+<div>
+<p>Discount offers can include one or more of these discount types, which correspond to charge types:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Recurring discounts:</span> Discounts that aren't generated or affected by usage, such as a monthly discount. For example, you could offer 10% off of a monthly movie rental for the first year.</p>
+</li>
+<li>
+<p><span class="bold">One-time discounts:</span> Discounts for product purchases or for non-recurring, limited time promotions. For example, you could offer $25 off the registration fee for customers who join during the month of February.</p>
+</li>
+<li>
+<p><span class="bold">Billing-time discounts:</span> Discounts that are applied during the billing process and are based on the customer's total usage or amount spent for the billing period.</p>
+</li>
+<li>
+<p><span class="bold">Usage discounts:</span> Discounts that are applied when customers use their services, such as when making phone calls or using the Internet.</p>
+</li>
+<li>
+<p><span class="bold">Allowance:</span> Discounts a charge if there's an available allowance. For example, if a customer has been charged $7 for a movie, but has 3 movies remaining from their allowance of 5 movies per month, the allowance discount credits the $7 charge and reduces the movie allowance by 1.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG1100"></a>
+<div class="props_rev_3"><a id="GUID-70610DC5-CE6B-4572-B6C5-B3A2343763FA"></a>
+<h2 id="BCSUG-GUID-70610DC5-CE6B-4572-B6C5-B3A2343763FA" class="sect2">About using temporary balances in discounts</h2>
+<div>
+<p>Temporary balance elements retain their balance when processing the discounts for one event and then are reset to 0. This allows you to calculate a value in one discount and use it in a subsequent discount. For example, you could grant customers 10 additional minutes of WiFi usage when a session lasts at least 60 minutes and the data transferred is less than 100 megabytes. To do this, you'd create these discounts:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The first discount determines the amount of data transferred during the session and stores it in temporary balance A.</p>
+</li>
+<li>
+<p>The second discount determines the session's duration and stores it in temporary balance B.</p>
+</li>
+<li>
+<p>The third discount grants 10 minutes of WiFi usage when the amount in temporary balance A is less than 100 megabytes and the amount in temporary balance B is 60 minutes or higher.</p>
+</li>
+</ul>
+<p>You create temporary balances by using Business Configuration. See <a href="creating-pricing-setup-components1.htm#GUID-B287450B-9222-4738-94AD-B90585D32E13">Creating balance elements</a>.</p>
+</div>
+</div>
+<a id="BCSUG438"></a>
+<div class="props_rev_3"><a id="GUID-B373866B-6A98-4305-AC78-C385F777C5EA"></a>
+<h2 id="BCSUG-GUID-B373866B-6A98-4305-AC78-C385F777C5EA" class="sect2">Creating discount offers</h2>
+<div>
+<div class="section">
+<p>Use Offer Design to create discount offers. From the Pricing navigation section, select <span class="bold">Create Discount Offer</span>.</p>
+<p>When you create a discount offer, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Define the discount offer's general properties, such as the service that the discounts apply to and the discount offer's priority.</span></li>
+<li><span>Create one or more discounts. For each discount, you define attributes such as the criteria for qualifying for a discount and how much to discount.</span></li>
+</ol>
+<div class="section">
+<p>To make a discount offer available to your customers, you must add it to a bundle and then add that bundle to a package.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG825"></a>
+<div class="props_rev_3"><a id="GUID-D694DBE6-922E-4389-89C7-8C2B5D3150F7"></a>
+<h2 id="BCSUG-GUID-D694DBE6-922E-4389-89C7-8C2B5D3150F7" class="sect2">Defining a discount offer's general properties</h2>
+<div>
+<div class="section">
+<p>To define your discount offer's general properties, do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description. These may be displayed in Subscriber Management when an account is created.</p>
+</li>
+<li>
+<p>Select the service that you want to discount.</p>
+</li>
+<li>
+<p>Select the type of currency that you want to discount, such as US Dollars or Euros.</p>
+</li>
+<li>
+<p>Select the dates when the discount offer is valid.</p>
+</li>
+<li>
+<p>Select the type of discount offer:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscription:</span> Discounts apply only to customers who subscribe to the discount offer.</p>
+</li>
+<li>
+<p><span class="bold">System:</span> Discounts apply to all customers who use the service.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Enter the priority of the discount offer. A higher number indicates a higher priority. See <a href="creating-discount-offers2.htm#GUID-EF1A3A3F-6F09-4A5F-B492-A85AF55E2FB9">Applying multiple discount offers to an event</a>.</p>
+</li>
+<li>
+<p>Select how to apply the discount offer when the customer has multiple discount offers: to the original charge amount, to any remaining change, or to the remaining charge and quantity. See <a href="creating-discount-offers2.htm#GUID-EF1A3A3F-6F09-4A5F-B492-A85AF55E2FB9">Applying multiple discount offers to an event</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-E003DD5C-DC2C-4C2C-BE0D-96EBFBBEF432"></a>
+<h2 id="BCSUG-GUID-E003DD5C-DC2C-4C2C-BE0D-96EBFBBEF432" class="sect2">Creating discounts</h2>
+<div>
+<p>This figure shows a discount:</p>
+<div class="figure" id="GUID-E003DD5C-DC2C-4C2C-BE0D-96EBFBBEF432__GUID-16A17219-3039-4F84-AFE1-3421ACFA646F"><br />
+<div class="imageleft"><img class="imageleft" width="509" height="144" src="img/usr_offer_discount_recur.gif" alt="Description of usr_offer_discount_recur.gif follows" title="Description of usr_offer_discount_recur.gif follows" /><br />
+<a href="img_text/usr_offer_discount_recur.htm">Description of the illustration usr_offer_discount_recur.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>To create a discount, you do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select the event type to discount, such as monthly cycle forward, basic usage, or product purchase fee.</p>
+</li>
+<li>
+<p>In <span class="bold">Add Discount Type</span>, select the type of discount impact:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Fixed:</span> Discounts the charge by a fixed amount, such as $20.</p>
+</li>
+<li>
+<p><span class="bold">Percentage:</span> Discounts a percentage of the charge, such as 5%.</p>
+</li>
+<li>
+<p><span class="bold">Scaled:</span> The amount of the discount is dependent on a formula, such as $5 off for every $50 charge.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Enter the discount amount, such as 5%, $25, or $10 for every $100 charge.</p>
+</li>
+<li>
+<p>Select the GL ID in which to record the transaction.</p>
+</li>
+<li>
+<p>For billing time discounts only, specify whether to apply taxes. See <a href="creating-discount-offers2.htm#GUID-59C2E661-D042-4D88-813A-3C10F2A22CB8">Applying taxes to billing-time discounts</a>.</p>
+</li>
+<li>
+<p>Add quantity tiers if you want to apply discounts based on the amount used or the customer's counter balance. See <a href="creating-discount-offers2.htm#GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B">Discounting based on quantity</a>.</p>
+</li>
+</ul>
+<p>In addition, you can optionally add these to a discount:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Eligibility criteria. See <a href="creating-discount-offers2.htm#GUID-1A059FFC-F396-436C-B6EA-4B7B800576E3">Defining eligibility criteria for discounts and counters</a>.</p>
+</li>
+<li>
+<p>Trigger conditions. See <a href="creating-discount-offers2.htm#GUID-F77E14D8-9F11-43B6-8B1F-A1561153B177">Defining trigger conditions for discounts and counters</a>.</p>
+</li>
+<li>
+<p>Discount settings. You can specify how to apply a discount when it's valid for only part of a cycle.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-59C2E661-D042-4D88-813A-3C10F2A22CB8"></a>
+<h2 id="BCSUG-GUID-59C2E661-D042-4D88-813A-3C10F2A22CB8" class="sect2">Applying taxes to billing-time discounts</h2>
+<div>
+<div class="section">You can optionally apply taxes to billing-time discounts. You'd typically want to tax discounts that debit (or increase) the amount owed by customers. By default, taxes aren't applied.
+<p>Select <span class="bold">Tax Treatment</span> and then do the following:</p>
+</div>
+<!-- class="section" -->
+<ul>
+<li class="stepexpand"><span>Select when to apply taxes:</span>
+<ul>
+<li><span class="bold">Never:</span> Taxes aren't added to billing-time discounts. This is the default.</li>
+<li><span class="bold">At Billing:</span> Taxes are calculated when billing is run for the account.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Select the tax code to assign to the discount.</span>
+<div>Tax codes are created in Business Configuration. See <a href="calculating-taxes3.htm#GUID-C582CC4D-2676-43D4-A456-9E935F730848">Creating tax codes</a>.</div>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG440"></a>
+<div class="props_rev_3"><a id="GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B"></a>
+<h2 id="BCSUG-GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B" class="sect2">Discounting based on quantity</h2>
+<div>
+<p>For usage discounts and billing-time discounts, you can apply different discount amounts to an event based on:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The customer's counter balance. For example, you can apply a 10% billing-time discount for counter balances of up to 10 loyalty points, and a 15% billing-time discount for counter balances of 11 loyalty points and above.</p>
+</li>
+<li>
+<p>The amount used by the customer, such as the number of minutes or gigabytes. For example, you can apply a $10 discount for up to 100 minutes, and a $15 discount $15 for 101 minutes or more.</p>
+</li>
+<li>
+<p>The amount your customer was charged for the event.</p>
+</li>
+</ul>
+<p>To do so, select the <span class="bold">Add Quantity Range</span> icon in the discount.</p>
+<div class="figure" id="GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B__GUID-6A908E1D-0DD6-4057-A2EF-F5AB63500DBC"><br />
+<div class="imageleft"><img class="imageleft" width="37" height="37" src="img/usr_quantity_button.gif" alt="Shows the Add Quantity Range icon" title="Shows the Add Quantity Range icon" /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>Enter an ending point for the range. For example, to create a range of 0&ndash;10, enter <span class="bold">10</span>. Each subsequent range uses the end of the previous range as its starting value.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The end of the range is inclusive. For example, a range of 0&ndash;100 includes minute 100. The next range, 100&ndash;200 minutes, begins at 101.</p>
+</li>
+<li>
+<p>For the first range, you can enter a minimum amount after creating the range. Select the <span class="bold">Quantity Range</span> value and change the <span class="bold">Start</span> value.</p>
+</li>
+<li>
+<p>For the last range, you can enter a maximum amount after creating the range. Select the <span class="bold">Quantity Range</span> value and enter an <span class="bold">End</span> value.</p>
+</li>
+</ul>
+<p>In addition to the ranges, you specify the volume discount settings. The quantity range can represent:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Balance:</span> For example, if the quantity is based on a counter balance of Loyalty Points, the discount applies to counter balances of up to 10 Loyalty Points.</p>
+</li>
+<li>
+<p><span class="bold">Quantity:</span> For example, if the quantity is based on minutes for a range of 0&ndash;10, the discount applies to the first 10 minutes used.</p>
+</li>
+<li>
+<p><span class="bold">Charge:</span> For example, if the quantity is based on dollars for a range of 0&ndash;10, the discount applies to the first 10 dollars charged.</p>
+</li>
+</ul>
+<p>You also specify how to apply the discount for the range:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Single:</span> Even though multiple discounts are configured, only one discount is applied, and it's applied to all usage. The range that the total usage falls within determines which discount is applied. For example, consider this scenario:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>0&ndash;500 minutes: 5% off</p>
+</li>
+<li>
+<p>500&ndash;No maximum minutes: 10% off</p>
+</li>
+</ul>
+<p>If 700 minutes are used, the 10% discount is applied to all minutes, even those between 0 and 500.</p>
+</li>
+<li>
+<p><span class="bold">Tiered:</span> The discount for each range is applied. Using the previous example, if 700 minutes are used, the discounts are applied as follows:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>0&ndash;500: A 5% discount is applied to the charge for minutes 1 through 500.</p>
+</li>
+<li>
+<p>500&ndash;no maximum: A 10% discount is applied to the charge for minutes 501 through 700.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This figure shows a tiered discount based on the amount the customer is charged for usage. A 5% discount is applied to the first $100, and a 10% discount to any remaining charge.</p>
+<div class="figure" id="GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B__FIG_HNL_P3R_V2B"><br />
+<div class="imageleft"><img class="imageleft" id="GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B__IMAGE_BR5_TSR_M2B" width="640" height="191" src="img/usr_discount_tier2.gif" alt="Description of usr_discount_tier2.gif follows" title="Description of usr_discount_tier2.gif follows" /><br />
+<a href="img_text/usr_discount_tier2.htm">Description of the illustration usr_discount_tier2.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>To delete a quantity range, select the <span class="bold">Delete Quantity Range</span> icon:</p>
+<div class="figure" id="GUID-3E8A836F-30B3-40BB-8738-6B5278AC060B__GUID-C7E17F30-2570-46BE-BE4A-F48E59AE92E5"><br />
+<div class="imageleft"><img class="imageleft" width="45" height="39" src="img/usr_quantity_delete.gif" alt="Shows the Delete Quantity Range icon" title="Shows the Delete Quantity Range icon" /></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-F4E30565-2FDA-4C05-B1B9-943D9AD4220F"></a>
+<h2 id="BCSUG-GUID-F4E30565-2FDA-4C05-B1B9-943D9AD4220F" class="sect2">Adding counters to track balances</h2>
+<div>
+<p>You can add counters to your discounts to track balances such as the amount spent or megabytes downloaded by a customer. Counters allow you to vary discounts based on a counter's total. For example, you could create a counter to track how many books were purchased in a cycle and then grant a discount when the counter total is 5 or more.</p>
+<p>To add a counter, do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>In <span class="bold">Add Counter Type</span>, select the type of counter you want:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Fixed:</span> The counter increments by a fixed amount, such as 1 point.</p>
+</li>
+<li>
+<p><span class="bold">Scaled:</span> The amount the counter increments is dependent on a formula, such as 1 point for every $5 charge.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select whether to increase or decrease the counter.</p>
+</li>
+<li>
+<p>Enter the amount to increase or decrease the counter, such as 1 loyalty point, 2 tokens, or 1 point for every $10 charge.</p>
+<p>Only noncurrency balance elements that are enabled as counters are supported. See Creating balance elements.</p>
+</li>
+<li>
+<p>Select the number of cycles to keep a running total in the counter: for the current billing cycle, for multiple billing cycles, or always. When the cycle ends, the counter is reset to 0.</p>
+</li>
+<li>
+<p>Select the GL ID to associate with the counter.</p>
+</li>
+</ul>
+<p>This figure shows a monthly cycle discount that adds 10 Loyalty Points to the customer's counter balance. The counter keeps a running total indefinitely.</p>
+<div class="figure" id="GUID-F4E30565-2FDA-4C05-B1B9-943D9AD4220F__GUID-ACC93EE0-B83D-4005-BD9D-1B9802EC2DF0"><br />
+<div class="imageleft"><img class="imageleft" width="592" height="130" src="img/usr_discount_counter.gif" alt="Description of usr_discount_counter.gif follows" title="Description of usr_discount_counter.gif follows" /><br />
+<a href="img_text/usr_discount_counter.htm">Description of the illustration usr_discount_counter.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG829"></a>
+<div class="props_rev_3"><a id="GUID-1A059FFC-F396-436C-B6EA-4B7B800576E3"></a>
+<h2 id="BCSUG-GUID-1A059FFC-F396-436C-B6EA-4B7B800576E3" class="sect2">Defining eligibility criteria for discounts and counters</h2>
+<div>
+<p>You can limit when discounts are applied and counters are incremented based on a charge's attributes. The criteria can be based on one or more attribute values, such as the date when the event occurred or a balance element. For example, you can specify that only movies with a New Release category and purchased in June can receive a discount and increment the counter.</p>
+<p>To include eligibility criteria, you must add one or more filters to your discount. If you add multiple filters, the charge must meet the criteria in all of the filters.</p>
+<p>In the discount, select <span class="bold">Eligibility criteria</span>, select the add icon, and then do the following for each filter:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description for the filter.</p>
+</li>
+<li>
+<p>Select the dates during which the event must have occurred.</p>
+</li>
+<li>
+<p>Include one or more of the following criteria:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select a balance element, such as euros or free minutes.</p>
+</li>
+<li>
+<p>Select a charge selector result tag.</p>
+</li>
+<li>
+<p>Select a charge offer.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This figure shows eligibility criteria that requires an event to have occurred prior to June 29, 2018, be in US Dollars, and have a charge selector result tag of ABC.</p>
+<div class="figure" id="GUID-1A059FFC-F396-436C-B6EA-4B7B800576E3__GUID-B78565E3-A2C1-4DBF-A0A9-E51483243ACC"><br />
+<div class="imageleft"><img class="imageleft" width="504" height="333" src="img/usr_discount_eligiible.gif" alt="Description of usr_discount_eligiible.gif follows" title="Description of usr_discount_eligiible.gif follows" /><br />
+<a href="img_text/usr_discount_eligiible.htm">Description of the illustration usr_discount_eligiible.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG830"></a>
+<div class="props_rev_3"><a id="GUID-F77E14D8-9F11-43B6-8B1F-A1561153B177"></a>
+<h2 id="BCSUG-GUID-F77E14D8-9F11-43B6-8B1F-A1561153B177" class="sect2">Defining trigger conditions for discounts and counters</h2>
+<div>
+<p>You can add conditions that a charge must meet in order to apply a discount and increment a counter. For example, you can add a condition that only charges greater than $5 or calls longer than 5 minutes can receive a discount and increment the counter.</p>
+<p>To include trigger conditions, select <span class="bold">Trigger conditions</span> in the discount and then do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description for the trigger condition.</p>
+</li>
+<li>
+<p>Select the add icon for each condition that you want to add. If you add multiple conditions, the charge must meet the criteria in all of the conditions.</p>
+</li>
+<li>
+<p>Enter the trigger expression, which consists of:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The expression value, such as balance, quantity, or charge.</p>
+</li>
+<li>
+<p>The operator, such as Greater Than or Less Than.</p>
+</li>
+<li>
+<p>The amount, such as 5, 50, or 100.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This figure shows a trigger condition that requires an event to have a charge of $50 or more.</p>
+<div class="figure" id="GUID-F77E14D8-9F11-43B6-8B1F-A1561153B177__GUID-B91EFB55-5204-4345-9918-F85FB8CFF967"><br />
+<div class="imageleft"><img class="imageleft" width="486" height="261" src="img/usr_discount_trig.gif" alt="Description of usr_discount_trig.gif follows" title="Description of usr_discount_trig.gif follows" /><br />
+<a href="img_text/usr_discount_trig.htm">Description of the illustration usr_discount_trig.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG1101"></a>
+<div class="props_rev_3"><a id="GUID-F8C61E41-7D6D-412C-AEF1-EDEC363BFCC3"></a>
+<h2 id="BCSUG-GUID-F8C61E41-7D6D-412C-AEF1-EDEC363BFCC3" class="sect2">Using allowances to discount charges</h2>
+<div>
+<p>Allowance discounts let you credit charges when customers have a remaining allowance of free minutes, books, movies, and so on. For example, if a customer has been charged $12 for a book download, but has a remaining allowance of 2 free books, the customer is credited for the $12 charge and the allowance is reduced to 1 free book.</p>
+<p>This figure shows an allowance discount that credits data transfer charges when customers have a remaining allowance of gigabytes. Instead of owing money for the data transfer, customers have their allowance of gigabytes reduced.</p>
+<div class="figure" id="GUID-F8C61E41-7D6D-412C-AEF1-EDEC363BFCC3__GUID-2EBA8AF1-B8D9-4C4D-8022-F07F876A78C7"><br />
+<div class="imageleft"><img class="imageleft" width="380" height="132" src="img/usr_discount_allow.gif" alt="Description of usr_discount_allow.gif follows" title="Description of usr_discount_allow.gif follows" /><br />
+<a href="img_text/usr_discount_allow.htm">Description of the illustration usr_discount_allow.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG659"></a>
+<div class="props_rev_3"><a id="GUID-9BA96D20-9A39-4096-8BC9-91C6A263E59F"></a>
+<h2 id="BCSUG-GUID-9BA96D20-9A39-4096-8BC9-91C6A263E59F" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a></p>
+</li>
+<li>
+<p><a href="creating-trackers2.htm#GUID-75BC6899-79D5-4BAD-8712-C58013D70C43" title="In Oracle Monetization Cloud, you can use trackers to measure the usage or amount spent by your customers. After you create trackers, you add them to your billing-time discounts.">Creating trackers</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a></p>
+</li>
+<li>
+<p><a href="creating-bundles1.htm#GUID-3838CAC0-56BB-42A4-BA5F-FE69B44CE895" title="In Oracle Monetization Cloud, you use bundles to group offers that you want to sell together. After you create bundles, you add them to your packages.">Creating bundles</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-19C29957-A507-4279-B7AB-1BFDE6C14176" title="In Oracle Monetization Cloud, you use packages to offer multiple services to your customers. For example, you could create an Internet package that includes the Wifi, email, and fax services.">Creating packages</a></p>
+</li>
+<li>
+<p><a href="creating-package-lists1.htm#GUID-912C17D9-0875-4DFB-B0FC-1E387B6EB2D8" title="This document describes how to create package lists in Oracle Monetization Cloud.">Creating package lists</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-charge-selectors1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-trackers2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

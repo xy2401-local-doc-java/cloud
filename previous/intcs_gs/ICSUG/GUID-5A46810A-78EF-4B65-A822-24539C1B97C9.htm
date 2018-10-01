@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing Integrations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When you are ready for your integration to go live, you must activate the integration in Integration Cloud Service. You can also deactivate a running activation if you must make changes to it or if it is no longer needed." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9"></a> <span id="PAGE" style="display:none;">60/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-5A46810A-78EF-4B65-A822-24539C1B97C9" class="sect1">Managing Integrations</h1>
+<div>
+<p>When you are ready for your integration to go live, you must activate the integration in Integration Cloud Service. You can also deactivate a running activation if you must make changes to it or if it is no longer needed.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-5D917409-710D-49B8-B7CB-B0C0A8EC45CC" title="You can deactivate an integration to stop it from processing any new messages. If you want to modify an active integration, you need to deactivate it first.">Deactivating an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-0F2E84BC-8A51-4A73-80D3-F8A11BCE85A6" title="You can modify an existing integration, including changing a source or target connection, reconfiguring the connection, and updating the data mapping. Changes to the source or target can cause changes to the existing mappings.">Modifying an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-238CAC29-E619-41A0-8610-299DC33E7126" title="You can view the details associated with trigger, invoke, and enrichment endpoints of an integration.">Viewing the Trigger, Invoke, and Enrichment Details of an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-925F120E-B761-4677-B0CB-2284B5FAED7D" title="Cloning an integration creates a new copy with identical connections and data mappings. You give the clone a new name, identifier, version number, and package name, but the remaining configuration is the same. You can reconfigure the clone after you create it.">Cloning an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-0699AE2D-83BF-4E05-BD28-B8BB2697FE99" title="Creating a draft of an integration creates a new copy with the same integration information. This action represents an easier way to create an integration. During draft creation, you must update the version of the integration and optionally update the package and description. However, unlike a cloned integration, you cannot update the integration name or identifier.">Creating a Draft of an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DB558C9-6536-4BC3-91C2-CB926008D1F2" title="You can delete an integration that is no longer needed.">Deleting an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-64A3759A-D5CE-4B81-998D-1103D2D58284">Reactivating Integrations After Instance Upgrade to View the Latest Business Identifier Tracking Behavior</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-6411C499-1344-4EFB-9C0C-8645833C67AF" title="You can filter the display of integrations by their type (custom, user-developed, or prebuilt).">Filtering the Display of Integrations By Type</a></p>
+</li>
+<li>
+<p><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-3AE22A25-4133-4565-AFEC-D20E8AAC7CC1" title="You can change the time zone that is displayed in Integration Cloud Service.">Changing the Time Zone</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7DC28681-FB67-4925-B7AA-0A118961A952"></a>
+<h2 id="ICSUG-GUID-7DC28681-FB67-4925-B7AA-0A118961A952" class="sect2">Activating an Integration</h2>
+<div>
+<p>Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.</p>
+<div class="section">To activate an integration:
+<div class="infobox-note" id="GUID-7DC28681-FB67-4925-B7AA-0A118961A952__GUID-2247B477-CBD4-4D25-96BE-65FC1F012523">
+<p class="notep1">Note:</p>
+If you activate a new version of an existing integration, tracking instances or logs of the old version are not deleted. However, related artifacts are deleted and redeployment is performed on the back end. Monitoring data is also removed.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>If you are not already on the Integrations page, click <span class="bold">Designer</span> on the toolbar, then click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>In the Integrations list, locate the integration you want to activate and go to the far right end.</span></li>
+<li class="stepexpand"><span>Above <span class="bold">Pending Activation</span>, click <span class="bold">Activate</span>.</span>
+<div><img width="151" height="82" src="img/GUID-C4390AAE-698A-4A60-94C4-626FB14076C5-default.png" alt="Description of GUID-C4390AAE-698A-4A60-94C4-626FB14076C5-default.png follows" title="Description of GUID-C4390AAE-698A-4A60-94C4-626FB14076C5-default.png follows" /><br />
+<a href="img_text/GUID-C4390AAE-698A-4A60-94C4-626FB14076C5-default.htm">Description of the illustration GUID-C4390AAE-698A-4A60-94C4-626FB14076C5-default.png</a></div>
+<div>The Confirmation dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>If you want to enable detailed tracing, click the <span class="bold">Enable detailed tracing</span> checkbox.</span>
+<div>When this checkbox is selected, detailed logging information about messages processed by this integration flow at runtime is collected. For example, you see more detailed logging information about payload activity at several points in the integration flow, such as the payload prior to data mapping and the payload after data mapping. This can aid in troubleshooting issues. However, detailed tracing may also impact performance. To disable tracing, you must deactivate the integration, then reactivate it without selecting the <span class="bold">Enable detailed tracing</span> checkbox. For information about accessing logging information, see <a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-FD354A23-22A1-463D-A864-115CCBB0AB93" title="You can view the runtime health of Oracle Integration Cloud Service.">Viewing Runtime Health</a>.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Activate</span>.</span>
+<div>An activation progress bar is displayed at the top of the dialog. If activation is successful, the status of the integration changes to <span class="bold">ACTIVE</span> in the list. If you selected to enable tracing, the words <span class="bold">TRACE ENABLED</span> are displayed next to <span class="bold">ACTIVE</span>.<br />
+<div class="imageleft"><img class="imageleft" width="417" height="91" src="img/GUID-6C60F199-13BD-4C7F-8655-C72C54F501E4-default.png" alt="Description of GUID-6C60F199-13BD-4C7F-8655-C72C54F501E4-default.png follows" title="Description of GUID-6C60F199-13BD-4C7F-8655-C72C54F501E4-default.png follows" /><br />
+<a href="img_text/GUID-6C60F199-13BD-4C7F-8655-C72C54F501E4-default.htm">Description of the illustration GUID-6C60F199-13BD-4C7F-8655-C72C54F501E4-default.png</a></div>
+<br />
+<p>To access the detailing trace logging information:</p>
+<ol>
+<li>
+<p>Click the <span class="bold">Monitoring</span> tab.</p>
+</li>
+<li>
+<p>Click <span class="bold">Download Logs</span> to download Oracle Integration Cloud Service logs and diagnostics logs.</p>
+</li>
+</ol>
+<div class="infobox-note" id="GUID-7DC28681-FB67-4925-B7AA-0A118961A952__GUID-5B47DDB2-31EE-4A22-9D2A-5A9062C0B11B">
+<p class="notep1">Note:</p>
+If activation fails, an error message is displayed at the top of the Integrations page. To troubleshoot the activation error, click <span class="bold">Download diagnostic logs</span> to download the logs for diagnosing the issue.</div>
+</div>
+</li>
+<li class="stepexpand"><span>View active integrations by clicking the integration name or selecting <span class="bold">View</span> from the menu at the far right of the integration. The active integration is displayed with a message saying <span class="bold">Viewing</span>.</span></li>
+</ol>
+<div class="section">Note the following details about read-only mode:
+<ul style="list-style-type: disc;">
+<li>
+<p>No <span class="bold">Save</span> button and <span class="bold">Actions</span> button are displayed.</p>
+</li>
+<li>
+<p>There is no Connections Palette for adding adapters.</p>
+</li>
+<li>
+<p>You can click through multiple parts of the integration to view configuration details, such viewing the business identifiers under the <span class="bold">Tracking</span> tab, viewing the source-to-target and target-to-source mappings in the mapper, and viewing the configurations on the pages of the connection wizards, but you cannot modify anything.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-5D917409-710D-49B8-B7CB-B0C0A8EC45CC"></a>
+<h2 id="ICSUG-GUID-5D917409-710D-49B8-B7CB-B0C0A8EC45CC" class="sect2">Deactivating an Integration</h2>
+<div>
+<p>You can deactivate an integration to stop it from processing any new messages. If you want to modify an active integration, you need to deactivate it first.</p>
+<div class="section">Deactivation is equivalent to undeployment of a project, which means all existing history, monitoring, and runtime data are lost. Integration Cloud Service does not support the notion of starting and stopping projects. With asynchronous patterns, the queue for the deactivated project is deleted and all messages associated with this queue are also deleted. Therefore, if there are pending requests unprocessed, they are lost after deactivation. The previous version is deactivated and all existing history, monitoring, and runtime data is lost.</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the expanded Integrations page, find the integration you want to deactivate.</span>
+<div>To view only active integrations, select <span class="bold">Active</span> in the Integrations list. You can also filter by integration name or integration type (prebuilt, custom, or developed) to narrow down the list.</div>
+</li>
+<li class="stepexpand"><span>In the row containing the integration you want to deactivate, click the <span class="bold">Active</span> icon to deactivate the integration.</span>
+<div><img width="158" height="80" src="img/GUID-C9AF14D7-F6A7-4171-A30B-3AB3A03C1654-default.png" alt="Description of GUID-C9AF14D7-F6A7-4171-A30B-3AB3A03C1654-default.png follows" title="Description of GUID-C9AF14D7-F6A7-4171-A30B-3AB3A03C1654-default.png follows" /><br />
+<a href="img_text/GUID-C9AF14D7-F6A7-4171-A30B-3AB3A03C1654-default.htm">Description of the illustration GUID-C9AF14D7-F6A7-4171-A30B-3AB3A03C1654-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> on the dialog that appears. A deactivation progress bar is displayed at the top of the dialog.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-0F2E84BC-8A51-4A73-80D3-F8A11BCE85A6"></a>
+<h2 id="ICSUG-GUID-0F2E84BC-8A51-4A73-80D3-F8A11BCE85A6" class="sect2">Modifying an Integration</h2>
+<div>
+<p>You can modify an existing integration, including changing a source or target connection, reconfiguring the connection, and updating the data mapping. Changes to the source or target can cause changes to the existing mappings.</p>
+<div class="p">If the integration you want to modify is active, deactivate it first. See <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-5D917409-710D-49B8-B7CB-B0C0A8EC45CC" title="You can deactivate an integration to stop it from processing any new messages. If you want to modify an active integration, you need to deactivate it first.">Deactivating an Integration</a> for instructions.</div>
+<!-- class="section" -->
+<div class="section">To modify an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, find the integration you want to modify.</span>
+<div>You can search by entering a partial or complete integration name in the <span class="bold">Search</span> field or filter integrations by selecting an option from the <span class="bold">Filter By</span> list. From this list, you can filter by <span class="bold">Type</span> (<span class="bold">Custom</span>, <span class="bold">Developed</span>, and <span class="bold">Prebuilt</span>), <span class="bold">Pattern</span> (<span class="bold">Map Data</span>, <span class="bold">Publish to Integration Cloud Service</span>, <span class="bold">Subscribe To Integration Cloud Service</span>, <span class="bold">File Transfer</span>, and others), <span class="bold">Status</span> (<span class="bold">Draft</span>, <span class="bold">Configured</span>, <span class="bold">Active</span>, or <span class="bold">Failed Activation</span>), or <span class="bold">Style</span> (<span class="bold">Template</span> or <span class="bold">Orchestration</span>). Search or filter criteria are displayed in the banner above the returned list of integrations. To remove search or filter criteria, click the <span class="bold">x</span> icon in the banner.</div>
+</li>
+<li class="stepexpand"><span>On the row that contains the integration you want to change, click the integration name or click the vertical bars icon on the far right and select <span class="bold">Edit</span>.</span></li>
+<li class="stepexpand"><span>To modify the name, package, or description, click the <span class="bold">Edit</span> icon on the right side.<br /></span>
+<div class="imageleft"><img class="imageleft" width="249" height="166" src="img/GUID-61225E39-C469-4F72-B918-DDE285A79D2B-default.png" alt="Description of GUID-61225E39-C469-4F72-B918-DDE285A79D2B-default.png follows" title="Description of GUID-61225E39-C469-4F72-B918-DDE285A79D2B-default.png follows" /><br />
+<a href="img_text/GUID-61225E39-C469-4F72-B918-DDE285A79D2B-default.htm">Description of the illustration GUID-61225E39-C469-4F72-B918-DDE285A79D2B-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>To modify the source or target configuration, click the connection on the canvas and click <span class="bold">Edit</span> on the menu that is displayed.<br /></span>
+<div class="imageleft"><img class="imageleft" width="110" height="96" src="img/GUID-A83DA165-5BA2-4994-9386-83B067A03B89-default.png" alt="Description of GUID-A83DA165-5BA2-4994-9386-83B067A03B89-default.png follows" title="Description of GUID-A83DA165-5BA2-4994-9386-83B067A03B89-default.png follows" /><br />
+<a href="img_text/GUID-A83DA165-5BA2-4994-9386-83B067A03B89-default.htm">Description of the illustration GUID-A83DA165-5BA2-4994-9386-83B067A03B89-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Modify any of the open fields in the wizard that appears. See <a href="GUID-C347192C-EC09-43CB-8988-F87B35CEF268.htm" title="When you add an adapter to a trigger (source) or an invoke (target) in an integration, a wizard prompts you to configure how the data is processed for that connection, including the type of operation to perform, the business objects or fields to use, and so on. The properties you can configure vary by each type of adapter. Click any of the topics below to read more about the properties you can configure for each type of adapter.">Connection Configuration Reference</a> for instructions.</span></li>
+<li class="stepexpand"><span>To assign a new connection as the source or target, click the connection to delete, then click <span class="bold">Delete</span> on the menu that is displayed.<br /></span>
+<div class="imageleft"><img class="imageleft" width="143" height="147" src="img/GUID-13454651-71B3-4851-9686-340703CC4000-default.png" alt="Description of GUID-13454651-71B3-4851-9686-340703CC4000-default.png follows" title="Description of GUID-13454651-71B3-4851-9686-340703CC4000-default.png follows" /><br />
+<a href="img_text/GUID-13454651-71B3-4851-9686-340703CC4000-default.htm">Description of the illustration GUID-13454651-71B3-4851-9686-340703CC4000-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Click the <span class="bold">Show Palette</span> icon on the right side and drag the new adapter from the Connections or Technologies panel on the right to the connection on the canvas that you want to replace. Configure the new connection. See <a href="GUID-C347192C-EC09-43CB-8988-F87B35CEF268.htm" title="When you add an adapter to a trigger (source) or an invoke (target) in an integration, a wizard prompts you to configure how the data is processed for that connection, including the type of operation to perform, the business objects or fields to use, and so on. The properties you can configure vary by each type of adapter. Click any of the topics below to read more about the properties you can configure for each type of adapter.">Connection Configuration Reference</a> for instructions.</span></li>
+<li class="stepexpand"><span>To modify a data mapping, click the appropriate map icon in the middle of the integration and update the mappings. See <a class="olink GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</span></li>
+<li class="stepexpand"><span>When you are done making changes, click <span class="bold">Save</span> and then click <span class="bold">Exit Integration</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-238CAC29-E619-41A0-8610-299DC33E7126"></a>
+<h2 id="ICSUG-GUID-238CAC29-E619-41A0-8610-299DC33E7126" class="sect2">Viewing the Trigger, Invoke, and Enrichment Details of an Integration</h2>
+<div>
+<p>You can view the details associated with trigger, invoke, and enrichment endpoints of an integration.</p>
+<div class="section">To view the trigger, invoke, and enrichment details of an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, find the integration you want to view. You can filter the display of integrations by their current status on the left side of the page.</span></li>
+<li class="stepexpand"><span>Click the trigger, invoke, or (if configured) enrichment endpoint of the integration.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Details</span> icon.</span></li>
+<li class="stepexpand"><span>View the connection name, endpoint name, input payload, and output payload of the integration.<br /></span>
+<div class="imageleft"><span><img class="imageleft" width="304" height="228" src="img/GUID-C36EB342-303D-4325-A6C6-37428A860B7F-default.png" alt="Description of GUID-C36EB342-303D-4325-A6C6-37428A860B7F-default.png follows" title="Description of GUID-C36EB342-303D-4325-A6C6-37428A860B7F-default.png follows" /><br />
+<a href="img_text/GUID-C36EB342-303D-4325-A6C6-37428A860B7F-default.htm">Description of the illustration GUID-C36EB342-303D-4325-A6C6-37428A860B7F-default.png</a></span></div>
+<span><br /></span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-925F120E-B761-4677-B0CB-2284B5FAED7D"></a>
+<h2 id="ICSUG-GUID-925F120E-B761-4677-B0CB-2284B5FAED7D" class="sect2">Cloning an Integration</h2>
+<div>
+<p>Cloning an integration creates a new copy with identical connections and data mappings. You give the clone a new name, identifier, version number, and package name, but the remaining configuration is the same. You can reconfigure the clone after you create it.</p>
+<div class="p">
+<div class="infobox-note" id="GUID-925F120E-B761-4677-B0CB-2284B5FAED7D__GUID-A39B555B-0322-482D-8916-595ADC13022D">
+<p class="notep1">Note:</p>
+Integration versions follow a formatting convention of <code>xx.yy.zzzz</code>, where <code>xx</code> is the major version and <code>yy.zzzz</code> is the minor version. If you clone an integration (for example, version <code>1.00.0000</code>) and change the minor version of the cloned integration to <code>1.10.0000</code>, version <code>1.00.0000</code> is deactivated when you activate version to <code>1.10.0000</code>. To keep both integrations active, change the major version of the cloned integration to <code>2.00.0000</code>. This enables integration versions <code>1.00.0000</code> and <code>2.00.0000</code> to be active at the same time. For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</div>
+</div>
+<!-- class="section" -->
+<div class="section">To clone an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, find the integration you want to clone. You can filter the display of integrations by their current status on the left side of the page.</span></li>
+<li class="stepexpand"><span>In the row containing the integration you want to clone, click the vertical bars icon on the far right and then click <span class="bold">Clone</span>.<br />
+<img width="123" height="173" src="img/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png" alt="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" title="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" /><br />
+<a href="img_text/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.htm">Description of the illustration GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png</a><br /></span></li>
+<li class="stepexpand"><span>In the dialog that appears, enter a name, unique identifier, version number, package name, and an optional description.</span>
+<div>You can include English alphabetic characters, numbers, underscores, and dashes in the identifier. Enter the version using numbers only in this format: <code>xx.xx.xxxx.</code></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Clone</span>.</span></li>
+<li class="stepexpand"><span>You can modify the clone in any of the ways described in <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-0F2E84BC-8A51-4A73-80D3-F8A11BCE85A6" title="You can modify an existing integration, including changing a source or target connection, reconfiguring the connection, and updating the data mapping. Changes to the source or target can cause changes to the existing mappings.">Modifying an Integration</a>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-0699AE2D-83BF-4E05-BD28-B8BB2697FE99"></a>
+<h2 id="ICSUG-GUID-0699AE2D-83BF-4E05-BD28-B8BB2697FE99" class="sect2">Creating a Draft of an Integration</h2>
+<div>
+<p>Creating a draft of an integration creates a new copy with the same integration information. This action represents an easier way to create an integration. During draft creation, you must update the version of the integration and optionally update the package and description. However, unlike a cloned integration, you <span class="italic">cannot</span> update the integration name or identifier.</p>
+<div class="section">To create a draft of an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, find the integration for which you want to create a draft. You can filter the display of integrations by their current status on the right side of the page.</span></li>
+<li class="stepexpand"><span>In the row containing the integration for which you want to create a draft, click the vertical bars icon on the far right and then click <span class="bold">Create Draft</span>.<br />
+<img width="123" height="173" src="img/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png" alt="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" title="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" /><br />
+<a href="img_text/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.htm">Description of the illustration GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png</a><br />
+.</span></li>
+<li class="stepexpand"><span>In the dialog that appears, modify the version number. Not modifying this field results in the following error:</span>
+<div>
+<pre dir="ltr">
+The draft version of Integration "<span class="italic">integration_name</span>" you are trying to create already exists in the system.
+</pre></div>
+</li>
+<li class="stepexpand"><span>Optionally modify the package name and description. You cannot modify the integration name or identifier.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Create Draft</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-7DB558C9-6536-4BC3-91C2-CB926008D1F2"></a>
+<h2 id="ICSUG-GUID-7DB558C9-6536-4BC3-91C2-CB926008D1F2" class="sect2">Deleting an Integration</h2>
+<div>
+<p>You can delete an integration that is no longer needed.</p>
+<div class="p">Make sure the integration you want to delete is not active. To deactivate the integration, see <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-5D917409-710D-49B8-B7CB-B0C0A8EC45CC" title="You can deactivate an integration to stop it from processing any new messages. If you want to modify an active integration, you need to deactivate it first.">Deactivating an Integration</a>.</div>
+<!-- class="section" -->
+<div class="section">To delete an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, find the integration you want to delete. You can filter the display of integrations by their current status on the left side of the page.</span></li>
+<li class="stepexpand"><span>In the row containing the integration you want to delete, click the vertical bars icon on the far right and then click <span class="bold">Delete</span>.<br />
+<img width="123" height="173" src="img/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png" alt="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" title="Description of GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png follows" /><br />
+<a href="img_text/GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.htm">Description of the illustration GUID-5052098D-3CC0-4FF4-B1B8-3BC30CE588EA-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> on the dialog that appears.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-64A3759A-D5CE-4B81-998D-1103D2D58284"></a>
+<h2 id="ICSUG-GUID-64A3759A-D5CE-4B81-998D-1103D2D58284" class="sect2">Reactivating Integrations After Instance Upgrade to View the Latest Business Identifier Tracking Behavior</h2>
+<div>
+<div class="section">After your Integration Cloud Service instance is upgraded to a newer version, you must reactivate your integrations to view the latest and correct business identifier behavior in the Tracking page.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-6411C499-1344-4EFB-9C0C-8645833C67AF"></a>
+<h2 id="ICSUG-GUID-6411C499-1344-4EFB-9C0C-8645833C67AF" class="sect2">Filtering the Display of Integrations By Type</h2>
+<div>
+<p>You can filter the display of integrations by their type (custom, user-developed, or prebuilt).</p>
+<div class="section">To filter the display of integrations by type:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span>
+<div>The Designer Portal appears.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Filter by</span> list to filter the display of integrations.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Sort By</span> list to filter the display of integrations by the last update or name.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-3AE22A25-4133-4565-AFEC-D20E8AAC7CC1"></a>
+<h2 id="ICSUG-GUID-3AE22A25-4133-4565-AFEC-D20E8AAC7CC1" class="sect2">Changing the Time Zone</h2>
+<div>
+<p>You can change the time zone that is displayed in Integration Cloud Service.</p>
+<div class="section">To change the time zone:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the upper right corner, click the <span class="italic"><span class="bold">username</span></span> dropdown list, then select <span class="bold">Preferences</span>.</span></li>
+<li class="stepexpand"><span>From the <span class="bold">Time Zone Settings</span> list, select the time zone you want to use.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+<li class="stepexpand"><span>Go to the Integrations page and note that the time zone is changed in the message below the status of the integration and inside the information icon at the far right.</span>
+<div>The time zone change is also shown in other parts of Integration Cloud Service in which the time is displayed (for example, on the Tracking page).</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Tracking Business Identifiers in Integrations in Which Routing Paths Are Defined</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="If the integration in which you defined business identifiers also includes definitions for routing paths, you can view the value of the business identifier, the status of the routing path taken based on the business identifier value, the routing expression logic in the blue header above the integration, and the status of the overall integration flow. The status of the routing path taken and the overall integration flow are indicated by color (green indicates success and red indicates failure)." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-02C9A46A-9069-464B-A9CC-A2995A0E14D5.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-53B8C55A-DC99-45DF-ADC4-8B3BE394B597.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-17377DF6-E14B-42E4-9AA4-5A3414A148DF"></a> <span id="PAGE" style="display:none;">69/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-17377DF6-E14B-42E4-9AA4-5A3414A148DF" class="sect1">Tracking Business Identifiers in Integrations in Which Routing Paths Are Defined</h1>
+<div>
+<p>If the integration in which you defined business identifiers also includes definitions for routing paths, you can view the value of the business identifier, the status of the routing path taken based on the business identifier value, the routing expression logic in the blue header above the integration, and the status of the overall integration flow. The status of the routing path taken and the overall integration flow are indicated by color (green indicates success and red indicates failure).</p>
+<div class="section">To track business identifiers in integrations in which routing paths are defined:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li class="stepexpand"><span>In the navigation pane, click <span class="bold">Tracking</span>.</span>
+<div>The Tracking page is displayed.</div>
+</li>
+<li class="stepexpand"><span>From the menu, select the time period during which to search for business identifiers in messages.<br /></span>
+<div class="imageleft"><span><img class="imageleft" width="348" height="201" src="img/GUID-D09B4EB5-D409-485C-993A-68F13FD2CBDE-default.png" alt="Description of GUID-D09B4EB5-D409-485C-993A-68F13FD2CBDE-default.png follows" title="Description of GUID-D09B4EB5-D409-485C-993A-68F13FD2CBDE-default.png follows" /><br />
+<a href="img_text/GUID-D09B4EB5-D409-485C-993A-68F13FD2CBDE-default.htm">Description of the illustration GUID-D09B4EB5-D409-485C-993A-68F13FD2CBDE-default.png</a></span></div>
+<span><br /></span></li>
+<li class="stepexpand"><span>Click the business identifier to access a graphical display of the integration instance.</span>
+<div>The page shows (from top to bottom) the value of the business identifier, the status of the routing path taken based on the business identifier value, the routing expression logic in the blue header above the integration, and the status of the overall integration flow. Several examples of what can potentially be displayed are shown below.
+<ul style="list-style-type: disc;">
+<li>
+<p>The following example shows that the business identifier <span class="bold">Party ID</span> value is <span class="bold">11</span>. Based on this value, the IF portion of the routing expression logic (<span class="bold">partyid &lt; 12.0</span>) completed successfully (as indicated by green). Therefore, the ELSE portion was never taken (as indicated by gray). Message delivery in the overall integration flow (request and response parts) also completed successfully (also indicated by green).<br />
+<img width="851" height="339" src="img/GUID-AB4521CB-1308-484C-8F6B-92F2150C7C05-default.png" alt="Description of GUID-AB4521CB-1308-484C-8F6B-92F2150C7C05-default.png follows" title="Description of GUID-AB4521CB-1308-484C-8F6B-92F2150C7C05-default.png follows" /><br />
+<a href="img_text/GUID-AB4521CB-1308-484C-8F6B-92F2150C7C05-default.htm">Description of the illustration GUID-AB4521CB-1308-484C-8F6B-92F2150C7C05-default.png</a><br /></p>
+<p>If the business identifier <span class="bold">Party ID</span> value had been <span class="bold">12</span> or greater, the IF portion of the routing expression logic (<span class="bold">partyid &lt; 12.0</span>) would not have been taken and the ELSE portion would have been taken and displayed in green.</p>
+</li>
+<li>
+<p>The following example shows that the business identifier <span class="bold">Party ID</span> value is <span class="bold">11</span>. Based on this value, the IF portion of the routing expression logic (<span class="bold">partyid &lt; 12.0</span>) completed successfully (as indicated by green). The ELSE path was not taken (as indicated by gray). However, the message delivery in the overall integration flow failed due to an error with the target connection (indicated by red).<br />
+<img width="854" height="334" src="img/GUID-FD98FA00-D20A-4C10-BD11-213128747E2A-default.png" alt="Description of GUID-FD98FA00-D20A-4C10-BD11-213128747E2A-default.png follows" title="Description of GUID-FD98FA00-D20A-4C10-BD11-213128747E2A-default.png follows" /><br />
+<a href="img_text/GUID-FD98FA00-D20A-4C10-BD11-213128747E2A-default.htm">Description of the illustration GUID-FD98FA00-D20A-4C10-BD11-213128747E2A-default.png</a><br /></p>
+</li>
+<li>
+<p>The following example shows that the business identifier <span class="bold">Party ID</span> value is <span class="bold">12</span>. Therefore, the routing expression logic for the IF (<span class="bold">partyid &lt; 12.0</span>) and ELSE (<span class="bold">partyid &gt;21.0</span>) portions is not satisfied and neither path is taken. The triangle is displayed in red. Therefore, the request message was never delivered to the target in the overall integration and the integration is displayed as unsuccessful (indicated by red).<br />
+<img width="853" height="334" src="img/GUID-9A0F84CD-2819-4414-85D0-F6A97A68EAD8-default.png" alt="Description of GUID-9A0F84CD-2819-4414-85D0-F6A97A68EAD8-default.png follows" title="Description of GUID-9A0F84CD-2819-4414-85D0-F6A97A68EAD8-default.png follows" /><br />
+<a href="img_text/GUID-9A0F84CD-2819-4414-85D0-F6A97A68EAD8-default.htm">Description of the illustration GUID-9A0F84CD-2819-4414-85D0-F6A97A68EAD8-default.png</a><br /></p>
+<div class="p">If you select <span class="bold">Actions</span> &gt; <span class="bold">Audit Trail</span> in the upper right corner, the following message is displayed:
+<pre dir="ltr">
+Failed to send to target because all routing expressions failed on evaluation.
+</pre></div>
+</li>
+<li>
+<p>The following example shows that the business identifier <span class="bold">Party ID</span> value is <span class="bold">12</span>. In this example, only a single routing expression is defined (<span class="bold">partyid &lt; 12.0</span> in the routing expression logic in the blue header above the integration). Because only a single routing expression is defined, no routing diagram is displayed. The request message is never delivered to the target and the overall integration flow is unsuccessful (indicated by red).<br />
+<img width="838" height="336" src="img/GUID-7B1B8E83-0585-4142-A7A5-2BFF15C9BD39-default.png" alt="Description of GUID-7B1B8E83-0585-4142-A7A5-2BFF15C9BD39-default.png follows" title="Description of GUID-7B1B8E83-0585-4142-A7A5-2BFF15C9BD39-default.png follows" /><br />
+<a href="img_text/GUID-7B1B8E83-0585-4142-A7A5-2BFF15C9BD39-default.htm">Description of the illustration GUID-7B1B8E83-0585-4142-A7A5-2BFF15C9BD39-default.png</a><br /></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-02C9A46A-9069-464B-A9CC-A2995A0E14D5.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-53B8C55A-DC99-45DF-ADC4-8B3BE394B597.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Managing the MySQL Cloud Service Life Cycle</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section describes tasks to manage the life cycle of MySQL Cloud Service." />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3"></a> <span id="PAGE" style="display:none;">13/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-6CDBC386-8E9E-4719-84BF-49B0B914D7F3" class="sect1"><span class="enumeration_chapter">2</span> Managing the <span id="MYSQLCSHORT">MySQL Cloud Service</span> Life Cycle</h1>
+<div>
+<p>This section describes tasks to manage the life cycle of <span>MySQL Cloud Service</span>.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24.htm" title="To create a database deployment on MySQL Cloud Service, use the Create MySQL Cloud Service wizard as described in the following procedure.">Creating a MySQL Server Deployment</a></p>
+</li>
+<li>
+<p><a href="GUID-690CD607-7FF2-44ED-9F7B-C8A7FEDB045D.htm" title="For accounts that use the Universal Credits payment model, MySQL Cloud Service provides a QuickStart template that creates a deployment of commonly used configuration. You simply pick a template and, if desired, change the default deployment name. MySQL Cloud Service then uses an Oracle Cloud Stack Manager template to provide all the other configuration information.">Creating a Quickstart MySQL Cloud Service Deployment</a></p>
+</li>
+<li>
+<p><a href="GUID-939FAC07-4D97-4D15-9B75-3A4E275E29D3.htm" title="You can create a MySQL Cloud Service database deployment from a snapshot you have taken of another database deployment in the same identity domain. The resulting deployment is known as a linked clone because its storage is linked to the snapshot&rsquo;s storage.">Creating a Cloned Instance from a Snapshot</a></p>
+</li>
+<li>
+<p><a href="GUID-5A573A7C-7FEB-4561-A8A5-9BF24847C131.htm">Viewing All MySQL Server Deployments</a></p>
+</li>
+<li>
+<p><a href="GUID-0256EAF2-067F-4BAD-87DC-1B334657E94D.htm">Viewing Detailed Information for a MySQL Server Deployment</a></p>
+</li>
+<li>
+<p><a href="GUID-D2836C59-516E-41D7-A901-FE47F3E909B1.htm">Viewing Activities for MySQL Server Deployments in an Identity Domain</a></p>
+</li>
+<li>
+<p><a href="GUID-52546D52-1039-4802-9F4C-A55067D2337A.htm" title="From the MySQL Cloud Service console, you can stop, start and restart the compute nodes associated with a MySQL Server deployment on MySQL Cloud Service.">Stopping, Starting and Restarting</a></p>
+</li>
+<li>
+<p><a href="GUID-82FC7D5C-F126-4259-9A0E-8DC4E5FB26D3.htm">Rebooting a Compute Node</a></p>
+</li>
+<li>
+<p><a href="GUID-B1B9F94B-522D-4BA4-835A-04608E589C4B.htm">Deleting a MySQL Server Deployment</a></p>
+</li>
+<li>
+<p><a href="GUID-ACCB5430-19FA-4458-9C43-4068DE1AEFB7.htm">Tracking the Number of MySQL Server Deployments in an Account</a></p>
+</li>
+<li>
+<p><a href="GUID-A51C1C2F-8674-4CCC-BCFE-A8528D8D5ACA.htm" title="If your identity domain supports the regional compute infrastructure, you can create and manage IP reservations. You use these reservations when creating MySQL Cloud Service deployments instead of having MySQL Cloud Service assign one for you.">Creating and Managing IP Reservations</a></p>
+</li>
+<li>
+<p><a href="GUID-AD726758-0072-4E7E-A86D-3C14D0138BA3.htm" title="MySQL Cloud Service supports the creation of snapshots, which you can then use to create new database deployments called linked clones.">Creating and Managing Snapshots</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

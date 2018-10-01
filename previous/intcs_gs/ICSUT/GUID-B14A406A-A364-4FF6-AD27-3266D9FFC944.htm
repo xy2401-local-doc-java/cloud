@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Mappings and Lookups</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Create mappings and optional lookups to exchange data between the trigger and invoke connections." />
+<meta name="dcterms.created" content="2016-12-04T11:48:08Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Utilities Adapter" />
+<meta name="dcterms.identifier" content="E76820-03" />
+<meta name="dcterms.isVersionOf" content="ICSUT" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUT.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUT.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUT.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944"></a> <span id="PAGE" style="display:none;">14/20</span> <!-- End Header -->
+<h1 id="ICSUT-GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944" class="sect1">Creating Mappings and Lookups</h1>
+<div>
+<p>Create mappings and optional lookups to exchange data between the trigger and invoke connections.</p>
+<div class="section">
+<p class="subhead1">Topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm#GUID-9DFDFD0B-6DA9-47F6-A30D-D1EB2E7A2E50">Creating Mappings</a></p>
+</li>
+<li>
+<p><a href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm#GUID-571ABCFA-2C62-43BD-932E-C9DFABE0E311" title="It&rsquo;s a common practice to customize the application endpoints of the prebuilt integrations that you import into Oracle Integration Cloud Service from the Oracle Marketplace (for example, adding custom fields). As a result, you must customize the integration mappings to take advantage of these custom fields. Oracle Integration Cloud Service lets you customize the mappings in the imported prebuilt integrations. This action creates a customized mapping layer on top of the base mapping file, which isn&rsquo;t modified. You can add customized mappings only to prebuilt integrations imported from Oracle Marketplace, not to integrations that you or another user created.">Adding Customized Mappings to Prebuilt Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-B14A406A-A364-4FF6-AD27-3266D9FFC944.htm#GUID-194AC356-945F-4A11-934B-EFD53076C543">Creating a Lookup to Map Values Between Applications</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-9DFDFD0B-6DA9-47F6-A30D-D1EB2E7A2E50"></a>
+<h2 id="ICSUT-GUID-9DFDFD0B-6DA9-47F6-A30D-D1EB2E7A2E50" class="sect2">Creating Mappings</h2>
+<div>
+<div class="section">
+<p>Map fields directly from the source data structure to the target data structure in the mapper. To learn more about mapping, see <a class="olink OCMAP-GUID-C8ED0D16-0602-4EC9-B68B-54A911C23DF3" target="_blank" href="../OCMAP/GUID-C8ED0D16-0602-4EC9-B68B-54A911C23DF3.htm#OCMAP-GUID-C8ED0D16-0602-4EC9-B68B-54A911C23DF3">Using the Oracle Mapper</a>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Create the connection and the integration. See<a href="GUID-BBDD71E7-1BE2-4695-9902-77BDC88D190F.htm#GUID-BBDD71E7-1BE2-4695-9902-77BDC88D190F" title="To create an integration, you must first create the connections to the applications with which you want to share data.">Creating a Connection</a> and <a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm#GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434" title="Create a Basic Map Data integration pattern to which you add a trigger (source) and an invoke (target) connection. The trigger connection sends requests to Oracle Integration Cloud Service. You can create a single routing expression as well as request and response enrichments as needed.You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the Refresh Metadata menu option is provided.The following tables provide descriptions of the fields that appear in the Oracle Integration Cloud Service Adapter Endpoint Configuration Wizard. The wizard appears when you create an integration.">Choosing an Integration Pattern</a>.</span></li>
+<li><span>Open the integration.</span></li>
+<li><span>In the middle of the integration, click the <span class="bold">Mapper</span> icon.</span></li>
+<li><span>Click the <span class="bold">Create</span> icon.</span></li>
+<li><span>Click a field in the <span class="bold">Source</span> pane and drag it to the corresponding field in the <span class="bold">Target</span> pane, and click <span class="bold">Save</span>.</span></li>
+<li><span>Click <span class="bold">Exit Mapper</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-571ABCFA-2C62-43BD-932E-C9DFABE0E311"></a>
+<h2 id="ICSUT-GUID-571ABCFA-2C62-43BD-932E-C9DFABE0E311" class="sect2">Adding Customized Mappings to Prebuilt Integrations</h2>
+<div>
+<p>It&rsquo;s a common practice to customize the application endpoints of the prebuilt integrations that you import into <span>Oracle Integration Cloud Service</span> from the Oracle Marketplace (for example, adding custom fields). As a result, you must customize the integration mappings to take advantage of these custom fields. <span>Oracle Integration Cloud Service</span> lets you customize the mappings in the imported prebuilt integrations. This action creates a customized mapping layer on top of the base mapping file, which isn&rsquo;t modified. You can add customized mappings only to prebuilt integrations imported from Oracle Marketplace, not to integrations that you or another user created.</p>
+<ol>
+<li><span>Log in to <span>Oracle Integration Cloud Service</span> and click <span class="bold">Integrations</span>.</span></li>
+<li><span>Select a prebuilt integration. Prebuilt integrations are identified with the label <span class="bold">BUILT BY ORACLE</span> to the right of the integration name.</span></li>
+<li><span>From the menu at the far right of the integration name, select <span class="bold">Customize</span>.</span></li>
+<li><span>Click the icon for the type of mapping that you want to customize. You can customize request, response, fault, enrichment source, and enrichment response mappings.</span></li>
+<li><span>Click <span class="bold">Customize</span>.</span></li>
+<li><span>Drag and drop source fields to target elements.</span></li>
+<li><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Mapper</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-194AC356-945F-4A11-934B-EFD53076C543"></a>
+<h2 id="ICSUT-GUID-194AC356-945F-4A11-934B-EFD53076C543" class="sect2">Creating a Lookup to Map Values Between Applications</h2>
+<div>
+<ol>
+<li><span>Log on to <span>Oracle Integration Cloud Service</span>, scroll down, and click <span class="bold">Lookups</span>.</span></li>
+<li><span>Click <span class="bold">Create Lookups</span>.</span></li>
+<li><span>Click <span class="bold">New Lookup</span>.</span></li>
+<li><span>Enter a name and optional description for the lookup.</span></li>
+<li><span>Click <span class="bold">Create</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment317">
+<tr>
+<td class="cellalignment324">
+<table class="cellalignment322">
+<tr>
+<td class="cellalignment321"><a href="GUID-7E6362DF-E165-44D1-BA98-5D82C05CF434.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment321"><a href="GUID-D6C7F3DA-971B-4615-8D1D-405C935B38A0.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment326">
+<table class="cellalignment320">
+<tr>
+<td class="cellalignment321"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment321"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment321"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Extracting Data From A Fusion Applications Data Source</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="If you are deploying a Fusion Applications HCM Cloud data source (either Release 9.2 or 10), you first load your data into your Oracle Storage Service (this process is known as a Cloud Extract). Then, you load the data into the OTBI-Enterprise data warehouse. To load data into your Oracle Cloud Storage Service, you use BI Cloud Connector Console, which is deployed on your Fusion Applications HCM pod." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-59EE3ED9-ACA6-4DF8-BAAA-427EA21DA68A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B2D60E07-CEF7-4934-8122-624E40423631.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998"></a> <span id="PAGE" style="display:none;">15/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998" class="sect1">Extracting Data From A Fusion Applications Data Source</h1>
+<div>
+<p>If you are deploying a Fusion Applications HCM Cloud data source (either Release 9.2 or 10), you first load your data into your Oracle Storage Service (this process is known as a Cloud Extract). Then, you load the data into the OTBI-Enterprise data warehouse. To load data into your Oracle Cloud Storage Service, you use BI Cloud Connector Console, which is deployed on your Fusion Applications HCM pod.</p>
+<div class="section">Before you start, log into BI Cloud Connector Console using the Web link and user name supplied to you by Oracle Cloud Support. You can also start BI Cloud Connector Console using a HTTP URL based on the following format: http://&lt;<span class="italic">FA OHS Host</span>&gt;:&lt;<span class="italic">FA OHS Port</span>&gt;/biacm.</div>
+<!-- class="section" -->
+<div class="section">To operate BI Cloud Connector Console, users must be provisioned with the Application role &ndash; ESSAdmin and the Enterprise Role &ndash; ASM_APPLICATION_IMPLEMENTATION_ADMIN_ABSTRACT, as described in the topic <a class="olink GUID-ED345815-7F6F-459F-860B-7817D2CFD772" target="_blank" href="../BITAG/GUID-ED345815-7F6F-459F-860B-7817D2CFD772.htm#GUID-ED345815-7F6F-459F-860B-7817D2CFD772">Provisioning a User for Oracle Business Intelligence Cloud Connector Access</a>, in <cite>Oracle Transactional Business Intelligence Enterprise Administering Your Deployment for Oracle Transactional Business Intelligence Enterprise</cite>.
+<div class="infobox-note" id="GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998__GUID-9DE2CBC5-24BD-4133-A45E-ED5CB19D58F1">
+<p class="notep1">Note:</p>
+If you are deploying from Fusion Applications HCM Cloud Release 9.2, then Oracle Cloud Operations supply you with the URL and login credentials for BI Cloud Connector Console when the Service Request is completed (for more information, see <a href="GUID-59EE3ED9-ACA6-4DF8-BAAA-427EA21DA68A.htm" title="If you are deploying FA HCM Cloud Release 9.2 data source, then during Initial Configuration, OTBI-Enterprise Implementors create a Service Request to deploy BI Cloud Connector on your Fusion Applications pod. When the Service Request is completed, Oracle Cloud Operations will supply you with the URL and login credentials for BI Cloud Connector Console.">Creating a Service Request to deploy BI Cloud Connector Console</a>).</div>
+<br />
+<img alt="img/GUID-577D1EC4-9A8B-4B98-9B6D-758542376336-default.gif" width="664" height="402" src="img/GUID-577D1EC4-9A8B-4B98-9B6D-758542376336-default.gif" /><br /></div>
+<!-- class="section" -->
+<div class="section">To extract data from a cloud source to an Oracle Cloud Storage Service:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In BI Cloud Connector Console, select the <span class="bold">Configure Cloud Extract</span> link on the Tasks pane.</span></li>
+<li class="stepexpand"><span>In the list of Offerings, select the check box next to the Cloud source system functional areas that you want to deploy.<br />
+<img alt="img/GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif" width="517" height="536" src="img/GUID-99F3003D-1A24-487F-8E7D-2C1530C44D30-default.gif" /><br /></span></li>
+<li class="stepexpand"><span>Click Save, then Done.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Configure External Storage</span> link on the Tasks pane.</span></li>
+<li class="stepexpand"><span>Under <span class="bold">Storage Type</span>, click the <span class="bold">Cloud Storage Service</span> option.<br />
+<img alt="img/GUID-FF2D85C8-43D1-40AE-A34C-E54E7AD104B9-default.gif" width="566" height="551" src="img/GUID-FF2D85C8-43D1-40AE-A34C-E54E7AD104B9-default.gif" /><br /></span></li>
+<li class="stepexpand"><span>Specify the following details:</span>
+<ul>
+<li>Protocol &mdash; Select https.</li>
+<li>Host &mdash; Enter the domain name of your Oracle Cloud Storage Service. The domain of the storage service is typically formatted as: identitydomain.storage.oraclecloud.com. You can obtain this domain name from the <span class="bold">Service REST Endpoint</span> data field in the storage service&rsquo;s details area from Oracle Cloud My Services. It is the first part of the address, before the first forward slash.</li>
+<li>Port &mdash; Leave blank.</li>
+<li>User Name &mdash; Use the Oracle Cloud account user name that will be used to authenticate to the Storage Service. The account must have the following storage cloud service role: &lsquo;StorageServiceName Storage Read Write Group&rsquo;.</li>
+<li>Password &mdash; Enter the password for the Oracle Cloud account user name that you specified in the User Name field.</li>
+<li>Download Folder &mdash; This should be filled in automatically. If it is not, select UCM as storage type, copy the download folder value, navigate back to Cloud Storage Service and paste.</li>
+<li>Upload Folder &mdash; This should be filled in automatically. If it is not, select UCM as storage type, copy the upload folder value, navigate back to Cloud Storage Service and paste.</li>
+<li>Service Name &mdash; Identifies the specific service to upload files to. This is a concatenation of the service name and the identity domain, separated by a dash, for example: storageservicename-identitydomainname. You can obtain this service name from the <span class="bold">Service REST Endpoint</span> data field in the storage service&rsquo;s details area in Oracle Cloud My Services. It is the last part of the address, after the last forward slash.</li>
+<li>Container &mdash; Name of the container to upload data to in the storage service. This should be the same container specified in Configuration Manager where the Fusion data source was registered (that is, in Configuration Manager navigate to System Setups\Define Business Intelligence Applications\Source Systems tab).</li>
+<li>Data Encryption &mdash; Select the check box to enable data encryption at rest within storage cloud service. Click <span class="bold">Choose File</span>, and navigate to and select the key pair file that you saved when you registered your data source in Configuration Manager (that is, in Configuration Manager navigate to System Setups\Define Business Intelligence Applications\Source Systems tab). <span class="bold">Note</span>: if you revisit this page after logging out and then logging back in, the certificate file name will no longer be visible. This is a system limitation, and does not mean that the uploaded certificate details were not saved.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Click Save, then Done.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Configure Cloud Extract</span> link on the Tasks pane.</span></li>
+<li class="stepexpand"><span>Click the Manage Extract Schedules icon (<img width="34" height="29" src="img/GUID-DC8A2A2F-7AD5-406B-B7BD-90A7B433141B-default.gif" alt="Manage Extract Schedules" title="Manage Extract Schedules" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-DC8A2A2F-7AD5-406B-B7BD-90A7B433141B-default.gif</a>) to display the Schedules dialog.<br />
+<img alt="img/GUID-750FB9D7-8C43-462A-A8CB-724C1C1D77C9-default.gif" width="474" height="492" src="img/GUID-750FB9D7-8C43-462A-A8CB-724C1C1D77C9-default.gif" /><br /></span></li>
+<li class="stepexpand"><span>Click the Add icon (<img width="31" height="27" src="img/GUID-85DC9562-19E8-4AB1-AF89-2B2423F64131-default.gif" alt="Add icon" title="Add icon" />) to create a new schedule.</span></li>
+<li class="stepexpand"><span>Specify when you want to perform the Cloud Extract.</span>
+<div><span class="bold">Note</span>: To perform a once-only Cloud Extract, select the &lsquo;Simple&rsquo; option under <span class="bold">Recurrence</span>.</div>
+<div>You typically schedule a daily extract to run at a time when the load on the Fusion Applications source system is low, for example, during off-peak hours. In addition, you must schedule the extract so that it completes before the load plan executes to load data from the Oracle Cloud Storage Service into the OTBI-Enterprise data warehouse.</div>
+</li>
+<li class="stepexpand"><span>Click Save, and then Done.</span></li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-59EE3ED9-ACA6-4DF8-BAAA-427EA21DA68A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-B2D60E07-CEF7-4934-8122-624E40423631.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

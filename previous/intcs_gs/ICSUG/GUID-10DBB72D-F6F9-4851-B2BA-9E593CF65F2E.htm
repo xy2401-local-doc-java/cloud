@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Connections</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:" />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E"></a> <span id="PAGE" style="display:none;">18/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E" class="sect1">Creating Connections</h1>
+<div>
+<p>You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" title="The first step in creating an integration is to create the connections to the applications with which you want to share data.">Creating a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" title="From the Connection Administrator section of the connection, you can add a contact email address for notifications.">Adding a Contact Email</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B" title="Configure security for your connection by selecting the security policy and specifying login credentials.">Configuring Connection Security</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" title="Test your connection to ensure that it is successfully configured.">Testing the Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" title="You can edit connection settings after creating a new connection.">Editing a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0" title="You can clone a copy of an existing connection. It is a quick way to create a new connection.">Cloning a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-39E653C5-6506-427B-923E-45BD965D1F69" title="You can delete a connection from the connection menu.">Deleting a Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B" title="You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the Refresh Metadata menu option is provided.">Refreshing Integration Metadata</a></p>
+</li>
+<li>
+<p><a href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm#GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB" title="You can manage security certificates in Oracle Integration Cloud Service.">Managing Security Certificates</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"></a>
+<h2 id="ICSUG-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" class="sect2">Creating a Connection</h2>
+<div>
+<p>The first step in creating an integration is to create the connections to the applications with which you want to share data.</p>
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">New Connection</span>.</span>
+<div>The Create Connection &mdash; Select Adapter dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select an adapter from the dialog. You can also search for the type of adapter to use by entering a partial or full name in the Search field, and clicking <span class="bold">Search</span>.</span>
+<div>The New Connection &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the information to describe the connection.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a meaningful name to help others find your connection when they begin to create their own integrations. The name you enter is automatically added in capital letters to the <span class="bold">Identifier</span> field. If you modify the identifier name, do not include a blank space (for example, <code>OSC Inbound</code>).</p>
+</li>
+<li>
+<p>Select the role (direction) in which to use this connection (trigger, invoke, or both). Only the roles supported by this adapter are displayed for selection. When you select a role, only the connection properties and security policies appropriate to that role are displayed on the Connections page. If you select an adapter that supports both invoke and trigger, but select only one of those roles, then try to drag the adapter into the section you did not select, you receive an error (for example, configure an <span>Oracle RightNow Cloud Adapter</span> as only an invoke, but drag the adapter to the trigger section).</p>
+</li>
+<li>
+<p>Enter an optional description of the connection.</p>
+</li>
+</ul>
+<br />
+<img width="550" height="326" src="img/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png" alt="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" title="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" /><br />
+<a href="img_text/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.htm">Description of the illustration GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>Your connection is created and you are now ready to configure connection details, such as email contact, connection properties, security policies, and connection login credentials.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE"></a>
+<h2 id="ICSUG-GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" class="sect2">Adding a Contact Email</h2>
+<div>
+<p>From the Connection Administrator section of the connection, you can add a contact email address for notifications.</p>
+<ol>
+<li><span>In the <span class="bold">Email Address</span> field, enter an email address to receive email notifications when problems occur.</span></li>
+<li><span>In the upper right corner, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E"></a>
+<h2 id="ICSUG-GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E" class="sect2">Configuring Connection Properties</h2>
+<div>
+<p>Enter connection information so your application can process requests.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Connectivity</span>.</span>
+<div>The Connection Properties dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>See the following sections for information about specifying connection properties.</span>
+<div>
+<div class="tblformal" id="GUID-6DE35F8D-A2A5-4E47-9FC3-CC702B13CD0E__GUID-0AA741B4-7837-4D75-946A-794144A83182">
+<table class="cellalignment926" summary="List of the available adapters.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d7908e267">Adapter</th>
+<th class="cellalignment929" id="d7908e269">For Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d7908e273" headers="d7908e267"><span>Adobe eSign Adapter</span></td>
+<td class="cellalignment929" headers="d7908e273 d7908e269"><a class="olink ICSAE-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSAE/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSAE-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Adobe eSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e282" headers="d7908e267"><span>Concur Adapter</span></td>
+<td class="cellalignment929" headers="d7908e282 d7908e269"><a class="olink ICSCO-GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934" target="_blank" href="../ICSCO/GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934.htm#ICSCO-GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934"><span class="italic">Using the Concur Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e291" headers="d7908e267">
+<p>DB2 Adapter</p>
+</td>
+<td class="cellalignment929" headers="d7908e291 d7908e269"><a class="olink ICSDB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSDB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSDB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the DB2 Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e300" headers="d7908e267"><span>DocuSign Adapter</span></td>
+<td class="cellalignment929" headers="d7908e300 d7908e269"><a class="olink ICSDS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSDS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSDS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the DocuSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e309" headers="d7908e267"><span>Eventbrite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e309 d7908e269"><a class="olink ICSEB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSEB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Eventbrite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e318" headers="d7908e267"><span>Evernote Adapter</span></td>
+<td class="cellalignment929" headers="d7908e318 d7908e269"><a class="olink ICSEN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSEN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Evernote Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e327" headers="d7908e267"><span>Facebook Adapter</span></td>
+<td class="cellalignment929" headers="d7908e327 d7908e269"><a class="olink ICSFB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Facebook Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e336" headers="d7908e267"><span>File Adapter</span></td>
+<td class="cellalignment929" headers="d7908e336 d7908e269"><a class="olink ICSFI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the File Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e345" headers="d7908e267"><span>FTP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e345 d7908e269"><a class="olink ICSFT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the FTP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e354" headers="d7908e267"><span>Gmail Adapter</span></td>
+<td class="cellalignment929" headers="d7908e354 d7908e269"><a class="olink ICSGM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Gmail Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e363" headers="d7908e267"><span>Google Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d7908e363 d7908e269"><a class="olink ICSGO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Google Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e373" headers="d7908e267"><span>Google Task Adapter</span></td>
+<td class="cellalignment929" headers="d7908e373 d7908e269"><a class="olink ICSGT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSGT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Google Task Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e382" headers="d7908e267"><span>Oracle JD Edwards EnterpriseOne Adapter</span></td>
+<td class="cellalignment929" headers="d7908e382 d7908e269"><a class="olink ICSJD-GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A" target="_blank" href="../ICSJD/GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A.htm#ICSJD-GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A"><span class="italic">Using the JD Edwards EnterpriseOne Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e391" headers="d7908e267"><span>JMS Adapter</span></td>
+<td class="cellalignment929" headers="d7908e391 d7908e269"><a class="olink ICSJM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSJM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSJM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the JMS Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e400" headers="d7908e267"><span>LinkedIn Adapter</span></td>
+<td class="cellalignment929" headers="d7908e400 d7908e269"><a class="olink ICSLI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSLI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSLI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the LinkedIn Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e409" headers="d7908e267"><span>Microsoft Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d7908e409 d7908e269"><a class="olink ICSMS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSMS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e418" headers="d7908e267"><span>Microsoft Contact Adapter</span></td>
+<td class="cellalignment929" headers="d7908e418 d7908e269"><a class="olink ICSMT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSMT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMT-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Contact Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e427" headers="d7908e267"><span>Microsoft Email Adapter</span></td>
+<td class="cellalignment929" headers="d7908e427 d7908e269"><a class="olink ICSME-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSME/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSME-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft Email Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e436" headers="d7908e267"><span>Microsoft SQL Server Adapter</span></td>
+<td class="cellalignment929" headers="d7908e436 d7908e269"><a class="olink ICSSS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Microsoft SQL Server Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e445" headers="d7908e267"><span>MailChimp Adapter</span></td>
+<td class="cellalignment929" headers="d7908e445 d7908e269"><a class="olink ICSCH-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSCH/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCH-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the MailChimp Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e454" headers="d7908e267"><span>MySQL Adapter</span></td>
+<td class="cellalignment929" headers="d7908e454 d7908e269"><a class="olink ICSSQ-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSQ/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSQ-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the MySQL Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e463" headers="d7908e267"><span>Oracle Advanced Queuing (AQ) Adapter</span></td>
+<td class="cellalignment929" headers="d7908e463 d7908e269"><a class="olink ICSAQ-GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613" target="_blank" href="../ICSAQ/GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613.htm#ICSAQ-GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613"><span class="italic">Using the Oracle Advanced Queuing (AQ) Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e473" headers="d7908e267"><span>Oracle Commerce Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e473 d7908e269"><a class="olink ICSCC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSCC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e482" headers="d7908e267"><span>Oracle CPQ Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e482 d7908e269"><a class="olink ICSCP-GUID-0926586A-F0D2-4492-A74D-FCA7EA282CC9" target="_blank" href="../ICSCP/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCP-GUID-0926586A-F0D2-4492-A74D-FCA7EA282CC9">Using the Oracle CPQ Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e490" headers="d7908e267"><span>NetSuite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e490 d7908e269"><a class="olink ICSNS-GUID-B6CC24A5-DC4E-479D-B86A-62A2762ADA7D" target="_blank" href="../ICSNS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSNS-GUID-B6CC24A5-DC4E-479D-B86A-62A2762ADA7D">Using the NetSuite Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e498" headers="d7908e267"><span>Oracle Database Adapter</span></td>
+<td class="cellalignment929" headers="d7908e498 d7908e269"><a class="olink ICSSB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSB-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Database Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e507" headers="d7908e267"><span>Oracle E-Business Suite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e507 d7908e269"><a class="olink ics_ebs_guide" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ics_ebs_guide"><span class="italic">Using Oracle E-Business Suite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e516" headers="d7908e267"><span>Oracle Field Service Adapter</span></td>
+<td class="cellalignment929" headers="d7908e516 d7908e269"><a class="olink ICSFS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSFS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using Oracle Field Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e525" headers="d7908e267"><span>Oracle Eloqua Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e525 d7908e269">N/A</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e531" headers="d7908e267"><span>Oracle ERP Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e531 d7908e269"><a class="olink ICSER-GUID-1B92F72F-4AA8-4C2B-9E93-8F9760EEE859" target="_blank" href="../ICSER/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSER-GUID-1B92F72F-4AA8-4C2B-9E93-8F9760EEE859">Using the Oracle ERP Cloud Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e539" headers="d7908e267"><span>Oracle HCM Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e539 d7908e269"><a class="olink ICSHC-GUID-011D6A86-7C9E-4839-B2F4-2A4A170E879E" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSHC-GUID-011D6A86-7C9E-4839-B2F4-2A4A170E879E">Using the Oracle HCM Cloud Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e547" headers="d7908e267"><span>Oracle Messaging Cloud Service</span></td>
+<td class="cellalignment929" headers="d7908e547 d7908e269"><a class="olink ICSMC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSMC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMC-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Using the Oracle Messaging Cloud Service Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e555" headers="d7908e267"><span>Oracle Responsys Adapter</span></td>
+<td class="cellalignment929" headers="d7908e555 d7908e269"><a class="olink ICSRS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSRS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRS-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Responsys Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e565" headers="d7908e267"><span>Oracle RightNow Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e565 d7908e269"><a class="olink ICSRN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSRN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRN-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Using the Oracle RightNow Cloud Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e573" headers="d7908e267"><span>Oracle Sales Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e573 d7908e269"><a class="olink ICSSC-GUID-AC01C4FD-7B12-454A-A505-85DFC8D98035" target="_blank" href="../ICSSC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSC-GUID-AC01C4FD-7B12-454A-A505-85DFC8D98035">Using the Oracle Sales Cloud Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e581" headers="d7908e267"><span>Oracle Siebel Adapter</span></td>
+<td class="cellalignment929" headers="d7908e581 d7908e269"><a class="olink ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Siebel Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e590" headers="d7908e267"><span>REST Adapter</span></td>
+<td class="cellalignment929" headers="d7908e590 d7908e269"><a class="olink ICSRE-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSRE/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRE-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Using the REST Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e598" headers="d7908e267"><span>Salesforce Adapter</span></td>
+<td class="cellalignment929" headers="d7908e598 d7908e269"><a class="olink ICSSF-GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C" target="_blank" href="../ICSSF/GUID-C47BEDF3-F892-4380-85A3-3E2674B948FE.htm#ICSSF-GUID-2C42BEF9-DB1C-422A-83A7-C89F8375A16C">Using the Salesforce Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e606" headers="d7908e267"><span>SAP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e606 d7908e269"><a class="olink ICSSA-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSA/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSA-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the SAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e615" headers="d7908e267"><span>SAP Ariba Adapter</span></td>
+<td class="cellalignment929" headers="d7908e615 d7908e269"><a class="olink ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72" target="_blank" href="../ICSAR/GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72.htm#ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72"><span class="italic">Using the SAP Ariba Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e624" headers="d7908e267"><span>SOAP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e624 d7908e269"><a class="olink ICSSO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Using the SOAP Adapter</a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e632" headers="d7908e267"><span>SurveyMonkey Adapter</span></td>
+<td class="cellalignment929" headers="d7908e632 d7908e269"><a class="olink ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the SurveyMonkey Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e641" headers="d7908e267"><span>Twilio Adapter</span></td>
+<td class="cellalignment929" headers="d7908e641 d7908e269"><a class="olink ICSTL-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSTL/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTL-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Twilio Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e650" headers="d7908e267"><span>Twitter Adapter</span></td>
+<td class="cellalignment929" headers="d7908e650 d7908e269"><a class="olink ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSTW/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Twitter Adapter</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>You are now ready to configure connection security.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B"></a>
+<h2 id="ICSUG-GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B" class="sect2">Configuring Connection Security</h2>
+<div>
+<p>Configure security for your connection by selecting the security policy and specifying login credentials.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Credentials</span>.</span></li>
+<li class="stepexpand"><span>See the following sections for information about selecting the security policy and entering your login credentials.</span>
+<div>
+<div class="tblformal" id="GUID-39669C56-2CA9-4663-A2A9-F5B49EAF743B__GUID-0AA741B4-7837-4D75-946A-794144A83182">
+<table class="cellalignment926" summary="List of the available adapters.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d7908e708">Adapter</th>
+<th class="cellalignment929" id="d7908e710">For Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d7908e714" headers="d7908e708"><span>Adobe eSign Adapter</span></td>
+<td class="cellalignment929" headers="d7908e714 d7908e710"><a class="olink ICSAE-GUID-CD14B97C-30AC-4895-92C7-A37F2E6628B3" target="_blank" href="../ICSAE/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSAE-GUID-CD14B97C-30AC-4895-92C7-A37F2E6628B3"><span class="italic">Using the Adobe eSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e723" headers="d7908e708"><span>Concur Adapter</span></td>
+<td class="cellalignment929" headers="d7908e723 d7908e710"><a class="olink ICSCO-GUID-13ECB2A6-268E-4E06-A0B8-826CC5AB6F5F" target="_blank" href="../ICSCO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCO-GUID-13ECB2A6-268E-4E06-A0B8-826CC5AB6F5F"><span class="italic">Using the Concur Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e732" headers="d7908e708">
+<p>DB2 Adapter</p>
+</td>
+<td class="cellalignment929" headers="d7908e732 d7908e710"><a class="olink ICSDB-GUID-B2CDE706-410E-4369-A238-4E5695F5A5B2" target="_blank" href="../ICSDB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSDB-GUID-B2CDE706-410E-4369-A238-4E5695F5A5B2"><span class="italic">Using the DB2 Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e741" headers="d7908e708"><span>DocuSign Adapter</span></td>
+<td class="cellalignment929" headers="d7908e741 d7908e710"><a class="olink ICSDS-GUID-023CCE8C-D15C-47EA-8833-EB1470FFAA4D" target="_blank" href="../ICSDS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSDS-GUID-023CCE8C-D15C-47EA-8833-EB1470FFAA4D"><span class="italic">Using the DocuSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e750" headers="d7908e708"><span>Eventbrite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e750 d7908e710"><a class="olink ICSEB-GUID-0AFC3988-1CEF-4624-A8D7-CD09C1E34211" target="_blank" href="../ICSEB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEB-GUID-0AFC3988-1CEF-4624-A8D7-CD09C1E34211"><span class="italic">Using the Eventbrite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e759" headers="d7908e708"><span>Evernote Adapter</span></td>
+<td class="cellalignment929" headers="d7908e759 d7908e710"><a class="olink ICSEN-GUID-AE7BF523-5425-499B-84AA-44FE06E061E8" target="_blank" href="../ICSEN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSEN-GUID-AE7BF523-5425-499B-84AA-44FE06E061E8"><span class="italic">Using the Evernote Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e768" headers="d7908e708"><span>Facebook Adapter</span></td>
+<td class="cellalignment929" headers="d7908e768 d7908e710"><a class="olink ICSFB-GUID-D2A0E132-69DF-476D-B31F-F0DC7B9833A6" target="_blank" href="../ICSFB/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFB-GUID-D2A0E132-69DF-476D-B31F-F0DC7B9833A6"><span class="italic">Using the Facebook Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e777" headers="d7908e708"><span>File Adapter</span></td>
+<td class="cellalignment929" headers="d7908e777 d7908e710">NA</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e783" headers="d7908e708"><span>FTP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e783 d7908e710"><a class="olink ICSFT-GUID-6BD410FC-061C-4F5B-B900-A586638710CA" target="_blank" href="../ICSFT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFT-GUID-6BD410FC-061C-4F5B-B900-A586638710CA"><span class="italic">Using the FTP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e792" headers="d7908e708"><span>Gmail Adapter</span></td>
+<td class="cellalignment929" headers="d7908e792 d7908e710"><a class="olink ICSGM-GUID-173F2E84-9729-4402-8881-EEDD84284222" target="_blank" href="../ICSGM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGM-GUID-173F2E84-9729-4402-8881-EEDD84284222"><span class="italic">Using the Gmail Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e801" headers="d7908e708"><span>Google Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d7908e801 d7908e710"><a class="olink ICSGO-GUID-E1E07C95-0436-4D3C-BCD9-41A3451BA47D" target="_blank" href="../ICSGO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGO-GUID-E1E07C95-0436-4D3C-BCD9-41A3451BA47D"><span class="italic">Using the Google Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e811" headers="d7908e708"><span>Google Task Adapter</span></td>
+<td class="cellalignment929" headers="d7908e811 d7908e710"><a class="olink ICSGT-GUID-017296B6-8C25-4297-B175-7C8E2F71ED3E" target="_blank" href="../ICSGT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSGT-GUID-017296B6-8C25-4297-B175-7C8E2F71ED3E"><span class="italic">Using the Google Task Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e820" headers="d7908e708"><span>Oracle JD Edwards EnterpriseOne Adapter</span></td>
+<td class="cellalignment929" headers="d7908e820 d7908e710"><a class="olink ICSJD-GUID-6EF83924-FBE4-461D-BA1D-592E1B34122D" target="_blank" href="../ICSJD/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSJD-GUID-6EF83924-FBE4-461D-BA1D-592E1B34122D"><span class="italic">Using the JD Edwards EnterpriseOne Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e829" headers="d7908e708"><span>JMS Adapter</span></td>
+<td class="cellalignment929" headers="d7908e829 d7908e710"><a class="olink ICSJM-GUID-F53AD24B-CF85-44B1-B37D-91940EB8DCAC" target="_blank" href="../ICSJM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSJM-GUID-F53AD24B-CF85-44B1-B37D-91940EB8DCAC"><span class="italic">Using the JMS Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e838" headers="d7908e708"><span>LinkedIn Adapter</span></td>
+<td class="cellalignment929" headers="d7908e838 d7908e710"><a class="olink ICSLI-GUID-97C05E88-4186-475A-B266-B77E363F249C" target="_blank" href="../ICSLI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSLI-GUID-97C05E88-4186-475A-B266-B77E363F249C"><span class="italic">Using the LinkedIn Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e847" headers="d7908e708"><span>Microsoft Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d7908e847 d7908e710"><a class="olink ICSMS-GUID-5AFDE406-8168-4875-9CA7-792ECD363DA6" target="_blank" href="../ICSMS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMS-GUID-5AFDE406-8168-4875-9CA7-792ECD363DA6"><span class="italic">Using the Microsoft Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e856" headers="d7908e708"><span>Microsoft Contact Adapter</span></td>
+<td class="cellalignment929" headers="d7908e856 d7908e710"><a class="olink ICSMT-GUID-030E9999-78CD-461E-987E-61DB5524C660" target="_blank" href="../ICSMT/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMT-GUID-030E9999-78CD-461E-987E-61DB5524C660"><span class="italic">Using the Microsoft Contact Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e865" headers="d7908e708"><span>Microsoft Email Adapter</span></td>
+<td class="cellalignment929" headers="d7908e865 d7908e710"><a class="olink ICSME-GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274" target="_blank" href="../ICSME/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSME-GUID-ED8BA700-3C23-4065-BA9B-9553DBAFE274"><span class="italic">Using the Microsoft Email Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e874" headers="d7908e708"><span>Microsoft SQL Server Adapter</span></td>
+<td class="cellalignment929" headers="d7908e874 d7908e710"><a class="olink ICSSS-GUID-CBB81A2C-29CC-4D26-9977-6F962E9EB07B" target="_blank" href="../ICSSS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSS-GUID-CBB81A2C-29CC-4D26-9977-6F962E9EB07B"><span class="italic">Using the Microsoft SQL Server Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e883" headers="d7908e708"><span>MailChimp Adapter</span></td>
+<td class="cellalignment929" headers="d7908e883 d7908e710"><a class="olink ICSCH-GUID-B6E54331-C52D-44A1-99A2-B388348F971B" target="_blank" href="../ICSCH/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCH-GUID-B6E54331-C52D-44A1-99A2-B388348F971B"><span class="italic">Using the MailChimp Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e892" headers="d7908e708"><span>MySQL Adapter</span></td>
+<td class="cellalignment929" headers="d7908e892 d7908e710"><a class="olink ICSSQ-GUID-EBD7CF54-9B0C-4882-83DC-813A47AC7EA9" target="_blank" href="../ICSSQ/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSQ-GUID-EBD7CF54-9B0C-4882-83DC-813A47AC7EA9"><span class="italic">Using the MySQL Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e901" headers="d7908e708"><span>Oracle Advanced Queuing (AQ) Adapter</span></td>
+<td class="cellalignment929" headers="d7908e901 d7908e710"><a class="olink ICSAQ-GUID-D14C2096-9B86-404A-A1AD-3A3129B71D9F" target="_blank" href="../ICSAQ/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSAQ-GUID-D14C2096-9B86-404A-A1AD-3A3129B71D9F"><span class="italic">Using the Oracle Advanced Queuing (AQ) Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e911" headers="d7908e708"><span>Oracle Commerce Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e911 d7908e710"><a class="olink ICSCC-GUID-7C793F3A-310E-4948-8EFF-6318E7F64533" target="_blank" href="../ICSCC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCC-GUID-7C793F3A-310E-4948-8EFF-6318E7F64533"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e920" headers="d7908e708"><span>Oracle CPQ Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e920 d7908e710"><a class="olink ICSCP-GUID-CCD45F4E-42F4-4E3C-B55D-DAF9AF7A8053" target="_blank" href="../ICSCP/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSCP-GUID-CCD45F4E-42F4-4E3C-B55D-DAF9AF7A8053"><span class="italic">Using the Oracle CPQ Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e929" headers="d7908e708"><span>NetSuite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e929 d7908e710"><a class="olink ICSNS-GUID-CBE57D3D-83CF-4379-A8AF-CB3A7CB5D5A1" target="_blank" href="../ICSNS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSNS-GUID-CBE57D3D-83CF-4379-A8AF-CB3A7CB5D5A1"><span class="italic">Using the NetSuite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e938" headers="d7908e708"><span>Oracle Database Adapter</span></td>
+<td class="cellalignment929" headers="d7908e938 d7908e710"><a class="olink ICSSB-GUID-DE7103DC-FBF7-4B78-BC02-027920F6CEF0" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSSB-GUID-DE7103DC-FBF7-4B78-BC02-027920F6CEF0"><span class="italic">Using the Oracle Database Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e947" headers="d7908e708"><span>Oracle E-Business Suite Adapter</span></td>
+<td class="cellalignment929" headers="d7908e947 d7908e710"><a class="olink ics_ebs_guide" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ics_ebs_guide"><span class="italic">Using Oracle E-Business Suite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e956" headers="d7908e708"><span>Oracle Field Service Adapter</span></td>
+<td class="cellalignment929" headers="d7908e956 d7908e710"><a class="olink ICSFS-GUID-66592312-9B9E-4379-BA44-048C87C24626" target="_blank" href="../ICSFS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSFS-GUID-66592312-9B9E-4379-BA44-048C87C24626"><span class="italic">Using Oracle Field Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e965" headers="d7908e708"><span>Oracle Eloqua Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e965 d7908e710">N/A</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e971" headers="d7908e708"><span>Oracle ERP Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e971 d7908e710"><a class="olink ICSER-GUID-14DB5A84-DC57-46EC-A91C-F4EA3D080023" target="_blank" href="../ICSER/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSER-GUID-14DB5A84-DC57-46EC-A91C-F4EA3D080023"><span class="italic">Using the Oracle ERP Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e980" headers="d7908e708"><span>Oracle HCM Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e980 d7908e710"><a class="olink ICSHC-GUID-62555362-4FDC-418D-B254-927B01D9C354" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSHC-GUID-62555362-4FDC-418D-B254-927B01D9C354"><span class="italic">Using the Oracle HCM Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e989" headers="d7908e708"><span>Oracle Messaging Cloud Service</span></td>
+<td class="cellalignment929" headers="d7908e989 d7908e710"><a class="olink ICSMC-GUID-062F187A-9A25-421B-9D05-56B6BA12BE4A" target="_blank" href="../ICSMC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSMC-GUID-062F187A-9A25-421B-9D05-56B6BA12BE4A"><span class="italic">Using the Oracle Messaging Cloud Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e998" headers="d7908e708"><span>Oracle Responsys Adapter</span></td>
+<td class="cellalignment929" headers="d7908e998 d7908e710"><a class="olink ICSRS-GUID-7142CA94-E4C4-464A-8404-4CEDE9DC17A5" target="_blank" href="../ICSRS/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRS-GUID-7142CA94-E4C4-464A-8404-4CEDE9DC17A5"><span class="italic">Using the Oracle Responsys Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1008" headers="d7908e708"><span>Oracle RightNow Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1008 d7908e710"><a class="olink ICSRN-GUID-FF6349AA-5889-4DB8-9290-E47F34BDFB19" target="_blank" href="../ICSRN/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRN-GUID-FF6349AA-5889-4DB8-9290-E47F34BDFB19"><span class="italic">Using the Oracle RightNow Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1017" headers="d7908e708"><span>Oracle Sales Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1017 d7908e710"><a class="olink ICSSC-GUID-F0D20733-0072-4E19-B3FF-E74C65603A44" target="_blank" href="../ICSSC/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSC-GUID-F0D20733-0072-4E19-B3FF-E74C65603A44"><span class="italic">Using the Oracle Sales Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1026" headers="d7908e708"><span>Oracle Siebel Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1026 d7908e710"><a class="olink ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSI/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSI-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Oracle Siebel Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1035" headers="d7908e708"><span>REST Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1035 d7908e710"><a class="olink ICSRE-GUID-CCB398AC-7204-44DD-A9FF-933D0621A060" target="_blank" href="../ICSRE/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSRE-GUID-CCB398AC-7204-44DD-A9FF-933D0621A060"><span class="italic">Using the REST Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1044" headers="d7908e708"><span>Salesforce Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1044 d7908e710"><a class="olink ICSSF-GUID-20D28277-2ACE-4248-90D6-F671BC15865B" target="_blank" href="../ICSSF/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSF-GUID-20D28277-2ACE-4248-90D6-F671BC15865B"><span class="italic">Using the Salesforce Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1053" headers="d7908e708"><span>SAP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1053 d7908e710"><a class="olink ICSSA-GUID-C6B3CF5A-DC12-4F8C-8F4A-5B885BE8D4C4" target="_blank" href="../ICSSA/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSA-GUID-C6B3CF5A-DC12-4F8C-8F4A-5B885BE8D4C4"><span class="italic">Using the SAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1062" headers="d7908e708"><span>SAP Ariba Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1062 d7908e710"><a class="olink ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72" target="_blank" href="../ICSAR/GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72.htm#ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72"><span class="italic">Using the SAP Ariba Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1071" headers="d7908e708"><span>SOAP Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1071 d7908e710"><a class="olink ICSSO-GUID-B83AABDA-4E24-4186-A140-50A5A2857E63" target="_blank" href="../ICSSO/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSO-GUID-B83AABDA-4E24-4186-A140-50A5A2857E63"><span class="italic">Using the SOAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1080" headers="d7908e708"><span>SurveyMonkey Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1080 d7908e710"><a class="olink ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSSM/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSSM-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the SurveyMonkey Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1089" headers="d7908e708"><span>Twilio Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1089 d7908e710"><a class="olink ICSTL-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSTL/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTL-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Twilio Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d7908e1098" headers="d7908e708"><span>Twitter Adapter</span></td>
+<td class="cellalignment929" headers="d7908e1098 d7908e710"><a class="olink ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" target="_blank" href="../ICSTW/GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#ICSTW-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"><span class="italic">Using the Twitter Adapter</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span>
+<div>For most adapters, you are now ready to test your connection. For some adapters, you must first configure an agent group.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22"></a>
+<h2 id="ICSUG-GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" class="sect2">Testing the Connection</h2>
+<div>
+<p>Test your connection to ensure that it is successfully configured.</p>
+<ol>
+<li class="stepexpand"><span>In the upper right corner of the page, click <span class="bold">Test</span>.</span>
+<div>If successful, the following message is displayed and the progress indicator shows 100%.
+<p><code>The connection test was successful!</code></p>
+</div>
+</li>
+<li class="stepexpand"><span>If your connection was unsuccessful, an error message is displayed with details. Verify that the configuration details you entered are correct.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED"></a>
+<h2 id="ICSUG-GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" class="sect2">Editing a Connection</h2>
+<div>
+<p>You can edit connection settings after creating a new connection.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, search for the connection name.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Edit</span> from the connection <span class="bold">Actions</span> menu or click the connection name.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Connection page is displayed.</div>
+</li>
+<li class="stepexpand"><span>To edit the notification email contact, change the email address in the <span class="bold">Email Address</span> field.</span></li>
+<li class="stepexpand"><span>To edit the connection properties, click <span class="bold">Configure Connectivity</span>. Note that some connections do not include this button. If your connector does not include a <span class="bold">Configure Connectivity</span> button, then click the <span class="bold">Configure Credentials</span> button.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0"></a>
+<h2 id="ICSUG-GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0" class="sect2">Cloning a Connection</h2>
+<div>
+<p>You can clone a copy of an existing connection. It is a quick way to create a new connection.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, search for the connection name.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Clone</span> from the connection <span class="bold">Actions</span> menu.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Clone Connection dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the connection information.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Clone</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Edit</span> to configure the credentials of your cloned connection. Cloning a connection does not copy the credentials.</span></li>
+</ol>
+<div class="section">See <a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" title="You can edit connection settings after creating a new connection.">Editing a Connection</a> for instructions.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-39E653C5-6506-427B-923E-45BD965D1F69"></a>
+<h2 id="ICSUG-GUID-39E653C5-6506-427B-923E-45BD965D1F69" class="sect2">Deleting a Connection</h2>
+<div>
+<p>You can delete a connection from the connection menu.</p>
+<ol>
+<li class="stepexpand"><span>In the <span>Oracle Integration Cloud Service</span> toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>On the Connections page, search for the connection name.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Delete</span> from the connection <span class="bold">Actions</span> menu.<br />
+<img width="121" height="77" src="img/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png" alt="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" title="Description of GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png follows" /><br />
+<a href="img_text/GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.htm">Description of the illustration GUID-5F51C715-A667-4995-A8D4-A22FD1FA9C46-default.png</a><br /></span>
+<div>The Delete Connection dialog is displayed if the connection is not used in an integration.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> to confirm deletion.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B"></a>
+<h2 id="ICSUG-GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B" class="sect2">Refreshing Integration Metadata</h2>
+<div>
+<p>You can manually refresh the currently-cached metadata available to adapters that have implemented metadata caching. Metadata changes typically relate to customizations of integrations, such as adding custom objects and attributes to integrations. There may also be cases in which integrations have been patched, which results in additional custom objects and attributes being added. This option is similar to clearing the cache in your browser. Without a manual refresh, a staleness check is only performed when you drag a connection into an integration. This is typically sufficient, but in some cases you may know that a refresh is required. For these cases, the <span class="bold">Refresh Metadata</span> menu option is provided.</p>
+<div class="section">To refresh integration metadata:
+<div class="infobox-note" id="GUID-E2CD3E29-33B5-4245-BA25-770444AABD4B__GUID-4558664B-C97A-4889-AC51-7DD45B3550ED">
+<p class="notep1">Note:</p>
+The <span class="bold">Refresh Metadata</span> menu option is only available with adapters that have implemented metadata caching.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>In the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Locate the connection to refresh.</span></li>
+<li class="stepexpand"><span>From the menu at the right, select <span class="bold">Refresh Metadata</span>.<br />
+<img width="160" height="129" src="img/GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png" alt="Description of GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png follows" title="Description of GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png follows" /><br />
+<a href="img_text/GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.htm">Description of the illustration GUID-E798F574-EFB9-4589-B2C1-418FF194DCB0-default.png</a><br /></span>
+<div>A message is displayed indicating that the refresh was successful.
+<pre dir="ltr">
+Metadata refresh for connection "<span class="italic">connection_type</span>" has been initiated successfully.
+</pre></div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

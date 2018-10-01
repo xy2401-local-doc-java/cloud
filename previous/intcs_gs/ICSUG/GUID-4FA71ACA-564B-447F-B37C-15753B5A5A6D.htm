@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Developing Integration Cloud Services</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You develop integrations using a simple but robust set of components, including connections to the applications you are integrating, data mappings, and lookups that map similar objects across the applications with which you share data." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-AE91D1B9-11C0-4D76-8A5E-5F4458DCA62F.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4FA71ACA-564B-447F-B37C-15753B5A5A6D"></a> <span id="PAGE" style="display:none;">16/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-4FA71ACA-564B-447F-B37C-15753B5A5A6D" class="sect1"><span class="enumeration_chapter">2</span> Developing Integration Cloud Services</h1>
+<div>
+<p>You develop integrations using a simple but robust set of components, including connections to the applications you are integrating, data mappings, and lookups that map similar objects across the applications with which you share data.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm#GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE" title="You follow a very simple workflow to develop integrations in Integration Cloud Service. The only prerequisites for creating an integration are that the application connections you need are in place and that any lookups you want to use to map information between applications are created.">Typical Workflow for Creating Integration Cloud Services</a></p>
+</li>
+<li>
+<p><a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E" title="You define connections to the specific cloud applications that you want to integrate. The following topics describe how to define connections:">Creating Connections</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D" title="Integrations use the connections you created to your applications, and define how information is shared between those applications. You can create new integrations, import integrations, modify or delete integrations, create integrations to publish messages, create integrations to subscribe to messages, and add and remove request and response enrichment triggers. Click one of the following topics for more information.">Creating Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-268D7A7B-1024-4076-BC50-766E79E218C2.htm" title="Use the mapper to drag fields from the source structure to the target structure to map elements between the two.">Mapping Integration Cloud Service Data</a></p>
+</li>
+<li>
+<p><a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C" title="A lookup associates values used by one application for a specific field to the values used by other applications for the same field. This provides the capability to map values across vocabularies or systems. For example, you can map country codes, city codes, currency codes, and so on.">Creating Lookups</a></p>
+</li>
+<li>
+<p><a href="GUID-BE72843C-275E-40E3-AF9F-2F3D49DFF761.htm" title="You can create the parameter values for the lookupValue function with the Build Lookup Function wizard. This wizard enables you to define the lookup table, source column, target column, and default value to use in the function. For these parameter values to be selectable in the wizard, you must have already created a lookup on the Lookups page.">Creating the lookupValue Function</a></p>
+</li>
+<li>
+<p><a href="GUID-BBA3475D-D96F-43F7-9F48-B77BA20EED64.htm" title="Review the following topics to learn how to import map files into Oracle JDeveloper and Integration Cloud Service.">Importing Map Files</a></p>
+</li>
+<li>
+<p><a href="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1.htm#GUID-A2E33343-291E-4F82-92F2-B1309886FDC1" title="You can import and export both integrations and lookups to share them between Integration Cloud Service environments.">Importing and Exporting Components</a></p>
+</li>
+<li>
+<p><a href="GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D.htm" title="This section describes how to manage business identifiers that enable you to track fields in messages during runtime.">Assigning Business Identifiers for Tracking Messages</a></p>
+</li>
+<li>
+<p><a href="GUID-9FD8FF86-6E03-4B33-BA48-1857652958EE.htm" title="You can group integrations into a package. When you import or export the package to or from Integration Cloud Service, all integrations in that package are imported or exported.">Managing Packages</a></p>
+</li>
+<li>
+<p><a href="GUID-22529652-FD48-420C-9903-EB1339D4EBFA.htm" title="You must create an agent group and install the on-premises agent before you can create an integration in which messages are exchanges between your on-premises applications and Oracle Integration Cloud Service.">Managing Agent Groups and the On-Premises Agent</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-AE91D1B9-11C0-4D76-8A5E-5F4458DCA62F.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-56EF491A-71B8-4EE4-A119-3D564E1C75EE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

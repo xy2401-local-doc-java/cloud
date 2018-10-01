@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>REST Adapter Capabilities</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The REST Adapter enables you to expose an Oracle Integration Cloud Service integration flow as a REST service and to invoke an external REST application." />
+<meta name="dcterms.created" content="2016-11-28T11:48:40Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the REST Adapter" />
+<meta name="dcterms.identifier" content="E66630-02" />
+<meta name="dcterms.isVersionOf" content="ICSRE" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-216FBA19-17CC-486B-9C88-A2E96CB32B66.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-9879A070-F54F-4A52-B2ED-94CA671B2E9B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSRE.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSRE.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSRE.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D"></a> <span id="PAGE" style="display:none;">5/31</span> <!-- End Header -->
+<h1 id="ICSRE-GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D" class="sect1">REST Adapter Capabilities</h1>
+<div>
+<p>The REST Adapter enables you to expose an Oracle Integration Cloud Service integration flow as a REST service and to invoke an external REST application.</p>
+<div class="p">The REST Adapter provides the following benefits:
+<ul style="list-style-type: disc;">
+<li>
+<p>Trigger: When configured as a trigger, it acts as a generic inbound REST Adapter for exposing an Integration Cloud Service integration flow as a REST resource. A client can connect to the integration using a REST endpoint.</p>
+</li>
+<li>
+<p>Invoke: When configured as an invoke, it acts as a generic outbound REST Adapter for connecting to any external REST-exposed SaaS application.</p>
+</li>
+</ul>
+</div>
+<p>The message in the integration flow is always in XML format. Messages sent to Integration Cloud Service through the REST Adapter in JSON or URL-encoded format are converted to XML. If messages sent from Integration Cloud Service through the REST Adapter are in XML message format, they can be converted to JSON or URL-encoded format, depending on the configured media type.</p>
+<p>The REST Adapter provides design-time support for REST metadata catalog-compliant REST APIs. There is also top-level array support in JSON documents.</p>
+<p>The REST Adapter provides the following additional features:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__CONFIGURATIONPARAMETERS-773F58A2">Configuration Parameters</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__STANDARDANDCUSTOMHEADERSUPPORT-773F9E9A">Standard and Custom Header Support</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__MESSAGEEXCHANGEPATTERNS-7740FBEA">Message Exchange Patterns</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__SECURITYROLES-7741555A">Security Roles</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__EXTENSIBILITYSUPPORTFORMULTIPLEOAUT-7741884F">Extensibility Support for Multiple OAuth Providers</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__ROLE-BASEDCONNECTIONS-774215C7">Role-Based Connections</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__CROSS-ORIGINRESOURCESHARINGCORS-7742BC22">Cross-Origin Resource Sharing (CORS)</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__SWAGGERANDRAMLPAYLOADSUPPORT-7743ECDB">Swagger and RAML Payload Support</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__MULTIPARTATTACHMENTSUPPORTFORTRIGGE-77442541">Multipart Attachment Support for Trigger and Invoke Connections</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__TRANSPORTLAYERSECURITYTLSVERSIONSUP-774464C8">Transport Layer Security (TLS) Version Support</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__HOMOGENOUSMULTIDIMENSIONALARRAYSUPP-774526CF">Homogenous Multidimensional Array Support in JSON Documents</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__ON-PREMISESRESTAPISUPPORTWITHTHEAGE-7746B7FB">On-Premises REST API Support with the Agent</a></p>
+</li>
+<li>
+<p><a href="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D.htm#GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__VIEWTHEINBOUNDINVOCATIONASASWAGGERF-77456A1D">View the Inbound Invocation as a Swagger Format</a></p>
+</li>
+</ul>
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__CONFIGURATIONPARAMETERS-773F58A2">
+<p class="subhead1">Configuration Parameters</p>
+<div class="p">The REST Adapter is not configured from an existing WSDL or WADL file. Instead, you configure the following parameters using the REST endpoint wizard to expose or consume the REST service:
+<ul style="list-style-type: disc;">
+<li>
+<p>Relative resource path URI</p>
+</li>
+<li>
+<p>HTTP method (actions) to perform</p>
+</li>
+<li>
+<p>Template and query parameters</p>
+</li>
+<li>
+<p>Request/response message structure</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1"></p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__STANDARDANDCUSTOMHEADERSUPPORT-773F9E9A">
+<p class="subhead1">Standard and Custom Header Support</p>
+<p>The REST adapter supports standard and custom HTTP request and response headers in the invoke and trigger directions.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Outbound (Invoke) direction</p>
+<p>HTTP headers enable you to use an outbound invocation to specify header properties. Many REST APIs expect certain properties to be specified in the HTTP headers (similar to SOAP APIs where you can specify header properties such as the WS address). Use the standard HTTP headers to specify these properties. You can also use the custom HTTP headers to specify properties. The REST APIs can expect the client application to pass properties in the custom headers, which can influence the behavior of the APIs. You can map the header properties in the Oracle Mapper.</p>
+</li>
+<li>
+<p>Inbound (trigger) direction</p>
+<p>You can expose integration flows as REST endpoints and enable client applications to access the properties in the standard and custom headers. You can use these properties to create routing expressions in your integrations. You can map the header properties in the Oracle Mapper. For more information about creating routing expressions, see <a class="olink ICSUG-GUID-D621E470-D286-478D-9A7F-7E9060CB2C90" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSUG-GUID-D621E470-D286-478D-9A7F-7E9060CB2C90">Creating Routing Paths for Two Different Invoke Endpoints in Integrations</a> and <a class="olink ICSUG-GUID-36A90FF0-F0D4-4F81-9028-41971C7D100BGUID-D621E470-D286-478D-9A7F-7E9060CB2C90" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSUG-GUID-36A90FF0-F0D4-4F81-9028-41971C7D100BGUID-D621E470-D286-478D-9A7F-7E9060CB2C90">Creating an Orchestrated Integration</a>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__GUID-85B6556C-A3A9-47DE-99FC-C229B93C68A2">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you want to send multiple values of a header, use a comma separated value (CSV) file. This is considered as one header and one value that consists of:</p>
+<pre dir="ltr">
+val1 comma val2 comma val3 ...
+</pre>
+<p>The same value is propagated across the mapper and then to the outbound service. The outbound service must then interpret the CSVs of the header to be used as multiple values.</p>
+</li>
+<li>
+<p>You cannot store multiple headers with the same name. The WSDL can only store one element with one unique name.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__MESSAGEEXCHANGEPATTERNS-7740FBEA">
+<p class="subhead1">Message Exchange Patterns</p>
+<div class="p">The REST Adapter supports the following message exchange patterns:
+<ul style="list-style-type: disc;">
+<li>
+<p>Synchronous request and response patterns</p>
+</li>
+<li>
+<p>Synchronous one-way request patterns</p>
+</li>
+<li>
+<p>Asynchronous inbound patterns</p>
+<p>With this pattern, the REST service takes a request and immediately returns a blank response with a status of <code>202</code> (accepted). This is a fire request and forget scenario. Any PUT, POST, and DELETE operations without a response payload or a response header are assumed to be asynchronous. Asynchronous GET operations are not applicable with this message exchange pattern. GET endpoints are treated as synchronous and the generated artifacts remain unchanged. The summary page of the Adapter Endpoint Configuration Wizard indicates that you configured a one-way operation. For new integrations, this is the default behavior.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__SECURITYROLES-7741555A">
+<p class="subhead1">Security Roles</p>
+<div class="p">The REST Adapter supports the following security policies:
+<ul style="list-style-type: disc;">
+<li>
+<p>Basic Authentication</p>
+</li>
+<li>
+<p>OAuth Client Credentials (two-legged flow)</p>
+</li>
+<li>
+<p>OAuth Resource Owner Password Credentials (two-legged flow)</p>
+</li>
+<li>
+<p>OAuth Authorization Code Credentials (three-legged flow)</p>
+</li>
+<li>
+<p>OAuth Custom Three Legged Flow</p>
+</li>
+<li>
+<p>OAuth Custom Two Legged Flow</p>
+</li>
+</ul>
+</div>
+<p>See <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-CCB398AC-7204-44DD-A9FF-933D0621A060" title="Configure security for your REST Adapter connection by selecting the security policy and security token.">Configuring Connection Security</a> for more information about these security policies.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__EXTENSIBILITYSUPPORTFORMULTIPLEOAUT-7741884F">
+<p class="subhead1">Extensibility Support for Multiple OAuth Providers</p>
+<p>You can use the extensibility framework of the REST Adapter to access the OAuth-protected resource of endpoints. This framework enables you to access endpoints that have implemented their own variations of OAuth.</p>
+<div class="p">The OAuth standard provides flexibility for endpoints to define specific aspects of their OAuth flows. For example:
+<ul style="list-style-type: disc;">
+<li>
+<p>Create their own properties.</p>
+</li>
+<li>
+<p>Decide when to use these properties in an OAuth flow. For example, some custom properties may be required with the authorization request, while others may be required for the access token request or for the refresh of the access token after its expiration.</p>
+</li>
+<li>
+<p>Decide how to pass these properties in an OAuth flow. For example, whether a property is passed as a header, query parameter, or payload.</p>
+</li>
+</ul>
+</div>
+<div class="p">To address these challenges, Oracle Integration Cloud Service provides two custom security policies that enable you to specify each step in the OAuth flow when you create the REST Adapter connection:
+<ul style="list-style-type: disc;">
+<li>
+<p>OAuth custom two-legged flow: The client application directly interacts with the authorization server on behalf of a resource owner.</p>
+</li>
+<li>
+<p>OAuth custom three-legged flow: The client application redirects the owner to a separate resource URL where the resource owner authenticates and provides consent for the flow to continue.</p>
+</li>
+</ul>
+</div>
+<p>This enables you to adapt to most OAuth framework scenarios and integrate with many third-party applications without writing additional code.</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>During design-time, the access token is obtained, validated, and stored in the CSF. The security token is also stored in the CSF.</p>
+</li>
+<li>
+<p>During runtime, the access token is retrieved, applied, and managed. A valid access token is applied to the request before invoking the REST endpoint.</p>
+</li>
+</ul>
+</div>
+For information about specifying the OAuth custom two-legged flow and three-legged flow security policies, see <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-CCB398AC-7204-44DD-A9FF-933D0621A060" title="Configure security for your REST Adapter connection by selecting the security policy and security token.">Configuring Connection Security</a>.
+<div class="infobox-note" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__GUID-28F82F2B-2383-49A0-8201-F60D9207CB30">
+<p class="notep1">Note:</p>
+This extensibility feature is an advanced feature, and not for business users. Users of this feature should use a tool such as postman to configure the necessary properties.</div>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__ROLE-BASEDCONNECTIONS-774215C7">
+<p class="subhead1">Role-Based Connections</p>
+<p>The REST adapter is bidirectional. You can configure the REST Adapter depending on the context in which you want to use the connection.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Trigger: The REST Adapter is used to create a REST endpoint to trigger an integration. You select <span class="bold">Trigger</span> from the <span class="bold">Connection Role</span> list on the New Connection - Information dialog. When configured as a trigger, a base URI is not required. The security policy defined in the inbound direction accepts credentials configured in the identity domain. Therefore, you are not required to provide the applicable credentials. When configuring security on the Connections page, you only provide the security policy that must be attached to the inbound endpoint. Basic authentication is the only security policy available. Agent configuration is not applicable on a connection with the trigger role.</p>
+</li>
+<li>
+<p>Invoke: The REST Adapter is used to invoke external REST endpoints. A base URI and security configuration for accessing external protected resources are required. You are prompted for these additional details on the Connections page. You cannot use an invoke connection on the trigger side.</p>
+</li>
+<li>
+<p>Trigger and invoke: The REST Adapter is used in both the trigger and invoke directions of an integration. This connection requires invoke and trigger values.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__CROSS-ORIGINRESOURCESHARINGCORS-7742BC22">
+<p class="subhead1">Cross-Origin Resource Sharing (CORS)</p>
+<p>CORS defines a way in which a browser and server can interact to determine safely whether or not to allow the cross-origin request. CORS provides for more flexibility than same-origin requests, but is more secure than simply permitting all cross-origin requests.</p>
+<div class="p">CORS is supported by browsers based on the following layout engines:
+<ul style="list-style-type: disc;">
+<li>
+<p>Blink- and Chromium-based browsers (Chrome 28, Opera 15, Amazon Silk, Android's 4.4+ WebView, and Qt's WebEngine).</p>
+</li>
+<li>
+<p>Gecko 1.9.1 (Firefox 3.5, SeaMonkey 2.0, and Camino 2.1) and above.</p>
+</li>
+<li>
+<p>MSHTML/Trident 6.0 (Internet Explorer 10) has native support. MSHTML/Trident 4.0 &amp; 5.0 (Internet Explorer 8 &amp; 9) provide partial support through the XDomainRequest object.</p>
+</li>
+<li>
+<p>Presto-based browsers (Opera) implement CORS as of Opera 12.00 and Opera Mobile 12, but not Opera Mini.</p>
+</li>
+<li>
+<p>WebKit (Safari 4 and above, Google Chrome 3 and above, possibly earlier).</p>
+</li>
+</ul>
+</div>
+<div class="p">The following browsers do not support CORS:
+<ul style="list-style-type: disc;">
+<li>
+<p>Camino does not implement CORS in the 2.0.x release series because these versions are based on Gecko 1.9.0</p>
+</li>
+<li>
+<p>As of version 0.10.2, Arora exposes WebKit's CORS-related APIs, but attempted cross-origin requests fail.[16]</p>
+</li>
+</ul>
+</div>
+<p>Supports cross origin resource sharing (CORS) in the inbound direction.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__SWAGGERANDRAMLPAYLOADSUPPORT-7743ECDB">
+<p class="subhead1">Swagger and RAML Payload Support</p>
+<p>The REST Adapter provides support for the following payload types:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>RESTful API Modeling Language (RAML): A language for describing RESTful APIs. RAML provides the information necessary to describe RESTful or practically-RESTful APIs (APIs that do not obey all REST constraints).</p>
+</li>
+<li>
+<p>Swagger: A specification for describing, producing, consuming, and visualizing RESTful web services.</p>
+</li>
+</ul>
+<div class="p">The following example shows a Swagger 2.0 file. This file contains two main resources:
+<ul style="list-style-type: disc;">
+<li>
+<p><code>/Book</code>. This resource contains <code>get</code> and <code>post</code> methods and <code>/Book/{id}</code>, <code>/Book/hello</code>, and <code>/Book/search</code> subresources.</p>
+</li>
+<li>
+<p><code>/Author</code>. This resource contains a <code>get</code> method and an <code>/Author/{id}</code> subresource.</p>
+</li>
+</ul>
+</div>
+<p>When configuring an invoke (outbound) REST Adapter in the Adapter Endpoint Configuration Wizard, the resources and subresources are displayed for selection as business objects and the methods are displayed for selection as operations to perform on the business objects.</p>
+<p>When creating the REST Adapter connection, you select <span class="bold">Swagger Definition URL</span> in the <span class="bold">Connection Type</span> field and specify the URL in the <span class="bold">Connection URL</span> field of the Connection Properties dialog.</p>
+<pre dir="ltr">
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "RestServiceForBooks"
+  },
+
+  "host" : "<span class="italic">host_name</span>:8080",
+  "basePath" : "/Test/rest",
+  "schemes" : ["http"],
+  "paths" : {
+    "/Book" : {
+      "get" : {
+        "operationId" : "getBooks",
+        "description" : "Returns all the available books in teh store",
+        "produces" : [ "application/xml", "application/json" ],
+        "responses" : {
+          "default" : {
+            "schema" : {
+              "$ref" : "#/definitions/Books"
+            }
+          }
+        }
+
+      },
+      "post" : {
+        "operationId" : "postBook",
+        "description" : "Creates a new book item",
+        "produces" : [ "application/xml", "application/json" ],
+        "consumes" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name" : "Book",
+            "in" : "body",
+            "required" : true,
+            "schema" : { "$ref" : "#/definitions/Book" }
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "schema" : { "$ref" : "#/definitions/Book" }
+          }
+        }
+      }
+    },
+    "/Book/{id}" : {
+      "get" : {
+        "operationId" : "getSingleBook",
+        "description" : "Returns a book with specific id",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name": "id",
+            "in": "path",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "schema" : { "$ref" : "#/definitions/Book" }
+          }
+        }
+      }
+    },
+    "/Book/hello" : {
+      "get" : {
+        "operationId" : "sayHelloToBook",
+        "description" : "says hello to a book",
+        "produces" : [ "application/xml", "application/json" ],
+        "responses" : {
+          "default" : {
+            "schema" : { "type" : "string" }
+          }
+        }
+      }
+    },
+    "/Book/search" : {
+      "get" : {
+        "operationId" : "searchBook",
+        "description" : "Returns a list of books that match query param",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name": "name",
+            "in": "query",
+            "required" : false,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "schema" : {
+              "$ref" : "#/definitions/Books"
+            }
+          }
+        }
+      }
+    },
+    "/Author" : {
+      "get" : {
+        "operationId" : "getAuthors",
+        "description": "Returns a list of authors",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "default": {
+            "schema": {
+              "$ref" : "#/definitions/Authors"
+            }
+          }
+        }
+      }
+    },
+    "/Author/{id}" : {
+      "get" : {
+        "operationId" : "getSingleAuthor",
+        "description" : "Returns a Author with specific id",
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name": "id",
+            "in": "path",
+            "required" : true,
+            "type" : "string"
+          }
+        ],
+        "responses" : {
+          "default" : {
+            "schema" : { "$ref" : "#/definitions/Author" }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Author" : {
+      "type" : "object",
+      "properties" : {
+        "id" : { "type" : "string" },
+        "firstName" : { "type"  : "string"},
+        "lastName" : { "type" : "string" }
+      },
+      "required" : [ "id", "firstName", "lastName"]
+    },
+    "Authors" : {
+      "type" : "object",
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Author"
+          }
+        }
+      }
+    },
+    "Publisher" : {
+      "type" : "object",
+      "properties" : {
+        "id" : { "type" : "string" },
+        "name" : { "type"  : "string"},
+        "location" : { "type" : "string" }
+      },
+      "required" : [ "id", "name", "location"]
+    },
+    "Publishers" : {
+      "type" : "object",
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Publisher"
+          }
+        }
+      }
+    },
+    "Book" : {
+      "type" : "object",
+      "properties" : {
+        "id" : { "type" : "string" },
+        "name" : { "type" : "string" },
+        "ISBN" : { "type" : "string" },
+        "price" : { "type" : "integer" },
+        "author" : { "type" : "array", "items" :{ "$ref" : "#/definitions/Author" } },
+        "publisher" : { "$ref" : "#/definitions/Publisher"  }
+      },
+      "required" : ["id", "name", "ISBN", "price", "author", "publisher" ]
+    },
+    "Books" : {
+      "type" : "object",
+      "properties" : {
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Book"
+          }
+        }
+      }
+    }
+  }
+}
+</pre>
+<p>The following example shows a RAML file. The file contains the schemas that use the service. This file contains two main resources:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>/Author</code>. This resource contains a <code>get</code> method and an <code>/Author/{id}</code> subresource.</p>
+</li>
+<li>
+<p><code>/Book</code>. This resource contains <code>get</code> and <code>post</code> methods and <code>/Book/{id}</code> and <code>/Book/search</code> subresources.</p>
+</li>
+</ul>
+<p>When configuring an invoke (outbound) REST Adapter in the Adapter Endpoint Configuration Wizard, the resources and subresources are displayed for selection as business objects and the methods are displayed for selection as operations to perform on the business objects.</p>
+<p>When creating your REST Adapter connection, you select <span class="bold">RAML Definition URL</span> in the <span class="bold">Connection Type</span> field and specify the URL in the <span class="bold">Connection URL</span> field of the Connection Properties dialog.</p>
+<pre dir="ltr">
+ #%RAML 0.8
+title: API for Books
+version: v1
+baseUri: "http://<span class="italic">host_name</span>:8080/Test/rest"
+protocols: [ HTTP ]
+schemas: 
+ - authors-jsonschema: |
+    {  
+      "$schema" : "http://json-schema.org/draft-03/schema",         
+       "type":"object",
+       "properties":{  
+          "items":{  
+           "type":"array",
+           "items":{  
+                 "type":"object",
+                 "properties":{  
+                    "id":{  
+                       "type":"string"
+                    },
+                    "firstName":{  
+                       "type":"string"
+                    },
+                    "lastName":{  
+                       "type":"string"
+                    }
+                 },
+                 "required":[  
+                    "id",
+                    "firstName",
+                    "lastName"
+                 ]                
+             }
+          }
+       }
+    }
+ - author-jsonschema: |
+    {  
+       "$schema":"http://json-schema.org/draft-03/schema",
+
+             "type":"object",
+             "properties":{  
+                "id":{  
+                   "type":"string"
+                },
+                "firstName":{  
+                   "type":"string"
+                },
+                "lastName":{  
+                   "type":"string"
+                }
+             },
+             "required":[  
+                "id",
+                "firstName",
+                "lastName"
+             ]
+    }
+
+ - books-jsonschema: |
+    {  
+       "$schema":"http://json-schema.org/draft-03/schema",
+
+             "type":"object",
+             "properties":{  
+                "items":{  
+                   "type":"array",
+                   "items":{                        
+                         "type":"object",
+                         "properties":{  
+                            "id":{  
+                               "type":"string"
+                            },
+                            "name":{  
+                               "type":"string"
+                            },
+                            "ISBN":{  
+                               "type":"string"
+                            },
+                            "price":{  
+                               "type":"integer"
+                            },
+                            "author":{  
+                               "type":"array",
+                               "items":{  
+                                  "type":"object",
+                                  "properties":{  
+                                     "id":{  
+                                        "type":"string"
+                                     },
+                                     "firstName":{  
+                                        "type":"string"
+                                     },
+                                     "lastName":{  
+                                        "type":"string"
+                                     }
+                                  },
+                                  "required":[  
+                                     "id",
+                                     "firstName",
+                                     "lastName"
+                                  ]
+                               }
+                            },
+                            "publisher":{  
+                               "type":"object",
+                               "properties":{  
+                                  "id":{  
+                                     "type":"string"
+                                  },
+                                  "name":{  
+                                     "type":"string"
+                                  },
+                                  "location":{  
+                                     "type":"string"
+                                  }
+                               },
+                               "required":[  
+                                  "id",
+                                  "name",
+                                  "location"
+                               ]
+                            }
+                         },
+                         "required":[  
+                            "id",
+                            "name",
+                            "ISBN",
+                            "price",
+                            "author",
+                            "publisher"
+                         ]                      
+                   }
+                }
+             }
+
+    }
+ - book-jsonschema: |
+    {  
+       "$schema":"http://json-schema.org/draft-03/schema", 
+             "type":"object",
+             "properties":{  
+                "id":{  
+                   "type":"string"
+                },
+                "name":{  
+                   "type":"string"
+                },
+                "ISBN":{  
+                   "type":"string"
+                },
+                "price":{  
+                   "type":"integer"
+                },
+                "author":{  
+                   "type":"array",
+                   "items":{  
+                      "type":"object",
+                      "properties":{  
+                         "id":{  
+                            "type":"string"
+                         },
+                         "firstName":{  
+                            "type":"string"
+                         },
+                         "lastName":{  
+                            "type":"string"
+                         }
+                      },
+                      "required":[  
+                         "id",
+                         "firstName",
+                         "lastName"
+                      ]
+                   }
+                },
+                "publisher":{  
+                   "type":"object",
+                   "properties":{  
+                      "id":{  
+                         "type":"string"
+                      },
+                      "name":{  
+                         "type":"string"
+                      },
+                      "location":{  
+                         "type":"string"
+                      }
+                   },
+                   "required":[  
+                      "id",
+                      "name",
+                      "location"
+                   ]
+                }
+             },
+             "required":[  
+                "id",
+                "name",
+                "ISBN",
+                "price",
+                "author",
+                "publisher"
+             ]
+    }
+/Author:
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/xml: 
+            schema: authors-jsonschema
+            example: |
+              &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+              &lt;authors&gt;&lt;/authors&gt;
+          application/json: 
+            schema: authors-jsonschema
+            example: |
+              {
+                "authors" : ""
+              }
+  /{id}: 
+    get: 
+      responses: 
+        200: 
+          body: 
+            application/xml: 
+              schema: author-jsonschema
+              example: |
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;author&gt;&lt;/author&gt;
+            application/json: 
+              schema: author-jsonschema
+              example: |
+                {
+                  "author" : ""
+                }
+/Book: 
+  post: 
+    body: 
+      application/xml: 
+        schema: book-jsonschema
+      application/json: 
+        schema: book-jsonschema
+    responses: 
+      200: 
+        body: 
+          application/xml: 
+            schema: book-jsonschema
+            example: |
+              &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+              &lt;book&gt;
+                &lt;price&gt;&lt;/price&gt;
+              &lt;/book&gt;
+          application/json: 
+            schema: book-jsonschema
+            example: |
+              {
+                "book" : {
+                  "price" : ""
+                }
+              }
+  get: 
+    responses: 
+      200: 
+        body: 
+          application/xml: 
+            schema: books-jsonschema
+            example: |
+              &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+              &lt;book&gt;
+                &lt;price&gt;&lt;/price&gt;
+              &lt;/book&gt;
+          application/json: 
+            schema: books-jsonschema
+            example: |
+              {
+                "book" : {
+                  "price" : ""
+                }
+              }
+  /search: 
+    get: 
+      queryParameters: 
+        name: 
+      responses: 
+        200: 
+          body: 
+            application/xml: 
+              schema: books-jsonschema
+              example: |
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;book&gt;
+                  &lt;price&gt;&lt;/price&gt;
+                &lt;/book&gt;
+            application/json: 
+              schema: books-jsonschema
+              example: |
+                {
+                  "book" : {
+                    "price" : ""
+                  }
+                }
+  /{id}: 
+    get: 
+      responses: 
+        200: 
+          body: 
+            application/xml: 
+              schema: book-jsonschema
+              example: |
+                &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+                &lt;book&gt;
+                  &lt;price&gt;&lt;/price&gt;
+                &lt;/book&gt;
+            application/json: 
+              schema: book-jsonschema
+              example: |
+                {
+                  "book" : {
+                    "price" : ""
+                  }
+                }
+</pre></div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__MULTIPARTATTACHMENTSUPPORTFORTRIGGE-77442541">
+<p class="subhead1">Multipart Attachment Support for Trigger and Invoke Connections</p>
+<p>The REST Adapter supports the following multipart attachments for trigger (inbound) requests and invoke (outbound) requests. You can send the following media types with attachments to your endpoint:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Multipart/mixed: Send XML or JSON payload with attachments.</p>
+</li>
+<li>
+<p>Multipart/form-data: Send XML or JSON payload with attachments.</p>
+</li>
+<li>
+<p>Multipart/form-data: Send an HTML form payload type, with the rest of the body consisting of attachments.</p>
+</li>
+</ul>
+<p>For example, you can send a review document attachment with the trigger (inbound) REST Adapter to an invoke (outbound) Adobe eSign Adapter or DocuSign Adapter for delivery to the downstream endpoint for signing.</p>
+<p>If you want to send attachments from inbound to outbound (in request messages) or to download attachments from outbound to inbound (in response messages), then for each attachment you must map the <code>attachmentReference</code> from source to target in the mapper.<br />
+<img width="1113" height="184" src="img/GUID-9CDB401F-843C-403D-A88C-7109031095D1-default.png" alt="Description of GUID-9CDB401F-843C-403D-A88C-7109031095D1-default.png follows" title="Description of GUID-9CDB401F-843C-403D-A88C-7109031095D1-default.png follows" /><br />
+<a href="img_text/GUID-9CDB401F-843C-403D-A88C-7109031095D1-default.htm">Description of the illustration GUID-9CDB401F-843C-403D-A88C-7109031095D1-default.png</a><br /></p>
+<p>If you do not map <code>attachmentReference</code> in the mapper for a request, the outbound REST Adapter does not receive attachments from the inbound direction (multipart request). Similarly, if you do not map <code>attachmentReference</code> in the mapper for a response, the inbound REST Adapter does not receive attachments from the outbound REST Adapter (multipart response).</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__TRANSPORTLAYERSECURITYTLSVERSIONSUP-774464C8">
+<p class="subhead1">Transport Layer Security (TLS) Version Support</p>
+<p>TLS version support of the target server in provided. The TLS protocol provides privacy and data integrity between two communicating computer applications. For more information, see <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-07B2A588-6DB8-47A9-A206-51B4132B0DA1" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__HOMOGENOUSMULTIDIMENSIONALARRAYSUPP-774526CF">
+<p class="subhead1">Homogenous Multidimensional Array Support in JSON Documents</p>
+<p>You can select a JSON sample with homogenous multidimensional arrays when configuring the REST Adapter in the Adapter Configuration Wizard.</p>
+<p>All JSON messages must be converted to XML before they can be processed by <span id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__INTCS">Oracle Integration Cloud Service</span> at runtime. Semantically, there is no equivalent of multidimensional arrays in XML. To support multidimensional arrays, intermediate XML elements are generated that denote the beginning and ending of a nested array. When receiving a JSON message containing multidimensional arrays, these reserved elements are injected into the generated XML to denote the beginning and ending of a nested array. While converting XML elements back into JSON, the injected elements are converted into JSON with nested arrays.</p>
+<p>The following JSON document consists of a multidimensional array (<code>@ref "rercordsData&rdquo;</code>).</p>
+<pre dir="ltr">
+{
+    "studentData": {
+        "fieldNames": [ "id","mobile_number" ],
+        "recordsData": [ ["21","23"], ["+91123456789", "+91987654321" ]  ],
+        "name": "jack"
+    },
+    "schoolData": {
+        "Name": "ABCInternations",
+        "StudentNumbers": 1300,
+        "Address": "YYY streets Sector-44 India"
+    }
+}
+</pre>
+<p>The sample generated schema XML for the JSON document looks as follows:</p>
+<pre dir="ltr">
+&lt;?xml version = '1.0' encoding = 'UTF-8'?&gt;
+
+&lt;ns0:executeResponse xmlns:ns1="http://xmlns.oracle.com/cloud/adapter/REST/test/types" 
+xmlns:ns0="http://xmlns.oracle.com/cloud/adapter/REST/test_REQUEST/types"&gt;
+
+&lt;ns1:response-wrapper&gt;
+  &lt;ns1:studentData&gt;
+    &lt;ns1:fieldNames&gt;id&lt;/ns1:fieldNames&gt;
+    &lt;ns1:fieldNames&gt;mobile_number&lt;/ns1:fieldNames&gt; 
+    &lt;ns1:recordsData&gt;  
+         &lt;ns1:nestedArray&gt;
+                 &lt;ns1:nestedArrayItem&gt;21&lt;/ns1:nestedArrayItem&gt;
+                 &lt;ns1:nestedArrayItem&gt;23&lt;/ns1:nestedArrayItem&gt;
+         &lt;/ns1:nestedArray&gt;
+                         &lt;ns1:nestedArray&gt;
+                                         &lt;ns1:nestedArrayItem&gt;+91123456789&lt;/ns1:nestedArrayItem&gt;
+                                         &lt;ns1:nestedArrayItem&gt;+91987654321&lt;/ns1:nestedArrayItem&gt;
+                         &lt;/ns1:nestedArray&gt;
+         &lt;/ns1:recordsData&gt;
+    &lt;ns1:name&gt;jack&lt;/ns1:name&gt;
+  &lt;/ns1:studentData&gt;
+  &lt;ns1:schoolData&gt;
+        &lt;ns1:Name&gt;ABCInternations&lt;/ns1:Name&gt;
+        &lt;ns1:StudentNumbers&gt;1300&lt;/ns1:StudentNumbers&gt;
+        &lt;ns1:Address&gt;YYY streets Sector-44 India&lt;/ns1:Address&gt;
+   &lt;/ns1:schoolData&gt;
+&lt;/ns1:response-wrapper&gt;
+&lt;/ns0:executeResponse&gt;
+</pre>
+<p>Elements in the nested array appear as <code>nestedArray</code> in the mapper and items in the elements appear as <code>nestedArrayItem</code>. You must map <code>nestedArray</code> as a <code>for-each</code> statement and <code>nestedArrayItem</code> as a <code>for-each</code> statement.<br />
+<img width="568" height="208" src="img/GUID-E9866A90-2EFF-4231-9E95-50AF54613186-default.png" alt="Description of GUID-E9866A90-2EFF-4231-9E95-50AF54613186-default.png follows" title="Description of GUID-E9866A90-2EFF-4231-9E95-50AF54613186-default.png follows" /><br />
+<a href="img_text/GUID-E9866A90-2EFF-4231-9E95-50AF54613186-default.htm">Description of the illustration GUID-E9866A90-2EFF-4231-9E95-50AF54613186-default.png</a><br /></p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__ON-PREMISESRESTAPISUPPORTWITHTHEAGE-7746B7FB">
+<p class="subhead1">On-Premises REST API Support with the Agent</p>
+<p>Oracle Integration Cloud Service provides an agent framework that enables you to create integrations and exchange messages between on-premises applications and Oracle Integration Cloud Service. You can integrate on-premises REST APIs with Oracle Integration Cloud Service through use of the on-premises agent. Once you create an agent group and install the on-premises agent, you can create and configure a REST Adapter connection as follows:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>Select <span class="bold">REST API Base URL</span> or <span class="bold">Swagger Definition URL</span> from the <span class="bold">Connection Type</span> list and enter the appropriate URL in the <span class="bold">Connection URL</span> field of the Connection Properties dialog. No other connection types are supported.</p>
+</li>
+<li>
+<p>Select <span class="bold">Basic Authentication</span> or <span class="bold">No Security Policy</span> from the <span class="bold">Security Policy</span> list of the Credentials dialog. No other security policies are supported.</p>
+</li>
+<li>
+<p>Select the previously-created agent group in the Select an Agent Group dialog.</p>
+</li>
+</ul>
+</div>
+<p>For conceptual information about the on-premises agent, see <a class="olink ICSUG-GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905" target="_blank" href="../ICSUG/GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#ICSUG-GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905">About Agents and Integrations Between On-Premises Applications and Oracle Integration Cloud Service</a>. For information about creating an agent group and installing the on-premises agent, see <a class="olink ICSUG-GUID-22529652-FD48-420C-9903-EB1339D4EBFA" target="_blank" href="../ICSUG/GUID-22529652-FD48-420C-9903-EB1339D4EBFA.htm#ICSUG-GUID-22529652-FD48-420C-9903-EB1339D4EBFA">Managing Agent Groups and the On-Premises Agent</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-51B08D30-C8BA-4D80-8912-7C6CA84DAF3D__VIEWTHEINBOUNDINVOCATIONASASWAGGERF-77456A1D">
+<p class="subhead1">View the Inbound Invocation as a Swagger Format</p>
+<p>You can view the metadata of an activated REST integration and then append <code>/swagger</code> to the metadata URL to view the swagger format for the integration.&nbsp; The inbound REST integration can then be exposed as a swagger connection.</p>
+<ol>
+<li>
+<p>On the Integrations page, find the integration whose endpoint URL you want to use.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Details</span> icon at the far right.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Endpoint URL</span> value (for example, <code>http://myPODname:7002/integration/flowapi/rest/GET_ONE_BOOK/v01/metadata</code>).</p>
+</li>
+<li>
+<p>Append <code>/swagger</code> to the end of the URL, and press <span class="bold">Enter</span>.</p>
+<p>Appending <code>/swagger</code> to the URL generates a swagger file for the inbound integration. This URL can also be used to create a new swagger connection in the Connection Properties dialog. You enter the swagger URL in the <span class="bold">Connection URL</span> field and select <span class="bold">Swagger Definition URL</span> from the <span class="bold">Connection Type</span> field.<br />
+<img width="776" height="338" src="img/GUID-1CA5E0FB-D937-4077-92C6-2EC8A649F1A8-default.png" alt="Description of GUID-1CA5E0FB-D937-4077-92C6-2EC8A649F1A8-default.png follows" title="Description of GUID-1CA5E0FB-D937-4077-92C6-2EC8A649F1A8-default.png follows" /><br />
+<a href="img_text/GUID-1CA5E0FB-D937-4077-92C6-2EC8A649F1A8-default.htm">Description of the illustration GUID-1CA5E0FB-D937-4077-92C6-2EC8A649F1A8-default.png</a><br /></p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment353">
+<tr>
+<td class="cellalignment360">
+<table class="cellalignment358">
+<tr>
+<td class="cellalignment357"><a href="GUID-216FBA19-17CC-486B-9C88-A2E96CB32B66.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment357"><a href="GUID-9879A070-F54F-4A52-B2ED-94CA671B2E9B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment362">
+<table class="cellalignment356">
+<tr>
+<td class="cellalignment357"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment357"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment357"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

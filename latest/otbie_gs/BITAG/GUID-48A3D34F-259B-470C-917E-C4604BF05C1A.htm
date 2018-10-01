@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Migrating OTBI Enterprise From Test to Production</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="Transfer OTBI Enterprise system state and configurations from your stage environment to your production environment." />
+<meta name="dcterms.created" content="2015-11-27T05:27:18Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Administering Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E54436-04" />
+<meta name="dcterms.isVersionOf" content="BITAG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-295DBCE2-DBA4-4E6A-866B-949FAD64F572.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-553DEE53-98D7-4002-A648-CC1CB95AB968.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITAG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITAG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITAG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-48A3D34F-259B-470C-917E-C4604BF05C1A"></a> <span id="PAGE" style="display:none;">32/47</span> <!-- End Header -->
+<h1 id="BITAG-GUID-48A3D34F-259B-470C-917E-C4604BF05C1A" class="sect1"><span class="bold">Migrating OTBI Enterprise From Test to Production</span></h1>
+<div>
+<p>Transfer OTBI Enterprise system state and configurations from your stage environment to your production environment.</p>
+<div class="section">Use snapshots to migrate catalog objects. For more information about snapshots, see <a href="GUID-FAE709DE-3370-457C-9015-2E088ACA6181.htm" title="A snapshot captures the state of your environment at a point in time.">About Snapshots</a></div>
+<!-- class="section" -->
+<div class="section">To migrate your OTBI Enterprise service from test to production:</div>
+<!-- class="section" -->
+<ol>
+<li><span>Migrate the OTBI Enterprise service system state:</span>
+<ol>
+<li class="substepexpand"><span>In the test environment, log in to the Service Console and click <span class="bold">New Snapshot</span> in the Snapshots tab.</span>
+<div><img alt="img/GUID-CD0B79F3-B88C-4252-A1A6-C01EF40C89A7-default.gif" width="412" height="131" src="img/GUID-CD0B79F3-B88C-4252-A1A6-C01EF40C89A7-default.gif" /></div>
+</li>
+<li class="substepexpand"><span>In the New Snapshot dialog box, enter a Description for the system state. For example, you could enter the purpose of the snapshot, if it&rsquo;s migrating from test to production.</span></li>
+<li class="substepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+<li class="substepexpand"><span>Click the <span class="bold">Manage Snapshot</span> <img alt="img/GUID-26FE6F79-3511-4C4E-9D2D-5667ED68ED3C-default.gif" width="26" height="29" src="img/GUID-26FE6F79-3511-4C4E-9D2D-5667ED68ED3C-default.gif" /> icon for the new snapshot and select <span class="bold">Download</span>.</span></li>
+<li class="substepexpand"><span>In the Snapshot Download dialog box, enter and confirm a Snapshot Password and click <span class="bold">OK</span>.</span>
+<div>The Snapshot is stored as a Business Intelligence Archive (BAR) file in the local area.</div>
+</li>
+<li class="substepexpand"><span>Copy the BAR file from the stage environment to the production environment.</span></li>
+<li class="substepexpand"><span>In the production environment, log in to the Service Console and click <span class="bold">Upload Snapshot</span>.</span></li>
+<li class="substepexpand"><span>In the Upload Snapshot dialog box, click <span class="bold">Browse</span>.</span></li>
+<li class="substepexpand"><span>In the File Upload dialog box, locate the BAR file you copied from the stage environment and click <span class="bold">Open</span>.</span></li>
+<li class="substepexpand"><span>In the Upload Snapshot dialog box, enter the Snapshot Password and click <span class="bold">OK</span>.</span>
+<div>A confirmation stating &ldquo;Snapshot Restore Completed Successfully&rdquo; is displayed.
+<div class="infobox-note" id="GUID-48A3D34F-259B-470C-917E-C4604BF05C1A__GUID-93187F76-6611-4421-A39B-1175B087FB7A">
+<p class="notep1">Note:</p>
+This replaces the custom catalog content, other than user folders, in the production environment.</div>
+</div>
+</li>
+</ol>
+</li>
+<li><span>Migrate Configuration Manager setup data:</span>
+<ol>
+<li class="substepexpand"><span>In the test Environment, select <span class="bold">Export Setup Data</span> from the Tasks bar in Configuration Manager.</span></li>
+<li class="substepexpand"><span>Click <span class="bold">Export Data</span> to display the Export Data dialog box.</span></li>
+<li class="substepexpand"><span>In the Export Data dialog box, select all check boxes in the Setup Objects to Export list and click <span class="bold">Export</span>.</span></li>
+<li class="substepexpand"><span>Save the export file.</span>
+<div>The Setup Data file is stored in the local area.</div>
+</li>
+<li class="substepexpand"><span>In the production environment, select <span class="bold">Import Setup Data</span> from the Tasks bar in Configuration Manager.</span></li>
+<li class="substepexpand"><span>In the Import Setup Data dialog box, specify the location and name of the Setup Data file you exported from the stage environment.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment24">
+<tr>
+<td class="cellalignment34">
+<table class="cellalignment29">
+<tr>
+<td class="cellalignment28"><a href="GUID-295DBCE2-DBA4-4E6A-866B-949FAD64F572.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment28"><a href="GUID-553DEE53-98D7-4002-A648-CC1CB95AB968.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment36">
+<table class="cellalignment27">
+<tr>
+<td class="cellalignment28"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment28"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

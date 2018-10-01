@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Scheduling Integration Runs</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can schedule the running of integrations. For example, you can create an orchestrated integration that is triggered by a schedule or create a basic map data integration in which a trigger FTP Adapter reads a file and an invoke FTP Adapter writes the file. You can schedule this integration run to copy files at a date and time of your choosing. You can also define the frequency of the integration. When you create either of these types of integrations, a schedule icon is displayed with the integration entry on the Integrations page." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8"></a> <span id="PAGE" style="display:none;">57/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8" class="sect1">Scheduling Integration Runs</h1>
+<div>
+<p>You can schedule the running of integrations. For example, you can create an orchestrated integration that is triggered by a schedule or create a basic map data integration in which a trigger FTP Adapter reads a file and an invoke FTP Adapter writes the file. You can schedule this integration run to copy files at a date and time of your choosing. You can also define the frequency of the integration. When you create either of these types of integrations, a schedule icon is displayed with the integration entry on the Integrations page.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-9632A5C8-98A7-4371-B542-6A8583427C8D" title="You can create a schedule for running orchestrated integrations.">Creating an Integration Schedule</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-2F2A2806-A2D3-4989-A67D-3C859ADB3196" title="After you define a schedule, you must activate it. You can also pause (deactivate) a schedule, as needed.">Starting and Pausing an Integration Schedule</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-87FDBEF2-96E3-4E52-8198-60B72E55D472" title="You can view the status of past and present scheduled integration runs.">Viewing Past and Present Integration Runs</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-269698E1-FCA0-4690-9F79-7D72BCC98C08" title="You can view the status of future scheduled integration runs.">Viewing Future Runs</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-5DF11100-C712-45A4-8A91-53DACC829908" title="You can edit a schedule for an integration run.">Editing an Integration Schedule</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-CD1CDDA3-E068-4855-9DF5-98D1142D0F44" title="You can delete a schedule for an integration run.">Deleting an Integration Schedule</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-E7944896-F5EF-4A5E-AB34-78B2522E4DA9" title="You can pause and resume scheduled runs for an integration from the Monitoring page.">Monitoring Integration Runs</a></p>
+</li>
+<li>
+<p><a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-6D49F551-B0E5-4F57-AD63-E5E2C4613EA2" title="You can create ad-hoc runs on integrations on which a schedule has been defined from the REST API. This is useful for when you want to test a scheduled integration.">Creating Ad-Hoc Integration Runs Using the REST API</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<p>For more information about the FTP Adapter see <a class="olink ICSFT-GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0" target="_blank" href="../ICSFT/GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0.htm#ICSFT-GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0"><span class="italic">Getting Started with the FTP Adapter</span></a>.</p>
+</div>
+<div class="sect2"><a id="GUID-9632A5C8-98A7-4371-B542-6A8583427C8D"></a>
+<h2 id="ICSUG-GUID-9632A5C8-98A7-4371-B542-6A8583427C8D" class="sect2">Creating an Integration Schedule</h2>
+<div>
+<p>You can create a schedule for running orchestrated integrations.</p>
+<div class="section">To create an integration schedule:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration in which trigger and invoke FTP adapter connections have been defined.</span>
+<div>These integrations are identified by a <span class="bold">Schedule</span> icon that depicts a calendar. There are several ways in which to create an integration.</div>
+</li>
+<li class="stepexpand"><span>If you want to first activate the integration and then create the schedule:</span>
+<ol>
+<li><span>Click the <span class="bold">Activate</span> icon.</span></li>
+<li><span>Click <span class="bold">Activate and Schedule</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If you want to first create a schedule for an integration that you activate later:</span>
+<ol>
+<li><span>Select <span class="bold">Add Schedule</span> from the dropdown menu at the far right.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Schedule Name</span> field, accept the default name or click the <span class="bold">Edit</span> icon to enter a new name. When complete, enter an optional description and click the <span class="bold">green checkmark</span>. This action does not save the changes.</span>
+<div>
+<div class="infobox-note" id="GUID-9632A5C8-98A7-4371-B542-6A8583427C8D__GUID-4AED3F9E-D90E-47A4-AC61-CF1FF5D93462">
+<p class="notep1">Note:</p>
+Assume you create a schedule and generate several integration runs, then deactivate and delete the integration. If you then create and activate a new integration with the same name as the deleted integration, and go to the Past Runs page, the past&nbsp;runs of the deleted integration are displayed. This is by design.</div>
+</div>
+</li>
+<li class="stepexpand"><span>If you want to schedule integration runs with an iCal expression, click <span class="bold">Advanced</span>.</span>
+<ol>
+<li class="substepexpand"><span>Enter an iCal expression, and click <span class="bold">Validate Expression</span>. For example, the following expression indicates that this integration runs each month on the 1st, 10th, and 15th days of the month at 5:15 AM, 10:15 AM, 3:15 PM, and 8:15 PM.</span>
+<div><br />
+<img width="735" height="115" src="img/GUID-1ADB49A5-D33E-4442-A9FC-76C1484221C4-default.png" alt="Description of GUID-1ADB49A5-D33E-4442-A9FC-76C1484221C4-default.png follows" title="Description of GUID-1ADB49A5-D33E-4442-A9FC-76C1484221C4-default.png follows" /><br />
+<a href="img_text/GUID-1ADB49A5-D33E-4442-A9FC-76C1484221C4-default.htm">Description of the illustration GUID-1ADB49A5-D33E-4442-A9FC-76C1484221C4-default.png</a><br />
+<p>If validation is successful, the following message is displayed at the top:</p>
+<code>iCal expression is valid.</code>
+<div class="infobox-note" id="GUID-9632A5C8-98A7-4371-B542-6A8583427C8D__GUID-B2055590-F288-4437-B533-EDA02606B8D8">
+<p class="notep1">Note:</p>
+There is a three minute limitation on how frequently you can run scheduled integrations with an iCal expression. Anything below this limit is not supported.</div>
+</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Frequency</span> section, click the icon to display a dropdown list for selecting the frequency with which to run the integration. As you define one frequency, you can specify additional values by clicking the icon to the right of the <span class="bold">Frequency</span> section.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Only Once</span>: This is the default selection. This selection clears all settings except for the <span class="bold">From</span> field.</p>
+<p>If you select this option, you cannot&nbsp;select <span class="bold">When schedule starts</span> as the start date. This option is disabled.</p>
+</li>
+<li>
+<p><span class="bold">Hours and Minutes</span>: Specify the hours and minutes at which to run the integration.</p>
+</li>
+<li>
+<p><span class="bold">Days</span>: Specify the days on which to run the integration.</p>
+</li>
+<li>
+<p><span class="bold">Weeks</span>: Specify the weeks during which to run the integration.</p>
+</li>
+<li>
+<p><span class="bold">Months</span>: Specify the months during which to run the integration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">green checkmark</span> icon for each frequency type that you specify.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span> to validate your frequency settings.</span>
+<div>Your selections are validated. If there are any errors, a validation message is displayed in the upper left corner that describes how to resolve the errors.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">This schedule is effective</span> section, click the link to the right of <span class="bold">From</span>.</span>
+<div>A menu is displayed for defining the start date of the schedule.</div>
+</li>
+<li class="stepexpand"><span>If you want to start the integration run when the schedule is activated:</span>
+<ol>
+<li><span>Click <span class="bold">When schedule starts</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If you want to explicitly set an integration run start date:</span>
+<ol>
+<li><span>Select <span class="bold">Modify start date</span>.</span></li>
+<li><span>Click the <span class="bold">Calendar</span> icon to select the month, year, and day and the hour, minute, and second at which to start the integration run.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Until</span> section, click the link to the right.</span>
+<div>A menu is displayed for defining the expiration date.</div>
+</li>
+<li class="stepexpand"><span>If you want the schedule run to never expire:</span>
+<ol>
+<li><span>Select <span class="bold">Never (repeat indefinitely)</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If you want the integration run to have a fixed expiration date:</span>
+<ol>
+<li><span>Select <span class="bold">Choose expiry date</span>.</span></li>
+<li><span>Click the <span class="bold">Calendar</span> icon to select the month, year, and day and the hour, minute, and second at which to end the integration run.</span></li>
+<li><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span>
+<div>If successful, a message is displayed in the upper left corner.
+<pre dir="ltr">
+Schedule Run <span class="italic">name</span> saved successfully
+</pre></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Exit Scheduler</span>.</span>
+<div>The Schedule and Future Runs page is displayed and the Monitoring tab is highlighted in the upper right corner.
+<p>Details about the integration run schedule are displayed. You can click the <span class="bold">Edit</span> icon to update the schedule definition.</p>
+</div>
+</li>
+<li class="stepexpand"><span>If you have already activated the integration, click <span class="bold">Submit Now</span> to run the integration or <span class="bold">Start Schedule</span> to activate the integration schedule.</span>
+<div>
+<div class="infobox-note" id="GUID-9632A5C8-98A7-4371-B542-6A8583427C8D__GUID-55234629-0D53-441B-9CA9-D0DCE76CF637">
+<p class="notep1">Note:</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>
+<p>If you place a file in an input directory and run an integration for the first time, the file is copied to the output directory. If you then run the integration a second time, the same file is not copied again to the output directory, even if you deleted the file from the output directory before rerunning the integration.&nbsp;This is by design. Second integration runs do not copy the same file. However, if a new file is placed in the input folder or the previously-copied file is updated with a newer version in the input directory, both are copied to the output directory.</p>
+</li>
+<li>
+<p>If you create a new schedule to repeat every minute and launch the&nbsp;calendar to specify a start time, it shows the current time (for example, 12:41:16). If you update the start time to several minutes later (for example, 12:43:55), save, and start the scheduled integration run, the integration starts running at 12:43:16 instead of &nbsp;12:43:55. The scheduler does not care about the seconds entered and runs the schedule every minute.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+<li class="stepexpand"><span>If you have not yet started the integration, return to the Integrations page and click <span class="bold">Activate</span>.</span></li>
+<li class="stepexpand"><span>Run the schedule in either of two ways:</span>
+<ol>
+<li><span>From the menu at the far right on the Integrations page, select <span class="bold">Submit Now</span>.</span></li>
+</ol>
+<div>or</div>
+<ol>
+<li><span>Select <span class="bold">Schedule</span> from the dropdown menu at the far right to return to the Schedule and Future Runs page.</span></li>
+<li><span>Click <span class="bold">Submit Now</span> to run the integration or <span class="bold">Start Schedule</span> to activate the integration schedule.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-2F2A2806-A2D3-4989-A67D-3C859ADB3196"></a>
+<h2 id="ICSUG-GUID-2F2A2806-A2D3-4989-A67D-3C859ADB3196" class="sect2">Starting and Pausing an Integration Schedule</h2>
+<div>
+<p>After you define a schedule, you must activate it. You can also pause (deactivate) a schedule, as needed.</p>
+<div class="section">To start and pause an integration schedule:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration on which the scheduled run is defined.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Schedule</span> from the menu at the right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Start Schedule</span> box.</span>
+<div>The following message is displayed at the top of the page: <code>Schedule is now active.</code></div>
+<div>Details about the schedule including the frequency and any expiration date are displayed. The <span class="bold">Start Schedule</span> button is changed to <span class="bold">Stop Schedule</span>.</div>
+</li>
+<li class="stepexpand"><span>If you want to pause the schedule run, click <span class="bold">Pause Schedule</span> at the far right.</span>
+<div><br />
+<img width="149" height="101" src="img/GUID-27FB48E2-196B-47A9-8899-F164B4C25E7A-default.png" alt="Description of GUID-27FB48E2-196B-47A9-8899-F164B4C25E7A-default.png follows" title="Description of GUID-27FB48E2-196B-47A9-8899-F164B4C25E7A-default.png follows" /><br />
+<a href="img_text/GUID-27FB48E2-196B-47A9-8899-F164B4C25E7A-default.htm">Description of the illustration GUID-27FB48E2-196B-47A9-8899-F164B4C25E7A-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>If you want to resume the schedule run, click <span class="bold">Resume Schedule</span>. This toggles the button name to <span class="bold">Pause Schedule</span>.</span>
+<div>
+<div class="infobox-note" id="GUID-2F2A2806-A2D3-4989-A67D-3C859ADB3196__GUID-772FE9BF-19DE-4741-B158-BA8597B69C97">
+<p class="notep1">Note:</p>
+You can also pause a schedule from the Integrations page available under the Monitoring tab. For information, see <a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-E7944896-F5EF-4A5E-AB34-78B2522E4DA9" title="You can pause and resume scheduled runs for an integration from the Monitoring page.">Monitoring Integration Runs</a>.</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-87FDBEF2-96E3-4E52-8198-60B72E55D472"></a>
+<h2 id="ICSUG-GUID-87FDBEF2-96E3-4E52-8198-60B72E55D472" class="sect2">Viewing Past and Present Integration Runs</h2>
+<div>
+<p>You can view the status of past and present scheduled integration runs.</p>
+<div class="section">To view past and present integration runs:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration on which the scheduled run is defined.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Schedule</span> from the menu at the right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">View Past Runs</span>.</span>
+<div>The Past Runs page is displayed. By default, all integration runs are displayed.</div>
+</li>
+<li class="stepexpand"><span>Filter the display of integrations:</span>
+<ol>
+<li><span>Click <span class="bold">In Progress</span> to display all integration runs currently in progress.</span></li>
+<li><span>Click <span class="bold">Completed</span> to display all completed integration runs.</span></li>
+<li><span>Click the dropdown list to filter the display of runs by <span class="bold">1</span> hour, <span class="bold">6</span> hours, <span class="bold">1</span> day, <span class="bold">2</span> days, or <span class="bold">3</span> days.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If a schedule run has failed (for example, the target FTP server did not have the correct write permissions), click the <span class="bold">Resubmit</span> icon at the far right to resubmit the schedule run.</span>
+<div>If you selected the <span class="bold">Delete Files After Successful Retrieval</span> checkbox on the Configure File Read page when configuring the inbound FTP Adapter, the file is deleted from the source directory if the file transfer is successful or unsuccessful this time.</div>
+<div>This action creates a <span class="bold">RESUBMITTED RUN ID:</span> <span class="italic"><span class="bold">number</span></span> message to the right of the schedule name and original run ID. If you resubmit again, you end up with the following messages to the right of the schedule name:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">RUN ID:</span> <span class="italic"><span class="bold">number</span></span>: The run ID for the first resubmission, which failed.</p>
+</li>
+<li>
+<p><span class="bold">RESUBMITTED RUN ID:</span> <span class="italic"><span class="bold">number</span></span>: The run ID for the latest submission.</p>
+</li>
+<li>
+<p><span class="bold">ORIGINAL RUN ID:</span> <span class="italic"><span class="bold">number</span></span>: The run ID for the initial submission.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">RESUBMITTED RUN ID:</span> <span class="italic"><span class="bold">number</span></span> message link to go to the Tracking page.</span></li>
+<li class="stepexpand"><span>Click the file name of the instance.</span>
+<div>A graphical view of the integration flow is displayed.</div>
+<div>For example, if the resubmission resulted in a failure, details are displayed. For this example, the write portion of the integration failed because of a permissions issue.<br />
+<img width="1280" height="221" src="img/GUID-F129AA55-A0D3-4711-912B-829E922AAC09-default.png" alt="Description of GUID-F129AA55-A0D3-4711-912B-829E922AAC09-default.png follows" title="Description of GUID-F129AA55-A0D3-4711-912B-829E922AAC09-default.png follows" /><br />
+<a href="img_text/GUID-F129AA55-A0D3-4711-912B-829E922AAC09-default.htm">Description of the illustration GUID-F129AA55-A0D3-4711-912B-829E922AAC09-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Actions</span> &gt; <span class="bold">Audit Trail</span> to view specific details about the error, such as the target directory not being defined with write permissions.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-269698E1-FCA0-4690-9F79-7D72BCC98C08"></a>
+<h2 id="ICSUG-GUID-269698E1-FCA0-4690-9F79-7D72BCC98C08" class="sect2">Viewing Future Runs</h2>
+<div>
+<p>You can view the status of future scheduled integration runs.</p>
+<div class="section">To view future runs:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration on which the scheduled run is defined.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Schedule</span> from the menu at the right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">View Past Runs</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">View Schedule</span>.</span>
+<div>
+<p>Details about the future runs are displayed.<br />
+<img width="1212" height="447" src="img/GUID-BAF76A6A-7C0A-470E-990D-7EA255C69E0C-default.png" alt="Description of GUID-BAF76A6A-7C0A-470E-990D-7EA255C69E0C-default.png follows" title="Description of GUID-BAF76A6A-7C0A-470E-990D-7EA255C69E0C-default.png follows" /><br />
+<a href="img_text/GUID-BAF76A6A-7C0A-470E-990D-7EA255C69E0C-default.htm">Description of the illustration GUID-BAF76A6A-7C0A-470E-990D-7EA255C69E0C-default.png</a><br /></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5DF11100-C712-45A4-8A91-53DACC829908"></a>
+<h2 id="ICSUG-GUID-5DF11100-C712-45A4-8A91-53DACC829908" class="sect2">Editing an Integration Schedule</h2>
+<div>
+<p>You can edit a schedule for an integration run.</p>
+<div class="section">To edit an integration schedule:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration on which the scheduled run is defined.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Schedule</span> from the menu at the right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the far right, click the <span class="bold">Edit</span> icon.<br />
+<img width="64" height="36" src="img/GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png" alt="Description of GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png follows" title="Description of GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png follows" /><br />
+<a href="img_text/GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.htm">Description of the illustration GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Edit the schedule. For information about the fields you can edit, see <a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-9632A5C8-98A7-4371-B542-6A8583427C8D" title="You can create a schedule for running orchestrated integrations.">Creating an Integration Schedule</a>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-CD1CDDA3-E068-4855-9DF5-98D1142D0F44"></a>
+<h2 id="ICSUG-GUID-CD1CDDA3-E068-4855-9DF5-98D1142D0F44" class="sect2">Deleting an Integration Schedule</h2>
+<div>
+<p>You can delete a schedule for an integration run.</p>
+<div class="section">To delete an integration schedule:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Go to the Integration page.</span></li>
+<li class="stepexpand"><span>Find the integration on which the scheduler run is defined.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Schedule</span> from the menu at the right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Find the schedule in the list that you want to delete.</span></li>
+<li class="stepexpand"><span>On the far right, click the <span class="bold">Delete</span> icon.<br />
+<img width="64" height="36" src="img/GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png" alt="Description of GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png follows" title="Description of GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png follows" /><br />
+<a href="img_text/GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.htm">Description of the illustration GUID-AE4EC4DC-CC90-4AC7-B0C4-19F91FF2A8E6-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> when prompted to confirm.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-E7944896-F5EF-4A5E-AB34-78B2522E4DA9"></a>
+<h2 id="ICSUG-GUID-E7944896-F5EF-4A5E-AB34-78B2522E4DA9" class="sect2">Monitoring Integration Runs</h2>
+<div>
+<p>You can pause and resume scheduled runs for an integration from the Monitoring page.</p>
+<div class="section">To monitor integration runs:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">Integrations</span>.</span>
+<div>For integrations that include source and target FTP adapter connections, the calendar icon is displayed. This page shows only active integrations. Integrations can be of any type (that is, with or without the FTP Adapter).</div>
+</li>
+<li class="stepexpand"><span>If you want to resubmit a run of an integration, click <span class="bold">Submit Now</span>. This button is available only for integrations that have an FTP Adapter as a trigger.<br />
+<img width="97" height="91" src="img/GUID-1C821CCD-9936-40FE-AEB1-F8C7017B78DA-default.png" alt="Description of GUID-1C821CCD-9936-40FE-AEB1-F8C7017B78DA-default.png follows" title="Description of GUID-1C821CCD-9936-40FE-AEB1-F8C7017B78DA-default.png follows" /><br />
+<a href="img_text/GUID-1C821CCD-9936-40FE-AEB1-F8C7017B78DA-default.htm">Description of the illustration GUID-1C821CCD-9936-40FE-AEB1-F8C7017B78DA-default.png</a><br /></span></li>
+<li class="stepexpand"><span>If you click <span class="bold">Push Integrations</span> under <span class="bold">Integrations</span> in the navigator, all integrations that cannot be scheduled are displayed (that is, integrations that do <span class="italic">not</span> have an FTP Adapter as a trigger).</span></li>
+<li class="stepexpand"><span>If you click <span class="bold">Scheduled</span> under <span class="bold">Integrations</span> in the navigator, only scheduled integrations are displayed (that is, integrations that have an FTP Adapter as a trigger).</span></li>
+<li class="stepexpand"><span>If you want to pause the scheduled runs, click the <span class="bold">Pause Schedule</span> button.<br />
+<img width="393" height="146" src="img/GUID-4C88D843-D5C3-4642-9140-D6D21704C32B-default.png" alt="Description of GUID-4C88D843-D5C3-4642-9140-D6D21704C32B-default.png follows" title="Description of GUID-4C88D843-D5C3-4642-9140-D6D21704C32B-default.png follows" /><br />
+<a href="img_text/GUID-4C88D843-D5C3-4642-9140-D6D21704C32B-default.htm">Description of the illustration GUID-4C88D843-D5C3-4642-9140-D6D21704C32B-default.png</a><br /></span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6D49F551-B0E5-4F57-AD63-E5E2C4613EA2"></a>
+<h2 id="ICSUG-GUID-6D49F551-B0E5-4F57-AD63-E5E2C4613EA2" class="sect2">Creating Ad-Hoc Integration Runs Using the REST API</h2>
+<div>
+<p>You can create ad-hoc runs on integrations on which a schedule has been defined from the REST API. This is useful for when you want to test a scheduled integration.</p>
+<div class="section">To create ad-hoc integration runs:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>Find an integration on which a schedule is defined (indicated by the <span class="bold">calendar</span> icon).</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Integration Details</span> icon at the far right.</span></li>
+<li class="stepexpand"><span>Copy the URL from the <span class="bold">Submit Now Link</span> into a tool (such as SOAP UI) to test REST APIs. You can also use CURL commands from a terminal window to invoke the REST APIs.<br />
+<img width="455" height="359" src="img/GUID-D6D30B91-3344-47C0-B1C8-396A430296EB-default.png" alt="Description of GUID-D6D30B91-3344-47C0-B1C8-396A430296EB-default.png follows" title="Description of GUID-D6D30B91-3344-47C0-B1C8-396A430296EB-default.png follows" /><br />
+<a href="img_text/GUID-D6D30B91-3344-47C0-B1C8-396A430296EB-default.htm">Description of the illustration GUID-D6D30B91-3344-47C0-B1C8-396A430296EB-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Invoke the integration run.</span></li>
+<li class="stepexpand"><span>Return to the Integrations page, and select <span class="bold">Schedule</span> from the list at the far right.</span>
+<div>The Schedule and Future Runs page is displayed.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">View Past Runs</span> link in the upper right corner.</span>
+<div>Details about the ah-hoc integration run are displayed.</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-376FAB91-E560-4A1F-9FCD-EAD5AB4D3E8A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,748 @@
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Integration Cloud Service Concepts</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The following topics describe each of the components required to create an end-to-end integration. Each integration includes connections and mappings. You can also include lookups, which are reusable mappings for the different codes and terms used in your applications to describe the same item. You can also group integrations into packages." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-B52A73B9-4520-48A2-8A4B-8680CCFC9680.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9"></a> <span id="PAGE" style="display:none;">9/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9" class="sect1">About Integration Cloud Service Concepts</h1>
+<div>
+<p>The following topics describe each of the components required to create an end-to-end integration. Each integration includes connections and mappings. You can also include lookups, which are reusable mappings for the different codes and terms used in your applications to describe the same item. You can also group integrations into packages.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C" title="Connections define information about the instances of each configuration you are integrating. Oracle Integration Cloud Service includes a set of predefined adapters, which are the types of applications on which you can base your connections, such as Oracle Sales Cloud, Oracle Eloqua Cloud, Oracle RightNow Cloud, and others. A connection is based on an adapter. A connection includes the additional information required by the adapter to communicate with a specific instance of an application (this can be referred to as metadata or as connection details). For example, to create a connection to a specific RightNow Cloud application instance, you must select the Oracle RightNow adapter and then specify the WSDL URL, security policy, and security credentials to connect to it.">Integration Cloud Service Connections</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD" title="Integrations are the main ingredient of Oracle Integration Cloud Service. An integration includes at the least a trigger (source) connection (for requests sent to Oracle Integration Cloud Service) and invoke (target) connection (for requests sent from Oracle Integration Cloud Service to the target) and the field mapping between those two connections.">Integration Cloud Service Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-69C04FC1-6FE1-4249-82B5-C3FD043A9369" title="One of the key tasks to any integration is defining how data is transferred, or mapped, between two applications.">About Mappings</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-90617019-7815-4AF7-AEFE-C64E6FCFE7EB" title="You may have business use cases in which you need to enhance data by calling another service before sending data to an invoke service or before sending data back to a requestor. To address this business requirement, you can optionally add enrichment data sources to the request part, the response part, or both parts of an integration. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke services. Enrichments subscribe to a synchronous request and response message pattern.">About Integration Cloud Service Enrichments</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-222C0D1E-3239-4BAF-BF07-457E2190E213" title="Use lookups in your integrations to create reusable tables that map the different terms used to describe the same item across your applications.">Integration Cloud Service Lookups</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-39554E12-FB31-4A78-A92A-79C552B8AE1D" title="You can group one or more integrations into a single structure called a package. Packages enable you to easily import and export a group of integrations to and from Integration Cloud Service. You can import packages from the Oracle Marketplace. These packages consist of a series of prebuilt integrations provided by Oracle. You can also import and export packages that consist of integrations that you or other users created. Packages are optional, meaning that integrations do not need to be part of packages. However, for a package to exist, it must include at least one integration. Packages cannot be locked to exclude other users of your Integration Cloud Service instance.">About Integration Cloud Service Packages</a></p>
+</li>
+<li>
+<p><a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905" title="Oracle Integration Cloud Service provides an agent framework that enables you to create integrations and exchange messages between on-premises applications and Oracle Integration Cloud Service. Message payloads of up to 5 MB are supported through the use of compression, which may bring the payload down to 512 KB in size. The on-premises agent provides multithreading support, which allows for multiple executors to perform downstream message processing.">About Agents and Integrations Between On-Premises Applications and Oracle Integration Cloud Service</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C"></a>
+<h2 id="ICSUG-GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C" class="sect2">About <span>Oracle Integration Cloud Service</span> Connections</h2>
+<div>
+<p>Connections define information about the instances of each configuration you are integrating. <span>Oracle Integration Cloud Service</span> includes a set of predefined <span class="italic">adapters</span>, which are the types of applications on which you can base your connections, such as <span>Oracle Sales Cloud</span>, Oracle Eloqua Cloud, Oracle RightNow Cloud, and others. A connection is based on an adapter. A connection includes the additional information required by the adapter to communicate with a specific instance of an application (this can be referred to as metadata or as connection details). For example, to create a connection to a specific RightNow Cloud application instance, you must select the Oracle RightNow adapter and then specify the WSDL URL, security policy, and security credentials to connect to it.</p>
+<div class="video-box">
+<div xmlns="" id="11240" class="video-container"></div>
+</div>
+</div>
+<div class="sect3"><a id="GUID-97CDD85B-B3BB-4F47-828C-3A559F7FA632"></a>
+<h3 id="ICSUG-GUID-97CDD85B-B3BB-4F47-828C-3A559F7FA632" class="sect3">Connection Creation</h3>
+<div>
+<p>You can create a connection based on any of the following adapters to which you are subscribed.</p>
+<div class="p">
+<div class="tblformal" id="GUID-97CDD85B-B3BB-4F47-828C-3A559F7FA632__GUID-0AA741B4-7837-4D75-946A-794144A83182">
+<table class="cellalignment926" summary="List of the available adapters.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d2985e175">Adapter</th>
+<th class="cellalignment929" id="d2985e177">For Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d2985e181" headers="d2985e175"><span>Adobe eSign Adapter</span></td>
+<td class="cellalignment929" headers="d2985e181 d2985e177"><a class="olink ICSAE-GUID-13099E62-57BF-4C3B-9FE6-667DD3B60721" target="_blank" href="../ICSAE/GUID-13099E62-57BF-4C3B-9FE6-667DD3B60721.htm#ICSAE-GUID-13099E62-57BF-4C3B-9FE6-667DD3B60721"><span class="italic">Using the eSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e190" headers="d2985e175"><span>Concur Adapter</span></td>
+<td class="cellalignment929" headers="d2985e190 d2985e177"><a class="olink ICSCO-GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934" target="_blank" href="../ICSCO/GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934.htm#ICSCO-GUID-7CA11762-ACDB-4225-90FC-B6C212AE9934"><span class="italic">Using the Concur Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e199" headers="d2985e175">
+<p>DB2 Adapter</p>
+</td>
+<td class="cellalignment929" headers="d2985e199 d2985e177"><a class="olink ICSDB-GUID-7643F4D9-2FD8-4F9A-BBC1-36089A130C67" target="_blank" href="../ICSDB/GUID-7643F4D9-2FD8-4F9A-BBC1-36089A130C67.htm#ICSDB-GUID-7643F4D9-2FD8-4F9A-BBC1-36089A130C67"><span class="italic">Using the DB2 Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e208" headers="d2985e175"><span>DocuSign Adapter</span></td>
+<td class="cellalignment929" headers="d2985e208 d2985e177"><a class="olink ICSDS-GUID-57DB217F-985E-4E27-AE19-944AC2C2CE5B" target="_blank" href="../ICSDS/GUID-57DB217F-985E-4E27-AE19-944AC2C2CE5B.htm#ICSDS-GUID-57DB217F-985E-4E27-AE19-944AC2C2CE5B"><span class="italic">Using the DocuSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e217" headers="d2985e175"><span>Eventbrite Adapter</span></td>
+<td class="cellalignment929" headers="d2985e217 d2985e177"><a class="olink ICSEB-GUID-93C1A75D-ACCE-4BFB-9199-E9E33D8F42B1" target="_blank" href="../ICSEB/GUID-93C1A75D-ACCE-4BFB-9199-E9E33D8F42B1.htm#ICSEB-GUID-93C1A75D-ACCE-4BFB-9199-E9E33D8F42B1"><span class="italic">Using the Eventbrite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e226" headers="d2985e175"><span>Evernote Adapter</span></td>
+<td class="cellalignment929" headers="d2985e226 d2985e177"><a class="olink ICSEN-GUID-2947D83E-81F6-42DD-B782-D124E71F697F" target="_blank" href="../ICSEN/GUID-2947D83E-81F6-42DD-B782-D124E71F697F.htm#ICSEN-GUID-2947D83E-81F6-42DD-B782-D124E71F697F"><span class="italic">Using the Evernote Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e235" headers="d2985e175"><span>Facebook Adapter</span></td>
+<td class="cellalignment929" headers="d2985e235 d2985e177"><a class="olink ICSFB-GUID-DDE5A1BA-E8B2-488F-BE7C-9FFEF6719160" target="_blank" href="../ICSFB/GUID-DDE5A1BA-E8B2-488F-BE7C-9FFEF6719160.htm#ICSFB-GUID-DDE5A1BA-E8B2-488F-BE7C-9FFEF6719160"><span class="italic">Using the Facebook Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e244" headers="d2985e175"><span>File Adapter</span></td>
+<td class="cellalignment929" headers="d2985e244 d2985e177"><a class="olink ICSFI-GUID-9F482FF9-06CF-4680-B87A-ACB3076D5FB9" target="_blank" href="../ICSFI/GUID-9F482FF9-06CF-4680-B87A-ACB3076D5FB9.htm#ICSFI-GUID-9F482FF9-06CF-4680-B87A-ACB3076D5FB9"><span class="italic">Using the File Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e253" headers="d2985e175"><span>FTP Adapter</span></td>
+<td class="cellalignment929" headers="d2985e253 d2985e177"><a class="olink ICSFT-GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0" target="_blank" href="../ICSFT/GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0.htm#ICSFT-GUID-6975BE0E-EB04-4FC1-A632-24590017C2A0"><span class="italic">Using the FTP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e262" headers="d2985e175"><span>Gmail Adapter</span></td>
+<td class="cellalignment929" headers="d2985e262 d2985e177"><a class="olink ICSGM-GUID-74A79526-4EA4-43E2-84DC-C0F08FA5B1C5" target="_blank" href="../ICSGM/GUID-74A79526-4EA4-43E2-84DC-C0F08FA5B1C5.htm#ICSGM-GUID-74A79526-4EA4-43E2-84DC-C0F08FA5B1C5"><span class="italic">Using the Gmail Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e271" headers="d2985e175"><span>Google Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d2985e271 d2985e177"><a class="olink ICSGO-GUID-653A241B-E1DD-4F63-A40F-0C299B064509" target="_blank" href="../ICSGO/GUID-653A241B-E1DD-4F63-A40F-0C299B064509.htm#ICSGO-GUID-653A241B-E1DD-4F63-A40F-0C299B064509"><span class="italic">Using the Google Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e281" headers="d2985e175"><span>Google Task Adapter</span></td>
+<td class="cellalignment929" headers="d2985e281 d2985e177"><a class="olink ICSGT-GUID-8145BF58-0E14-458E-A551-BECAA59D30D1" target="_blank" href="../ICSGT/GUID-8145BF58-0E14-458E-A551-BECAA59D30D1.htm#ICSGT-GUID-8145BF58-0E14-458E-A551-BECAA59D30D1"><span class="italic">Using the Google Task Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e290" headers="d2985e175"><span>Oracle JD Edwards EnterpriseOne Adapter</span></td>
+<td class="cellalignment929" headers="d2985e290 d2985e177"><a class="olink ICSJD-GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A" target="_blank" href="../ICSJD/GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A.htm#ICSJD-GUID-4AF5211A-7FCA-4DAF-B58C-1D709CDC8F2A"><span class="italic">Using the JD Edwards EnterpriseOne Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e299" headers="d2985e175"><span>JMS Adapter</span></td>
+<td class="cellalignment929" headers="d2985e299 d2985e177"><a class="olink ICSJM-GUID-FF81DF22-053D-4087-A98D-104009BC9692" target="_blank" href="../ICSJM/GUID-FF81DF22-053D-4087-A98D-104009BC9692.htm#ICSJM-GUID-FF81DF22-053D-4087-A98D-104009BC9692"><span class="italic">Using the JMS Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e308" headers="d2985e175"><span>LinkedIn Adapter</span></td>
+<td class="cellalignment929" headers="d2985e308 d2985e177"><a class="olink ICSLI-GUID-30EFE792-6302-4B84-B75F-6243DA33CF39" target="_blank" href="../ICSLI/GUID-30EFE792-6302-4B84-B75F-6243DA33CF39.htm#ICSLI-GUID-30EFE792-6302-4B84-B75F-6243DA33CF39"><span class="italic">Using the LinkedIn Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e318" headers="d2985e175"><span>Microsoft Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d2985e318 d2985e177"><a class="olink ICSMS-GUID-BD3DF109-0DF8-4176-8D11-718A915EA31D" target="_blank" href="../ICSMS/GUID-BD3DF109-0DF8-4176-8D11-718A915EA31D.htm#ICSMS-GUID-BD3DF109-0DF8-4176-8D11-718A915EA31D"><span class="italic">Using the Microsoft Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e328" headers="d2985e175"><span>Microsoft Contact Adapter</span></td>
+<td class="cellalignment929" headers="d2985e328 d2985e177"><a class="olink ICSMT-GUID-09A7C9E7-38A6-4903-B7CD-E4A377ABA338" target="_blank" href="../ICSMT/GUID-09A7C9E7-38A6-4903-B7CD-E4A377ABA338.htm#ICSMT-GUID-09A7C9E7-38A6-4903-B7CD-E4A377ABA338"><span class="italic">Using the Microsoft Contact Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e337" headers="d2985e175"><span>Microsoft Email Adapter</span></td>
+<td class="cellalignment929" headers="d2985e337 d2985e177"><a class="olink ICSME-GUID-1787F780-93FE-47A4-92D1-CD60900FC27C" target="_blank" href="../ICSME/GUID-1787F780-93FE-47A4-92D1-CD60900FC27C.htm#ICSME-GUID-1787F780-93FE-47A4-92D1-CD60900FC27C"><span class="italic">Using the Microsoft Email Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e347" headers="d2985e175"><span>Microsoft SQL Server Adapter</span></td>
+<td class="cellalignment929" headers="d2985e347 d2985e177"><a class="olink ICSSS-GUID-8208ECEF-D5EC-48EF-8235-EDD4AC472377" target="_blank" href="../ICSSS/GUID-8208ECEF-D5EC-48EF-8235-EDD4AC472377.htm#ICSSS-GUID-8208ECEF-D5EC-48EF-8235-EDD4AC472377"><span class="italic">Using the Microsoft SQL Server Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e356" headers="d2985e175"><span>MailChimp Adapter</span></td>
+<td class="cellalignment929" headers="d2985e356 d2985e177"><a class="olink ICSCH-GUID-C5D35673-276E-4AE4-8541-FCE13FCE0DA4" target="_blank" href="../ICSCH/GUID-C5D35673-276E-4AE4-8541-FCE13FCE0DA4.htm#ICSCH-GUID-C5D35673-276E-4AE4-8541-FCE13FCE0DA4"><span class="italic">Using the MailChimp Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e366" headers="d2985e175"><span>MySQL Adapter</span></td>
+<td class="cellalignment929" headers="d2985e366 d2985e177"><a class="olink ICSSQ-GUID-12DFCAA6-95C2-4F09-885D-2D46E5289D41" target="_blank" href="../ICSSQ/GUID-12DFCAA6-95C2-4F09-885D-2D46E5289D41.htm#ICSSQ-GUID-12DFCAA6-95C2-4F09-885D-2D46E5289D41"><span class="italic">Using the MySQL Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e376" headers="d2985e175"><span>Oracle Advanced Queuing (AQ) Adapter</span></td>
+<td class="cellalignment929" headers="d2985e376 d2985e177"><a class="olink ICSAQ-GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613" target="_blank" href="../ICSAQ/GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613.htm#ICSAQ-GUID-ECC270EA-1C4F-4587-BFB1-6B654E047613"><span class="italic"><span class="italic">Using the Oracle Advanced Queuing (AQ) Adapter</span></span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e387" headers="d2985e175"><span>Oracle Commerce Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e387 d2985e177"><a class="olink ICSCC-GUID-06BEA751-965E-448A-B817-79B0EBD3BB36" target="_blank" href="../ICSCC/GUID-06BEA751-965E-448A-B817-79B0EBD3BB36.htm#ICSCC-GUID-06BEA751-965E-448A-B817-79B0EBD3BB36"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e396" headers="d2985e175"><span>Oracle CPQ Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e396 d2985e177"><a class="olink ICSCP-GUID-FB6BE639-85C6-4552-9A6A-CD562733FE57" target="_blank" href="../ICSCP/GUID-FB6BE639-85C6-4552-9A6A-CD562733FE57.htm#ICSCP-GUID-FB6BE639-85C6-4552-9A6A-CD562733FE57"><span class="italic">Using the Oracle CPQ Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e405" headers="d2985e175"><span>NetSuite Adapter</span></td>
+<td class="cellalignment929" headers="d2985e405 d2985e177"><a class="olink ICSNS-GUID-68FD5688-9ABF-415B-800E-903ADAE13608" target="_blank" href="../ICSNS/GUID-68FD5688-9ABF-415B-800E-903ADAE13608.htm#ICSNS-GUID-68FD5688-9ABF-415B-800E-903ADAE13608"><span class="italic">Using the NetSuite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e414" headers="d2985e175"><span>Oracle Database Adapter</span></td>
+<td class="cellalignment929" headers="d2985e414 d2985e177"><a class="olink ICSSB-GUID-B6DE5BB7-3188-43B7-AF38-AC41661FA527" target="_blank" href="../ICSSB/GUID-B6DE5BB7-3188-43B7-AF38-AC41661FA527.htm#ICSSB-GUID-B6DE5BB7-3188-43B7-AF38-AC41661FA527"><span class="italic">Using the Oracle Database Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e423" headers="d2985e175"><span>Oracle E-Business Suite Adapter</span></td>
+<td class="cellalignment929" headers="d2985e423 d2985e177"><a class="olink ics_ebs_guide" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ics_ebs_guide"><span class="italic">Using the Oracle E-Business Suite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e432" headers="d2985e175"><span>Oracle Field Service Adapter</span></td>
+<td class="cellalignment929" headers="d2985e432 d2985e177"><a class="olink ICSFS-GUID-3842D11B-B1CF-40E2-8976-4B050CB15EDA" target="_blank" href="../ICSFS/GUID-3842D11B-B1CF-40E2-8976-4B050CB15EDA.htm#ICSFS-GUID-3842D11B-B1CF-40E2-8976-4B050CB15EDA"><span class="italic">Using the Oracle Field Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e441" headers="d2985e175"><span>Oracle Eloqua Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e441 d2985e177"><a class="olink ICSEL-GUID-CBE3CBD6-C250-4D6D-97B2-5CD00E1B371A" target="_blank" href="../ICSEL/GUID-CBE3CBD6-C250-4D6D-97B2-5CD00E1B371A.htm#ICSEL-GUID-CBE3CBD6-C250-4D6D-97B2-5CD00E1B371A"><span class="italic">Using the Oracle Eloqua Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e450" headers="d2985e175"><span>Oracle ERP Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e450 d2985e177"><a class="olink ICSER-GUID-F4D895BD-5234-4C38-B6B1-B7C5CA2F6B37" target="_blank" href="../ICSER/GUID-F4D895BD-5234-4C38-B6B1-B7C5CA2F6B37.htm#ICSER-GUID-F4D895BD-5234-4C38-B6B1-B7C5CA2F6B37"><span class="italic">Using the Oracle ERP Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e459" headers="d2985e175"><span>Oracle HCM Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e459 d2985e177"><a class="olink ICSHC-GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSHC-GUID-40A15882-F8D1-452E-9E9C-1B184616E1A8"><span class="italic">Using the Oracle HCM Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e468" headers="d2985e175"><span>Oracle Messaging Cloud Service</span></td>
+<td class="cellalignment929" headers="d2985e468 d2985e177"><a class="olink ICSMC-GUID-2712284D-FDEF-4EB4-974C-F271D7FF4DEF" target="_blank" href="../ICSMC/GUID-2712284D-FDEF-4EB4-974C-F271D7FF4DEF.htm#ICSMC-GUID-2712284D-FDEF-4EB4-974C-F271D7FF4DEF"><span class="italic">Using the Oracle Messaging Cloud Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e477" headers="d2985e175"><span>Oracle Responsys Adapter</span></td>
+<td class="cellalignment929" headers="d2985e477 d2985e177"><a class="olink ICSRS-GUID-215EE290-897B-4B1F-9F83-3B6C691E80C0" target="_blank" href="../ICSRS/GUID-215EE290-897B-4B1F-9F83-3B6C691E80C0.htm#ICSRS-GUID-215EE290-897B-4B1F-9F83-3B6C691E80C0"><span class="italic">Using the Using the Oracle Responsys Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e487" headers="d2985e175"><span>Oracle RightNow Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e487 d2985e177"><a class="olink ICSRN-GUID-526EC9E0-CADD-4017-86AA-F71263CFFA5A" target="_blank" href="../ICSRN/GUID-526EC9E0-CADD-4017-86AA-F71263CFFA5A.htm#ICSRN-GUID-526EC9E0-CADD-4017-86AA-F71263CFFA5A"><span class="italic">Using the Oracle RightNow Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e496" headers="d2985e175"><span>Oracle Sales Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d2985e496 d2985e177"><a class="olink ICSSC-GUID-FEF6915A-F306-4D15-8CC1-DB682D4951F0" target="_blank" href="../ICSSC/GUID-FEF6915A-F306-4D15-8CC1-DB682D4951F0.htm#ICSSC-GUID-FEF6915A-F306-4D15-8CC1-DB682D4951F0"><span class="italic">Using the Oracle Sales Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e505" headers="d2985e175"><span>Oracle Siebel Adapter</span></td>
+<td class="cellalignment929" headers="d2985e505 d2985e177"><a class="olink ICSSI-GUID-B3683764-29E8-49D6-92DB-0C0DCA2ADE98" target="_blank" href="../ICSSI/GUID-B3683764-29E8-49D6-92DB-0C0DCA2ADE98.htm#ICSSI-GUID-B3683764-29E8-49D6-92DB-0C0DCA2ADE98"><span class="italic">Using the Oracle Siebel Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e514" headers="d2985e175">
+<p>Oracle Utilities Adapter</p>
+</td>
+<td class="cellalignment929" headers="d2985e514 d2985e177"><a class="olink GUID-F242E3DD-5C93-4313-96AA-40F4CF76EEB1" target="_blank" href="../ICSUT/GUID-F242E3DD-5C93-4313-96AA-40F4CF76EEB1.htm#GUID-F242E3DD-5C93-4313-96AA-40F4CF76EEB1"><span class="italic">Oracle Utilities Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e523" headers="d2985e175"><span>REST Adapter</span></td>
+<td class="cellalignment929" headers="d2985e523 d2985e177"><a class="olink ICSRE-GUID-216FBA19-17CC-486B-9C88-A2E96CB32B66" target="_blank" href="../ICSRE/GUID-216FBA19-17CC-486B-9C88-A2E96CB32B66.htm#ICSRE-GUID-216FBA19-17CC-486B-9C88-A2E96CB32B66"><span class="italic">Using the REST Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e532" headers="d2985e175"><span>Salesforce Adapter</span></td>
+<td class="cellalignment929" headers="d2985e532 d2985e177"><a class="olink ICSSF-GUID-A24C8AE2-7CC7-4940-A9EB-21C1670EC8FD" target="_blank" href="../ICSSF/GUID-A24C8AE2-7CC7-4940-A9EB-21C1670EC8FD.htm#ICSSF-GUID-A24C8AE2-7CC7-4940-A9EB-21C1670EC8FD"><span class="italic">Using the Salesforce Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e541" headers="d2985e175"><span>SAP Adapter</span></td>
+<td class="cellalignment929" headers="d2985e541 d2985e177"><a class="olink ICSSA-GUID-A016F05F-68D1-4C10-BF5F-2BEEEDDD5C20" target="_blank" href="../ICSSA/GUID-A016F05F-68D1-4C10-BF5F-2BEEEDDD5C20.htm#ICSSA-GUID-A016F05F-68D1-4C10-BF5F-2BEEEDDD5C20"><span class="italic">Using the SAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e550" headers="d2985e175"><span>SAP Ariba Adapter</span></td>
+<td class="cellalignment929" headers="d2985e550 d2985e177"><a class="olink ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72" target="_blank" href="../ICSAR/GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72.htm#ICSAR-GUID-E3071578-D673-4FB4-B1AC-0E6B828DFB72"><span class="italic">Using the SAP Ariba Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e559" headers="d2985e175"><span>SOAP Adapter</span></td>
+<td class="cellalignment929" headers="d2985e559 d2985e177"><a class="olink ICSSO-GUID-CB502705-197E-4D1F-AA0A-AB40E743E018" target="_blank" href="../ICSSO/GUID-CB502705-197E-4D1F-AA0A-AB40E743E018.htm#ICSSO-GUID-CB502705-197E-4D1F-AA0A-AB40E743E018"><span class="italic">Using the SOAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e568" headers="d2985e175">SuccessFactors Adapter</td>
+<td class="cellalignment929" headers="d2985e568 d2985e177"><a class="olink ICSSU-GUID-546AA394-AEF0-44EC-963A-2DE4E48605E5" target="_blank" href="../ICSSU/GUID-546AA394-AEF0-44EC-963A-2DE4E48605E5.htm#ICSSU-GUID-546AA394-AEF0-44EC-963A-2DE4E48605E5"><span class="italic">Using the SuccessFactors Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e576" headers="d2985e175"><span>SurveyMonkey Adapter</span></td>
+<td class="cellalignment929" headers="d2985e576 d2985e177"><a class="olink ICSSM-GUID-C28CF2E7-4884-4285-A2A7-02250D681C29" target="_blank" href="../ICSSM/GUID-C28CF2E7-4884-4285-A2A7-02250D681C29.htm#ICSSM-GUID-C28CF2E7-4884-4285-A2A7-02250D681C29"><span class="italic">Using the SurveyMonkey Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e586" headers="d2985e175"><span>Twilio Adapter</span></td>
+<td class="cellalignment929" headers="d2985e586 d2985e177"><a class="olink ICSTL-GUID-8B83EA28-415E-4895-B05F-C331C00DF374" target="_blank" href="../ICSTL/GUID-8B83EA28-415E-4895-B05F-C331C00DF374.htm#ICSTL-GUID-8B83EA28-415E-4895-B05F-C331C00DF374"><span class="italic">Using the Twilio Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d2985e595" headers="d2985e175"><span>Twitter Adapter</span></td>
+<td class="cellalignment929" headers="d2985e595 d2985e177"><a class="olink ICSTW-GUID-76DEA591-AF4D-4FBA-8391-6F8E1292E23E" target="_blank" href="../ICSTW/GUID-76DEA591-AF4D-4FBA-8391-6F8E1292E23E.htm#ICSTW-GUID-76DEA591-AF4D-4FBA-8391-6F8E1292E23E"><span class="italic">Using the Twitter Adapter</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<div class="sect4"><a id="GUID-22CFB686-94D2-41B7-8167-867D86AF3192"></a>
+<h4 id="ICSUG-GUID-22CFB686-94D2-41B7-8167-867D86AF3192" class="sect4">Integration Cloud Service Messaging</h4>
+<div>
+<p>Integration Cloud Service Messaging enables you to publish messages to and subscribe to messages from Integration Cloud Service.</p>
+<div class="p">You may have business use cases in which you need to synchronize objects between applications. For example:
+<ul style="list-style-type: disc;">
+<li>
+<p>Create an object in one application that causes the object to be created in other applications. For example, create a new account in Oracle Sales Cloud Adapter, which causes the creation of an Oracle RightNow organization and an Oracle Eloqua account.</p>
+</li>
+<li>
+<p>Enable multiple applications to subscribe to Integration Cloud Service and register for updates.</p>
+</li>
+<li>
+<p>Add or remove subscribers without impacting other subscribers or producers.</p>
+</li>
+</ul>
+</div>
+<p>Integration Cloud Service Messaging addresses these business requirements through the creation of two types of integrations: one for publishing to Integration Cloud Service and one for subscribing to Integration Cloud Service.</p>
+<div class="p">
+<ul style="list-style-type: disc;">
+<li>You create an integration that enables you to publish messages to Integration Cloud Service by selecting the <span class="bold">Publish to ICS</span> option in the Create Integration &mdash; Select a Pattern dialog. In this integration:
+<ul style="list-style-type: disc;">
+<li>
+<p>Integration Cloud Service is added as an invoke and is automatically configured.</p>
+</li>
+<li>
+<p>You configure a trigger (source) adapter (for example, Oracle RightNow, Oracle Sales Cloud, or another).</p>
+</li>
+<li>
+<p>The message to pass to Integration Cloud Service is opaque, so no request mapper support is provided.</p>
+</li>
+<li>
+<p>No trigger (source) enrichment mapper support is provided.</p>
+</li>
+<li>
+<p>Multiple publishers targeting a single message destination is not supported.</p>
+<div class="infobox-note" id="GUID-22CFB686-94D2-41B7-8167-867D86AF3192__GUID-55E8FB42-DC9C-46E2-B1BB-A393A59AFAD0">
+<p class="notep1">Note:</p>
+Modifying the publisher after creating the subscribers can potentially impact the subscribers. For example, if you change the published object, any existing subscriber mappings are impacted.</div>
+</li>
+</ul>
+</li>
+<li>You create an integration that enables you to subscribe to messages from Integration Cloud Service by selecting the <span class="bold">Subscribe to ICS</span> option in the Create Integration &mdash; Select a Pattern dialog. In this integration:
+<ul style="list-style-type: disc;">
+<li>
+<p>Integration Cloud Service is added as a trigger (source).</p>
+</li>
+<li>
+<p>You are prompted to select the published integration to which to subscribe.</p>
+<br />
+<div class="imageleft"><img class="imageleft" width="684" height="604" src="img/GUID-C6BA40D0-9085-45C0-8D00-2AC840FD489D-default.png" alt="Description of GUID-C6BA40D0-9085-45C0-8D00-2AC840FD489D-default.png follows" title="Description of GUID-C6BA40D0-9085-45C0-8D00-2AC840FD489D-default.png follows" /><br />
+<a href="img_text/GUID-C6BA40D0-9085-45C0-8D00-2AC840FD489D-default.htm">Description of the illustration GUID-C6BA40D0-9085-45C0-8D00-2AC840FD489D-default.png</a></div>
+<br /></li>
+<li>
+<p>You configure an invoke adapter to subscribe to and receive messages from Integration Cloud Service.</p>
+</li>
+<li>
+<p>Response mapper support is provided between the published object and the subscriber&rsquo;s application object.</p>
+</li>
+<li>
+<p>Trigger (source) enrichment mapper support is provided.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<p>For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a> and <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" title="You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Subscribe to Integration Cloud Service</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD"></a>
+<h2 id="ICSUG-GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD" class="sect2">About <span>Oracle Integration Cloud Service</span> Integrations</h2>
+<div>
+<p>Integrations are the main ingredient of <span>Oracle Integration Cloud Service</span>. An integration includes at the least a trigger (source) connection (for requests sent to <span>Oracle Integration Cloud Service</span>) and invoke (target) connection (for requests sent from <span>Oracle Integration Cloud Service</span> to the target) and the field mapping between those two connections.</p>
+<p>When you create your integrations, you build on the <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C" title="Connections define information about the instances of each configuration you are integrating. Oracle Integration Cloud Service includes a set of predefined adapters, which are the types of applications on which you can base your connections, such as Oracle Sales Cloud, Oracle Eloqua Cloud, Oracle RightNow Cloud, and others. A connection is based on an adapter. A connection includes the additional information required by the adapter to communicate with a specific instance of an application (this can be referred to as metadata or as connection details). For example, to create a connection to a specific RightNow Cloud application instance, you must select the Oracle RightNow adapter and then specify the WSDL URL, security policy, and security credentials to connect to it.">connections</a> you already created by defining how to process the data for the trigger (source) and invoke (target) connections. This can include defining the type of operations to perform on the data, the business objects and fields against which to perform those operations, required schemas, and so on. To make this easier, the most complex configuration tasks are handled by <span>Oracle Integration Cloud Service</span>. Once your trigger (source) and invoke (target) connections are configured, the mappers between the two are enabled so you can define how the information is transferred between the trigger (source) and invoke (target) data structures for both the request and response messages.</p>
+<div class="video-box">
+<div xmlns="" id="11241" class="video-container"></div>
+</div>
+</div>
+<div class="sect3"><a id="GUID-6C377ABA-6AFC-4E1F-94C4-7886E129F5A8"></a>
+<h3 id="ICSUG-GUID-6C377ABA-6AFC-4E1F-94C4-7886E129F5A8" class="sect3">Related Topics</h3>
+<div>
+<p>See the following sections for additional information.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For more information about triggers (sources) and invokes (targets), see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D" title="The trigger (source) connection sends requests to Integration Cloud Service. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the incoming data.">Adding a Source Connection</a> and <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2" title="Integration Cloud Service sends requests or information to the invoke (target) connection. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the data.">Adding a Target Connection</a>.</p>
+</li>
+<li>
+<p>For information about creating a connection, see <a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" title="The first step in creating an integration is to create the connections to the applications with which you want to share data.">Creating a Connection</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-69C04FC1-6FE1-4249-82B5-C3FD043A9369"></a>
+<h2 id="ICSUG-GUID-69C04FC1-6FE1-4249-82B5-C3FD043A9369" class="sect2">About Mappings</h2>
+<div>
+<p>One of the key tasks to any integration is defining how data is transferred, or <span class="italic">mapped</span>, between two applications.</p>
+<p>In most cases, the messages you want to transfer between the applications in an integration have different data structures. A visual mapper enables you to map fields between applications by dragging source fields onto target fields. When you open the mapper for a request or response message in an integration, the data structures are automatically populated with the information pulled from the source and target connections. You can expand and the load data structure levels on demand to display additional levels. There is no limit on the levels of display.<br />
+<img width="776" height="490" src="img/GUID-2A80EEFB-6539-4EEF-BA50-1DFD0A92ED3F-default.png" alt="Description of GUID-2A80EEFB-6539-4EEF-BA50-1DFD0A92ED3F-default.png follows" title="Description of GUID-2A80EEFB-6539-4EEF-BA50-1DFD0A92ED3F-default.png follows" /><br />
+<a href="img_text/GUID-2A80EEFB-6539-4EEF-BA50-1DFD0A92ED3F-default.htm">Description of the illustration GUID-2A80EEFB-6539-4EEF-BA50-1DFD0A92ED3F-default.png</a><br /></p>
+<p>The maps you create are called transformation maps, and use the eXtensible Stylesheet Language (XSL) to describe the data mappings, which lets you perform complex data manipulation and transformation. A standard set of XPath functions are provided for you to define how data is modified when moving from one application to another. A specialized function is also provided for you to reference lookups directly from the mapper.</p>
+<p>The mapper supports both qualified and unqualified schemas (that is, schemas without <code>elementFormDefault=&rdquo;qualified&rdquo;</code>). Elements and attributes with and without namespace prefixes are also supported.</p>
+<p>Substitution groups in schemas are supported. You can see all the substitutable elements in a base element in the mapper, and select the one to use.</p>
+<p>Elements and attributes for which mapping is required are identified by a blue asterisk (*) to the left of their names. To display only required fields, click the <span class="bold">Filter</span> icon, select <span class="bold">Required Fields</span>, and click <span class="bold">Apply</span>.<br />
+<img width="404" height="240" src="img/GUID-5DF65FA7-A1CA-4A8E-BA96-56D483511A30-default.png" alt="Description of GUID-5DF65FA7-A1CA-4A8E-BA96-56D483511A30-default.png follows" title="Description of GUID-5DF65FA7-A1CA-4A8E-BA96-56D483511A30-default.png follows" /><br />
+<a href="img_text/GUID-5DF65FA7-A1CA-4A8E-BA96-56D483511A30-default.htm">Description of the illustration GUID-5DF65FA7-A1CA-4A8E-BA96-56D483511A30-default.png</a><br /></p>
+<p>You can also place your cursor over elements and attributes to display specific schema details such as the data type, if mapping is required, and so on. When you place your cursor over some elements and attributes, additional custom annotations can also be displayed. These annotations are currently only available with the Oracle Sales Cloud Adapter. The <span>Oracle Sales Cloud Adapter</span> obtains this information from the applications and annotates it in the integration WSDL. This information is then read and made visible as annotations in the mapper (for example, title and description). This information can help you better understand what data is being mapped.<br />
+<img width="361" height="286" src="img/GUID-2075A05C-39AF-4EFE-AB95-A39CA889488B-default.png" alt="Description of GUID-2075A05C-39AF-4EFE-AB95-A39CA889488B-default.png follows" title="Description of GUID-2075A05C-39AF-4EFE-AB95-A39CA889488B-default.png follows" /><br />
+<a href="img_text/GUID-2075A05C-39AF-4EFE-AB95-A39CA889488B-default.htm">Description of the illustration GUID-2075A05C-39AF-4EFE-AB95-A39CA889488B-default.png</a><br />
+.</p>
+<div class="video-box">
+<div xmlns="" id="11242" class="video-container"></div>
+</div>
+</div>
+<div class="sect3"><a id="GUID-3C91344F-58C6-4020-B9A4-A2E208F3BD82"></a>
+<h3 id="ICSUG-GUID-3C91344F-58C6-4020-B9A4-A2E208F3BD82" class="sect3">Mapping Request Data Between Applications</h3>
+<div>
+<p>Once you create an integration and have the trigger (source) and invoke (target) in place, you can define how data is mapped between the two data structures.</p>
+<div class="section">The mapper appears with the source data structure on the left and the target data structure on the right:</div>
+<!-- class="section" -->
+<ol>
+<li><span>Map request data between the source data structure and target data structure.</span></li>
+<li><span>On the toolbar, click <span class="bold">Save</span>.</span></li>
+</ol>
+<div class="section">When returning from the mapper, the map icon changes color to indicate it is complete. Once you create a mapping in an integration, you can return to the mapping and make any necessary changes to how you mapped your data.</div>
+<!-- class="section" -->
+<div class="section">For procedural instructions about mapping request data between applications, see <a class="olink OCMAP-GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#OCMAP-GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-A1AF34EA-0259-4EB3-B2C7-62302D669696"></a>
+<h3 id="ICSUG-GUID-A1AF34EA-0259-4EB3-B2C7-62302D669696" class="sect3">Mapping Response Data Between Applications</h3>
+<div>
+<p>If your integration pattern contains a response, you can map the response.</p>
+<ol>
+<li class="stepexpand"><span>Map response data between the source data structure and target data structure.</span></li>
+<li class="stepexpand"><span>On the toolbar, click <span class="bold">Save</span>.</span>
+<div>When returning from the mapper, the map icon changes color to indicate it is complete.</div>
+<div>Once you create a mapping in an integration, you can return to the mapping and make any necessary changes to how you mapped your data.</div>
+</li>
+</ol>
+<div class="section">For procedural instructions about mapping response data between applications, see <a class="olink OCMAP-GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#OCMAP-GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-32A0B89F-2DB6-4F43-A988-5E075BB22543"></a>
+<h3 id="ICSUG-GUID-32A0B89F-2DB6-4F43-A988-5E075BB22543" class="sect3">About Mapping Multiple Sources to a Target</h3>
+<div>
+<p>When mapping data between source and target data structures, some integration scenarios enable you to map the fields of multiple source structures to the fields of a single target structure.</p>
+<div class="section">Integration scenarios that include multiple source structure capabilities include the following:
+<ul style="list-style-type: disc;">
+<li>
+<p>Integrations in which message enrichment points have been added (for example, a request message enrichment point, a response message enrichment point, or both points). For example, within the context of the following inbound trigger connection to outbound invoke connection, request mappings and request enrichment mappings are both defined.<br />
+<span class="imageleft"><img class="imageleft" width="1363" height="217" src="img/GUID-83B8FD4E-9247-46AD-A631-4E151DC0A5C6-default.png" alt="Description of GUID-83B8FD4E-9247-46AD-A631-4E151DC0A5C6-default.png follows" title="Description of GUID-83B8FD4E-9247-46AD-A631-4E151DC0A5C6-default.png follows" /><br />
+<a href="img_text/GUID-83B8FD4E-9247-46AD-A631-4E151DC0A5C6-default.htm">Description of the illustration GUID-83B8FD4E-9247-46AD-A631-4E151DC0A5C6-default.png</a></span><br /></p>
+<p>Clicking the <span class="bold">Request Mapping</span> icon shows that there are two sources available for mapping in the <span class="bold">Source</span> section. The <span class="bold">process</span> structure is the primary source. The <span class="bold">$RequestEnrichmentApplicationObject</span> structure is the secondary source. Secondary sources are treated as variables and identified by the <span class="bold">$</span> added to the front. The fields of both sources can be mapped to the fields of the target.<br />
+<span class="imageleft"><img class="imageleft" width="334" height="186" src="img/GUID-1EFA32E0-A724-4496-B258-597D0DD01B95-default.png" alt="Description of GUID-1EFA32E0-A724-4496-B258-597D0DD01B95-default.png follows" title="Description of GUID-1EFA32E0-A724-4496-B258-597D0DD01B95-default.png follows" /><br />
+<a href="img_text/GUID-1EFA32E0-A724-4496-B258-597D0DD01B95-default.htm">Description of the illustration GUID-1EFA32E0-A724-4496-B258-597D0DD01B95-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Integration responses with a response mapping between a trigger connection and an invoke connection. For example, within the context of the invoke connection&rsquo;s response back to the trigger connection, there are response mappings.<br />
+<span class="imageleft"><img class="imageleft" width="1366" height="370" src="img/GUID-10809D70-59AD-4DD9-915B-B4661D36F1AB-default.png" alt="Description of GUID-10809D70-59AD-4DD9-915B-B4661D36F1AB-default.png follows" title="Description of GUID-10809D70-59AD-4DD9-915B-B4661D36F1AB-default.png follows" /><br />
+<a href="img_text/GUID-10809D70-59AD-4DD9-915B-B4661D36F1AB-default.htm">Description of the illustration GUID-10809D70-59AD-4DD9-915B-B4661D36F1AB-default.png</a></span><br /></p>
+<p>Clicking the <span class="bold">Response Mapping</span> icon shows the two sources available for mapping in the <span class="bold">Source</span> section. The <span class="bold">GetResponse</span> structure is the primary source. The <span class="bold">$SourceApplicationObject</span> structure is the secondary source (note the <span class="bold">$</span>). The fields of both sources can be mapped to the fields of the target.<br />
+<span class="imageleft"><img class="imageleft" width="329" height="163" src="img/GUID-FEE8AEC2-B725-45FC-8CF6-B49D37DA28A7-default.png" alt="Description of GUID-FEE8AEC2-B725-45FC-8CF6-B49D37DA28A7-default.png follows" title="Description of GUID-FEE8AEC2-B725-45FC-8CF6-B49D37DA28A7-default.png follows" /><br />
+<a href="img_text/GUID-FEE8AEC2-B725-45FC-8CF6-B49D37DA28A7-default.htm">Description of the illustration GUID-FEE8AEC2-B725-45FC-8CF6-B49D37DA28A7-default.png</a></span><br /></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">For more information, see <a class="olink GUID-B513BA84-6FDA-4905-99D8-7F58C3549BA2" target="_blank" href="../OCMAP/GUID-B513BA84-6FDA-4905-99D8-7F58C3549BA2.htm#GUID-B513BA84-6FDA-4905-99D8-7F58C3549BA2">Mapping Multiple Sources to a Target</a> of <span class="italic">Using the Oracle Mapper</span>.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-90617019-7815-4AF7-AEFE-C64E6FCFE7EB"></a>
+<h2 id="ICSUG-GUID-90617019-7815-4AF7-AEFE-C64E6FCFE7EB" class="sect2">About Integration Cloud Service Enrichments</h2>
+<div>
+<p>You may have business use cases in which you need to enhance data by calling another service <span class="italic">before</span> sending data to an invoke service or <span class="italic">before</span> sending data back to a requestor. To address this business requirement, you can optionally add enrichment data sources to the request part, the response part, or both parts of an integration. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke services. Enrichments subscribe to a synchronous request and response message pattern.</p>
+<div class="p">Enrichments enable you to:
+<ul style="list-style-type: disc;">
+<li>
+<p>Add additional information. For example, your business use case may require you to:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Add a stock price</p>
+</li>
+<li>
+<p>Increase on-site quantities of a product</p>
+</li>
+<li>
+<p>Estimate local currency</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Convert data, such as mapping data between account numbers. The ability to map data between the request/response payload and the enrichment source application is a key feature of enrichments.</p>
+</li>
+</ul>
+</div>
+<p>For information about using enrichments, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E" title="When you create an integration, you also have the option of adding both request and response message enrichment points to the overall integration flow. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke.">Adding Request and Response Enrichments</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-222C0D1E-3239-4BAF-BF07-457E2190E213"></a>
+<h2 id="ICSUG-GUID-222C0D1E-3239-4BAF-BF07-457E2190E213" class="sect2">About Integration Cloud Service Lookups</h2>
+<div>
+<p>Use lookups in your integrations to create reusable tables that map the different terms used to describe the same item across your applications.</p>
+<p>A lookup associates values used by one application for a specific item to the values used by other applications for the same item. For example, one application uses a specific set of codes to describe countries, while another application uses a different set of codes to describe the same countries. Lookups can be used for items such as mapping gender codes, nationality codes, currency codes&mdash;any type of information that your applications must share with each other but that they represent differently. You may have several lookups for one integration, depending on the number of fields that require mapping. Lookups are also reusable, and can be used by multiple integrations. Lookups are based on a static definition, meaning you create and populate them during design time, and are not changed by runtime activities. These tables are used for looking up values only.</p>
+<div class="section">
+<p class="subhead2">Lookup Function</p>
+<div class="p">Integration Cloud Service provides a lookupValue function that you can call in the mapper to specify when to reference a lookup table. Use this function to look up values at runtime based on information in incoming messages. This way, your integration knows how to map data coming in from one application to data being sent to another application.
+<div class="figure" id="GUID-222C0D1E-3239-4BAF-BF07-457E2190E213__GUID-C983B493-9B9C-42D3-9A82-558FF87B13DE"><br />
+<div class="imageleft"><img class="imageleft" width="563" height="316" src="img/GUID-4587D2C4-B899-4459-A814-4240576D5C2B-default.png" alt="Description of GUID-4587D2C4-B899-4459-A814-4240576D5C2B-default.png follows" title="Description of GUID-4587D2C4-B899-4459-A814-4240576D5C2B-default.png follows" /><br />
+<a href="img_text/GUID-4587D2C4-B899-4459-A814-4240576D5C2B-default.htm">Description of the illustration GUID-4587D2C4-B899-4459-A814-4240576D5C2B-default.png</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+<p>For more information, see <a class="olink GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68" target="_blank" href="../OCMAP/GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68.htm#GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68">Referencing Lookups</a> of <span class="italic">Using the Oracle Mapper</span>.</p>
+<div class="video-box">
+<div xmlns="" id="11238" class="video-container"></div>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-39554E12-FB31-4A78-A92A-79C552B8AE1D"></a>
+<h2 id="ICSUG-GUID-39554E12-FB31-4A78-A92A-79C552B8AE1D" class="sect2">About Integration Cloud Service Packages</h2>
+<div>
+<p>You can group one or more integrations into a single structure called a package. Packages enable you to easily import and export a group of integrations to and from Integration Cloud Service. You can import packages from the Oracle Marketplace. These packages consist of a series of prebuilt integrations provided by Oracle. You can also import and export packages that consist of integrations that you or other users created. Packages are optional, meaning that integrations do not need to be part of packages. However, for a package to exist, it must include at least one integration. Packages cannot be locked to exclude other users of your Integration Cloud Service instance.</p>
+<p>Packages are displayed on the Packages page in Integration Cloud Service. From this page, you can view, delete, import, and export packages. You create packages when you create an integration in the Create Integration dialog. You can also update an integration&rsquo;s package in the Update Integration dialog.<img width="1395" height="271" src="img/GUID-B0AA6B00-4EB8-4E22-A654-5073BCEC3036-default.png" alt="Description of GUID-B0AA6B00-4EB8-4E22-A654-5073BCEC3036-default.png follows" title="Description of GUID-B0AA6B00-4EB8-4E22-A654-5073BCEC3036-default.png follows" /><br />
+<a href="img_text/GUID-B0AA6B00-4EB8-4E22-A654-5073BCEC3036-default.htm">Description of the illustration GUID-B0AA6B00-4EB8-4E22-A654-5073BCEC3036-default.png</a></p>
+<p>For more information, see <a href="GUID-9FD8FF86-6E03-4B33-BA48-1857652958EE.htm" title="You can group integrations into a package. When you import or export the package to or from Integration Cloud Service, all integrations in that package are imported or exported.">Managing Packages</a> and <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</p>
+<div class="video-box">
+<div xmlns="" id="11459" class="video-container"></div>
+</div>
+<div class="video-box">
+<div xmlns="" class="video-container"></div>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905"></a>
+<h2 id="ICSUG-GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905" class="sect2">About Agents and Integrations Between On-Premises Applications and Oracle Integration Cloud Service</h2>
+<div>
+<p>Oracle Integration Cloud Service provides an agent framework that enables you to create integrations and exchange messages between on-premises applications and Oracle Integration Cloud Service. Message payloads of up to 5 MB are supported through the use of compression, which may bring the payload down to 512 KB in size. The on-premises agent provides multithreading support, which allows for multiple executors to perform downstream message processing.</p>
+<p>This type of integration enables you to:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Access SOAP endpoints</p>
+</li>
+<li>
+<p>Access non-SOAP endpoints (such as Oracle E-Business Suite and Oracle Siebel)</p>
+</li>
+<li>
+<p>Send requests from a cloud application (for example, send a Create Service Order request from an Oracle RightNow Cloud application) to an on-premises E-Business Suite application</p>
+</li>
+</ul>
+<div class="p">The agent framework consists of the following components:
+<ul style="list-style-type: disc;">
+<li>
+<p>SAAS agent: This agent is installed and runs in Oracle Integration Cloud Service and supports communication with on-premises applications. There is one SAAS agent per Oracle Integration Cloud Service environment.</p>
+</li>
+<li>
+<p>On-premises agent: This agent is installed and runs in an on-premises environment on the same network as internal systems such as Oracle E-Business Suite, Oracle Siebel, Oracle Database, and others. You download the on-premises agent installer from the Agents page in Oracle Integration Cloud Service to your on-premises environment for installation. Multiple agents can run on a single host. There can be multiple host systems, each running one or more agents, in a cloud/on premises topology. The on-premises agent does not permit any explicit inbound connections. All connections are established from the on-premises environment to Oracle Integration Cloud Service. This functionality means that:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>No ports are opened on the on-premises system for communication.</p>
+</li>
+<li>
+<p>All communications is secured using SSL.</p>
+</li>
+<li>
+<p>The on-premises agent registers with <span id="GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905__INTCS">Oracle Integration Cloud Service</span> over SSL using the provided <span>Oracle Integration Cloud Service</span> credentials.</p>
+</li>
+<li>
+<p>The on-premises agent checks for work by making outbound requests through the firewall.</p>
+</li>
+<li>
+<p>The on-premises agent can use a proxy to access the internet (the same proxy as other internal applications and browsers use).</p>
+</li>
+<li>
+<p>The on-premises agent connections are configured by the agent retrieving the configuration details from <span>Oracle Integration Cloud Service</span>.</p>
+</li>
+<li>
+<p>The on-premises agent processes requests by pulling messages from <span>Oracle Integration Cloud Service</span> across SSL.</p>
+</li>
+<li>
+<p>The on-premises agent posts responses by pushing messages to <span>Oracle Integration Cloud Service</span> across SSL.</p>
+</li>
+<li>
+<p>All communication is initiated by the on-premises agent.</p>
+</li>
+<li>
+<p>No private SOAP-based web services are exposed.</p>
+</li>
+<li>
+<p>No existing J2EE container is required to deploy the on-premises agent.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Oracle Messaging Cloud Service: This service handles message exchange between Oracle Integration Cloud Service and on-premises environments.</p>
+</li>
+<li>
+<div class="p">Outbound adapters: The following adapters can be configured as invoke connections in an integration to support communication with endpoint applications:
+<ul style="list-style-type: disc;">
+<li>
+<p>File</p>
+</li>
+<li>
+<p>Microsoft SQL Server</p>
+</li>
+<li>
+<p>MySQL Database</p>
+</li>
+<li>
+<p>Oracle Database</p>
+</li>
+<li>
+<p>Oracle E-Business Suite</p>
+</li>
+<li>
+<p>REST</p>
+</li>
+<li>
+<p>SAP</p>
+</li>
+<li>
+<p>Siebel</p>
+</li>
+<li>
+<p>SOAP</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<div class="p">Inbound adapters: The following adapters can be configured as trigger connections in an integration:
+<ul style="list-style-type: disc;">
+<li>
+<p>File</p>
+</li>
+<li>
+<p>Microsoft SQL Server</p>
+</li>
+<li>
+<p>Oracle Database</p>
+</li>
+<li>
+<p>Oracle E-Business Suite</p>
+</li>
+<li>
+<p>SAP</p>
+</li>
+<li>
+<p>Siebel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="section">
+<p class="subhead2">Workflow for Using the On-Premises Agent</p>
+<p>You follow this workflow to use the on-premises agent.</p>
+<div class="tblformal" id="GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905__GUID-1836406F-7657-4320-AB46-013B042B3FA9">
+<table class="cellalignment926" summary="The following table describes the workflow for installing and using the on-premises agent in an integration. After completing these tasks, you can invoke the integration.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d2985e1366">Task</th>
+<th class="cellalignment927" id="d2985e1368">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d2985e1372" headers="d2985e1366">Create an agent group.</td>
+<td class="cellalignment927" headers="d2985e1372 d2985e1368"><a href="GUID-42E01556-191D-4362-BB25-0C6D6DB97EF6.htm" title="You must create an agent group in Oracle Integration Cloud Service before you can run the agent installer. When you install the on-premises agent in your environment, you associate the on-premises agent with the agent group identifier. Only one on-premises agent can be associated with an agent group. For a single Oracle Integration Cloud Service instance, you can create up to five agent groups.">Creating an Agent Group</a></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d2985e1381" headers="d2985e1366">Download and run the on-premises agent installer on your host. During installation setup, you associate the on-premises agent with the agent group.</td>
+<td class="cellalignment927" headers="d2985e1381 d2985e1368"><a href="GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9.htm#GUID-7AE16A3A-CC2E-4FC1-8EE3-60C7E1CFA2D9" title="You must download the agent installer from Oracle Integration Cloud Service and run the installer to install the on-premises agent in your local environment. During installation, you associate the agent with the agent group identifier you generated when creating an agent group in Oracle Integration Cloud Service.">Downloading and Running the On-Premises Agent Installer</a></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d2985e1390" headers="d2985e1366">Create an adapter connection in Oracle Integration Cloud Service and associate the connection with the agent group.</td>
+<td class="cellalignment927" headers="d2985e1390 d2985e1368"><a href="GUID-9531A95C-EC36-4126-8199-ACB1ECF9FA1D.htm" title="After you have installed the on-premises agent, you can create a connection that uses the agent group and its associated on-premises agent. Only agent groups whose monitoring status is green on the Agent Monitoring page and which have not yet been associated with an adapter can be selected.">Creating a Connection with an Agent Group</a></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d2985e1399" headers="d2985e1366">Design an integration that uses this connection.</td>
+<td class="cellalignment927" headers="d2985e1399 d2985e1368"><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a></td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d2985e1408" headers="d2985e1366">Activate the integration.</td>
+<td class="cellalignment927" headers="d2985e1408 d2985e1368"><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For more information, see <a href="GUID-22529652-FD48-420C-9903-EB1339D4EBFA.htm" title="You must create an agent group and install the on-premises agent before you can create an integration in which messages are exchanges between your on-premises applications and Oracle Integration Cloud Service.">Managing Agent Groups and the On-Premises Agent</a> and <a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" title="You can monitor the agent groups and their associated on-premises agents in Oracle Integration Cloud Service.">Monitoring Agents</a>.</p>
+<div class="video-box">
+<div id="12332" class="video-container"></div>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-B52A73B9-4520-48A2-8A4B-8680CCFC9680.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

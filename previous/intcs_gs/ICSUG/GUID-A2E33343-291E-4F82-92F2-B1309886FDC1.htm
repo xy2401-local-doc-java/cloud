@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Importing and Exporting Components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can import and export both integrations and lookups to share them between Integration Cloud Service environments." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-C0CB64FE-3C4D-4BDC-B949-1C20029EF0FD.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1"></a> <span id="PAGE" style="display:none;">39/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-A2E33343-291E-4F82-92F2-B1309886FDC1" class="sect1">Importing and Exporting Components</h1>
+<div>
+<p>You can import and export both integrations and lookups to share them between Integration Cloud Service environments.</p>
+<p>See the following topics:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1.htm#GUID-0678B0AB-9948-4563-8035-5E23221ACAD4" title="Once you create an integration, you can export that integration as a JAR file for use in other Integration Cloud Service environments or import the integration into Oracle JDeveloper to perform an advanced XSLT mapper task (for example, creating variables or using templates) that you cannot perform in the Integration Cloud Service mapper. After mapper editing in Oracle JDeveloper is complete, the mapper file can then be imported back into Integration Cloud Service. You can export an integration from either the Integration Designer or from the Integrations list.">Exporting an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1.htm#GUID-C5BFDA4A-977F-45DC-BDA9-95E5D51F7CF3" title="You can import integrations that were previously exported as a JAR file from Integration Cloud Service.">Importing an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1.htm#GUID-BF0A988D-E858-42C5-8FCB-59D77CF6CE79" title="Once you create a lookup, you can export that lookup for use in other Integration Cloud Service environments. You can export a lookup from either the Lookup Designer or from the Lookups list.">Exporting a Lookup</a></p>
+</li>
+<li>
+<p><a href="GUID-A2E33343-291E-4F82-92F2-B1309886FDC1.htm#GUID-E1B15594-7417-450B-B1CA-AC80325EB237" title="You can import lookups that were previously exported from Integration Cloud Service.">Importing a Lookup</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2"><a id="GUID-0678B0AB-9948-4563-8035-5E23221ACAD4"></a>
+<h2 id="ICSUG-GUID-0678B0AB-9948-4563-8035-5E23221ACAD4" class="sect2">Exporting an Integration</h2>
+<div>
+<p>Once you create an integration, you can export that integration as a JAR file for use in other Integration Cloud Service environments or import the integration into Oracle JDeveloper to perform an advanced XSLT mapper task (for example, creating variables or using templates) that you cannot perform in the Integration Cloud Service mapper. After mapper editing in Oracle JDeveloper is complete, the mapper file can then be imported back into Integration Cloud Service. You can export an integration from either the Integration Designer or from the Integrations list.</p>
+<div class="section">
+<p>To export an integration:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the toolbar, click <span class="bold">Designer</span>.</span></li>
+<li><span>On the Designer Portal, click <span class="bold">Integrations</span>.</span></li>
+<li><span>Do one of the following:</span>
+<ul>
+<li>Select the integration in the Integration Designer, click <span class="bold">Actions</span>, and then select <span class="bold">Export</span>.</li>
+<li>Locate the integration to export in the Integrations list on the left side of the page. Click the vertical lines icon to the right in the integration&rsquo;s row, and then select <span class="bold">Export</span>.<br />
+<div class="imageleft"><img class="imageleft" width="117" height="183" src="img/GUID-63865793-80C0-4DF1-888A-EBC4F8E307AB-default.png" alt="Description of GUID-63865793-80C0-4DF1-888A-EBC4F8E307AB-default.png follows" title="Description of GUID-63865793-80C0-4DF1-888A-EBC4F8E307AB-default.png follows" /><br />
+<a href="img_text/GUID-63865793-80C0-4DF1-888A-EBC4F8E307AB-default.htm">Description of the illustration GUID-63865793-80C0-4DF1-888A-EBC4F8E307AB-default.png</a></div>
+<br /></li>
+</ul>
+</li>
+<li><span>In the dialog that appears, select <span class="bold">Save File</span>, and then click <span class="bold">OK</span>.</span></li>
+<li><span>Save the file to the location you want.</span></li>
+</ol>
+<div class="section">The file is saved with a name that consists of the identifier plus the version number, and an IAR extension.</div>
+<!-- class="section" -->
+<div class="section">For information about importing an exported integration into the XSL Map Editor in Oracle Service Bus, see <a href="GUID-A8921EBF-28D6-4E70-BBEB-577ECE8019B2.htm" title="You can import an Integration Cloud Service archive file into an Oracle Service Bus project in Oracle JDeveloper. The archive file can include a map file that is largely complete in content or a map file that is empty of content. This action enables you to perform advanced XSLT tasks (create variables, use templates, and so on) in Oracle JDeveloper that you cannot perform in the Integration Cloud Service mapper. After you complete these advanced tasks in Oracle JDeveloper, you can save and re-import the map file into Integration Cloud Service.">Importing a Map File into Oracle JDeveloper</a>.
+<div class="infobox-note" id="GUID-0678B0AB-9948-4563-8035-5E23221ACAD4__GUID-30BC6FE4-055F-45A4-A69D-B73A06454A41">
+<p class="notep1">Note:</p>
+Lookups referenced using the <code>lookupValue</code> function in the Expression Builder are included in the exported integration JAR file. When you import the integration, the referenced lookups are also imported and are visible in the Expression Builder. For information about referencing lookups, see <a class="olink OCMAP-GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68" target="_blank" href="../OCMAP/GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68.htm#OCMAP-GUID-285FCAEE-9A23-4711-824F-B104D2EC6A68">Referencing Lookups</a>.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-C5BFDA4A-977F-45DC-BDA9-95E5D51F7CF3"></a>
+<h2 id="ICSUG-GUID-C5BFDA4A-977F-45DC-BDA9-95E5D51F7CF3" class="sect2">Importing an Integration</h2>
+<div>
+<p>You can import integrations that were previously exported as a JAR file from Integration Cloud Service.</p>
+<div class="section">To import an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>In the banner, click <span class="bold">Import</span>.</span></li>
+<li class="stepexpand"><span>In the Import Integration File dialog, click <span class="bold">Browse</span> to navigate to and select the file to import.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Import</span>.</span>
+<div>If an integration already exists with the same identifier and version, you must confirm whether to overwrite the existing integration.</div>
+</li>
+</ol>
+<div class="section">The imported integration appears in the Integrations list and you can customize or activate it.
+<div class="infobox-note" id="GUID-C5BFDA4A-977F-45DC-BDA9-95E5D51F7CF3__GUID-E02FA42F-C572-49D7-8733-9C1EAF5BA6D7">
+<p class="notep1">Note:</p>
+Even though the <span class="bold">Activate</span> button is enabled after you import an integration, you must first configure your connection endpoints. If you do not, you receive an error when trying to activate the integration. For information about editing connections, see <a href="GUID-10DBB72D-F6F9-4851-B2BA-9E593CF65F2E.htm#GUID-14C32FCB-0E2D-4543-B489-34AE136397ED" title="You can edit connection settings after creating a new connection.">Editing a Connection</a> and <a href="GUID-C347192C-EC09-43CB-8988-F87B35CEF268.htm" title="When you add an adapter to a trigger (source) or an invoke (target) in an integration, a wizard prompts you to configure how the data is processed for that connection, including the type of operation to perform, the business objects or fields to use, and so on. The properties you can configure vary by each type of adapter. Click any of the topics below to read more about the properties you can configure for each type of adapter.">Adapter Configuration Reference</a>.</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-BF0A988D-E858-42C5-8FCB-59D77CF6CE79"></a>
+<h2 id="ICSUG-GUID-BF0A988D-E858-42C5-8FCB-59D77CF6CE79" class="sect2">Exporting a Lookup</h2>
+<div>
+<p>Once you create a lookup, you can export that lookup for use in other Integration Cloud Service environments. You can export a lookup from either the Lookup Designer or from the Lookups list.</p>
+<div class="section">To export a lookup:</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the toolbar, click <span class="bold">Designer</span>.</span></li>
+<li><span>On the Designer Portal, click <span class="bold">Lookups</span>.</span></li>
+<li><span>Do one of the following:</span>
+<ul>
+<li>Locate the lookup to export in the Lookups list on the left side of the page. Click the vertical lines icon to the right in the lookup&rsquo;s row, and select <span class="bold">Edit</span>. In the upper right corner, click <span class="bold">Actions</span>, and select <span class="bold">Export</span>.</li>
+<li>Locate the lookup to export in the Lookups list on the left side of the page. Click the vertical lines icon to the right in the lookup&rsquo;s row, and select <span class="bold">Export to CVS</span>.</li>
+</ul>
+</li>
+<li><span>In the dialog that appears, select <span class="bold">Save File</span>, and then click <span class="bold">OK</span>.</span></li>
+<li><span>Save the file to the location you want.</span></li>
+</ol>
+<div class="section">The file is saved as a CSV file with the same name as the lookup.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-E1B15594-7417-450B-B1CA-AC80325EB237"></a>
+<h2 id="ICSUG-GUID-E1B15594-7417-450B-B1CA-AC80325EB237" class="sect2">Importing a Lookup</h2>
+<div>
+<p>You can import lookups that were previously exported from Integration Cloud Service.</p>
+<div class="p">The file to import must have the following for the first row, where <span class="italic">table_name</span> is the name of the table as you want it to appear in Integration Cloud Service. This name cannot contain spaces.
+<pre dir="ltr">
+DVM,table_name
+</pre>
+<p>The second row contains the names of the adapters that are being mapped. Use the following case-sensitive IDs for each adapter:</p>
+<div class="tblformal" id="GUID-E1B15594-7417-450B-B1CA-AC80325EB237__GUID-8AA6BE28-431A-4E4D-BACD-96E1EEFC1263">
+<table class="cellalignment926" summary="A list of adapter names with the identifier to use in the import file.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d26317e335">Adapter Name</th>
+<th class="cellalignment929" id="d26317e337">Identifier to Use in the Import File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d26317e341" headers="d26317e335">Oracle Eloqua Cloud</td>
+<td class="cellalignment929" headers="d26317e341 d26317e337">eloqua</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e346" headers="d26317e335">Oracle Sales Cloud</td>
+<td class="cellalignment929" headers="d26317e346 d26317e337">osc</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e351" headers="d26317e335">Oracle Messaging Cloud Service</td>
+<td class="cellalignment929" headers="d26317e351 d26317e337">oms</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e356" headers="d26317e335">Oracle RightNow Cloud</td>
+<td class="cellalignment929" headers="d26317e356 d26317e337">rightnow</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e361" headers="d26317e335">Oracle HCM Cloud</td>
+<td class="cellalignment929" headers="d26317e361 d26317e337">hcm</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e366" headers="d26317e335">Oracle ERP Cloud</td>
+<td class="cellalignment929" headers="d26317e366 d26317e337">erp</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d26317e371" headers="d26317e335">Salesforce Cloud</td>
+<td class="cellalignment929" headers="d26317e371 d26317e337">salesforce</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" -->
+<div class="section">To import a lookup:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Locate the CSV file containing the lookup table you want to import.</span></li>
+<li class="stepexpand"><span>On the toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Lookups</span>.</span></li>
+<li class="stepexpand"><span>In the banner, click <span class="bold">Import</span>.</span></li>
+<li class="stepexpand"><span>In the Import Lookup File dialog, click <span class="bold">Browse</span> to navigate to and select the CSV file to import.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Import</span>.</span>
+<div>If a lookup already exists with the same identifier and version, you must confirm whether to overwrite the existing lookup.</div>
+</li>
+</ol>
+<div class="section">The imported lookup appears in the Lookups list on the left. You can customize or activate it, if it is ready.</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-C0CB64FE-3C4D-4BDC-B949-1C20029EF0FD.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

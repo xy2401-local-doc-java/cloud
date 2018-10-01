@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Error Management</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can manage integration errors from the Errors pages in Integration Cloud Service. The Errors pages display information about individual integration instances and group the errors by integrations and connections over a specified time period." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B52A73B9-4520-48A2-8A4B-8680CCFC9680.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-DF628368-1AE4-42BB-B5C8-39A1D3808D6D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4F539C26-1125-4880-A1FD-E31DC4CA54EF"></a> <span id="PAGE" style="display:none;">11/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-4F539C26-1125-4880-A1FD-E31DC4CA54EF" class="sect1">About Error Management</h1>
+<div>
+<p>You can manage integration errors from the Errors pages in Integration Cloud Service. The Errors pages display information about individual integration instances and group the errors by integrations and connections over a specified time period.</p>
+<div class="p">You can perform the following tasks from the Errors page and its subpages:
+<ul style="list-style-type: disc;">
+<li>
+<p>Search for and display errors by integration name or the total error count over a specific time period</p>
+</li>
+<li>
+<p>Resubmit errors</p>
+</li>
+<li>
+<p>Discard (remove) errors by integration name</p>
+</li>
+<li>
+<p>Display errors by connection name over a specific time period</p>
+</li>
+<li>
+<p>Discard errors by connection name</p>
+</li>
+<li>
+<p>Display errors by integration instance identifier, error location, or time of occurrence over a specific time period</p>
+</li>
+<li>
+<p>View the instance in which errors occurred</p>
+</li>
+<li>
+<p>View the error message</p>
+</li>
+<li>
+<p>View and discard errors by instance ID</p>
+</li>
+<li>
+<p>View the audit trail and message payload of a failed integration instance</p>
+</li>
+<li>
+<p>View the business identifiers of a failed integration instance</p>
+</li>
+</ul>
+</div>
+<div class="section">
+<p class="subhead1">Integration Failure Scenarios</p>
+<div class="p">Integrations can fail for the following reasons:
+<ul style="list-style-type: disc;">
+<li>
+<p>A call to a target system fails because the target system is down (for a short or long time period).</p>
+</li>
+<li>
+<p>A source-to-target transformation or target-to-source transformation fails because of faulty XSL coding, an invalid lookup call, or other system issue.</p>
+</li>
+<li>
+<p>A target system call results in a business failure for the following possible reasons:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Incorrect target application configuration</p>
+</li>
+<li>
+<p>Invalid lookup data</p>
+</li>
+<li>
+<p>Invalid business data</p>
+</li>
+</ul>
+</li>
+<li>
+<p>A call to a trigger system (with a response message) fails because the trigger system is down.</p>
+</li>
+<li>
+<p>An enrichment step fails.</p>
+</li>
+<li>
+<p>A publish/subscribe scenario fails.</p>
+</li>
+<li>
+<p>Any other Integration Cloud Service system failure.</p>
+</li>
+</ul>
+</div>
+<p>For more information about error management, see <a href="GUID-260E36D6-924F-451B-BCB6-5FF2B78F5608.htm" title="You can manage errors from the Errors pages in Integration Cloud Service at the integration level, connection level, or specific integration instance level.">Managing Errors</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-B52A73B9-4520-48A2-8A4B-8680CCFC9680.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-DF628368-1AE4-42BB-B5C8-39A1D3808D6D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

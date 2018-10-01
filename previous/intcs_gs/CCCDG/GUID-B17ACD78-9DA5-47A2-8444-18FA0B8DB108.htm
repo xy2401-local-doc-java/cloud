@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Message Transformations for Outbound Adapters</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="An outbound adapter must often transform messages to and from the target application." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BCC571E5-7D0C-4AFD-9EBF-C7D45ABFD55A.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-76DA1991-4004-4F26-B52A-D25BCD04B594.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B17ACD78-9DA5-47A2-8444-18FA0B8DB108"></a> <span id="PAGE" style="display:none;">32/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-B17ACD78-9DA5-47A2-8444-18FA0B8DB108" class="sect1">Message Transformations for Outbound Adapters</h1>
+<div>
+<p>An outbound adapter must often transform messages to and from the target application.</p>
+<p>Refer to the <code>SampleCloudAdapterMessageHandler</code> class.</p>
+<div class="tblformal" id="GUID-B17ACD78-9DA5-47A2-8444-18FA0B8DB108__GUID-1E0A16C3-2FF4-4E4B-8577-F867B10238BF">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapterMessageHandler class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d11163e37">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d11163e37">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d11163e50">
+<p><span class="bold">Package:</span><code>oracle.tip.tools.ide.adapters.samplecloudadapter.runtime</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e59">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterMessageHandler</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e59">
+<p>This class handles incoming requests and adjusts the payload according to the target system.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e73">
+<p><span class="bold">Method:</span></p>
+<p><code>handleRequestMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e73">
+<p>Handles the incoming request and modifies the payload according to the target system.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e88">
+<p><code>handleResponseMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e88">
+<p>Handles the response from the target system and delivers it to ICS or JDeveloper.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e100">
+<p><code>handleErrorMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e100">
+<p>Handles error messages.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="376" height="379" src="img/GUID-D5504316-162B-462C-82C5-069406E3A4D3-default.png" alt="media/image41.png" title="media/image41.png" /><br />
+<a href="img_text/GUID-003A3EF3-592F-4956-B8D2-491EDE63BE4A.htm">Description of the illustration GUID-D5504316-162B-462C-82C5-069406E3A4D3-default.png</a></p>
+<p>Handlers in the sample code handle only the <code>createAccount()</code> request payload. (One of the operations in the Sample Account service is <code>createAccount()</code>.)</p>
+<pre dir="ltr">
+private static String CREATE_OPERATION = "createAccount";
+private Map&lt;String,OperationHandler&gt; operationHandlers = new HashMap&lt;String, OperationHandler&gt;();
+    
+public SampleCloudAdapterMessageHandler() {
+   operationHandlers.put(CREATE_OPERATION, new CreateOperationHandler());
+}
+</pre>
+<p>You can implement the <code>handleRequestMessage</code> method to adjust the payload according to the target system schema.</p>
+<pre dir="ltr">
+// Gets the approapriate message handler based on operation selection in UI
+OperationHandler handler = operationHandlers.get(targetOperationName.getLocalPart());
+                
+// Creating SOAPHeader according to target endpoint
+MessageHeader header = createWSSHeader(jcaEndpointInteractionProperties,authManager);
+message.addMessageHeader(header);
+</pre>
+<p>You can implement <code>handleResponseMessage</code> in a format understandable to ICS or JDeveloper.</p>
+<pre dir="ltr">
+// Gets the appropriate response message handler based on selection
+OperationHandler handler = operationHandlers.get(context.getTargetOperationName());
+</pre>
+<p>Here are details of the <code>AbstractOperationHandler</code> abstract class:</p>
+<div class="tblformal" id="GUID-B17ACD78-9DA5-47A2-8444-18FA0B8DB108__GUID-EEDCC0A1-62D7-4C0C-B9A8-0C68598CA393">
+<table class="cellalignment290" summary="This table describes the AbstractOperationHandler class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d11163e158">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d11163e158">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d11163e171">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.runtime</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e181">
+<p><span class="bold">Class:</span></p>
+<p><code>AbstractOperationHandler</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e181">
+<p>This abstract class normalizes the payload.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e194">
+<p><span class="bold">Method:</span></p>
+<p><code>handleOperationRequest()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e194">
+<p>Handles the incoming request to normalize the root element. ICS or JDeveloper generates the operation that holds the data object of the target system service.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e209">
+<p><code>handleOperationResponse()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e209">
+<p>Handles the response.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d11163e221">
+<p><code>handleOperationError()</code></p>
+</td>
+<td class="cellalignment291" headers="d11163e221">
+<p>Handles error messages.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Here is a basic implementation of the <code>handleOperationRequest</code> method.</p>
+<pre dir="ltr">
+// Normalize root element is to change integration WSDL specification to concrete WSDL spec.
+Element sourceRootElement = normalizeRootElement(context, requestDocument, version);
+</pre>
+<p>The <code>CreateOperationHandler</code> class extends <code>AbstractOperationHandler</code> to handle messages in case of any further changes.</p>
+<pre dir="ltr">
+public class CreateOperationHandler extends AbstractOperationHandler {
+}
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-BCC571E5-7D0C-4AFD-9EBF-C7D45ABFD55A.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-76DA1991-4004-4F26-B52A-D25BCD04B594.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

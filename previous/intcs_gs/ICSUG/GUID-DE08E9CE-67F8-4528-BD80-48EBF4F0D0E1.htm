@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Resubmitting Failed Messages</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can manually resubmit failed messages. Resubmitting a failed message starts the integration from the beginning." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-3FAA8514-6763-4AC0-959F-9A5D9A31E7D8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-134AED2A-44DA-4033-8FF2-B89D30E57D7D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-DE08E9CE-67F8-4528-BD80-48EBF4F0D0E1"></a> <span id="PAGE" style="display:none;">65/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-DE08E9CE-67F8-4528-BD80-48EBF4F0D0E1" class="sect1">Resubmitting Failed Messages</h1>
+<div>
+<p>You can manually resubmit failed messages. Resubmitting a failed message starts the integration from the beginning.</p>
+<div class="p">
+<div class="p">All faulted instances in asynchronous flows in Integration Cloud Service are recoverable and can be resubmitted. Synchronous flows cannot be resubmitted. You can resubmit errors in the following ways:
+<ul style="list-style-type: disc;">
+<li>
+<p>Single failed message resubmissions</p>
+</li>
+<li>
+<p>Bulk failed message resubmissions</p>
+</li>
+</ul>
+</div>
+<p>Error instances that are resubmitted and successfully resolved are removed from the error list. If an instance is resubmitted and is in progress, a state of <code>In Progress</code> is displayed in the list. During this state, additional resubmittals of this error instance are not permitted.</p>
+<div class="infobox-note" id="GUID-DE08E9CE-67F8-4528-BD80-48EBF4F0D0E1__GUID-00371481-4CAA-4027-BFE0-64051F95D3F9">
+<p class="notep1">Note:</p>
+Do <span class="italic">not</span> discard a message that you want to resubmit. A discarded message cannot be resubmitted.</div>
+<p>To resubmit failed messages:</p>
+<ol>
+<li>
+<p>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</p>
+</li>
+<li>
+<p>In the navigation pane, click <span class="bold">Errors</span>.</p>
+</li>
+<li>
+<p>From the tabs on the left, select the level of message resubmission to perform, then see below for instructions.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Errors By Integration</span>: For resubmitting all failed messages in an integration.</p>
+</li>
+<li>
+<p><span class="bold">Errors By Connection</span>: For resubmitting failed messages in a connection.</p>
+</li>
+<li>
+<p><span class="bold">Error Message Details</span>: For resubmitting failed messages in an integration instance.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Resubmitting All Failed Messages in an Integration</p>
+<p>You can resubmit all failed messages that occurred in an integration.</p>
+<p>To resubmit failed messages in an integration:</p>
+<ol>
+<li>
+<p>In the navigation pane, click <span class="bold">Errors By Integration</span>.</p>
+</li>
+<li>
+<p>Find the integration in which to resubmit failed messages.</p>
+<p>At the far right, click the <span class="bold">Resubmit</span> icon (second from the end) to resubmit the messages. The <span class="bold">Resubmit</span> icon is not visible for synchronous integrations.<br />
+<span class="imagecenter"><img class="imagecenter" width="754" height="212" src="img/GUID-76B6C84A-3CA4-4CCC-85A1-2D5A0FAC26A5-default.png" alt="Description of GUID-76B6C84A-3CA4-4CCC-85A1-2D5A0FAC26A5-default.png follows" title="Description of GUID-76B6C84A-3CA4-4CCC-85A1-2D5A0FAC26A5-default.png follows" /><br />
+<a href="img_text/GUID-76B6C84A-3CA4-4CCC-85A1-2D5A0FAC26A5-default.htm">Description of the illustration GUID-76B6C84A-3CA4-4CCC-85A1-2D5A0FAC26A5-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> when prompted to confirm.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Resubmitting Failed Messages in a Connection</p>
+<p>You can resubmit all failed messages that occurred in a connection.</p>
+<p>To resubmit failed messages in a connection:</p>
+<ol>
+<li>
+<p>In the navigation pane, click <span class="bold">Errors By Connection</span>.</p>
+</li>
+<li>
+<p>Find the integration in which to resubmit failed messages.</p>
+</li>
+<li>
+<p>At the far right, click the <span class="bold">Resubmit</span> icon (second from the end) to resubmit the messages.<br />
+<img width="755" height="314" src="img/GUID-1A37CBF4-B6C9-4321-9F2D-2CBC066759A4-default.png" alt="Description of GUID-1A37CBF4-B6C9-4321-9F2D-2CBC066759A4-default.png follows" title="Description of GUID-1A37CBF4-B6C9-4321-9F2D-2CBC066759A4-default.png follows" /><br />
+<a href="img_text/GUID-1A37CBF4-B6C9-4321-9F2D-2CBC066759A4-default.htm">Description of the illustration GUID-1A37CBF4-B6C9-4321-9F2D-2CBC066759A4-default.png</a><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> when prompted to confirm.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Resubmitting Failed Messages in an Integration Instance</p>
+<p>You can resubmit all failed messages that occurred in a specific integration instance.</p>
+<p>To resubmit failed messages in an integration instance:</p>
+<ol>
+<li>
+<p>In the navigation pane, click <span class="bold">Errors</span>, then click <span class="bold">Error Message Details</span>.</p>
+<p>The Error Message Details page is displayed. Any integration errors that are displayed by default are those that occurred within the selected time period.</p>
+</li>
+<li>
+<p>Select the appropriate method for resubmitting errors.</p>
+<ol>
+<li>
+<p>For single instance resubmissions, optionally click the checkbox, then click the <span class="bold">Resubmit</span> icon (middle icon at the far right) to resubmit the message.</p>
+<br />
+<img width="893" height="248" src="img/GUID-57DBCBB3-A780-4EB9-8D9B-745B9FBD1DC0-default.png" alt="Description of GUID-57DBCBB3-A780-4EB9-8D9B-745B9FBD1DC0-default.png follows" title="Description of GUID-57DBCBB3-A780-4EB9-8D9B-745B9FBD1DC0-default.png follows" /><br />
+<a href="img_text/GUID-57DBCBB3-A780-4EB9-8D9B-745B9FBD1DC0-default.htm">Description of the illustration GUID-57DBCBB3-A780-4EB9-8D9B-745B9FBD1DC0-default.png</a><br /></li>
+<li>
+<p>For bulk instance resubmissions, click the appropriate checkboxes, then click <span class="bold">Resubmit</span> above the integration instances to resubmit the messages.</p>
+<br />
+<div class="imageleft"><img class="imageleft" width="482" height="482" src="img/GUID-576CAF25-A02C-4329-81B7-1C4333F746A3-default.png" alt="Description of GUID-576CAF25-A02C-4329-81B7-1C4333F746A3-default.png follows" title="Description of GUID-576CAF25-A02C-4329-81B7-1C4333F746A3-default.png follows" /><br />
+<a href="img_text/GUID-576CAF25-A02C-4329-81B7-1C4333F746A3-default.htm">Description of the illustration GUID-576CAF25-A02C-4329-81B7-1C4333F746A3-default.png</a></div>
+<br /></li>
+<li>
+<p>Click <span class="bold">Yes</span> when prompted to confirm.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-3FAA8514-6763-4AC0-959F-9A5D9A31E7D8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-134AED2A-44DA-4033-8FF2-B89D30E57D7D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

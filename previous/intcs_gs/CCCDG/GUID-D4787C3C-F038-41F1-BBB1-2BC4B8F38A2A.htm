@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Unified UI Framework Classes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="This section lists the classes, interfaces, and methods in the Unified UI (or Adapter Wizard) Framework." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-CE5D682D-C249-4101-AD06-C27557653304.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-C99E1181-618C-4729-9FEE-AC3052D0B601.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D4787C3C-F038-41F1-BBB1-2BC4B8F38A2A"></a> <span id="PAGE" style="display:none;">70/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-D4787C3C-F038-41F1-BBB1-2BC4B8F38A2A" class="sect1">Unified UI Framework Classes</h1>
+<div>
+<p>This section lists the classes, interfaces, and methods in the Unified UI (or Adapter Wizard) Framework.</p>
+<p>Throughout this section, <span class="bold">AUUIF</span> is an acronym for Adapter Unified UI Framework.</p>
+<div class="section">
+<p class="subhead1">CloudAdapterUIProvider Abstract Class</p>
+<p>This abstract class must be extended by adapters, and all methods must be implemented. This class creates the <code>UIBinding</code> corresponding to the adapter. Also, the consumer inputs and the locale are passed to <code>UIbinding</code>. <code>UIBidning</code> uses this info to generate pages and fields in the wizard.</p>
+<p><span class="bold">Methods</span></p>
+<p><span class="bold">ICloudAdapterUIBinding getCloudAdapterUIBinding()</span></p>
+<p>This method creates a new instance of the adapter-specific UIBinding (subclass of ICloudAdapterUIBinding) and returns it. The client&rsquo;s locale and the consumer&rsquo;s input are passed to the UIBinding object from here.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+uiBinding = new SampleCloudUIBinding(cloudAdapterFilter, locale);
+</pre>
+<p><span class="bold">String getLocalizedAdapterType()</span> &mdash; Localized String: <span class="bold">YES</span></p>
+<p>This method returns the adapter type, such as RightNow, SalesForce, and so on.</p>
+<p>This string is part of the wizard header and must be localized.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">ICloudAdapterUIBinding Interface</p>
+<p>You can either implement this or extend <code>AbstractCloudAdapterUIBinding</code>.</p>
+<p>The implementation class of <code>ICloudAdapterUIBinding</code>:</p>
+<ul style="list-style-type: disc;">
+<li>Creates the <code>DefaultAdapterPluginContext</code>, an adapter-specific context for creating artifacts. This context object is also passed to all pages so values can be passed from one page to another.</li>
+<li>Creates the actual <code>adapterProvider</code> (subclass of <code>AbstractCloudApplicationAdapter</code>), and sets this in the context created in the previous step.</li>
+<li>Allows you to set any other object used in pages in this context. For example, the locale and <code>adapterFilter</code> are passed to this class.</li>
+</ul>
+<p>This interface has APIs to get the list of pages, get the UI fields for each page, perform business logic validation, delegate page actions to respective pages, and generate artifacts. This interface handles interaction between the wizard and the actual adapter pages. This class should specify the following constructor.</p>
+<p><span class="bold">Constructor:</span></p>
+<p><span class="bold">SampleCloudUIBinding&lt;CloudAdapterFilter cloudAdapterFilter, Locale locale&gt;</span></p>
+<p>Initializes the adapter and the adapter-specific context.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+this.context = new 
+DefaultAdapterPluginContext(SampleCloudAdapterScaEndPoint.JCA_ADAPTER_SUBTYPE_ID, referenceName, null);
+AbstractCloudApplicationAdapter cloudApplicationAdapter = new SampleCloudAdapter(this.context);
+
+this.context.setContextObject(CloudAdapterConstants.APPLICATION_ADAPTER, cloudApplicationAdapter);
+this.context.setContextObject(CloudAdapterConstants.UI_CLOUD_ADAPTER_FILTER, cloudAdapterFilter);
+</pre>
+<p><span class="bold">Methods:</span></p>
+<p><span class="bold">LinkedHashMap&lt;String, ICloudAdapterPage&gt; getEditPages()</span></p>
+<p>This method returns the list of pages in the wizard. The key in the map is <code>pageId</code> and the value is an instance of <code>ICloudAdapterPage</code>.</p>
+<p>The sequence of pages in the map determines the sequence in the wizard.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+LinkedHashMap&lt;String, ICloudAdapterPage&gt; editPages = new LinkedHashMap&lt;String, ICloudAdapterPage&gt;();
+
+editPages.put(CloudAdapterConstants.WELCOME_PAGE_ID, new SampleCloudWelcomePage(context));
+
+editPages.put(CloudAdapterConstants.OPERATIONS_PAGE_ID, new SampleCloudOperationsPage(context));
+</pre>
+<p><span class="bold">CloudAdapterPageState getUpdatedEditPages()</span></p>
+<p>This method is called whenever events are generated in the wizard and the components generating these events have <code>eventListener</code> set on them. Examples are <code>ButtonClick</code>, <code>CheckBox</code> value change, <code>SelectBox</code> value change, and so on. This method forwards the request to the corresponding page, which handles the event. See <code>ICloudAdapterPage</code> for more details.</p>
+<p><span class="bold">LinkedHashMap&lt;String, UIError[]&gt; validatePage()</span></p>
+<p>This method is called when navigating to next page. The request is forwarded to the corresponding page. See <code>ICloudAdapterPage</code> for more details.</p>
+<p><span class="bold">CloudAdapterPageState getNextPage()</span></p>
+<p>This method is called if <code>validatePage()</code> doesn&rsquo;t return errors. The request is forwarded to corresponding page&rsquo;s <code>updateBackendModel()</code>. See <code>ICloudAdapterPage</code> for more details.</p>
+<p><span class="bold">CloudAdapterPageState getPreviousPage()</span> &mdash; This is not used currently.</p>
+<p><span class="bold">HashMap&lt;String, byte[]&gt; generateMetadataArtifacts()</span></p>
+<p>This method is called when the Done button in the wizard is clicked. The logic to generate all the artifacts, such as JCA, WSDL, and WSDL Operation, must be implemented. These artifacts are set in a map and returned to AUUIF.</p>
+<p><span class="bold">String getWizardTitle()</span> &mdash; Localized String: <span class="bold">YES</span></p>
+<p>Returns the wizard title.</p>
+<p><span class="bold">getAdapterConfiguration()</span> &mdash; This method is not used currently.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">AbstractCloudAdapterUIBinding Class</p>
+<p>This class implements <code>ICloudAdapterUIBinding</code> and provides the default implementation for methods common to most adapters. You can decide based on your requirements whether this class should be extended or <code>ICloudAdapterUIBinding</code> should be implemented.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">ICloudAdapterPage Interface</p>
+<p>This interface must be implemented, but in most cases it is already implemented indirectly. The standard page classes, such as <code>CloudAdapterConnectionPage</code>, extend <code>AbstractCloudAdapterPage</code>, which implements <code>ICloudAdapterPage</code>. If you don&rsquo;t use the standard page classes or extend <code>AbstractCloudAdapterPage</code>, you must implement <code>ICloudAdapterPage</code>.</p>
+<p>This interface builds a new page, specifying the fields required on the page, the order of the fields, business logic validation, and so on.</p>
+<p>The following figure shows how the wizard gets the values to display from the adapter.</p>
+<p><img width="675" height="422" src="img/GUID-CD7D4F8A-1A63-4D5E-9AD1-A3C8C6B3A7B2-default.png" alt="media/image97.png" title="media/image97.png" /><br />
+<a href="img_text/GUID-5F79BF78-DE2C-43F3-B980-DA9B6BC77D40.htm">Description of the illustration GUID-CD7D4F8A-1A63-4D5E-9AD1-A3C8C6B3A7B2-default.png</a></p>
+<p><span class="bold">Methods:</span></p>
+<p><span class="bold">getPageId()</span> &mdash; Localized String: <span class="bold">NO</span></p>
+<p>Returns the unique <code>pageId</code> associated with this wizard page. The <code>pageId</code> is used internally to locate the page. This is not exposed to wizard users.</p>
+<p><span class="bold">getPageName()</span> &mdash; Localized String: <span class="bold">YES</span></p>
+<p>Returns the <code>pageName</code>. The <code>pageName</code> is displayed in the list of pages.</p>
+<p><span class="bold">getPageTitle()</span> &mdash; Localized String: <span class="bold">YES</span></p>
+<p>Returns the <code>pageTitle</code>. The <code>pageTitle</code> is displayed at the top of the page.</p>
+<p><span class="bold">getWelcomeText()</span> &mdash; Localized String: <span class="bold">YES</span></p>
+<p>Returns the text which briefly describes the page.</p>
+<p><span class="bold">getPageEditFields()</span></p>
+<p>Returns the list of UI fields to be displayed on the page. The order of fields in the list determines the order on the page.</p>
+<p>This method is called only when fresh UI fields are needed, usually when the page is loaded for the first time. These fields are cached at the UI layer, and the cached fields are used afterward.</p>
+<p>These UI fields are from the UI Objects SDK, which contains a simple Java-based set of components you can use to build the page. The Adapter Wizard Framework (AWF) converts these fields to ADF fields before rendering the page.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+// Creating a simple textbox using UIObjects SDK&rsquo;s edit fields.
+
+LinkedList&lt;EditField&gt; fields= new LinkedList&lt;EditField&gt;();
+Locale locale = CloudAdapterUtils.getLocale(adapterPluginContext);
+TextBoxObject textBoxObject = UIFactory.createTextBox("");
+fields.add(UIFactory.createEditField(CloudAdapterConstants.REFERENCE_NAME,
+   CloudAdapterText.getString(locale, CloudAdapterText.WELCOME_PAGE_REFERENCE_NAME),                   
+   CloudAdapterText.getString(locale,  CloudAdapterText.WELCOME_PAGE_REFERENCE_DESC),     
+   true, textBoxObject));
+return fields;
+</pre>
+<p><span class="bold">getChildrenEditPages()</span></p>
+<p>A page can have child pages. Scenarios in which child pages may be required are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Pop-ups are not supported.</p>
+</li>
+<li>
+<p>Tabs are not supported.</p>
+</li>
+<li>
+<p>If a value in one field requires the display of several more fields, it might make sense to display the additional fields in a separate page.</p>
+<p>For example, in the <code>CloudOperationsPage</code>, a separate <code>childPage</code> can be added for testing an ROQL query.</p>
+</li>
+</ul>
+<p>Whenever a child page is loaded, it replaces the parent page in the wizard. That is, the parent and child pages share the same space in the wizard. When the child page is displayed, the train component, which lists all the wizard pages, is disabled. Navigation to wizard pages other than the parent is not possible from child page. Full navigation is reenabled upon return to the parent page.</p>
+<p><span class="bold">getUpdatedEditPages()</span></p>
+<p>This method is called whenever wizard components that generate events have <code>eventListener</code> set. Examples are <code>ButtonClick</code>, <code>CheckBox</code> value change, <code>SelectBox</code> value change, and so on. The method implementation must meet these requirements:</p>
+<ul style="list-style-type: disc;">
+<li>The fieldName parameter tells which field on the page generated the event, and the event should be handled accordingly.</li>
+<li>If there are any changes to the sequence of wizard pages or additions or deletions to wizard <code>pagesList</code> based on the event, modify the <code>wizardPages</code> parameter and send the modified <code>pagesList</code> back in the return object.</li>
+<li>If there are any additions or deletions to the page&rsquo;s <code>fieldsList</code> based on the event, the modified <code>fieldsList</code> should be sent back in the return object.</li>
+<li>Set refresh to true in the return object if the wizard needs to be refreshed. This may be required if there are additions or deletions to wizard pages.</li>
+<li>Set the modified wizard pages list, modified fields list, and refresh value in <code>CloudAdapterPageState</code> and return it. Refer to the <code>CloudAdapterPageState</code> description below.</li>
+</ul>
+<p><span class="bold">validatePage()</span></p>
+<p>This method, which performs business logic validation, is called just before leaving a page and before calling <code>updateEditPage()</code>. If validation fails, the corresponding error should be set in <code>errorsList</code> and returned.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+LinkedHashMap&lt;String, UIError[]&gt; errors = new LinkedHashMap&lt;String, UIError[]&gt;();
+UIError[] errorArray = new UIError[errorList.size()];
+errorArray[0]=new UIError(fiedName1,err1);
+errorArray[1]=new UIError(fieldsName2,er2r);
+ . . . . . . . 
+errors.put(getPageId(),errorArray) ;
+</pre>
+<p>The wizard uses this list to show and highlight the error field.</p>
+<p><span class="bold">updateBackEndModel()</span></p>
+<p>This method updates field values in the back-end model. This method is called just before leaving the page.</p>
+<p><span class="bold">Code Example:</span></p>
+<pre dir="ltr">
+@Override
+public CloudAdapterPageState updateBackEndModel(LinkedHashMap&lt;String,
+ICloudAdapterPage&gt; wizardPages, LinkedList&lt;EditField&gt; currentPageFields) {
+        
+   Properties props = new Properties();
+   // captures current edit fields...
+   Map&lt;String, UIObject&gt; map =
+      EditField.getObjectMap(currentPageFields.toArray(new EditField[currentPageFields.size()]));
+   CloudAdapterPageState state = new CloudAdapterPageState(false, wizardPages, currentPageFields);
+        
+        
+   // Set BusinessObject Name and CloudOperation Name to contextObject to display in summary page.
+   UIObject uiobject = (UIObject)map.get(CloudAdapterConstants.CLOUD_BIZ_OBJ);
+   String bizObjName = ((IShuttleObject)uiobject).getSelectedValues().get(0);
+        
+   this.adapterPluginContext.setContextObject(CloudAdapterConstants.CLOUD_BIZ_OBJ, bizObjName);
+        
+   String cloudOpName = UIFactory.getStringValue(map, CloudAdapterConstants.CLOUD_OPERATION);        
+        
+   this.adapterPluginContext.setContextObject(CloudAdapterConstants.CLOUD_OPERATION,cloudOpName);
+        
+   CloudMetadataBrowser browser = CloudAdapterUtils.getMetadataBrowser(adapterPluginContext);
+   // This is a convenience class that will add objects/operations to the 
+   //TransformationModelBuilder. You can of course choose to do this yourself. 
+   //But if this works for you then you should just use it.
+        
+   CloudAdapterUtils.setOperationMappingsForGenerator(adapterPluginContext, map, browser, props, 
+      getSelectedOperation());
+        
+   return state; 
+}
+</pre></div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">AbstractCloudAdapterPage Class</p>
+<p>This class implements <code>ICloudAdapterPage</code> and provides a default implementation of common methods. You can decide, based on requirements, whether to extend this class or implement <code>ICloudAdapterPage</code>.</p>
+<p><span class="bold">Note:</span> Using this class is recommended over implementing <code>ICloudAdapterPage</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">CloudAdapterPageState Class</p>
+<p>Methods such as <code>getUpdatedEditPages()</code> and <code>updateEditPage()</code> return a <code>CloudAdapterPageState</code> object. These methods can change the sequence in which pages are rendered, add more pages to the <code>pagesList</code>, or delete pages from the <code>pagesList</code>. Similarly, fields can be added or deleted or their sequence can be modified. Set the modified <code>pagesList</code> and <code>editFiledsList</code> in the <code>CloudAdapterPageState</code> object. For navigation from a parent page to a child page and back, set the <code>childPageId</code> in this object.</p>
+<p>Use <code>refreshWizard</code> if the complete wizard needs to be refreshed. Use <code>nextPageId</code> if the next page is different from the initial page sequence. Use <code>refreshParentPage</code> if the parent page needs to be refreshed after returning from a child page.</p>
+<p><span class="bold">Methods:</span></p>
+<p><span class="bold">isRefreshChildPage() and setRefreshChildPage()</span></p>
+<p>This flag indicates that the child page must be refreshed with back-end model values.</p>
+<p><span class="bold">isRefreshParentPage() and setRefreshParentPage()</span></p>
+<p>These methods determine whether the parent page must be refreshed when navigating back from a child page. If set to true, the back-end model is updated, so that the parent page can retrieve updated values from the back-end model and display them. If set to false, the back-end model and parent page are not updated.</p>
+<p><span class="bold">isNavigateToChildPage() and setNavigateToChildPage()</span></p>
+<p>These methods determine whether the next page to be rendered is a <code>childPage</code>. If set to true, the wizard navigates to the child page. The child page must be set. If set to false, the wizard navigates to the next page in the <code>pagesList</code>.</p>
+<p><span class="bold">isNavigateToParentPage() and setNavigateToParentPage()</span></p>
+<p>These methods determine whether navigation is from a child page to a parent page. If set to true, the next page to be rendered is the parent page of current child page.</p>
+<p><span class="bold">getNextPageId() and setNextPageId()</span></p>
+<p>These methods determine which page should be rendered when <span class="bold">Next</span> is clicked. If the next page is different from the initial page sequence, then set this to the <code>pageId</code> of the next page. If this value is not set, the default next page from the <code>pagesList</code> is rendered.</p>
+<p><span class="bold">getPrePageId() and setPrePageId()</span></p>
+<p>These methods determine which page should be rendered when Back is clicked. If the previous page is different from the initial page sequence, then set this to the <code>pageId</code> of the previous page. If this value is not set, the default previous page from the <code>pagesList</code> is rendered.</p>
+<p><span class="bold">getChildPageId() and setChildPageId()</span></p>
+<p>If <code>isNavigateToChildPage()</code> is true, these methods must specify the <code>childPageId</code>.</p>
+<p><span class="bold">isRefreshWizard()</span></p>
+<p>If the sequence of pages has changed or if pages are added to or deleted from the <code>pagesList</code>, set this flag to true to refresh the wizard&rsquo;s train component.</p>
+<p><span class="bold">getUpdatedCloudAdapterPages()</span></p>
+<p>Returns the updated <code>pagesList</code>.</p>
+<p><span class="bold">getUpdatedPageEditFields()</span></p>
+<p>Returns updated fields for the current page.</p>
+<p><span class="bold">isConfigComplete() and setConfigComplete()</span></p>
+<p>This flag indicates whether the configuration is complete. If set to true, the <span class="bold">Done</span> button is enabled in the wizard.</p>
+<p><span class="bold">getUiErrors() and setUiErrors()</span></p>
+<p>These methods handle errors that occur when any method that returns <code>CloudAdapterPageState</code> runs. Examples are errors in validating the page or updating the back-end model. The Adapter Wizard Framework checks for errors, displays them to the wizard user, and cancels all page navigations.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">CloudAdapterFilter Class</p>
+<p>This class is an input to the wizard. Based on the filter value set, pages are filtered in the wizard. The consumer of the wizard, for example JDeveloper or ICS, sets the filters.</p>
+<p><span class="bold">Filters:</span></p>
+<p><span class="bold">applicationInstance</span> &mdash; If the consumer has a valid <code>ApplicationInstance</code> (a valid connection object), it can be passed to the Adapter Wizard Framework (AWF). The AWF gets information from the application instance such as the provider, the cloud adapter connection, and so on. If this is not present, the consumer must pass at least the provider ID with which the cloud adapter is registered.</p>
+<p><span class="bold">applicationType</span> &mdash; For internal use.</p>
+<p><span class="bold">applicationName</span> &mdash; For internal use.</p>
+<p><span class="bold">referenceName</span> &mdash; The consumer can also pass the reference name. This is optional.</p>
+<p><span class="bold">providerId</span> &mdash; If the consumer does not have an <code>ApplicationInstance</code>, the <code>providerId</code> must be passed to determine which cloud adapter is being invoked. The <code>providerId</code> is a unique ID with which the cloud adapter is registered with the consumer.</p>
+<p><span class="bold">cloudAdapterArtifacts</span> &mdash; This filter sets the artifacts. This is mostly for when the wizard is invoked in edit (re-entrant mode). The wizard is pre-populated with the artifact values.</p>
+<p><span class="bold">inbound</span> &mdash; This flag indicates that the wizard is for an inbound adapter.</p>
+<p><span class="bold">username</span> &mdash; For internal use.</p>
+<p><span class="bold">addConnection</span> &mdash; Adds the connection page to the wizard pages.</p>
+<p><span class="bold">connectivityServiceFactory</span> &mdash; For internal use.</p>
+<p><span class="bold">cloudAdapterCallerContext</span> &mdash; Identifies the consumer. Valid values include ICS_WEB, SOA_JDEV, and OSB_WEB.</p>
+<p><span class="bold">adapterPluginContext</span> &mdash; The default adapter plugin context, which is provider-specific.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Page Implementation Classes</p>
+<p>The Cloud Adapter Wizard Framework also provides implementation for four commonly used pages: the Welcome page, Connection page, Operations page, and Summary page. You can extend these classes if these pages meet your requirements with only minor modifications. Otherwise you can either extend <code>AbstractCloudAdapterPage</code> or implement <code>ICloudAdapterPage</code> directly and create pages from scratch.</p>
+<p>Here are the classes that extend <code>AbstractCloudAdapterPage</code>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>CloudAdapterWelcomePage</code></p>
+</li>
+<li>
+<p><code>CloudAdapterConnetionsPage</code></p>
+</li>
+<li>
+<p><code>CloudAdapterOperationsPage</code></p>
+</li>
+<li>
+<p><code>CloudAdapterSummaryPage</code></p>
+</li>
+</ul>
+<p>The wizard can display up to 10 pages, not including child pages.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-CE5D682D-C249-4101-AD06-C27557653304.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-C99E1181-618C-4729-9FEE-AC3052D0B601.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

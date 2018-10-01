@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter">
+<meta name="dcterms.identifier" content="E66534-07">
+<meta name="dcterms.isVersionOf" content="ICSEA">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T662147.htm" title="Previous" type="text/html">
+<link rel="Next" href="index.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICSEA.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">16/17</span>
+<!-- End Header -->
+<h1>Error Messages</h1>
+
+
+
+
+		<H2> <a name="8308236"></a><a id="T660845"></a><B>Overview</B></H2>
+
+<a name="d0e9363"></a><A NAME="ics_apperr"></A>
+
+
+
+	<p>This appendix describes
+the error messages if occur at the design time while testing an Oracle
+E-Business Suite connection and while creating an integration with
+an Oracle E-Business Suite Adapter connection in Oracle Integration
+Cloud Service. The possible resolutions are also included in this
+appendix.</p>
+
+  <ul>
+  <li>
+	<p><A HREF="T657359T660844.htm#ics_Atest">Error Messages While Testing an Oracle E-Business
+Suite Connection</A></p>
+  </li><li>
+	<p><A HREF="T657359T660844.htm#ics25_errsource">Error Messages While Creating an Integration
+with Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A></p>
+  </li><li>
+	<p><A HREF="T657359T660844.htm#ics_Adesign">Error Messages While Creating an Integration
+with Oracle E-Business Suite Adapter as an Invoke (Target) Connection</A></p></li></ul>
+
+
+	<p>For additional information on
+managing errors, see Managing Errors, Administering Integration Cloud
+Service chapter, <I>Oracle Cloud Using Oracle
+Integration Cloud Service</I>.</p>
+
+
+
+
+
+
+
+
+		<H2> <a name="8309417"></a><a id="T660922"></a><B>Error Messages While Testing
+an Oracle E-Business Suite Connection</B></H2>
+
+<a name="d0e9410"></a><A NAME="ics_Atest"></A>
+
+
+
+	<p>The following table describes
+error messages if occur while testing an Oracle E-Business Suite connection
+with Oracle E-Business Suite Adapter from Oracle Integration Cloud
+Service:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+ICS Error Code
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Error Message
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Resolution
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0004
+
+    		
+<td >
+Invalid user name or password.
+
+    		
+<td >
+Provide valid Oracle E-Business
+Suite user name and password combination.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+User is not authorized to execute
+the service. Please check the user grants.
+
+    		
+<td >
+All methods of the Metadata Provider
+service do not have required grants created. Grant the required user
+privileges to Metadata Provider service, as described in step 4, <A HREF="T657359T657339.htm#ics_setup">Setting Up Oracle E-Business Suite Adapter from
+Oracle Integration Cloud Service</A>.
+<BR> Alternatively, this error could
+also occur if the access to Oracle E-Business Suite instance is forbidden
+or blocked from Oracle Integration Cloud Service. Ensure that Oracle
+Integration Cloud Service is able to access the Oracle E-Business
+Suite instance.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+Verify Integrated SOA Gateway
+setup on Oracle E-Business Suite. For details, refer to documentation.
+
+    		
+<td >
+Ensure to complete the setup
+tasks for Oracle E-Business Suite Integrated SOA Gateway (ISG), as
+described in <A HREF="T657359T657339.htm#ics_setup">Setting Up Oracle E-Business Suite Adapter from
+Oracle Integration Cloud Service</A>.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+Verify if Metadata Provider service
+is deployed with alias 'provider'. Ensure that all its methods are
+deployed with GET verb.
+
+    		
+<td >
+This error occurs due to either
+of the following reasons:
+
+  <ul>
+  <li>
+	<p>The Metadata Provider
+API is not deployed as a REST service.</p>
+  </li><li>
+	<p>All the methods of
+the API are not deployed with GET verb.</p>
+  </li><li>
+	<p>The API is deployed
+with GET verb but with a service alias other than "<B>provider</B>".</p></li></ul>
+
+<BR> To resolve the issue, ensure
+to deploy all the methods in the Metadata Provider API with GET verb
+and with service alias "<B>provider</B>". 
+<BR> For information on deploying
+Metadata Provider service, see step 3, as described in <A HREF="T657359T657339.htm#ics_setup">Setting Up Oracle E-Business Suite Adapter from
+Oracle Integration Cloud Service</A>.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+Error connecting to the Oracle
+E-Business Suite: &lt;URL&gt;
+
+    		
+<td >
+Provide valid Oracle E-Business
+Suite host and port information (http(s)://&lt;ebs host name&gt;:&lt;port&gt;) where Oracle E-Business Suite is configured for ISG REST services.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+A connector specific exception
+was raised by the application.
+<BR> The connection URL should be
+of the format: http://&lt;ebs host name&gt;:&lt;port&gt;
+
+    		
+<td >
+This error occurs due to invalid
+URL format. 
+<BR> To resolve the issue, remove
+any trailing slash in the URL. Ensure that the Oracle E-Business Suite
+connection URL is of the format: http(s)://&lt;ebs host name&gt;:&lt;port&gt;
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0007
+
+    		
+<td >
+Unable to establish a secure
+connection to example.com. SSL protocol related
+exception occurred.
+<BR> - sun.security.validator.ValidatorException:
+PKIX path building failed:sun.security.provider.certpath.SunCertPathBuilderException:
+unable to find valid certification path to requested target   
+<BR> - PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable
+to find valid certification path to requested target    
+<BR> - unable to find valid certification
+path to requested target
+
+    		
+<td >
+This error occurs because of
+SSL certificate issues.
+<BR> If Oracle E-Business Suite requires
+a specific SSL certificate, ensure that you import or upload the Oracle
+E-Business Suite SSL certificate to Oracle Integration Cloud Service.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+CASDK-0005
+
+    		
+<td >
+Connection URL should be of the
+format: http://&lt;host name&gt;:&lt;port&gt;
+
+    		
+<td >
+This issue occurs because of
+protocol error.
+<BR> To resolve the issue, the connection
+URL should be of the format: http(s)://&lt;ebs host name&gt;:&lt;port&gt;
+
+    		
+
+
+</TABLE>
+
+
+
+
+
+
+
+
+		<H2> <a name="8353589"></a><a id="T662033"></a><B>Error Messages While Creating
+an Integration with Oracle E-Business Suite Adapter as a Trigger (Source)
+Connection</B></H2>
+
+<a name="d0e9717"></a><A NAME="ics25_errsource"></A>
+
+
+
+	<p>The following table describes
+error messages if occur while creating an integration using the Oracle
+E-Business Suite Adapter as a trigger (source) connection at the design
+time:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+Error Message
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Resolution
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+Please select a Business Event
+to proceed. If no events are listed, select another Product / Product
+family.
+
+    		
+<td >
+If no Business Event is selected
+in the Business Events page, after you click <B>Next</B>, this error occurs.
+<BR> Ensure that you select a desired
+business event from the populated list based on your selected product
+and product family before clicking <B>Next</B>.
+<BR> For information on configuring
+the endpoint for business events, see <A HREF="T657359T661673.htm#ics_sourcevent">Configuring an Oracle E-Business Suite Business
+Event in an Integration</A>.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+Please select a XML Gateway Map
+to proceed. If no maps are listed, select another Product / Product
+family.
+
+    		
+<td >
+If no XML Gateway map is selected
+in the XML Gateway Message page, after you click <B>Next</B>, this error occurs.
+<BR> Ensure that you select a desired
+XML Gateway message from the populated list based on your selected
+product and product family before clicking <B>Next</B>.
+<BR> For information on configuring
+the endpoint for XML Gateway message maps, see <A HREF="T657359T661673.htm#ics_sourcexml">Configuring an Oracle E-Business Suite XML
+Gateway Message in an Integration</A>.
+
+    		
+
+
+</TABLE>
+
+
+
+
+
+
+
+
+		<H2> <a name="8309418"></a><a id="T660923"></a><B>Error Messages While Creating
+an Integration with the Oracle E-Business Suite Adapter as an Invoke
+(Target) Connection</B></H2>
+
+<a name="d0e9829"></a><A NAME="ics_Adesign"></A>
+
+
+
+	<p>The following table describes
+error messages if occur while creating an integration
+using the Oracle E-Business Suite Adapter as an invoke (target) connection
+at the design time:</p>
+ 
+	<table summary="" BORDER="1" CELLPADDING="4" cellspacing="0" summary="table is summarized in text"><caption></caption>
+
+
+	<TR CLASS="HEADER" VALIGN="CENTER" BGCOLOR="#E0E0E0">
+<th SCOPE="col"><B>
+Error Message
+</B>
+   	</th>
+<th SCOPE="col"><B>
+Resolution
+</B>
+   	</th>
+
+
+
+
+	<TR VALIGN="TOP">
+<td >
+Empty set of values appear in
+the drop down during the Product Family selection.
+
+    		
+<td >
+This error occurs when the Metadata
+Provider API in Oracle E-Business Suite only has the "isActive" method
+deployed, but the rest of all methods in the API are not deployed.
+<BR> To resolve the issue, ensure
+to deploy all the methods in the Metadata Provider API with GET verb
+and with service alias "<B>provider</B>".
+For information on deploying Metadata Provider service, see step 3,
+as described in <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business
+Suite Adapter</A>.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+Service is not deployed as a
+REST service in Oracle E-Business Suite. To use this service, deploy
+it from Integration Repository of Oracle E-Business Suite. Contact
+Oracle E-Business Suite Integration Administrator.
+
+    		
+<td >
+This error occurs when the selected
+interface is not deployed as a REST service.
+<BR> Ensure that you deploy the selected
+interface as a REST service. For information on deploying an interface
+as a REST service, see step 3 as described in <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business
+Suite Adapter</A>.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+Service Status: Not Deployed
+<BR> Service is not deployed as a
+REST service in Oracle E-Business Suite. To use this service, deploy
+it from Integration Repository of Oracle E-Business Suite. Contact
+Oracle E-Business Suite Integration Administrator.
+
+    		
+<td >
+When a selected operation or
+method is not deployed as a REST service operation, this error occurs.
+<BR> Ensure that you deploy the selected
+method in an interface as a REST service operation.
+
+    		
+
+
+	<TR VALIGN="TOP">
+<td >
+The application has encountered
+an unexpected error. Please check the application connection details
+and credentials, and retry your request.
+
+    		
+<td >
+This error occurs when any of
+the Metadata Provider API methods (such as getInterfaces, getMethods,
+getProducts) except the "isActive" method are deployed but do not
+have grants created. 
+<BR> To resolve the issue, in addition
+to deploying all the methods in the API with GET verb, ensure that
+you grant the required user privileges to Metadata Provider service,
+as described in step 4, <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business
+Suite Adapter</A>.
+
+    		
+
+
+</TABLE>
+
+
+
+
+
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

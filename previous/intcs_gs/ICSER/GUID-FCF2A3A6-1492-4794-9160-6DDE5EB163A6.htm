@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Obtaining the Oracle ERP Cloud Service Catalog Service WSDL or Event Catalog URL</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You specify a mandatory Oracle ERP Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions). The service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. The event catalog URL is required for configuring the inbound adapter for event subscriptions." />
+<meta name="dcterms.created" content="2016-10-25T13:32:51Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle ERP Cloud Adapter" />
+<meta name="dcterms.identifier" content="E66641-02" />
+<meta name="dcterms.isVersionOf" content="ICSER" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FEA17A38-60BF-482D-99CD-31DA9E6C9E77.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-C179F26D-7409-43D7-B87B-E508A1DF7314.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSER.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSER.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSER.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6"></a> <span id="PAGE" style="display:none;">13/29</span> <!-- End Header -->
+<h1 id="ICSER-GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6" class="sect1">Obtaining the Oracle ERP Cloud Service Catalog Service WSDL or Event Catalog URL</h1>
+<div>
+<p>You specify a mandatory Oracle ERP Cloud service catalog service WSDL (for accessing business objects) and optionally an event catalog URL (for accessing event subscriptions). The service catalog service WSDL is required to configure the adapter for both inbound and outbound endpoints using either business objects or business services. The event catalog URL is required for configuring the inbound adapter for event subscriptions.</p>
+<div class="section">
+<p class="subhead1">Obtaining the Service Cloud Service WSDL</p>
+<div class="tblformal" id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6__GUID-2F7D5ADB-0AB7-4A39-AEA6-CA1A638FCF38">
+<table class="cellalignment476" summary="Requirements for configuring Oracle ERP Cloud connectivity.">
+<thead align="left">
+<tr>
+<th class="cellalignment473" id="d2469e28">WSDL Requirements</th>
+<th class="cellalignment473" id="d2469e30">Where Do You Get the WSDL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment473" id="d2469e34" headers="d2469e28">
+<p>The URL must be that of a service catalog service WSDL. The service catalog service is a Fusion Application service that returns a list of external services available for integration. It allows clients to retrieve information about all public Fusion Application service endpoints available for that instance.</p>
+<p>The service catalog service enables clients to retrieve information about all public Oracle Fusion Application service endpoints available for that instance. The information it returns is specific to the particular cloud instance and also reflects the new services that may have been introduced in patches applied to the instance. This service is used to programmatically discover the SOAP services available on the cloud instance and retrieve the necessary metadata to invoke the SOAP services to manage business objects.</p>
+</td>
+<td class="cellalignment473" headers="d2469e34 d2469e30">
+<p>The developer creating an Oracle ERP Cloud connection must work with the Oracle ERP Cloud service administrator to get the concrete WSDL URL for the service catalog service provisioned for the specific SaaS application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This section describes how to derive the external virtual host and port for a tokenized service WSDL. The topology information in the Topology Registration setup task contains the external virtual host and port for the domains and applications. The following instructions describe the steps for deriving the values using the service catalog service WSDL URL as an example: <code>https://atf_server:<span class="codeinlineitalic">port</span>/fndAppCoreServices/ServiceCatalogService</code>.</p>
+<p>To access the Review Topology page, the ASM_REVIEW_TOPOLOGY_HIERARCHY_PRIV entitlement must be granted to the user's job role. The entitlement is granted to the ASM_APPLICATION_DEPLOYER_DUTY duty role, which is inherited by the duty roles ASM_APPLICATION_DEVELOPER_DUTY and ASM_APPLICATION_ADMIN_DUTY.</p>
+<p>If the menu items and tasks described in the following procedure are not available in your cloud instance, your user account is missing the required role. Contact your cloud instance security administrator for assistance.</p>
+<ol>
+<li>
+<p>Log in to the cloud instance.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Navigator</span> icon in the global area in the top part of the window, then chose <span class="bold">Setup and Maintenance</span> under the <span class="bold">Tools</span> heading.</p>
+</li>
+<li>
+<p>Select <span class="bold">Review Topology</span> under the <span class="bold">Topology Registration</span> section in the <span class="bold">Tasks</span> regional area on the left side of the window.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Detailed</span> tab in the middle of the window.</p>
+<p>The tab shows the list of domains configured in the cloud instance.<br />
+<span class="imageleft"><img class="imageleft" width="943" height="791" src="img/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png" alt="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" title="Description of GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png follows" /><br />
+<a href="img_text/GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.htm">Description of the illustration GUID-A83FF1BE-84D9-49C5-8820-9F7EBB92A3FD-default.png</a></span><br /></p>
+</li>
+<li>
+<div class="p">Map the token name for the service path value to the domain name in the Topology Manager:
+<div class="tblformal" id="GUID-FCF2A3A6-1492-4794-9160-6DDE5EB163A6__GUID-94658D1F-6BBF-49DC-8F10-9EA8E15BC56D">
+<table class="cellalignment472" summary="Token name in the service path and its associated domain name.">
+<thead align="left">
+<tr>
+<th class="cellalignment473" id="d2469e103">Token Name in Service Path</th>
+<th class="cellalignment473" id="d2469e105">Domain Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment473" id="d2469e109" headers="d2469e103">atf_server</td>
+<td class="cellalignment473" headers="d2469e109 d2469e105">CommonDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e114" headers="d2469e103">crm_server</td>
+<td class="cellalignment473" headers="d2469e114 d2469e105">CRMDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e119" headers="d2469e103">fin_server</td>
+<td class="cellalignment473" headers="d2469e119 d2469e105">FinancialDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e124" headers="d2469e103">hcm_server</td>
+<td class="cellalignment473" headers="d2469e124 d2469e105">HCMDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e129" headers="d2469e103">ic_server</td>
+<td class="cellalignment473" headers="d2469e129 d2469e105">ICDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e134" headers="d2469e103">prc_server</td>
+<td class="cellalignment473" headers="d2469e134 d2469e105">ProcurementDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e139" headers="d2469e103">prj_server</td>
+<td class="cellalignment473" headers="d2469e139 d2469e105">ProjectsDomain</td>
+</tr>
+<tr>
+<td class="cellalignment473" id="d2469e144" headers="d2469e103">scm_server</td>
+<td class="cellalignment473" headers="d2469e144 d2469e105">SCMDomain</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li>
+<p>Expand the domain name and select any external virtual host and port for the J2EE applications that are deployed on the domain. In the sample window, the values for this particular instance are <span class="bold">fs-your-cloud-hostname</span> and <span class="bold">443</span>, respectively.<br />
+<span class="imageleft"><img class="imageleft" width="935" height="640" src="img/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png" alt="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" title="Description of GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png follows" /><br />
+<a href="img_text/GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.htm">Description of the illustration GUID-CB01D3AF-462B-4765-81A8-7E2BBEE1BA6F-default.png</a></span><br /></p>
+</li>
+<li>
+<p>Replace the <code><span class="codeinlineitalic">domainName</span>_<span class="codeinlineitalic">server</span>:<span class="codeinlineitalic">PortNumber</span></code> with the external virtual host and port identified in the previous step. For example:</p>
+<p><code>https://fs-your-cloud-hostname:port/fndAppCoreServices/ServiceCatalogService?wsdl</code></p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Obtaining the Event Catalog URL</p>
+<p>You must know the CRM URL format to access the CRM application user interface. Follow the URL format to determine the event catalog URL. For example, if the CRM URL format is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com:<span class="italic">port</span>/customer/faces/CrmFusionHome
+</pre>
+<p>Then the event catalog URL is:</p>
+<pre dir="ltr">
+https://fusxxxx-crm-ext.us.oracle.com:<span class="italic">port</span>/soa-infra
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment462">
+<tr>
+<td class="cellalignment469">
+<table class="cellalignment467">
+<tr>
+<td class="cellalignment466"><a href="GUID-FEA17A38-60BF-482D-99CD-31DA9E6C9E77.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment466"><a href="GUID-C179F26D-7409-43D7-B87B-E508A1DF7314.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment471">
+<table class="cellalignment465">
+<tr>
+<td class="cellalignment466"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment466"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment466"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

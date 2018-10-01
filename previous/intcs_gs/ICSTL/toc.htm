@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using the Twilio Adapter - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This guide describes how to configure and add theTwilio Adapter to an integration in Oracle Integration Cloud Service." />
+<meta name="dcterms.created" content="2016-09-14T19:39:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Twilio Adapter" />
+<meta name="dcterms.identifier" content="E75769-02" />
+<meta name="dcterms.isVersionOf" content="ICSTL" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSTL.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSTL.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSTL.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/25</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-47EF1A79-F89A-48E0-AA30-9D08A98A4D58.htm#GUID-47EF1A79-F89A-48E0-AA30-9D08A98A4D58">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-47EF1A79-F89A-48E0-AA30-9D08A98A4D58.htm#GUID-9F174C6A-08A7-4F7F-B1A9-E8F25F4B17C5">Audience</a></li>
+<li><a href="GUID-47EF1A79-F89A-48E0-AA30-9D08A98A4D58.htm#GUID-53B67CB3-533D-4137-9E0F-0C2F90D0C799">Related Resources</a></li>
+<li><a href="GUID-47EF1A79-F89A-48E0-AA30-9D08A98A4D58.htm#GUID-4B673234-EF4E-4CFE-8699-BF84A24DE685">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-8B83EA28-415E-4895-B05F-C331C00DF374.htm"><span class="secnum">1</span> Getting Started with the Twilio Adapter</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-EE8744A7-73FC-464A-858F-68E9ABAA1F28.htm">About the Twilio Adapter</a></li>
+<li><a href="GUID-EA577473-6130-422A-AE73-1120F4E3E028.htm">What Application Version Does the Twilio Adapter Support?</a></li>
+<li><a href="GUID-DF97A9E0-2BC5-42F9-B61F-CBB839DFB26B.htm">About Oracle Integration Cloud Service</a></li>
+<li><a href="GUID-DDA9C4B9-BCB0-4F4D-BA51-44FB610AEA1C.htm">About Oracle Integration Cloud Service Connections</a></li>
+<li><a href="GUID-9B783859-561A-40F4-B8D8-A7256C8A5DAD.htm">About Oracle Integration Cloud Service Integrations</a></li>
+<li><a href="GUID-47F64537-370E-45E7-81D2-014484CC7B78.htm">Twilio Adapter Use Cases</a></li>
+<li><a href="GUID-E6CBB8A5-44CC-44DE-82F7-EA1AD36B8E47.htm">Typical Workflow for Creating and Including an Adapter Connection in an Integration</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-FB90EAE9-E5F9-442C-8149-29548EABB1CC.htm"><span class="secnum">2</span> Creating an Twilio Adapter Connection</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-03F0C10D-1F8E-4576-BD5A-494E9781160B.htm#GUID-03F0C10D-1F8E-4576-BD5A-494E9781160B">Prerequisites for Creating a Connection</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-03F0C10D-1F8E-4576-BD5A-494E9781160B.htm#GUID-7047FE99-B64D-4F37-9775-B990566CDC5A">Creating a Twilio User Account</a></li>
+</ul>
+</li>
+<li><a href="GUID-9F6A7704-A8DE-484E-8D8A-06D51AD9D13C.htm">Uploading an SSL Certificate</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD">Creating a Connection</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE">Adding a Contact Email</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-CA3A6826-0A9B-4C81-A335-A57FE9DACA31">Configuring Connection Security</a></li>
+<li><a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22">Testing the Connection</a></li>
+</ul>
+</li>
+<li><a href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm">Editing a Connection</a></li>
+<li><a href="GUID-44A50218-C1B3-4503-9F71-0CA8CF8BC7C0.htm">Cloning a Connection</a></li>
+<li><a href="GUID-39E653C5-6506-427B-923E-45BD965D1F69.htm">Deleting a Connection</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-080E83E1-F23F-46C2-8967-540C1B944268.htm"><span class="secnum">3</span> Creating an Integration</a></h2>
+<h2 class="tocheader"><a href="GUID-AA9A3E30-4098-45CF-8A35-FCCD61C8898A.htm"><span class="secnum">4</span> Adding the Twilio Adapter Connection to an Integration</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-844B1899-7B8B-4714-9EF9-217BC38FC9A9.htm#GUID-844B1899-7B8B-4714-9EF9-217BC38FC9A9">Configuring Basic Information Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-844B1899-7B8B-4714-9EF9-217BC38FC9A9.htm#GUID-B73E6866-6766-4BA3-BC66-213F6854C2D0">What You Can Do from the Basic Info Page</a></li>
+<li><a href="GUID-844B1899-7B8B-4714-9EF9-217BC38FC9A9.htm#GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD">What You See on the Basic Info Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-5FE2B7CD-7FB6-4E06-825A-643CF41BB466.htm#GUID-5FE2B7CD-7FB6-4E06-825A-643CF41BB466">Configuring Twilio Adapter Invoke Operations Properties</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-5FE2B7CD-7FB6-4E06-825A-643CF41BB466.htm#GUID-E5BD9481-CD51-4928-B267-90AD590AF3A5">What You Can Do from the Twilio Adapter Operations Page</a></li>
+<li><a href="GUID-5FE2B7CD-7FB6-4E06-825A-643CF41BB466.htm#GUID-66D8C1F8-555D-404E-8772-E856D929AFEC">What You See on the Twilio Adapter Operations Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-B4590C36-078F-41A9-A670-345D21197835">Reviewing Configuration Values on the Summary Page</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-5F667FCE-08B6-4335-B29F-479B0D2B148C">What You Can Do from the Summary Page</a></li>
+<li><a href="GUID-B4590C36-078F-41A9-A670-345D21197835.htm#GUID-FC2783A0-8CC9-4498-906F-3562FCCD5726">What You See on the Summary Page</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-F69969B6-541B-4F23-8EDB-3598A665EDD9.htm"><span class="secnum">5</span> Creating Mappings and Lookups in Integrations</a></h2>
+<h2 class="tocheader"><a href="GUID-C47D65D5-8D0B-45FF-8E4F-E81A01227AA9.htm"><span class="secnum">6</span> Administering Integrations</a></h2>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment299">
+<tr>
+<td class="cellalignment306">
+<table class="cellalignment314">
+<tr>
+<td class="cellalignment303"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment308">
+<table class="cellalignment313">
+<tr>
+<td class="cellalignment303"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment303"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

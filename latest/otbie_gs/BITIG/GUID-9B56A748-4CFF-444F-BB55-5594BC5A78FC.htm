@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Performing Functional Configuration</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="During Functional Configuration, Implementors specify ETL and Reporting values that determine how the transactional data is loaded and displayed to BI end users. For example, you might specify the Initial Extract Date for data as January 1 2014, specify the local currency as US Dollars (USD), and define the Enterprise Calendar data range for your business. This is done by completing a number of Tasks in Functional Setup Manager. You can either complete the tasks yourself or assign tasks to other members of your team." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2000EF24-D3AA-49E1-BB3A-B0C7333560C6.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-47401657-48C7-42C0-8BB6-988C93841177.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-9B56A748-4CFF-444F-BB55-5594BC5A78FC"></a> <span id="PAGE" style="display:none;">26/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-9B56A748-4CFF-444F-BB55-5594BC5A78FC" class="sect1"><span class="bold">Performing Functional Configuration</span></h1>
+<div>
+<p>During Functional Configuration, Implementors specify ETL and Reporting values that determine how the transactional data is loaded and displayed to BI end users. For example, you might specify the Initial Extract Date for data as January 1 2014, specify the local currency as US Dollars (USD), and define the Enterprise Calendar data range for your business. This is done by completing a number of Tasks in Functional Setup Manager. You can either complete the tasks yourself or assign tasks to other members of your team.</p>
+<div class="section">To perform Functional Configuration:</div>
+<!-- class="section" -->
+<ol>
+<li><span>In FSM, from the Tasks pane, select the <span class="bold">Manage Implementation Projects</span> link, and click the Implementation Plan that you created earlier.<br />
+<img width="696" height="338" src="img/GUID-BA92BB7A-B369-4759-A741-FFBCD2FDDE30-default.gif" alt="Description of GUID-BA92BB7A-B369-4759-A741-FFBCD2FDDE30-default.gif follows" title="Description of GUID-BA92BB7A-B369-4759-A741-FFBCD2FDDE30-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-BA92BB7A-B369-4759-A741-FFBCD2FDDE30-default.gif</a><br /></span></li>
+<li><span>In the Task column, expand your Offering (for example, Oracle Human Resource Analytics) to display the Tasks that you need to complete.<br />
+<img width="471" height="515" src="img/GUID-C6ABFE3A-3A33-4BCF-91B8-267EA720B383-default.gif" alt="Description of GUID-C6ABFE3A-3A33-4BCF-91B8-267EA720B383-default.gif follows" title="Description of GUID-C6ABFE3A-3A33-4BCF-91B8-267EA720B383-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-C6ABFE3A-3A33-4BCF-91B8-267EA720B383-default.gif</a><br /></span></li>
+<li><span>For each Task under that Offering, do the following:</span>
+<ol>
+<li class="substepexpand"><span>Click the <span class="bold">Go to Task</span> icon.<br />
+<img width="496" height="427" src="img/GUID-33CB6C7C-E4B8-43B1-99C9-D13F2F32387E-default.gif" alt="Description of GUID-33CB6C7C-E4B8-43B1-99C9-D13F2F32387E-default.gif follows" title="Description of GUID-33CB6C7C-E4B8-43B1-99C9-D13F2F32387E-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-33CB6C7C-E4B8-43B1-99C9-D13F2F32387E-default.gif</a><br /></span></li>
+<li class="substepexpand"><span>Use the displayed dialog to review the default value and change the value if required, then click <span class="bold">Save and Close</span>.</span>
+<div>For example, if you click Go to Task for the Task named &lsquo;Workforce Extract Date&rsquo;, then you use the Edit Parameter Value dialog to review and edit the date.<br />
+<img width="456" height="335" src="img/GUID-0958DCAC-A477-4922-9ACB-DFB78D0D4EE7-default.gif" alt="Description of GUID-0958DCAC-A477-4922-9ACB-DFB78D0D4EE7-default.gif follows" title="Description of GUID-0958DCAC-A477-4922-9ACB-DFB78D0D4EE7-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-0958DCAC-A477-4922-9ACB-DFB78D0D4EE7-default.gif</a><br /></div>
+<div>If the task is Informational only, then you can review the information in a separate Help dialog. If the information contains a list of steps that you must perform in a separate tool, then you must perform those steps as specified. For example, an Informational task might display a list of Functional Areas to include in a load plan, or it might include a list of steps to be performed in a separate (for example, a security tool).</div>
+</li>
+<li class="substepexpand"><span>Click the icon in the <span class="bold">Status</span> column, use the Edit Status dialog to change the status to Completed, then click <span class="bold">Save and Close</span>. The Status icon will change to a green tick.</span>
+<div><img width="234" height="127" src="img/GUID-A470FB2D-AB8A-4A6B-A9E7-BA094839ABCE-default.gif" alt="Description of GUID-A470FB2D-AB8A-4A6B-A9E7-BA094839ABCE-default.gif follows" title="Description of GUID-A470FB2D-AB8A-4A6B-A9E7-BA094839ABCE-default.gif follows" /><br />
+<a href="img_text/GUID-5B55A3D0-7C1D-46E6-A6EB-D2770DC78A73.htm">Description of GUID-A470FB2D-AB8A-4A6B-A9E7-BA094839ABCE-default.gif</a></div>
+</li>
+</ol>
+</li>
+</ol>
+<div class="section">Your Offering is now functionally configured for ETL, and you can now start to load your data.</div>
+<!-- class="section" -->
+<div class="section">If you want to verify that your configuration values have been set, then click the <span class="bold">Go to Task</span> icon again to review the current value and change the value if required, then click Save and Close. You can also use Configuration Manager to review functional configuration values such as Data Load Parameters, Reporting Parameters, and Mappings.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-2000EF24-D3AA-49E1-BB3A-B0C7333560C6.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-47401657-48C7-42C0-8BB6-988C93841177.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

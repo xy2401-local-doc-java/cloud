@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Interacting with Microsoft Outlook in the Add-In</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-04-26T11:27:29Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Social Network" />
+<meta name="dcterms.identifier" content="E85025-01" />
+<meta name="dcterms.isVersionOf" content="OSNUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="oa_so.htm" title="Previous" type="text/html" />
+<link rel="Next" href="oa_landf.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OSNUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-57B2B8D2-1770-4C40-B16B-145764D04CE7"></a> <span id="PAGE" style="display:none;">162/367</span> <!-- End Header -->
+<a id="OSNUG2545"></a>
+<h1 id="OSNUG-GUID-57B2B8D2-1770-4C40-B16B-145764D04CE7" class="sect1">Interacting with Microsoft Outlook in the Add-In</h1>
+<div>
+<p>This section describes how to interact with Microsoft Outlook in the add-in:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oa_outlook.htm#GUID-772C3581-E133-470F-934C-A36C6EB04F6B">What kinds of shared activities are there between Outlook and the add-in for Outlook?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1">How do I add email, meeting details, or tasks to a Conversation or wall?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-02C3324B-F05A-4B0C-9BC9-4E32E4A15184">How do I tell Oracle Social Network to ignore particular email addresses or domains when posting email messages to a Conversation or wall?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-CC918DE7-BEA7-4772-8A20-1812BE4E7F60">How do I add an Oracle Social Network contact to my Microsoft Outlook Contacts list?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-748BB6C8-6A63-4C77-8080-92E6C09240BF">How do I schedule a Microsoft Outlook Calendar meeting through the add-in for Outlook?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-B4201477-6729-464B-AE02-3133488E5BB2">How do I create a Microsoft Outlook Task from the add-in for Outlook?</a></p>
+</li>
+<li>
+<p><a href="oa_outlook.htm#GUID-EF3E79DF-8735-4DBF-A72E-B4D2947602E4">How do I send an email from the add-in for Outlook?</a></p>
+</li>
+</ul>
+</div>
+<a id="OSNUG2753"></a>
+<div class="props_rev_3"><a id="GUID-772C3581-E133-470F-934C-A36C6EB04F6B"></a>
+<h2 id="OSNUG-GUID-772C3581-E133-470F-934C-A36C6EB04F6B" class="sect2">What kinds of shared activities are there between Outlook and the add-in for Outlook?</h2>
+<div>
+<p>You can add Microsoft Outlook emails, meeting details, and tasks to an Oracle Social Network Conversation or wall; and, in the Oracle Social Network add-in for Microsoft Outlook, you can initiate Outlook-related activities. For example, you can add an Oracle Social Network contact to your Outlook Contacts list; create an Outlook task; send an email with links and attachments from the add-in; schedule an Outlook calendar meeting, and select participants from Oracle Social Network as well as your Outlook address book and your other usual sources.</p>
+</div>
+</div>
+<a id="OSNUG2471"></a>
+<div class="props_rev_3"><a id="GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1"></a>
+<h2 id="OSNUG-GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1" class="sect2">How do I add email, meeting details, or tasks to a Conversation or wall?</h2>
+<div>
+<div class="section">
+<p>You can add Outlook email, meeting details, and tasks to an Oracle Social Network Conversation through the Oracle Social Network add-in for Microsoft Outlook. Additionally, you can add the item's recipients and attachments. You can edit the item to leave out some or all of the its content, recipients, and attachments. You can add more content, people, and files along with the originals.</p>
+<p>Be thoughtful about which items you add and how much of their content you include. Depending on their length, added Outlook items can quickly clutter a Conversation. Before finalizing an addition, you can edit it to sanitize and simplify it. Consider removing header information, signatures, and any other unnecessary or unwanted parts.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Perform one of the following actions to add an Outlook item (email, meeting, or task) to a Conversation or wall:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select an Outlook item, then click <span class="bold">Add To Oracle Social Network</span> in the Outlook ribbon.</p>
+</li>
+<li>
+<p>Right-click an Outlook item, then click <span class="bold">Add To Oracle Social Network</span>.</p>
+</li>
+<li>
+<p>Select an Outlook item, then go to the Conversation or wall you want to add the email to, and in its top-most banner, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, then select <span class="bold">Add To Oracle Social Network</span>.</p>
+</li>
+<li>
+<p>Open the target Conversation or wall, then drag and drop the Outlook item into the open Conversation or wall.</p>
+</li>
+<li>
+<p>In a meeting or task, click <span class="bold">Add to</span> in the item's ribbon at the top of the form.</p>
+</li>
+<li>
+<p>In an email's ribbon, select one of the following options under <span class="bold">When sending</span>:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Move to</span>&mdash;Post the message to a Conversation or wall, rather than sending the email.</p>
+</li>
+<li>
+<p><span class="bold">Copy to</span>&mdash;Post the message to a Conversation or wall, but also send the email.</p>
+<p>This option is useful if your message includes some users who are not part of your social network. You would generally want to use this for simple posted information, not messages that will spark a discussion, otherwise the email thread and the Conversation will become out of sync. For example, you might want to send meeting details such as location and agenda to a user who is not part of your social network, and copy it to a Conversation in your social network so that you have a record of the communication along with other related information for internal use, like documents for the meeting.</p>
+</li>
+</ul>
+<p>The email is moved or copied to the Conversation or wall when you click <span class="bold">Send</span>.</p>
+<p><span class="bold">Note:</span> If you don't want to post the email to a Conversation or wall, select <span class="bold">No Post</span> to just send the email.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>In the resulting dialog, the <span class="bold">Conversation</span> is populated with the Conversation or wall you targeted or with the title of the email, meeting, or task (which will be the title of the new Conversation). To select another Conversation, click <span class="bold">Conversation</span>, then select a recent Conversation or a favorite Conversation, or, to create a new Conversation with a different name, click <span class="bold">New</span>.</span>
+<div>
+<p><span class="bold">Note:</span> For more information about creating a new Conversation, see <a href="oa_conv.htm#GUID-AB55B199-84E7-40E2-AED6-8B70753BBBAF">How do I start a Conversation?</a></p>
+</div>
+</li>
+<li class="stepexpand"><span>Any people included in the email, meeting, or task who are Oracle Social Network users are added to the <span class="bold">Invitees</span>. To select other people to invite, click <span class="bold">Invitees</span>, then, in the Select Members dialog, select groups and people you want to add as members.</span>
+<div>
+<p>Double-click a name to add it to the <span class="bold">Select</span> list at the bottom of the dialog, or select names, then click <span class="bold">Select</span> to add all selections. Use <span class="bold">Ctrl+Click</span> to select more than one person or group.</p>
+<p>By default, you see a list of email recipients. Click a tab to change your view:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Recipients</span>&mdash;View the list of people who received the email.</p>
+</li>
+<li>
+<p><span class="bold">Contacts</span>&mdash;View a list of your contacts.</p>
+</li>
+<li>
+<p><span class="bold">Groups</span>&mdash;View a list of your groups.</p>
+</li>
+<li>
+<p><span class="bold">Current Members</span>&mdash;If you are adding the email to an existing Conversation, you can see the people and groups that are members of the Conversation.</p>
+</li>
+</ul>
+<p>Alternatively, you can enter part of a person's or group's name, and select them from the list that pops up.</p>
+<p><span class="bold">Note:</span> You can hide unwanted email recipients by telling Oracle Social Network to ignore particular email addresses or domain names when adding an email to Oracle Social Network. For more information, see <a href="oa_outlook.htm#GUID-02C3324B-F05A-4B0C-9BC9-4E32E4A15184">How do I tell Oracle Social Network to ignore particular email addresses or domains when posting email messages to a Conversation or wall?</a></p>
+</div>
+</li>
+<li class="stepexpand"><span>Any documents that were part of the email, meeting, or task are added to the <span class="bold">Attachments</span>. To add more attachments, click <span class="bold">Attachments</span>, then, in the dialog, click <span class="bold">Add</span>, select documents to attach, and add descriptions of the selected documents.</span>
+<div>
+<p><span class="bold">Note:</span> The documents you select are uploaded to the Conversation or wall, but they are not also attached as additional documents to the email, meeting, or task.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Post As</span> to select how the text should be posted:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Top-Level Messages</span>&mdash;Post the email as one or more individual messages. Message splits mark the end of each message. See Step <a href="oa_outlook.htm#GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1__CIHBEFCD">6</a> for more information on message splits.</p>
+</li>
+<li>
+<p><span class="bold">Single Message with Replies</span>&mdash;Post the first email message in the dialog as a top-level message in the Conversation or wall, and post all other messages as replies to the top-level message. Message splits mark the end of each message. See Step <a href="oa_outlook.htm#GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1__CIHBEFCD">6</a> for more information on message splits. This option is useful for email threads.</p>
+</li>
+<li>
+<p><span class="bold">Word Document</span>&mdash;Post the email as a Microsoft Word document. Formatting and inline images will be preserved. Message splits aren't supported.</p>
+</li>
+<li>
+<p><span class="bold">HTML Document</span>&mdash;Post email as an HTML document. Formatting and inline images will be preserved. Message splits aren't supported.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand" id="GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1__CIHBEFCD"><span>Any text in the email, meeting, or task is included in the dialog's editor. You can edit the text and formatting, add or remove links, insert references to Oracle Social Network items, and change how the messages are split up.</span>
+<div>
+<p>Oracle Social Network automatically adds message splits ("End of Message" indicators) based on the messages in the email, but you can also manually add or remove message splits to control how the email is posted to the Conversation or wall:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To remove a message split, delete the whole "End of Message" line.</p>
+</li>
+<li>
+<p>To add a message split, place your cursor where you want to split the messages, then click <span class="bold">Add Message Split</span>.</p>
+</li>
+</ul>
+<p>If you're adding an email with multiple messages, the newest message appears in the dialog first (at the top), the same as it does in the email. When the messages are added to Oracle Social Network, the first message in the dialog is posted to the Conversation or wall first, followed by the remaining messages.</p>
+<p>If you want to reverse the order of the messages in the dialog (to show the oldest message first), click <span class="bold">Sort Messages</span>, then select <span class="bold">Last Message on Top</span>.</p>
+<p><span class="bold">Note:</span> The sort order has no effect if there are no message splits.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Post</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG10848"></a>
+<div class="props_rev_3"><a id="GUID-02C3324B-F05A-4B0C-9BC9-4E32E4A15184"></a>
+<h2 id="OSNUG-GUID-02C3324B-F05A-4B0C-9BC9-4E32E4A15184" class="sect2">How do I tell Oracle Social Network to ignore particular email addresses or domains when posting email messages to a Conversation or wall?</h2>
+<div>
+<div class="section">
+<p>You might send or receive email from addresses or domain names that are part of Oracle Social Network but that you don't want to include when posting email messages to Conversations or walls (for example, distribution lists or support email addresses). You can tell Oracle Social Network to ignore these email addresses and domain names so they don't show up in the <span class="bold">Recipients</span> list when you're adding an email to a Conversation or wall. Also, if you're prompted to post outgoing email messages to Oracle Social Network (see <a href="oa_settings.htm#GUID-E3EA1D45-9FB5-404A-8CF4-44DF40BC527E">How do I tell Outlook to prompt me to use Oracle Social Network?</a>), the ignored email addresses and domain names won't generate a prompt.</p>
+<p>You can add email addresses or domain names to the ignore list in the following ways:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>When adding an email to a Conversation or wall:</p>
+<ol>
+<li>
+<p>In the Add to Oracle Social Network dialog, click <span class="bold">Invitees</span>.</p>
+</li>
+<li>
+<p>In the Select Members dialog, on the <span class="bold">Recipients</span> tab, right-click the recipient whose email address/domain name you want to ignore.</p>
+</li>
+<li>
+<p>Select <span class="bold">Add Invitee to Ignore List</span> or <span class="bold">Add Invitee's Domain to Ignore List</span>.</p>
+<p>Recipients that match the ignored email addresses/domain names are immediately removed from the list.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Add, edit, or remove entries in your Posting Email preferences. For more information, see <a href="oa_settings.htm#GUID-E3EA1D45-9FB5-404A-8CF4-44DF40BC527E">How do I tell Outlook to prompt me to use Oracle Social Network?</a>, step <a href="oa_settings.htm#GUID-E3EA1D45-9FB5-404A-8CF4-44DF40BC527E__CIHBBDBI">4</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2546"></a>
+<div class="props_rev_3"><a id="GUID-CC918DE7-BEA7-4772-8A20-1812BE4E7F60"></a>
+<h2 id="OSNUG-GUID-CC918DE7-BEA7-4772-8A20-1812BE4E7F60" class="sect2">How do I add an Oracle Social Network contact to my Microsoft Outlook Contacts list?</h2>
+<div>
+<div class="section">
+<p>You can accomplish this task wherever people or groups are listed, like on a Conversation or wall's membership list or on one of the tabs on the <span class="bold">View people and groups</span> panel. This describes how to add an Outlook Contact from the add-in's <span class="bold">View people and groups panel</span>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="View people and groups icon" title="View people and groups icon" />.</span></li>
+<li class="stepexpand"><span>Click a tab to open it.</span>
+<div>
+<div class="figure" id="GUID-CC918DE7-BEA7-4772-8A20-1812BE4E7F60__GUID-B3927753-537D-41C4-A30D-B5D2C95C7F67"><img width="105" height="17" src="img/GUID-403FADD7-95BB-46D1-9ED9-51CB3FF751CD-default.png" alt="People &amp; Groups tabs" title="People &amp; Groups tabs" /></div>
+<!-- class="figure" -->
+<div class="p"><span class="bold">Tip:</span> On the <span class="bold">Groups</span> tab, double-click a group to open its wall, then click the <span class="bold">Members</span> tab to see its members.
+<div class="figure" id="GUID-CC918DE7-BEA7-4772-8A20-1812BE4E7F60__GUID-4DB9FD3B-1162-4230-82BD-578F9268A9A3"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></div>
+</div>
+</li>
+<li class="stepexpand"><span>Right-click someone on the list, and select <span class="bold">Add to Outlook Contacts</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG1916"></a>
+<div class="props_rev_3"><a id="GUID-748BB6C8-6A63-4C77-8080-92E6C09240BF"></a>
+<h2 id="OSNUG-GUID-748BB6C8-6A63-4C77-8080-92E6C09240BF" class="sect2">How do I schedule a Microsoft Outlook Calendar meeting through the add-in for Outlook?</h2>
+<div>
+<div class="section">
+<ol>
+<li>
+<p>Right-click a message, person, Conversation, wall, or other item, and select <span class="bold">Schedule Meeting</span> to open an Outlook Calendar <span class="bold">Meeting</span> scheduler.</p>
+<p>You can also invite multiple people or groups in one action:</p>
+<ol>
+<li>
+<p>On the <span class="bold">People and Groups</span> tab, use Ctrl+Click to select multiple people or groups.</p>
+</li>
+<li>
+<p>Right-click, and select <span class="bold">Schedule Meeting</span> from the context menu.</p>
+<p>The people or groups you selected are added to the meeting's list of invitees.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Finish setting up the meeting as you would for any Outlook Calendar entry.</p>
+</li>
+</ol>
+<p><span class="bold">Note:</span> You can add meeting details from your Outlook Calendar to a Conversation or wall. For more information, see <a href="oa_outlook.htm#GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1">How do I add email, meeting details, or tasks to a Conversation or wall?</a></p>
+<p>Where you initiate a new meeting in the add-in affects who is automatically invited to the meeting and what is included in the invitation. For example:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>Right-click a message, and the person who posted the message is automatically added to the <span class="bold">To</span> field in the meeting scheduler. Additionally, a link to the message is included in the body of the invitation.</p>
+</li>
+<li>
+<p>Right-click a document, and the person who uploaded the document is added to the <span class="bold">To</span> field in the meeting scheduler. Additionally, a link to the document is added to the body of the invitation.</p>
+</li>
+<li>
+<p>Right-click a listed Conversation, wall, collection, or Social Object, and no one is automatically added to the <span class="bold">To</span> field in the meeting scheduler. But a link to the item that you right-clicked is included in the body of the message.</p>
+</li>
+</ul>
+<p><span class="bold">Tip:</span> You can invite people who use Oracle Social Network using the scheduler's <span class="bold">Attendees</span> list. Select I<span class="bold">nvite Attendees</span>, then <span class="bold">Attendees</span>, and <span class="bold">Address Book</span>. In the Select Attendees and Resources dialog in Outlook Calendar, open the Address Book menu and select Oracle Social Network under <span class="bold">Outlook Address Book</span> (or <span class="bold">Other Address Books</span>).</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2547"></a>
+<div class="props_rev_3"><a id="GUID-B4201477-6729-464B-AE02-3133488E5BB2"></a>
+<h2 id="OSNUG-GUID-B4201477-6729-464B-AE02-3133488E5BB2" class="sect2">How do I create a Microsoft Outlook Task from the add-in for Outlook?</h2>
+<div>
+<div class="section">
+<p>You can accomplish this wherever people or groups are listed, like on a Conversation or wall's list of members or on one of the tabs on the <span class="bold">View people and groups</span> panel. This describes how to create an Outlook Task from the add-in's <span class="bold">View people and groups panel</span>.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="View people and groups icon" title="View people and groups icon" />.</span></li>
+<li class="stepexpand"><span>Click a tab to open it.</span>
+<div>
+<div class="figure" id="GUID-B4201477-6729-464B-AE02-3133488E5BB2__GUID-F15CF85B-B421-40EA-9504-4F8C15E84F7B"><img width="105" height="17" src="img/GUID-403FADD7-95BB-46D1-9ED9-51CB3FF751CD-default.png" alt="People &amp; Groups tabs" title="People &amp; Groups tabs" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Right-click someone on the list, and select <span class="bold">Create Task</span>.</span>
+<div>
+<div class="p"><span class="bold">Note:</span> For groups, double-click a group, open its <span class="bold">Members</span> tab, then right-click a group member.
+<div class="figure" id="GUID-B4201477-6729-464B-AE02-3133488E5BB2__GUID-FE20CF89-CBF1-486D-981A-38214BFC5C6F"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></div>
+</div>
+</li>
+<li class="stepexpand"><span>Fill out and save the <span class="bold">Task</span> form like you would with any other Outlook task.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2549"></a><a id="OSNUG2548"></a>
+<div class="props_rev_3"><a id="GUID-EF3E79DF-8735-4DBF-A72E-B4D2947602E4"></a>
+<h2 id="OSNUG-GUID-EF3E79DF-8735-4DBF-A72E-B4D2947602E4" class="sect2">How do I send an email from the add-in for Outlook?</h2>
+<div>
+<div class="section">
+<p>You can send an Outlook email from just about anywhere in the add-in for Outlook, like the list of messages in a Conversation, on a person or a group on the <span class="bold">View people and groups</span> panel, on a document on the <span class="bold">Documents</span> panel or on the <span class="bold">Documents</span> tab of any Conversation or wall.</p>
+<p><span class="bold">Note:</span> You can also add an Outlook email to a Conversation or wall. For more information, see <a href="oa_outlook.htm#GUID-CC634DBC-A582-4964-8463-FB236FCFD9D1">How do I add email, meeting details, or tasks to a Conversation or wall?</a></p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>Right-click an item, person, or group, and select <span class="bold">Send Email</span> or <span class="bold">Send As Email</span> (depending on your starting point).</span></li>
+<li><span>Write and send the message like you would any other Outlook email.</span></li>
+</ol>
+<div class="section">
+<p>The person, group, or type of item you initiate this action from determines what you are sending. <a href="oa_outlook.htm#GUID-EF3E79DF-8735-4DBF-A72E-B4D2947602E4__BEJHEFEA" title="Inclusions in emails initiated from Oracle Social Network">Table 14-3</a> lists people, groups, and item types and describes what occurs when you select <span class="bold">Send Email</span> or <span class="bold">Send As Email</span>.</p>
+<div class="tblformalwide" id="GUID-EF3E79DF-8735-4DBF-A72E-B4D2947602E4__BEJHEFEA">
+<p class="titleintable">Table 14-3 What Gets Sent When You Send Email from the Add-In?</p>
+<table class="cellalignment11" title="What Gets Sent When You Send Email from the Add-In?" summary="Inclusions in emails initiated from Oracle Social Network">
+<thead>
+<tr class="cellalignment2">
+<th class="cellalignment80" id="d40107e689">Send (As) Email From a</th>
+<th class="cellalignment81" id="d40107e692">An Email Form Opens With&nbsp;&hellip;</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e697" headers="d40107e689">
+<p>Conversation</p>
+</td>
+<td class="cellalignment83" headers="d40107e697 d40107e692">
+<p>The name of the Conversation in the Subject field and a link to the Conversation in the body of the email</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e704" headers="d40107e689">
+<p>Collection</p>
+</td>
+<td class="cellalignment83" headers="d40107e704 d40107e692">
+<p>The name of the collection in the Subject field and a link to the collection in the body of the email</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e711" headers="d40107e689">
+<p>Message</p>
+</td>
+<td class="cellalignment83" headers="d40107e711 d40107e692">
+<p>The email address of the person who posted the message in the To field; the name of the Conversation where the message was posted in the Subject field; and the message and a link to the message in the body of the email</p>
+<p>When recipients click the link, it opens the Conversation where the message was posted in the web version of Oracle Social Network</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e720" headers="d40107e689">
+<p>Document</p>
+</td>
+<td class="cellalignment83" headers="d40107e720 d40107e692">
+<p>The person who uploaded the document in the To field; the name of the Conversation where the documents was posted in the Subject field; and the document added as an attachment</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e727" headers="d40107e689">
+<p>Person</p>
+</td>
+<td class="cellalignment83" headers="d40107e727 d40107e692">
+<p>The person's name in the To field</p>
+</td>
+</tr>
+<tr class="cellalignment2">
+<td class="cellalignment82" id="d40107e734" headers="d40107e689">
+<p>Group</p>
+</td>
+<td class="cellalignment83" headers="d40107e734 d40107e692">
+<p>All members of the group in the To field</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="oa_so.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="oa_landf.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

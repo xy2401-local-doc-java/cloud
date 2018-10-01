@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Monitoring Integration Cloud Services</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Use the Integration Cloud Service dashboard to see how your integrations are performing. The dashboard provides multiple views for you to check your running services." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E"></a> <span id="PAGE" style="display:none;">59/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E" class="sect1">Monitoring Integration Cloud Services</h1>
+<div>
+<p>Use the Integration Cloud Service dashboard to see how your integrations are performing. The dashboard provides multiple views for you to check your running services.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A" title="You can view information about how your integrations are performing on the Dashboard page.">Viewing the Dashboard</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-1988E089-DB84-469C-A9F1-564F27685D13" title="You can view information about the system health of Oracle Integration Cloud Service components. As you navigate around Oracle Integration Cloud Service, you receive a system health state that is not older then five minutes. The only exception is the Messaging Service state, which may take longer than five minutes to update.">Viewing System Health</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-FD354A23-22A1-463D-A864-115CCBB0AB93" title="You can view the runtime health of Oracle Integration Cloud Service.">Viewing Runtime Health</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-60740D78-EF3C-40CA-83CD-A298150A0C24" title="You can view the design-time metrics of Oracle Integration Cloud Service, including details about packages, integrations, connections, lookups, and agents.">Viewing Design-Time Metrics</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18" title="On the Integration Cloud Service dashboard, you can see how your running integrations are processing messages, such as how many messages have been received and processed, how many successful messages and errors have occurred, and the overall success rate.">Monitoring Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" title="You can monitor the agent groups and their associated on-premises agents in Oracle Integration Cloud Service.">Monitoring Agents</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A"></a>
+<h2 id="ICSUG-GUID-A18B7212-6246-40A1-A7BB-E495EE29A92A" class="sect2">Viewing the Dashboard</h2>
+<div>
+<p>You can view information about how your integrations are performing on the Dashboard page.</p>
+<div class="section">To view the dashboard:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Access the dashboard through one of the following methods:</span>
+<ol>
+<li class="substepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li class="substepexpand"><span>On the Integration Cloud Service Home page, click the <span class="bold">Monitor</span> diagram.</span>
+<div>The Dashboard page is displayed by default. If not, click the <span class="bold">Dashboard</span> tab.</div>
+</li>
+</ol>
+<div>The Dashboard page provides the following details:
+<ul style="list-style-type: disc;">
+<li>
+<p>A list for selecting the time period for which to display integration information (for example, one hour, six hours, one day, two days, three days, or since the first activation).</p>
+</li>
+<li>
+<p>Success rate for messages. Click the percentage value or wording to access the Errors by Integration page.</p>
+</li>
+<li>
+<p>Number of initiated messages in the last three days. Click the value or wording to access the Tracking page.</p>
+</li>
+<li>
+<p>Number of failed messages in the last three days. Click the value or wording to access the Error Message Details page.</p>
+</li>
+<li>
+<p>Number and percentage of currently used connections. Click the value, percentage, or wording beneath the percentage to access the Errors by Connection page.</p>
+</li>
+<li>
+<p>Number and percentage of currently active integrations. Click the value, percentage, or wording beneath the percentage to access the Errors by Integration page.</p>
+</li>
+<li>
+<p>Number and percentage of scheduled integrations, including those currently paused. Click the value, percentage, or wording beneath the percentage to access the Integrations page listing all scheduled integrations.</p>
+</li>
+<li>
+<p>Activity streams link. Click the link to access the Runtime Health page to view the activity stream.</p>
+</li>
+<li>
+<p>Download Logs menu. Click the link to show options for downloading the Oracle Integration Cloud Service logs or diagnostics logs. If you are having problems with an integration, you can attach the diagnostic logs to a service request for help in debugging the issue.</p>
+</li>
+<li>
+<p>Download incidents link. Click to download the created incident report. For more information, see <a href="GUID-801093AB-F012-4AB7-ADD0-B19F97060CD9.htm" title="You can report incidents for problematic issues that occur during design time (for example, being unable to open an integration, the failure of connection testing, or the failure of artifact regeneration).">Reporting Incidents</a>.</p>
+</li>
+<li>
+<p>Graphs showing the hourly and daily history of total, successful, and failed messages. You can place your cursor over the bars in each graph to display the total number of successful messages and failed messages.</p>
+</li>
+</ul>
+<br />
+<img width="1092" height="587" src="img/GUID-13F23A24-B532-428B-9AA7-2B0A3C412B44-default.png" alt="Description of GUID-13F23A24-B532-428B-9AA7-2B0A3C412B44-default.png follows" title="Description of GUID-13F23A24-B532-428B-9AA7-2B0A3C412B44-default.png follows" /><br />
+<a href="img_text/GUID-13F23A24-B532-428B-9AA7-2B0A3C412B44-default.htm">Description of the illustration GUID-13F23A24-B532-428B-9AA7-2B0A3C412B44-default.png</a><br /></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-1988E089-DB84-469C-A9F1-564F27685D13"></a>
+<h2 id="ICSUG-GUID-1988E089-DB84-469C-A9F1-564F27685D13" class="sect2">Viewing System Health</h2>
+<div>
+<p>You can view information about the system health of <span>Oracle Integration Cloud Service</span> components. As you navigate around <span>Oracle Integration Cloud Service</span>, you receive a system health state that is not older then five minutes. The only exception is the Messaging Service state, which may take longer than five minutes to update.</p>
+<div class="section">The state of system health is viewable from multiple locations in <span>Oracle Integration Cloud Service</span>:
+<ul style="list-style-type: disc;">
+<li>
+<p>From the main banner of pages</p>
+</li>
+<li>
+<p>From the Integrations, Connections, and Lookups pages</p>
+</li>
+<li>
+<p>From the mapper or expression builder</p>
+</li>
+<li>
+<p>From the System Health page under the <span class="bold">Monitoring</span> tab</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">To view system health:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On any page of <span>Oracle Integration Cloud Service</span> or from the Integration page, Connections page, Lookups page, mapper, or expression builder, click the <span class="bold">System Health</span> icon in the upper right corner to display the status of system health. Green indicates that the service is running as expected. Red indicates that errors are occurring in the service that can impact your active integrations.</span>
+<div><br />
+<img width="365" height="135" src="img/GUID-EFBBF0B8-D30C-45AC-9BCF-A3A17DB8301D-default.png" alt="Description of GUID-EFBBF0B8-D30C-45AC-9BCF-A3A17DB8301D-default.png follows" title="Description of GUID-EFBBF0B8-D30C-45AC-9BCF-A3A17DB8301D-default.png follows" /><br />
+<a href="img_text/GUID-EFBBF0B8-D30C-45AC-9BCF-A3A17DB8301D-default.htm">Description of the illustration GUID-EFBBF0B8-D30C-45AC-9BCF-A3A17DB8301D-default.png</a><br />
+<p>You can also view the status of system health from the Monitoring dashboard.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Access the Monitoring dashboard through one of the following methods:</span>
+<ol>
+<li><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li><span>On the Integration Cloud Service Home page, click the <span class="bold">Monitor</span> diagram.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">System Health</span>.</span></li>
+<li class="stepexpand"><span>View the current status of system services upon which Oracle Integration Cloud Service relies. A green checkmark indicates that the service is running as expected. A red triangle for a service indicates that errors are occurring that can impact your active integrations.</span>
+<div><br />
+<img width="694" height="352" src="img/GUID-3E344BE3-5572-4BE7-A91D-CBDBE0912E72-default.png" alt="Description of GUID-3E344BE3-5572-4BE7-A91D-CBDBE0912E72-default.png follows" title="Description of GUID-3E344BE3-5572-4BE7-A91D-CBDBE0912E72-default.png follows" /><br />
+<a href="img_text/GUID-3E344BE3-5572-4BE7-A91D-CBDBE0912E72-default.htm">Description of the illustration GUID-3E344BE3-5572-4BE7-A91D-CBDBE0912E72-default.png</a><br /></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-FD354A23-22A1-463D-A864-115CCBB0AB93"></a>
+<h2 id="ICSUG-GUID-FD354A23-22A1-463D-A864-115CCBB0AB93" class="sect2">Viewing Runtime Health</h2>
+<div>
+<p>You can view the runtime health of Oracle Integration Cloud Service.</p>
+<div class="section">To view the runtime health of Oracle Integration Cloud Service:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Access the Monitoring dashboard through one of the following methods:</span>
+<ol>
+<li><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li><span>On the Integration Cloud Service Home page, click the <span class="bold">Monitor</span> diagram.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">Runtime Health</span>.</span></li>
+<li class="stepexpand"><span>View the total number of messages received, total number of messages processed, total number of successful and failed messages, and the message success rate percentage. The graphs showing the hourly and daily history of total, successful, and failed messages that appeared on the Dashboard page are also provided. You can also view the activity stream for your running integrations, such as details about successful responses received from the target application, successful responses sent to the source application, and target application invocations.<br />
+<img width="1265" height="545" src="img/GUID-C9FC5A41-35AD-4916-933C-3E1B49386579-default.png" alt="Description of GUID-C9FC5A41-35AD-4916-933C-3E1B49386579-default.png follows" title="Description of GUID-C9FC5A41-35AD-4916-933C-3E1B49386579-default.png follows" /><br />
+<a href="img_text/GUID-C9FC5A41-35AD-4916-933C-3E1B49386579-default.htm">Description of the illustration GUID-C9FC5A41-35AD-4916-933C-3E1B49386579-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Refresh Activity Stream</span> to refresh the view to display the latest activities.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Download Logs</span> to show options for downloading the Oracle Integration Cloud Service logs or diagnostics logs. The Oracle Integration Cloud Service logs provide more detailed logging information about payload activity at several points in the integration flow, such as the payload prior to data mapping and the payload after data mapping. For information about enabling tracing, see <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a>. If you are having problems with an integration, you can attach the diagnostic logs to a service request for help in debugging the issue.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-60740D78-EF3C-40CA-83CD-A298150A0C24"></a>
+<h2 id="ICSUG-GUID-60740D78-EF3C-40CA-83CD-A298150A0C24" class="sect2">Viewing Design-Time Metrics</h2>
+<div>
+<p>You can view the design-time metrics of Oracle Integration Cloud Service, including details about packages, integrations, connections, lookups, and agents.</p>
+<div class="section">To view the design-time metrics of Oracle Integration Cloud Service:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Access the Monitoring dashboard through one of the following methods:</span>
+<ol>
+<li><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span></li>
+<li><span>On the Integration Cloud Service Home page, click the <span class="bold">Monitor</span> diagram.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">Design-Time Metrics</span>.</span></li>
+<li class="stepexpand"><span>View details about the following components in Oracle Integration Cloud Service:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>The number of developed and prebuilt packages.</p>
+</li>
+<li>
+<p>The state of integrations (draft (under construction), configured, active, and failed).</p>
+</li>
+<li>
+<p>The state of connections (draft, configured, and in use).</p>
+</li>
+<li>
+<p>The number of lookups.</p>
+</li>
+<li>
+<p>The number of connectivity and execution agents.</p>
+</li>
+</ul>
+<br />
+<img width="803" height="658" src="img/GUID-CD4BC0F1-C4F8-4427-A7BC-DE972C1E16B4-default.png" alt="Description of GUID-CD4BC0F1-C4F8-4427-A7BC-DE972C1E16B4-default.png follows" title="Description of GUID-CD4BC0F1-C4F8-4427-A7BC-DE972C1E16B4-default.png follows" /><br />
+<a href="img_text/GUID-CD4BC0F1-C4F8-4427-A7BC-DE972C1E16B4-default.htm">Description of the illustration GUID-CD4BC0F1-C4F8-4427-A7BC-DE972C1E16B4-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click the arrow for <span class="bold">Integrations</span> to display details about the number of integrations configured for the following::</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Performing file transfers</p>
+</li>
+<li>
+<p>Using the <span class="bold">Map Data</span> integration type</p>
+</li>
+<li>
+<p>Using undefined integrations</p>
+</li>
+<li>
+<p>Using message exchange pattern (MEP) types</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click the arrow for <span class="bold">Integrations</span> again to view how many integrations are using each adapter.</span></li>
+<li class="stepexpand"><span>Click the arrows for <span class="bold">Connections</span> and <span class="bold">Agents</span> to view more specific details about those components.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18"></a>
+<h2 id="ICSUG-GUID-5E722590-C9A8-4A9C-96C3-08B313DF0F18" class="sect2">Monitoring Integrations</h2>
+<div>
+<p>On the Integration Cloud Service dashboard, you can see how your running integrations are processing messages, such as how many messages have been received and processed, how many successful messages and errors have occurred, and the overall success rate.</p>
+<div class="section">To monitor integrations:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</span>
+<div>The Monitoring dashboard is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the navigator, click <span class="bold">Integrations</span>.</span>
+<div>A list of running integrations appears, along with processing information about the number of messages received, the number of messages processed, the number of successful messages, and the number of failed messages.</div>
+</li>
+<li class="stepexpand"><span>From the <span class="bold">Integrations</span> list, select the time period for which to display integration information (for example, one hour, six hours, one day, two days, three days, or since the first activation).</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B"></a>
+<h2 id="ICSUG-GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" class="sect2">Monitoring Agents</h2>
+<div>
+<p>You can monitor the agent groups and their associated on-premises agents in Oracle Integration Cloud Service.</p>
+<div class="p">To monitor an agent:
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Monitoring</span>.</p>
+</li>
+<li>
+<p>In the navigation panel on the left, click <span class="bold">Agents</span>.</p>
+</li>
+<li>
+<p>The Agent Monitoring page shows details such as the time at which the agent was last updated and the on-premises agents associated with the agent groups.</p>
+<div class="infobox-note" id="GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B__GUID-BA20B6EF-2B63-4AF8-8916-0DED9DA21A86">
+<p class="notep1">Note:</p>
+If the agent status is red, you cannot select it in the Select an Agent Group dialog of the Connections page, even though the agent may be up and running.</div>
+</li>
+<li>
+<p>Click the number above <span class="bold">AGENTS</span> or click the agent group name to see the on-premises agent associated with this group.</p>
+</li>
+<li>
+<p>At the far right, click the information icon to display details about the agent group such as creation date and the last startup date of the on-premises agent.</p>
+</li>
+<li>
+<p>Click <span class="bold">Sort By</span> to sort by agent name or the date at which the on-premises agent was last started.</p>
+</li>
+</ol>
+<div class="infobox-note" id="GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B__GUID-711D6ABA-7FBE-47A5-A85B-CCBED9816BFE">
+<p class="notep1">Note:</p>
+When you shut down the agent server, several minutes pass before the agent is displayed as down on the Agent Monitoring page (as indicated by a red thunderbolt).</div>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-B231549B-5C18-4609-9ECB-7D73D6FC0EB9.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Generating invoices</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="An invoice lists the balance information for a customer's bill, and the amount due. In Oracle Monetization Cloud, you can assign invoice templates to a customer, view a customer's invoice, and generate a batch of invoices for your customers in PDF format." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="trial-billing-topics-document.htm" title="Previous" type="text/html" />
+<link rel="Next" href="customizing-bill-items2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E9959C5B-C706-4B3E-98B1-A0CBCE6B7F7D"></a> <span id="PAGE" style="display:none;">45/67</span> <!-- End Header -->
+<a id="BCSUG871"></a><a id="BCSUG872"></a><a id="BCSUG508"></a>
+<h1 id="BCSUG-GUID-E9959C5B-C706-4B3E-98B1-A0CBCE6B7F7D" class="sect1"><span class="enumeration_chapter">38</span> Generating invoices</h1>
+<div>
+<p>An invoice lists the balance information for a customer's bill, and the amount due. In Oracle Monetization Cloud, you can assign invoice templates to a customer, view a customer's invoice, and generate a batch of invoices for your customers in PDF format.</p>
+<p>For background information, see <a href="overview-oracle-monetization-cloud.htm#GUID-9F13C9B8-734F-4A89-8540-0454E1119921">Overview of Oracle Monetization Cloud</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="generating-invoices2.htm#GUID-A76B89F0-186F-495E-AABD-29CFD1E47397">About invoicing</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-2D4A1DEF-1D16-4594-AAE6-3E636CDC67D2">Customizing invoices</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-79069B59-55D0-41B6-9AF9-76BA9AA4CA54">Assigning invoice templates to bills</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-FA1A31A3-EDB4-488C-AB7F-A02B4DB43809">Setting the output format for invoices</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-6B571416-5414-4D62-B068-0EBFE1DCD26A">Generating invoices</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-BE550C9E-091C-4B71-B352-2D643A1A05BC">Accessing your invoices</a></p>
+</li>
+<li>
+<p><a href="generating-invoices2.htm#GUID-F4880D26-BCAA-42D4-9F88-09EA02A63635">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG509"></a>
+<div class="props_rev_3"><a id="GUID-A76B89F0-186F-495E-AABD-29CFD1E47397"></a>
+<h2 id="BCSUG-GUID-A76B89F0-186F-495E-AABD-29CFD1E47397" class="sect2">About invoicing</h2>
+<div>
+<p>After you run billing, you can generate invoices that you send to your customers. Two types of invoices can be generated: detailed and summary.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A detailed invoice lists the bill items and the events that have currency balance impacts greater than zero.</p>
+</li>
+<li>
+<p>A summary invoice lists only the bill items and not the events.</p>
+</li>
+</ul>
+<p>Before creating your final invoices, you can run trial billing to validate that your company's billing charges are correct. See <a href="trial-billing-topics-document.htm#GUID-DEEAD488-FE24-4BAC-8D14-BF80E1DB2500" title="Trial billing is a process that simulates billing in Oracle Monetization Cloud and creates trial invoices. You use trial billing to validate billing results without impacting customer accounts.">About trial billing</a>.</p>
+</div>
+</div>
+<a id="BCSUG680"></a>
+<div class="props_rev_3"><a id="GUID-2D4A1DEF-1D16-4594-AAE6-3E636CDC67D2"></a>
+<h2 id="BCSUG-GUID-2D4A1DEF-1D16-4594-AAE6-3E636CDC67D2" class="sect2">Customizing invoices</h2>
+<div>
+<p>To customize the appearance of an invoice, you modify the invoice template by using Oracle Business Intelligence (BI) Publisher. You can change the surrounding text, graphics, and layout. You can't change the content of the invoice; for example, by adding charges from custom events.</p>
+<p>To modify an invoice template in BI Publisher, save the invoice template as a Word file, edit it, and then upload it to BI Publisher.</p>
+</div>
+</div>
+<a id="BCSUG873"></a>
+<div class="props_rev_3"><a id="GUID-79069B59-55D0-41B6-9AF9-76BA9AA4CA54"></a>
+<h2 id="BCSUG-GUID-79069B59-55D0-41B6-9AF9-76BA9AA4CA54" class="sect2">Assigning invoice templates to bills</h2>
+<div>
+<p>Default invoice templates are assigned to your customers' bills whenever you create an account or add a bill unit to an existing account. You can change the template assigned to a bill or bill unit; for example, to one with a corporate customer's logo.</p>
+<p>Use Subscriber Management to assign an invoice template to a customer's bills. After opening the account, select <span class="bold">Actions</span>, <span class="bold">Financial Setup</span>, and then <span class="bold">Bill Unit Setup</span>. Select the <span class="bold">Edit</span> icon and then specify the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The invoice template to use for bills that have been rerated after an invoice has already been sent to the customer. You can select a Replacement or a Corrective template. The Replacement template includes the original charges and the corrected charges. The Corrected template includes only the corrected charges. The default is Replacement.</p>
+</li>
+<li>
+<p>The invoice template to use for all other bills. You can select a Consumer or a Corporate template. The default is Consumer.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG1036"></a>
+<div class="props_rev_3"><a id="GUID-FA1A31A3-EDB4-488C-AB7F-A02B4DB43809"></a>
+<h2 id="BCSUG-GUID-FA1A31A3-EDB4-488C-AB7F-A02B4DB43809" class="sect2">Setting the output format for invoices</h2>
+<div>
+<p>By default, your customers' invoices are generated in PDF format. To change the output format, you use BI Publisher to modify the bursting definition for your data model. In the bursting definition, set the OUTPUT_FORMAT parameter to the desired format, such as XML, HTML, or RTF.</p>
+<p>For more information, see the discussion about adding bursting definitions in <span><cite>Oracle Fusion Middleware Data Modeling Guide for Oracle Business Intelligence Publisher</cite></span>.</p>
+</div>
+</div>
+<a id="BCSUG510"></a>
+<div class="props_rev_3"><a id="GUID-6B571416-5414-4D62-B068-0EBFE1DCD26A"></a>
+<h2 id="BCSUG-GUID-6B571416-5414-4D62-B068-0EBFE1DCD26A" class="sect2">Generating invoices</h2>
+<div>
+<p>To generate invoices for your customers, you create an invoice job. You can specify which invoices to generate based on your customers' payment method, when your customers' billing cycle ends, and the invoice type.</p>
+<p>Use Business Operations to create an invoice job. Select the <span class="bold">Jobs</span> icon, <span class="bold">Invoicing</span>, and then <span class="bold">New</span>. The options for running the job are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Run the job once. You can run it immediately or on a specific calendar day.</p>
+</li>
+<li>
+<p>Repeat the job.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify how often to run the job: daily, weekly, or monthly.</p>
+</li>
+<li>
+<p>Specify when to start the job, immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Specify when to end the job, never or at a specified date and time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Get an email notification when the job completes.</p>
+</li>
+</ul>
+<p>The invoice job attributes are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The payment method.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Credit card or debit card</p>
+</li>
+<li>
+<p>Invoice</p>
+</li>
+<li>
+<p>All payment methods</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The accounts to generate an invoice for. You can generate invoices for accounts whose billing cycle ends:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>On or before the day the job is run.</p>
+</li>
+<li>
+<p>A specified number of days before the date the job is run.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The invoice type: summary or detailed.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG1092"></a>
+<div class="props_rev_3"><a id="GUID-BE550C9E-091C-4B71-B352-2D643A1A05BC"></a>
+<h2 id="BCSUG-GUID-BE550C9E-091C-4B71-B352-2D643A1A05BC" class="sect2">Accessing your invoices</h2>
+<div>
+<p>After you run an invoicing job, your invoices are saved to the Oracle Monetization Cloud database so you can view them in BI Publisher and Subscriber Management. When the customer's payment type is invoice and preferred delivery method is postal, the invoices are also saved in PDF format to your SFTP server.</p>
+</div>
+<a id="BCSUG1093"></a>
+<div class="props_rev_3"><a id="GUID-E386D9E0-0337-474F-9A47-76343E067355"></a>
+<h3 id="BCSUG-GUID-E386D9E0-0337-474F-9A47-76343E067355" class="sect3">Viewing invoices in BI Publisher</h3>
+<div>
+<p>You can view all of your customers' invoices by using BI Publisher.</p>
+<p>In BI Publisher, select <span class="bold">Catalog</span>. In the <span class="bold">Folders</span> section, select <span class="bold">Shared Folders</span>, <span class="bold">BRM_Invoices</span>, <span class="bold">0.0.0.1</span>, and then <span class="bold">ViewInvoiceReport</span>. Your invoices are grouped according to their template type, such as consumer invoice or corporate invoice.</p>
+<p>For information about using BI Publisher, see <span><cite>Oracle Fusion Middleware User's Guide for Oracle Business Intelligence Publisher</cite></span>.</p>
+</div>
+</div>
+<a id="BCSUG874"></a>
+<div class="props_rev_3"><a id="GUID-72BD37B8-39A2-4A02-B1E5-14977E4E0EEA"></a>
+<h3 id="BCSUG-GUID-72BD37B8-39A2-4A02-B1E5-14977E4E0EEA" class="sect3">Viewing invoices in Subscriber Management</h3>
+<div>
+<div class="section">Use Subscriber Management to view a customer's invoice; for example, so you can review its contents with the customer during a phone call.</div>
+<!-- class="section" -->
+<ol>
+<li><span>Open an account and then select the <span class="bold">Bills</span> tab.</span></li>
+<li><span>Select a bill.</span></li>
+<li><span>In the <span class="bold">Bills</span> section, select <span class="bold">Actions</span> and then <span class="bold">View Invoice PDF</span>.</span></li>
+</ol>
+<div class="section">
+<p>You can also download or print the invoice.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG1037"></a>
+<div class="props_rev_3"><a id="GUID-9E2BE3AC-886D-42A0-8DCE-EB4EEF5A45F3"></a>
+<h3 id="BCSUG-GUID-9E2BE3AC-886D-42A0-8DCE-EB4EEF5A45F3" class="sect3">Retrieving invoice files from the SFTP server</h3>
+<div>
+<p>When a customer's payment type is invoice and delivery method is postal, Business Operations saves the invoice in PDF format to your SFTP server.</p>
+<p>You can retrieve the invoice files from the SFTP server's <span class="bold">/u01/sftp/</span><span class="italic">environment</span><span class="bold">_tenant_sftp/outgoing/invoices</span> directory, where <span class="italic">environment</span> is <span class="bold">prod</span> for the production environment or <span class="bold">test</span> for the development environment. From there, you can securely download the invoices to an external system from which you can mail them to your customers.</p>
+</div>
+</div>
+</div>
+<a id="BCSUG681"></a>
+<div class="props_rev_3"><a id="GUID-F4880D26-BCAA-42D4-9F88-09EA02A63635"></a>
+<h2 id="BCSUG-GUID-F4880D26-BCAA-42D4-9F88-09EA02A63635" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="billing2.htm#GUID-0D6FB6F8-633A-43B7-BCF5-21CE09CF043E" title="Billing is a process that calculates the amount each customer owes for the current billing cycle and then stores the information internally in Oracle Monetization Cloud. It doesn't generate invoices or collect payments from your customers.">About billing</a></p>
+</li>
+<li>
+<p><a href="managing-payment-methods1.htm#GUID-3FE51160-2622-489C-A089-4F0F66197CC8" title="A payment method is the way that your customers pay their bills. For example, they could pay through credit cards, debit cards, or checks. In Oracle Monetization Cloud, the payment method is specified when the account is created, but it can be changed at any time.">Managing payment methods</a></p>
+</li>
+<li>
+<p><a href="configuring-customers-billing-settings1.htm#GUID-A23072B8-938F-458C-A6AA-B1E7F988C505">Configuring a customer's billing settings</a></p>
+</li>
+<li>
+<p><a href="running-business-operations-jobs1.htm#GUID-3E770FFC-9731-42F4-B2EE-6DCAD2CD384E">About running business operations jobs</a></p>
+</li>
+<li>
+<p><a class="olink BCSIG2357" target="_blank" href="../BCSIG/transferring-files-securely1.htm#BCSIG2357">Transferring files securely with SFTP</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="trial-billing-topics-document.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="customizing-bill-items2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

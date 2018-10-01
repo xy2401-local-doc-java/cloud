@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Oracle Cloud Help Center</title>
+        <meta http-equiv="refresh" content="1; url=/en/cloud/get-started/index.html">
+        <script type="text/javascript">
+            console.log(location.search);
+            if(typeof location.search != "undefined" && location.search.length > 0) {
+              if(location.search.indexOf("tab=2") >= 0) {
+                location.replace("/en/cloud/saas/index.html");
+              } else if(location.search.indexOf("tab=3") >= 0) {
+                location.replace("/en/cloud/paas/index.html");
+              } else if(location.search.indexOf("tab=4") >= 0) {
+                location.replace("/en/cloud/iaas/index.html");
+              } else if(location.search.indexOf("tab=5") >= 0) {
+                location.replace("/en/cloud/marketplace/index.html");
+              } else if(location.search.indexOf("tab=6") >= 0) {
+                location.replace("/cloud-machine/latest/?tab=2");
+              } else {
+                location.replace("/en/cloud/");
+              }
+            } else if(typeof location.hash != "undefined" && location.hash.length > 0) {
+              if(location.hash.indexOf("tab2") >= 0) {
+                location.replace("/en/cloud/saas/index.html");
+              } else if(location.hash.indexOf("tab3") >= 0) {
+                location.replace("/en/cloud/paas/index.html");
+              } else if(location.hash.indexOf("tab4") >= 0) {
+                location.replace("/en/cloud/iaas/index.html");
+              } else if(location.hash.indexOf("tab5") >= 0) {
+                location.replace("/en/cloud/marketplace/index.html");
+              } else if(location.hash.indexOf("tab6") >= 0) {
+                location.replace("/cloud-machine/latest/?tab=2");
+              } else {
+                location.replace("/en/cloud/");
+              }
+            } else {
+              location.replace("/en/cloud/get-started/index.html");
+            }
+        </script>
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <p>If you are not redirected automatically, follow this <a href='/en/cloud/'>link to Oracle Cloud Help Center</a>.</p>
+    </body>
+</html>

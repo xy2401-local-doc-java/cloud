@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Network Access to MySQL Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="By default, network access to the compute nodes associated with MySQL Cloud Service is provided by Secure Shell (SSH) connections on port 22. To access other network protocols and services requires additional configuration." />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-7EAF7972-0A00-4647-9861-BDB3E843E84B.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E"></a> <span id="PAGE" style="display:none;">33/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E" class="sect1">About Network Access to <span id="MYSQLCSHORT">MySQL Cloud Service</span></h1>
+<div>
+<p>By default, network access to the compute nodes associated with <span>MySQL Cloud Service</span> is provided by Secure Shell (SSH) connections on port 22. To access other network protocols and services requires additional configuration.</p>
+<div class="section">
+<p class="subhead1">SSH Access on Port 22</p>
+<p>SSH is a cryptographic network protocol that uses two keys, one public and one private, to provide secure communication between two networked computers. Port 22 is the standard TCP/IP port that is assigned to SSH servers.</p>
+<div class="infobox-note" id="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E__GUID-56E83273-00C7-4E78-96CC-3F7DF2A296E1">
+<p class="notep1">Note:</p>
+Only the <code class="codeph">opc</code> user can connect to <span id="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E__MYSQLCSHORT">MySQL Cloud Service</span> over SSH. For more information on the <code class="codeph">opc</code> user, see <a href="GUID-5D3A2177-9947-4B5A-A84C-D74ED096919D.htm" title="This section provides information about Linux user accounts that are provisioned on a MySQL Cloud Service deployment.">Linux User Accounts</a>.</div>
+<p>When a database deployment is being created, the public key is specified on the Details page of the Create MySQL Cloud Service wizard by:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Uploading the public key file.</p>
+<p>When the public key file is uploaded during the database deployment creation process, the key is added to the Oracle Compute Cloud Service environment that supports <span>MySQL Cloud Service</span> and given a unique name.</p>
+</li>
+<li>
+<p>Entering the full hierarchical name of an existing public key using the format <code class="codeph">/</code><span class="italic"><code class="codeph">domain</code></span><code class="codeph">/</code><span class="italic"><code class="codeph">user</code></span><code class="codeph">/</code><span class="italic"><code class="codeph">keyname</code></span>.</p>
+<p>An existing public key is one that has already been added to the Oracle Compute Cloud Service environment that supports <span>MySQL Cloud Service</span>, either as the result of an earlier database deployment creation process or by manual addition to Oracle Compute Cloud Service. To discover the full hierarchical name of a key, view the list of keys on the Oracle Compute Cloud Service SSH Public Keys page and hover over the short name of the key. For more information, see <a class="olink OCSUG234" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=OCSUG234">Viewing an SSH Public Key</a> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+<p>For information on manually adding a public key to Oracle Compute Cloud Service, see <a class="olink OCSUG233" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=OCSUG233">Adding an SSH Public Key</a> in <span class="italic">Using Oracle Compute Cloud Service</span>.</p>
+</li>
+</ul>
+<p>When you access a compute node using SSH, you must provide the private key that matches the public key specified when the database deployment was created.</p>
+<p>To generate the SSH public/private key pairs needed to access <span>MySQL Cloud Service</span>, see <a href="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1.htm#GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1">Generating a Secure Shell (SSH) Public/Private Key Pair</a>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Access to Other Ports</p>
+<p><img width="32" height="32" src="img/GUID-C093C2D1-FAC9-4EEA-BD23-CB0C3C7AC569-default.png" alt="Not Oracle Cloud Infrastructure" title="Not Oracle Cloud Infrastructure" /> This topic does not apply to Oracle Cloud Infrastructure.</p>
+<p>To access network protocols and services on a compute node by using a port other than port 22, you must either:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enable network access to the port</p>
+<p>You can use the <span>MySQL Cloud Service</span> console to enable access to a port on a compute node. For more information, see <a href="GUID-91DABBDA-48FF-456D-96D1-8B03BECF88D8.htm" title="MySQL Cloud Service relies on Oracle Compute Cloud Service to provide secure network access to database deployments. You can use the MySQL Cloud Service console to perform network access operations such as enabling access to a port on a compute node, or creating new access rules.">Enabling Access to a Compute Node Port</a></p>
+</li>
+<li>
+<p>Create an SSH tunnel to the port</p>
+<p>Creating an SSH tunnel enables you to access a specific compute node port by using an SSH connection as the transport mechanism. To create the tunnel, you must have the SSH private key file that matches the public key specified during the database deployment creation process. For more information, see <a href="GUID-7229DBC7-553C-4299-9563-D86886F8C80A.htm#GUID-7229DBC7-553C-4299-9563-D86886F8C80A">Creating an SSH Tunnel to a Compute Node Port</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-7EAF7972-0A00-4647-9861-BDB3E843E84B.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

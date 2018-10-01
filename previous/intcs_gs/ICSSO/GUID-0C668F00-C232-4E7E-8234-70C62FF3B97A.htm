@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>SOAP Adapter Capabilities</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The SOAP Adapter enables you to connect to any SOAP web service." />
+<meta name="dcterms.created" content="2016-11-28T14:49:33Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the SOAP Adapter" />
+<meta name="dcterms.identifier" content="E66631-03" />
+<meta name="dcterms.isVersionOf" content="ICSSO" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-CB502705-197E-4D1F-AA0A-AB40E743E018.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-A72D359D-A212-4241-91CA-7277644822FB.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSO.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSO.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSO.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0C668F00-C232-4E7E-8234-70C62FF3B97A"></a> <span id="PAGE" style="display:none;">5/28</span> <!-- End Header -->
+<h1 id="ICSSO-GUID-0C668F00-C232-4E7E-8234-70C62FF3B97A" class="sect1">SOAP Adapter Capabilities</h1>
+<div>
+<p>The SOAP Adapter enables you to connect to any SOAP web service.</p>
+<p>The SOAP Adapter enables you to expose an Integration Cloud Service integration as a SOAP web service and to invoke an external SOAP web service. When creating a connection with the SOAP Adapter, you can either upload the WSDL file (using the <span class="bold">Upload</span> button) or provide a URL to the WSDL file. When you invoke the wizard to create a connection, the contents of the specified WSDL file are read and the port type, operation, and service to use are displayed. If your WSDL includes only a single service, port type, and operation, they are automatically selected. If the WSDL includes multiple services, port types, and operations, you can select the ones to use in your integration.</p>
+<p>The SOAP Adapter provides the following additional features:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Transport Layer Security (TLS) version support of the target server. The TLS protocol provides privacy and data integrity between two communicating computer applications. For more information, see <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6C2557BD-2393-4F13-AA1B-1E3840B42DDC" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a>.</p>
+</li>
+<li>
+<p>Version suppression of the timestamp in the WS-Security header. Suppression applies to the Username Password Token security policy in the invoke (outbound) direction. In secure Web Services transactions, a WS-Utility (WSU) timestamp can be inserted into a WS-Security header to define the lifetime of the message in which it is placed. For more information, see <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6C2557BD-2393-4F13-AA1B-1E3840B42DDC" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a>.</p>
+</li>
+<li>
+<p>Ability to specify if the timestamp is not required in the response message. For more information, see <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-6C2557BD-2393-4F13-AA1B-1E3840B42DDC" title="Enter connection information so your application can process requests.">Configuring Connection Properties</a>.</p>
+</li>
+<li>
+<p>Use of 16.3.3 or later SOAP Adapter runtime functionality or 16.2.5 SOAP Adapter runtime functionality in an integration. You configure this option on the Basic Info page of the Adapter Endpoint Configuration Wizard. For more information, see <a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-5BF2617C-51FF-4B46-A0C2-E2CD7E5C8DCD" title="The following table describes the key information on the Basic Info page.">What You See on the Basic Info Page</a>.</p>
+</li>
+<li>
+<p>Disabling SOAP action validation for inbound requests on the Operations page of the Adapter Endpoint Configuration Wizard. This is useful for environments in which your WSDL includes custom code and you want to bypass validation. For more information, see <a href="GUID-F0B3F848-8786-48F1-9CAB-3B4F0C177FF3.htm#GUID-1D9D9588-710D-4809-A7FC-A731B26016EC" title="The following table describes the key information on the Oracle SOAP Adapter trigger Operations page.">What You See on the Oracle SOAP Adapter Trigger Operations Page</a>.</p>
+</li>
+<li>
+<p>Asynchronous callback response support in the invoke (outbound) direction. This feature is supported if your WSDL defines both a request and callback response port type with one-way operations. The callback response endpoint must be specified through a different integration flow. The endpoint must be built using the SOAP Adapter and secured with the username password token security policy.</p>
+<p>For example, the WSDL includes a port type with <span class="bold">Callback</span> or <span class="bold">Response</span> in the name (such as <span class="bold">portType name=&ldquo;EchoAsyncCallback&rdquo;</span> or <span class="bold">portType name = "EchoAsyncResponse"</span>) and an operation with <span class="bold">Response</span> in the name (such as <span class="bold">operation name=&rdquo;processResponse&rdquo;</span>). You must also set <span class="bold">Preview updated SOAP adapter runtime</span> to <span class="bold">Yes</span> on the Basic Info page of the Adapter Endpoint Configuration Wizard.</p>
+<div class="p">Based on the operation selection, if it is a one-way operation, you are asked to select the expected response type (no response or delayed response) on the Callback Operation page of the Adapter Endpoint Configuration Wizard.
+<ul style="list-style-type: disc;">
+<li>
+<p>No Response: One-way invocation.</p>
+</li>
+<li>
+<p>Delayed Response: Specify the callback port type, operation, callback flow identifier, and version.</p>
+</li>
+</ul>
+</div>
+<p>The callback flow identifier and version are used to determine the callback endpoint and sent in the ReplyTo header while sending a request to the outbound endpoint.</p>
+</li>
+<li>
+<p>Support for adding standard and custom SOAP and HTTP headers to outbound and inbound requests and handling the responses with headers to propagate back to the user. This configuration enables header configuration for the inbound service and header propagation for the outbound service. WS-Addressing headers propagation is not supported (for example, MessageId, ReplyTo, FaultTo, and so on). All header information and body elements are encapsulated under a single element so the mapper can display request and response information. To use this feature, you must set <span class="bold">Preview updated SOAP adapter runtime</span> to <span class="bold">Yes</span> on the Basic Info page. For more information, see <a href="GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5.htm" title="When you drag the SOAP Adapter into the trigger and invoke areas of an integration, the Cloud Endpoint Configuration Wizard is invoked. This wizard guides you through configuration of the SOAP Adapter endpoint properties.">Adding the SOAP Adapter Connection to an Integration</a>.</p>
+</li>
+<li>
+<p>Support for multiple part messages in document-style WSDLs. The support is provided for both inbound and outbound adapter configurations.</p>
+<p>Standard SOAP headers can be defined in a WSDL in two ways:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Implicit headers:</p>
+<p>With this type, the request header and body part are in different message types. In the binding section of the WSDL, the header uses the part name within the message type and message type name. The body does not have any part names explicitly defined in it.</p>
+<pre dir="ltr">
+&lt;wsdl:message name="CreateUserRequestHeader"&gt;
+&lt;wsdl:part name="<span class="bold">requestHeader</span>" element=" tns:UserCreate"/&gt; 
+&lt;/wsdl:message&gt; 
+<span class="bold">&lt;wsdl:message name="CreateUserRequest"&gt;</span> 
+&lt;wsdl:part element="tns:UserCreateHeader" name="parameters"/&gt; 
+&lt;/wsdl:message&gt; 
+&lt;wsdl:binding name="UserBinding" type="tns:UserEndPoint"&gt; 
+&lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /&gt; 
+&lt;wsdl:operation name="CreateUser"&gt; 
+&lt;soap:operation soapAction="http://example.com/CreateUser" /&gt; 
+&lt;wsdl:input&gt; &lt;soap:body use="literal" /&gt; 
+&lt;soap:header use="literal" part="<span class="bold">requestHeader</span>" message="tns:CreateUserRequestHeader"/&gt; 
+&lt;/wsdl:input&gt; 
+&lt;wsdl:output&gt; 
+&lt;soap:body use="literal" /&gt; 
+&lt;/wsdl:output&gt; 
+&lt;/wsdl:operation&gt; 
+&lt;wsdl:binding/&gt;
+</pre></li>
+<li>
+<p>Explicit headers:</p>
+<p>With this type, there are multiple parts in a single message type in the WSDL: one for the header and one for the body payload. The header is specified by its part name. The body uses its own name.</p>
+<pre dir="ltr">
+&lt;wsdl:message name="CreateUserRequest"&gt; 
+&lt;wsdl:part element="tns:UserCreateHeader" name="parameters"/&gt; 
+&lt;wsdl:part name="<span class="bold">requestHeader</span>" element=" tns:UserCreate"/&gt; 
+&lt;/wsdl:message&gt; 
+&lt;wsdl:binding name="UserBinding" type="tns:UserEndPoint"&gt; 
+&lt;soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /&gt; 
+&lt;wsdl:operation name="CreateUser"&gt; 
+&lt;soap:operation soapAction="http://example.com/CreateUser" /&gt; 
+&lt;wsdl:input&gt; &lt;soap:body use="literal" /&gt; 
+&lt;soap:header use="literal" part="<span class="bold">requestHeader</span>" message="tns:CreateUserRequest"/&gt; 
+&lt;/wsdl:input&gt; 
+&lt;wsdl:output&gt; 
+&lt;soap:body use="literal" /&gt; 
+&lt;/wsdl:output&gt; 
+&lt;/wsdl:operation&gt; 
+&lt;wsdl:binding/&gt;
+</pre>
+<p>To use this feature, you must set <span class="bold">Preview updated SOAP adapter runtime</span> to <span class="bold">Yes</span> on the Basic Info page.</p>
+<div class="infobox-note" id="GUID-0C668F00-C232-4E7E-8234-70C62FF3B97A__GUID-DF08D4C0-0C78-4C2E-8A6B-AE8A6F169B6F">
+<p class="notep1">Note:</p>
+Without specifying a header, multiple parts in a document-style WSDL are not supported.</div>
+</li>
+</ul>
+<p>When you invoke the Adapter Endpoint Configuration to configure the SOAP Adapter as a trigger or invoke, the Operations page detects that the WSDL includes defined SOAP request and/or response headers and automatically enables the button to configure SOAP headers for the endpoint. You can select <span class="bold">No</span> to remove the headers for the endpoint. You cannot modify these headers. The subsequent Request Header and Response Header pages of the WSDL load and show the specific headers defined in the WSDL. For more information, see <a href="GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5.htm" title="When you drag the SOAP Adapter into the trigger and invoke areas of an integration, the Cloud Endpoint Configuration Wizard is invoked. This wizard guides you through configuration of the SOAP Adapter endpoint properties.">Adding the SOAP Adapter Connection to an Integration</a>.</p>
+</li>
+</ul>
+<p>For more information, see <a href="GUID-A5F500E9-E042-4269-B46E-85C9A7B8558F.htm#GUID-A5F500E9-E042-4269-B46E-85C9A7B8558F" title="Enter the callback response operation details for the SOAP Adapter.">Configuring SOAP Adapter Invoke Callback Operation Properties</a>.</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment405">
+<tr>
+<td class="cellalignment412">
+<table class="cellalignment410">
+<tr>
+<td class="cellalignment409"><a href="GUID-CB502705-197E-4D1F-AA0A-AB40E743E018.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment409"><a href="GUID-A72D359D-A212-4241-91CA-7277644822FB.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment414">
+<table class="cellalignment408">
+<tr>
+<td class="cellalignment409"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment409"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment409"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

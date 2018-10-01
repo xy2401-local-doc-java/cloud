@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--Composite DITA to XHTML application by IBM Corp., 2001, 2002, 2003--><!--Common DITA topic to HTML application by IBM Corp., 2001, 2002, 2003--><html lang="en-US"><head><META http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/edocs.css" type="text/css" rel="stylesheet"><title>Create users</title>
+<meta content="Oracle WebLogic Server 12.2.1.2.0 Documentation" name="description"><meta content="Oracle WebLogic Server" name="keywords"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="no-cache" http-equiv="pragma"><meta content="en-us" http-equiv="content-language"><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/floatwin.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script opens a new, small, floating window and puts
+            TOC<name>.html and IX<name>.html files in it and
+            sets a generic popup window code to enable the display of
+            some viewlets in the WebLogic Platform Tour.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/banner.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the banner required for edocs
+            documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/breadcrumb.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the product breadcrumb required for
+            edocs documentation.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/footer.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the footer with the correct copyright
+            date and link to copyright page.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/googlesearch4.js" language="Javascript1.1">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs the google search form.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/note.js" language="Javascript">; (intentional empty statement to force closing script tag)
+        </script><!--
+            This script outputs a note such as a BETA note.
+        --><script type="text/javascript" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/js/search.js" language="JavaScript1.1">;
+        </script><!--
+            This script is not for online documents. It is only used by
+            the QuestAgent Java Applet for CD search indexes.
+        -->
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head><body class="base"><a name="WLACH03065" id="WLACH03065"></a>
+<script type="text/javascript" language="Javascript1.1">
+            GoogleURL();
+        </script><noscript>
+            This script outputs the google search URL required for
+            search on edocs documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            Banner();
+        </script><noscript>
+            This script outputs the banner required for edocs
+            documentation.
+        </noscript><script type="text/javascript" language="Javascript1.1">
+            GoogleSearchCollection();
+        </script><noscript>
+            This script outputs the google search parameters required
+            for search on edocs documentation.
+        </noscript><div class="breadcrumb"><a href="http://www.oracle.com/technology/index.html">OTN Home</a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/../../../index.html">Oracle WebLogic Server 12.2.1.2.0 Documentation
+            </a>
+            &gt;
+            <a href="http://docs.oracle.com/middleware/12212/wls/WLACH/core/index.html">Administration Console Online Help</a>
+                    &gt;
+                    Create users</div><h1 class="booktitle">Administration Console Online Help</h1><table cellspacing="0" cellpadding="2%" align="left" border="0" width="100%"><tr><td>    <img alt="Previous" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_prev_grey1.gif"> <img alt="Next" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_next_grey1.gif"> <img alt="" border="0" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_dots.gif"> <a title="Open TOC in new window" onblur="window.status=''; return true" onmouseout="window.status=''; return true" onfocus="window.status='Table of Contents'; return true" onmouseover="window.status='Table of Contents'; return true" href="javascript:OpenWindowEdocsHelpTOC();" accesskey="1"><img border="0" alt="Open TOC in new window" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/doc_nav_contents.gif"></a> </td></tr></table><a title="Content starts here" name="skipnav"><img width="1" height="1" border="0" alt="Content starts here" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/_.gif"></a>
+
+  <h1 class="topictitle1">Create users</h1>
+
+  <div><!--topic body-->
+    <div class="prereq"><p class="sectiontitle"><b>
+        Before you begin
+      </b></p>
+      <p>Read <a href="ManageUsersAndGroups.html">Manage users and
+  groups</a> and
+      <a href="UseRolesAndPoliciesToSecureResources.html">Use roles and policies
+  to secure resources</a>.</p>
+
+      <p><b>Note: </b>When using the WebLogic Server Administration Console,
+      or WLST, you can create users only in the following databases: <ul>
+          <li>The embedded LDAP server, configured with the WebLogic
+          Authentication provider (DefaultAuthenticator)</li>
+
+          <li>An RDBMS system that is configured with a valid SQL
+          Authentication provider.</li>
+        </ul><p>To create users in other identity stores &mdash; for example, any
+      external LDAP server &mdash; you must use the tools available with those
+      stores. In addition, if you customize the default security configuration
+      to use a custom Authentication provider, you must use the administration
+      tools supplied by that security provider to create a user. If you are
+      upgrading to the WebLogic Authentication provider, you can load existing
+      users and groups into the embedded LDAP server. For more information,
+      see <a href="http://docs.oracle.com/middleware/12212/wls/SECMG/security_data_migration.htm">Migrating Security Data</a>.</p></p>
+    </div>
+
+    <div><br>
+      <p>To create a user:</p>
+    </div>
+
+    <ol>
+      <li>
+        <span><a name="WLACH03065__security_7x1172470" id="WLACH03065__security_7x1172470"></a>In the left
+        pane select <b>Security Realms</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1172474" id="WLACH03065__security_7x1172474"></a>On the
+        Summary of Security Realms page select the name of the realm (for
+        example, <var>myrealm</var>).</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1171100" id="WLACH03065__security_7x1171100"></a>On the
+        Settings for <var>Realm Name</var> page select
+        <b>Users and Groups &gt; Users</b>.</span>
+
+         
+          <p><a name="WLACH03065__security_7x1171101" id="WLACH03065__security_7x1171101"></a>The User table
+          displays the names of all users defined in the Authentication
+          provider.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1171102" id="WLACH03065__security_7x1171102"></a>Click
+        <b>New</b>.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1171103" id="WLACH03065__security_7x1171103"></a>In the
+        <b>Name</b> field of the Create New User page enter
+        the name of the user.</span>
+
+         
+          <p>User names must be unique. For the WebLogic Authentication
+          provider (DefaultAuthenticator), user names are case insensitive.
+          User names <i>must not</i> include tabs or any of the following
+          characters:</p>
+
+          <ul>
+            <li>Semicolons &mdash; <code><code>;</code></code></li>
+
+            <li>Commas &mdash; <code>,</code></li>
+
+            <li>Plus signs &mdash; <code>+</code></li>
+
+            <li>Equal signs &mdash; <code>=</code></li>
+
+            <li>Single backslash character &mdash; <code>\</code> (note that two
+            consecutive backslashes may be used; for example
+            <code>smith\\</code>)</li>
+
+            <li>Apostrophe &mdash; <code>'</code></li>
+
+            <li>Double quotes &mdash; <code>"</code></li>
+          </ul>
+
+          <p>In addition, user names <i>must not</i> begin with either of the
+          following characters:</p>
+
+          <ul>
+            <li>Pound sign &mdash; <code>#</code></li>
+
+            <li>Double quotations &mdash; <code>"</code></li>
+          </ul>
+
+          <p><b>Important:</b> If a user is created with any of the preceding
+          invalid characters, the WebLogic domain can become corrupted.</p>
+        
+      </li>
+
+      <li>
+        <span>(Optional) In the <b>Description</b> field, enter
+        a description. The description might be the user's full name.</span>
+      </li>
+
+      <li>
+        <span>In the <b>Provider</b> drop-down list, select the
+        Authentication provider for the user.</span>
+
+         
+          <p>If multiple Authentication providers are configured in the
+          security realm, they will appear in the list. Select the
+          Authentication provider that corresponds to the database in which
+          the information for the new user is to be stored.</p>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1171104" id="WLACH03065__security_7x1171104"></a>In the
+        <b>Password</b> field, enter a password for the
+        user.</span>
+
+         
+          <div>The minimum password length for a user defined in the WebLogic
+          Authentication provider is 8 characters. Do not use the
+          username/password combination <code>weblogic</code>/<code>welcome1</code> in production.
+          <p><b>Note: </b>Oracle recommends that you configure the Password
+          Validation provider in the security realm after you create a domain.
+          The Password Validation provider can be configured to impose
+          additional password composition rules. For more information, see
+          <a href="ConfigurePasswordValidationProviders.html">Configure the Password
+  Validation provider</a>.</p></div>
+        
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1190505" id="WLACH03065__security_7x1190505"></a>Re-enter the
+        password for the user in the <b>Confirm Password</b>
+        field.</span>
+      </li>
+
+      <li>
+        <span><a name="WLACH03065__security_7x1171105" id="WLACH03065__security_7x1171105"></a>Click
+        <b>OK</b> to save your changes.</span>
+
+        <span>
+          <p>The user name appears in the User table.</p>
+        </span>
+      </li>
+    </ol>
+
+    <div class="postreq"><p class="sectiontitle"><b>
+        After you finish
+      </b></p>
+      <div><ul>
+          <li>If the user is created in the WebLogic Authentication provider
+          (also known as the Default Authentication provider), you may
+          optionally set attributes for the user. For instructions, see <a href="AddUserAttributes.html">Manage values for user
+  attributes</a>.</li>
+
+          <li>For more efficient management, Oracle recommends adding users to
+          groups. For instructions, see <a href="AddUsersToGroup.html">Add users to
+  groups</a>.</li>
+        </ul></div>
+    </div>
+  </div>
+
+<br><table cellspacing="0" cellpadding="0" border="0" width="100%"><tr><td> <a href="#WLACH03065"><img border="0" title="Back to Top" alt="Back to Top" height="25" width="90" src="http://docs.oracle.com/middleware/12212/wls/WLACH/global_resources/images/backtop.gif"></a><script type="text/javascript" language="Javascript1.1">
+                        Copyright();
+                    </script><noscript><a href="http:///middleware//assets/cpyr.htm">
+                            Oracle Legal Notices
+                        </a></noscript></td></tr></table>
+</body></html>

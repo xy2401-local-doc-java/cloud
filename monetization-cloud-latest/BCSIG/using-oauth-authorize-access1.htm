@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Using OAuth to authorize access</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You authorize external applications to access Oracle Monetization Cloud web services by using the OAuth protocol." />
+<meta name="dcterms.created" content="2018-08-31T10:19:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Integration Guide" />
+<meta name="dcterms.identifier" content="E92624-02" />
+<meta name="dcterms.isVersionOf" content="BCSIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="using-saml-authenticate-access-requests1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="using-basic-authentication-authenticate-access-requests.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92624-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92624-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92624-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0CF0474E-5C28-452E-84E6-7815B09A948D"></a> <span id="PAGE" style="display:none;">8/42</span> <!-- End Header -->
+<a id="BCSIG2310"></a><a id="BCSIG2311"></a><a id="BCSIG2266"></a>
+<h1 id="BCSIG-GUID-0CF0474E-5C28-452E-84E6-7815B09A948D" class="sect1"><span class="enumeration_chapter">4</span> Using OAuth to authorize access</h1>
+<div>
+<p>You authorize external applications to access Oracle Monetization Cloud web services by using the OAuth protocol.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="using-oauth-authorize-access1.htm#GUID-431A0AAF-F477-4C89-8A91-03B100C9CA79">About authorizing access to web services</a></p>
+</li>
+<li>
+<p><a href="using-oauth-authorize-access1.htm#GUID-3A7AEF55-0CC2-4CBC-8278-10FF9C3C766F">Registering applications as OAuth clients</a></p>
+</li>
+<li>
+<p><a href="using-oauth-authorize-access1.htm#GUID-1726FD54-9E37-4397-B96E-4E778F281F5C">Managing OAuth clients</a></p>
+</li>
+<li>
+<p><a href="using-oauth-authorize-access1.htm#GUID-26CF0843-56E0-4476-898D-4C4B0694E5ED">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSIG2339"></a>
+<div class="props_rev_3"><a id="GUID-431A0AAF-F477-4C89-8A91-03B100C9CA79"></a>
+<h2 id="BCSIG-GUID-431A0AAF-F477-4C89-8A91-03B100C9CA79" class="sect2">About authorizing access to web services</h2>
+<div>
+<p><span class="italic">Authorization</span> ensures that an application is allowed to access a service or component. It's typically performed after authentication, which verifies the application's identity.</p>
+<p>Oracle Monetization Cloud uses the OAuth 2.0 protocol to authorize external applications to access its web services.</p>
+<p>To call the web services, an application must be registered as an OAuth client in Oracle Monetization Cloud.</p>
+</div>
+</div>
+<a id="BCSIG2271"></a>
+<div class="props_rev_3"><a id="GUID-3A7AEF55-0CC2-4CBC-8278-10FF9C3C766F"></a>
+<h2 id="BCSIG-GUID-3A7AEF55-0CC2-4CBC-8278-10FF9C3C766F" class="sect2">Registering applications as OAuth clients</h2>
+<div>
+<div class="section">To register an application as an OAuth client:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Open the System Configuration application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Federation Services</span>.</span></li>
+<li class="stepexpand"><span>On the <span class="bold">OAuth Clients</span> tab, select the identity domain in which you want to register the new client.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">New OAuth Client</span>.</span>
+<div>The OAuth Client Configuration page appears.</div>
+</li>
+<li class="stepexpand"><span>Enter the following information:</span>
+<table class="cellalignment188" id="GUID-3A7AEF55-0CC2-4CBC-8278-10FF9C3C766F__CHOICETABLE_ZG2_VTL_H2B">
+<thead>
+<tr>
+<th class="cellalignment189" id="d4115e88-option">Option</th>
+<th class="cellalignment189" id="d4115e88-desc">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment190" headers="d4115e88-option" id="d4115e90"><strong>Name</strong></td>
+<td class="cellalignment190" headers="d4115e88-desc d4115e90">The name of the external application.</td>
+</tr>
+<tr>
+<td class="cellalignment190" headers="d4115e88-option" id="d4115e95"><strong>Description</strong></td>
+<td class="cellalignment190" headers="d4115e88-desc d4115e95">(Optional) A text description of the application.</td>
+</tr>
+<tr>
+<td class="cellalignment190" headers="d4115e88-option" id="d4115e100"><strong>Client ID</strong></td>
+<td class="cellalignment190" headers="d4115e88-desc d4115e100">A public identifier for the application. It must be unique within the identity domain.
+<p>The client ID is used to authenticate requests from the application to Oracle Monetization Cloud web services.</p>
+<p>You can enter an ID manually or select <span class="bold">Generate</span> to create an ID automatically.</p>
+<p>Don't include spaces in the ID.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment190" headers="d4115e88-option" id="d4115e114"><strong>Client Secret</strong></td>
+<td class="cellalignment190" headers="d4115e88-desc d4115e114">A secret identifier for the application. It must be unique within the identity domain.
+<p>The client secret is used to authenticate requests from the application to Oracle Monetization Cloud web services.</p>
+<p>You can enter the secret manually or select <span class="bold">Generate</span> to create it automatically.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment190" headers="d4115e88-option" id="d4115e126"><strong>Shown in Clear Text</strong></td>
+<td class="cellalignment190" headers="d4115e88-desc d4115e126">Select this option to display the client secret in human-readable form. By default, the client secret is encrypted.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li class="stepexpand"><span>Select <span class="bold">Save</span>.</span></li>
+</ol>
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSIG2270"></a>
+<div class="props_rev_3"><a id="GUID-1726FD54-9E37-4397-B96E-4E778F281F5C"></a>
+<h2 id="BCSIG-GUID-1726FD54-9E37-4397-B96E-4E778F281F5C" class="sect2">Managing OAuth clients</h2>
+<div>
+<div class="section">To view, edit, or delete OAuth clients:</div>
+<!-- class="section" -->
+<ol id="GUID-1726FD54-9E37-4397-B96E-4E778F281F5C__OL_QTW_GTX_H2B">
+<li class="stepexpand"><span>Open the System Configuration application.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Federation Services</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">OAuth Clients</span> tab, select the identity domain that contains the client you want to manage.</span>
+<div>The clients in the selected domain are displayed in the tab.</div>
+</li>
+<li class="stepexpand"><span>To view or edit a client:</span>
+<ol id="GUID-1726FD54-9E37-4397-B96E-4E778F281F5C__OL_RTW_GTX_H2B">
+<li><span>Select the client's link.</span></li>
+<li><span>Change the editable fields as necessary.</span></li>
+<li><span>Save your changes.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>To delete a client, select its delete button (<span class="bold">X</span>), and then select <span class="bold">Yes</span> in the confirmation message.</span></li>
+</ol>
+</div>
+</div>
+<a id="BCSIG2273"></a>
+<div class="props_rev_3"><a id="GUID-26CF0843-56E0-4476-898D-4C4B0694E5ED"></a>
+<h2 id="BCSIG-GUID-26CF0843-56E0-4476-898D-4C4B0694E5ED" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="using-saml-authenticate-access-requests1.htm#GUID-9E7564FD-9877-4041-AD91-9323966CA03D" title="This document explains how to configure Oracle Monetization Cloud to use external Security Assertion Markup Language (SAML) identity providers to authenticate requests for access to its web services.">Using SAML to authenticate access requests</a></p>
+</li>
+<li>
+<p><a href="using-ssl-secure-connections-service-providers1.htm#GUID-88E3102F-DE93-4E15-AB8B-141B81E2A549" title="You secure connections between Oracle Monetization Cloud and external service providers, such as payment processors and tax calculators, by using Secure Sockets Layer (SSL) certificates.">Using SSL to secure connections to service providers</a></p>
+</li>
+<li>
+<p><a href="transferring-files-securely1.htm#GUID-498A849B-2E40-476A-8610-A75AA0A308F7" title="You use secure file transfer protocol (SFTP) to protect data when you upload and download files between Oracle Monetization Cloud and external systems.">Transferring files securely with SFTP</a></p>
+</li>
+<li>
+<p><a href="oracle-monetization-cloud-web-services1.htm#GUID-1DCEA540-0860-4858-8A17-56C60F2FCC47">Oracle Monetization Cloud web services</a></p>
+</li>
+<li>
+<p><a href="integrating-your-business-systems1.htm#GUID-60243463-3A48-49E1-B841-A10F134A08A6">About integrating your business systems</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment76">
+<tr>
+<td class="cellalignment83">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment80"><a href="using-saml-authenticate-access-requests1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment80"><a href="using-basic-authentication-authenticate-access-requests.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment85">
+<table class="cellalignment79">
+<tr>
+<td class="cellalignment80"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment80"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment80"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

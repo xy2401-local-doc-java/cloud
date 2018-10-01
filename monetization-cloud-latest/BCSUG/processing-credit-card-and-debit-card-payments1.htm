@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Processing credit card and debit card payments</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="After you run billing, you can collect the balance due from your customers who pay with credit cards and debit cards. To do so, you create a payment collections job in Oracle Monetization Cloud." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="processing-payments-batches1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="processing-offline-payments1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-93C010F0-CF7B-4CCE-9398-8D4AAFC60342"></a> <span id="PAGE" style="display:none;">50/67</span> <!-- End Header -->
+<a id="BCSUG1039"></a><a id="BCSUG1040"></a><a id="BCSUG523"></a>
+<h1 id="BCSUG-GUID-93C010F0-CF7B-4CCE-9398-8D4AAFC60342" class="sect1"><span class="enumeration_chapter">42</span> Processing credit card and debit card payments</h1>
+<div>
+<p>After you run billing, you can collect the balance due from your customers who pay with credit cards and debit cards. To do so, you create a payment collections job in Oracle Monetization Cloud.</p>
+<p>For background information, see <a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-credit-card-and-debit-card-payments1.htm#GUID-4328FBEE-C507-4C6F-B7C2-B9691456A71B">Running payment collections jobs</a></p>
+</li>
+<li>
+<p><a href="processing-credit-card-and-debit-card-payments1.htm#GUID-799633E4-DBEE-41DD-9187-D0D3B7212FDD">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG524"></a>
+<div class="props_rev_3"><a id="GUID-4328FBEE-C507-4C6F-B7C2-B9691456A71B"></a>
+<h2 id="BCSUG-GUID-4328FBEE-C507-4C6F-B7C2-B9691456A71B" class="sect2">Running payment collections jobs</h2>
+<div>
+<p>Use Business Operations to create a payment collections job. Select the <span class="bold">Jobs</span> icon, <span class="bold">Payment Collections</span>, and then <span class="bold">New</span>. The options for running the job are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Run the job once. You can run it immediately or on a specific calendar day.</p>
+</li>
+<li>
+<p>Repeat the job.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify how often to run the job: daily, weekly, or monthly.</p>
+</li>
+<li>
+<p>Specify when to start the job: immediately or at a specified date and time.</p>
+</li>
+<li>
+<p>Specify when to end the job: never or at a specified date and time.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Get an email notification when the job completes.</p>
+</li>
+</ul>
+<p>You can specify to collect payments from accounts based on these attributes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The account status: active, inactive, or closed.</p>
+</li>
+<li>
+<p>The payment method: credit or debit card.</p>
+</li>
+<li>
+<p>The customer's payment date. Collect payments from your customers that paid:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>On or before the day the job is run.</p>
+</li>
+<li>
+<p>A specified number of days before the date the job is run.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Whether the account contains pre-authorized but unpaid credit card transactions.</p>
+<p>Credit cards are pre-authorized when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Customers enter their payment details for a credit card.</p>
+</li>
+<li>
+<p>CSRs issue charges in Subscriber Management.</p>
+</li>
+</ul>
+<p>All pre-authorized but unpaid credit card transactions made within the past 30 days are sent to your credit card processor.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG683"></a>
+<div class="props_rev_3"><a id="GUID-799633E4-DBEE-41DD-9187-D0D3B7212FDD"></a>
+<h2 id="BCSUG-GUID-799633E4-DBEE-41DD-9187-D0D3B7212FDD" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a></p>
+</li>
+<li>
+<p><a href="processing-offline-payments1.htm#GUID-A2448FEC-DA43-4C44-82F5-E52C36B691DE" title="You can process offline payments, such as checks, by using the Oracle Monetization Cloud Subscriber Management application.">Processing offline payments</a></p>
+</li>
+<li>
+<p><a href="setting-business-configuration-options1.htm#GUID-0F20FB51-8576-4F83-9AE9-BEF8BA29BE36">Setting the minimum credit card charge threshold</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="processing-payments-batches1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="processing-offline-payments1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

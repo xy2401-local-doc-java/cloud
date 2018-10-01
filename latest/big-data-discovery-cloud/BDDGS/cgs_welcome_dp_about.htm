@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About Data Processing</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The Data Processing component of BDD runs a set of processes and jobs. This set is called data processing workflows. Many of these processes run natively in Hadoop." />
+<meta name="dcterms.created" content="2016-11-21T17:21:17Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Big Data Discovery Cloud Service Getting Started Guide" />
+<meta name="dcterms.identifier" content="E65362-05" />
+<meta name="dcterms.isVersionOf" content="BDDGS" />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="cgs_welcome_studio_about.htm" title="Previous" type="text/html" />
+<link rel="Next" href="cgs_welcome_dgraph_about.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDDGS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDDGS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDDGS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="concept_149436BC3AF84474B35E3C14659A9C7E"></a> <span id="PAGE" style="display:none;">48/77</span> <!-- End Header -->
+<h1 id="BDDGS-concept_149436BC3AF84474B35E3C14659A9C7E" class="sect1">About Data Processing</h1>
+<div>
+<p>The <strong class="term">Data Processing</strong> component of BDD runs a set of processes and jobs. This set is called <strong class="term">data processing workflows</strong>. Many of these processes run natively in Hadoop.</p>
+<p><a id="d7594e14" class="indexterm-anchor"></a> The Data Processing component controls several workflows in BDD. For example, you can create workflows for data loading, data updates, and others. The Data Processing component discovers new Hive tables and loads data into BDD. It runs data refresh operations and incremental updates. It also keeps BDD data sets in synch with Hive tables that BDD creates.</p>
+<div class="p">For example, during a data loading workflow, the Data Processing component performs these tasks:
+<ul style="list-style-type: disc;" id="concept_149436BC3AF84474B35E3C14659A9C7E__ul_B64E103D8B89413698BE24397CCCC30A">
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_E98BD5520D41407FAE7D10916C861591">Discovery of data in Hive tables</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_6889243CDF53409EB10B9C1EE029168F">Creation of data sets in BDD</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_A2EC72DBD0DC4018A06A3B1E3011A1B1">Running a select set of enrichments on discovered data sets</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_3B5B9D79517A4CC0AAFB721DD00F84D8">Profiling of the data sets</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_8778E33539D44173A516F8600416973D">Indexing of the data sets, by streaming data to the Dgraph.</li>
+</ul>
+</div>
+<p>To launch a data processing workflow when Big Data Discovery starts, you use the <strong class="term">Data Processing Command Line Interface (DP CLI)</strong>.</p>
+<div class="section" id="concept_149436BC3AF84474B35E3C14659A9C7E__section_4A47A58E3E4B403BAEFA9953A22F3170">
+<p class="subhead1">Data Processing CLI</p>
+<p>The DP CLI is a shell Linux utility that launches data processing workflows in Hadoop. You can control their steps and behavior. You can run the DP CLI manually or from a <code>cron</code> job. You can run the data processing workflows on an individual Hive table, all tables within a Hive database, or all tables within Hive. This depends on DP CLI settings, such as a blacklist and a whitelist.</p>
+<div class="p">Here are some of the jobs you can run with DP CLI:
+<ul style="list-style-type: disc;" id="concept_149436BC3AF84474B35E3C14659A9C7E__ul_BBA050F2F87340C39575D3643FB3250B">
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_D9AC47E27F424289A1EFAF0198EEF466">Load data from Hive tables after installing Big Data Discovery (BDD). When you first install BDD, your existing Hive tables are not processed. You must use the DP CLI to launch a data processing operation on your tables.</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_CCC7A87A40994A4CAA2911C244D4311B">Run data updates. They include:
+<ul style="list-style-type: disc;" id="concept_149436BC3AF84474B35E3C14659A9C7E__ul_874D14DAF41C46B9BAE8F80CE77CCBE9">
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_D341C0EA54324AB6B4EC3B4104F2427D">An operation to refresh data. It reloads an existing data set in a Studio project, replacing the contents of the data set with the latest data from Hive in its entirety.</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_D1B4D417B37142ABBB3F574872A81AEA">An incremental update. It adds newer data to existing data sets in a Studio's project.</li>
+</ul>
+</li>
+<li id="concept_149436BC3AF84474B35E3C14659A9C7E__li_65EE349C082E46D3872B5553A1D135FC">Launch the BDD Hive Table Detector (this is a utility in Data Processing). The BDD Hive Table Detector detects if a new table is added to Hive. It then checks the whitelist and blacklist. If the table passes them, it creates a data set in BDD. It also deletes any BDD data set that does not have a corresponding source Hive table. This keeps BDD data sets in synch with data sets in Hive. For detailed information on how data sets are managed in BDD, see <a href="cgs_datasets_data_lifecycle_BDD.htm" title="As a data set flows through Big Data Discovery, it is useful to know what happens to it along the way.">Data set lifecycle in Studio</a>.</li>
+</ul>
+</div>
+<p>For information on Data Processing and the DP CLI, see the <cite>Data Processing Guide</cite>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment13">
+<tr>
+<td class="cellalignment20">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment17"><a href="cgs_welcome_studio_about.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment17"><a href="cgs_welcome_dgraph_about.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment22">
+<table class="cellalignment16">
+<tr>
+<td class="cellalignment17"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment17"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment17"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment17"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

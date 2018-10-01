@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>High Level Steps for Data Loading</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="During the Loading Data stage, Implementors load transactional data into the OTBI-Enterprise data warehouse for analysis by BI end users." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EA634241-2127-4059-A2B8-40BA350EEB83.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7E5C5AF1-96E9-4E81-ABA9-775ECF0ADDB7.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"2",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"265c4b1",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"265c4b1",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-F568437A-A629-4E3B-B127-378A12F1AD69"></a> <span id="PAGE" style="display:none;">29/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-F568437A-A629-4E3B-B127-378A12F1AD69" class="sect1">High Level Steps for Data Loading</h1>
+<div>
+<p>During the Loading Data stage, Implementors load transactional data into the OTBI-Enterprise data warehouse for analysis by BI end users.</p>
+<div class="section">
+<p class="subhead1">High&ndash;level steps for loading data</p>
+1. If you are deploying a Fusion Applications Cloud, E-Business Suite, or PeopleSoft data source, then you will have performed a Cloud Extract during Initial Configuration to load data into your Cloud Storage Service. If you created a once-only Cloud Extract during Initial Configuration, then you must schedule a regular Cloud Extract by following the steps in <a href="GUID-7DB2D86B-AB85-4D43-80D1-BE95F2815998.htm" title="If you are deploying a Fusion Applications HCM Cloud data source (either Release 9.2 or 10), you first load your data into your Oracle Storage Service (this process is known as a Cloud Extract). Then, you load the data into the OTBI-Enterprise data warehouse. To load data into your Oracle Cloud Storage Service, you use BI Cloud Connector Console, which is deployed on your Fusion Applications HCM pod.">Extracting Data Into Your Oracle Cloud Storage Service</a>. If you scheduled a regular Cloud Extract during Initial Configuration, then you can skip this step.
+<p><span class="bold">Note</span>: This step is not required for Taleo data sources.</p>
+<p>2. Create a load plan in Configuration Manager to specify which offerings and functional areas to load by following the steps in <a href="GUID-7E5C5AF1-96E9-4E81-ABA9-775ECF0ADDB7.htm" title="You specify which offerings and functional areas to load by creating a load plan. A load plan is a set of instructions in Configuration Manager that extracts data from a Cloud data source or Cloud Storage Service and loads that data into the OTBI-Enterprise data warehouse. Load plans can be executed once only or scheduled to execute regularly.">Specifying which offerings and functional areas to load</a>.</p>
+<p>3. Load the data using one of the following methods:</p>
+<p>&mdash; Schedule the load plan in Configuration Manager to execute and load the data into the OTBI-Enterprise data warehouse by following the steps in <a href="GUID-CDFC8882-7D00-4430-ABAD-2C6112A249B7.htm" title="When you have specified which Offerings and Functional Areas to load by creating a Load plan in Configuration Manager, you schedule that load plan to load data regularly. For example, you might want to perform an incremental data load once per week on Sunday at midnight. You typically schedule the data load to run during off-peak hours. In addition, if you are loading Fusion Applications data from an Oracle Cloud Storage Service, then you must schedule the data load so that it starts after the Cloud Extract (that is, from Fusion Applications source into Oracle Cloud Storage Service) has completed.">Scheduling a load plan</a>.</p>
+<p>&mdash; Execute the load plan manually in Configuration Manager by following the steps in <a href="GUID-2D5A4B14-2A80-4B52-9AE5-79AE48899593.htm" title="If you want to load data once only, you execute a load plan directly in Configuration Manager. For example, your deployment project might be in test phase. You load data during off-peak hours. In addition, if you are loading Fusion Applications data from an Oracle Cloud Storage Service, then you perform the data load after the Cloud Extract (that is, from Fusion Applications source into Oracle Cloud Storage Service) has completed.">Execute a load plan manually</a>.</p>
+<p>When you load data, if irregularities are found in the source data or auto-corrections are made, then the Administrator receives a Health Check notification email. For more information, see <a href="GUID-ADC6D395-AB88-416D-95D6-9CD942FBEF1E.htm" title="Health Checks are performed automatically during data loads, and analyze source data and ETL processes to look for irregularities and errors. The Administrator receives a Health Check email notification if the load plan failed because of irregularities in the source data, or if the load plan executed successfully but with auto-corrections.">Responding to a Health Check notification email.</a></p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-EA634241-2127-4059-A2B8-40BA350EEB83.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-7E5C5AF1-96E9-4E81-ABA9-775ECF0ADDB7.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adapter Issues</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This section describes issues associated with adapters." />
+<meta name="dcterms.created" content="2017-02-24T15:08:31Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Known Issues for Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55682-22" />
+<meta name="dcterms.isVersionOf" content="ICSKI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-FBB3E9CE-E66B-45FD-8848-73CA2A445CE1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-0FB9BD95-2D56-409D-8B03-3B3FE387F98D.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSKI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSKI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSKI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E984107A-7884-412B-8443-2B771F255ECE"></a> <span id="PAGE" style="display:none;">4/60</span> <!-- End Header -->
+<h1 class="sect1"><span class="enumeration_chapter">1</span> Adapter Issues</h1>
+<div>
+<p>This section describes issues associated with adapters.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-0FB9BD95-2D56-409D-8B03-3B3FE387F98D.htm" title="By default, the maximum number of files that can be processed by the FTP Adapter in a scheduled run is 100. If you are processing a larger number of files (for example, 5000 files) to be received by an FTP Adapter write operation, it is mandatory to map the FTP read file operation headers and FTP write file name headers in the mapper. If you do not map the headers, output files may be lost when compared to the number of processed input files.">Processing a Large Number of Files with the FTP Adapter in a Clustered Environment May Result in Lost Output Files</a></p>
+</li>
+<li>
+<p><a href="GUID-9337EEEB-B8DC-4F0C-A4CC-E7C005B39C7D.htm" title="The Netsuite Adapter does not support Netsuite WSDL endpoints beyond version 2015_1_0. To connect to Netsuite application versions 2015_2_0 and beyond, use the 2015_1_0 version of the Netsuite WSDL endpoint.">Netsuite Adapter Does Not Support Netsuite WSDL Endpoints Beyond Version 2015_1_0</a></p>
+</li>
+<li>
+<p><a href="GUID-73C906F3-ED5E-437A-AE17-5B31C217F9AF.htm" title="You can deploy and register your own custom cloud adapters under Designer &gt; Adapters. This feature currently supports only custom cloud adapters. Custom on-premise adapters are currently not supported.">Deployment and Registration of Custom On-Premises Cloud Adapter Is Not Supported</a></p>
+</li>
+<li>
+<p><a href="GUID-2893398A-9930-4E8E-8C8E-FB8401159BE1.htm" title="The RightNow Object Query Language (ROQL) supports querying data using QueryCSV, which enables you to retrieve data in a tabular format. Note that this query returns only the first one hundred records.">Oracle RightNow Adapter QueryCSV returns only the first one hundred records</a></p>
+</li>
+<li>
+<p><a href="GUID-3E3168BA-ED17-46CF-ABA7-8A408AEBB940.htm" title="The RightNow application documentation indicates that given a Contact, the CustomFields contains a subobject C_Contacto that has a SalesCloudID field. To fetch the SalesCloudID using a Query or Get operation, note that the CustomFields subobject is listed in the object model as specify to get. This means that you must provide a hint to the system that you want that information. Provide the hint by including an empty CustomFields subobject in the Contact object you passed in as a template. This action informs the server that the object to be returned should also include all the ContactCustomFields. You can do this with any subobject that is listed as specify-to-get.">Mapping of Custom Field Fails During Runtime in Oracle RightNow Cloud To Oracle Sales Cloud Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-DC3B7FE4-6DC6-412D-AFD1-14357E7E1AD5.htm" title="Assume you create and activate an integration with an invoke (outbound) Salesforce Adapter configured with the custom WSDL option. You invoke the integration from the SOAP UI and then invalidate the session by using the enterprise WSDL. If you then invoke the integration again from the SOAP UI, you receive an Invalid Session ID.">Salesforce Adapter Custom WSDL Invalid Session is Not Working</a></p>
+</li>
+<li>
+<p><a href="GUID-25F13370-2ACB-43C3-A46D-12DB0077E704.htm" title="When standard HTTP headers are used in the response headers as part of the response message, extra information is included as part of the returned output data at runtime. This issue occurs only when headers are used in the SOAP Adapter. Without headers, the output is returned without extra information in the response message.">Extra Information is Included in the Response Headers Returned as Part of the Response Message</a></p>
+</li>
+<li>
+<p><a href="GUID-4EAA2D34-9C44-4B84-A617-5E06EAD4AA8A.htm" title="When a comment is included as part of the input SOAP header in the request message generated by the SOAP UI, the expected header values fail to be sent.">Comments Are Not Allowed as Part of the SOAP Header in Request Messages</a></p>
+</li>
+<li>
+<p><a href="GUID-E2B4995D-D395-46E8-AF09-EB95D15A6517.htm" title="Starting with Release 16.3.3, you can select to use either SOAP Adapter 16.3.3 runtime features (which use the JCA transport) or 16.2.5 features (which use the HTTP transport) on the Basic Info page of the Adapter Endpoint Configuration Wizard. Note that you can only upgrade the SOAP Adapter from the 16.2.5 HTTP transport to the 16.3.3 JCA transport. You cannot downgrade from the 16.3.3 JCA transport to the 16.2.5 HTTP transport.">Downgrading the SOAP Adapter from the JCA Transport to the HTTP Transport Causes a Runtime Failure</a></p>
+</li>
+<li>
+<p><a href="GUID-83739BC1-7567-4B3C-B40C-61D019CB520D.htm" title="After importing an IAR file that was exported from a 16.2.5 release, while updating a SOAP Adapter Connection that uses Basic Authentication, the Username and Password fields are not available in the Configure Security dialog. For a trigger connection, these credentials are not required because this is a SOAP endpoint. The credentials to access the endpoint are always the Integration Cloud Service runtime user and password. In previous releases, the inbound SOAP Adapter connection accepted username and password changes.">Basic Authentication Fields are Unavailable when Updating a SOAP Adapter Connection after Importing an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-7D98FD86-8D3C-44F1-85E7-1BB042EC92DC.htm" title="When creating a SOAP Adapter connection with Suppress insertion of timestamp into WS-Security header set to Yes on the Connections page and using a WSDL that requires a timestamp header, the connection fails during runtime with the following error instead of a message indicating that a valid timestamp is not present:">Unexpected Use of the Suppression Insertion of Timestamp into WS-Security Header Feature in the SOAP Adapter Causes an Unrelated Error Response</a></p>
+</li>
+<li>
+<p><a href="GUID-9E55C396-4D8D-4113-915B-D15FAD27EE6A.htm#GUID-9E55C396-4D8D-4113-915B-D15FAD27EE6A" title="When adding a MySQL adapter connection as an invoke to an integration, the relationship between two related tables is not shown by default. This behavior also occurs when a foreign key is declared in one of the imported tables. A workaround is not available.">Table Relationships Not Displaying by Default when Adding a MySQL Adapter Connection as an Invoke to an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-A88A6E8E-F1DE-4806-BF81-99B041878DFE.htm" title="A single call with multiple updates is not supported with the SQL Server Adapter in basic map data integration patterns. In the case of multiple updates, use an orchestrated integration pattern or a basic map data integration pattern with enrichments.">A Single Call with Multiple Updates is Not Supported with the SQL Server Adapter in Basic Map Data Integration Patterns</a></p>
+</li>
+<li>
+<p><a href="GUID-C3C6FC93-13DE-4326-889D-404227678535.htm" title="If you create a REST Adapter connection using a metadata catalog URL, and then create and activate a REST Adapter inbound-to-REST Adapter outbound integration using the Basic Map Data pattern, the endpoint link shows an incorrectly constructed WSDL:">REST Adapter Endpoint Provides a SOAP WSDL with the Basic Map Data Template</a></p>
+</li>
+<li>
+<p><a href="GUID-DAB68B85-6F3F-45E8-8A6B-FE3F2118D2AC.htm" title="When configuring the REST Adapter in the Adapter Endpoint Configuration Wizard, you must click Next to save your changes and move to the next page of the wizard. For example, if you configure details on the Request page, click the tab of the Basic Info page in the left pane, then click Next to return to the Request page, none of your previous configurations were saved, and the page is empty.">REST Adapter Data is Only Saved When You Click Next</a></p>
+</li>
+<li>
+<p><a href="GUID-4B8C6AA8-2A3F-402E-9EEA-45FF3282C214.htm" title="When designing the REST Adapter on the Request and Response pages of the Adapter Endpoint Configuration Wizard, the maximum size of the JSON file is restricted to 100 KB.">JSON Files in the REST Adapter are Restricted to 100 KB</a></p>
+</li>
+<li>
+<p><a href="GUID-9A7B949C-1D55-41DD-B2BC-780B4628E44B.htm" title="While designing the REST Adapter in the Adapter Endpoint Configuration Wizard, carefully review the contents on the Summary page. The endpoint URI must match the invoke service URI. If you do not see the necessary values, review your invoke connection and the outbound service. The base URI in the connection and resource URI in the invoke service must add up to the endpoint URI.">Invoke Endpoint URI Must Match the Base URI + Resource URI in REST Adapter</a></p>
+</li>
+<li>
+<p><a href="GUID-3E6D0E50-BB7E-4D54-8BF7-1B068DD79EC2.htm" title="If you create a REST Adapter connection that returns multipart/mixed or multipart/form-data, you cannot design an integration with the REST Adapter as both the inbound and outbound connections because the response does not support both the multipart/mixed and multipart/form-data media types.">REST Adapter Does Not Support Services Returning Multipart Data</a></p>
+</li>
+<li>
+<p><a href="GUID-42AE0963-59C5-481D-8D9A-1267D32FD1A2.htm" title="Redirect URI configuration with the REST Adapter is required for the following security policies: OAuth Authorization Code Credentials and OAuth Custom Three Legged Flow.">Redirect URL Constructed in an Expanded Domain Fails the Provide Consent Button</a></p>
+</li>
+<li>
+<p><a href="GUID-D141B6DB-F620-4974-B808-A80B9597291D.htm" title="Each SAP instance has version-specific JAR files. After installing the on-premises agent, you must copy sapidoc3.jar and sapjco3.jar. to Agent_Home/thirdparty/lib and restart the on-premises agent.">Copying SAP Instance-Dependant JARs After On-Premises Agent Installation</a></p>
+</li>
+<li>
+<p><a href="GUID-E912CA09-A904-481B-9A04-B4BB7EC1DD39.htm" title="The fault response is not getting mapped during runtime.">SuccessFactors Fault Response is Not Mapped at Runtime</a></p>
+</li>
+<li>
+<p><a href="GUID-9EE4F483-5A97-4803-AA47-427EE3CED40A.htm" title="The ServiceNow Adapter is now compatible with the Helsinki Patch 5 and Geneva versions of ServiceNow. Fuji is no longer supported.">Application Versions Supported by the ServiceNow Adapter</a></p>
+</li>
+<li>
+<p><a href="GUID-E56F850F-7DD7-4261-BC11-7579731DA15B.htm">Oracle E-Business Suite Adapter Issues</a></p>
+</li>
+<li>
+<p><a href="GUID-688AC4FF-C589-4195-A465-F0BB10CAF764.htm" title="Siebel Application WSDL validation errors are thrown during activation of a few Siebel inbound services.">Siebel Application WSDL Validation Errors During Activation of Siebel Inbound Services</a></p>
+</li>
+<li>
+<p><a href="GUID-A8775D9F-BBF3-4F18-83CD-2DCB4F96F2FA.htm" title="When a load interface job fails during an integration import, the ERP system adds the document ID in the JSON callback string. However, the document ID is missing from the ERP JSON payload. Therefore, the Oracle ERP Cloud Adapter cannot process the ERP callback payload.">ERP System Does Not Add a Document ID in the JSON String When a Load Interface Job Fails</a></p>
+</li>
+<li>
+<p><a href="GUID-A645395A-F16E-4D01-A2F0-4F38E47DAFF7.htm" title="When you create a connection to the Oracle ERP Cloud adapter in Integration Cloud Service, and click Configure Credentials to specify the security policy, user name, and password, ensure that the user name you specify includes the SOAOperator role. For information, contact the Oracle ERP Cloud adapter administrator. If the user name does not include this role, you receive the following error when you click Test after completing adapter configuration: Unable to test the connection. Contact your administrator for assistance.">Oracle ERP Cloud Adapter User Name Requires the SOAOperator Role</a></p>
+</li>
+<li>
+<p><a href="GUID-A4CAF13A-74A4-48C4-8139-48FBDB7967A5.htm" title="In an active-active Integration Cloud Service environment with an inbound Oracle Messaging Cloud Service connection, the behavior of a durable subscription topic is as follows:">Durable Subscriber Topic in Oracle Messaging Cloud Service Connection in Active-Active Cluster Behaves Differently</a></p>
+</li>
+<li>
+<p><a href="GUID-030E7F2B-8AB1-4A2A-8989-B683D8953B4C.htm" title="With the Microsoft SQL Server Adapter, UPDATE statements with incorrect syntax validate successfully. For example, this statement validates successfully even though the comma is missing before bit_id:">Incorrect UPDATE Statement Syntax Validation</a></p>
+</li>
+<li>
+<p><a href="GUID-97511E61-F974-4074-8F0B-74682C21222F.htm" title="The Oracle Logistics Adapter is only supported with Logistics Cloud versions 6.4.2 and later.">Oracle Logistics Adapter Requires Logistics Cloud Version 6.4.2 or Later</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment134">
+<tr>
+<td class="cellalignment141">
+<table class="cellalignment139">
+<tr>
+<td class="cellalignment138"><a href="GUID-FBB3E9CE-E66B-45FD-8848-73CA2A445CE1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment138"><a href="GUID-0FB9BD95-2D56-409D-8B03-3B3FE387F98D.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment143">
+<table class="cellalignment137">
+<tr>
+<td class="cellalignment138"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment138"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment138"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

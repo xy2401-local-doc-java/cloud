@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Developing Custom Oracle Cloud Adapters - Contents</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="This guide describes how to create custom adapters using the Cloud Adapter SDK." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"   src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"   src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Next" href="title.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript"  src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript"  src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript"  src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript"  src="../dcommon/js/foundation.min.js"></script>
+<script type="application/javascript"  src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript"  src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript"  src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="application/javascript"  src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<span id="PAGE" style="display:none;">1/71</span> <!-- End Header -->
+<h1 class="toc">Contents</h1>
+<h2 class="tocheader"><a href="title.htm">Title and Copyright Information</a></h2>
+<h2 class="tocheader"><a href="GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7.htm#GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7">Preface</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7.htm#GUID-0392FF10-65C7-403A-86DF-0143E80466FB">Audience</a></li>
+<li><a href="GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7.htm#GUID-E13D96F2-FB27-4642-803C-1491ADB9CFDB">Prerequisites</a></li>
+<li><a href="GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7.htm#GUID-E4E10D58-A427-448A-83E0-32418435BBB8">Related Documentation and Resources</a></li>
+<li><a href="GUID-30EFAB79-D043-4716-94BB-B17EA583D1B7.htm#GUID-934B715E-C3B9-43DA-BBDC-EEB1232C27C5">Conventions</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-5537678F-43DB-40FD-9C52-B1C618434178.htm"><span class="secnum">1</span> About Creating Custom Cloud Adapters with Cloud Adapter SDK</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-2F053897-A01D-4AEC-8070-1FCB06260C67.htm">Custom Adapters</a></li>
+<li><a href="GUID-8D9BE837-203D-464D-9BF0-46ACF4321895.htm">Cloud Adapter SDK</a></li>
+<li><a href="GUID-4904EA91-2F82-45FD-86C6-CD2650E4CF56.htm">Adapter Framework Components</a></li>
+<li><a href="GUID-723CBC45-99F2-4A50-B6FC-AFE2611B351B.htm">Design-Time Functional Components</a></li>
+<li><a href="GUID-BB2D3442-2961-4D48-8708-89BC5C326CE5.htm">Runtime Functional Components</a></li>
+<li><a href="GUID-A2F99D08-CFFF-409B-AFB9-D5527B4E2E12.htm">Adapter Wizard Framework</a></li>
+<li><a href="GUID-6C1344AC-A6CE-4830-96BF-0A67F0F4B8BC.htm">Adapter Development Life Cycle</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-DEA65848-3DBF-4E5D-8204-7C51C9A1E281.htm"><span class="secnum">2</span> Developing the Sample Cloud Adapter</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-BF8E8E09-504D-4C3E-94B1-B372C69C7E72.htm">Differences between Outbound and Inbound Adapters</a></li>
+<li><a href="GUID-276BB7DC-B5DA-4C7E-95A7-F726D1FD8E66.htm">Setting Up the Cloud Adapter Development Environment</a></li>
+<li><a href="GUID-1718B773-3F38-43FC-BA9A-79B8C484626A.htm">Creating the Adapter Project</a></li>
+<li><a href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm">Creating a cloud-adapter.xml File for a Cloud Adapter</a></li>
+<li><a href="GUID-F3E8F57C-658C-4B80-BC0F-2E4DC5F5EA62.htm">Design-Time Components</a></li>
+<li><a href="GUID-5FDE4D65-C82B-4F12-9E3F-DB2F5090FF5D.htm">User Interface Module</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-CEEF5B75-0F1C-43CD-B511-44071F9FC70D.htm">Adapter User Interface Entry Point</a></li>
+<li><a href="GUID-7C9015F0-C57C-45D0-9F59-21CAB2108A30.htm">Welcome Page</a></li>
+<li><a href="GUID-95FEB3DD-4C71-48B4-AF1E-E5AD2F22DD21.htm">Connection Page</a></li>
+<li><a href="GUID-7DA46D87-8B34-47E2-B48A-E0C014459B07.htm">Operations Page for Outbound Adapters</a></li>
+<li><a href="GUID-A97BED9A-E3FF-4F0D-8605-62F2D15CF528.htm">Request Configuration Page for Inbound Adapters</a></li>
+<li><a href="GUID-ED01D778-E5AA-4A3E-9DA5-9D3F1A90ED7A.htm">Response Configuration Page for Inbound Adapters</a></li>
+<li><a href="GUID-66859FEC-9599-4196-A241-56BAFDF0CB10.htm">Summary Page</a></li>
+</ul>
+</li>
+<li><a href="GUID-463279F2-BBD4-4B69-A727-BBAB76DFC4E6.htm">Plugin Module</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-0A574F28-7F29-4B43-91C0-E21BA3297B44.htm">Connection Properties and Testing</a></li>
+<li><a href="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF.htm">Metadata Browser</a></li>
+<li><a href="GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9.htm">Generating the Runtime Artifacts</a></li>
+</ul>
+</li>
+<li><a href="GUID-41E53C35-37E3-4F15-A217-31995DAC32F6.htm">Runtime Components</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-BCC571E5-7D0C-4AFD-9EBF-C7D45ABFD55A.htm">Endpoint Invoker</a></li>
+<li><a href="GUID-B17ACD78-9DA5-47A2-8444-18FA0B8DB108.htm">Message Transformations for Outbound Adapters</a></li>
+<li><a href="GUID-76DA1991-4004-4F26-B52A-D25BCD04B594.htm">Message Transformations for Inbound Adapters</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-4EC28D34-FF6A-4912-B656-E5F7493468F2.htm"><span class="secnum">3</span> Developing the Sample REST Cloud Adapter</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-7DA479E7-1039-4F82-8082-E441679DC475.htm">About REST Cloud Adapters</a></li>
+<li><a href="GUID-BF1067A3-B94A-4FBB-BFC1-2CE6B8D55AF8.htm">Creating a Metadata Catalog for a REST Cloud Adapter</a></li>
+<li><a href="GUID-6101E682-E91F-46D2-BBB7-43CD617764BA.htm">Setting Up the REST Cloud Adapter Development Environment</a></li>
+<li><a href="GUID-1C145066-0BD1-4F0C-A37A-843B40DCEEE3.htm">Creating a cloud-adapter.xml File for a REST Cloud Adapter</a></li>
+<li><a href="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0.htm">Creating Outbound REST Cloud Adapter Design-Time Components</a></li>
+<li><a href="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7.htm">Creating Outbound REST Cloud Adapter Runtime Components</a></li>
+<li><a href="GUID-41ACD6C0-20AA-47DB-B325-8148E9634C48.htm">Creating Inbound REST Cloud Adapter Components</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-EFFD9C04-0D04-4186-BA0D-304BD451CEF8.htm"><span class="secnum">4</span> Building and Packaging the Sample Cloud Adapter</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-7E87E728-AC62-4F5D-ADA2-ED42539A3894.htm">Building the Sample Cloud Adapter</a></li>
+<li><a href="GUID-AD87B028-A344-43E2-90B3-38195083378F.htm">Packaging and Generating the JAR File</a></li>
+<li><a href="GUID-1E7307BE-32BC-486F-AC50-B9F8D780DFBA.htm">Registering the Adapter</a></li>
+<li><a href="GUID-DCFDAF48-C604-4BC9-800D-AF6DF0BD2DE7.htm">Testing an Outbound Adapter</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-DB727FF4-4B62-41A7-89A7-367478AE8EC1.htm">Creating an Application for Testing an Outbound Adapter</a></li>
+<li><a href="GUID-CF4094B0-8C72-4E09-8E26-430F1231ED2E.htm">Adding an External Reference and Using the Adapter Wizard</a></li>
+<li><a href="GUID-CE84D739-2787-4555-931A-95EF5FC4BA3A.htm">Creating a BPEL Client to Invoke the Adapter</a></li>
+<li><a href="GUID-A78D4602-08E8-4A7B-B8BA-C3958FA1AB99.htm">Deploying the Application that Tests the Outbound Adapter</a></li>
+<li><a href="GUID-41242FC0-F9CE-4A37-A66D-276E7994289B.htm">Testing the Outbound Adapter Using the EM Console</a></li>
+</ul>
+</li>
+<li><a href="GUID-F4609E4F-4FA1-4773-9F0F-3AB5B56A23B6.htm">Testing an Inbound Adapter</a>
+<ul style="list-style-type: none">
+<li><a href="GUID-68C2B838-5D49-4074-90AB-34D9E85473FE.htm">Creating an Application for Testing an Inbound Adapter</a></li>
+<li><a href="GUID-F46C8DA8-E10D-421F-BA57-079911F78A2D.htm">Adding an Exposed Service and Using the Adapter Wizard</a></li>
+<li><a href="GUID-63ECB358-57D0-42D2-878C-4F44096F6C09.htm">Creating a BPEL Process to Consume the Adapter</a></li>
+<li><a href="GUID-70DA0AE7-718E-470C-90BB-30EC46BA5DE6.htm">Deploying the Application that Tests the Inbound Adapter</a></li>
+<li><a href="GUID-1C64B490-9C6B-4AE6-BAF4-7984740191CD.htm">Testing the Inbound Adapter Using the EM Console</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="tocheader"><a href="GUID-E09CC069-DC48-4BAC-A3E7-6CCD5510D063.htm"><span class="secnum">5</span> Cloud Adapter SDK Advanced Features</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-F1301B8B-6A02-4F76-A274-388E831E27D8.htm">Design-Time Framework Description</a></li>
+<li><a href="GUID-301AC75F-154F-46A6-AF2B-511C86BE7397.htm">Batch and Bulk Operations</a></li>
+<li><a href="GUID-F8103121-6F3B-46D8-8C87-65DC1E0497D5.htm">Response Mapping</a></li>
+<li><a href="GUID-82309FC8-583B-49BD-98C7-F659B387D20D.htm">Queries and DSLs</a></li>
+<li><a href="GUID-092518BD-941C-4988-B4BF-F6518A7ADFE8.htm">Edit Mode</a></li>
+<li><a href="GUID-11A35CDA-D459-406A-B0BE-9BA6979EB92E.htm">Metadata Downloading and Caching</a></li>
+<li><a href="GUID-54792378-79DD-4B3F-9F73-440F01A0E198.htm">Error Handling Support for REST-Based Adapters</a></li>
+<li><a href="GUID-146FA003-C826-41BE-BB89-6000EBDC9FE2.htm">Runtime Framework Execution Flow</a></li>
+</ul>
+<h2 class="tocheader"><a href="GUID-EAD40020-BE95-41A5-975D-EC0967C89764.htm"><span class="secnum">A</span> Cloud Adapter SDK Reference Information</a></h2>
+<ul style="list-style-type: none">
+<li><a href="GUID-6358FE32-C167-48A0-BDFB-959D14A5EB18.htm">Adapter Troubleshooting</a></li>
+<li><a href="GUID-CE5D682D-C249-4101-AD06-C27557653304.htm">JDeveloper Wizard Design Recommendations</a></li>
+<li><a href="GUID-D4787C3C-F038-41F1-BBB1-2BC4B8F38A2A.htm">Unified UI Framework Classes</a></li>
+<li><a href="GUID-C99E1181-618C-4729-9FEE-AC3052D0B601.htm">Unified UI Field Object Names and Descriptions</a></li>
+</ul>
+</div>
+<!-- class="ind" -->
+<!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment296">
+<tr>
+<td class="cellalignment284"><a href="title.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment295">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

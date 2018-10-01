@@ -1,0 +1,409 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="This section describes deploying and undeploying applications to an Oracle SOA Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, and WLST commands. You cannot deploy and undeploy applications directly through the Oracle SOA Cloud Service Console.">
+      <meta name="description" content="This section describes deploying and undeploying applications to an Oracle SOA Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, and WLST commands. You cannot deploy and undeploy applications directly through the Oracle SOA Cloud Service Console.">
+      <title>Deploying and Undeploying Applications for an Oracle SOA Cloud Service Instance</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Administering Oracle SOA Cloud Service in a Customer-Managed Environment">
+      <meta property="og:description" content="This section describes deploying and undeploying applications to an Oracle SOA Cloud Service instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, and WLST commands. You cannot deploy and undeploy applications directly through the Oracle SOA Cloud Service Console.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Administering Oracle SOA Cloud Service in a Customer-Managed Environment">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="administering-oracle-soa-cloud-service-customer-managed-environment.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-09-10T04:11:21-07:00">
+      <meta name="dcterms.title" content="Administering Oracle SOA Cloud Service in a Customer-Managed Environment">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2018">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E55598-51">
+      
+      <meta name="dcterms.product" content="en/cloud/paas/soa-cloud">
+      
+      <link rel="prev" href="developing-oracle-soa-cloud-service.html" title="Previous" type="text/html">
+      <link rel="next" href="using-otd-host-name-oracle-service-bus-business-service.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"paas","element_name":"Platform as a Service (PaaS)","display_in_url":true},"product_group":{"short_name":"integration-cloud","element_name":"Integration","display_in_url":false},"product":{"short_name":"soa-cloud","element_name":"SOA Cloud Service","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}}</script>
+      
+    <meta name="dcterms.isVersionOf" content="CSBCS">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="developing-oracle-soa-cloud-service.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="using-otd-host-name-oracle-service-bus-business-service.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Administering Oracle SOA Cloud Service in a Customer-Managed Environment</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="developing-oracle-soa-cloud-service.html" property="item" typeof="WebPage"><span property="name">Developing Applications with Oracle SOA Cloud Service</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Deploying and Undeploying Applications for an Oracle SOA Cloud Service Instance</li>
+            </ol>
+            <a id="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06" name="GUID-6A22645D-1194-4BF0-98CD-0E272248DC06"></a>
+            
+            <h2 id="CSBCS-GUID-6A22645D-1194-4BF0-98CD-0E272248DC06" class="sect2">Deploying and Undeploying Applications for an <span id="SOASUITECS">Oracle SOA Cloud Service</span> Instance
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>This section describes deploying and undeploying applications to an <span id="SOASUITECS">Oracle SOA Cloud Service</span> instance by using: Fusion Middleware Control, the WebLogic Server Administration Console, and WLST commands. You cannot deploy and undeploy applications directly through the <span id="SOASUITECS">Oracle SOA Cloud Service</span> Console.
+               </p>
+               <div class="section">
+                  <p class="subhead1">Topics:</p>
+               </div>
+               <!-- class="section" -->
+               <ul style="list-style-type: disc;">
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-6BEA1FB8-9471-49BC-9C0D-16F5C5EB721F" title="You can use Oracle JDeveloper to deploy SOA composite applications and Oracle Service Bus applications.">Using Oracle JDeveloper to Deploy Applications</a></p>
+                  </li>
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-415A34A3-F1BF-4732-A94F-6999E769C95F" title="Consider the typical tasks for deploying and undeploying an application to an Oracle SOA Cloud Service instance, as shown in the following table.">Overview of Deployment Tasks for an Oracle SOA Cloud Service Instance</a></p>
+                  </li>
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-6DBF457F-34DE-49AA-932A-09F65E859D85" title="You can use Oracle Enterprise Manager Fusion Middleware Control to deploy and undeploy an application to an Oracle SOA Cloud Service instance, just as you would deploy and undeploy the application to an on-premises service instance.">Using Oracle Enterprise Manager Fusion Middleware Control to Deploy an Application</a></p>
+                  </li>
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29" title="You can use the Oracle WebLogic Server Administration Console to deploy and undeploy an application to an Oracle SOA Service instance, just as you would deploy and undeploy the application to an on-premises service instance.">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</a></p>
+                  </li>
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378" title="You can use WLST commands to deploy and undeploy an application to and from an Oracle SOA Cloud Service instance. All WLST commands are supported.">Using WLST Commands to Deploy and Undeploy an Application</a></p>
+                  </li>
+                  <li>
+                     <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-1F10B393-1F55-448D-82DD-799DFA906469" title="You can access an application deployed to an Oracle SOA Cloud Service instance through a URL in a browser.">Accessing an Application Deployed to an Oracle SOA Cloud Service Instance</a></p>
+                  </li>
+               </ul>
+            </div>
+            <div class="props_rev_3"><a id="GUID-415A34A3-F1BF-4732-A94F-6999E769C95F" name="GUID-415A34A3-F1BF-4732-A94F-6999E769C95F"></a><h3 id="CSBCS-GUID-415A34A3-F1BF-4732-A94F-6999E769C95F" class="sect3">Overview of Deployment Tasks for an Oracle SOA Cloud Service Instance</h3>
+               <div>
+                  <p>Consider the typical tasks for deploying and undeploying an application to an Oracle SOA Cloud Service instance, as shown in the following table.</p>
+                  <div class="tblformalwide" id="GUID-415A34A3-F1BF-4732-A94F-6999E769C95F__GUID-0A25D669-230E-47B4-8A8C-ACD052E15333">
+                     <table cellpadding="4" cellspacing="0" class="FormalWide" title summary="This table shows typical tasks for deploying and undeploying applications." width="100%" frame="hsides" border="1" rules="rows">
+                        <thead>
+                           <tr align="left" valign="top">
+                              <th align="left" valign="bottom" width="30%" id="d27345e80">Task</th>
+                              <th align="left" valign="bottom" width="35%" id="d27345e83">Description</th>
+                              <th align="left" valign="bottom" width="35%" id="d27345e86">More Information</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="30%" id="d27345e91" headers="d27345e80 ">
+                                 <p>Use Oracle JDeveloper</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e91 d27345e83 ">
+                                 <p>Deploy SOA composite applications and Oracle Service Bus applications.</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e91 d27345e86 ">
+                                 <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-6BEA1FB8-9471-49BC-9C0D-16F5C5EB721F" title="You can use Oracle JDeveloper to deploy SOA composite applications and Oracle Service Bus applications.">Using Oracle JDeveloper to Deploy Applications</a></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="30%" id="d27345e105" headers="d27345e80 ">
+                                 <p>Use Fusion Middleware Control</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e105 d27345e83 ">
+                                 <p>Deploy and undeploy applications just as you would for an on-premise service instance.</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e105 d27345e86 ">
+                                 <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-6DBF457F-34DE-49AA-932A-09F65E859D85" title="You can use Oracle Enterprise Manager Fusion Middleware Control to deploy and undeploy an application to an Oracle SOA Cloud Service instance, just as you would deploy and undeploy the application to an on-premises service instance.">Using Oracle Enterprise Manager Fusion Middleware Control to Deploy an Application</a></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="30%" id="d27345e119" headers="d27345e80 ">
+                                 <p>Use the WebLogic Server Administration Console</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e119 d27345e83 ">
+                                 <p>Deploy and undeploy applications just as you would for an on-premise service instance.</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e119 d27345e86 ">
+                                 <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29" title="You can use the Oracle WebLogic Server Administration Console to deploy and undeploy an application to an Oracle SOA Service instance, just as you would deploy and undeploy the application to an on-premises service instance.">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</a></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="30%" id="d27345e133" headers="d27345e80 ">
+                                 <p>Use WLST commands</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e133 d27345e83 ">
+                                 <p>Use WLST commands online or offline to deploy an application.</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e133 d27345e86 ">
+                                 <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378" title="You can use WLST commands to deploy and undeploy an application to and from an Oracle SOA Cloud Service instance. All WLST commands are supported.">Using WLST Commands to Deploy and Undeploy an Application</a></p>
+                              </td>
+                           </tr>
+                           <tr align="left" valign="top">
+                              <td align="left" valign="top" width="30%" id="d27345e147" headers="d27345e80 ">
+                                 <p>Access a deployed application</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e147 d27345e83 ">
+                                 <p>Copy the public IP address of the load balancer into the URL for the application.</p>
+                              </td>
+                              <td align="left" valign="top" width="35%" headers="d27345e147 d27345e86 ">
+                                 <p><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-1F10B393-1F55-448D-82DD-799DFA906469" title="You can access an application deployed to an Oracle SOA Cloud Service instance through a URL in a browser.">Accessing an Application Deployed to an Oracle SOA Cloud Service Instance</a></p>
+                              </td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <!-- class="inftblhruleinformal" -->
+               </div>
+            </div>
+            <div class="sect2"><a id="GUID-6BEA1FB8-9471-49BC-9C0D-16F5C5EB721F" name="GUID-6BEA1FB8-9471-49BC-9C0D-16F5C5EB721F"></a><h3 id="CSBCS-GUID-6BEA1FB8-9471-49BC-9C0D-16F5C5EB721F" class="sect3">Using Oracle JDeveloper to Deploy Applications</h3>
+               <div>
+                  <p>You can use Oracle JDeveloper to deploy SOA composite applications and Oracle Service Bus applications.</p>
+                  <div class="section">See <a href="https://www.oracle.com/technetwork/middleware/soasuite/learnmore/jdevdeploymenttosoacs-4408368.pdf" target="_blank"><span class="italic">Deploying SOA Composites and Oracle Service Bus Applications from Oracle JDeveloper to Oracle SOA Cloud Service</span></a>.
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-6DBF457F-34DE-49AA-932A-09F65E859D85" name="GUID-6DBF457F-34DE-49AA-932A-09F65E859D85"></a><h3 id="CSBCS-GUID-6DBF457F-34DE-49AA-932A-09F65E859D85" class="sect3">Using Oracle Enterprise Manager Fusion Middleware Control to Deploy an Application</h3>
+               <div>
+                  <p>You can use Oracle Enterprise Manager Fusion Middleware Control to deploy and undeploy an application to an Oracle SOA Cloud Service instance, just as you would deploy and undeploy the application to an on-premises service instance. </p>
+                  <div class="section">
+                     <div class="infoboxnote" id="GUID-6DBF457F-34DE-49AA-932A-09F65E859D85__GUID-354A3E3C-EDB3-4359-A4CD-CAC85DC8533B">
+                        <p class="notep1">Note:</p>Before you can use Oracle Enterprise Manager Fusion Middleware Control to deploy an application, you must add a managed server IP as described in <a href="cloud-adapter-pack.html#GUID-12A22E48-6155-4073-95E6-43AF2C944606" title="If you use the cloud adapter pack, before you can use Fusion Middleware Control to deploy applications, you must add a managed server IP in to a non proxy host.">Adding a Managed Server IP in a Non Proxy Host to Enable Deployment From Fusion Middleware Control</a>.
+                     </div>
+                     <p>Oracle Enterprise Manager Fusion Middleware Control is one of the consoles available through the Oracle SOA Cloud Service Console. For information about opening Oracle Enterprise Manager Fusion Middleware Control, see <a href="accessing-administration-console-software-that-service-instance-is-running.html" title="From an Oracle SOA Cloud Service instance, you can access the administration consoles for the software that the service instance is running.">Accessing an Administration Console for Software that a Service Instance Is Running</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p>The following table shows additional resources.</p>
+                     <div class="tblformalwide" id="GUID-6DBF457F-34DE-49AA-932A-09F65E859D85__GUID-BE59B57A-2680-43FD-B6AD-2A0A0DD7BBEC">
+                        <table cellpadding="4" cellspacing="0" class="FormalWide" title summary="The following table shows additional resources about deploying and undeploying applications." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="20%" id="d27345e218">For...</th>
+                                 <th align="left" valign="bottom" width="20%" id="d27345e220">See...</th>
+                                 <th align="left" valign="bottom" width="20%" id="d27345e222">In...</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="20%" id="d27345e226" headers="d27345e218 ">Oracle Enterprise Manager Fusion Middleware Control12.1.3</td>
+                                 <td align="left" valign="top" width="20%" headers="d27345e226 d27345e220 ">
+                                    <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=ASADM674">Deploying, Undeploying, and Redeploying Java EE Applications</a></p>
+                                 </td>
+                                 <td align="left" valign="top" width="20%" headers="d27345e226 d27345e222 "><cite>Administering Oracle Fusion Middleware</cite></td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29" name="GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29"></a><h3 id="CSBCS-GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29" class="sect3">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</h3>
+               <div>
+                  <p>You can use the Oracle WebLogic Server Administration Console to deploy and undeploy an application to an Oracle SOA Service instance, just as you would deploy and undeploy the application to an on-premises service instance. </p>
+                  <div class="section">
+                     <p>The Oracle WebLogic Server Administration Console is one of the consoles available through the Oracle SOA Cloud Service Console. For information about opening the Oracle WebLogic Server Administration Console, see <a href="accessing-administration-console-software-that-service-instance-is-running.html" title="From an Oracle SOA Cloud Service instance, you can access the administration consoles for the software that the service instance is running.">Accessing an Administration Console for Software that a Service Instance Is Running</a>.
+                     </p>
+                  </div>
+                  <!-- class="section" -->
+                  <div class="section">
+                     <p class="subhead2">Topics</p>
+                  </div>
+                  <!-- class="section" -->
+                  <ul>
+                     <li class="stepexpand"><span><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-52AB36B2-ECF5-42CB-9622-497CA4CA1D29" title="You can use the Oracle WebLogic Server Administration Console to deploy and undeploy an application to an Oracle SOA Service instance, just as you would deploy and undeploy the application to an on-premises service instance.">Using the WebLogic Server Administration Console to Deploy and Undeploy an Application</a></span><div></div>
+                     </li>
+                     <li class="stepexpand"><span><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-3A0A4A01-CF9C-4B7F-8A09-59C39BCDF270" title="You must start the application to make it ready to accept requests.">Using the WebLogic Server Administration Console to Start an Application</a></span><div></div>
+                     </li>
+                     <li class="stepexpand"><span><a href="deploying-and-undeploying-applications-oracle-soa-suite-cloud-service-instance.html#GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A" title="You can use the WebLogic Server Administration Console to undeploy an application from an Oracle SOA Cloud Service instance.">Using the WebLogic Server Administration Console to Undeploy an Application</a></span><div></div>
+                     </li>
+                  </ul>
+               </div>
+               <div class="props_rev_3"><a id="GUID-3A0A4A01-CF9C-4B7F-8A09-59C39BCDF270" name="GUID-3A0A4A01-CF9C-4B7F-8A09-59C39BCDF270"></a><h4 id="CSBCS-GUID-3A0A4A01-CF9C-4B7F-8A09-59C39BCDF270" class="sect4">Using the WebLogic Server Administration Console to Start an Application</h4>
+                  <div>
+                     <p>You must start the application to make it ready to accept requests.</p>
+                     <div class="section">To start an application:</div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li class="stepexpand"><span>From the <img src="img/icon_menu.gif" width="13" alt="Menu icon" title="Menu icon"> menu on the SOA Cloud Service Console, open the WebLogic Server Administration Console.</span></li>
+                        <li class="stepexpand"><span>In the Change Center, click <span class="bold">Lock &amp; Edit</span>.</span></li>
+                        <li class="stepexpand"><span>On Deployments table on the WebLogic Server Administration Console, select the application.</span></li>
+                        <li class="stepexpand"><span>Click <span class="bold">Start</span>, then <span class="bold">Servicing all requests</span>.</span></li>
+                        <li class="stepexpand"><span>On the Start Deployments dialog, click <span class="bold">Yes</span> to confirm the deployment.</span><div>The application is now in the <span class="bold">Active</span> state and is ready to accept requests.
+                           </div>
+                        </li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="props_rev_3"><a id="GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A" name="GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A"></a><h4 id="CSBCS-GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A" class="sect4">Using the WebLogic Server Administration Console to Undeploy an Application</h4>
+                  <div>
+                     <p>You can use the WebLogic Server Administration Console to undeploy an application from an Oracle SOA Cloud Service instance.</p>
+                     <div class="section">
+                        <p>This table provides additional sources of information for learning about undeploying an application.</p>
+                        <div class="tblformalwide" id="GUID-B7253E78-3EA1-4966-87F4-2C1ECA010F3A__GUID-5A04E877-39DC-466C-B33C-CAECF5ECC0C1">
+                           <table cellpadding="4" cellspacing="0" class="FormalWide" title summary="This table provides additional sources of information for learning about undeploying an application:" width="100%" frame="hsides" border="1" rules="rows">
+                              <thead>
+                                 <tr align="left" valign="top">
+                                    <th align="left" valign="bottom" width="29%" id="d27345e354">For...</th>
+                                    <th align="left" valign="bottom" width="35%" id="d27345e357">See...</th>
+                                    <th align="left" valign="bottom" width="35%" id="d27345e360">In...</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr align="left" valign="top">
+                                    <td align="left" valign="top" width="29%" id="d27345e365" headers="d27345e354 ">
+                                       <p>Oracle Fusion Middleware CONTROL 12.1.3</p>
+                                    </td>
+                                    <td align="left" valign="top" width="35%" headers="d27345e365 d27345e357 ">
+                                       <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=WLACH00706">Remove an application or module from a domain</a></p>
+                                    </td>
+                                    <td align="left" valign="top" width="35%" headers="d27345e365 d27345e360 ">
+                                       <p><cite>Oracle WebLogic Server Administration Console Online Help</cite></p>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <!-- class="inftblhruleinformal" -->
+                     </div>
+                     <!-- class="section" -->
+                     <div class="section">To undeploy the application:</div>
+                     <!-- class="section" -->
+                     <ol>
+                        <li><span>From the <img src="img/icon_menu.gif" width="13" alt="Menu icon" title="Menu icon"> menu on the SOA Cloud Service Console, open the WebLogic Server Administration Console.</span></li>
+                        <li><span>In the Change Center of the WebLogic Server Administration Console, click <span class="bold">Lock &amp; Edit</span>.</span></li>
+                        <li><span>In the left pane of the WebLogic Server Administration Console, select <span class="bold">Deployments</span>.</span></li>
+                        <li><span>In the right pane, select the check boxes next to the application you want to remove, and click <span class="bold">Delete</span>.</span></li>
+                        <li><span>Click <span class="bold">Yes</span> to confirm your decision and remove the application.</span></li>
+                        <li><span>To activate your changes, in the Change Center of the WebLogic Server Administration Console, click <span class="bold">Activate Changes</span>.</span></li>
+                     </ol>
+                  </div>
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378" name="GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378"></a><h3 id="CSBCS-GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378" class="sect3">Using WLST Commands to Deploy and Undeploy an Application</h3>
+               <div>
+                  <p>You can use WLST commands to deploy and undeploy an application to and from an Oracle SOA Cloud Service instance. All WLST commands are supported.</p>
+                  <div class="section">
+                     <p>You can use a secure shell (SSH) to connect to the virtual machine (VM) that hosts the administration server and run WLST commands locally. For information, see <a href="creating-ssh-tunnel-1.html" title="An SSH tunnel to an Oracle SOA Cloud Service VM enables you to connect to other non-public ports on the VM though a port your local machine.">Creating an SSH Tunnel</a>. When running WLST commands locally on the VM, you can use WLST online and offline. You can only undeploy an application online. For more information, see <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/soa-cloud/csbcs&amp;id=GUID-F30599B0-82E6-4266-B7B7-6E83E037952C" target="_blank">Running WLST Commands Local to the VM</a> in <cite>Using Oracle Java Cloud Service</cite>.
+                     </p>
+                     <p>Alternatively, if you are not connected to the VM that hosts the administration server, you can connect to the administration server using WLST commands online and run WLST commands remotely, for example, from a command shell in your local environment. When running WLST commands remotely, you can use WLST commands for deployment and undeployment online only. See <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/soa-cloud/csbcs&amp;id=GUID-A369DB5E-A70E-4004-9FE5-A353B1CA4D3E" target="_blank">Running WLST Commands from a Different Host</a> in <cite>Using Oracle Java Cloud Service</cite>.
+                     </p>
+                     <p>This table provides references to additional sources of information for learning about using WLST commands.</p>
+                     <div class="tblformalwide" id="GUID-9442BC88-91C1-4821-A6A2-A008A1B3F378__GUID-54DBB602-83C8-4ED8-81D4-125532341D28">
+                        <table cellpadding="4" cellspacing="0" class="FormalWide" title summary="This table provides references to more information about WLST." width="100%" frame="hsides" border="1" rules="rows">
+                           <thead>
+                              <tr align="left" valign="top">
+                                 <th align="left" valign="bottom" width="30%" id="d27345e465">For...</th>
+                                 <th align="left" valign="bottom" width="35%" id="d27345e468">See...</th>
+                                 <th align="left" valign="bottom" width="35%" id="d27345e471">In...</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="30%" id="d27345e476" headers="d27345e465 ">
+                                    <p>Oracle Fusion Middleware</p>
+                                 </td>
+                                 <td align="left" valign="top" width="35%" headers="d27345e476 d27345e468 ">
+                                    <div class="p">
+                                       <ul style="list-style-type: disc;">
+                                          <li>
+                                             <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&amp;id=WLSTG222">Using WLST Online to Deploy Applications 12.2.1.2</a></p>
+                                          </li>
+                                          <li>
+                                             <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=WLSTG222">Using WLST Online to Deploy Applications 12.1.3</a></p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </td>
+                                 <td align="left" valign="top" width="35%" headers="d27345e476 d27345e471 ">
+                                    <p><cite>Oracle Fusion Middleware Understanding the WebLogic Scripting Tool</cite></p>
+                                 </td>
+                              </tr>
+                              <tr align="left" valign="top">
+                                 <td align="left" valign="top" width="30%" id="d27345e497" headers="d27345e465 ">
+                                    <p>A description of all of the SOA and Business Process Management commands that are available to use with the WebLogic Scripting Tool (WLST)</p>
+                                 </td>
+                                 <td align="left" valign="top" width="35%" headers="d27345e497 d27345e468 ">
+                                    <div class="p">
+                                       <ul style="list-style-type: disc;">
+                                          <li>
+                                             <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw122120&amp;id=SOACR107">Oracle Cloud WLST Command Reference for SOA Suite 12.2.1.2</a></p>
+                                          </li>
+                                          <li>
+                                             <p><a class="new-window" href="http://www.oracle.com/pls/topic/lookup?ctx=fmw121300&amp;id=SOACR107">Oracle Cloud WLST Command Reference for SOA Suite 12.1.3</a></p>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </td>
+                                 <td align="left" valign="top" width="35%" headers="d27345e497 d27345e471 ">
+                                    <p></p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- class="inftblhruleinformal" -->
+                  </div>
+                  <!-- class="section" -->
+               </div>
+            </div>
+            <div class="props_rev_3"><a id="GUID-1F10B393-1F55-448D-82DD-799DFA906469" name="GUID-1F10B393-1F55-448D-82DD-799DFA906469"></a><h3 id="CSBCS-GUID-1F10B393-1F55-448D-82DD-799DFA906469" class="sect3">Accessing an Application Deployed to an Oracle SOA Cloud Service Instance</h3>
+               <div>
+                  <p>You can access an application deployed to an Oracle SOA Cloud Service instance through a URL in a browser.</p>
+                  <div class="section">To access a deployed application:</div>
+                  <!-- class="section" -->
+                  <ol>
+                     <li class="stepexpand"><span>From the <img src="img/icon_menu.gif" width="13" alt="Menu icon" title="Menu icon"> menu on the SOA Cloud Service Console, open the Service Bus Console.</span></li>
+                     <li class="stepexpand"><span>Copy the Host IP Address of the load balancer or managed server, depending on whether your Oracle SOA Cloud Service instance has a load balancer.</span></li>
+                     <li class="stepexpand"><span>Find the context-root of the application. </span><div>The context-root is defined in the service project as a project property, or in the <code class="codeph">weblogic.xml</code> file. The context-root might or might not be the same as the internal application name.
+                        </div>
+                        <ol type="a">
+                           <li class="substepexpand"><span>Navigate to the Oracle SOA Cloud Service Console.</span></li>
+                           <li class="substepexpand"><span>From the Oracle SOA Cloud Service Console, open the WebLogic Server Administration Console.</span></li>
+                           <li class="substepexpand"><span>Select <span class="italic">domain</span> &gt; Deployments, where <span class="italic">domain</span> is the domain where the application is deployed.</span></li>
+                           <li class="substepexpand"><span>In the Deployments table, click on the name of your service.</span><div>The Settings dialog is displayed.</div>
+                           </li>
+                           <li class="substepexpand"><span>In the Overview tab, locate the context-root.</span></li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>Open a browser.</span></li>
+                     <li class="stepexpand"><span>In the address bar, specify the URL of the application:</span><div><code class="codeph">https://</code><span class="italic"><code class="codeph"><span class="codeinlineitalic">public_IP_of_load_balancer_or_managed_server</span>:<span class="codeinlineitalic">port</span>/application_context_root</code></span></div>
+                        <div>or</div>
+                        <div><code class="codeph">http://</code><span class="italic"><code class="codeph"><span class="codeinlineitalic">public_IP_of_load_balancer_or_managed_server</span>:<span class="codeinlineitalic">port</span>/application_context_root</code></span></div>
+                        <ol type="a">
+                           <li class="substepexpand"><span>Paste the Host IP Address of the load balancer or managed server into the URL.</span></li>
+                           <li class="substepexpand"><span>Specify the port number.</span><div>The default ports differ according to whether you created the service instance on which the application by using the service instance creation wizard accessible on Oracle SOA Cloud Service Console <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/soa-cloud/csbcs&amp;id=soacs_rest_api" target="_blank">REST API for Oracle SOA Cloud Service</a>. The HTTP port is disabled if you created the service instance by using the service instance creation wizard.
+                              </div>
+                              <div>See <a href="configuring-network-security.html#GUID-846B7E03-DD9D-4AF9-9F6E-82EB8D39EC52" title="To use Oracle resources through Oracle SOA Cloud Service, access them through the default ports.">Understanding the Default Access Ports</a>.
+                              </div>
+                           </li>
+                           <li class="substepexpand"><span>Specify the context-root for the application.</span><div>If you do not want to specify the IP address and port when you access the application, you can create a custom URL To do this, you must acquire and configure a third-party DNS provider to map the custom URL. See <a href="https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/soa-cloud/csbcs&amp;id=JSCUG-GUID-4CA04D5D-510D-4B7E-A6DB-70416871409D" target="_blank">Defining a Custom URL for an Application Deployed to an Oracle Java Cloud Service Instance</a> in <cite>Using Oracle Java Cloud Service</cite>.
+                              </div>
+                           </li>
+                        </ol>
+                     </li>
+                     <li class="stepexpand"><span>If you receive a warning, accept the signed certificate.</span><div>The application opens in your browser.</div>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

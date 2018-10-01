@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating the Adapter Project</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="Follow these steps to create a project for the Sample Cloud Adapter. These steps are the same for an outbound or inbound adapter." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-276BB7DC-B5DA-4C7E-95A7-F726D1FD8E66.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1718B773-3F38-43FC-BA9A-79B8C484626A"></a> <span id="PAGE" style="display:none;">15/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-1718B773-3F38-43FC-BA9A-79B8C484626A" class="sect1">Creating the Adapter Project</h1>
+<div>
+<p>Follow these steps to create a project for the Sample Cloud Adapter. These steps are the same for an outbound or inbound adapter.</p>
+<ol>
+<li class="stepexpand"><span>Open JDeveloper.</span></li>
+<li class="stepexpand"><span>Create a new JDeveloper extension Application by selecting <span class="bold">File &gt; New &gt; Application</span> and typing <kbd class="userinput">Extension</kbd> in the search field.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Extension Application</span> from the list and click <span class="bold">OK</span>.</span>
+<div><img width="700" height="503" src="img/GUID-B9DA5551-3D8B-4BB8-AE65-14AFB9D9A2BA-default.png" alt="media/image9.png" title="media/image9.png" /><br />
+<a href="img_text/GUID-C4285034-AC97-4A78-A17E-66093A772C1D.htm">Description of the illustration GUID-B9DA5551-3D8B-4BB8-AE65-14AFB9D9A2BA-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Enter an Application Name and Application Package Prefix.</span>
+<div><img width="800" height="602" src="img/GUID-690B4359-1878-49D4-B835-21490C33366F-default.png" alt="media/image10.png" title="media/image10.png" /><br />
+<a href="img_text/GUID-68BB4BFF-6CE4-47AB-8008-CA5032EFD9D3.htm">Description of the illustration GUID-690B4359-1878-49D4-B835-21490C33366F-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Enter a Project Name and click <span class="bold">Next</span>.</span>
+<div><img width="796" height="598" src="img/GUID-747D747F-BDED-40C5-BA4E-23F08115E007-default.png" alt="media/image11.png" title="media/image11.png" /><br />
+<a href="img_text/GUID-5F8635EB-D12A-4F87-988E-3AD91DD19856.htm">Description of the illustration GUID-747D747F-BDED-40C5-BA4E-23F08115E007-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span>.</span>
+<div>An empty project is displayed in the Project Explorer.</div>
+</li>
+<li class="stepexpand"><span>Add dependency libraries to the SampleCloudAdapter project. Right click on the SampleCloudAdapter project and select <span class="bold">Project Properties</span>.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Libraries and Classpath</span> in Project Properties window.</span></li>
+<li class="stepexpand"><span>Add the Cloud Adapter SDK and UI Object Framework JAR files from ORACLE_HOME locations (see <a href="GUID-276BB7DC-B5DA-4C7E-95A7-F726D1FD8E66.htm" title="The Sample Cloud Adapter project (SampleCloudAdapterProj) has dependencies upon the following JAR files, which are required for successful compilation.">Setting Up the Cloud Adapter Development Environment</a>).</span>
+<div><img width="699" height="502" src="img/GUID-5BD25C08-7E9E-4B7A-8E9C-0980CF64224B-default.png" alt="media/image12.png" title="media/image12.png" /><br />
+<a href="img_text/GUID-74EC6D7D-01E0-4C89-88E4-2D31944FFAE7.htm">Description of the illustration GUID-5BD25C08-7E9E-4B7A-8E9C-0980CF64224B-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>Double click on <code>extension.xml</code> and edit the values according to the new adapter.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Display Name &mdash; Name of the cloud adapter</p>
+</li>
+<li>
+<p>Identifier &mdash; Unique identity of the <code>SampleCloudAdapter</code> plugin</p>
+</li>
+<li>
+<p>Resource Bundle &mdash; Adapter-specific resource bundle to tokenize the element property values</p>
+</li>
+</ul>
+</div>
+<div>When you create an extension project, the extension manifest is created and opened in the overview editor. The adapter descriptor file is <code>extension.xml</code>. The order in which extensions are loaded depends on the entries in the extension manifest. The <code>MANIFEST.MF</code> file lists cloud adapter dependency JAR files.</div>
+<div><img width="840" height="292" src="img/GUID-84C48894-2C19-47EF-AAE4-6050AE054071-default.png" alt="media/image13.png" title="media/image13.png" /><br />
+<a href="img_text/GUID-0D5636C9-6A41-48AE-8DEC-991C9BA43F91.htm">Description of the illustration GUID-84C48894-2C19-47EF-AAE4-6050AE054071-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Source</span> tab and edit the <code>trigger-hook</code> element in the <code>extension.xml</code> file as shown in the following example:</span>
+<div>
+<pre dir="ltr">
+&lt;trigger-hooks xmlns="http://xmlns.oracle.com/ide/extension"&gt;
+     &lt;triggers&gt;
+        &lt;sca-config-hook xmlns="http://xmlns.oracle.com/ide/extension/sca-config"&gt;
+            &lt;adapter-types&gt;
+                &lt;adapter-type technology-keys="SOA,BPM"&gt;
+                    &lt;name&gt;SampleCloudAdapter&lt;/name&gt;
+                    &lt;folder-name&gt;Cloud Adapters&lt;/folder-name&gt;
+                    &lt;category-name&gt;Cloud&lt;/category-name&gt;
+                    &lt;description&gt;A Sample adapter can send and receive messages from SaaS Application&lt;/description&gt;
+                    &lt;inbound&gt;false&lt;/inbound&gt;
+                    &lt;outbound&gt;true&lt;/outbound&gt;
+                    &lt;binding-type&gt;jca&lt;/binding-type&gt;
+                    &lt;binding-subtype&gt;sample&lt;/binding-subtype&gt;
+                    &lt;implementation-class&gt;oracle.tip.tools.ide.adapters.samplecloudadapter.wizard.SampleCloudScaEndpointImpl&lt;/implementation-class&gt;
+                    &lt;icon16x16&gt;/oracle/cloud/adapter/sample/images/SampleCloud_16x16.png&lt;/icon16x16&gt;
+                    &lt;icon20x20&gt;/oracle/cloud/adapter/sample/images/SampleCloud_20x20.png&lt;/icon20x20&gt;                     
+                &lt;/adapter-type&gt;
+            &lt;/adapter-types&gt;
+        &lt;/sca-config-hook&gt;
+     &lt;/triggers&gt;
+   &lt;/trigger-hooks&gt;
+  &lt;hooks&gt;
+    &lt;!-- TODO Declare functionality provided by extension: oracle.cloud.adapter.sample --&gt;
+  &lt;/hooks&gt;
+</pre></div>
+<div>The sub-elements of the <code>trigger-hook</code> element are:
+<ul style="list-style-type: disc;">
+<li>
+<p><code>adapterType@ technology-keys</code> &mdash; The type of the adapter depends on the integration platform. For example:</p>
+<p><span class="bold">JDeveloper:</span> technology-keys="SOA,BPM"</p>
+<p><span class="bold">Service Bus or ICS:</span> technology-keys="ServiceBusTechnology"</p>
+</li>
+<li>
+<p><code>name</code> &mdash; Name of the adapter</p>
+</li>
+<li>
+<p><code>category-name</code> &mdash; Name of a category for the new cloud adapter</p>
+</li>
+<li>
+<p><code>description</code> &mdash; Description of the adapter</p>
+</li>
+<li>
+<p><code>inbound</code> &mdash; Flag to enable inbound adapter capabilities</p>
+</li>
+<li>
+<p><code>outbound</code> &mdash; Flag to enable outbound adapter capabilities</p>
+</li>
+<li>
+<p><code>binding-type</code> &mdash; Binding type. For example:</p>
+<p><span class="bold">JDeveloper:</span> "jca"</p>
+<p><span class="bold">Service Bus or ICS:</span> "sb"</p>
+</li>
+<li>
+<p><code>binding-subtype</code> &mdash; Binding subtype details. For example:</p>
+<p><span class="bold">JDeveloper:</span> "jca"</p>
+<p><span class="bold">Service Bus or ICS:</span> "jca/samplecloudadapter"</p>
+</li>
+<li>
+<p><code>implementation-class</code> &mdash; Provider class and new adapter implementation class details</p>
+</li>
+<li>
+<p><code>icon16x16</code> and <code>20x20</code> &mdash; Adapter icon location details</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Double click the <code>MANIFEST.MF</code> file and change the content as shown in the example below. This is required to include the Bundle-Name and runtime dependencies (Require-Bundle) in the new cloud adapter.</span>
+<div>
+<pre dir="ltr">
+Bundle-ManifestVersion: 2.0
+Bundle-Version: 12.1.2
+Bundle-Name: oracle.cloud.adapter.sample
+Bundle-SymbolicName: oracle.cloud.adapter.sample
+Bundle-ClassPath: .
+Require-Bundle: 
+ oracle.external.oracle-jrf-webservices,
+ oracle.external.oracle-jrf-wsdl,
+ oracle.external.jaxws,
+ oracle.external.oracle-jrf-saaj,
+ oracle.sca.modeler,
+ oracle.sca.ui.adapters,
+ oracle.cloud.adapter.api,
+ oracle.cloud.adapter.impl,
+ oracle.javatools,
+ oracle.jewt-core,
+ oracle.external.balishare,
+ oracle.sb.tooling.ide.sca,
+ oracle.soa.tools.widgets,
+ oracle.bpm-ide-common,
+ oracle.uic,
+ oracle.ide,
+ oracle.tools.cloud.adapter.ide
+</pre></div>
+</li>
+<li class="stepexpand"><span>Create the Sample Cloud Adapter application-specific <code>cloud-adapter.xml</code> file.</span>
+<div><img width="697" height="497" src="img/GUID-D7FDEBDE-F800-443F-BE75-C7E2AF511AD6-default.png" alt="media/image14.png" title="media/image14.png" /><br />
+<a href="img_text/GUID-DBCE5385-B2A1-44C0-B3F1-6A199218D197.htm">Description of the illustration GUID-D7FDEBDE-F800-443F-BE75-C7E2AF511AD6-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Create this XML file under the <code>src\META-INF</code> directory of the plugin JAR file.</span>
+<div><img width="575" height="246" src="img/GUID-5F737DB6-EC6F-4D27-AA61-86F130311CEE-default.png" alt="media/image15.png" title="media/image15.png" /><br />
+<a href="img_text/GUID-805D92DF-1EC3-40EB-8000-C282F40CDF48.htm">Description of the illustration GUID-5F737DB6-EC6F-4D27-AA61-86F130311CEE-default.png</a></div>
+</li>
+</ol>
+<div class="section">To create the content of the <code>cloud-adapter.xml</code> file, see <a href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm" title="To enable adapter registration, an adapter plugin MUST contain an XML file named cloud-adapter.xml in the META-INF folder of the plugin JAR file.">Creating a cloud-adapter.xml File for a Cloud Adapter</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-276BB7DC-B5DA-4C7E-95A7-F726D1FD8E66.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-28E1F810-6DB4-4165-B7C5-43CFDADC8F55.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

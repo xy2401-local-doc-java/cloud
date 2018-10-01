@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Connecting to a Compute Node Through Secure Shell (SSH)</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1D0F6D4A-6413-44B4-9DBC-029589E085CD.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-23702231-DB98-420C-AF92-5A7F3F13BBCB.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EA0771FD-45AC-4BD3-8FB2-28B793BC59F0"></a> <span id="PAGE" style="display:none;">45/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-EA0771FD-45AC-4BD3-8FB2-28B793BC59F0" class="sect1">Connecting to a Compute Node Through Secure Shell (SSH)</h1>
+<div>
+<div class="section">
+<p>To gain local access the tools, utilities and other resources on a compute node associated with <span id="GUID-EA0771FD-45AC-4BD3-8FB2-28B793BC59F0__MYSQLCSHORT">MySQL Cloud Service</span>, you use Secure Shell (SSH) client software to establish a secure connection and log in as the user <code class="codeph">opc</code>. Once logged in as <code class="codeph">opc</code>, you can switch to the <code class="codeph">oracle</code> user.</p>
+<p>Several SSH clients are freely available. The following sections show how to use SSH clients on UNIX, UNIX-like and Windows platforms to connect to a compute node associated with <span>MySQL Cloud Service</span>.</p>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-1647B90F-D017-41D6-BD9B-B28EDA53F987"></a>
+<h2 id="UOMCS-GUID-1647B90F-D017-41D6-BD9B-B28EDA53F987" class="sect2">Connecting to a Compute Node Using the ssh Utility on UNIX and UNIX-Like Platforms</h2>
+<div>
+<div class="section">
+<p>UNIX and UNIX-like platforms (including Solaris and Linux) include the ssh utility, an SSH client.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Before You Begin</p>
+<p>Before you use the ssh utility to connect to a compute node, you need the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The IP address of the compute node</p>
+<p>The IP address of a compute node associated with a database deployment on <span id="GUID-1647B90F-D017-41D6-BD9B-B28EDA53F987__MYSQLCSHORT">MySQL Cloud Service</span> is listed on the <span>MySQL Cloud Service</span> Overview page. For instructions to display this page, see <a href="GUID-0256EAF2-067F-4BAD-87DC-1B334657E94D.htm">Viewing Detailed Information for a MySQL Server Deployment</a>.</p>
+</li>
+<li>
+<p>The SSH private key file that matches the public key associated with the deployment.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Procedure</p>
+</div>
+<!-- class="section" -->
+<div class="section">To connect to a compute node using the ssh utility on UNIX and UNIX-like platforms:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In a command shell, set the file permissions of the private key file so that only you have access to it:</span>
+<div>
+<pre dir="ltr">
+$ <span class="bold">chmod 600 <span class="italic">private-key-file</span></span>
+</pre>
+<p><span class="italic"><span class="bold"><code class="codeph">private-key-file</code></span></span> is the path to the SSH private key file that matches the public key that is associated with the deployment.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Run the ssh utility:</span>
+<div>
+<pre dir="ltr">
+$ <span class="bold">ssh -i <span class="italic">private-key-file</span> <span class="italic">user-name</span>@<span class="italic">node-ip-address</span></span>
+</pre>
+<p>where:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="italic"><span class="bold"><code class="codeph">private-key-file</code></span></span> is the path to the SSH private key file.</p>
+</li>
+<li>
+<p><span class="italic"><span class="bold"><code class="codeph">user-name</code></span></span> is the <span class="bold">opc</span> user</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Connect as the user <span class="bold"><code class="codeph">opc</code></span> to perform operations that require root access to the compute node, this user can use the <code class="codeph">sudo su oracle</code> command to use MySQL from the command prompt..</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="italic"><span class="bold"><code class="codeph">node-ip-address</code></span></span> is the IP address of the compute node in <span class="italic"><code class="codeph">x.x.x.x</code></span> format.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>If this is the first time you are connecting to the compute node, the ssh utility prompts you to confirm the public key. In response to the prompt, enter <span class="bold"><code class="codeph">yes</code></span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-ECB6F8B0-405A-454C-B667-4E08ECCADE56"></a>
+<h2 id="UOMCS-GUID-ECB6F8B0-405A-454C-B667-4E08ECCADE56" class="sect2">Connecting to a Compute Node Using the PuTTY Program on Windows</h2>
+<div>
+<div class="section">
+<p>PuTTY is a freely available SSH client program for Windows.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Before You Begin</p>
+<p>Before you use the PuTTY program to connect to a compute node, you need the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The IP address of the compute node</p>
+<p>The IP address of a compute node associated with a database deployment on <span id="GUID-ECB6F8B0-405A-454C-B667-4E08ECCADE56__MYSQLCSHORT">MySQL Cloud Service</span> is listed on the <span>MySQL Cloud Service</span> Overview page. For instructions to display this page, see <a href="GUID-0256EAF2-067F-4BAD-87DC-1B334657E94D.htm">Viewing Detailed Information for a MySQL Server Deployment</a>.</p>
+</li>
+<li>
+<p>The SSH private key file that matches the public key associated with the deployment. This private key file must of the PuTTY .ppk format. If the private key file was originally created on the Linux platform, you can use the PuTTYgen program to convert it to the .ppk format.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Procedure</p>
+</div>
+<!-- class="section" -->
+<div class="section">To connect to a compute node using the PuTTY program on Windows:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Download and install PuTTY.</span>
+<div>
+<p>To download PuTTY, go to http://www.putty.org/ and click the <span class="bold">You can download PuTTY here</span> link.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Run the PuTTY program.</span>
+<div>
+<p>The PuTTY Configuration window is displayed, showing the Session panel.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In <span class="bold">Host Name (or IP address)</span> box, enter the IP address of the compute node.</span></li>
+<li class="stepexpand"><span>Confirm that the <span class="bold">Connection type</span> option is set to <span class="bold">SSH</span>.</span></li>
+<li class="stepexpand"><span>In the Category tree, expand <span class="bold">Connection</span> if necessary and then click <span class="bold">Data</span>.</span>
+<div>
+<p>The Data panel is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In <span class="bold">Auto-login username</span> box, enter the <span class="bold">opc</span> user to connect as.</span></li>
+<li class="stepexpand"><span>Confirm that the <span class="bold">When username is not specified</span> option is set to <span class="bold">Prompt</span>.</span></li>
+<li class="stepexpand"><span>In the Category tree, expand <span class="bold">SSH</span> and then click <span class="bold">Auth</span>.</span>
+<div>
+<p>The Auth panel is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Browse</span> button next to the <span class="bold">Private key file for authentication</span> box. Then, in the Select private key file window, navigate to and open the private key file that matches the public key that is associated with the deployment .</span></li>
+<li class="stepexpand"><span>In the Category tree, click <span class="bold">Session</span>.</span>
+<div>
+<p>The Session panel is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Saved Sessions</span> box, enter a name for this connection configuration. Then, click <span class="bold">Save</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Open</span> to open the connection.</span>
+<div>
+<p>The PuTTY Configuration window is closed and the PuTTY window is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>If this is the first time you are connecting to the VM, the PuTTY Security Alert window is displayed, prompting you to confirm the public key. Click <span class="bold">Yes</span> to continue connecting.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-1D0F6D4A-6413-44B4-9DBC-029589E085CD.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-23702231-DB98-420C-AF92-5A7F3F13BBCB.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About payments</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This document provides an overview of payment processing in Oracle Monetization Cloud." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="payments1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="processing-payments-batches1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9"></a> <span id="PAGE" style="display:none;">48/67</span> <!-- End Header -->
+<a id="BCSUG963"></a><a id="BCSUG877"></a><a id="BCSUG520"></a>
+<h1 id="BCSUG-GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" class="sect1"><span class="enumeration_chapter">40</span> About payments</h1>
+<div>
+<p>This document provides an overview of payment processing in Oracle Monetization Cloud.</p>
+<p>For background information, see <a href="overview-oracle-monetization-cloud.htm#GUID-9F13C9B8-734F-4A89-8540-0454E1119921">Overview of Oracle Monetization Cloud</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments.htm#GUID-07AA7302-9795-4E13-84E6-9553E710DEF4">About processing payments</a></p>
+</li>
+<li>
+<p><a href="processing-payments.htm#GUID-A9889453-231D-4AD8-92F2-F53F2C01642A">About storing card numbers as tokens</a></p>
+</li>
+<li>
+<p><a href="processing-payments.htm#GUID-4DA2F128-29A2-47E7-8B3B-47FEF72AF423">About managing payments</a></p>
+</li>
+<li>
+<p><a href="processing-payments.htm#GUID-0F51B409-6EC1-4964-A853-EDEFFBB1361E">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG521"></a>
+<div class="props_rev_3"><a id="GUID-07AA7302-9795-4E13-84E6-9553E710DEF4"></a>
+<h2 id="BCSUG-GUID-07AA7302-9795-4E13-84E6-9553E710DEF4" class="sect2">About processing payments</h2>
+<div>
+<p>How you process payments depends on how the payments are received; for example, by credit card or by check.</p>
+<p>To process credit card and debit card payments, you use the System Configuration application to configure a connection with an online payment processer, such as Chase Paymentech or Cielo. You must have an existing merchant agreement with a payment processor before configuration.</p>
+<p>This figure shows how a payment system works with an online payment processor:</p>
+<div class="figure" id="GUID-07AA7302-9795-4E13-84E6-9553E710DEF4__GUID-014B5E13-D11C-47C3-96F6-3C7FD181D85D"><br />
+<div class="imageleft"><img class="imageleft" width="361" height="184" src="img/payment_process_internal.gif" alt="Description of payment_process_internal.gif follows" title="Description of payment_process_internal.gif follows" /><br />
+<a href="img_text/payment_process_internal.htm">Description of the illustration payment_process_internal.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>For information about setting up payment gateways, see <a class="olink BCSIG964" target="_blank" href="../BCSIG/connecting-payment-gateways2.htm#BCSIG964">Connecting to payment gateways</a>.</p>
+<p>To process payments from checks and other offline payment methods, use Subscriber Management. You can process the following payment types:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Cash</p>
+</li>
+<li>
+<p>Check</p>
+</li>
+<li>
+<p>Wire-Transfer</p>
+</li>
+<li>
+<p>Inter Bank Payment Order</p>
+</li>
+<li>
+<p>Postal Order</p>
+</li>
+</ul>
+<p>This figure shows how Oracle Monetization Cloud handles manual payments:</p>
+<div class="figure" id="GUID-07AA7302-9795-4E13-84E6-9553E710DEF4__GUID-55E788CF-FC7B-442F-944B-F55BB6F9F376"><br />
+<div class="imageleft"><img class="imageleft" width="361" height="184" src="img/payment_process.gif" alt="Description of payment_process.gif follows" title="Description of payment_process.gif follows" /><br />
+<a href="img_text/payment_process.htm">Description of the illustration payment_process.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG1038"></a>
+<div class="props_rev_3"><a id="GUID-A9889453-231D-4AD8-92F2-F53F2C01642A"></a>
+<h2 id="BCSUG-GUID-A9889453-231D-4AD8-92F2-F53F2C01642A" class="sect2">About storing card numbers as tokens</h2>
+<div>
+<p>To process credit and debit card payments securely, Oracle Monetization Cloud doesn't store actual credit or debit card numbers in the database. Instead, credit and debit card numbers are stored as random identifiers, called tokens, provided by the payment gateway.</p>
+<p>Oracle Monetization Cloud requests tokens from the payment gateway when you:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Set up the payment method for a new account</p>
+</li>
+<li>
+<p>Make a one-time payment with a credit or debit card</p>
+</li>
+<li>
+<p>Change a customer's credit or debit card number</p>
+</li>
+<li>
+<p>Change a customer's payment method to a credit or debit card</p>
+</li>
+</ul>
+<p>The payment gateway stores the card number and the token mapping, and sends the token back to Oracle Monetization Cloud. The token, rather than the card number, is stored in the Oracle Monetization Cloud database, and only that token is used for subsequent payments from that card.</p>
+<p>Because the token is only valid between Oracle Monetization Cloud and the active payment gateway, the token can be sent without the risk of exposing the actual card number. If you ever change payment gateways, you must ask your customers for their card numbers again and request new tokens from the new payment gateway.</p>
+<p>Tokens are typically the same length as the credit or debit card numbers and include the last four digits of the credit or debit card numbers. This lets CSRs identify credit and debit cards without actually seeing the whole number.</p>
+</div>
+</div>
+<a id="BCSUG622"></a>
+<div class="props_rev_3"><a id="GUID-4DA2F128-29A2-47E7-8B3B-47FEF72AF423"></a>
+<h2 id="BCSUG-GUID-4DA2F128-29A2-47E7-8B3B-47FEF72AF423" class="sect2">About managing payments</h2>
+<div>
+<p>Payments are recorded in two places:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>In Oracle Monetization Cloud</p>
+</li>
+<li>
+<p>At the payment processor; for example, at a bank</p>
+</li>
+</ul>
+<p>You might need to reverse a payment; for example, if it's recorded in Oracle Monetization Cloud, but not by the payment processor. If a payment fails (for example, if a check doesn't clear), you might need to suspend the payment until it can be completely processed. See the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C95EA667-EBED-4DC4-9F66-62B881079246" title="Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved.">Suspending and correcting payments</a></p>
+</li>
+<li>
+<p><a href="reversing-payments2.htm#GUID-EBFACF29-E060-4DA6-AC4E-17AAC86E654D" title="You must reverse a payment when it's recorded in Oracle Monetization Cloud, but the payment isn't deposited (for example, when a check doesn't clear). Reversing the payment enables Oracle Monetization Cloud to treat the payment as if it never happened.">Reversing payments</a></p>
+</li>
+</ul>
+<p>Oracle Monetization Cloud manages payments by keeping track of their status, their allocation history, and so on. Two IDs are used for payments:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Payment ID:</span> An automatically generated ID for a payment transaction. Accounting can use this ID to process payments, refunds, and payment reversals.</p>
+</li>
+<li>
+<p><span class="bold">Transaction ID:</span> Similar to a payment ID, a transaction ID is automatically generated for each payment, payment reversal, and refund. Additionally, the transaction ID identifies transactions involving third parties, such as transactions with credit card processing companies.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG682"></a>
+<div class="props_rev_3"><a id="GUID-0F51B409-6EC1-4964-A853-EDEFFBB1361E"></a>
+<h2 id="BCSUG-GUID-0F51B409-6EC1-4964-A853-EDEFFBB1361E" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-credit-card-and-debit-card-payments1.htm#GUID-93C010F0-CF7B-4CCE-9398-8D4AAFC60342" title="After you run billing, you can collect the balance due from your customers who pay with credit cards and debit cards. To do so, you create a payment collections job in Oracle Monetization Cloud.">Processing credit card and debit card payments</a></p>
+</li>
+<li>
+<p><a href="processing-offline-payments1.htm#GUID-A2448FEC-DA43-4C44-82F5-E52C36B691DE" title="You can process offline payments, such as checks, by using the Oracle Monetization Cloud Subscriber Management application.">Processing offline payments</a></p>
+</li>
+<li>
+<p><a href="reversing-payments2.htm#GUID-EBFACF29-E060-4DA6-AC4E-17AAC86E654D" title="You must reverse a payment when it's recorded in Oracle Monetization Cloud, but the payment isn't deposited (for example, when a check doesn't clear). Reversing the payment enables Oracle Monetization Cloud to treat the payment as if it never happened.">Reversing payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C95EA667-EBED-4DC4-9F66-62B881079246" title="Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved.">Suspending and correcting payments</a></p>
+</li>
+<li>
+<p><a href="setting-business-configuration-options1.htm#GUID-0F20FB51-8576-4F83-9AE9-BEF8BA29BE36">Setting the minimum credit card charge threshold</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="payments1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="processing-payments-batches1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

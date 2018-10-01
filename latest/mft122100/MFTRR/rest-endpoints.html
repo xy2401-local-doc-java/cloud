@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Managed File Transfer Cloud Service 12.2.1 - All REST Endpoints</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1">
+        <meta property="og:description" content="Use the REST API for Oracle Managed File Transfer Cloud Service to discover and trigger sources.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Managed File Transfer Cloud Service 12.2.1">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="index.html" title="Previous" type="text/html">
+        <link rel="next" href="QuickStart.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="QuickStart.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>               
+        <article>
+
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Managed File Transfer Cloud Service 12.2.1</a></li>
+                    <li class="active">Endpoints</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+                <h2>All REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input id="grouped" type="checkbox" checked> Group by API
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="summary-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Discover Sources</div>
+                            <div class="panel-body">
+                                <div>Discover available active MFT sources. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Invoke MFT Events</div>
+                            <div class="panel-body">
+                                <div>Trigger sources and get instance details of events. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="summary-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="path-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Discover Sources</div>
+                            <div class="panel-body">
+                                <div>Discover available active MFT sources. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Invoke MFT Events</div>
+                            <div class="panel-body">
+                                <div>Trigger sources and get instance details of events. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="path-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="method-sort-grouped">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Discover Sources</div>
+                            <div class="panel-body">
+                                <div>Discover available active MFT sources. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Invoke MFT Events</div>
+                            <div class="panel-body">
+                                <div>Trigger sources and get instance details of events. Click an operation to view method details and examples.</div>
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="method-sort-ungrouped">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">All Endpoints</div>
+                            <div class="panel-body">
+                                <dl class="list-group schema-properties">
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-get.html">Get the instances summary of an event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-%7BeventSessionId%7D-instances-get.html">Get the resultant minimal instances details of event</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events/{eventSessionId}/instances</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-sources-get.html">Get available active sources</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-get text-uppercase">get</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/sources</code></div>
+                                    </dd>
+                                    
+                                    <dt><a href="op-events-post.html">Trigger a source</a></dt>
+                                    <dd>
+                                        <div>Method: <span class="label label-post text-uppercase">post</span></div>
+                                        <div>Path: <code style="word-wrap: break-word;">/events</code></div>
+                                    </dd>
+                                    
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </article>
+    </body>
+</html>

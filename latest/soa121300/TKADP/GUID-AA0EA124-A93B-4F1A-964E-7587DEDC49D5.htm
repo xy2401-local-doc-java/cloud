@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Oracle JCA Adapter for JDE Edwards World</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This chapter shows how to use the Oracle JCA Adapter for JDE Edwards World, and provides both design time and runtime configuration information, along with a brief conceptual overview.The JDE World System is an ERP (Enterprise Resource Planning) product running on IBM minicomputers. The JD Edwards World Adapter uses a new JDBC-driver based connection to the IBM system and enables SOA integration users to interact with JDE World system as a typical database." />
+<meta name="dcterms.created" content="2016-10-16T12:00:17Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Understanding Technology Adapters" />
+<meta name="dcterms.identifier" content="E60648-04" />
+<meta name="dcterms.isVersionOf" content="TKADP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2010, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-EA82A9A3-656E-464A-B764-E076C172BAEF.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-D9F90C07-D09D-4AA5-8DB1-99AA993B43FB.htm" title="Next" type="text/html" />
+<link rel="alternate" href="TKADP.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="TKADP.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="TKADP.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5"></a> <span id="PAGE" style="display:none;">21/25</span> <!-- End Header -->
+<a id="TKADP0999"></a><a id="TKADP0994"></a>
+<h1 id="TKADP-GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5" class="sect1"><span class="enumeration_chapter">15</span> Oracle JCA Adapter for JDE Edwards World</h1>
+<div>
+<div><span>This chapter shows how to use the Oracle JCA Adapter for JDE Edwards World, and provides both design time and runtime configuration information, along with a brief conceptual overview.The JDE World System is an ERP (Enterprise Resource Planning) product running on IBM minicomputers. The <span>JD Edwards World Adapter</span> uses a new JDBC-driver based connection to the IBM system and enables SOA integration users to interact with JDE World system as a typical database.</span></div>
+<p>For complete information on the JD Edwards World System, see the <a href="http://docs.oracle.com/cd/E26228_01/index.htm" target="_blank">Oracle JD Edwards World documentation page</a>.</p>
+<p>This chapter includes the following sections:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-5C2FC340-01BA-41C3-9DDF-94F05ABC3C20">JD Edwards World System and JDE Edwards World Adapter Concepts</a></p>
+</li>
+<li>
+<p><a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-3E882DC8-5491-45FA-995D-903024BECADC"><span>JD Edwards World Adapter</span> Features</a></p>
+</li>
+<li>
+<p><a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-8164FE38-6E0A-4B72-A733-EAB5D03D9C00">Configuring the JD Edwards World Adapter</a></p>
+</li>
+<li>
+<p><a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519">JD Edwards Word Adapter Configuration Wizard Flow: Insert Operation</a></p>
+</li>
+<li>
+<p><a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317">JD Edwards World Adapter: Select Operation</a></p>
+</li>
+</ul>
+</div>
+<a id="TKADP0909"></a>
+<div class="sect2"><a id="GUID-5C2FC340-01BA-41C3-9DDF-94F05ABC3C20"></a>
+<h2 id="TKADP-GUID-5C2FC340-01BA-41C3-9DDF-94F05ABC3C20" class="sect2">JD Edwards World System and JDE Edwards World Adapter Concepts</h2>
+<div>
+<p>J.D. Edwards World System enables integration with Enterprise systems through its interoperability framework. The Oracle JD Edwards World Adapter uses the Adapter framework and leverages various integration access methods to provide the greatest amount of flexibility and functionality.</p>
+<p>JDE Edwards World System is a database-based integration: the J.D.Edwards application is intrinsically a database. Its reports and any information extraction from it are based on SQL queries. Similarly, write interactions with JDE Edwards World System are based on inserts into special tables. The special tables are called z-tables and are used to temporarily store data that you have imported from an external source (a flat file, spreadsheet, or another type of file). The JD Edwards World System processes this data and imports it into real database tables. The Z-tables help to ensure that the format and process of importing data are as consistent as possible.</p>
+<p>Z-files contain all the information needed to process a transaction in the JD Edwards System and there is an associated batch processing program for each Z-file.</p>
+<p>Z-files correspond to different types of transactions, such as sales orders and addresses. The JD Edwards World System documentation documents these different types of files and their use within the JD Edwards World System.</p>
+<p>The JD Edwards World Adapter exposes the underlying JD Edwards World System database tables through the filter of an integration by doing the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Exposing only integration points, that is, alternative descriptive names of tables/columns. The JD Edwards World Adapter does not expose the "real" names of the JD Edwards World tables.</p>
+</li>
+<li>
+<p>Providing a powerful UI that enables you to find the correct integration touch points</p>
+</li>
+<li>
+<p>Providing a JDBC driver which ensures that only certain trusted callers are allowed to insert data into a limited set of tables.</p>
+</li>
+</ul>
+<p>The information in the JD Edwards World system is in tables in a format unusable to a Database Adapter. Numbers are stored without the decimal place, dates are in a certain format, and connections must be made with "translate binary=true" (AS/400 DB2 specific).</p>
+<p>For the purposes of the JD Edwards World Adapter, these formats are handled by the JD Edwards World JDBC driver, which also handles most of the typical runtime Adapter functions such as environment setup and data translation. Thus, the JDBC driver provides a means of communication between the JD Edwards World Adapter and the JD Edwards World system Z-tables.</p>
+</div>
+</div>
+<a id="TKADP0991"></a>
+<div class="sect2"><a id="GUID-3E882DC8-5491-45FA-995D-903024BECADC"></a>
+<h2 id="TKADP-GUID-3E882DC8-5491-45FA-995D-903024BECADC" class="sect2"><span>JD Edwards World Adapter</span> Features</h2>
+<div>
+<p>The JD Edwards World Adapter Features includes these features</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">JDE World Create Connection Template</span>. Through the Configuration Wizard, the Adapter provides the use of connection templates to assist in connecting to the JD Edwards World System.</p>
+</li>
+<li>
+<p><span class="bold">JDE World Custom Connection Parameters</span>. Through the Configuration Wizard, the JD Edwards World Adapter provides the use of connection parameters specific to JDE World System.</p>
+</li>
+<li>
+<p><span class="bold">Operation determined by table selected</span>. The JD Edwards World Adapter enables the user to choose an operation that is determined by the table that is selected.</p>
+</li>
+<li>
+<p><span class="bold">Select Table Browser</span>. This functionality enables you to browse JD Edwards World Z-tables, as an aide and prerequisite to your using the JD Edwards Adapter to perform a Select against the Z-tables.</p>
+</li>
+<li>
+<p><span class="bold">JD Edwards World System Z-tables grouped by business module</span>. To assist you in determining which tables you want to perform inserts and selects against, the JD Edwards World Adapter provides JD Edwards World System business module groupings of Z-tables. These business modules have descriptive names that are clearly indicative of their use in the Enterprise.</p>
+</li>
+<li>
+<p><span class="bold">The JD Edwards World Adapter exposes only those Z-tables that are to be used as integrations endpoints</span>. It does not expose Z-tables that are not integration endpoints.</p>
+</li>
+<li>
+<p><span class="bold">The JD Edwards World Adapter provides connection pooling support</span>.</p>
+</li>
+<li>
+<p><span class="bold">Z-table Insert Support</span>. Inserts to JD Edwards World System Z-tables require that the SQL connections obtained by the JDE World JCA adapter have permission to execute insert statements.</p>
+<p>Again, the Z-tables against which the JD World System Adapter provides you the ability to perform operations are staging tables: that is, they are data interfaces to import/export data to and from J D Edwards. External Applications always interface with the Z-tables from where you can move data into real JDEdwards World System tables using batch programming and other interfaces on the back-end JD Edwards World System.Different transactions in different functional areas have their own defined Z-tables and configurations to move them into real JD Edwards World tables. Refer to each of the vertical (Financial, Manufacturing, Human Resources) sets of JD Edwards World documentation, where you can find information about processing options that enable you to move data from their respective Z-tables.</p>
+</li>
+<li>
+<p><span class="bold">No Polling Support</span>. There is no polling support for the JD Edwards World Adapter.</p>
+</li>
+<li>
+<p><span class="bold">No Transaction Support</span>. Though many adapters generally support XA transactions, the JDEdwards World Adapter does not. This is partly because JDE World systems are non-transactional. Journalling is typically not enabled on the AS/400 DB2 database underlying the JD Edwards World System, meaning that not only are XA transactions not possible, but starting and committing a local transaction is also not supported.</p>
+<p>Also, there are only two database options available within the JD Edwards World Adapter: select and insert. Select does not need to be transactional. Insert is also to a Z-table only, and is always associated with a non-transactional RPG call.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="TKADP9421"></a>
+<div class="sect2"><a id="GUID-8164FE38-6E0A-4B72-A733-EAB5D03D9C00"></a>
+<h2 id="TKADP-GUID-8164FE38-6E0A-4B72-A733-EAB5D03D9C00" class="sect2">Configuring the JD Edwards World Adapter</h2>
+<div>
+<div class="section">
+<p>There are several preparatory configuration steps involved with the JD Edwards World Adapter. Prior to deploying the Adapter, you must provide both runtime and designtime configuration.</p>
+</div>
+<!-- class="section" --></div>
+<a id="TKADP9423"></a><a id="TKADP9424"></a><a id="TKADP9425"></a><a id="TKADP9426"></a><a id="TKADP9427"></a><a id="TKADP9428"></a><a id="TKADP9429"></a><a id="TKADP9430"></a><a id="TKADP9431"></a><a id="TKADP9422"></a>
+<div class="sect3"><a id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C"></a>
+<h3 id="TKADP-GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C" class="sect3">Configuring Connection Pooling for the JDEdwards World Adapter</h3>
+<div>
+<div class="section">
+<p>A JCA connector must provide pooling support. With the Database Adapter, SQL connections are obtained from a Data source. In this way, pooling requirements are delegated to the underlying JDBC driver and its DataSource implementation.</p>
+<p>Because the JD Edwards World JCA Adapter is based on the Oracle Database Adapter, the process for configuring pooling support for the JD Edwards World Adapter is similar to that of providing pooling support for the Oracle Database Adapter.</p>
+<p>To provide connection pooling for the JD Edwards World Adapter:</p>
+<ol>
+<li>
+<p>Ensure that the Oracle WebLogic Server is installed on a build which contains the JD Edwards World Adapter. Next, search for and find the JD Edwards World Adapter on the <span class="bold">Search</span> <span class="bold">Panel</span> on the WebLogic Console.</p>
+<p>Enter the name of the Adapter in the <span class="bold">Search</span> field. The <span class="bold">Search Panel</span> displays the search results, JDEdwards World Adapter, with its type AppDeployment, See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACHGFAH">Figure 15-1</a>.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACHGFAH">
+<p class="titleinfigure">Figure 15-1 Searching for the JDEdwards World Adapter on the WebLogic Console</p>
+<img width="831" height="236" src="img/GUID-8BF24AD6-EFBD-4682-85FD-DBCD89BB5105-default.gif" alt="Description of Figure 15-1 follows" title="Description of Figure 15-1 follows" /><br />
+<a href="img_text/GUID-8BF24AD6-EFBD-4682-85FD-DBCD89BB5105-default.htm">Description of "Figure 15-1 Searching for the JDEdwards World Adapter on the WebLogic Console"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>The JDEdwards World Adapter is an optional Adapter, thus its initial JDeveloper state is Installed, not Active. You must make the JDEdwards World Adapter state active. To make the state Active:</p>
+<ol>
+<li>
+<p>Select the <span class="bold">Targets</span> tab on the WebLogic Console</p>
+</li>
+<li>
+<p>Select the <span class="bold">Servers</span> to which to deploy the Adapter. Click <span class="bold">Save</span>.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-988797D7-C1A7-4EB4-A656-4237981D53A4">
+<p class="titleinfigure">Figure 15-2 Selecting a Server on the WebLogic Console</p>
+<img width="644" height="280" src="img/GUID-51CCF77E-C034-41C9-9A41-748F2B0999E7-default.gif" alt="Description of Figure 15-2 follows" title="Description of Figure 15-2 follows" /><br />
+<a href="img_text/GUID-51CCF77E-C034-41C9-9A41-748F2B0999E7-default.htm">Description of "Figure 15-2 Selecting a Server on the WebLogic Console"</a></div>
+<!-- class="figure" --></li>
+</ol>
+</li>
+<li>
+<p>You must obtain the <code>jt400.jar</code> file from Sourceforge (the <code>jt400.jar</code> file is called JTOpen 7.9 at that location.) JTOpen is the open source version of the IBM Toolbox for Java Licensed Program Product (LPP).</p>
+<p>Place the <code>jt400.jar</code> file under <code>&lt;middleware_home&gt;/user_projects/domains/WLS_SOA/lib/</code></p>
+</li>
+<li>
+<p>To verify that the Adapter is active, select the <span class="bold">Control</span> tab. You might need to manually activate it. To do so, select the checkbox next to <code>JDBCWorldAdapter</code> and choose <span class="bold">Start</span>.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-D687D55C-CF60-461B-86F1-15B36A242E77">
+<p class="titleinfigure">Figure 15-3 Verifying the JD Edwards World Adapter is in Active Status</p>
+<img width="945" height="286" src="img/GUID-87F21DBF-2401-4E1E-86DE-033F11280F0B-default.gif" alt="Description of Figure 15-3 follows" title="Description of Figure 15-3 follows" /><br />
+<a href="img_text/GUID-87F21DBF-2401-4E1E-86DE-033F11280F0B-default.htm">Description of "Figure 15-3 Verifying the JD Edwards World Adapter is in Active Status"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>The next step is to create a data source connection by proceeding to <span class="bold">Data Sources --&gt;Services</span> on the WebLogic Console and selecting <span class="bold">Generic Data Source</span>:</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-1EF6E430-698B-46D3-BD6D-900F2C05B2F3">
+<p class="titleinfigure">Figure 15-4 Choosing a Generic Data Source</p>
+<img width="1005" height="291" src="img/GUID-80EC00B3-6BF0-4D6E-949F-AB0C79CFF252-default.gif" alt="Description of Figure 15-4 follows" title="Description of Figure 15-4 follows" /><br />
+<a href="img_text/GUID-80EC00B3-6BF0-4D6E-949F-AB0C79CFF252-default.htm">Description of "Figure 15-4 Choosing a Generic Data Source"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Supply the name <code>jdbc/JDEWorldDataSource</code>. This represents the term to which the default JCA <code>eis/JDEWorld/JDEWorldDemo</code> instance is referring. Use database type <code>Other</code>.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-5FF8122D-D2DC-4A4B-8455-AC862F48DB72">
+<p class="titleinfigure">Figure 15-5 Defining the JDBC Data Source JDEWorldDataSource</p>
+<img width="602" height="430" src="img/GUID-50E4AEA2-3D25-4CFF-884A-353CE958769D-default.gif" alt="Description of Figure 15-5 follows" title="Description of Figure 15-5 follows" /><br />
+<a href="img_text/GUID-50E4AEA2-3D25-4CFF-884A-353CE958769D-default.htm">Description of "Figure 15-5 Defining the JDBC Data Source JDEWorldDataSource"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Within the <span class="bold">Transactions</span> tab, disable XA by ensuring that <span class="bold">Supports Global Transactions</span> is not selected. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACCABAD">Figure 15-6</a>.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACCABAD">
+<p class="titleinfigure">Figure 15-6 Ensuring Supports Global Transactions is Not Selected on the WebLogic Transactions Tab</p>
+<img width="668" height="391" src="img/GUID-C2D894E1-988B-4916-8B1A-3B0EA2FFF546-default.gif" alt="Description of Figure 15-6 follows" title="Description of Figure 15-6 follows" /><br />
+<a href="img_text/GUID-C2D894E1-988B-4916-8B1A-3B0EA2FFF546-default.htm">Description of "Figure 15-6 Ensuring Supports Global Transactions is Not Selected on the WebLogic Transactions Tab"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Proceed to the <span class="bold">Connection Pool</span> page to configure the Connection Pool information. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACDFIEG">Figure 15-7</a>.</p>
+<p>The Connection Pool URL should resemble the following. Be sure to also specify three settings (<span class="bold">User</span>, <span class="bold">ServerName</span>, and <span class="bold">JDEWEnvironment</span>) as properties on the Connection Pool page, even though all three appear either in the connection URL already or were entered when you configured the data source:</p>
+<pre dir="ltr">
+jdbc:jdew://JDED;JDEWEnvironment=QA92;JDEWTableNomenclature=OBJN_OBJT;JDEWColumnNomenclature=FDFT_FDFN;translate binary=true;date format=mdy;prompt=false;auto commit=true;
+
+user=BPELTEST
+serverName=JDED2.us.mydomain.com
+JDEWEnvironment=A93BPELTEST
+JDEWTableNomenclature=OBJN_OBJT
+JDEWColumnNomenclature=FDFT_FDFN
+</pre>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__CACDFIEG">
+<p class="titleinfigure">Figure 15-7 Configuring the Connection Pool URL on the WebLogic Console</p>
+<img width="740" height="589" src="img/GUID-BDC5760D-7DE2-4D12-BECE-F02D926C8977-default.gif" alt="Description of Figure 15-7 follows" title="Description of Figure 15-7 follows" /><br />
+<a href="img_text/GUID-BDC5760D-7DE2-4D12-BECE-F02D926C8977-default.htm">Description of "Figure 15-7 Configuring the Connection Pool URL on the WebLogic Console"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Select <span class="bold">Advanced</span> and set <span class="bold">Connection Reserved Timeout</span> to 180. This value is required because creating a connection can take three minutes the first time the Adapter connects using the Connection Pool.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-8A11E9D7-0A6F-4C9F-B134-072B4B36E9E0">
+<p class="titleinfigure">Figure 15-8 Setting the Connection Reserved Timeout Value</p>
+<img width="591" height="141" src="img/GUID-E5306134-57FD-4E93-B326-35DC6137F3BE-default.gif" alt="Description of Figure 15-8 follows" title="Description of Figure 15-8 follows" /><br />
+<a href="img_text/GUID-E5306134-57FD-4E93-B326-35DC6137F3BE-default.htm">Description of "Figure 15-8 Setting the Connection Reserved Timeout Value"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Next, select the <span class="bold">Control</span> tab to manually control each instance of the JDBC Data Source.</p>
+<div class="figure" id="GUID-34839592-11DE-4DEB-8857-FA2A9E028C7C__GUID-087674AE-43E1-4874-B3EF-924C0C7BF867">
+<p class="titleinfigure">Figure 15-9 Using the Control Tab to Manually Manage Each Instance of the Deployed Data Source</p>
+<img width="607" height="308" src="img/GUID-380D7F9E-E2C8-413B-8A5F-CD76F6D0527E-default.gif" alt="Description of Figure 15-9 follows" title="Description of Figure 15-9 follows" /><br />
+<a href="img_text/GUID-380D7F9E-E2C8-413B-8A5F-CD76F6D0527E-default.htm">Description of "Figure 15-9 Using the Control Tab to Manually Manage Each Instance of the Deployed Data Source"</a></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<a id="TKADP9433"></a><a id="TKADP9434"></a><a id="TKADP9435"></a><a id="TKADP9436"></a><a id="TKADP9437"></a><a id="TKADP9438"></a><a id="TKADP9432"></a>
+<div class="sect2"><a id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519"></a>
+<h2 id="TKADP-GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519" class="sect2">JD Edwards Word Adapter Configuration Wizard Flow: Insert Operation</h2>
+<div>
+<div class="section">
+<p>You can use the JD Edwards Adapter Configuration Wizard to configure the JD Edwards Adapter to perform an insert operation to the JDEdwards World Z-tables.</p>
+<p>To do so:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Launch the JDE World Adapter Configuration Wizard by dragging and dropping it onto a composite or BPEL process in the Reference section of the JDeveloper design view. The JD Edwards World Adapter Configuration Wizard Welcome Screen appears.</span>
+<div>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-D56AC8AB-FBCE-4C89-8E32-4EFBBE68D5D3"><img width="594" height="495" src="img/GUID-69309075-FE98-487A-9DF1-BF18B08E200F-default.gif" alt="Description of GUID-69309075-FE98-487A-9DF1-BF18B08E200F-default.gif follows" title="Description of GUID-69309075-FE98-487A-9DF1-BF18B08E200F-default.gif follows" /><br />
+<a href="img_text/GUID-69309075-FE98-487A-9DF1-BF18B08E200F-default.htm">Description of the illustration GUID-69309075-FE98-487A-9DF1-BF18B08E200F-default.gif</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Use the <span class="bold">Service Connection</span> screen to establish a service connection. Edit an existing connection by browsing to that connection or supply new connection information on this page. Click <span class="bold">Next</span>.</span>
+<div>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-5C427F16-3751-4AB0-93C9-1D8937116A93"><img width="600" height="496" src="img/GUID-69671DB0-B56C-4684-9A2D-35BE3544E33B-default.gif" alt="Description of GUID-69671DB0-B56C-4684-9A2D-35BE3544E33B-default.gif follows" title="Description of GUID-69671DB0-B56C-4684-9A2D-35BE3544E33B-default.gif follows" /><br />
+<a href="img_text/GUID-69671DB0-B56C-4684-9A2D-35BE3544E33B-default.htm">Description of the illustration GUID-69671DB0-B56C-4684-9A2D-35BE3544E33B-default.gif</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Th<span class="bold">e JDEWorld Adapter Configuration Wizard Select Table</span> screen is displayed. This screen enables you to select either one of two operations you can perform against JD Edwards World z-tables: <span class="bold">Z-table Insert</span> or <span class="bold">Select</span>. In this example, <span class="bold">Z-table Insert</span> has been selected. Click <span class="bold">Next</span>.</span>
+<div>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-87070919-BECA-4CAA-A277-C19F9A24ACDC">
+<p class="titleinfigure">Figure 15-10 JDE World Adapter Configuration Wizard Select Table Screen</p>
+<img width="598" height="498" src="img/GUID-924239B0-3F2E-4601-96FC-6739BAD1AB02-default.gif" alt="Description of Figure 15-10 follows" title="Description of Figure 15-10 follows" /><br />
+<a href="img_text/GUID-924239B0-3F2E-4601-96FC-6739BAD1AB02-default.htm">Description of "Figure 15-10 JDE World Adapter Configuration Wizard Select Table Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The <span class="bold">Service</span> <span class="bold">Connection</span> page opens, enabling you to select the root database for this service's query.</span>
+<div>
+<p>To do this, you must have a basic understanding of the Z-Tables against which you want to perform the operation and the root database table. It also helps to understand the JD Edwards World System business module against which you are performing insertions or making queries.</p>
+<p>This page enables you to import Z-tables by clicking the <span class="bold">Import Tables</span> button at the bottom of the page. When you select a Z-Table from this list, you are selecting a table that is the root database for the operation.You can also remove Z-tables you have added.</p>
+<p>To do so:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select the <span class="bold">Import Tables</span> button to import Z-tables, and select the table you want as the root database table, or</p>
+</li>
+<li>
+<p>After importing, you can remove tables. To remove a table from the list, select the appropriate tables, then select the <span class="bold">Remove Tables</span> button to remove Z-Tables from the list of ones you want imported.</p>
+</li>
+<li>
+<p>Select <span class="bold">Next</span>.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-6167C5B1-6AB6-4E09-B339-A1686A28F631">
+<p class="titleinfigure">Figure 15-11 Selecting the Root Database Table</p>
+<img width="601" height="493" src="img/GUID-391B4BCB-D3B9-44EE-9BEB-2C83B79FC82E-default.gif" alt="Description of Figure 15-11 follows" title="Description of Figure 15-11 follows" /><br />
+<a href="img_text/GUID-391B4BCB-D3B9-44EE-9BEB-2C83B79FC82E-default.htm">Description of "Figure 15-11 Selecting the Root Database Table"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JD Edwards World Adapter Configuration Wizard displays the <span class="bold">Relationships</span> screen.This screen provides a list of relationships that are available from the root database.</span>
+<div>
+<p>You can define new relationships by clicking the <span class="bold">Create</span> button, which is shown at the bottom of the screen and enables you to provide a table that can be reachable from the root database. Next to the <span class="bold">Create</span> button is the <span class="bold">Remove</span> button, which enables you to remove a table from being reachable from the root database table.</p>
+<p>You can also rename a relationship table by clicking it in rename it. You can also just move to the next screen.</p>
+<p>After you have optionally completed creation or removal, or not performed either of these, as in the example, select <span class="bold">Next</span>.</p>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-22670695-7496-4276-81EC-624BD95AC0AE">
+<p class="titleinfigure">Figure 15-12 The JDEWorld Adapter Configuration Wizard Relationships Screen</p>
+<img width="600" height="499" src="img/GUID-D9DE58CB-D923-4544-BDD3-183552666BA7-default.gif" alt="Description of Figure 15-12 follows" title="Description of Figure 15-12 follows" /><br />
+<a href="img_text/GUID-D9DE58CB-D923-4544-BDD3-183552666BA7-default.htm">Description of "Figure 15-12 The JDEWorld Adapter Configuration Wizard Relationships Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JDEWorld Adapter Configuration Wizard <span class="bold">Attribute Filtering Screen</span> appears. This shows the attribute filter that is created from the imported table definitions, including any relationships that you may have defined.</span>
+<div>
+<p>You can also uncheck any attributes you want to exclude from the database queries you perform. Note that you cannot exclude primary key attributes. Select <span class="bold">Select All</span> to select all attributes or <span class="bold">Deselect All</span> to deselect all attributes.</p>
+<p>Select <span class="bold">Next</span>.</p>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-390D5AA9-0559-4973-B723-F0ABA8749F50">
+<p class="titleinfigure">Figure 15-13 The JDEWorld Adapter Configuration Wizard Attribute Filtering Screen</p>
+<img width="596" height="502" src="img/GUID-7135DF97-69EC-4936-A507-C8EBF0F48204-default.gif" alt="Description of Figure 15-13 follows" title="Description of Figure 15-13 follows" /><br />
+<a href="img_text/GUID-7135DF97-69EC-4936-A507-C8EBF0F48204-default.htm">Description of "Figure 15-13 The JDEWorld Adapter Configuration Wizard Attribute Filtering Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JDE World Adapter Configuration Wizard <span class="bold">Advanced Options Screen</span> appears. On this page, the <span class="bold">JDBC Options Query Timeout</span> option is provided. You can either change this value from its default, 0, or select <span class="bold">Next</span> to accept the default value.</span>
+<div>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-68FCD7F0-4631-47DB-A978-1CDC7A816DEB">
+<p class="titleinfigure">Figure 15-14 The JDE World Adapter Configuration Wizard Advanced Options Screen</p>
+<img width="599" height="500" src="img/GUID-641691C4-9D2E-43C5-8EAA-59CD689A1DAB-default.gif" alt="Description of Figure 15-14 follows" title="Description of Figure 15-14 follows" /><br />
+<a href="img_text/GUID-641691C4-9D2E-43C5-8EAA-59CD689A1DAB-default.htm">Description of "Figure 15-14 The JDE World Adapter Configuration Wizard Advanced Options Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JDE World Adapter Configuration Wizard JCA Endpoint Properties Screen appears.</span>
+<div>
+<p>In the <span class="bold">Auto-Retries</span> section, specify the value for auto-retry in case of an operation time out. This value is used if there is a connection-related fault, and the Invoke activity can be automatically retried a limited number of times. You can specify the following values in the fields in this section:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To retry indefinitely, type <code>unlimited</code> in the <span class="bold">Attempts</span> field.</p>
+</li>
+<li>
+<p><span class="bold">Interval</span> is the delay between retries.</p>
+</li>
+<li>
+<p><span class="bold">Backoff Factor: x</span> enables you to wait for increasing periods of time between retries. 9 attempts with a starting interval of 1 and a back off of 2 leads to retries after 1, 2, 4, 8, 16, 32, 64, 128, and 256 (2<sup>8</sup>) seconds.</p>
+</li>
+<li>
+<p><span class="bold">Max Interval</span> is the number of intervals of delays between retries.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-7A70B6A6-64CB-4C91-85D2-45F6BF0A5519__GUID-0ABFD01C-17C1-42F8-B7F4-3BF5A2412499">
+<p class="titleinfigure">Figure 15-15 JDE World Adapter Configuration Wizard JCA Endpoint Properties</p>
+<img width="599" height="496" src="img/GUID-427BACD7-68F2-4080-B795-85A4CFAF606A-default.gif" alt="Description of Figure 15-15 follows" title="Description of Figure 15-15 follows" /><br />
+<a href="img_text/GUID-427BACD7-68F2-4080-B795-85A4CFAF606A-default.htm">Description of "Figure 15-15 JDE World Adapter Configuration Wizard JCA Endpoint Properties"</a></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+</div>
+</div>
+<a id="TKADP9440"></a><a id="TKADP9441"></a><a id="TKADP9442"></a><a id="TKADP9443"></a><a id="TKADP9444"></a><a id="TKADP9445"></a><a id="TKADP9446"></a><a id="TKADP9447"></a><a id="TKADP9448"></a><a id="TKADP9449"></a><a id="TKADP9450"></a><a id="TKADP9451"></a><a id="TKADP9452"></a><a id="TKADP9453"></a><a id="TKADP9439"></a>
+<div class="sect2"><a id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317"></a>
+<h2 id="TKADP-GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317" class="sect2">JD Edwards World Adapter: Select Operation</h2>
+<div>
+<div class="section">
+<p>The JDEWorld Adapter provides the ability to perform a select, or query from a JD Edwards World Z-table. You can configure this operation using the JD Edwards World Adapter Configuration Wizard.</p>
+<p>To do so:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the <span class="bold">Select Table</span> screen, choose the <span class="bold">Select</span> Operation Type, and select <span class="bold">Next</span>.</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-AB905870-37F4-487C-B69D-297B30062483">
+<p class="titleinfigure">Figure 15-16 JD Edwards World Adapter Select Table Screen</p>
+<img width="701" height="565" src="img/GUID-CCED926A-B477-405F-AAEC-C00127234164-default.gif" alt="Description of Figure 15-16 follows" title="Description of Figure 15-16 follows" /><br />
+<a href="img_text/GUID-CCED926A-B477-405F-AAEC-C00127234164-default.htm">Description of "Figure 15-16 JD Edwards World Adapter Select Table Screen"</a></div>
+<!-- class="figure" -->
+<p>Here, <span class="bold">Select</span> has been chosen.</p>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-2236E56E-97B3-4301-8DF3-99539F27B70E">
+<p class="titleinfigure">Figure 15-17 JDE World Adapter Configuration Wizard with Select Operation Chosen</p>
+<img width="698" height="568" src="img/GUID-7A100BEA-02E3-4597-8974-2D097A06D900-default.gif" alt="Description of Figure 15-17 follows" title="Description of Figure 15-17 follows" /><br />
+<a href="img_text/GUID-7A100BEA-02E3-4597-8974-2D097A06D900-default.htm">Description of "Figure 15-17 JDE World Adapter Configuration Wizard with Select Operation Chosen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The <span class="bold">Service</span> <span class="bold">Connection</span> page opens, enabling you to select the root database for this service's query. To do this, you must have a basic understanding of the Z-Tables against which you want to perform the operation and the root database table. It also helps to understand the JD Edwards World System business module against which you are performing insertions or making queries.</span>
+<div>
+<p>This page enables you to import Z-tables by selecting the <span class="bold">Import Tables</span> button at the bottom of the page. When you select a Z-Table from this list, you are selecting a table that is the root database for the operation.</p>
+<p>You can also remove Z-tables you have added. To do so:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Click the <span class="bold">Import Tables</span> button to import Z-tables, and select the table you want as the root database table, or</p>
+</li>
+<li>
+<p>After importing tables, you can remove them. To remove a table from the list, select the appropriate tables, then select the <span class="bold">Remove Tables</span> button to remove Z-Tables from the list of ones you want imported.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-CAE6EFFD-E61D-4DE6-9061-8ECE5316E8AE">
+<p class="titleinfigure">Figure 15-18 JDE World Adapter Configuration Wizard Service Connection Screen</p>
+<img width="704" height="565" src="img/GUID-B197D720-483F-4E15-B6EA-057CC9C7BC9A-default.gif" alt="Description of Figure 15-18 follows" title="Description of Figure 15-18 follows" /><br />
+<a href="img_text/GUID-B197D720-483F-4E15-B6EA-057CC9C7BC9A-default.htm">Description of "Figure 15-18 JDE World Adapter Configuration Wizard Service Connection Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JD Edwards World Adapter <span class="bold">System Browser</span> appears. Here you can browse for tables you want to import.</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-598EAE84-B6DC-4627-AA6A-7F8835785BA2">
+<p class="titleinfigure">Figure 15-19 The JDE World System Browser</p>
+<img width="795" height="549" src="img/GUID-3F360429-3FBF-4915-9A23-C4A11CB9CBD8-default.gif" alt="Description of Figure 15-19 follows" title="Description of Figure 15-19 follows" /><br />
+<a href="img_text/GUID-3F360429-3FBF-4915-9A23-C4A11CB9CBD8-default.htm">Description of "Figure 15-19 The JDE World System Browser"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Click on a system table to select a system table in the JDE World System Browser.</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-D89E5441-2417-47A8-916C-26AF2EB00DA9">
+<p class="titleinfigure">Figure 15-20 Selecting a System Table in the JDE World System Browser</p>
+<img width="801" height="556" src="img/GUID-5DB0FD48-DDD5-4F37-B0E1-60CC5ECDE758-default.gif" alt="Description of Figure 15-20 follows" title="Description of Figure 15-20 follows" /><br />
+<a href="img_text/GUID-5DB0FD48-DDD5-4F37-B0E1-60CC5ECDE758-default.htm">Description of "Figure 15-20 Selecting a System Table in the JDE World System Browser"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Once you have selected a system table, you can expand the table's node in the display and search for columns within tables. Click <span class="bold">OK</span> to select what you have chosen for importing.</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-40B77718-1C1A-4532-B536-7CD7842A5C6B">
+<p class="titleinfigure">Figure 15-21 Using the JDE World System Browser to Display Column and Type Information</p>
+<img width="799" height="551" src="img/GUID-9DD82C1E-786A-42E1-99AE-98BBCDCAA36E-default.gif" alt="Description of Figure 15-21 follows" title="Description of Figure 15-21 follows" /><br />
+<a href="img_text/GUID-9DD82C1E-786A-42E1-99AE-98BBCDCAA36E-default.htm">Description of "Figure 15-21 Using the JDE World System Browser to Display Column and Type Information"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Once you have selected root database tables for importing, the <span class="bold">Service Connection</span> screen reappears, and asks you to choose a table for this service's querying. Select the root database table, and click <span class="bold">Next</span> to import it. You can also click the <code>Remove Tables</code> button to remove tables from your prospective Import list that you do not wish to import,</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-77BE25F2-EA7E-4F87-8E52-A32FFC400CD6">
+<p class="titleinfigure">Figure 15-22 JDE World Adapter Configuration Wizard Service Connection Screen with Tables Ready for Import</p>
+<img width="695" height="566" src="img/GUID-02056E22-D216-4FBB-A813-0E1ACFB631CC-default.gif" alt="Description of Figure 15-22 follows" title="Description of Figure 15-22 follows" /><br />
+<a href="img_text/GUID-02056E22-D216-4FBB-A813-0E1ACFB631CC-default.htm">Description of "Figure 15-22 JDE World Adapter Configuration Wizard Service Connection Screen with Tables Ready for Import"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The <span class="bold">Define Primary Keys</span> Screen appears if you must define a primary key. The screen gives you the opportunity to define a Primary Key. The Adapter must be able to uniquely identify a given row. As it states, the ROWID option is only configurable with Oracle databases, a single table, and polling, insert, and select operations only. The screen supplies additional information about defining primary keys. To use this screen, select a Primary Key candidate or candidates and click <span class="bold">Next</span>.</span>
+<div>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-B50E8540-CF79-4C88-A720-10D877539341">
+<p class="titleinfigure">Figure 15-23 The JDE Adapter Configuration Wizard Define Primary Keys Screen</p>
+<img width="698" height="573" src="img/GUID-8CDC1914-6203-4537-9ED1-7BD7A6A52B1F-default.gif" alt="Description of Figure 15-23 follows" title="Description of Figure 15-23 follows" /><br />
+<a href="img_text/GUID-8CDC1914-6203-4537-9ED1-7BD7A6A52B1F-default.htm">Description of "Figure 15-23 The JDE Adapter Configuration Wizard Define Primary Keys Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>If you selected a table and chose Import, the JDE Edwards World Adapter uses the table as the root table for your query operation and the JDE World Adapter Configuration Wizard <span class="bold">Relationships</span> screen appears.</span>
+<div>
+<p>This screen shows the relationships that are reachable from the root database table you have indicated on the previous screen. If there are no reachable relationships between tables, the screen says "No reachable relationships."</p>
+<p>To use this screen:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Define a new relationship by selecting the <span class="bold">Create</span> button, or</p>
+</li>
+<li>
+<p>Select <span class="bold">Remove</span> to remove a relationship.</p>
+</li>
+<li>
+<p>To rename a relationship, select the relationship and click <span class="bold">Rename</span>.</p>
+</li>
+</ul>
+<p>When you have finished defining, renaming or removing a relationship, or if you have no relationships to create or modify, select <span class="bold">Next</span>.</p>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__GUID-08B6317B-02B5-4991-813A-98225D5029C9">
+<p class="titleinfigure">Figure 15-24 The JDE World Adapter Configuration Wizard Relationships Screen</p>
+<img width="695" height="569" src="img/GUID-DD529202-EB00-4498-A254-8D5F1F7954F0-default.gif" alt="Description of Figure 15-24 follows" title="Description of Figure 15-24 follows" /><br />
+<a href="img_text/GUID-DD529202-EB00-4498-A254-8D5F1F7954F0-default.htm">Description of "Figure 15-24 The JDE World Adapter Configuration Wizard Relationships Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JD Edwards World Adapter Configuration Wizard Attribute Filtering screen appears. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACDBHGG">Figure 15-25</a>.</span>
+<div>
+<p>You can use this screen to exclude any attributes from your database queries. To do so:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Uncheck any attributes you do not want to use in your queries.</p>
+</li>
+<li>
+<p>Use the <span class="bold">Select All</span> button at the bottom of the screen to select all attributes.</p>
+</li>
+<li>
+<p>Use the <span class="bold">Deselect All</span> button to deselect attributes.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACDBHGG">
+<p class="titleinfigure">Figure 15-25 The JD Edwards World Adapter Configuration Wizard Attribute Filtering Screen</p>
+<img width="695" height="566" src="img/GUID-EE62C35E-7D75-4085-90BC-E661B7DF543D-default.gif" alt="Description of Figure 15-25 follows" title="Description of Figure 15-25 follows" /><br />
+<a href="img_text/GUID-EE62C35E-7D75-4085-90BC-E661B7DF543D-default.htm">Description of "Figure 15-25 The JD Edwards World Adapter Configuration Wizard Attribute Filtering Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JD Edwards World Adapter Configuration Wizard Define Selection Criteria Screen appears, where you can define the Selection Criteria for this JD Edwards World Adapter reference. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CHDDEEDH">Figure 15-26</a></span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter the parameters in the field at the top and/or select the <span class="bold">Add</span> button to add additional SQL criteria.</p>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CHDDEEDH">
+<p class="titleinfigure">Figure 15-26 The JDE World Adapter Configuration Wizard Define Selection Criteria Screen</p>
+<img width="699" height="565" src="img/GUID-5AE23EB9-C0D0-4BCE-A9B8-39EBB51854B1-default.gif" alt="Description of Figure 15-26 follows" title="Description of Figure 15-26 follows" /><br />
+<a href="img_text/GUID-5AE23EB9-C0D0-4BCE-A9B8-39EBB51854B1-default.htm">Description of "Figure 15-26 The JDE World Adapter Configuration Wizard Define Selection Criteria Screen"</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Select <span class="bold">Edit</span> to use the SQL Expression Builder to create or modify the SQL Expression. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACCDJIG">Figure 15-27</a> for an example of the screen.</p>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACCDJIG">
+<p class="titleinfigure">Figure 15-27 The Expression Builder</p>
+<img width="533" height="446" src="img/GUID-1CEB93F6-1979-4D68-8D3A-54AC9461FE72-default.gif" alt="Description of Figure 15-27 follows" title="Description of Figure 15-27 follows" /><br />
+<a href="img_text/GUID-1CEB93F6-1979-4D68-8D3A-54AC9461FE72-default.htm">Description of "Figure 15-27 The Expression Builder "</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>To define your own custom Select SQL, modify the pre-generated SQL string in the Expression Builder, and click <span class="bold">OK</span> to use the modified SQL.</p>
+</li>
+<li>
+<p>Back on the Define Selection Criteria Screen, select <span class="bold">Use Outer Joins to return a Single Result Set for both Master and Detail Tables</span> to use an advanced feature that influences how many total statements are used when querying against multiple related tables. The safest method is to use the default (1 per table), and this feature attempts 1 in total, by performing an outer join on all related tables into a single result set.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>The JD Edwards World Adapter Configuration Wizard Advanced Options screen appears. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACFEIEE">Figure 15-28</a>.</span>
+<div>
+<p>On this screen, you can enter new values for either or both of the JDBC options provided, or select <span class="bold">Next</span> to accept the default values of 0.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Query Timeout</span> - enables you to configure a timeout value on the Select operation.</p>
+</li>
+<li>
+<p><span class="bold">Max Row</span><span class="bold">s</span> - the maximum number of rows to return from the Select operation.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span> when finished.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACFEIEE">
+<p class="titleinfigure">Figure 15-28 The JDEdwards World Adapter Configuration Wizard Adapter Advanced Options Screen</p>
+<img width="700" height="566" src="img/GUID-3C7C9B94-79EA-4B98-9D2B-72D144DF9AD5-default.gif" alt="Description of Figure 15-28 follows" title="Description of Figure 15-28 follows" /><br />
+<a href="img_text/GUID-3C7C9B94-79EA-4B98-9D2B-72D144DF9AD5-default.htm">Description of "Figure 15-28 The JDEdwards World Adapter Configuration Wizard Adapter Advanced Options Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JDE World Adapter Configuration JCA Endpoint Properties Screen appears. See <a href="GUID-AA0EA124-A93B-4F1A-964E-7587DEDC49D5.htm#GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACEBDED">Figure 15-29</a>. On this screen, you can specify Adapter framework-level properties.</span>
+<div>
+<p>To use the recommended values, select <span class="bold">Next</span>. These properties include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Attempts</span>-The number of retries. This defaults to 4.</p>
+</li>
+<li>
+<p><span class="bold">Interval(s)</span>-The delay, or interval, between retries. This value defaults to 1.</p>
+</li>
+<li>
+<p><span class="bold">Backoff factor:x</span>- Enables you to wait for increasing periods of time between retries. For example, 9 attempts with a starting interval of 1 and a back off of 2 leads to retries after 1, 2, 4, 8, 16, 32, 64, 128, and 256 (2<sup>8</sup>) seconds. This value defaults to 2.</p>
+</li>
+<li>
+<p><span class="bold">Max Interval</span>- The maximum interval for retries. This value defaults to 120 seconds.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-4BB178F5-49EE-4BF2-B456-2E6605D81317__CACEBDED">
+<p class="titleinfigure">Figure 15-29 Oracle JDEdwards World Adapter Configuration Wizard JCA Endpoint Properties Screen</p>
+<img width="703" height="565" src="img/GUID-CE135583-16D1-4371-B539-43658D216C15-default.gif" alt="Description of Figure 15-29 follows" title="Description of Figure 15-29 follows" /><br />
+<a href="img_text/GUID-CE135583-16D1-4371-B539-43658D216C15-default.htm">Description of "Figure 15-29 Oracle JDEdwards World Adapter Configuration Wizard JCA Endpoint Properties Screen"</a></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>The JDEdwards World Adapter <span class="bold">Finish Screen</span> appears. You have finished defining the JD Edwards World Adapter.</span></li>
+</ol>
+</div>
+<a id="TKADP9454"></a>
+<div class="sect3"><a id="GUID-62827C48-AB4C-4C24-A07E-A29BBA804699"></a>
+<h3 id="TKADP-GUID-62827C48-AB4C-4C24-A07E-A29BBA804699" class="sect3">Configuration Files</h3>
+<div>
+<div class="section">
+<p>The WSDL and .jca configuration files for each of the example configured JD Edwards Adapters, using the <code>Addressbook</code> tables in this chapter, follow for your reference.</p>
+</div>
+<!-- class="section" --></div>
+<a id="TKADP9455"></a>
+<div class="sect4"><a id="GUID-062B8FFD-55FD-46FF-A52D-87D7AD63EF88"></a>
+<h4 id="TKADP-GUID-062B8FFD-55FD-46FF-A52D-87D7AD63EF88" class="sect4">Insert Operation Example WSDL and .jca File</h4>
+<div>
+<div class="section">
+<p>The following example shows the WSDL file for the Insert operation example.</p>
+<p><span class="bold">Example - WSDL File for Insert Operation</span></p>
+<pre dir="ltr">
+&lt;wsdl:definitions
+     name="jdeworldReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/
+         adapter/jdeworld/JDEW_selectAll/Insert/jdeworldReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/jdeworld/JDEW_selectAll/Insert/jdeworldReference"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/
+               db/top/jdeworldReference"
+    &gt;
+  &lt;plt:partnerLinkType name="jdeworldReference_plt" &gt;
+    &lt;plt:role name="jdeworldReference_role" &gt;
+      &lt;plt:portType name="tns:jdeworldReference_ptt" /&gt;
+    &lt;/plt:role&gt;
+  &lt;/plt:partnerLinkType&gt;
+    &lt;wsdl:types&gt;
+      &lt;schema xmlns="http://www.w3.org/2001/XMLSchema" &gt;
+        &lt;import namespace="http://xmlns.oracle.com/pcbpel/
+            adapter/db/top/jdeworldReference" schemaLocation="../Schemas/jdeworldReference_table.xsd" /&gt;
+      &lt;/schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="F01018Z____Address_Book_Email_URL_Z_FileCollection_msg"&gt;
+        &lt;wsdl:part name="F01018Z____Address_Book_Email_URL_Z_FileCollection" element="top:F01018Z____Address_Book_Email_URL_Z_FileCollection"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="jdeworldReference_ptt"&gt;
+        &lt;wsdl:operation name="zFileInsert"&gt;
+            &lt;wsdl:input message="tns:F01018Z____Address_Book_Email_URL_Z_FileCollection_msg"/&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+&lt;/wsdl:definitions&gt;
+
+</pre>
+<p>The following example shows the .jca file for the Insert operation example.</p>
+<p><span class="bold">Example - .jca File for Sample Insert Operation</span></p>
+<pre dir="ltr">
+&lt;adapter-config name="jdeworldReference" adapter="jdeworld" 
+    wsdlLocation="../WSDLs/jdeworldReference.wsdl" 
+       xmlns="http://platform.integration.oracle/blocks/
+                adapter/fw/metadata"&gt;
+  &lt;connection-factory UIConnectionName="JDEWConnection1" 
+location="eis/JDEWorld/JDEWConnection1"/&gt;
+  &lt;endpoint-interaction portType="jdeworldReference_ptt" operation="zFileInsert"&gt;
+    &lt;interaction-spec className="oracle.tip.adapter.jdeworld.
+JDEWorldZTableInteractionSpec"&gt;
+      &lt;property name="DescriptorName" 
+value="jdeworldReference.F01018Z____Address_Book_Email_URL_Z_File"/&gt;
+      &lt;property name="MappingsMetaDataURL" value="jdeworldReference-or-
+mappings.xml"/&gt;
+    &lt;/interaction-spec&gt;
+  &lt;/endpoint-interaction&gt;
+&lt;/adapter-config&gt;
+</pre></div>
+<!-- class="section" --></div>
+</div>
+<a id="TKADP9458"></a>
+<div class="sect4"><a id="GUID-A3A4E038-9476-4099-B84D-D8B82DD3A26B"></a>
+<h4 id="TKADP-GUID-A3A4E038-9476-4099-B84D-D8B82DD3A26B" class="sect4">Select Operation Example WSDL and .jca File</h4>
+<div>
+<div class="section">
+<p>The following example shows the WSDL file for the sample Select operation example.</p>
+<p><span class="bold">Example - WSDL File for Sample Select Operation</span></p>
+<pre dir="ltr">
+&lt;wsdl:definitions
+     name="jd"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/
+          adapter/jdeworld/JDEW_selectAll/JDED_select1/jd"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:tns="http://xmlns.oracle.com/
+          pcbpel/adapter/jdeworld/JDEW_selectAll/JDED_select1/jd"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/jd"
+    &gt;
+  &lt;plt:partnerLinkType name="jd_plt" &gt;
+    &lt;plt:role name="jd_role" &gt;
+      &lt;plt:portType name="tns:jd_ptt" /&gt;
+    &lt;/plt:role&gt;
+  &lt;/plt:partnerLinkType&gt;
+    &lt;wsdl:types&gt;
+      &lt;schema xmlns="http://www.w3.org/2001/XMLSchema" &gt;
+        &lt;import namespace=
+         "http://xmlns.oracle.com/pcbpel/adapter/db/top/jd"          schemaLocation="../Schemas/jd_table.xsd" /&gt;
+      &lt;/schema&gt;
+    &lt;/wsdl:types&gt;
+    &lt;wsdl:message name="jdSelect_inputParameters"&gt;
+        &lt;wsdl:part name="jdSelect_inputParameters" element="top:jdSelectInputParameters"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:message name=
+           "F0101______Address_Book_MasterCollection_msg"&gt;
+        &lt;wsdl:part name=
+        "F0101______Address_Book_MasterCollection" element="top:F0101______Address_Book_MasterCollection"/&gt;
+    &lt;/wsdl:message&gt;
+    &lt;wsdl:portType name="jd_ptt"&gt;
+        &lt;wsdl:operation name="jdSelect"&gt;
+            &lt;wsdl:input message="tns:jdSelect_inputParameters"/&gt;
+            &lt;wsdl:output message=
+            "tns:F0101______Address_Book_MasterCollection_msg"/&gt;
+        &lt;/wsdl:operation&gt;
+    &lt;/wsdl:portType&gt;
+&lt;/wsdl:definitions&gt;
+
+</pre>
+<p>The following example shows the .jca file for the sample Select operation</p>
+<p><span class="bold">Example - .jca File for Sample Select Operation</span></p>
+<pre dir="ltr">
+&lt;adapter-config name="jd" adapter="jdeworld" 
+           wsdlLocation="../WSDLs/jd.wsdl" xmlns="http://platform.integration.oracle/blocks/
+                adapter/fw/metadata"&gt;
+  &lt;connection-factory UIConnectionName="JDEWConnection1" location="eis/JDEWorld/JDEWConnection1"/&gt;
+  &lt;endpoint-interaction portType="jd_ptt" operation="jdSelect"&gt;
+    &lt;interaction-spec className="oracle.tip.adapter.jdeworld.JDEWorldReadInteractionSpec"&gt;
+      &lt;property name="DescriptorName"
+           value="jd.F0101______Address_Book_Master"/&gt;
+      &lt;property name="QueryName" value="jdSelect"/&gt;
+      &lt;property name="MappingsMetaDataURL" 
+            value="jd-or-mappings.xml"/&gt;
+      &lt;property name="ReturnSingleResultSet" value="false"/&gt;
+    &lt;/interaction-spec&gt;
+  &lt;/endpoint-interaction&gt;
+&lt;/adapter-config&gt;
+</pre></div>
+<!-- class="section" --></div>
+</div>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment186">
+<tr>
+<td class="cellalignment196">
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment190"><a href="GUID-EA82A9A3-656E-464A-B764-E076C172BAEF.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment190"><a href="GUID-D9F90C07-D09D-4AA5-8DB1-99AA993B43FB.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2010, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment198">
+<table class="cellalignment189">
+<tr>
+<td class="cellalignment190"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment190"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment190"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

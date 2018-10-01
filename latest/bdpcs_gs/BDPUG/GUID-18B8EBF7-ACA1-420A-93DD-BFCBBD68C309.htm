@@ -1,0 +1,122 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Blend multiple data files in a transform by selecting the conditions for a data blend, the columns to include, and the column can be used as a blend key.">
+      <meta name="description" content="Blend multiple data files in a transform by selecting the conditions for a data blend, the columns to include, and the column can be used as a blend key.">
+      <title>Blending Data</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta property="og:description" content="Blend multiple data files in a transform by selecting the conditions for a data blend, the columns to include, and the column can be used as a blend key.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.3.1">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.epub" title="ePub File" type="application/epub+zip">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.mobi" title="Mobi File" type="application/x-mobipocket-ebook">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-05-10T15:12:37-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63106-15">
+      <meta name="dcterms.isVersionOf" content="bdpug">
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-prep-cloud">
+      <meta name="dcterms.release" content="Latest Cloud Release">
+      <link rel="prev" href="deleting-custom-reference-knowledge-files.html" title="Previous" type="text/html">
+      <link rel="next" href="blending-multiple-data-files.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"cloud",
+                      "element_name":"Cloud",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"paas",
+                      "element_name":"Platform as a Service (PaaS)",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"business-analytics",
+                      "element_name":"Business Analytics",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"big-data-prep-cloud",
+                      "element_name":"Big Data Preparation Cloud Service",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"latest",
+                      "element_name":"Latest Cloud Release",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="deleting-custom-reference-knowledge-files.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="blending-multiple-data-files.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Preparation Cloud Service</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Blending Data</li>
+            </ol>
+            <a id="GUID-18B8EBF7-ACA1-420A-93DD-BFCBBD68C309" name="GUID-18B8EBF7-ACA1-420A-93DD-BFCBBD68C309"></a>
+            
+            <h2 id="BDPUG-GUID-18B8EBF7-ACA1-420A-93DD-BFCBBD68C309" class="sect2"><span class="enumeration_chapter">7 </span>Blending Data
+            </h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Blend multiple data files in a transform by selecting the conditions for a data blend, the columns to include, and the column can be used as a blend key.</p>
+               <div class="section">
+                  <p class="subhead1">Topics:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p><a href="blending-multiple-data-files.html" title="Blend multiple data files in a single transform.">Blending Multiple Data Files</a></p>
+                     </li>
+                     <li>
+                        <p><a href="setting-conditions-your-blending-configuration.html" title="Set conditions for a data blend by specifying which columns are blend keys manually or accepting system-generated recommendations, and viewing the confidence scores for them.">Setting Conditions in Your Blending Configuration</a></p>
+                     </li>
+                     <li>
+                        <p><a href="selecting-columns-your-blending-configuration.html" title="Select the columns to be used in a data blend.">Setting Columns in Your Blending Configuration</a></p>
+                     </li>
+                  </ul>
+               </div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

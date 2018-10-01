@@ -1,0 +1,162 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="The transform script contains the actions to apply to your data. When you create a transform, the application automatically creates a basic transform script. Edit this script and add actions to prepare and enrich your data.">
+      <meta name="description" content="The transform script contains the actions to apply to your data. When you create a transform, the application automatically creates a basic transform script. Edit this script and add actions to prepare and enrich your data.">
+      <title>Task Overview for Authoring the Transform Script</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta property="og:description" content="The transform script contains the actions to apply to your data. When you create a transform, the application automatically creates a basic transform script. Edit this script and add actions to prepare and enrich your data.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.3.1">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.epub" title="ePub File" type="application/epub+zip">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.mobi" title="Mobi File" type="application/x-mobipocket-ebook">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-05-10T15:12:37-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63106-15">
+      <meta name="dcterms.isVersionOf" content="bdpug">
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-prep-cloud">
+      <meta name="dcterms.release" content="Latest Cloud Release">
+      <link rel="prev" href="authoring-transform-script.html" title="Previous" type="text/html">
+      <link rel="next" href="changing-column-order.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"cloud",
+                      "element_name":"Cloud",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"paas",
+                      "element_name":"Platform as a Service (PaaS)",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"business-analytics",
+                      "element_name":"Business Analytics",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"big-data-prep-cloud",
+                      "element_name":"Big Data Preparation Cloud Service",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"latest",
+                      "element_name":"Latest Cloud Release",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="authoring-transform-script.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="changing-column-order.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Preparation Cloud Service</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="authoring-transform-script.html" property="item" typeof="WebPage"><span property="name">Authoring the Transform Script</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Task Overview for Authoring the Transform Script</li>
+            </ol>
+            <a id="GUID-556AB785-67EF-4BB0-AEEF-D20A48382716" name="GUID-556AB785-67EF-4BB0-AEEF-D20A48382716"></a>
+            
+            <h2 id="BDPUG-GUID-556AB785-67EF-4BB0-AEEF-D20A48382716" class="sect2">Task Overview for Authoring the Transform Script</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>The transform script contains the actions to apply to your data. When you create a transform, the application automatically creates a basic transform script. Edit this script and add actions to prepare and enrich your data.</p>
+               <div class="tblformalwide" id="GUID-556AB785-67EF-4BB0-AEEF-D20A48382716__GUID-6789582A-E4E1-4D92-BC4C-1D8C8C3CE12F">
+                  <table cellpadding="4" cellspacing="0" class="FormalWide" title="" summary="This table lists the tasks you can perform when you repair and enrich your data." width="100%" frame="hsides" border="1" rules="rows">
+                     <thead>
+                        <tr align="left" valign="top">
+                           <th align="left" valign="bottom" id="d8170e28">Task</th>
+                           <th align="left" valign="bottom" id="d8170e30">Description</th>
+                           <th align="left" valign="bottom" id="d8170e32">More Information</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d8170e36" headers="d8170e28 ">Work with different views.</td>
+                           <td align="left" valign="top" headers="d8170e36 d8170e30 ">View the columns of your data set with their data type and sample values, or view the complete data set with all the values.</td>
+                           <td align="left" valign="top" headers="d8170e36 d8170e32 ">
+                              <p><a href="working-metadata-view.html" title="The Metadata view shows the column name, the detected data type, and a set of sample values.">Working with the Metadata View</a></p>
+                              <p><a href="working-sample-data-view.html" title="The Sample Data view displays a table with the sample data that you used to create the transform. The header row shows the name of the columns and the rows show the data.">Working with the Sample Data View</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d8170e56" headers="d8170e28 ">Edit the data set structure.</td>
+                           <td align="left" valign="top" headers="d8170e56 d8170e30 ">Edit the names of the columns in the data set, change their order, or delete columns.</td>
+                           <td align="left" valign="top" headers="d8170e56 d8170e32 ">
+                              <p><a href="changing-column-order.html" title="Configure your transform to change the order of the columns when you run it on a source. The resulting source uses the new column order.">Changing the Column Order</a></p>
+                              <p><a href="changing-column-name.html" title="Change the name of a transform column. When you create the transform, the columns are automatically renamed. In some cases, it isn’t possible to find a name for the column. In other cases, you might have a better name than the one suggested. When necessary, rename the column manually.">Changing the Column Name</a></p>
+                              <p><a href="merging-columns.html" title="Merge multiple columns in your transform, use a delimiter in your merge, assign a new name to the resulting column, and add a prefix or suffix to the contents of the column.">Merging Columns</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d8170e83" headers="d8170e28 ">View and apply alerts and recommendations.</td>
+                           <td align="left" valign="top" headers="d8170e83 d8170e30 ">Improve, repair, and enhance your data using the suggestions in the alerts and recommendations.</td>
+                           <td align="left" valign="top" headers="d8170e83 d8170e32 ">
+                              <p><a href="viewing-and-applying-recommendations.html" title="When you create a transform, Oracle Big Data Preparation Cloud Service suggests a list of recommendations to repair or enrich your data. Select the recommendations that you want to include in your transform script.">Viewing and Applying Recommendations</a></p>
+                              <p><a href="viewing-and-fixing-alerts.html" title="Alerts let you quickly identify and fix those columns in the transform that may cause problems when using the data. The most typical issues are related to the sensitivity of certain data.">Viewing and Fixing Alerts</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d8170e106" headers="d8170e28 ">Prepare data.</td>
+                           <td align="left" valign="top" headers="d8170e106 d8170e30 ">Improve your data by concealing (obfuscating) sensitive data, normalizing values, finding duplicates, or eliminating rows with null values.</td>
+                           <td align="left" valign="top" headers="d8170e106 d8170e32 ">
+                              <p><a href="handling-sensitive-information.html" title="Your data sets might contain sensitive information that you want to handle carefully. Credit card numbers, social security numbers, and other personal details like birthdates in data files are considered sensitive information. You can partially or completely obfuscate such values so that you can process it without placing any personal or identifying information at risk. An alert icon is displayed next to columns that the system identifies as sensitive information.">Handling Sensitive Information</a></p>
+                              <p><a href="unifying-classified-data-values.html" title="Classified values may sometimes contain different values for the same category. For example, a data set may contain a variety of designations for male or female gender. You can standardize these values across a data set. You can also use this feature to search and replace null values in your data.">Unifying Classified Data Values</a></p>
+                              <p><a href="using-regular-expressions.html" title="A regular expression is a special text string that describes a search pattern.">Using Regular Expressions</a></p>
+                              <p><a href="finding-duplicates-your-data.html" title="Run an analysis on your data set to find records with duplicate values. Select which values to use as the matching criteria and specify the precision of the analysis.">Finding Duplicates in Your Data</a></p>
+                              <p><a href="checking-null-data.html" title="A data set may sometimes contain empty records or null values. Verify whether your data set contains such null values by including a validation in your transform, and prompt error alerts if a specific column has null values above a specified percentage threshold.">Checking for Null Data</a></p>
+                           </td>
+                        </tr>
+                        <tr align="left" valign="top">
+                           <td align="left" valign="top" id="d8170e147" headers="d8170e28 ">Enrich data sets.</td>
+                           <td align="left" valign="top" headers="d8170e147 d8170e30 ">Add information to your data based on the existing information.</td>
+                           <td align="left" valign="top" headers="d8170e147 d8170e32 "><a href="enriching-data-sets.html" title="Improve your raw data by adding further details based on knowledge data available on the processing engine or by importing custom reference knowledge.">Enriching Data Sets</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <!-- class="inftblhruleinformal" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

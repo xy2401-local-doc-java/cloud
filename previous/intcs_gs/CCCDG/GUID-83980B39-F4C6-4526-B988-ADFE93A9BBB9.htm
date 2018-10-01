@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Generating the Runtime Artifacts</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The final result of the Design-Time Framework is the generation of runtime artifacts that the Runtime Framework uses." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-41E53C35-37E3-4F15-A217-31995DAC32F6.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9"></a> <span id="PAGE" style="display:none;">29/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9" class="sect1">Generating the Runtime Artifacts</h1>
+<div>
+<p>The final result of the Design-Time Framework is the generation of runtime artifacts that the Runtime Framework uses.</p>
+<p>The <code>RuntimeMetadataGenerator</code> interface generates artifacts in specified directories. You can extend <code>oracle.tip.tools.ide.adapters.cloud.impl.generation.AbstractRuntimeMetadataGenerator</code>, which contains some default code for processing and invoking the artifact generators.</p>
+<p>Extending the abstract class requires implementing only one pure abstract method:</p>
+<pre dir="ltr">
+protected abstract void initializeContext(RuntimeGenerationContext context);
+</pre>
+<p>Subclasses can use this method to add additional objects to the context. In many cases no additional methods need to be overridden when extending <code>AbstractRuntimeGenerator</code>. However, some subclasses may need to modify the selected objects or operations. Overriding <code>setTransformModel</code> in the generator gives you access to the <code>TransformationModel</code>. From the <code>TransformationModel</code>, you can access the selected objects and operations.</p>
+<p>Refer to the <code>SampleRuntimeMetadataGenerator</code> class under the <code>plugin.generator</code> package.</p>
+<div class="tblformal" id="GUID-83980B39-F4C6-4526-B988-ADFE93A9BBB9__GUID-038DEA53-7F1E-4EB3-BFDC-4E6858AD7DF5">
+<table class="cellalignment290" summary="This table describes the SampleRuntimeMetadataGenerator class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d9855e66">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d9855e66">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d9855e79">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.plugin.generator</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9855e89">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRuntimeMetadataGenerator</code></p>
+</td>
+<td class="cellalignment291" headers="d9855e89">
+<p>This class generates runtime metadata artifacts such as the Cloud Application Configuration file and the integration WSDL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9855e102">
+<p><span class="bold">Method:</span></p>
+<p><code>SampleRuntimeMetadataGenerator()</code></p>
+</td>
+<td class="cellalignment291" headers="d9855e102">
+<p>Initializes class-level variables.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d9855e117">
+<p><code>initializeContext()</code></p>
+</td>
+<td class="cellalignment291" headers="d9855e117">
+<p>Similar to <code>setContextObject</code> in a runtime connection factory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p><img width="608" height="333" src="img/GUID-A06303B8-06C1-406E-BF36-0892EF0F949E-default.png" alt="media/image36.png" title="media/image36.png" /><br />
+<a href="img_text/GUID-E58691E9-F329-493B-BA8C-AB5A7AED8D10.htm">Description of the illustration GUID-A06303B8-06C1-406E-BF36-0892EF0F949E-default.png</a></p>
+<p>The following sequence diagram shows a simple example of generating runtime artifacts.</p>
+<p><img width="557" height="468" src="img/GUID-70B0406C-DA16-4A90-9918-A59F7393C058-default.png" alt="media/image37.png" title="media/image37.png" /><br />
+<a href="img_text/GUID-CFC6DF1C-B236-4BF1-AE4E-CF8CF6257593.htm">Description of the illustration GUID-70B0406C-DA16-4A90-9918-A59F7393C058-default.png</a></p>
+<p>Here is a more detailed explanation of the sequence:</p>
+<ol>
+<li><code>new TypeMapping(dataObject)</code> &mdash;&nbsp;The wizard creates a new <code>oracle.cloud.connector.metadata.TypeMapping</code> for each selected business object.</li>
+<li><code>new OperationMapping</code> &mdash;&nbsp;The wizard creates a new <code>oracle.cloud.connector.metadata.OperationMapping</code> for each selected operation. These are known as target operations. The <code>OperationMapping</code> instance allows the name of the target operation to be overridden. The overridden name shows in the generated integration WSDL. Typically, only one target operation is selected and thus only one <code>OperationMapping</code> object is needed.</li>
+<li><code>setRequestObjectMappings(List&lt;TypeMapping&gt;)</code> &mdash;&nbsp;Sets the list of <code>TypeMapping</code> instances (each representing selected business objects) that are the input (or request) for the target operation.</li>
+<li><code>setResponseObjectMappings(List&lt;TypeMapping&gt;)</code> &mdash;&nbsp;Optionally, the wizard can set mappings for the response. This is unlikely to be necessary, however. More likely, the wizard doesn&rsquo;t call this method and the plugin implementation handles the response mapping. This is only an illustration of the typical steps for setting up mappings before generation. If no response object mappings are set by the wizard OR the plugin AND the target operation is a synchronous request/response operation, the generator copies the response of the target operation into the generated integration-friendly WSDL.</li>
+<li><code>getRuntimeGenerator()</code> &mdash;&nbsp;Each plugin provides its implementation of <code>oracle.cloud.connector.generation.RuntimeMetadataGenerator</code>, which is accessible using a call to <code>getRuntimeGenerator()</code> from the <code>CloudAdapter</code> interface.</li>
+<li><code>setConnection(connection)</code> &mdash;&nbsp;The <code>RuntimeMetadataGenerator</code> uses various properties in the <code>Connection</code> object to generate the Cloud Application Configuration file. Not all properties are copied. The section on <code>RuntimeMetadataGenerator</code> goes into detail about this process.</li>
+<li><code>setTargetNamespace(namespace)</code> &mdash;&nbsp;The <code>RuntimeMetadataGenerator</code> uses the target namespace passed to this method as the target namespace of the generated integration-friendly WSDL.</li>
+<li><code>setWSDLResourceOutput(output)</code> &mdash;&nbsp;The <code>RuntimeMetadataGenerator</code> uses this method to determine where the integration-friendly WSDL is generated.</li>
+<li><code>setCloudApplicationConnectionOutput(output)</code> &mdash;&nbsp;The <code>RuntimeMetadataGenerator</code> uses this method to determine where the Cloud Application Configuration file is generated.</li>
+<li><code>generate()</code> &mdash;&nbsp;this method is called by the wizard to generate all artifacts. This method returns an instance of <code>RuntimeMetadata</code> that has the locations of all generated artifacts.</li>
+</ol>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-0B702506-7F07-4D6F-A045-2029C1B802DF.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-41E53C35-37E3-4F15-A217-31995DAC32F6.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

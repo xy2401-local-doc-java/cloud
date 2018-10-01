@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adding an External Reference and Using the Adapter Wizard</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="In JDeveloper, you add an outbound adapter to an application as an external reference." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DB727FF4-4B62-41A7-89A7-367478AE8EC1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-CE84D739-2787-4555-931A-95EF5FC4BA3A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CF4094B0-8C72-4E09-8E26-430F1231ED2E"></a> <span id="PAGE" style="display:none;">48/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-CF4094B0-8C72-4E09-8E26-430F1231ED2E" class="sect1">Adding an External Reference and Using the Adapter Wizard</h1>
+<div>
+<p>In JDeveloper, you add an outbound adapter to an application as an external reference.</p>
+<ol>
+<li class="stepexpand"><span>Drag and drop the SampleCloudAdapter from the Cloud category of the component palette to the External References section.</span>
+<div><img width="700" height="664" src="img/GUID-2A438BC4-6320-4D68-81A7-B35FC2914B1D-default.png" alt="media/image54.png" title="media/image54.png" /><br />
+<a href="img_text/GUID-613FF3A4-D440-4B61-B0C9-D80A719668D8.htm">Description of the illustration GUID-2A438BC4-6320-4D68-81A7-B35FC2914B1D-default.png</a></div>
+</li>
+<li class="stepexpand"><span>The wizard pops up so you can configure the SampleCloudAdapter. The wizard starts with the Welcome page, which displays the SampleCloudAdapter reference name.</span>
+<div><img width="999" height="749" src="img/GUID-D1A2F4CA-DF11-46DC-A29C-9544A51E5369-default.png" alt="media/image55.png" title="media/image55.png" /><br />
+<a href="img_text/GUID-7FFA3041-861A-4535-9236-A2D6EE1846A3.htm">Description of the illustration GUID-D1A2F4CA-DF11-46DC-A29C-9544A51E5369-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>. The Connection page appears and asks you to provide the target WSDL reference.</span>
+<div>You can also enter security credentials using an Authentication Key.</div>
+<div><img width="1000" height="753" src="img/GUID-286D1184-334B-463C-85B3-9EA1C2E48433-default.png" alt="media/image56.png" title="media/image56.png" /><br />
+<a href="img_text/GUID-377C5B80-F503-492A-BF5D-E99E887F91CF.htm">Description of the illustration GUID-286D1184-334B-463C-85B3-9EA1C2E48433-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Test</span> to test the connectivity to the service.</span>
+<div>
+<p>A success or failure message is displayed in the Text area.</p>
+<img width="995" height="512" src="img/GUID-598BF647-F737-407C-82DD-031118BCC3DD-default.png" alt="media/image21.png" title="media/image21.png" /><br />
+<a href="img_text/GUID-8B53D34D-35F2-4834-9360-9134383D6A9D.htm">Description of the illustration GUID-598BF647-F737-407C-82DD-031118BCC3DD-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>. The Operations Page appears and asks you to select the Operation and its corresponding Business Object.</span>
+<div><img width="951" height="469" src="img/GUID-7BA8561B-4CDF-4E3B-9ECC-90CB05BBF3D9-default.png" alt="media/image24.png" title="media/image24.png" /><br />
+<a href="img_text/GUID-C0AB7E9C-5097-4950-BEC0-21D3E371628A.htm">Description of the illustration GUID-7BA8561B-4CDF-4E3B-9ECC-90CB05BBF3D9-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Move the desired business object from the Available list to the Selected list.</span></li>
+<li class="stepexpand"><span>Click Next. The Summary page appears and displays the items selected during configuration.</span>
+<div><img width="1001" height="747" src="img/GUID-02DD289F-36F9-4410-B47A-3F5E08A376CB-default.png" alt="media/image29.png" title="media/image29.png" /><br />
+<a href="img_text/GUID-815D5D6D-337C-40D6-B745-A5C9C7BA9079.htm">Description of the illustration GUID-02DD289F-36F9-4410-B47A-3F5E08A376CB-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Finish</span> to generate the runtime artifacts and references.</span>
+<div><span class="bold">Note:</span> If clicking <span class="bold">Finish</span> results in a <code>NullPointerException</code> in the UI thread, it means that you didn&rsquo;t implement the <code>updateBackEndModel()</code> method for one or more of your wizard pages.</div>
+<div><img width="1109" height="652" src="img/GUID-9C778005-9F5D-41D6-9CF6-36CBD7CA425E-default.png" alt="media/image57.png" title="media/image57.png" /><br />
+<a href="img_text/GUID-AC7CC2BF-6E6D-4237-B60E-AAB7C3616315.htm">Description of the illustration GUID-9C778005-9F5D-41D6-9CF6-36CBD7CA425E-default.png</a></div>
+</li>
+</ol>
+<div class="section">
+<p>These files are generated:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SampleReference.jca</code> (Cloud Application Configuration File)</p>
+</li>
+<li>
+<p><code>SampleReference.wsdl</code> (Integration WSDL)</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">See <a href="GUID-CE84D739-2787-4555-931A-95EF5FC4BA3A.htm" title="Within the adapter testing application, a BPEL client invokes the adapter.">Creating a BPEL Client to Invoke the Adapter</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-DB727FF4-4B62-41A7-89A7-367478AE8EC1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-CE84D739-2787-4555-931A-95EF5FC4BA3A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

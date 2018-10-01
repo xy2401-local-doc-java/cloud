@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating trackers</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="In Oracle Monetization Cloud, you can use trackers to measure the usage or amount spent by your customers. After you create trackers, you add them to your billing-time discounts." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-discount-offers2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-subscription-terms1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-75BC6899-79D5-4BAD-8712-C58013D70C43"></a> <span id="PAGE" style="display:none;">24/67</span> <!-- End Header -->
+<a id="BCSUG1117"></a><a id="BCSUG1110"></a>
+<h1 id="BCSUG-GUID-75BC6899-79D5-4BAD-8712-C58013D70C43" class="sect1"><span class="enumeration_chapter">19</span> Creating trackers</h1>
+<div>
+<p>In Oracle Monetization Cloud, you can use trackers to measure the usage or amount spent by your customers. After you create trackers, you add them to your billing-time discounts.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-trackers2.htm#GUID-1BBFCED2-B011-4485-8310-27F5BA73C249">About trackers</a></p>
+</li>
+<li>
+<p><a href="creating-trackers2.htm#GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D">Creating trackers</a></p>
+</li>
+<li>
+<p><a href="creating-trackers2.htm#GUID-83831876-11B1-443F-996D-46DE9F4BFCD8">Defining eligibility criteria for counters</a></p>
+</li>
+<li>
+<p><a href="creating-trackers2.htm#GUID-4F7728EB-BB27-494B-A811-54D97A1BEFC8">Defining trigger conditions for counters</a></p>
+</li>
+<li>
+<p><a href="creating-trackers2.htm#GUID-63EB74F7-0318-47DA-A6EB-03DB3B449BB1">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG1111"></a>
+<div class="props_rev_3"><a id="GUID-1BBFCED2-B011-4485-8310-27F5BA73C249"></a>
+<h2 id="BCSUG-GUID-1BBFCED2-B011-4485-8310-27F5BA73C249" class="sect2">About trackers</h2>
+<div>
+<p>Trackers contain counters that track balances, such as the amount spent or megabytes downloaded by a subscriber. Trackers allow you to vary your prices and discounts based on a counter's total. For example, you could create a counter to track how much a customer spent in a month and then grant billing-time discounts based on the counter's total.</p>
+<p>To track balances for discounts or charges only, add counters directly to your discount offers and charge offers.</p>
+</div>
+</div>
+<a id="BCSUG1112"></a>
+<div class="props_rev_3"><a id="GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D"></a>
+<h2 id="BCSUG-GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D" class="sect2">Creating trackers</h2>
+<div>
+<div class="section">
+<p>Use Offer Design to create trackers. From the Pricing navigation section, select <span class="bold">Create Tracker</span>.</p>
+<p>When you create a tracker, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Define the tracker's general properties:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description.</p>
+</li>
+<li>
+<p>Select the service that you want to track.</p>
+</li>
+<li>
+<p>Select the dates when the tracker is valid.</p>
+</li>
+<li>
+<p>Select the type of tracker:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Subscription:</span> Tracks the balances for a specific customer.</p>
+</li>
+<li>
+<p><span class="bold">System:</span> Tracks balances for all customers who use the service.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Enter the priority of the tracker. A higher number indicates a higher priority.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Add one or more of the following types of tracker items:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Recurring:</span> Counters that apply to recurring events only.</p>
+</li>
+<li>
+<p><span class="bold">One Time:</span> Counters that apply to one-time events only.</p>
+</li>
+<li>
+<p><span class="bold">Usage:</span> Counters that apply to usage events only.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Define each tracker item that you added:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select the event type you want to track, such as basic usage or product purchase fee.</p>
+</li>
+<li>
+<p>Select the type of counter you want:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Fixed:</span> The counter increments by a fixed amount, such as 1 point.</p>
+</li>
+<li>
+<p><span class="bold">Scaled:</span> The amount the counter increments is dependent on a formula, such as 1 point for every $5 charge.</p>
+</li>
+</ul>
+</li>
+<li>Select whether to increase or decrease the counter.</li>
+<li>
+<p>Enter the amount to increase or decrease the counter, such as 1 loyalty point, 2 tokens, or 1 point for every $200 charge.</p>
+<p>Only noncurrency balances elements that are enabled for counters are supported.</p>
+</li>
+<li>
+<p>Select the number of cycles to keep a running total in the counter: for the current billing cycle, for multiple billing cycles, or always. When the cycle ends, the counter is reset to 0.</p>
+</li>
+<li>
+<p>Select the general ledger ID (GL ID) in which to record the transaction.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Optionally, add the following to each tracker item:</span>
+<div>
+<ul style="list-style-type: disc;" id="GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D__UL_CQY_FC4_N2B">
+<li>
+<p>Eligibility criteria. See <a href="creating-trackers2.htm#GUID-83831876-11B1-443F-996D-46DE9F4BFCD8">Defining eligibility criteria for counters</a>.</p>
+</li>
+<li>
+<p>Trigger conditions. See <a href="creating-trackers2.htm#GUID-4F7728EB-BB27-494B-A811-54D97A1BEFC8">Defining trigger conditions for counters</a>.</p>
+</li>
+</ul>
+<p>This figure shows a sample tracker item that increments a counter by 10 tokens for each usage event that meets the criteria.</p>
+<div class="figure" id="GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D__GUID-1A6734E8-E170-458C-A874-DB75B547928C"><br />
+<div class="imageleft"><img class="imageleft" id="GUID-3F0B280B-835B-46A6-A590-6FAD7DA9101D__IMAGE_FZ1_LC4_N2B" width="587" height="127" src="img/usr_offer_discounts_tracker.gif" alt="Description of usr_offer_discounts_tracker.gif follows" title="Description of usr_offer_discounts_tracker.gif follows" /><br />
+<a href="img_text/usr_offer_discounts_tracker.htm">Description of the illustration usr_offer_discounts_tracker.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+<div class="section">
+<p>After you create a tracker, you can add it to your bundles.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG1113"></a>
+<div class="props_rev_3"><a id="GUID-83831876-11B1-443F-996D-46DE9F4BFCD8"></a>
+<h2 id="BCSUG-GUID-83831876-11B1-443F-996D-46DE9F4BFCD8" class="sect2">Defining eligibility criteria for counters</h2>
+<div>
+<p>You can limit when counters are incremented based on a charge's attributes. The criteria can be based on one or more attribute values, such as the date when the event occurred or the type of balance element. For example, you can specify that only movies with a New Release category and a purchase date in June can increment the counter.</p>
+<p>To include eligibility criteria, you must add one or more filters to your tracker item. If you add multiple filters, the charge must meet the criteria in all of the filters.</p>
+<p>In the tracker item, select <span class="bold">Eligibility criteria</span>, select the add icon, and then do the following for each filter:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description for the filter.</p>
+</li>
+<li>
+<p>Select the dates during which the event must have occurred.</p>
+</li>
+<li>
+<p>Include one or more of the following criteria:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select a balance element, such as euros or free minutes.</p>
+</li>
+<li>
+<p>Select a charge selector result tag.</p>
+</li>
+<li>
+<p>Select a charge offer.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This figure shows eligibility criteria that requires a charge to have occurred prior to June 29, 2018, be in US Dollars, and have a charge selector result tag of ABC.</p>
+<div class="figure" id="GUID-83831876-11B1-443F-996D-46DE9F4BFCD8__GUID-34708FBC-756B-40B7-9287-CE79245D95D4"><br />
+<div class="imageleft"><img class="imageleft" width="504" height="333" src="img/usr_discount_eligiible.gif" alt="Description of usr_discount_eligiible.gif follows" title="Description of usr_discount_eligiible.gif follows" /><br />
+<a href="img_text/usr_discount_eligiible.htm">Description of the illustration usr_discount_eligiible.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG1114"></a>
+<div class="props_rev_3"><a id="GUID-4F7728EB-BB27-494B-A811-54D97A1BEFC8"></a>
+<h2 id="BCSUG-GUID-4F7728EB-BB27-494B-A811-54D97A1BEFC8" class="sect2">Defining trigger conditions for counters</h2>
+<div>
+<p>You can add conditions that a charge must meet in order to increment a counter. For example, you can add a condition that only charges greater than $5 or calls longer than 5 minutes can increment the counter.</p>
+<p>To include trigger conditions, select <span class="bold">Trigger conditions</span> in the tracker item and then do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and description for the trigger condition.</p>
+</li>
+<li>
+<p>Select the add icon for each condition that you want to add. If you add multiple conditions, the charge must meet the criteria in all of the conditions.</p>
+</li>
+<li>
+<p>Enter the trigger expression, which consists of:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The expression value, such as balance, quantity, or charge.</p>
+</li>
+<li>
+<p>The operator, such as Greater Than or Less Than.</p>
+</li>
+<li>
+<p>The amount, such as 5, 50, or 100.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>This figure shows a trigger condition that requires an event to have a charge of $50 or more.</p>
+<div class="figure" id="GUID-4F7728EB-BB27-494B-A811-54D97A1BEFC8__GUID-9DDD067E-291F-46E8-8A95-0663B07A420C"><br />
+<div class="imageleft"><img class="imageleft" width="486" height="261" src="img/usr_discount_trig.gif" alt="Description of usr_discount_trig.gif follows" title="Description of usr_discount_trig.gif follows" /><br />
+<a href="img_text/usr_discount_trig.htm">Description of the illustration usr_discount_trig.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG1115"></a>
+<div class="props_rev_3"><a id="GUID-63EB74F7-0318-47DA-A6EB-03DB3B449BB1"></a>
+<h2 id="BCSUG-GUID-63EB74F7-0318-47DA-A6EB-03DB3B449BB1" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-D90FC10C-D984-4318-992C-E2529084E201" title="Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles.">Creating discount offers</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-discount-offers2.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-subscription-terms1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

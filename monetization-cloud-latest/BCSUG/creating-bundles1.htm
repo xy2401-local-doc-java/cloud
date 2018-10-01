@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating bundles</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="In Oracle Monetization Cloud, you use bundles to group offers that you want to sell together. After you create bundles, you add them to your packages." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-subscription-terms1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-packages1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3838CAC0-56BB-42A4-BA5F-FE69B44CE895"></a> <span id="PAGE" style="display:none;">26/67</span> <!-- End Header -->
+<a id="BCSUG949"></a><a id="BCSUG832"></a><a id="BCSUG442"></a>
+<h1 id="BCSUG-GUID-3838CAC0-56BB-42A4-BA5F-FE69B44CE895" class="sect1"><span class="enumeration_chapter">21</span> Creating bundles</h1>
+<div>
+<p>In Oracle Monetization Cloud, you use bundles to group offers that you want to sell together. After you create bundles, you add them to your packages.</p>
+<p>For background information, see <a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-bundles1.htm#GUID-47A6FED6-0264-426E-ABE5-A46D962A68E9">Creating bundles</a></p>
+</li>
+<li>
+<p><a href="creating-bundles1.htm#GUID-EE897BFB-1F8C-4903-B579-BB8F8567FAAA">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG443"></a>
+<div class="props_rev_3"><a id="GUID-47A6FED6-0264-426E-ABE5-A46D962A68E9"></a>
+<h2 id="BCSUG-GUID-47A6FED6-0264-426E-ABE5-A46D962A68E9" class="sect2">Creating bundles</h2>
+<div>
+<div class="section">
+<p>A bundle is a set of charge offers, discount offers, and trackers. Each bundle is associated with a single service. Only offers that apply to that service can be included in the bundle. An offer can be included in more than one bundle.</p>
+<p>Use Offer Design to create bundles. From the Pricing navigation section, select <span class="bold">Create Bundle</span>.</p>
+<p>When you create a bundle, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Specify general information for the bundle:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Name and description.</p>
+</li>
+<li>
+<p>The service that the bundle applies to, such as Email or Wifi.</p>
+<p>Alternatively, select <span class="bold">Account</span> to create a bundle that applies to any account that owns any service.</p>
+</li>
+<li>
+<p>Whether to create a bill for the bundle when it's purchased. If enabled, when a customer purchases the bundle, a bill is generated immediately for the purchase fees associated with the bundle. See <a href="pricing-scenarios1.htm#GUID-DD5058F2-6704-416E-81D2-864FEA51AB5E">Billing a customer when an offer is purchased</a>.</p>
+</li>
+<li>
+<p>The dates when the bundle is available for purchase. See <a href="pricing-scenarios1.htm#GUID-6F6ABAE6-EE19-4C34-8BE2-3E75CFD2C2DE">Configuring validity periods</a>.</p>
+</li>
+<li>
+<p>Whether to align the start date of all balance impacts whose validity period starts on first usage. See <a href="pricing-scenarios1.htm#GUID-84C1E837-E67E-45E9-9B45-049A9BDB81E2">Charging on first usage</a>.</p>
+</li>
+<li>
+<p>Whether to prohibit, allow, or require modifications in a particular bundle. For example, if customer input is required to set the date on which an offer's purchase fee is applied, you can specify that a bundle must be modified.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Select which of the preset terms to associate with the bundle. These terms are used if you make the bundle optional in a package. For required bundles, the terms you select here will be overridden by the terms you associate with the package.</span></li>
+<li class="stepexpand"><span>Add one or more charge offers, discount offers, and trackers. Select the plus icon in the Manage Bundle Content section to add an offer. For each offer, specify:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>The quantity to include with the offer. For example, if a bundle for a cable service includes a charge offer that provides one set-top box and you want to include three set-top boxes with the cable service, enter 3 for the charge offer in that bundle.</p>
+</li>
+<li>
+<p>The dates when the charge offer is valid for purchase.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Immediately</span>: At purchase time.</p>
+</li>
+<li>
+<p><span class="bold">Relative to Purchase</span>: For example, one month from purchase.</p>
+</li>
+<li>
+<p><span class="bold">First Usage</span>: The first time a subscriber uses a service or discount. Don't select <span class="bold">First Usage</span> for charge offers that have usage charges. If you do, the charge offer is never activated. See <a href="pricing-scenarios1.htm#GUID-84C1E837-E67E-45E9-9B45-049A9BDB81E2">Charging on first usage</a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The offer end date: never or relative to the start date.</p>
+</li>
+<li>
+<p>Whether the offer is inactive when purchased, but activated later. Use this option when the subscriber won't be ready to use the offer right away. For example, the subscriber might be on vacation, or the service can't be used until the subscriber receives equipment.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Optionally, customize how charges and discounts can be applied in an offer. For example, you can modify an offer to:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Apply percentage discounts to purchase, recurring, and usage charges. To apply discounts, we recommend using discount offers instead of discounts applied in bundles. Discount offers are more powerful and flexible.</p>
+</li>
+<li>
+<p>Add a start date for recurring charges and usage charges: immediately, relative to purchase, or first usage.</p>
+</li>
+<li>
+<p>Add an end date for recurring charges and usage charges: never or relative to the start date.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSUG660"></a>
+<div class="props_rev_3"><a id="GUID-EE897BFB-1F8C-4903-B579-BB8F8567FAAA"></a>
+<h2 id="BCSUG-GUID-EE897BFB-1F8C-4903-B579-BB8F8567FAAA" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a></p>
+</li>
+<li>
+<p><a href="pricing-scenarios1.htm#GUID-E3143009-C6D6-42B8-865D-E7A46B39E13F" title="This document describes how to configure common pricing scenarios in Oracle Monetization Cloud.">Pricing scenarios</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a></p>
+</li>
+<li>
+<p><a href="creating-discount-offers2.htm#GUID-D90FC10C-D984-4318-992C-E2529084E201" title="Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles.">Creating discount offers</a></p>
+</li>
+<li>
+<p><a href="creating-subscription-terms1.htm#GUID-6491E10D-2723-4097-A5D0-3E37219AD346" title="Create subscription terms to define the commitment periods and options for canceling and renewing the services you offer. Use Oracle Monetization Cloud Offer Design to create terms and associate them with packages.">Creating subscription terms</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-19C29957-A507-4279-B7AB-1BFDE6C14176" title="In Oracle Monetization Cloud, you use packages to offer multiple services to your customers. For example, you could create an Internet package that includes the Wifi, email, and fax services.">Creating packages</a></p>
+</li>
+<li>
+<p><a href="creating-package-lists1.htm#GUID-912C17D9-0875-4DFB-B0FC-1E387B6EB2D8" title="This document describes how to create package lists in Oracle Monetization Cloud.">Creating package lists</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-subscription-terms1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-packages1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

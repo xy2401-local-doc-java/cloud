@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Sending messages to customers</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="This document describes how Oracle Monetization Cloud automatically sends email messages to customers when triggering events occur." />
+<meta name="dcterms.created" content="2018-08-31T10:19:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Integration Guide" />
+<meta name="dcterms.identifier" content="E92624-02" />
+<meta name="dcterms.isVersionOf" content="BCSIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="notifications.htm" title="Previous" type="text/html" />
+<link rel="Next" href="sending-data-external-applications2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92624-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92624-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92624-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-05AE8F83-4BD2-4F6E-B4B7-428EF7C1CA39"></a> <span id="PAGE" style="display:none;">13/42</span> <!-- End Header -->
+<a id="BCSIG104"></a><a id="BCSIG2313"></a><a id="BCSIG1830"></a>
+<h1 id="BCSIG-GUID-05AE8F83-4BD2-4F6E-B4B7-428EF7C1CA39" class="sect1"><span class="enumeration_chapter">8</span> Sending messages to customers</h1>
+<div>
+<p>This document describes how Oracle Monetization Cloud automatically sends email messages to customers when triggering events occur.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-3AA62CF6-1630-4064-9350-4DAAA752C09A">About sending emails to customers</a></p>
+</li>
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-D8DC23A9-1FCE-497E-AECD-1152505FA0DD">Enabling automatic email messaging</a></p>
+</li>
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-EB834EEE-D1CD-4337-A0AC-0F171FAFF07B">Changing which messages are sent</a></p>
+</li>
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-9C8D09C9-D71B-4561-BAE5-E88F8899788C">About email templates</a></p>
+</li>
+<li>
+<p><a href="sending-messages-customers1.htm#GUID-462A9EBC-A6DF-42E2-8805-7458F584310C">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSIG105"></a>
+<div class="props_rev_3"><a id="GUID-3AA62CF6-1630-4064-9350-4DAAA752C09A"></a>
+<h2 id="BCSIG-GUID-3AA62CF6-1630-4064-9350-4DAAA752C09A" class="sect2">About sending emails to customers</h2>
+<div>
+<p>Oracle Monetization Cloud can automatically send an email to a customer when:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Their account is created, which triggers the welcome message</p>
+</li>
+<li>
+<p>Their contract is created, modified, canceled, or ended</p>
+</li>
+<li>
+<p>A phase of their contract starts, is about to end, or ends</p>
+</li>
+<li>
+<p>Their invoice is created</p>
+</li>
+<li>
+<p>Their payment is processed successfully or their payment fails</p>
+</li>
+<li>
+<p>Their balance crosses the credit limit threshold defined in the package</p>
+</li>
+<li>
+<p>Their credit card will expire in two months</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSIG2105"></a>
+<div class="props_rev_3"><a id="GUID-D8DC23A9-1FCE-497E-AECD-1152505FA0DD"></a>
+<h2 id="BCSIG-GUID-D8DC23A9-1FCE-497E-AECD-1152505FA0DD" class="sect2">Enabling automatic email messaging</h2>
+<div>
+<div class="section">
+<p>To automatically send emails to your customers, Oracle Monetization Cloud uses an Oracle server on behalf of your organization. To enable this, do the following when Oracle Monetization Cloud is initially configured:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Provide a sending address to your Oracle representative.</p>
+</li>
+<li>
+<p>Configure your domain name server (DNS) policy to validate email notification messages sent on behalf of your organization by Oracle.</p>
+</li>
+</ul>
+<p>For example, configure a sender policy framework (SPF) entry in your DNS authorizing Oracle Monetization Cloud to send email messages on behalf of your domain.</p>
+<p>We will provide you with the required host information for DNS configuration.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSIG106"></a>
+<div class="sect2"><a id="GUID-EB834EEE-D1CD-4337-A0AC-0F171FAFF07B"></a>
+<h2 id="BCSIG-GUID-EB834EEE-D1CD-4337-A0AC-0F171FAFF07B" class="sect2">Changing which messages are sent</h2>
+<div>
+<p>By default, all of the available messages are sent. To change which messages are sent, use System Configuration. Select <span class="bold">Event Publishing</span>, select <span class="bold">Configure Notification Events</span>, select or deselect the messages you want to send or stop sending, and then select <span class="bold">Save</span>.</p>
+<p>You can send emails for any of the events that have the email icon:</p>
+<div class="figure" id="GUID-EB834EEE-D1CD-4337-A0AC-0F171FAFF07B__GUID-7226A780-5585-44FB-9615-596D463D5E73"><br />
+<div class="imageleft"><img class="imageleft" width="60" height="80" src="img/email_icon.gif" alt="Email icon." title="Email icon." /></div>
+<br /></div>
+<!-- class="figure" -->
+<div class="infobox-note" id="GUID-EB834EEE-D1CD-4337-A0AC-0F171FAFF07B__GUID-F68FE318-03B1-4E09-BC62-C3E5531BE22D">
+<p class="notep1">Note:</p>
+<p>The <span class="bold">Job Completed in BOC</span> event sends messages to an internal business operations user, not to your customers. This event notifies the business operations user that a billing job they triggered is completed.</p>
+<p>The <span class="bold">Message Info Any</span> event is not used. Enabling it has no effect.</p>
+</div>
+<p>The events that have the cloud icon can be published to REST API endpoints for external systems to use. See <a href="sending-data-external-applications2.htm#GUID-44724203-42B7-4E11-8B4A-D4B20A7E3703" title="This document describes how Oracle Monetization Cloud publishes data from internal events to external endpoints.">Sending data to external applications</a>.</p>
+</div>
+</div>
+<a id="BCSIG2204"></a>
+<div class="props_rev_3"><a id="GUID-9C8D09C9-D71B-4561-BAE5-E88F8899788C"></a>
+<h2 id="BCSIG-GUID-9C8D09C9-D71B-4561-BAE5-E88F8899788C" class="sect2">About email templates</h2>
+<div>
+<p>Oracle Monetization Cloud includes default email templates for the triggering events. When Oracle initially sets up your Oracle Monetization Cloud environment, we help you personalize the templates to suit your business needs.</p>
+<p>To modify email templates after Oracle Monetization Cloud is configured, submit a service request to Oracle support with the requested changes:</p>
+<p><a href="https://support.oracle.com" target="_blank"><code class="codeph">https://support.oracle.com</code></a></p>
+</div>
+</div>
+<a id="BCSIG2213"></a>
+<div class="props_rev_3"><a id="GUID-462A9EBC-A6DF-42E2-8805-7458F584310C"></a>
+<h2 id="BCSIG-GUID-462A9EBC-A6DF-42E2-8805-7458F584310C" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="sending-data-external-applications2.htm#GUID-44724203-42B7-4E11-8B4A-D4B20A7E3703" title="This document describes how Oracle Monetization Cloud publishes data from internal events to external endpoints.">Sending data to external applications</a></p>
+</li>
+<li>
+<p><a href="event-publishing-reference1.htm#GUID-AB805DE0-4C9E-452A-9FB3-F0D9C4B4A004" title="This document describes the internal events that Oracle Monetization Cloud can automatically publish to external endpoints.">Event publishing reference</a></p>
+</li>
+<li>
+<p><a class="olink BCSUG451" target="_blank" href="../BCSUG/creating-packages1.htm#BCSUG451">Setting credit limits in a package</a></p>
+</li>
+<li>
+<p><a class="olink BCSUG394" target="_blank" href="../BCSUG/running-business-operations-jobs1.htm#BCSUG394">Creating jobs</a></p>
+</li>
+<li>
+<p><a href="integrating-your-business-systems1.htm#GUID-60243463-3A48-49E1-B841-A10F134A08A6">About integrating your business systems</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment76">
+<tr>
+<td class="cellalignment83">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment80"><a href="notifications.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment80"><a href="sending-data-external-applications2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment85">
+<table class="cellalignment79">
+<tr>
+<td class="cellalignment80"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment80"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment80"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

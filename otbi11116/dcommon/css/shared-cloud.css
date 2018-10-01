@@ -1,0 +1,1265 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{margin: 0; padding: 0; height: 100%;}
+
+body {
+	font-size:12px;
+	font-family:  Geneva, Arial, Helvetica, sans-serif;
+ 	background-image:url(../img-cloud/page-back.png);
+	background-repeat:repeat-x;
+	margin: 0px; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0px;
+	text-align: left; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #333333;
+	height: 100%;
+	min-height: 100%;
+}
+
+	 h1{
+	margin:0;
+	}
+	
+	table{
+	max-width:920px;
+	}
+	
+.fixedback{background-attachment: fixed;}
+
+	
+.hidden{
+position:absolute; 
+top:-999px
+}
+
+a:hover{color:#ff0000;}
+a:link{color:#094985;}
+a:visited{color:#1466B2; }
+
+
+.anchor{
+position:relative;
+display:block;
+/*top:-305px;*/
+text-decoration:none;
+/*this is used on the book page with a fixed header so the links don't show up behind the header
+jquery.anchor.js 
+*/
+}
+.anchor a{text-decoration:none;}
+
+img{border:0;}
+
+.bodyContent img{
+border:0;
+max-width:890px;
+height:auto;
+}
+input{margin:0;vertical-align: top;}
+
+pre{
+	background-color:#f4f4f8;
+	display:block;
+	max-width:850px;
+	min-width:200px;
+	overflow: auto;
+
+	padding:8px;
+	z-index:1;
+
+	margin-left:15px;
+	margin-bottom:2em;
+	
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	border: 1px solid #c9d4e1;/*E1E6EB*/
+	}
+	
+	hr, .hr{
+	width:100%;
+	height:1px;
+	border-bottom:1px solid #c9d4e1;
+	margin-top:10px;
+	margin-bottom:10px;
+	clear:both;
+	}
+	
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Header Styles  */  
+
+#container {
+	width: 930px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	height:auto;
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-left: 5px;
+	padding-top:0px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;}
+
+.container {
+	width: 930px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-top:0px;
+	padding-bottom:0px;
+	position: relative;}
+	
+	
+#headerbox{
+	position:fixed;
+	top:0px;
+	width:928px;
+	border-bottom:1px solid #c9d4e1;
+	z-index:100;
+	background-image:url(../img-cloud/page-back.png);
+	background-repeat:repeat-x;
+	background-color: #FFFFFF;
+
+}
+
+#headwrap{
+min-height:60px;
+padding-top:8px;
+/*margin-bottom:20px;*/
+}
+
+#doclinks{
+width:auto; 
+float:right; 
+padding-top:4px; 
+right:2px; 
+display:inline;
+font-size:10px;
+text-align:right;
+}
+#PrevNext{
+float:right; 
+position: absolute; 
+bottom:0px; 
+right:0px; 
+}
+.next{
+display:inline; float:right;z-index:1000;
+min-height:30px;
+}
+.prev{
+display:inline; float:right;z-index:1000;
+min-height:30px;
+}
+
+#toggletoc{
+display:inline;
+float:right;
+z-index:1000; 
+border-bottom:0px; 
+min-height:30px;
+}
+
+#navSpacer{
+height:200px;
+}
+
+
+#navSpacerfixed{
+height:200px;
+position:fixed;
+top:0px;
+width:100%;
+left:0px;
+z-index:20;
+float:left;
+background-color:#FFFFFF;
+background-image:url(../img-cloud/page-back.png);
+background-repeat:repeat-x;
+}
+
+#logobar{
+background: #000000 url(../img-cloud/logo.png);
+background-repeat:no-repeat;
+background-position:0px 0px;
+height:34px;
+width:100%;
+z-index:120;}
+
+#logoarea{
+float:left;
+width:175px;
+height:32px;
+}
+	
+/*  Breadcrumb Styles  */
+.breadcrumbs{
+color:#efefef;
+font-size:11px;
+text-decoration:none;
+clear:both;
+float:left;
+width:600px;
+height:22px;
+/*padding-left:7px;*/
+}
+
+.breadcrumbs a:link, .breadcrumbs a:active, .breadcrumbs a:visited{
+color:#efefef;
+text-decoration:none;
+}
+
+.breadcrumbs a:hover{
+color:#FFFFFF;
+text-decoration:underline;
+}
+
+
+
+#ContentOverlay{
+position:fixed; 
+top:0px;
+ z-index:10;
+  background-color:#ffffff; 
+  background-image:url(../img-cloud/page-back.png);
+background-repeat:repeat-x;
+ width:100%;}
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*MISC LINKS IN HEADER*/
+#misclinks {
+margin: 0;
+width: 220px;
+float:right;
+text-align:right;
+}
+#misclinks li{
+list-style: none;
+margin: 0;
+display:inline;
+}
+/*/////////////////////////////////*/
+
+.email a{
+background-image: url(../img-cloud/email.png);
+background-repeat: no-repeat;
+height: 17px;
+width: 86px;
+display: block;
+display:inline-block;
+	cursor: pointer;
+}
+/*/////////////////////////////////*/
+.rss a{
+background-image: url(../img-cloud/icn_cld_rss.png);
+background-repeat: no-repeat;
+height: 17px;
+width: 53px;
+display:inline-block;
+}
+/*/////////////////////////////////*/
+.allbooks a{
+background-image: url(../img-cloud/allbooks.png);
+background-repeat: no-repeat;
+height: 17px;
+width: 83px;
+display:inline-block;
+	cursor: pointer;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Tab SUB MENU */  
+
+ #tabsubmenu{ float:left; }
+ #tabsubmenu ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size:1em;
+		font-weight:bold;
+		display:inline;
+			}
+    
+	#tabsubmenu li {
+		float: left;
+		border: 1px solid #dfdfdf;
+		border-bottom-width: 0;
+		margin: 0;	margin-right:3px;}
+    
+	#tabsubmenu a {
+		text-decoration: none;
+		display: block;
+				background:#dfe4e7;
+		padding: 0.24em 1em;
+		color: #666;
+		text-align: center; 
+		
+	 }
+	
+	#tabsubmenu a:hover {
+		background: #fefefe;
+		color:#333333;
+	}
+	
+	#tabsubmenu #selected {
+		border-color: #c9d4e1;
+
+
+	}
+	
+	#tabsubmenu #selected a {
+		position: relative;
+		top: 1px;
+		/*background-color:#F7F7F7;*/
+		color: #000000;
+		font-weight: bold;
+				background-color:#fff;
+	}
+	
+	#tabsubmenubottom {
+	border-top: 1px solid #c9d4e1;
+	clear: both;
+	height:1px;
+	background: #F7F7F7;
+	}
+	
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*   3COLs    */
+
+
+	
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*   SEARCH STYLES    */
+
+#advancedsearch{
+font-size:10px;
+float:right;
+color:#FFFFFF;
+top:15px;
+z-index:1070;
+padding-top:6px;
+}
+#advancedsearch a{
+color:#ffffff;
+}
+
+#mainSearch{
+	float:right;
+	position:relative;
+	margin:0px;
+	width:atuo;
+/*	padding-top:8px;*/
+	z-index:3;
+
+}
+
+.searchitems{
+	display:inline-block;
+	float:right;
+}
+
+#topsearch{
+text-align:right; float:right; padding-top:5px;
+}
+.gobut{
+	margin-top:1px;
+	vertical-align:top;
+	margin-top:0px;
+	display:inline;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*   Content Styles*/
+
+
+
+#mainContent {/* Dont add padding*/
+	width:930px;
+	overflow:visible;
+	clear: both;
+	z-index:1;
+	margin-bottom:0px;
+	background-color: #FFFFFF;
+
+}
+
+#mainContent h1{
+	margin:0;
+	}
+
+#mainContent2 {
+	padding: 0px; /* remember that padding is the space inside the div box and margin is the space outside the div box */
+	background: #ffffff;/*FBFBFB*/
+/*	border-top-color:#cccccc;
+	border-top-width:1px;
+	border-top-style:solid;*/
+	width:100%;
+	overflow:visible;
+	padding-bottom:5px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  block styles */
+
+
+.bodyContent{
+	padding-top:8px;
+	display:block;
+	line-height:normal;
+	z-index:1;
+	position:relative;
+	clear:both;
+	padding-bottom: 5px;
+	width:930px;
+	/*overflow:scroll;*/
+}
+
+#slick-toggle{
+/*background-color:#efefef;*/
+padding:3px; /*size of toc box before */
+width:100%;  
+text-decoration:none;
+}
+#slick-toggle a, #slick-toggle a:link, #slick-toggle a:active{
+text-decoration:none;
+}
+
+
+#toc{
+padding-top:15px;
+padding-bottom:5px;
+/*visibility:hidden;*/
+}
+
+#tocflipnav{
+	position:absolute;
+	right:0px;
+	overflow: hidden;
+	
+	border:1px solid #c9d4e1;
+
+	z-index:50;
+	padding:0px; /* size of toc drop down */
+	background-image:url(../img-common/white-transp.png);
+	font-size:11px;
+	height:0px;
+	visibility:hidden;
+}
+
+tocflipnavMain{/* used for Main TOC page only */
+	position:absolute;
+	/*top:0px;*/
+	right:0px;/*660*/
+	/*max-height:95%;*/
+	/*width:248px;*/
+	overflow:visible;
+	z-index:50;
+	padding:10px;
+}
+
+#tocflipnavflat{/* used for flat page only */
+	top:0px;
+	right:0px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-top-width:0;
+	border-color:#c9d4e1;
+	border-style:solid;
+	z-index:50;
+	position:absolute;
+	padding:10px;
+	background-color:#ffffff;
+}
+
+#tocinpage{
+	width:900px;
+	padding:10px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+.mainPage{
+position:relative;
+display:inline-block;
+float:left;
+line-height:1.5em;
+
+margin-bottom:15px;
+margin-left:0;
+padding-left:90px;
+padding-right:70px;
+padding-top:10px;
+}
+
+
+.DocList ul{
+margin:0;
+padding-left:15px; 
+left:-10px;
+float:none;
+margin-bottom:20px;
+
+}
+
+.DocList ul li{
+float:none;
+list-style-image: url(../img-common/303146.gif); /*red arrow*/
+/*list-style:none;*/
+
+font-weight:bold;
+font-size:14px;
+vertical-align:top;
+
+padding-left:0;
+margin:0px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+
+.DocList ul li p{
+font-weight:normal;
+font-size:12px;
+padding:0;
+margin:0;
+}
+
+.DocList ul li ul {
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+.DocList ul li ul li{
+float:none;
+list-style-image:none;
+list-style:disc;
+font-weight:normal;
+font-size:12px;
+vertical-align: top;
+width: 100%;
+
+    padding-bottom:0px;
+    margin-bottom:0px;
+margin-top:0;
+}
+
+.DocList ul li ul li ul li,.DocList ul li ul li ul li a:link{
+
+	list-style-image: url(../img-common/bullet2.png); 
+    list-style-type:disc;
+	font-weight:normal;
+/*	color: #363636;*/
+	top: 3px;
+	vertical-align: top;
+	font-size:11px;
+	
+    padding-bottom:0px;
+    margin-bottom:0px;
+	
+}
+.DocList ul li ul li ul li a:hover{
+/*color:#1466B2;*/
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  reused 3-col.  */  
+
+.left {
+    float: left;
+    width: 266px;
+	font-size:12px;
+    margin: 0;
+	padding:0;
+}
+
+.right {
+    float: right;
+    width: 266px;
+	font-size:12px;
+	margin: 0px;
+	padding-bottom:15px;
+	padding-left:10px;
+}
+
+.middle {
+    padding: 0px 276px 0px 276px;
+	font-size:12px;
+	
+    margin: 0px;
+	padding-bottom:15px;	
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*// mainBlurbs /*/
+
+.mainBlurbs{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	padding-left:40px;
+	padding-top:10px;
+	width:900px;
+}
+
+.mainBlurbs ul{
+	position: relative;
+	padding-left: 0px;
+	margin-left:0px;
+	margin-right:0px;
+}
+
+/*Top level list items*/
+.mainBlurbs ul li{
+	float: left;
+	list-style:none;
+	font-size:1.5em;
+	font-weight: bold;
+	color:#333333;
+	width:230px;
+	text-align:left;
+	padding-bottom:10px;
+	padding-right:5px;
+	padding-left: 0;
+	margin-top:0px;
+	margin-bottom:6px;
+	margin-right:40px;
+}
+
+/*Top level list items*/
+.mainBlurbs ul li ul li{
+	position: relative;
+	float: left;
+	list-style-type:disc;
+	font-size:12px;
+	font-weight:normal;
+	color:#666666;
+	text-align:left;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	margin-left:15px;
+	margin-top:6px;
+	margin-bottom:0px;
+	margin-right: 0px;
+}
+
+.mainBlurbs ul li ul li ul li{
+	position: relative;
+	float: left;
+	list-style-image: url(../img-common/bullet2.png); 
+    list-style-type: none;
+	font-weight:normal;
+	color:#666666;
+	width:180px;
+	text-align:left;
+	margin-top:6px;	
+}
+
+/*Top level menu link items style*/
+.mainBlurbs ul li a{
+	color:#333333;
+}
+.mainBlurbs ul li a:hover{
+color:#1466B2;
+}
+
+.mainBlurbs ul li  ul li  ul li a{
+}
+
+/*Similar to mainBlurbs */
+
+.mainBlock{
+	position:relative;
+	/*display:inline-block;*/
+	float:left;
+	line-height:1.5em;
+	padding-left:20px;
+	padding-top:30px;
+	width:830px;
+	list-style-type:disc;
+	font-size:12px;
+	padding-bottom:20px;
+	margin-bottom:0px;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*///// Library home tasks ul li /////*/
+
+#GreyHeaderBox {
+	background:#F7F7F7;
+	width:880px;
+	overflow:visible;
+	border:1px solid #c9d4e1;
+	float:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 50px;
+	
+	margin:0px;
+	color:#333333;
+	font-size:1.1em;
+}
+#GreyHeaderBox ul{
+  width:100%;
+  margin-bottom:20px;
+  overflow:hidden;
+ padding-left:0px;
+  margin-left:0px;
+}
+#GreyHeaderBox ul li{
+  float:left;
+  display:inline;
+  width:48%;
+  padding-bottom:4px;
+  padding-top:4px;
+
+ padding-left:0px;
+  margin-left:0px;
+
+
+
+}
+#GreyHeaderBox a:link, #GreyHeaderBox a:active{
+
+}
+
+/*///// Library home tasks ul li /////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+.FMWtitle {
+font-size:24px;
+line-height:24px;
+font-weight:bold;
+color:#ffffff;
+display:inline;
+padding-right:6px;
+padding-top:3px;
+/*padding-left:7px;*/
+float:left;
+text-shadow:0 2px 3px rgba(0,0,0,0.50);
+}
+
+#versionselect{
+display:inline; 
+height:30px; 
+float:left; 
+margin:0; 
+padding:0; 
+margin-top:3px; 
+z-index:120;
+}
+
+.wrapspacer{padding-left:40px;	padding-right:40px;}
+
+.FMWtasks{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	width:100%;
+	
+	margin-top:20px;
+	margin-bottom:15px;
+	padding-top:10px;
+	padding-bottom:15px;
+
+	border:1px solid #c9d4e1;
+	background-color:#fcfcfc;
+}
+.FMWtasks ul{
+	position:relative;
+	display:block;
+	list-style:none;
+	padding:0px;
+	margin:0px;
+}
+/*Top level list items*/
+.FMWtasks ul li{
+	float: left;
+	list-style:none;
+	text-align:left;
+	width:400px;
+	color:#333333;
+	padding-right:5px;
+	margin-right: 15px;
+}
+/*Top level list items*/
+.FMWtasks ul li ul li{
+	
+	color:#666666;
+	width:380px;
+	
+	padding-top:2px;
+	padding-bottom:2px;
+	
+	list-style:none;
+}
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*// FMW LISTS ///////////////////////////////////////////////////////////////////////////////*/
+
+.FMWlists{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	margin-left:0px;
+	padding-left:50px;
+	padding-bottom:30px;
+	padding-top: 10px;
+	
+}
+.FMWlists ul{
+position: relative;
+display:block;
+list-style:none;
+padding: 0;
+margin:15px 0px 0px 0px;
+}
+/*Top level list items*/
+.FMWlists ul li{
+	float: left;
+	list-style:none;	
+	text-align:left;
+	font-size:14px;
+	width:380px;
+	color:#333333;
+	padding-right:5px;
+}
+
+/*Top level list items*/
+.FMWlists ul li ul li{
+	position: relative;
+	float:left;
+	display:block;
+	list-style:none;
+	font-size:13px;
+	line-height:15px;
+	color:#666666;
+	width:90%;
+	text-align:left;
+	padding-top:2px;
+	padding-bottom:18px;
+}
+
+/*Top level menu link items style*/
+.FMWlists ul li a{
+color:#333333;
+/*text-decoration:none;*/
+}
+
+.FMWlists ul li a:hover{
+color:#1466B2;
+}
+
+/*////////////////////////////////////////*/
+.FMWlists1col{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	margin-left:0px;
+	padding-bottom:30px;
+	padding-left:0px;
+}
+
+.FMWlists1col ul li {
+	position: relative;
+	float:left;
+	display:block;
+	list-style:none;
+	font-size:13px;
+	line-height:15px;
+	color:#666666;
+	width:80%;
+	text-align:left;
+	padding-top:2px;
+	padding-bottom:18px;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Misc.  */  
+
+#pageTitle{
+padding-top:10px;
+/*border-bottom:1px solid #cccccc; */
+font-size:24px; 
+color:#333333; 
+float:left;
+/*background-image:url(../img-common/pageTitle-backgnd.jpg);*/
+width:915px;
+margin-bottom:20px;
+margin-top:10px;}
+
+
+.pageTitle{
+padding-top:10px;
+/*border-bottom:1px solid #cccccc; */
+font-size:24px; 
+color:#333333; 
+float:left;
+/*background-image:url(../img-common/pageTitle-backgnd.jpg);*/
+width:915px;
+margin-bottom:20px;
+margin-top:10px;
+font-weight:normal;}
+
+
+.title {
+	font-weight:bold;
+	color:#333333;
+	font-size:21px;
+	padding-top:10px;
+	line-height:1.5em;
+	margin-top: 10px;
+	
+	}
+	
+	
+.title-product{
+	font-size:22px; 
+	margin:20px 0px 20px 0px; 
+	display:block; 
+	font-weight:bold;
+	}
+	
+	#bookicon{
+	margin-top:8px;
+	width:16px;
+	height:22px;
+	float:left;
+	background-image:url(../img-cloud/icn-book-doc.gif);
+	background-repeat:no-repeat;
+	background-position:1px 1px;
+	}
+		
+#booktitle{
+	float:left;
+	padding-left:5px;
+	display:inline;
+	max-width:780px;
+	font-weight: bold;
+	line-height:1.5em;
+	font-size:14px;
+	padding-top:8px;
+}
+#booktitle a:link{
+color: #333333;
+text-decoration:none;
+}
+#booktitle a:hover{
+text-decoration:underline;
+}
+	
+.title a:link, .title a:visited{
+text-decoration:none;
+}	
+
+	.subtitle{
+	font-size:22px;
+	font-weight:normal;
+	color: #333333 ;
+	padding-top:4px;
+	margin:0;
+	line-height:1.5em;
+	padding-left:5px;
+	max-width:660px;
+	float:left;
+	}
+	
+	#subtitle{
+	float:left;
+	font-size:22px;
+	font-weight:normal;
+	color: #88888;	
+	max-width:660px;
+	line-height:1.5em;
+	padding-left:5px;
+	padding-right: 5px;
+	}
+
+.heading {
+	font-size:1.3em;
+	font-weight:bold;
+	color: #333333;
+	padding-top:10px;
+	/*padding-left:6px;  removed for all-bak page*/
+	line-height:1.5em;
+	}
+	
+	
+.smalltext{
+font-size:11px;}
+
+
+.icn1{
+float:left;}
+
+.icn1txt{
+float:left;
+margin-left:30px;}
+
+
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+	overflow:auto;
+    height:0px;
+    font-size: 1px;
+    line-height: 0px;
+}
+	#clearfloat{
+	clear:both;
+	overflow:auto;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.noborder{
+border:none;
+}
+
+.bold{
+font-weight:bold;
+}
+
+.greytype, .greytype a:link{
+	color:#7E7E7E;
+}
+.greytype a:hover{
+color:#1466B2;
+}
+
+.searchlabel{
+font-size:13px; 
+color:rgb(180, 180, 180);;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  FOOTER  */
+
+
+.FootBookNav{
+	position:relative;
+	float:left;
+	line-height:1.5em;
+	width:930px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	padding-left: 0px;
+	border-top:1px #c9d4e1 solid;
+	/*border-bottom:1px #cccccc solid;
+	background-color:#f7f7f7;*/
+	/*border-bottom:1px #cccccc solid;*/ 
+}
+.BookNav{
+	position:relative;
+	/*	display:inline-block;*/
+	float:left;
+	line-height:1.5em;
+	width:928px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	padding-left: 0px;
+	/*border-top:1px #cccccc solid;*/
+	background-color:#ffffff;
+	/*border-bottom:1px #cccccc solid;*/ 
+}
+
+#footer{
+	border-top: 1px solid #F5F5F5;
+	background-color: #f4f4f8;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #f4f4f8));
+	background-image: -webkit-linear-gradient(#ffffff,#f4f4f8);
+	background-image: -moz-linear-gradient(#ffffff,#f4f4f8);
+	background-image: linear-gradient(#ffffff,#f4f4f8);
+	-webkit-border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	border: 1px solid #c9d4e1;/*E1E6EB*/
+	margin-bottom: 10px;
+	min-width:450px;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	}
+
+
+ #footer a:link, #footer a:hover, #footer a:visited, #footer a:active  {
+	padding: 0; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	/*background:#333333;*/
+	clear:both;
+	color:#333333;
+	}
+#footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+
+.footerBlurbs{
+	margin-left:0px;
+	/*padding-left:80px;*/
+padding-bottom:20px;
+	padding-top:10px;
+	
+/*position: inherit;*/
+/*display:inline-block;*/
+
+}
+.footerBlurbs ul{
+	position: relative;
+	list-style:none;
+	padding-left: 0;
+	margin-left:0;
+	text-align:left;
+	margin-bottom:30px;	
+	padding-bottom:10px;
+}
+/*Top level list items*/
+.footerBlurbs ul li{
+	float: left;
+	list-style:none;
+	font-size:14px;
+	color:#ffffff;
+	width:220px;
+	
+	margin-left:50px;
+	margin-bottom: 5px;
+	margin-right:10px;
+	
+	padding-left: 0; 
+	padding-right:5px;
+
+}
+
+/*Top level list items*/
+.footerBlurbs ul li ul li{
+	position: relative;
+	float: left;
+	list-style:none;
+	font-size:12px;
+	color:#666666;
+	width:210px;
+	text-align:left;
+	padding-top:4px;
+	padding-bottom:3px;
+	padding-left:0px;
+	padding-right:20px;
+	margin-right:25px;
+	margin-left:0px;
+	border-bottom:solid;
+	border-bottom-color:#c9d4e1;/*b1bbca*/
+	border-bottom-width:1px;
+	}
+	
+/*Top level menu link items style*/
+.footerBlurbs ul li {
+color:#c9d4e1;
+text-decoration:none;
+display:block;
+}
+
+.footerBlurbs ul li a:active, .footerBlurbs ul li a:link,.footerBlurbs ul li a:visited{
+color: #ADADAD;
+text-decoration:none;
+}
+
+.footerBlurbs ul li a:hover{
+color:#ffffff;
+text-decoration:none;
+}
+
+
+/* social icons */
+.socialicons{
+	width: 930px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:5px;
+	position: relative;}
+img.socialIcon{width:16px;height:16px;background-image:url(../img-common/social_sprite.png);background-repeat:no-repeat;background-color:transparent}
+img.socialIcon.linkedin{background-position:-72px -20px}
+img.socialIcon.rss{background-position:-88px -20px}
+img.socialIcon.twitter{background-position:-104px -20px}
+img.socialIcon.youtube{background-position:-120px -20px}
+img.socialIcon.facebook{background-position:-136px -20px}
+
+/*///////////////////////////////////*/
+
+.doclistlinks, .doclistlinks a:link{
+	font-size:10px;
+	text-align:right;
+	padding-left: 4px;
+	padding-left: 4px;
+	text-decoration:none;
+}
+
+
+.doclistlinks a:hover{
+font-size:10px;
+}
+
+.linktype, .linktype a:link, .linktype a:active{
+	font-size:12px;
+	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.linktype a:hover{
+	font-size:12px;
+
+}
+
+.copyright{
+	width: 930px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	background: #FFFFFF;
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	text-align: center; /* this overrides the text-align: center on the body element. */
+	padding-top:10px;
+	padding-bottom:20px;
+	padding-left:7px;
+	padding-right:7px;
+	position: relative;
+	font-size:10px;
+}

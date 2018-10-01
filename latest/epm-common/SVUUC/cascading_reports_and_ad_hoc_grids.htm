@@ -1,0 +1,153 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="You can create separate reports for any or all of the members of one or more dimensions in a report based on an ad hoc grid or Smart Slice query.">
+      <meta name="description" content="You can create separate reports for any or all of the members of one or more dimensions in a report based on an ad hoc grid or Smart Slice query.">
+      <title>Cascading Reports and Ad Hoc Grids</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Working with Oracle Smart View for Office">
+      <meta property="og:description" content="You can create separate reports for any or all of the members of one or more dimensions in a report based on an ad hoc grid or Smart Slice query.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Working with Oracle Smart View for Office">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 18.2.2">
+      <link rel="alternate" href="GUID-C284097E-4140-40A1-8E40-22E22B4B1C50.pdf" title="PDF File" type="application/pdf">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2018-08-30T15:20:23-07:00">
+      
+      <meta name="dcterms.dateCopyrighted" content="2004, 2018">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E96207-06">
+      
+      <meta name="dcterms.product" content="en/cloud/saas/enterprise-performance-management-common">
+      
+      <link rel="prev" href="multiple-grid_example_butterfly_report.html" title="Previous" type="text/html">
+      <link rel="next" href="substitution_variables.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet"/>');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">{"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"saas","element_name":"Software as a Service (SaaS)","display_in_url":true},"product_group":{"short_name":"perform-report-cloud","element_name":"Enterprise Performance Management Cloud","display_in_url":false},"product":{"short_name":"enterprise-performance-management-common","element_name":"Enterprise Performance Management Common","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}}</script>
+      
+    <meta name="dcterms.title" content="Working with Oracle Smart View for Office 11.1.2.5.800">
+    <meta name="dcterms.isVersionOf" content="SVUUC">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="multiple-grid_example_butterfly_report.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="substitution_variables.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Working with Oracle Smart View for Office</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="ad_hoc.html" property="item" typeof="WebPage"><span property="name">Ad Hoc Analysis</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Cascading Reports and Ad Hoc Grids</li>
+            </ol>
+            <a id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090" name="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090"></a>
+            
+            <h2 id="SVUUC-GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090" class="sect2">Cascading Reports and Ad Hoc Grids</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>You can create separate reports for any or all of the members of one or more dimensions in a report based on an ad hoc grid or Smart Slice query.</p>
+               <div class="section" id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090__clouddatasourcetypesdatasourcetypes-3a6a56c0">
+                  <p>You can then cascade these reports separately across the worksheets of an Excel workbook. For reports created in the Report Designer, you can also cascade reports across slides in a PowerPoint presentation. Worksheets or slides are created as needed to accommodate all reports.</p>
+                  <p><span class="props_platform_cloud"><span class="bold">Data source types: </span></span><span>Oracle Analytics Cloud - Essbase</span>, <span>Oracle Planning and Budgeting Cloud</span>, <span>Oracle Financial Consolidation and Close Cloud</span>, <span>Oracle Tax Reporting Cloud</span></p>
+               </div>
+               <!-- class="section" -->
+               <p>Formulas, comments and other text, Smart Slice function grids, charts, tables, and sliders are included in cascaded reports. </p>
+               <p><span class="bold"><span class="props_platform_cloud"><span>Oracle Analytics Cloud - Essbase</span></span> only: </span>Cascading is supported for multiple-grid worksheets.
+               </p>
+               <div class="infoboxnote">
+                  <p class="notep1">Note:</p>
+                  <p>When extensions are enabled in <span>Oracle Smart View for Office</span>, cascading a report with a large number of members can cause Excel to stop responding. You may disable any extensions that are installed from the <span class="bold">Smart View Options</span> dialog box, <span class="bold">Extensions</span> tab. After disabling, restart Excel and repeat the cascade operation.
+                  </p>
+               </div>
+               <p>Watch this tutorial video to get acquainted with cascading while connected to <span>Oracle Planning and Budgeting Cloud</span>.
+               </p>
+               <p><img src="img/videocloud.png" alt="video icon" title="video icon"> <a href="https://apex.oracle.com/pls/apex/f?p=44785:265:0:::265:P265_CONTENT_ID:11485" target="_blank">Tutorial video</a></p>
+               <p>To cascade an ad hoc grid or Smart Slice report:</p>
+               <ol>
+                  <li id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090__adhoc_322">
+                     <p>Open an ad hoc grid or Smart Slice report on the worksheet.</p>
+                  </li>
+                  <li id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090__adhoc_323">
+                     <p>From the <span class="bold">Essbase</span> ribbon or from the data provider ad hoc ribbon (for example, <span class="bold">Planning Ad Hoc</span>), select <span class="bold">Cascade</span>, and then one of the following:
+                     </p>
+                     <ul style="list-style-type: disc;">
+                        <li>
+                           <p><span class="bold">Same Workbook</span> to use the current workbook 
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">New Workbook</span> to use a new workbook
+                           </p>
+                        </li>
+                        <li>
+                           <p><span class="bold">Different Workbooks</span> to cascade each report to a different workbook
+                           </p>
+                        </li>
+                     </ul>
+                  </li>
+                  <li id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090__adhoc_325">
+                     <p>In <span class="bold">Select Cascade Members</span>, click <img src="img/select_cascade_members_button_100x26cba087.jpg" alt="The Member Selection button" title="The Member Selection button"> next to each dimension to launch <span class="bold">Member Selection</span>, where you select the members from each dimension for which you want to create reports.
+                     </p>
+                     <p>One report will be generated for each member you select. A message indicating the number of reports to be generated appears in the bottom left of the dialog.</p>
+                     <p>In the example dialog box below, members were selected for the <span class="q">"Product"</span>, <span class="q">"Market"</span>, and <span class="q">"Scenario"</span> dimensions. The message indicates that four cascaded sheets will be generated.
+                     </p>
+                     <p><img src="img/select_cascade_members_100x2855b368.jpg" alt="Select Cascade Member dialog box showing the members selected for the Product, Market, and Scenario dimensions, and a message indicating that four sheets will be cascaded." title="Select Cascade Member dialog box showing the members selected for the Product, Market, and Scenario dimensions, and a message indicating that four sheets will be cascaded."></p>
+                     <div class="infoboxnote">
+                        <p class="notep1">Note:</p>
+                        <p>In the <span class="bold">Select Cascade Members</span> dialog box, JAWS is not reading the <span class="q">"Number of cascaded sheets"</span> label and the number when reciting the dialog content. In JAWS, go to <span class="bold">Utilities</span>, then <span class="bold">Settings</span>, then <span class="bold">User</span>, then <span class="bold">Screen echo</span>, and then select <span class="bold">Echo all text</span>.
+                        </p>
+                     </div>
+                  </li>
+                  <li id="GUID-E65D6F58-EC36-4CB2-B1C8-011CBBCC6090__adhoc_326">
+                     <p>Click <span class="bold">OK</span> to begin cascading.
+                     </p>
+                     <p>Depending on your earlier cascade selection, the resulting reports are created on separate worksheets in the current workbook or in a new one. Each worksheet tab is named for the dimensions and members of the report it contains. Click a worksheet tab to view a report.</p>
+                     <p>To see a list of all the worksheets, right-click the left or right arrow at the bottom left of Excel:</p><br><img src="img/cascade_selection_arrows.jpg" alt="Cascade Selection arrows" title="Cascade Selection arrows"><br><p>In our example using the <span class="q">"Product"</span>, <span class="q">"Market"</span>, and <span class="q">"Scenario"</span> dimensions, the following reports were created:
+                     </p>
+                     <p><img src="img/cascade_reports_102x28561d30.jpg" alt="Dialog box showing all the reports that were created as a result of selecting the Product, Market, and Scenario dimensions." title="Dialog box showing all the reports that were created as a result of selecting the Product, Market, and Scenario dimensions."></p>
+                     <p>To display a specific report, select the report in the list, and then click <span class="bold">OK</span>.
+                     </p>
+                  </li>
+               </ol>
+               <div class="infoboxnote">
+                  <p class="notep1">Note:</p>
+                  <ul style="list-style-type: disc;">
+                     <li>
+                        <p>To enable worksheet tab naming, do not use more than 31 characters or any the following characters for dimension or member names: ( ) : \ / ? * [ ].</p>
+                     </li>
+                     <li>
+                        <p>Cascading may be very slow for large grids.</p>
+                     </li>
+                     <li>
+                        <p>When extensions are enabled in <span>Smart View</span>, cascading a report with a large number of members can cause Excel to stop responding. You may disable any extensions that are installed from the <span class="bold">Smart View Options</span> dialog box, <span class="bold">Extensions</span> tab. After disabling, restart Excel and repeat the cascade operation.
+                        </p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </article>
+   </body>
+</html>

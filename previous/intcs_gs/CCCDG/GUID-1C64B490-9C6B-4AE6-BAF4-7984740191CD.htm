@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Testing the Inbound Adapter Using the EM Console</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="After the application that uses the adapter is deployed, you can run it in the Enterprise Manager (EM) Console with the help of a SOAP application." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-70DA0AE7-718E-470C-90BB-30EC46BA5DE6.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-E09CC069-DC48-4BAC-A3E7-6CCD5510D063.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1C64B490-9C6B-4AE6-BAF4-7984740191CD"></a> <span id="PAGE" style="display:none;">57/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-1C64B490-9C6B-4AE6-BAF4-7984740191CD" class="sect1">Testing the Inbound Adapter Using the EM Console</h1>
+<div>
+<p>After the application that uses the adapter is deployed, you can run it in the Enterprise Manager (EM) Console with the help of a SOAP application.</p>
+<ol>
+<li class="stepexpand"><span>Open the EM Console after successful deployment.</span>
+<div>The URL is <code>http://<span class="variable">hostname</span>:<span class="variable">port</span>/em</code>.</div>
+</li>
+<li class="stepexpand"><span>Enter your credentials and log into the EM Console.</span></li>
+<li class="stepexpand"><span>Expand the <span class="bold">soa-infra</span> node and expand the default domain.</span>
+<div><img width="1603" height="559" src="img/GUID-872408CD-8D49-45B8-B771-D77B7D5C2C3D-default.png" alt="media/image88.png" title="media/image88.png" /><br />
+<a href="img_text/GUID-16FD82D4-0D67-441E-B635-B10C1C1907B9.htm">Description of the illustration GUID-872408CD-8D49-45B8-B771-D77B7D5C2C3D-default.png</a></div>
+</li>
+<li class="stepexpand"><span>A JCA adapter-based service is created under the Services section.</span>
+<div>You can&rsquo;t test JCA-based services directly, so a wrapper class exposes the JCA-based service as a SOAP-based service (web service).</div>
+</li>
+<li class="stepexpand"><span>Look at the Weblogic console logs to get the service reference URI.</span>
+<div>Content from <code>web.xml</code> is displayed after successful deployment of the SOA project. For example:</div>
+<div>
+<pre dir="ltr">
+&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;jav:web-app xmlns:jav="http://java.sun.com/xml/ns/javaee" version="3.0"&gt;
+  &lt;jav:servlet&gt;
+    &lt;jav:servlet-name&gt;ICS_EndPoint&lt;/jav:servlet-name&gt;
+    &lt;jav:servlet-class&gt;oracle.cloud.connector.impl.soap.HttpTransportServlet&lt;/jav:servlet-class&gt;
+    &lt;jav:init-param&gt;
+      &lt;jav:param-name&gt;service-ref&lt;/jav:param-name&gt;
+      &lt;jav:param-value&gt;<span class="bold">integration/flowsvc/sample/default/SampleCloudAdapterInboundTest/SampleService/v1.0</span>&lt;/jav:param-value&gt;
+    &lt;/jav:init-param&gt;
+  &lt;/jav:servlet&gt;
+  &lt;jav:servlet-mapping&gt;
+    &lt;jav:servlet-name&gt;ICS_EndPoint&lt;/jav:servlet-name&gt;
+    &lt;jav:url-pattern&gt;/&lt;/jav:url-pattern&gt;
+  &lt;/jav:servlet-mapping&gt;
+  &lt;jav:security-constraint&gt;
+    &lt;jav:web-resource-collection&gt;
+      &lt;jav:web-resource-name&gt;AllEndPoints&lt;/jav:web-resource-name&gt;
+      &lt;jav:url-pattern&gt;/*&lt;/jav:url-pattern&gt;
+    &lt;/jav:web-resource-collection&gt;
+    &lt;jav:user-data-constraint&gt;
+      &lt;jav:description&gt;SSL Required&lt;/jav:description&gt;
+      &lt;jav:transport-guarantee&gt;CONFIDENTIAL&lt;/jav:transport-guarantee&gt;
+    &lt;/jav:user-data-constraint&gt;
+  &lt;/jav:security-constraint&gt;
+  &lt;jav:login-config&gt;
+    &lt;jav:auth-method&gt;BASIC_PLAIN&lt;/jav:auth-method&gt;
+  &lt;/jav:login-config&gt;
+&lt;/jav:web-app&gt;
+</pre></div>
+</li>
+<li class="stepexpand"><span>Create a new URL based on the service reference URI.</span>
+<div>
+<p>The URL format is:</p>
+<code>https://<span class="variable">hostname</span>:<span class="variable">ssl-port</span>/integration/flowsvc/<span class="variable">adapter-ID</span>/<span class="variable">weblogic-domain</span>/<span class="variable">client-project-name</span>/<span class="variable">service-name</span>/<span class="variable">project-version</span>/?WSDL</code></div>
+<div>
+<p>In this case, the WSDL URL is:</p>
+<code>https://<span class="variable">hostname</span>:<span class="variable">ssl-port</span>/integration/flowsvc/sample/default/SampleCloudAdapterInboundTest/SampleService/v1.0/?WSDL</code></div>
+</li>
+<li class="stepexpand"><span>Create a new SOAP project with this URL.</span>
+<div><img width="678" height="312" src="img/GUID-37D1CE70-0AB7-433F-9B9C-5612E0CE38AF-default.png" alt="media/image89.png" title="media/image89.png" /><br />
+<a href="img_text/GUID-312392B3-E4E7-4D2A-A5A7-1BB55BD34AC5.htm">Description of the illustration GUID-37D1CE70-0AB7-433F-9B9C-5612E0CE38AF-default.png</a></div>
+</li>
+<li class="stepexpand"><span>Double click <span class="bold">Request1</span> to open the default request XML file.</span></li>
+<li class="stepexpand"><span>Submit the request without any changes as a BPEL process. Do not include any logic with the payload.</span></li>
+</ol>
+<div class="section">
+<p>You receive a response such as the following:</p>
+<img width="1426" height="222" src="img/GUID-997C6596-543B-4DB1-9D8E-2023118DF7E4-default.png" alt="media/image90.png" title="media/image90.png" /><br />
+<a href="img_text/GUID-5625399C-9050-464C-B5D9-DD43DF8B4412.htm">Description of the illustration GUID-997C6596-543B-4DB1-9D8E-2023118DF7E4-default.png</a></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-70DA0AE7-718E-470C-90BB-30EC46BA5DE6.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-E09CC069-DC48-4BAC-A3E7-6CCD5510D063.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

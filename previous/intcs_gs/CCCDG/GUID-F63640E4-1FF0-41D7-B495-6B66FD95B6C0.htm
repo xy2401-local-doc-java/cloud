@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Outbound REST Cloud Adapter Design-Time Components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="Outbound REST-based adapters have design-time components similar to those of other custom outbound adapters, including a User Interface Module and a Plugin Module." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-1C145066-0BD1-4F0C-A37A-843B40DCEEE3.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0"></a> <span id="PAGE" style="display:none;">39/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0" class="sect1">Creating Outbound REST Cloud Adapter Design-Time Components</h1>
+<div>
+<p>Outbound REST-based adapters have design-time components similar to those of other custom outbound adapters, including a User Interface Module and a Plugin Module.</p>
+<p>The following diagram shows the design-time components in an outbound REST-based adapter.</p>
+<img width="654" height="678" src="img/GUID-460979B2-7497-40F4-B1B2-F8380A1C473E-default.png" alt="media/image42B.png" title="media/image42B.png" /><br />
+<a href="img_text/GUID-27577150-EBC6-431E-9DF9-DB02F8EB2590.htm">Description of the illustration GUID-460979B2-7497-40F4-B1B2-F8380A1C473E-default.png</a>
+<p>The design-time plugin developer must provide concrete implementations of the following interfaces:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">CloudApplicationAdapterFactory</span> &mdash; The interface <code>com.oracle.cloud.connector.CloudApplicationAdapterFactory</code> creates instances of the <code>CloudApplicationAdapter</code>. Adapter developers must provide an instance of this interface. However, although this is a required interface, some wizards don&rsquo;t use it. For example, the JDeveloper Adapter Wizard Framework does not use this interface to create instances of the adapter.</p>
+</li>
+<li>
+<p><span class="bold">CloudApplicationAdapter</span> &mdash; An implementation of this interface provides an entry point to the design-time adapter plugin. From this interface, a wizard gets handles to other interfaces such as <code>CloudMetadataBrowser</code>, <code>RuntimeMetadataGenerator</code>, and so on.</p>
+</li>
+</ul>
+<p>The design-time framework can leverage existing default interface implementations, which provide baseline functionality without requiring explicit realization of all required interfaces.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">DefaultCloudConnection</span> &mdash; This is the default implementation of the <code>CloudConnection</code> interface. It stores user-provided connection information, such as username, password, and WSDL location.</p>
+</li>
+<li>
+<p><span class="bold">DefaultMetadataBrowser</span> &mdash; You can return an instance of this class in response to the <code>getMetadataBrowser()</code> method in the mandatory <code>CloudApplicationAdapter</code> interface. The default implementation can automatically provide metadata information if an instance of the <code>CloudConnection</code> interface exists.</p>
+</li>
+<li>
+<p><span class="bold">DefaultRuntimeGenerator</span> &mdash; This class provides a default implementation of the <code>RuntimeGenerator</code> interface. It generates runtime artifacts if a <code>TransformationModel</code> and an instance of <code>CloudConnection</code> exist. The <code>getRuntimeGenerator()</code> method of the <code>CloudApplicationAdapter</code> interface can return an instance of this class.</p>
+</li>
+</ul>
+<p>All default implementations extend abstract classes prefixed with <span class="bold">Abstract</span>, such as <code>AbstractCloudConnection</code>. Design-time plugins can extend abstract classes directly or extend the default implementations. The former is recommended, because the default implementations are internal classes and subject to change, while the abstract classes are part of the API and are therefore more stable.</p>
+<p>Refer to the <code>SampleRestAdapterFactory</code> class.</p>
+<div class="tblformal" id="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0__GUID-21E75D87-70E2-482A-A8EE-6ED30B85A9B0">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterFactory class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e121">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e121">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e134">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.plugin</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e144">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterFactory</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e144">
+<p>This class implements <code>CloudApplicationAdapterFactory</code> interface.</p>
+<p>A factory pattern handles object instantiation without exposing the instantiation logic.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e162">
+<p><code>createAdapter()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e162">
+<p>Returns an adapter instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleCloudAdapter</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapter class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e189">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e189">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e202">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.plugin</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e212">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapter</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e212">
+<p>This class creates and initializes the adapter.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e225">
+<p><code>getConnection()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e225">
+<p>Returns the adapter&rsquo;s connection object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e237">
+<p><code>getMetadataBrowser()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e237">
+<p>Returns the adapter&rsquo;s metadata browser.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e249">
+<p><code>getRuntimeMetadataGenerator()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e249">
+<p>Returns the adapter&rsquo;s <code>MetadataGenerator</code> class.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e264">
+<p><code>getName()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e264">
+<p>Returns the name of the adapter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleCloudAdapterConnection</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleCloudAdapterConnection class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e292">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e292">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e305">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.plugin</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e315">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterConnection</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e315">
+<p>This class lets the wizard user test the adapter&rsquo;s connectivity.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e328">
+<p><code>ping()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e328">
+<p>Tests connectivity to the target application.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e340">
+<p><code>getAuthenticationScheme()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e340">
+<p>Stores authentication credentials.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleMetadataBrowser</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleMetadataBrowser class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e367">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e367">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e380">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.plugin.metadata</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e390">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleMetadataBrowser</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e390">
+<p>This class parses the metadata of the target application so it can be displayed and selected in the wizard. In this case, it creates a metadata catalog for REST services.</p>
+<p>The metadata browser uses the Cloud Application Model (CAM).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e405">
+<p><code>getMetadataParsers()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e405">
+<p>Returns a list of metadata parsers. In this case, the <code>MetadataCatalogParser</code> is returned.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e420">
+<p><code>parseMetadata()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e420">
+<p>Parses the metadata. In this case, the JSON metadata catalog is parsed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleRuntimeMetadataGenerator</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleRuntimeMetadataGenerator class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e447">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e447">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e460">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.samplecloudadapter.plugin.generator</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e470">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRuntimeMetadataGenerator</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e470">
+<p>This class generates runtime metadata artifacts such as the Cloud application configuration file, WSDL files, and so on.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e483">
+<p><code>SampleRuntimeMetadataGenerator()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e483">
+<p>Initializes class-level variables.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e495">
+<p><code>initializeContext()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e495">
+<p>Sets context objects such as the runtime connection factory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleRestAdapterProvider</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterProvider class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e522">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e522">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e535">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e545">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterProvider</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e545">
+<p>This class creates the adapter-specific UI binding. Every adapter should extend the <code>CloudAdapterUIProvider</code> abstract class.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e561">
+<p><code>getCloudAdapterUIBinding()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e561">
+<p>Returns a new instance of the adapter-specific UI binding.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e573">
+<p><code>getLocalizedAdapterType()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e573">
+<p>Returns the adapter type, which is used in the wizard header.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleCloudAdapterUIBinding</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e595">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e595">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e608">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e618">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterUIBinding</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e618">
+<p>This class implements <code>ICloudAdapterUIBinding</code> and:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Creates the <code>DefaultAdapterPluginContext</code>. This adapter-specific context creates artifacts. This context object is also passed to all pages, which can use this for passing values from one page to other.</p>
+</li>
+<li>
+<p>Gets the list of pages, and UI fields for each page. Performs business logic validation, delegates page actions to respective pages, and generates artifacts. Handles interaction between the wizard and the actual adapter pages.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e644">
+<p><code>getEditPages()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e644">
+<p>Returns the list of pages to be displayed in the wizard. The key in the map is pageId, and the value is an instance of <code>ICloudAdapterPage</code>.</p>
+<p>The sequence of pages in the map determines the sequence in the wizard.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e661">
+<p><code>generateMetadataArtifacts()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e661">
+<p>Returns <code>CloudAdapter</code> runtime artifacts based on user selections. Runtime artifacts include the Cloud adapter configuration file and the integration WSDL.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleRestAdapterWelcomePage</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterWelcomePage class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e692">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e692">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e705">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e715">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterWelcomePage</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e715">
+<p>This class implements <code>ICloudAdapterPage</code> and creates the Welcome page in the wizard.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e731">
+<p><code>getWelcomeText()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e731">
+<p>Returns welcome text, which briefly describes the adapter to the wizard user.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This class can inherit the following API to modify the default WelcomePage properties. Here is a code snippet that shows how to extend CloudAdapterWelcomePage and change the Welcome Page text details.</p>
+<pre dir="ltr">
+import oracle.tip.tools.adapters.cloud.impl.CloudAdapterWelcomePage;
+
+public class SampleCloudAdapterWelcomePage extends CloudAdapterWelcomePage {
+
+    public String getWelcomeText() {
+        return SampleCloudAdapterCloudText.getString(SampleCloudAdapterCloudText.WELCOME_PAGE_WELCOME_TEXT);
+    }
+
+} 
+</pre>
+<p>Refer to the <code>SampleCloudAdapterOperationsPage</code> class.</p>
+<div class="tblformal" id="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0__GUID-8A188A95-AB81-40CB-95DF-1814585B35AF">
+<table class="cellalignment290">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e757">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e757">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e770">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e780">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleCloudAdapterOperationsPage</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e780">
+<p>This class implements <code>ICloudAdapterPage</code> and creates the Operations page in the wizard.</p>
+<p>The Operations page displays application-specific business operations and corresponding data objects.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e799">
+<p><code>getPageId()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e799">
+<p>Gets the page ID and initializes class-level variables.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e811">
+<p><code>getPageName()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e811">
+<p>Gets the page name.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e823">
+<p><code>getWelcomeText()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e823">
+<p>Gets the page&rsquo;s welcome text.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e835">
+<p><code>getPageTitle()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e835">
+<p>Gets the page title.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e847">
+<p><code>getPageEditFields()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e847">
+<p>Returns the page fields.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e859">
+<p><code>getUpdatedEditPages()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e859">
+<p>Updates the page controls based on user selections.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e871">
+<p><code>updateBackEndModel()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e871">
+<p>Updates the back-end data model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>The following code snippet displays operations and business objects.</p>
+<pre dir="ltr">
+try { browser = CloudAdapterUtils.getMetadataBrowser(adapterPluginContext); }
+catch(Exception e) {e.printStackTrace();}
+        
+// display list of resources
+String defaultResourceName = configureResources(browser, fields);
+       
+// display list of resource operations
+configureOperations(defaultResourceName, fields);
+</pre>
+<p>Refer to the <code>SampleRestAdapterSummaryPage</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d13194e897">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d13194e897">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d13194e910">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.wizard</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e920">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterSummaryPage</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e920">
+<p>This class implements <code>ICloudAdapterPage</code> and creates the Summary page in the wizard.</p>
+<p>The Summary page displays the configuration information that the user selected on previous pages.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e939">
+<p><code>getWelcomeText()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e939">
+<p>Gets the page&rsquo;s welcome text.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d13194e951">
+<p><code>getPageEditFields()</code></p>
+</td>
+<td class="cellalignment291" headers="d13194e951">
+<p>Returns the page fields.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This page inherits and extends the UI framework&rsquo;s default Summary page properties. You can extract and display information from the adapter context as part of the configuration summary.</p>
+<pre dir="ltr">
+public class SampleRestAdapterSummaryPage extends CloudAdapterSummaryPage
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-1C145066-0BD1-4F0C-A37A-843B40DCEEE3.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

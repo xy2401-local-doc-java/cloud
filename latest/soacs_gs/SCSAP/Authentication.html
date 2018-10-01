@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST API for Oracle SOA Cloud Service</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+		<meta name="dcterms.dateCopyrighted" content="2018">
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+			
+
+        <meta name="description" content="Use the Oracle SOA Cloud Service REST API to create and manage WebLogic Server instances on Oracle Cloud.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service">
+        <meta property="og:description" content="Use the Oracle SOA Cloud Service REST API to create and manage WebLogic Server instances on Oracle Cloud.">
+        <meta name="generator" content="Oracle REST API Publisher 1.6.0">
+		<meta name="date" content="2018-09-07 10:57:47 UTC">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="SendRequests.html" title="Previous" type="text/html">
+        <link rel="next" href="UsecURL.html" title="Next" type="text/html">
+    
+    <meta name="dcterms.created" content="2018-09-07T10:58:36+00:00">
+    <meta name="dcterms.title" content="REST API for Oracle SOA Cloud Service">
+    <meta name="dcterms.category" content="cloud">
+    <meta name="dcterms.isVersionOf" content="SCSAP">
+    <meta name="dcterms.product" content="en/cloud/paas/soa-cloud">
+    <meta name="dcterms.identifier" content="E69242-28">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"paas","element_name":"Platform as a Service (PaaS)","display_in_url":true},"product_group":{"short_name":"integration-cloud","element_name":"Integration","display_in_url":false},"product":{"short_name":"soa-cloud","element_name":"SOA Cloud Service","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}} </script>
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="SendRequests.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="UsecURL.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList"> 
+ <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">REST API for Oracle SOA Cloud ServiceREST API for Oracle SOA Cloud Service</span></a></li> 
+ <li class="active" property="itemListElement" typeof="ListItem">Authentication</li> 
+</ol> 
+<a id="GUID-6A95036C-610B-4669-8CC7-CA90FBC6EB2B" name="GUID-6A95036C-610B-4669-8CC7-CA90FBC6EB2B"></a> 
+<h2 id="null-GUID-6A95036C-610B-4669-8CC7-CA90FBC6EB2B" class="sect2">Authentication</h2>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><div> 
+ <div class="infoboxnote" id="GUID-6A95036C-610B-4669-8CC7-CA90FBC6EB2B__GUID-33420530-834D-485B-86FD-39DF2DABE91C"> 
+  <p class="notep1">Note:</p> 
+  <p>Ensure that you have the appropriate log-in credentials for creating, managing, and deleting Oracle SOA Cloud Service instances, as described in <a href="http://docs.oracle.com/cloud/latest/soacs_gs/CSBCS/GUID-D67B84AE-0D5E-4541-AA39-0047220C4513.htm#CSBCS-GUID-D67B84AE-0D5E-4541-AA39-0047220C4513" target="_blank">About Oracle SOA Cloud Service Roles and User Accounts</a> in <cite>Using Oracle SOA Cloud Service</cite>. </p> 
+ </div> 
+ <p>You access the Oracle SOA Cloud Service REST resources over HTTPS and must provide the following information for authentication:</p> 
+ <ul style="list-style-type: disc;"> 
+  <li> <p>User name and password for your Oracle SOA Cloud Service account.</p> </li> 
+  <li> <p>Custom header, <code class="codeph">X-ID-TENANT-NAME</code>, to identify the identity domain. </p> </li> 
+ </ul> 
+ <p>For example, to authenticate using cURL:</p> 
+ <ul style="list-style-type: disc;"> 
+  <li> <p>Use the <code class="codeph">-u</code> cURL option to pass the user name and password for your Oracle SOA Cloud Service account (for example, <code class="codeph">joe@example.com</code> and <code class="codeph">Mypassword1!</code>). </p> </li> 
+  <li> <p>Use the <code class="codeph">-H</code> cURL option to pass the <code class="codeph">X-ID-TENANT-NAME</code> custom header. </p> </li> 
+  <li> <p>When running cURL from a Windows command shell only, set the cURL environment variable, <code class="codeph">CURL_CA_BUNDLE</code>, to the location of an SSL certificate authority (CA) certificate file or bundle to authenticate against the Verisign CA certificate. Alternatively, you can specify the location of your local CA certificate bundle on the command line, using the <code class="codeph">--cacert</code> command line option. </p> <p>You can download an SSL CA certificate bundle from <a href="http://curl.haxx.se/docs/caextract.html" target="_blank">http://curl.haxx.se/docs/caextract.html </a>or provide your own. For information about CA certificate verification using cURL, see: <a href="http://curl.haxx.se/docs/sslcerts.html" target="_blank">http://curl.haxx.se/docs/sslcerts.html</a>. </p> </li> 
+ </ul> 
+ <p>The following example cURL command retrieves the details of the <code class="codeph">ExampleService</code> service instance: </p>
+ <pre class="oac_no_warn" dir="ltr">curl -i -X GET <span class="bold">-u joe@example.com:Mypassword1!</span> <span class="bold">-H "X-ID-TENANT-NAME:ExampleIdentityDomain</span>" https://psm.us.oraclecloud.com/paas/api/v1.1/instancemgmt/ExampleIdentityDomain/services/SOA/instances/ExampleService
+</pre>
+ <div class="infoboxnote"> 
+  <p class="notep1">Note:</p>This example shows the URL prefix for the United States (
+  <code class="codeph">soacs</code>). For information about the URL prefixes for other regions of the world, see 
+  <a href="SendRequests.html" target="_blank">Send Requests</a>. 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Generating a Secure Shell (SSH) Public/Private Key Pair</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7229DBC7-553C-4299-9563-D86886F8C80A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1"></a> <span id="PAGE" style="display:none;">34/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1" class="sect1">Generating a Secure Shell (SSH) Public/Private Key Pair</h1>
+<div>
+<div class="section">
+<p>Several tools exist to generate SSH public/private key pairs. The following sections show how to generate an SSH key pair on UNIX, UNIX-like and Windows platforms.</p>
+</div>
+<!-- class="section" --></div>
+<div class="props_rev_3"><a id="GUID-9BF1A3D2-FD91-47E5-8693-A8DCCCCA1175"></a>
+<h2 id="UOMCS-GUID-9BF1A3D2-FD91-47E5-8693-A8DCCCCA1175" class="sect2">Generating an SSH Key Pair on UNIX and UNIX-Like Platforms Using the ssh-keygen Utility</h2>
+<div>
+<div class="section">
+<p>UNIX and UNIX-like platforms (including Solaris and Linux) include the ssh-keygen utility to generate SSH key pairs.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To generate an SSH key pair on UNIX and UNIX-like platforms using the ssh-keygen utility:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Navigate to your home directory:</span>
+<div>
+<pre dir="ltr">
+$ <span class="bold">cd $HOME</span>
+</pre></div>
+</li>
+<li class="stepexpand"><span>Run the ssh-keygen utility, where <span class="italic"><span class="bold"><code class="codeph">filename</code></span></span> is your choice of file name for the private key:</span>
+<div>
+<pre dir="ltr">
+$ <span class="bold">ssh-keygen -b 2048 -t rsa -f <span class="italic">filename</span></span>
+</pre>
+<p>The ssh-keygen utility prompts you for a passphrase for the private key.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Enter a passphrase for the private key, or press Enter to create a private key without a passphrase:</span>
+<div>
+<pre dir="ltr">
+Enter passphrase (empty for no passphrase): <span class="italic"><span class="bold">passphrase</span></span>
+</pre>
+<div class="infobox-note" id="GUID-9BF1A3D2-FD91-47E5-8693-A8DCCCCA1175__GUID-FD1FDC09-FB4D-44C3-A825-72B245DDBB55">
+<p class="notep1">Note:</p>
+<p>While a passphrase is not required, you should specify one as a security measure to protect the private key from unauthorized use. When you specify a passphrase, a user must enter the passphrase every time the private key is used.</p>
+</div>
+<p>The ssh-keygen utility prompts you to enter the passphrase again.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Enter the passphrase again, or press Enter again to continue creating a private key without a passphrase:</span>
+<div>
+<pre dir="ltr">
+Enter the same passphrase again: <span class="italic"><span class="bold">passphrase</span></span>
+</pre></div>
+</li>
+<li class="stepexpand"><span>The ssh-keygen utility displays a message indicating that the private key has been saved as <span class="italic"><code class="codeph">filename</code></span> and the public key has been saved as <span class="italic"><code class="codeph">filename</code></span><code class="codeph">.pub</code>. It also displays information about the key fingerprint and randomart image.</span></li>
+</ol>
+</div>
+</div>
+<div class="props_rev_3"><a id="GUID-6475DFF2-250E-457A-86C8-4133CD1051BA"></a>
+<h2 id="UOMCS-GUID-6475DFF2-250E-457A-86C8-4133CD1051BA" class="sect2">Generating an SSH Key Pair on Windows Using the PuTTYgen Program</h2>
+<div>
+<div class="section">
+<p>The PuTTYgen program is part of PuTTY, an open source networking client for the Windows platform.</p>
+</div>
+<!-- class="section" -->
+<div class="section">To generate an SSH key pair on Windows using the PuTTYgen program:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Download and install PuTTY or PuTTYgen.</span>
+<div>
+<p>To download PuTTY or PuTTYgen, go to http://www.putty.org/ and click the <span class="bold">You can download PuTTY here</span> link.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Run the PuTTYgen program.</span>
+<div>
+<p>The PuTTY Key Generator window is displayed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Set the <span class="bold">Type of key to generate</span> option to <span class="bold">SSH-2 RSA</span>.</span></li>
+<li class="stepexpand"><span>In the <span class="bold">Number of bits in a generated key</span> box, enter <span class="bold">2048</span>.</span></li>
+<li class="stepexpand"><span>Click Generate to generate a public/private key pair.</span>
+<div>
+<p>As the key is being generated, move the mouse around the blank area as directed.</p>
+</div>
+</li>
+<li class="stepexpand"><span>(Optional) Enter a passphrase for the private key in the <span class="bold">Key passphrase</span> box and reenter it in the <span class="bold">Confirm passphrase</span> box.</span>
+<div>
+<div class="infobox-note" id="GUID-6475DFF2-250E-457A-86C8-4133CD1051BA__GUID-62DD6E88-F32D-4DAE-AD8E-83F1DE152597">
+<p class="notep1">Note:</p>
+<p>While a passphrase is not required, you should specify one as a security measure to protect the private key from unauthorized use. When you specify a passphrase, a user must enter the passphrase every time the private key is used.</p>
+</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save private key</span> to save the private key to a file. To adhere to file-naming conventions, you should give the private key file an extension of <code class="codeph">.ppk</code> (PuTTY private key).</span></li>
+<li class="stepexpand"><span>Select all of the characters in the <span class="bold">Public key for pasting into OpenSSH authorized_keys file</span> box.</span>
+<div>
+<p>Make sure you select all the characters, not just the ones you can see in the narrow window. If a scroll bar is next to the characters, you aren't seeing all the characters.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Right click somewhere in the selected text and select <span class="bold">Copy</span> from the menu.</span></li>
+<li class="stepexpand"><span>Open a text editor and paste the characters, just as you copied them. Start at the first character in the text editor, and do not insert any line breaks.</span></li>
+<li class="stepexpand"><span>Save the text file in the same folder where you saved the private key, using the <code class="codeph">.pub</code> extension to indicate that the file contains a public key.</span></li>
+<li class="stepexpand"><span>If you or others are going to use an SSH client that requires the OpenSSH format for private keys (such as the <code class="codeph">ssh</code> utility on Linux), export the private key:</span>
+<ol>
+<li><span>On the <span class="bold">Conversions</span> menu, choose <span class="bold">Export OpenSSH key</span> .</span></li>
+<li><span>Save the private key in OpenSSH format in the same folder where you saved the private key in <code class="codeph">.ppk</code> format, using an extension such as <code class="codeph">.openssh</code> to indicate the file's content.</span></li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-7229DBC7-553C-4299-9563-D86886F8C80A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

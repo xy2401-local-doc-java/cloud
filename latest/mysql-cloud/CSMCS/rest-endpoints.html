@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST API for MySQL Cloud Service - All REST Endpoints</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/" >
+		<meta name="dcterms.dateCopyrighted" content="2018" >
+		<meta name="dcterms.category" content="cloud" >
+		<meta name="dcterms.identifier" content="CSMCS" >
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+			
+
+        <meta name="description" content="Use the REST API to manage MySQL Cloud Service instances">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for MySQL Cloud Service">
+        <meta property="og:description" content="Use the REST API to manage MySQL Cloud Service instances">
+        <meta name="generator" content="Oracle REST API Publisher 1.5.7" >
+		<meta name="date" content="2018-07-12 16:00:00 UTC" >
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for MySQL Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="index.html" title="Previous" type="text/html">
+        <link rel="next" href="quick-start.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="index.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="quick-start.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for MySQL Cloud Service</a></li>
+                    <li class="active">Endpoints</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+                <h2>All REST Endpoints</h2>
+            </header>
+
+            <div class="clearfix">
+                <form class="form-inline endpoints pull-left">
+                    <label for="sortby" class="control-label">Sort by</label>
+
+                    <div id="sortby" class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="sort-radio" value="summary" autocomplete="off" checked> Task
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="path" autocomplete="off"> Path
+                        </label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="sort-radio" value="method" autocomplete="off"> Method
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <label>
+                            <input id="grouped" type="checkbox" checked> Group by API
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <section>
+
+<div class="tab-content">
+<div role="tabpanel" class="tab-pane fade in active" id="summary-sort-grouped">
+<div class="panel panel-default">
+<div class="panel-heading">Access Rules</div>
+<div class="panel-body">
+<div>View and manage network access rules for the MySQL Cloud Service instance virtual machines.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-accessrules-post.html">Add an Access Rule</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/accessrules</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-accessrules-rulename-put.html">Enable, Disable, or Delete an Access Rule</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/accessrules/{ruleName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-accessrules-get.html">View All Access Rules</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/accessrules</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Activity Logs</div>
+<div class="panel-body">
+<div>View status information and activity messages of operations performed on your MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-activitylog-identitydomainid-filter-get.html">List All Activity</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/activitylog/{identityDomainId}/filter</code></div></dd>
+<dt><a href="op-paas-api-v1.1-activitylog-identitydomainid-message-logid-get.html">View Activity by Log Id</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/activitylog/{identityDomainId}/message/{logId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-activitylog-identitydomainid-job-jobid-get.html">View the Status of an Operation by Job Id</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/activitylog/{identityDomainId}/job/{jobId}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Backups</div>
+<div class="panel-body">
+<div>Manage backup and restore operations on MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-deletedbackups-post.html">Delete a Backup</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/deletedbackups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-backups-post.html">Start a Backup Operation</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/backups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-restoredbackups-post.html">Start a Restore Operation</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/restoredbackups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-backupconfig-post.html">Update a Backup Configuration</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/backupconfig</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-backups-backupid-get.html">View a Backup</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/backups/{backupId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-backupconfig-get.html">View a Backup Configuration</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/backupconfig</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-deletedbackups-jobid-get.html">View a Deleted Backup</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/deletedbackups/{jobId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-backups-get.html">View All Backup Operations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/backups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-deletedbackups-get.html">View All Deleted Backups</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/deletedbackups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-restoredbackups-get.html">View All Restore Operations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/restoredbackups</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-restoredbackups-jobid-get.html">View Job Status of a Restore Operation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/restoredbackups/{jobId}</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Health Monitoring</div>
+<div class="panel-body">
+<div>Monitor the health of MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-healthcheck-get.html">Monitor a Service Instance</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/healthcheck</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">IP Reservations</div>
+<div class="panel-body">
+<div>View and manage IP reservations for your MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-network-identitydomainid-services-mysqlcs-ipreservations-post.html">Create an IP Reservation</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/network/{identityDomainId}/services/MySQLCS/ipreservations</code></div></dd>
+<dt><a href="op-paas-api-v1.1-network-identitydomainid-services-mysqlcs-ipreservations-ipresname-delete.html">Delete an IP Reservation</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/paas/api/v1.1/network/{identityDomainId}/services/MySQLCS/ipreservations/{ipResName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-network-identitydomainid-services-mysqlcs-ipreservations-get.html">View All IP Reservations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/network/{identityDomainId}/services/MySQLCS/ipreservations</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Patches</div>
+<div class="panel-body">
+<div>Patch MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-patchid-put.html">Apply a Patch</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/{patchId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-checks-patchid-put.html">Precheck Application of a Patch</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/checks/{patchId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-rollbackid-rollback-put.html">Rollback a Patch</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/{rollbackId}/rollback</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-applied-job-jobid-get.html">View a Patch Operation Status</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/applied/job/{jobId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-applied-get.html">View All Applied Patches</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/applied</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-available-get.html">View All Available Patches</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/available</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-checks-job-jobid-get.html">View Status of a Patching Precheck Operation</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/checks/job/{jobId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-patches-checks-get.html">View Status of All Patching Precheck Operations</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/patches/checks</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">SSH Keys</div>
+<div class="panel-body">
+<div>View and manage secure shell (SSH) public keys for Oracle MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-credentials-crednames-credentialname-post.html">Add an SSH Public Key</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/credentials/crednames/{credentialName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-credentials-credentialname-get.html">View an SSH Key&#x27;s Details</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/credentials/{credentialName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-credentials-crednames-credentialname-get.html">View an SSH Key&#x27;s Summary</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/credentials/crednames/{credentialName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-credentials-get.html">View Selected SSH Keys&#x27; Details</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/credentials</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-credentials-crednames-get.html">View Selected SSH Keys&#x27; Summaries</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/credentials/crednames</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Service Instances</div>
+<div class="panel-body">
+<div>Create and manage MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-storage-add-post.html">Add Storage to a Service instance</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/storage/add</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-post.html">Create a Service Instance</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-put.html">Delete a Service Instance</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-hosts-scale-post.html">Scale a Service instance</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/hosts/scale</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-hosts-function-post.html">Start, Stop, or Restart a Service Instance</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/hosts/{function}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-get.html">View a Service Instance</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-get.html">View All Service Instances</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-tags-get.html">View Tags for a Service Instance</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/tags</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Snapshots</div>
+<div class="panel-body">
+<div>Create and manage snapshots of MySQL Cloud Service instances.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-snapshots-post.html">Create a Snapshot</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/snapshots</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-snapshots-snapshotname-delete.html">Delete a Snapshot</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/snapshots/{snapshotName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-snapshots-snapshotname-get.html">View a Snapshot</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/snapshots/{snapshotName}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-instancemgmt-identitydomainid-services-mysqlcs-instances-serviceid-snapshots-get.html">View All Snapshots</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/instancemgmt/{identityDomainId}/services/MySQLCS/instances/{serviceId}/snapshots</code></div></dd>
+
+</dl>
+</div>
+</div><div class="panel panel-default">
+<div class="panel-heading">Tags and Tag Assignments</div>
+<div class="panel-body">
+<div>Create and manage tags and their assignments.</div>
+<dl class="list-group schema-properties">
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-tags-post.html">Create and Assign Tags</a></dt><dd><div>Method: <span class="l-post">post</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/tags</code></div></dd>
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-assignments-put.html">Create and Delete Tag Assignments</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/assignments</code></div></dd>
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-tags-tagkey-tagvalue-delete.html">Delete a Tag</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/tags/{tagKey}/{tagValue}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-tags-tagkey-delete.html">Delete All Tags by Key</a></dt><dd><div>Method: <span class="l-delete">delete</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/tags/{tagKey}</code></div></dd>
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-tags-put.html">Delete Multiple Tags</a></dt><dd><div>Method: <span class="l-put">put</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/tags</code></div></dd>
+<dt><a href="op-paas-api-v1.1-tags-identitydomainid-tags-get.html">List All Tags</a></dt><dd><div>Method: <span class="l-get">get</span></div><div>Path: <code>/paas/api/v1.1/tags/{identityDomainId}/tags</code></div></dd>
+
+</dl>
+</div>
+</div>
+</div>
+<div role="tabpanel" class="tab-pane fade" id="summary-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="path-sort-ungrouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-grouped"></div>
+<div role="tabpanel" class="tab-pane fade" id="method-sort-ungrouped"></div>
+</div>
+
+            </section>
+
+        </article>
+    </body>
+</html>

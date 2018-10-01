@@ -1,0 +1,1947 @@
+<!DOCTYPE html ><html lang="en">
+   <head><meta charset="utf-8">
+      
+      <title>Dashboard Creation (Chapter 4) R10</title>
+      <meta content="all" name="robots" >
+      <meta content="yes" name="mos_crawl" >
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="dcterms.title">
+      <meta content="Creating HCM Cloud Analytics for Oracle Transactional Business Intelligence Enterprise" name="doctitle">
+      <meta content="E61673-02" name="dcterms.identifier">
+      <meta content="E61632-01" name="partno">
+      <meta content="FAARC" name="dcterms.isVersionOf" >
+      <meta content="Fusion Publishing Server, UAE Print Staging" name="generator" >
+      <meta content="Fri Apr 29 11:21:56 PDT 2016" name="dcterms.created">
+      <meta name="relnum" content="Release 10">
+      <meta name="rel_num" content="Release 10">
+      <meta name="keywords" content="OTBI Enterprise;">
+      <link type="text/html" title="Home" href="../../index.html" rel="Start" >
+      <link type="text/html" title="Copyright" href="../dcommon/html/cpyr.htm" rel="Copyright">
+      <script src="../dcommon/js/headfoot.js" type="application/javascript"></script>
+      <script src="../nav/js/doccd.js" type="application/javascript"></script>
+      <link type="text/html" title="Contents" href="toc.htm" rel="Contents">
+      <link type="text/html" title="Previous" href="FAARC1654990.htm
+      " rel="Prev">
+      <link type="text/html" title="Next" href="glossary.htm" rel="Next">
+      <link type="application/pdf" title="PDF version" href="FAARC.pdf" rel="alternate">
+      <link type="application/epub+zip" title="ePub version" href="FAARC.epub" rel="alternate">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+      <link type="text/css" href="../dcommon/css/header.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/footer.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/fonts.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/foundation.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/codemirror.css" rel="stylesheet">
+      <link type="text/css" href="../nav/css/html5.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-480-tablet.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-768-laptop.css" rel="stylesheet">
+      <link type="text/css" href="../dcommon/css/respond-1140-deskop.css" rel="stylesheet">
+      <script src="../dcommon/js/modernizr.js" type="application/javascript"></script>
+      <script src="../dcommon/js/codemirror.js" type="application/javascript"></script>
+      <script src="../dcommon/js/jquery.js" type="application/javascript"></script>
+      <script src="../dcommon/js/foundation.min.js" type="application/javascript"></script>
+      <script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5" type="application/javascript"></script>
+      <script src="../dcommon/js/jqfns.js" type="application/javascript"></script>
+      <script src="../dcommon/js/ohc-inline-videos.js" type="application/javascript"></script>
+      <meta class="foundation-mq-topbar">
+      <link type="text/css" href="../dcommon/css/fusionapps.css" rel="stylesheet">
+      
+      <meta name="description" content="After you create analyses, prompts, and any other custom components you need for your dashboard pages, you're ready to build
+      your dashboard. When you create your dashboard and all the pages: To build your dashboard in the application:"><script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <header></header>
+      <div class="row" id="CONTENT">
+         <div class="IND large-9 medium-8 columns"><span id="PAGE" style="display:none;">7/8</span><div id="FAARC1654991" class="fusiondoc">
+               <h1 class="chapter"><span class="chapter-number">4</span>Dashboard Creation
+               </h1>
+               <p class="chapterintro">This chapter contains the following:</p>
+               <ul class="intro">
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1672010">Creating Dashboards and Pages: Overview</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1683410">Creating Dashboards and Setting Properties: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1673678">Copying the HR Executive Dashboard: Worked Example</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1684082">Creating Perspective Pages: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1684222">Creating Standard Detail Pages and Show Data Pages: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1698786">Creating Inspector Pages: Procedure</a></p>
+                  </li>
+                  <li>
+                     <p class="guidemap_sub_chapter"><a href="#FAARC1684485">Adding Links to Detail Pages: Procedure</a></p>
+                  </li>
+               </ul>
+               
+               <div class="sect1" id="FAARC1672010">
+                  <h2>Creating Dashboards and Pages: Overview</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>After you create analyses, prompts, and any
+                     other custom components you need for your dashboard pages, you're
+                     ready to build your dashboard. 
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1683340">
+                     <h3 class="topictitle">General Considerations</h3>
+                     
+                     <p>When you create your dashboard and all the
+                        pages:
+                     </p>
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Leave settings in their default
+                              state unless specified otherwise.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Avoid using custom HTML code and
+                              scripts.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Use styles and colors as described
+                              in this chapter so that your pages look consistent with predefined
+                              dashboards.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1683341">
+                     <h3 class="topictitle">Process Overview</h3>
+                     
+                     <p>To build your dashboard in the application:</p>
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Create a dashboard, which starts
+                              out blank, and set its properties. Or, you can copy a predefined dashboard
+                              and customize it.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Create perspective pages within
+                              your dashboard.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Create detail pages within your
+                              dashboard.
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>You create a separate dashboard for each inspector
+                                 page.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Back in the main body of perspective
+                              pages, where analyses are displayed, create links that go to detail
+                              pages.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1683410">
+                  <h2>Creating Dashboards and Setting Properties: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>Like analyses and prompts, a dashboard is
+                     an individual item that you create and then save in the catalog. As
+                     part of creating your dashboard, you need to set the style in the
+                     dashboard properties, which affects how every page in the dashboard
+                     looks.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1683409">
+                     <h3 class="topictitle">Creating Your Dashboard</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Dashboard</span> under <span class="uicontrol">Analysis and Interactive Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the dashboard name to appear
+                              under the <span class="uicontrol">Dashboards</span> menu.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Keep the default location of the
+                              dashboard in the catalog, within <span><span class="uicontrol">Shared Folders</span> - <span class="uicontrol">Custom</span> - <span class="uicontrol">Dashboard</span></span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Choose to add content now, and
+                              click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the dashboard edit mode, click
+                              the <span class="uicontrol">Tools</span> icon, and select <span class="uicontrol">Dashboard Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">BIAppsCloud</span> as the style.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">page 1</span> in the Dashboard Pages table, and click the <span class="uicontrol">Rename</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the name of the first perspective
+                              page you want to build, and click <span class="uicontrol">OK</span>. Users see this name in the row of tabs on the dashboard.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Deselect the <span class="uicontrol">Show Add To Briefing Book</span> check box.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>, and save your dashboard.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1673678">
+                  <h2>Copying the HR Executive Dashboard: Worked Example</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>To create a custom dashboard for Oracle Transactional
+                     Business Intelligence Enterprise, you can either create a new dashboard
+                     following the guidelines and procedures in this guide, or you can
+                     copy the HR Executive Dashboard and make changes to the copy.
+                  </p>
+                  
+                  
+                  
+                  <h3 class="topictitle">Creating a Copy of the HR Executive Dashboard</h3>
+                  
+                  
+                  <ol>
+                     
+                     <li>
+                        
+                        <p>Access the Home page for Oracle Business Intelligence
+                           Enterprise Edition.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Catalog</span> to open the Business Intelligence Catalog.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand <span class="uicontrol">Shared Folders</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand <span class="uicontrol">Human Capital Management</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Expand <span class="uicontrol">Dashboards</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">Dashboards</span> and select the HR Executive Dashboard.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>At the top of the page, click the <span class="uicontrol">Edit </span>icon.
+                        </p>
+                        
+                        
+                        <p>The Edit icon resembles a pencil.</p>
+                        
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>In the upper-right corner of the page, click <span class="uicontrol">Save Dashboard As</span> and navigate to the folder
+                           where you want to create your new dashboard such as /Shared Folders/Custom
+                           Dashboards.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Edit the <span class="uicontrol">Name</span> HR Executive Dashboard to change it to a customized name.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Enter a <span class="uicontrol">Description</span> such as Customized HR Dashboard.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>Click <span class="uicontrol">OK</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To customize a page, click <span class="uicontrol">Page Options</span> and select <span class="uicontrol">Edit
+                              Dashboard</span>.
+                        </p>
+                        
+                     </li>
+                     
+                     <li>
+                        
+                        <p>To customize an element on the page, click <span class="uicontrol">Properties</span> and select an item to edit, for
+                           example, select <span class="uicontrol">Edit Analysis</span>.
+                        </p>
+                        
+                     </li>
+                     
+                  </ol>
+                  
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1684082">
+                  <h2>Creating Perspective Pages: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>By default, a new dashboard comes with one
+                     blank page that you can use for your first perspective page. You can
+                     add more perspective pages, each as a tab in the dashboard. For each
+                     page, you determine the layout using columns and sections, add analyses
+                     and other content, and set properties for components within the page.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1684081">
+                     <h3 class="topictitle">Adding and Reordering Perspective Pages</h3>
+                     
+                     <p>To add perspective pages, with your dashboard in
+                        edit mode:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Add Dashboard Page</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the name you want users to
+                              see in the row of tabs on the dashboard, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 1 and 2 to add more
+                              pages.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Tools</span> icon, and select <span class="uicontrol">Dashboard
+                                 Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Dashboard Pages table, deselect
+                              the <span class="uicontrol">Show Add To Briefing Book</span> check box for each page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>To reorder pages, select the page
+                              you want to move and use the icons to the right of the table.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684115">
+                     <h3 class="topictitle">Adding Prompts</h3>
+                     
+                     <p>To put prompts on your perspective page:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a column into the main area on the right.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the column, click the <span class="uicontrol">Properties</span> icon, and select <span class="uicontrol">Column Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the icon after the <span class="uicontrol">Background Color</span> field to open the color
+                              selector.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <code>#F7F9FA</code>, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a section into the column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the section, click the <span class="uicontrol">Properties</span> icon, and deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Catalog pane, open <span class="uicontrol">Shared Folders</span> and find your prompt.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the prompt and drag it into
+                              the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684168">
+                     <h3 class="topictitle">Creating the Page Header</h3>
+                     
+                     <p>To add the page title and description:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another column to the right
+                              of the prompts column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the properties for the right
+                              column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Additional Formatting
+                              Options section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the <span class="uicontrol">Indent (Left Padding)</span> field, enter <span class="uicontrol">10</span>, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a section into the column.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties, and
+                              deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties again
+                              and select <span class="uicontrol">Format Section</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Custom CSS Style Options
+                              (HTML Only) section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Use Custom CSS Class</span> check box, and enter <code>otbi_title</code> in the field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a text into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the text, and click
+                              the <span class="uicontrol">Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the page title, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put another section below the one
+                              for the title. This second section is for the page description.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 6 through 13, except:</p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Enter <code>otbi_subtitle</code> for the custom CSS class.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Enter the description instead of
+                                    the page title.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684186">
+                     <h3 class="topictitle">Adding Performance Tiles</h3>
+                     
+                     <p>To put the row of performance tiles on your perspective
+                        page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another section below the page
+                              description.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties, and
+                              deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Catalog pane, find each
+                              performance tile and drag it into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>If you also have sparklines for
+                              each tile, then put another section right below the one for the tiles.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 2 and 3, except you're
+                              placing the corresponding sparkline from the catalog under each performance
+                              tile.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684210">
+                     <h3 class="topictitle">Adding Analyses</h3>
+                     
+                     <p>To put the primary and additional analyses on your
+                        perspective page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another section below the performance
+                              tiles or sparklines.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties, and
+                              deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Catalog pane, find the analysis
+                              and drag it into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>If the default view is not what
+                              you want to show, hover over the analysis, click the <span class="uicontrol">Properties</span> icon, and select the view you
+                              want under <span class="uicontrol">Show View</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put more sections at the bottom,
+                              if needed, and repeat steps 2 through 4. 
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>If any of the additional sections contain multiple
+                                 analyses, then make sure to put them in the same section.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1684222">
+                  <h2>Creating Standard Detail Pages and Show Data Pages: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>You create standard detail pages and show
+                     data pages as part of your dashboard, but hide them so that they don't
+                     appear to the user as tabs in the dashboard. You then create links
+                     between the perspective and detail pages.
+                  </p>
+                  
+                  
+                  
+                  <div class="infobox-note">
+                     <p class="notep1">Note</p>
+                     
+                     <p>For show data pages, there's an extra procedure for
+                        adding an <span class="uicontrol">Export</span> link.
+                     </p>
+                     
+                  </div>
+                  
+                  
+                  <div class="sect2" id="FAARC1693071">
+                     <h3 class="topictitle">Adding Detail Pages</h3>
+                     
+                     <p>To add detail pages, with your dashboard in edit
+                        mode:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Add Dashboard Page</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter a brief name for the page,
+                              and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 1 and 2 to add more
+                              pages.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Tools</span> icon, and select <span class="uicontrol">Dashboard
+                                 Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Dashboard Pages table, deselect
+                              the <span class="uicontrol">Show Add To Briefing Book</span> check box for each page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Hide Page</span> check box for each detail page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684298">
+                     <h3 class="topictitle">Adding Prompts</h3>
+                     
+                     <p>To put prompts on your detail page:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a column into the main area on the right.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the column, click the <span class="uicontrol">Properties</span> icon, and select <span class="uicontrol">Column Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the icon after the <span class="uicontrol">Background Color</span> field to open the color
+                              selector.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <code>#F7F9FA</code>, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a section into the column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the section, click the <span class="uicontrol">Properties</span> icon, and deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Catalog pane, open <span class="uicontrol">Shared Folders</span> and find the same prompts
+                              used in the parent perspective page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the prompt and drag it into
+                              the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684299">
+                     <h3 class="topictitle">Creating the Page Header</h3>
+                     
+                     <p>To add the parent perspective page title, the detail
+                        page title, and a link back to the perspective page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another column to the right
+                              of the prompts column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the properties for the right
+                              column.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Additional Formatting
+                              Options section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the <span class="uicontrol">Indent (Left Padding)</span> field, enter <span class="uicontrol">10</span>, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a section into the column.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties, and
+                              deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties again
+                              and select <span class="uicontrol">Format Section</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Cell section, select <span class="uicontrol">Bottom</span> for the vertical alignment.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Custom CSS Style Options
+                              (HTML Only) section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Use Custom CSS Class</span> check box, and enter <code>otbi_title</code> in the field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a text into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the text, and click
+                              the <span class="uicontrol">Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the same title as the parent
+                              perspective page, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag an action link and drop it to the right of the title text.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the action link, and
+                              click the <span class="uicontrol">Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the link text, enter <span class="uicontrol">Go to</span> followed by the parent perspective
+                              page name, the one that displays on the tab.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New Action</span> icon after the <span class="uicontrol">Action</span> field, and select <span class="uicontrol">Navigate to BI Content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Find and select the parent perspective
+                              page in the catalog, and click <span class="uicontrol">OK</span> until you close all dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put another section below the one
+                              for the parent page title. This second section is for the detail page
+                              title.
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>If you're creating a show data page, you don't need
+                                 this section for a detail page title. You can just skip to step 22
+                                 and save your work.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 6 through 14, except:</p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Skip step 8.</p>
+                              </li>
+                              
+                              <li>
+                                 <p>Enter <code>otbi_subpage</code> for the custom CSS class.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Enter the detail page title instead
+                                    of the perspective page title. This should be the same as what you
+                                    entered in step 9 when you created the dashboard for your detail page.
+                                 </p>
+                                 
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684397">
+                     <h3 class="topictitle">Adding Analyses</h3>
+                     
+                     <p>To put analyses on your detail page:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another section under the page
+                              header.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties, and
+                              deselect <span class="uicontrol">Collapsible</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Catalog pane, find the analysis
+                              and drag it into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>If the default view is not what
+                              you want to show, hover over the analysis, click the <span class="uicontrol">Properties</span> icon, and select the view you
+                              want under <span class="uicontrol">Show View</span>.
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>If you want to show the title view, set this first
+                                 view to the title view, and then create another section right below
+                                 for another view of the same analysis.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>If you're not creating a show data
+                              page, then put more sections at the bottom, if needed, and repeat
+                              steps 2 through 4. 
+                           </p>
+                           <div class="infobox-note">
+                              <p class="notep1">Note</p>
+                              
+                              <p>If any section contains multiple analyses, then make
+                                 sure to put them in the same section.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684418">
+                     <h3 class="topictitle">Adding Export Link</h3>
+                     
+                     <p>To add an <span class="uicontrol">Export</span> link below the table for a show data page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Tools</span> icon and select <span class="uicontrol">Page Report
+                                 Links</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Customize</span> option.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Export</span> check box.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1698786">
+                  <h2>Creating Inspector Pages: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>You create an inspector page as a separate
+                     dashboard with multiple hidden tabs, or dashboard pages. Each page
+                     represents a category of information describing that business object.
+                     For example, if your inspector page has three categories, then you
+                     create a dashboard with three dashboard pages. You then create links
+                     from data values on perspective pages to the corresponding inspector
+                     page (usually, the dashboard page for the first category).
+                  </p>
+                  
+                  
+                  
+                  <div class="infobox-note">
+                     <p class="notep1">Note</p>
+                     
+                     <p>After you preform the prerequisites and create the
+                        dashboard for your inspector page, follow the rest of the steps for
+                        each page in the dashboard.
+                     </p>
+                     
+                  </div>
+                  
+                  
+                  <div class="sect2" id="FAARC1698793">
+                     <h3 class="topictitle">Prerequisites</h3>
+                     
+                     <p>Before you create your inspector page:</p>
+                     
+                     
+                     <ul>
+                        
+                        <li>
+                           <p>Create a prompt with just one column,
+                              the one that you want to use for the link to open the inspector page.
+                              For example, if you want users to click on a person name to open an
+                              inspector page about that person, then use the person name column.
+                              This prompt is used as part of creating the dashboard for your inspector
+                              page, so that the page displays information for the right business
+                              object.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Create an analysis to be used to
+                              show the business object value in the page title, for example the
+                              specific person name.
+                           </p>
+                           
+                           <ol>
+                              
+                              <li>
+                                 <p>Add just one column, the same as
+                                    the one for the prompt.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Add a filter for the column, selecting <span class="uicontrol">is prompted</span> for the <span class="uicontrol">Operator</span> field.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>In the Results tab, remove all
+                                    views and add a Narrative view (found under <span class="uicontrol">Other Views</span>).
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Edit the view and enter <span class="uicontrol">@1</span> in the <span class="uicontrol">Narrative</span> field.
+                                 </p>
+                              </li>
+                              
+                           </ol>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Create an analysis with table views
+                              that display the identifiers for your inspector page.
+                           </p>
+                        </li>
+                        
+                     </ul>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1698785">
+                     <h3 class="topictitle">Creating the Dashboard for Your Inspector Page</h3>
+                     
+                     <p>Follow these steps:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New</span> menu, and select <span class="uicontrol">Dashboard</span> under <span class="uicontrol">Analysis and Interactive Reporting</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter a dashboard name, for example
+                              the business object that your inspector page is for.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Change the location of the dashboard
+                              in the catalog, from <span><span class="uicontrol">Shared
+                                    Folders</span> - <span class="uicontrol">Custom</span> - <span class="uicontrol">Dashboard</span></span> to another
+                              folder under <span class="uicontrol">Custom</span>, not <span class="uicontrol">Dashboard</span>. This way the dashboard doesn't
+                              appear in the Dashboards menu.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Choose to add content now, and
+                              click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the Add Dashboard Page icon.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Enter the name of the second category
+                              in the inspector page, and click OK
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 5 and 6 to add more
+                              pages, one for each of the remaining categories.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Tools</span> icon, and select <span class="uicontrol">Dashboard
+                                 Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">BIAppsCloud</span> as the style.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Edit</span> icon after <span class="uicontrol">Filters and
+                                 Variables</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Embed new hidden dashboard prompt</span> icon, find and select
+                              the prompt you created, and click <span class="uicontrol">OK</span> until you're back in the Dashboard Properties dialog box.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">page 1</span> in the Dashboard Pages table, and click the <span class="uicontrol">Rename</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter the name of the first category
+                              in the inspector page, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For each row, select the <span class="uicontrol">Hide Page</span> check box, and deselect the <span class="uicontrol">Show Add To Briefing Book</span> check box.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>, and save your dashboard.
+                           </p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1698894">
+                     <h3 class="topictitle">Creating the Page Header</h3>
+                     
+                     <p>To add the page title, description, and identifiers:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a column into the main area on the right.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the column, click the <span class="uicontrol">Properties</span> icon, and select <span class="uicontrol">Column Properties</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Border section, select the
+                              bottom border in the diagram.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">Single</span> for the <span class="uicontrol">Border Style</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <code>#EEEEEE</code> as the border color, and click <span class="uicontrol">OK</span> until you close all dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Follow steps 5 through 14 for creating
+                              page headers in standard detail pages, except:
+                           </p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Enter <span class="uicontrol">Top</span> for the vertical alignment.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>For the text, enter the business
+                                    object followed by a colon, for example <span class="uicontrol">Person:</span>.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>From the Catalog pane, find the
+                              analysis you created for the page title, and drop it to the right
+                              of the text object.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put another text to the right of
+                              the analysis, with the name of the category.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put another section below the first.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>For the section properties, deselect <span class="uicontrol">Collapsible</span> and enter <code>otbi_subtitle</code> for the custom CSS class.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a text in this section and
+                              enter the page description.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a section below the one for
+                              the page description.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the section properties, deselect <span class="uicontrol">Collapsible</span> and enter <code>otbi_menu</code> for the custom CSS class.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Catalog pane, find the
+                              analysis with the table views you created for the identifiers, and
+                              drop it in this section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1699080">
+                     <h3 class="topictitle">Creating the Menu of Categories</h3>
+                     
+                     <p>To add a list of category links that appears on the
+                        left of your inspector page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put a column under the one for
+                              the page header.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the column properties</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Border section, select the
+                              right border in the diagram.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select <span class="uicontrol">Single</span> for the <span class="uicontrol">Border Style</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <code>#EEEEEE</code> as the border color, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Additional Formatting Options
+                              section, enter a width that accommodates the links without the names
+                              wrapping too much, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a section in this column.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>For the section properties:</p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Deselect <span class="uicontrol">Collapsible</span>.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Select <span class="uicontrol">Left</span> for the horizontal alignment.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Enter <code>otbi_menu</code> for the custom CSS class
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag an action link into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the action link properties.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Enter the category name in the <span class="uicontrol">Link Text</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New Action</span> icon after the <span class="uicontrol">Action</span> field, and select <span class="uicontrol">Navigate to BI Content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Find and select the dashboard page
+                              for this category in the catalog, and click OK until you close all
+                              dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 9 through 13 for other
+                              categories on your inspector page.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1699232">
+                     <h3 class="topictitle">Adding Analyses</h3>
+                     
+                     <p>To put analyses for the category on the dashboard
+                        page:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Put another column to the right
+                              of the one for the menu of categories.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the column properties</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Additional Formatting Options
+                              section, enter <span class="uicontrol">10</span> in the <span class="uicontrol">Indent (Left Padding)</span> field, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Put a section in this column.</p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>For the section properties:</p>
+                           
+                           <ul>
+                              
+                              <li>
+                                 <p>Deselect <span class="uicontrol">Collapsible</span>.
+                                 </p>
+                              </li>
+                              
+                              <li>
+                                 <p>Select <span class="uicontrol">Left</span> for the horizontal alignment.
+                                 </p>
+                              </li>
+                              
+                           </ul>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Add one or more analyses to the
+                              section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Add additional sections and analyses
+                              as needed.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+               
+               <div class="sect1" id="FAARC1684485">
+                  <h2>Adding Links to Detail Pages: Procedure</h2>
+                  
+                  
+                  
+                  
+                  
+                  <p>After you create your detail pages, you can
+                     add links to them from other pages. These steps follow the general
+                     patterns for linking to detail pages: more information section, show
+                     data links, and inspector page navigation.
+                  </p>
+                  
+                  
+                  <div class="sect2" id="FAARC1684484">
+                     <h3 class="topictitle">More Information Sections</h3>
+                     
+                     <p>To create a section containing links to detail pages
+                        for more information:
+                     </p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Open your perspective page in the
+                              edit mode.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag a section and drop it right below the section that you want to
+                              provide more information for.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the section, click the <span class="uicontrol">Properties</span> icon, and select <span class="uicontrol">Show Section Title</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties again,
+                              and select <span class="uicontrol">Rename</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <span class="uicontrol">More</span> followed by the name of the analysis or section
+                              that the detail pages support.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the section properties again,
+                              and select <span class="uicontrol">Format Section</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Cell section, select <span class="uicontrol">Left</span> for the horizontal alignment.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Additional Formatting
+                              Options section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Enter <span class="uicontrol">15</span> in the <span class="uicontrol">Indent (Left Padding)</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Expand the Custom CSS Style Options
+                              (HTML Only) section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Use Custom CSS Class</span> check box, and enter <code>otbi_simplelink</code> in the field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag an action link into the section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the action link, and
+                              click the <span class="uicontrol">Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the link text, enter a question
+                              that summarizes what the detail page answers.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New Action</span> icon after the <span class="uicontrol">Action</span> field, and select <span class="uicontrol">Navigate to BI Content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Find and select the detail page
+                              in the catalog (under your dashboard), and click <span class="uicontrol">OK</span> until you close all dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Repeat steps 13 through 17 for
+                              additional links, making sure to put all the links in the same section.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1684515">
+                     <h3 class="topictitle">Show Data Links</h3>
+                     
+                     <p>To add a link that opens a show data page:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Open your perspective page in the
+                              edit mode.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>From the Dashboard Objects pane,
+                              drag an action link and drop it right below the corresponding analysis,
+                              in the same section.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the action link, and
+                              click the <span class="uicontrol">Properties</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>For the link text, enter <span class="uicontrol">Show data</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New Action</span> icon after the <span class="uicontrol">Action</span> field, and select <span class="uicontrol">Navigate to BI Content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Find and select the show data page
+                              in the catalog, and click <span class="uicontrol">OK</span> until
+                              you close all dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  <div class="sect2" id="FAARC1698720">
+                     <h3 class="topictitle">Inspector Page Navigation</h3>
+                     
+                     <p>To add a link that opens an inspector page:</p>
+                     
+                     
+                     <ol>
+                        
+                        <li>
+                           <p>Open in edit mode the page where
+                              you want to add the link.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Hover over the analysis that you
+                              want to link from, click the <span class="uicontrol">Properties</span> icon, and select <span class="uicontrol">Edit Analysis</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Open the Criteria tab.</p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the icon after the column
+                              that you want to link from, and select <span class="uicontrol">Column
+                                 Properties</span>.
+                           </p>
+                           <div class="infobox-important">
+                              <p class="notep1">Important</p>
+                              
+                              <p>This must be the same column that you used for the
+                                 prompt for the inspector pages.
+                              </p>
+                              
+                           </div>
+                        </li>
+                        
+                        <li>
+                           <p>Open the Interaction tab.</p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Value section, select <span class="uicontrol">Action Links</span> for the <span class="uicontrol">Primary Interaction</span> field.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">Add Action Link</span> icon.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Click the <span class="uicontrol">New Action</span> icon after the <span class="uicontrol">Action</span> field, and select <span class="uicontrol">Navigate to BI Content</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Find and select the inspector page
+                              (for the first category) in the catalog, and click <span class="uicontrol">OK</span>.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>In the Create New Action dialog
+                              box, click the <span class="uicontrol">Options</span> button.
+                           </p>
+                           
+                        </li>
+                        
+                        <li>
+                           <p>Select the <span class="uicontrol">Open In New Window</span> check box, and click <span class="uicontrol">OK</span> until you close all dialog boxes.
+                           </p>
+                        </li>
+                        
+                        <li>
+                           <p>Save your work.</p>
+                        </li>
+                        
+                     </ol>
+                     
+                     
+                  </div>
+                  
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer></footer>
+      <noscript>
+         <p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+      </noscript>
+      <!-- Start SiteCatalyst code -->
+      <script type="application/javascript" src="//www.oracleimg.com/us/assets/metrics/ora_docs.js"></script>
+      <!-- End SiteCatalyst code -->
+      </body>
+</html>

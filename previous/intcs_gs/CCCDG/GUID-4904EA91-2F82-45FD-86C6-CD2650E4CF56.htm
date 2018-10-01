@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Adapter Framework Components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="The Adapter Framework has two main components: the Design-Time Framework and the Runtime Framework. The Design-Time Framework creates runtime artifacts that the Runtime Framework uses to perform the integration." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8D9BE837-203D-464D-9BF0-46ACF4321895.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-723CBC45-99F2-4A50-B6FC-AFE2611B351B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4904EA91-2F82-45FD-86C6-CD2650E4CF56"></a> <span id="PAGE" style="display:none;">7/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-4904EA91-2F82-45FD-86C6-CD2650E4CF56" class="sect1">Adapter Framework Components</h1>
+<div>
+<p>The Adapter Framework has two main components: the Design-Time Framework and the Runtime Framework. The Design-Time Framework creates runtime artifacts that the Runtime Framework uses to perform the integration.</p>
+<p><span class="bold">Design-Time (DT) Framework</span></p>
+<p>At design time, the wizard user configures the adapter, selecting business operations and business objects, using the Adapter Configuration Wizard, also called the user interface (UI). The wizard uses the underlying Cloud Adapter SDK to connect to the application, browse the application metadata, and generate runtime artifacts.</p>
+<p>Adapters that implement the DT framework are used in designer tools such as JDeveloper and Integration Cloud Service (ICS).</p>
+<p><span class="bold">Runtime (RT) Framework</span></p>
+<p>At runtime, this framework uses the runtime artifacts to invoke and exchange messages with the source or target application. The adapter can perform optional message transformations or use a specific message exchange pattern.</p>
+<p>The following diagram illustrates the relationship between the Design-Time and Runtime frameworks:</p>
+<p><img width="528" height="302" src="img/GUID-699E0D40-8A1C-4044-9F1A-12EF0ECD640C-default.png" alt="media/image3.png" title="media/image3.png" /><br />
+<a href="img_text/GUID-9700E0C6-A0ED-46DB-84FB-E25BF2ED3E0C.htm">Description of the illustration GUID-699E0D40-8A1C-4044-9F1A-12EF0ECD640C-default.png</a></p>
+<p>The following diagram shows the wizard (or UI) pages, the required plugin classes developed using the Cloud Adapter SDK, and the runtime artifacts generated from wizard inputs.</p>
+<p><img width="676" height="512" src="img/GUID-A3C06D07-5558-4EC0-9FD9-4B891C2CCA6A-default.png" alt="media/image4.png" title="media/image4.png" /><br />
+<a href="img_text/GUID-369C5F2E-C0B0-4993-9242-85DE6DC5FBE6.htm">Description of the illustration GUID-A3C06D07-5558-4EC0-9FD9-4B891C2CCA6A-default.png</a></p>
+<p>The following diagram shows how the artifacts generated at design time are connected to the runtime framework classes developed using Cloud Adapter SDK.</p>
+<p><img width="675" height="476" src="img/GUID-77B68976-E2BE-4204-A930-635A9771BFE1-default.png" alt="media/image5.png" title="media/image5.png" /><br />
+<a href="img_text/GUID-D512AAE8-F70B-4E0A-BD73-8354672A6C74.htm">Description of the illustration GUID-77B68976-E2BE-4204-A930-635A9771BFE1-default.png</a></p>
+<p>The key runtime artifacts that the design-time framework generates are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Integration WSDL:</span> The integration WSDL is based on the end user&rsquo;s selection of specific business operations and business objects in the wizard.</p>
+<p>The integration WSDL is an interface between the integration platform and the application. It does not contain any concrete bindings or endpoints. The actual bindings and endpoints are defined in the Endpoint WSDL or WADL. The integration WSDL is generated for both inbound and outbound adapters.</p>
+</li>
+</ul>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Cloud Application Configuration File:</span> The integration platform uses this XML file to invoke an application instance. This file contains all the information the RT framework needs to invoke an application operation. This file is generated for both inbound and outbound adapters.</p>
+</li>
+<li>
+<p><span class="bold">Endpoint WSDL:</span> For SOAP-based adapters, this is the service interface between the adapter and the application. Clients can submit requests to the adapter based on this service interface. The Endpoint WSDL is generated for an inbound adapter only.</p>
+</li>
+<li>
+<p><span class="bold">Endpoint WADL:</span> For REST-based adapters, this is the service interface between the adapter and the application. Clients can submit requests to the adapter based on this service interface. The Endpoint WADL is generated for an inbound adapter only.</p>
+</li>
+</ul>
+<p>For outbound integration, the RT framework receives requests from the integration platform and translates these requests into request/response interactions with the application.</p>
+<p>For inbound integration, the RT framework receives requests from the application and passes them to the integration platform.</p>
+<p>To leverage the RT framework, adapters must implement an interface that the integration platform invokes. Once invoked, the interface delegates the request to the application. As part of this invocation, the RT framework receives the payload, the generated integration WSDL, the name of the application operation that needs to be invoked, and any properties set by the DT framework, such as connection information.</p>
+<p>The RT framework also performs translation, authentication, and authorization, and session management.</p>
+<p>The following diagram shows the design time and runtime environments:</p>
+<img width="480" height="248" src="img/GUID-6DCF1398-809C-4DC4-AE06-DBB5DAA2CC3C-default.png" alt="media/image5A.png" title="media/image5A.png" /><br />
+<a href="img_text/GUID-99EC38BF-E8BF-4B60-9D7E-5557C5F4C949.htm">Description of the illustration GUID-6DCF1398-809C-4DC4-AE06-DBB5DAA2CC3C-default.png</a></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-8D9BE837-203D-464D-9BF0-46ACF4321895.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-723CBC45-99F2-4A50-B6FC-AFE2611B351B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

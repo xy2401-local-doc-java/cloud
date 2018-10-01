@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Outbound REST Cloud Adapter Runtime Components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Infodev XHTML Plugin release 16.3.1)" />
+<meta name="description" content="Outbound REST-based adapters have runtime components similar to those of other custom outbound adapters, including an Endpoint Invoker and message transformations." />
+<meta name="dcterms.created" content="2016-04-01T12:58:53Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Developing Custom Oracle Cloud Adapters" />
+<meta name="dcterms.identifier" content="E58106-01" />
+<meta name="dcterms.isVersionOf" content="CCCDG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-41ACD6C0-20AA-47DB-B325-8148E9634C48.htm" title="Next" type="text/html" />
+<link rel="alternate" href="CCCDG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="CCCDG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="CCCDG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7"></a> <span id="PAGE" style="display:none;">40/71</span> <!-- End Header -->
+<h1 id="CCCDG-GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7" class="sect1">Creating Outbound REST Cloud Adapter Runtime Components</h1>
+<div>
+<p>Outbound REST-based adapters have runtime components similar to those of other custom outbound adapters, including an Endpoint Invoker and message transformations.</p>
+<p>The following diagram shows the runtime components in the sample outbound REST-based adapter.</p>
+<img width="551" height="447" src="img/GUID-10DD96AC-8E5D-4241-8EF1-99F59F178BFE-default.png" alt="media/image42C.png" title="media/image42C.png" /><br />
+<a href="img_text/GUID-EA66B395-D807-4C9B-B770-EB3D3509A00A.htm">Description of the illustration GUID-10DD96AC-8E5D-4241-8EF1-99F59F178BFE-default.png</a>
+<p>For general information about the interfaces and classes in the runtime environment, see <a href="GUID-41E53C35-37E3-4F15-A217-31995DAC32F6.htm" title="The runtime components connect to the source or target application and manage communication between the adapter and that application.">Runtime Components</a>.</p>
+<p>Refer to the <code>SampleRestAdapterConnectionFactory</code> class.</p>
+<div class="tblformal" id="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7__GUID-21E75D87-70E2-482A-A8EE-6ED30B85A9B0">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterConnectionFactory class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d15469e52">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d15469e52">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d15469e65">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.runtime</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e75">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterConnectionFactory</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e75">
+<p>This class lets you implement a connection factory class during runtime.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e88">
+<p><code>SampleRestAdapterConnectionFactory()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e88">
+<p>Initializes class-level variables.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e100">
+<p><code>getConnection()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e100">
+<p>Returns the connection class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleRestAdapterRuntimeConnection</code> class.</p>
+<div class="tblformal">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterRuntimeConnection class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d15469e127">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d15469e127">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d15469e140">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.runtime</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e150">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterRuntimeConnection</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e150">
+<p>This class is the actual adapter connection class during runtime.</p>
+<p>In this class, <code>MessageHandler</code> objects are created to handle request and response payloads.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e168">
+<p><code>getMessageHandlers()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e168">
+<p>Returns message handler classes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Refer to the <code>SampleRestAdapterMessageHandler</code> class.</p>
+<div class="tblformal" id="GUID-7DB343C8-3150-4373-8832-9D86D2C9F5D7__GUID-8A188A95-AB81-40CB-95DF-1814585B35AF">
+<table class="cellalignment290" summary="This table describes the SampleRestAdapterMessageHandler class.">
+<tbody>
+<tr>
+<td class="cellalignment291" id="d15469e195">
+<p><span class="bold">Package, Class, and Methods</span></p>
+</td>
+<td class="cellalignment291" headers="d15469e195">
+<p><span class="bold">Description</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment293" colspan="2" id="d15469e208">
+<p><span class="bold">Package:</span></p>
+<p><code>oracle.tip.tools.ide.adapters.cloud.rest.sample.runtime</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e218">
+<p><span class="bold">Class:</span></p>
+<p><code>SampleRestAdapterMessageHandler</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e218">
+<p>This class handles incoming requests and adjusts the payload according to the target system.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e232">
+<p><code>handleRequestMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e232">
+<p>Handles incoming requests and adjusts the payload according to the target system.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e244">
+<p><code>handleResponseMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e244">
+<p>Handles the response from target system and delivers it to ICS.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment291" id="d15469e256">
+<p><code>handleErrorMessage()</code></p>
+</td>
+<td class="cellalignment291" headers="d15469e256">
+<p>Handles error messages.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>A message in an ICS flow is always in XML format. A message from an inbound REST adapter is converted from JSON or URL-encoded format to XML using NXSD. Similarly, an XML message to an outbound REST adapter is converted using NXSD to JSON or URL-encoding depending on the configured media type. The following diagram shows these message transformations:</p>
+<img width="575" height="110" src="img/GUID-196C7009-314F-4D54-AB98-811B242FFAA6-default.png" alt="media/image42D.png" title="media/image42D.png" /><br />
+<a href="img_text/GUID-0CE0D3F9-2365-4001-946D-949C4F77777C.htm">Description of the illustration GUID-196C7009-314F-4D54-AB98-811B242FFAA6-default.png</a>
+<p>You can transform an incoming request message from XML to the target application content type:</p>
+<pre dir="ltr">
+addHeaderToCloudMessage(cloudMessage, cloudInvocationContext);
+translateRequestMessage(cloudInvocationContext, (RESTCloudMessage) cloudMessage);    
+</pre>
+<p>You can translate the response message to a format ICS understands:</p>
+<pre dir="ltr">
+translateMessageToXML(cloudInvocationContext, cloudMessage, mediaType);
+</pre>
+<p>To build, package, and test the REST Cloud Adapter, see <a href="GUID-EFFD9C04-0D04-4186-BA0D-304BD451CEF8.htm" title="This chapter describes the process of building and packaging the Sample Cloud Adapter and registering it with JDeveloper or Integration Cloud Service.">Building and Packaging the Sample Cloud Adapter</a>.</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment280">
+<tr>
+<td class="cellalignment287">
+<table class="cellalignment285">
+<tr>
+<td class="cellalignment284"><a href="GUID-F63640E4-1FF0-41D7-B495-6B66FD95B6C0.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment284"><a href="GUID-41ACD6C0-20AA-47DB-B325-8148E9634C48.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment289">
+<table class="cellalignment283">
+<tr>
+<td class="cellalignment284"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment284"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment284"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

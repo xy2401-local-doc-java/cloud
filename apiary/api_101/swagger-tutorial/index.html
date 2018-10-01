@@ -1,0 +1,567 @@
+<!DOCTYPE html><html prefix="og: http://ogp.me/ns#"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Swagger tutorial | Apiary Help</title>
+  <link rel="stylesheet" href="../../css/main.css?8d147e3a37768b440f679294bd9bc305">
+
+  
+    
+      <meta name="description" content="Tutorial for Swagger API Description language">
+    
+    <meta property="og:title" content="Swagger tutorial">
+    <meta property="og:site_name" content="Apiary.io">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://help.apiary.io/api_101/swagger-tutorial/">
+    <meta property="og:image" content="https://help.apiary.io/images/apiary_sharing.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    
+      <meta property="og:description" content="Tutorial for Swagger API Description language">
+    
+
+    <meta property="og:site_name" content="Apiary Help">
+
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/choosing-format/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/api_101/swagger/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/faq/file-size/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/faq/find-api-name/">
+    
+      <meta property="og:see_also" content="https://help.apiary.io/faq/swagger_import/">
+    
+
+    <meta property="twitter:account_id" content="183960592">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@apiaryio">
+    <meta name="twitter:creator" content="@apiaryio">
+    <meta name="twitter:title" content="Swagger tutorial">
+
+    
+      <meta name="twitter:description" content="Tutorial for Swagger API Description language">
+    
+
+    <meta name="twitter:image" content="https://help.apiary.io/images/apiary_sharing.png">
+    <meta name="twitter:url" content="https://help.apiary.io/api_101/swagger-tutorial/">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="index.html">
+    <link rel="dns-prefetch" href="//jsapi.apiary.io">
+  
+
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="../../sitemap.xml">
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+
+
+  <body vocab="http://schema.org/" typeof="WebPage">
+    <div class="pageWrap">
+      <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="https://apiary.io">
+      <img src="../../images/oracleapiarylogo.png" alt="Apiary logo">
+      <span>Apiary Help</span>
+    </a>
+
+    <nav class="site-nav">
+      <ul>
+        <li><a href="https://apiary.io/how-it-works">How It Works</a></li>
+<li><a href="https://apiary.io/plans">Plans</a></li>
+<li><a href="https://apiary.io/products">Product</a></li>
+<li><a href="../../">Help</a></li>
+<li class="hide-sm"><a href="https://apiary.io/company">Company</a></li>
+<li><a href="https://login.apiary.io/login">Sign In</a></li>
+<li><a class="site-nav-signup" href="https://login.apiary.io/login">Sign Up</a></li>
+
+        <li><a href="javascript:;" class="openMobileNav">&#x2630; Menu</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+
+
+      <div class="layout-content">
+        <div class="layout-content-inner">
+          <div class="page">
+  
+  <nav class="page-breadcrumbs">
+    <ul class="breadcrumbs">
+        
+        
+          <li>
+            
+              <a href="../../">Apiary Help</a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="../">API 101</a>
+            
+          </li>
+        
+          <li class="active">
+            
+              Swagger tutorial
+            
+          </li>
+        
+    </ul>
+  </nav>
+
+
+
+  <aside class="page-aside" property="hasPart" typeof="WPSideBar">
+    <aside>
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../tools/" class="category-link">Apiary Tools</a></h2>
+    <ul class="aside-category-page-list">
+      
+      
+        <li><a href="../../tools/apiary-editor/">Apiary Editor</a></li>
+      
+        <li><a href="../../tools/interactive-documentation/">Interactive Documentation</a></li>
+      
+        <li><a href="../../tools/mock-server/">Mock Server</a></li>
+      
+        <li><a href="../../tools/api-inspector/">API Inspector</a></li>
+      
+        <li><a href="../../tools/github-sync/">GitHub Sync</a></li>
+      
+        <li><a href="../../tools/github-integration/">GitHub Integration</a></li>
+      
+        <li><a href="../../tools/automated-testing/">Automated Testing</a></li>
+      
+        <li><a href="../../tools/apiary-cli/">Apiary CLI</a></li>
+      
+        <li><a href="../../tools/github-enterprise-integration/">GitHub Enterprise (GHE) Integration</a></li>
+      
+        <li><a href="../../tools/code-examples/">Integrated Code Examples</a></li>
+      
+        <li><a href="../../tools/embed/">Embed documentation</a></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <li><a href="../../tools/style-guide/">API Style Guide</a></li>
+      
+        <li><a href="../../tools/troubleshooting-github/">Troubleshooting GitHub Sync and Integration</a></li>
+      
+        <li><a href="../../tools/version-history/">Version history</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../faq/" class="category-link">FAQs</a></h2>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title">Resources</h2>
+    <ul class="aside-category-page-list">
+      <li><a href="../api_blueprint_tutorial/" class="category-link-resources">API Blueprint Tutorial</a></li>
+      <li><a href="http://support.apiary.io/forums/120125-general" class="category-link-resources" target="blank">Feedback</a></li>
+      <li><a href="https://apiary.io/support" class="category-link-resources" target="blank">Support</a></li>
+    </ul>
+  </div>
+</aside>
+
+  </aside>
+
+  <article class="page-content" role="main" property="mainEntityOfPage" typeof="Article">
+    <header class="page-header">
+      <h1 class="page-title" property="headline">Swagger tutorial</h1>
+    </header>
+    <div property="text" class="entry-content">
+      <div class="block block--lead">
+        
+<p><a href="../swagger">Swagger</a> is an alternative format to <a href="../api_blueprint_tutorial/">API Blueprint</a> for describing your API that you can use in Apiary. This page showcases basic syntax of Swagger API Description.</p>
+
+      </div>
+
+<div class="block block--warning">
+        <div class="block__heading">Tip</div>
+<p>For details on how to use Swagger in Apiary and what is supported, see <a href="../swagger">dedicated Swagger page</a>. Also feel free to <a href="../choosing-format">compare Swagger with API Blueprint</a>.</p>
+
+      </div>
+
+<div style="text-align: center; padding-top: 30px">
+  <img style="max-width: 150px" src="../../images/swagger-logo.png" alt="Swagger logo">
+</div>
+
+<h2 id="swagger">Swagger</h2>
+<p><strong><a href="../swagger">Swagger</a> is <a href="https://github.com/swagger-api">open sourced</a> format for describing APIs.</strong></p>
+
+<p>This is how Swagger looks like:</p>
+
+<pre><code class="language-swagger">swagger: &apos;2.0&apos;
+info:
+  title: Polls Swagger
+  description: Polls is a simple API allowing consumers to view polls and vote in them.
+  version: &quot;8234aab51481d37a30757d925b7f4221a659427e&quot;
+host: polls.apiblueprint.org
+schemes:
+  - https
+paths:
+  /questions:
+    x-summary: Questions Collection
+    x-description: &apos;&apos;
+    get:
+      summary: List all questions
+      responses:
+        200:
+          description: &apos;List&apos;
+          examples:
+            application/json:
+              - question: &quot;Favourite programming language?&quot;
+                published_at: &quot;2015-08-05T08:40:51.620Z&quot;
+                choices:
+                  - choice: &quot;Swift&quot;
+                    votes: 2048
+                  - choice: &quot;Python&quot;
+                    votes: 1024
+                  - choice: &quot;Objective-C&quot;
+                    votes: 512
+                  - choice: &quot;Ruby&quot;
+                    votes: 256
+</code></pre>
+
+<h2 id="writing-swagger">Writing Swagger</h2>
+
+<div class="block block--info">
+        <div class="block__heading">YAML by default</div>
+<p>We are showing Swagger only in YAML format, because that&#x2019;s how it&#x2019;s supported in Apiary, but Swagger in JSON format will work the same.</p>
+
+      </div>
+
+<h3 id="choosing-editor">Choosing editor</h3>
+<p>If you are new to API Description world, best choice is to use either <a href="../../tools/apiary-editor/">Apiary Editor</a> on <a href="https://apiary.io">Apiary.io</a>, because of its built-in helpers and instant preview or dedicated <a href="http://editor.swagger.io">Swagger Editor</a>.</p>
+
+<h3 id="metadata-api-name--description">Metadata, API Name &amp; Description</h3>
+
+<p>Every Swagger document starts with Swagger version declaration <code>swagger: &quot;2.0&quot;</code>. Then you can specify <code>info</code> object for additional metadata. <code>title</code> and <code>version</code> are required parameters, others like <code>description</code> are optional. See <a href="../swagger/#known-limitations">Known limitations</a> on what parameters are not supported.</p>
+
+<h3 id="url-definition">URL definition</h3>
+<ul>
+  <li><code>schemes</code> is an array protocols supported by API. You can specify them like so: <code>[http, https]</code>. Apiary will use <code>https</code> if defined</li>
+  <li><code>host</code> is domain for API</li>
+  <li><code>basePath</code> defines URL prefix for all defined endpoints.</li>
+</ul>
+
+<p>For example, defining <code>/account</code> endpoint actually means <code>scheme://host/basePath/account</code></p>
+
+<h3 id="paths">Paths</h3>
+<p><code>paths:</code> object defines endpoints in your API. <a href="../swagger-extensions"><code>x-summary</code> and <code>x-description</code></a> are Apiary defined Swagger extensions.</p>
+
+<h4 id="tags">Tags</h4>
+<p><code>tags</code> are used for grouping related API endpoints.</p>
+
+<h3 id="operations">Operations</h3>
+<p>Operations (like <code>get</code> or <code>post</code>) on paths defines <em>actions</em>. In <a href="../../tools/interactive-documentation">Apiary documentation</a>, <code>summary</code> will be used as action title, and <code>description</code> as action description.</p>
+
+<div class="block block--warning">
+        <div class="block__heading">Limitations</div>
+<p>Swagger doesn&#x2019;t support some features:</p>
+
+<ul>
+  <li>Example values of HTTP headers (see our <a href="../swagger-extensions"><code>x-example</code></a> extension)</li>
+  <li><a href="../api_blueprint_tutorial/#multiple-responses">Multiple requests</a></li>
+</ul>
+
+      </div>
+
+<div class="block block--warning">
+        <div class="block__heading">Using `operationId`</div>
+<p>Each operation can specify <code>operationId</code>. In <a href="../../tools/interactive-documentation">Apiary documentation</a> it&#x2019;s used for rendering <a href="https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md#def-relation-section">Action relation</a>.</p>
+
+      </div>
+
+<h4 id="operation-responses">Operation responses</h4>
+<p>You can describe multiple responses, for different content-types.</p>
+
+<div class="block block--warning">
+        <div class="block__heading">Limitations</div>
+<p>Swagger doesn&#x2019;t support some features:</p>
+
+<ul>
+  <li>Response headers</li>
+  <li>Request-Response pairing</li>
+  <li>Response names</li>
+</ul>
+
+      </div>
+
+<h3 id="definitions">Definitions</h3>
+<p><code>definitions</code> have same goal as <a href="../mson-tutorial/">MSON</a>. Make it easy to describe data structures and use them in API Description. Unlike <a href="../mson-tutorial/">MSON</a>, <code>definitions</code> in Swagger are using JSON Schema and JSON Schema referencing for use inside API Description. Here is an example API using <code>definitions</code>:</p>
+
+<pre><code class="language-swagger">swagger: &quot;2.0&quot;
+info:
+  version: 1.0.0
+  title: swagger-demo
+  description: Description of the API in Markdown
+host: petstore.swagger.io
+tags:
+  - greeting
+basePath: /api
+schemes: [http]
+paths:
+  /message/{name}:
+    x-summary: Message operations
+    x-description: Operation description in Markdown
+    get:
+      summary: Get a message of the day
+      description: |
+       Description of the operation in Markdown
+      operationId: getMessage
+      parameters:
+        - name: name
+          in: query
+          description: name to include in the message
+          type: string
+          x-example: &apos;Hello, Adam!&apos;
+      responses:
+        default:
+          description: Bad request
+        200:
+          description: Successful response
+          schema:
+            $ref: &apos;#/definitions/Message&apos;
+          examples:
+            &apos;application/json&apos;:
+              message: &apos;Hello, Adam!&apos;
+definitions:
+  Message:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+        default: &apos;Hello, Adam!&apos;
+</code></pre>
+
+<h2 id="further-reading">Further reading</h2>
+<ul>
+  <li><a href="../swagger-extensions"><code>x-summary</code>, <code>x-description</code>, <code>x-example</code></a> - Apiary defined Swagger extensions</li>
+  <li><a href="http://swagger.io/">Official website</a></li>
+  <li><a href="https://github.com/OAI/OpenAPI-Specification">Full Language Specification (currently OAI)</a></li>
+  <li><a href="https://github.com/OAI/OpenAPI-Specification/tree/master/examples/v2.0">Official Examples</a></li>
+</ul>
+
+    </div>
+
+    <div class="pageFeedback">
+  <div class="pageFeedback--initial">
+    <div class="pageFeedback--question">
+      Was this page useful?
+    </div>
+    <div class="pageFeedback--yes"></div>
+    <div class="pageFeedback--no"></div>
+  </div>
+  <div class="pageFeedback--thankYouBlock">
+    Thank you for the feedback!
+  </div>
+  <div class="pageFeedback--whatWentWrong">
+    <div class="pageFeedback--whatWentWrongTitle">What went wrong?</div>
+    <label><input type="checkbox" id="droids" value="droids"> It&#x2019;s not what I was looking for</label>
+    <label><input type="checkbox" id="simplify" value="simplify"> It was hard to understand</label>
+    <label><input type="checkbox" id="else" value="else"> Something else</label>
+  </div>
+</div>
+
+    
+  <div class="relatedTopics">
+    <h2 class="relatedTopics__title">Related topics</h2>
+    <ul class="relatedTopics__list">
+      
+        <li><a href="../choosing-format/">Choosing the right format</a><br></li>
+      
+        <li><a href="../swagger/">Swagger in Apiary</a><br></li>
+      
+        <li><a href="../../faq/file-size/">How to deal with big API Description Document</a><br></li>
+      
+        <li><a href="../../faq/find-api-name/">How can I find my API name?</a><br></li>
+      
+        <li><a href="../../faq/swagger_import/">Can I import Swagger into Apiary.io?</a><br></li>
+      
+    </ul>
+  </div>
+
+
+  </article>
+</div>
+
+        </div>
+      </div>
+
+      <footer>
+  <div class="footerRow">
+    <div class="footerColumns">
+      <div class="footerColumn">
+        <h4 class="footerTitle">Platform</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://apiary.io/how-it-works">How It Works</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/products">Product</a></li>
+          <li><a class="footerListLink" href="https://enterprise.apiary.io/">Enterprise</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/plans">Plans</a></li>
+          <li><a class="footerListLink" href="../../">Help</a></li>
+        </ul>
+      </div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Company</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="http://blog.apiary.io/">Blog</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/company">Team</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/jobs">Jobs</a></li>
+          <li><a class="footerListLink" href="https://apiary.io/contact">Contact</a></li>
+          <li><a class="footerListLink" href="https://static.apiary.io/assets/29b1ca7e9b4668542aa05ccd5f9338a6.zip">Press Kit</a></li>
+        </ul>
+      </div>
+      <div class="mobileBreak"></div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Open Source</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://apiblueprint.org">API Blueprint</a></li>
+          <li><a class="footerListLink" href="https://github.com/apiaryio/snowcrash">Snow Crash</a></li>
+          <li><a class="footerListLink" href="https://github.com/apiaryio/gavel">Gavel</a></li>
+          <li><a class="footerListLink" href="http://dredd.readthedocs.org/">Dredd</a></li>
+          <li><a class="footerListLink" href="../../tools/apiary-cli/">Apiary CLI</a></li>
+        </ul>
+      </div>
+      <div class="footerColumn">
+        <h4 class="footerTitle">Social</h4>
+        <ul class="footerList">
+          <li><a class="footerListLink" href="https://github.com/apiaryio">GitHub</a></li>
+          <li><a class="footerListLink" href="https://twitter.com/apiaryio">Twitter</a></li>
+          <li><a class="footerListLink" href="https://facebook.com/apiary.io">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footerRow">
+    <p class="footerCopyright">Copyright &#xA9; 2017, Oracle and/or its affiliates. All rights reserved. Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners. <span class="footerCopyrightLinks">&#x2022; <a href="https://apiary.io/tos" class="footerCopyrightLink">Terms</a> &#x2022; <a href="https://apiary.io/privacy" class="footerCopyrightLink">Privacy</a></span></p>
+  </div>
+</footer>
+
+    </div>
+    <nav class="mobileNav">
+  <div class="mobileNav-inner">
+    <a href="javascript:;" class="closeMobileNav">&#x2715; Close menu</a>
+    <ul class="mobileNav-list">
+      <li><a href="../../">Docs home</a></li>
+      <li><a href="https://apiary.io">Back to Apiary.io</a></li>
+      <li><a href="https://apiary.io/how-it-works">How It Works</a></li>
+<li><a href="https://apiary.io/plans">Plans</a></li>
+<li><a href="https://apiary.io/products">Product</a></li>
+<li><a href="../../">Help</a></li>
+<li class="hide-sm"><a href="https://apiary.io/company">Company</a></li>
+<li><a href="https://login.apiary.io/login">Sign In</a></li>
+<li><a class="site-nav-signup" href="https://login.apiary.io/login">Sign Up</a></li>
+
+    </ul>
+    <aside>
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../tools/" class="category-link">Apiary Tools</a></h2>
+    <ul class="aside-category-page-list">
+      
+      
+        <li><a href="../../tools/apiary-editor/">Apiary Editor</a></li>
+      
+        <li><a href="../../tools/interactive-documentation/">Interactive Documentation</a></li>
+      
+        <li><a href="../../tools/mock-server/">Mock Server</a></li>
+      
+        <li><a href="../../tools/api-inspector/">API Inspector</a></li>
+      
+        <li><a href="../../tools/github-sync/">GitHub Sync</a></li>
+      
+        <li><a href="../../tools/github-integration/">GitHub Integration</a></li>
+      
+        <li><a href="../../tools/automated-testing/">Automated Testing</a></li>
+      
+        <li><a href="../../tools/apiary-cli/">Apiary CLI</a></li>
+      
+        <li><a href="../../tools/github-enterprise-integration/">GitHub Enterprise (GHE) Integration</a></li>
+      
+        <li><a href="../../tools/code-examples/">Integrated Code Examples</a></li>
+      
+        <li><a href="../../tools/embed/">Embed documentation</a></li>
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        <li><a href="../../tools/style-guide/">API Style Guide</a></li>
+      
+        <li><a href="../../tools/troubleshooting-github/">Troubleshooting GitHub Sync and Integration</a></li>
+      
+        <li><a href="../../tools/version-history/">Version history</a></li>
+      
+    </ul>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title"><a href="../../faq/" class="category-link">FAQs</a></h2>
+  </div>
+
+  <div class="aside-category">
+    <h2 class="aside-category-title">Resources</h2>
+    <ul class="aside-category-page-list">
+      <li><a href="../api_blueprint_tutorial/" class="category-link-resources">API Blueprint Tutorial</a></li>
+      <li><a href="http://support.apiary.io/forums/120125-general" class="category-link-resources" target="blank">Feedback</a></li>
+      <li><a href="https://apiary.io/support" class="category-link-resources" target="blank">Support</a></li>
+    </ul>
+  </div>
+</aside>
+
+  </div>
+</nav>
+
+    
+  <script>
+    window._trackJs = {
+      token: '60775d2a4c124659ba6585cf31909f85',
+      application: 'docs-portal'
+    };
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-18252923-8', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+
+
+
+
+<script type="text/javascript" src="../../assets/main-9de9a2eabd0d23c2aefea3d1fee69cd4bb776643ddb27cfeb7da88d5371bc1cb.js?8d147e3a37768b440f679294bd9bc305"></script>
+
+
+
+  
+
+
+</body></html>

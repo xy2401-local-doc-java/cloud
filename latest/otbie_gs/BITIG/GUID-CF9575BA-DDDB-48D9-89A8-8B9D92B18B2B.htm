@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Registering a Taleo Data Source</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="During Initial Configuration, Implementors specify the Cloud data source details." />
+<meta name="dcterms.created" content="2015-11-27T02:36:26Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Implementing Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E55530-04" />
+<meta name="dcterms.isVersionOf" content="BITIG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-BDE0E526-44EE-489F-9DA0-C88DBCAE8D6D.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-59EE3ED9-ACA6-4DF8-BAAA-427EA21DA68A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITIG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITIG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITIG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-CF9575BA-DDDB-48D9-89A8-8B9D92B18B2B"></a> <span id="PAGE" style="display:none;">13/42</span> <!-- End Header -->
+<h1 id="BITIG-GUID-CF9575BA-DDDB-48D9-89A8-8B9D92B18B2B" class="sect1">Registering a Taleo Data Source</h1>
+<p>During Initial Configuration, Implementors specify the Cloud data source details.</p>
+<div class="sect2"><a id="REGISTERINGATALEOCLOUDSOURCESYSTEM-4595EC6F"></a>
+<h2 id="BITIG-REGISTERINGATALEOCLOUDSOURCESYSTEM-4595EC6F" class="sect2">Registering a Taleo Cloud Data Source</h2>
+<div>
+<div class="section">You use Configuration Manager to specify the data source details. Before you start, log in to Configuration Manager using the Web link and user name supplied to you by Oracle Cloud Support.</div>
+<!-- class="section" -->
+<div class="section"><span class="bold">Prerequisites</span>: You must have the Taleo Cloud source details.</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In Configuration Manager, select the <span class="bold">Define Business Intelligence Applications</span> link in the System Setups area on the Tasks pane.</span></li>
+<li class="stepexpand"><span>Click the Add icon (<img width="31" height="27" src="img/GUID-85DC9562-19E8-4AB1-AF89-2B2423F64131-default.gif" alt="Add icon" title="Add icon" />) to register a new source system using the Register Source dialog.<br />
+<img width="646" height="363" src="img/GUID-0B654DAF-F441-43C0-8FE8-CA4E24768CF6-default.gif" alt="Register Source dialog" title="Register Source dialog" /><br /></span></li>
+<li class="stepexpand"><span>At the Register Source dialog, specify the following details:</span>
+<ul>
+<li>Product Line &mdash; Select your source system type. For example, Taleo Recruitment.</li>
+<li>Product Line Version &mdash; Select the data source version that is deployed.</li>
+<li>Source Instance Name &mdash; Enter a short readable name to identify this data source in Configuration Manager.</li>
+<li>Description &mdash; (Optional) Enter a short description to help Administrators and Implementors identify and use this data source in Configuration Manager.</li>
+<li>Data Source Number &mdash; Enter an integer or use the spinner to specify a number to identify data in the OTBI-Enterprise data warehouse. This number must be unique within Configuration Manager. The number 999 is reserved, and should not be used.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span> to display the Cloud Replicator Details dialog.<br />
+<img width="763" height="399" src="img/GUID-69C3D4BA-7102-4E3A-989F-8F1B9AFF61F3-default.gif" alt="Cloud Replicator Details dialog" title="Cloud Replicator Details dialog" /><br /></span></li>
+<li class="stepexpand"><span>At the Cloud Replicator Details dialog, specify connection properties,:</span>
+<div>Specify the following details:</div>
+<ul>
+<li>For <code>HOSTNAME</code>, specify the Taleo hostname, for example, <kbd class="userinput">customer.taleo.net</kbd>.</li>
+<li>For <code>USER</code> and <code>PASSWORD</code>, specify the Taleo user account and password that you created in the Taleo application based on the default user type System Integration (Administrator WebTop). For more information, see <a class="olink GUID-74FE2234-7C9E-4824-ADB6-47C2EB17523E" target="_blank" href="../BITAG/GUID-74FE2234-7C9E-4824-ADB6-47C2EB17523E.htm#GUID-74FE2234-7C9E-4824-ADB6-47C2EB17523E">Roadmap for setting up security in OTBI-Enterprise</a> in <cite>Oracle Cloud Administering Your Deployment for Oracle Transactional Business Intelligence Enterprise</cite>.</li>
+</ul>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save.</span></span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="GUID-BDE0E526-44EE-489F-9DA0-C88DBCAE8D6D.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="GUID-59EE3ED9-ACA6-4DF8-BAAA-427EA21DA68A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

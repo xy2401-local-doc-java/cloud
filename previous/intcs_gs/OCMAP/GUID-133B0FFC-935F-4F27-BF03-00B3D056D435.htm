@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Repeating a Target Element to Map to Different Sources</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can repeat a target element in the mapper. This enables you to map different sources to the same target element. Elements defined in the target schema with the maxOccurs attribute set to a value greater than one can be repeated." />
+<meta name="dcterms.created" content="2016-11-27T09:27:43Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the Oracle Mapper" />
+<meta name="dcterms.identifier" content="E64409-09" />
+<meta name="dcterms.isVersionOf" content="OCMAP" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-56ED9A52-E431-4A61-9BCB-0DB8FCAE86C8.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-15073C6D-E5FC-461A-99E5-B2D808A65E7B.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OCMAP.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="OCMAP.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="OCMAP.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-133B0FFC-935F-4F27-BF03-00B3D056D435"></a> <span id="PAGE" style="display:none;">10/29</span> <!-- End Header -->
+<h1 id="OCMAP-GUID-133B0FFC-935F-4F27-BF03-00B3D056D435" class="sect1">Repeating a Target Element to Map to Different Sources</h1>
+<div>
+<p>You can repeat a target element in the mapper. This enables you to map different sources to the same target element. Elements defined in the target schema with the <code>maxOccurs</code> attribute set to a value greater than one can be repeated.</p>
+<div class="p">To repeat a target element to map to different sources:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the target data structure, right-click the element to repeat, and select <span class="bold">Repeat Element</span>. Elements that can be repeated are identified by a special icon with two bars to the left of the name. When you place your cursor over these elements, the words <span class="bold">Repeating Element</span> are displayed.</span>
+<div><br />
+<div class="imageleft"><img class="imageleft" width="312" height="251" src="img/GUID-68AC3496-316B-4DB0-A6C8-DB4101E7FEF1-default.png" alt="Description of GUID-68AC3496-316B-4DB0-A6C8-DB4101E7FEF1-default.png follows" title="Description of GUID-68AC3496-316B-4DB0-A6C8-DB4101E7FEF1-default.png follows" /><br />
+<a href="img_text/GUID-68AC3496-316B-4DB0-A6C8-DB4101E7FEF1-default.htm">Description of the illustration GUID-68AC3496-316B-4DB0-A6C8-DB4101E7FEF1-default.png</a></div>
+<br />
+<p>The element is repeated and displayed below the existing element. Elements that are repeated show the count (for example, <span class="bold">(1 of 2)</span> for the existing element and <span class="bold">(2 of 2)</span> for the repeated element. You can repeat an element multiple times.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Expand the existing and repeated elements to see that the attributes in each element are repeated.</span>
+<div><br />
+<div class="imageleft"><img class="imageleft" width="287" height="328" src="img/GUID-BEF67894-B9AE-4AFA-84B8-C8CCBCD0D1EE-default.png" alt="Description of GUID-BEF67894-B9AE-4AFA-84B8-C8CCBCD0D1EE-default.png follows" title="Description of GUID-BEF67894-B9AE-4AFA-84B8-C8CCBCD0D1EE-default.png follows" /><br />
+<a href="img_text/GUID-BEF67894-B9AE-4AFA-84B8-C8CCBCD0D1EE-default.htm">Description of the illustration GUID-BEF67894-B9AE-4AFA-84B8-C8CCBCD0D1EE-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Click the child attribute of the existing element (for this example, named <span class="bold">languageCode</span> under <span class="bold">EBOName (1 of 2)</span> to access the Mapping Builder.</span></li>
+<li class="stepexpand"><span>Replace <span class="bold">Drag and Drop or Type here</span> with a value (for this example, <code>en</code> is entered for English).<br /></span>
+<div class="imageleft"><img class="imageleft" width="296" height="90" src="img/GUID-4088FE32-FD25-4263-83C2-2A3B5D704C0D-default.png" alt="Description of GUID-4088FE32-FD25-4263-83C2-2A3B5D704C0D-default.png follows" title="Description of GUID-4088FE32-FD25-4263-83C2-2A3B5D704C0D-default.png follows" /><br />
+<a href="img_text/GUID-4088FE32-FD25-4263-83C2-2A3B5D704C0D-default.htm">Description of the illustration GUID-4088FE32-FD25-4263-83C2-2A3B5D704C0D-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Close</span>.</span></li>
+<li class="stepexpand"><span>Click the child attribute of the repeated element (for this example, named <span class="bold">languageCode</span> under <span class="bold">EBOName (2 of 2)</span> to access the Mapping Builder.</span></li>
+<li class="stepexpand"><span>Replace <span class="bold">Drag and Drop or Type here</span> with a value (for this example, <code>fr</code> is entered for French).</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Close</span>.</span>
+<div>The assigned values are displayed in the <span class="bold">Mapper</span> column.<br />
+<div class="imageleft"><img class="imageleft" width="315" height="159" src="img/GUID-52DE0376-B8AB-40B8-83F8-A9C1EBC8071D-default.png" alt="Description of GUID-52DE0376-B8AB-40B8-83F8-A9C1EBC8071D-default.png follows" title="Description of GUID-52DE0376-B8AB-40B8-83F8-A9C1EBC8071D-default.png follows" /><br />
+<a href="img_text/GUID-52DE0376-B8AB-40B8-83F8-A9C1EBC8071D-default.htm">Description of the illustration GUID-52DE0376-B8AB-40B8-83F8-A9C1EBC8071D-default.png</a></div>
+<br />
+<div class="infobox-note" id="GUID-133B0FFC-935F-4F27-BF03-00B3D056D435__GUID-3C373778-B8BB-48C1-99C9-FCBAF6E852E7">
+<p class="notep1">Note:</p>
+If you create a repeatable element in which you do not do any mapping, then click <span class="bold">Save</span> and <span class="bold">Exit Mapper</span>, the empty element is not saved.</div>
+</div>
+</li>
+</ol>
+<div class="section">For more information about repeatable elements, see <a href="GUID-15073C6D-E5FC-461A-99E5-B2D808A65E7B.htm" title="You can automatically create for-each statements when mapping between repeatable source and target elements in the mapper.">Automatically Creating for-each Statements</a>.</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment116">
+<tr>
+<td class="cellalignment123">
+<table class="cellalignment126">
+<tr>
+<td class="cellalignment120"><a href="GUID-56ED9A52-E431-4A61-9BCB-0DB8FCAE86C8.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment120"><a href="GUID-15073C6D-E5FC-461A-99E5-B2D808A65E7B.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment125">
+<table class="cellalignment119">
+<tr>
+<td class="cellalignment120"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment120"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment120"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

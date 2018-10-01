@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+<title>Oracle Cloud Using the Oracle E-Business Suite Adapter</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="all">
+<meta name="dcterms.title" content="Using the Oracle E-Business Suite Adapter">
+<meta name="dcterms.identifier" content="E66534-07">
+<meta name="dcterms.isVersionOf" content="ICSEA">
+<meta name="partno" content="E86414-01">
+
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html">
+
+<script type="application/javascript" src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript" src="../nav/js/doccd.js"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html">
+<link rel="Prev" href="T657359T661088.htm" title="Previous" type="text/html">
+<link rel="Next" href="T657359T657341.htm" title="Next" type="text/html">
+<link rel="alternate" href="ICSEA.pdf" title="PDF version" type="application/pdf">
+
+
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+<link href="../dcommon/css/fusiondoc.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/header.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/footer.css" rel="stylesheet">
+<link type="text/css"  href="../dcommon/css/fonts.css" rel="stylesheet">
+<link href="../dcommon/css/foundation.css" rel="stylesheet">
+<link href="../dcommon/css/codemirror.css" rel="stylesheet">
+<link type="text/css" title="Default" href="../nav/css/html5.css" rel="stylesheet">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script src="../dcommon/js/modernizr.js"></script>
+<script src="../dcommon/js/codemirror.js"></script>
+<script src="../dcommon/js/jquery.js"></script>
+<script src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53addf516e0e58a5"></script>
+<script src="../dcommon/js/jqfns.js"></script>
+<script src="../dcommon/js/ohc-inline-videos.js"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header>
+</header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+
+
+
+<span id="PAGE" style="display:none;">13/17</span>
+<!-- End Header -->
+<h1>An Example of Using an XML Gateway
+Message as a Trigger (Source) in an Integration</h1>
+
+
+
+
+		<H2> <a name="8350236"></a><a id="T661817"></a><B>Overview</B></H2>
+
+<a name="d0e5996"></a><A NAME="ics1625_examlover"></A>
+
+
+
+	<p><B>Sample
+Business Scenario </B></p>
+
+	<p>When a purchase order is approved
+in the Oracle E-Business Suite Purchasing application, a process purchase
+order XML message should be sent from Oracle E-Business Suite to Oracle
+Integration Cloud Service. </p>
+
+	<p>In this example, an XML Gateway
+message "Purchase Order XML message" from Oracle Purchasing is used
+as a trigger (source) to explain using the Oracle E-Business Suite
+Adapter to trigger an integration in Oracle Integration Cloud Service.
+The Oracle E-Business Suite Adapter is used to connect to the Oracle
+Purchasing instance. Additionally, you need to configure the trading
+partner in Oracle XML Gateway to send the outbound XML message from
+Oracle E-Business Suite to the integration endpoint in Oracle Integration
+Cloud Service.</p>
+
+	<p>At runtime, when an order is
+approved, if the supplier or trading partner is configured to receive
+the outbound XML message for Process Purchase Order, Oracle E-Business
+Suite Purchasing will trigger the integration and initiate XML Gateway
+outbound processing to send the process order XML message from Oracle
+E-Business Suite to Oracle Integration Cloud Service.  </p>
+
+	<p><B>Using XML
+Gateway Messages for Integrations in Oracle Integration Cloud Service</B></p>
+
+	<p>Based on the business scenario,
+the following tasks are included in this section:</p>
+
+  <ol>
+  <li>
+	<p><A HREF="T657359T661816.htm#ics_exxmlinst">Preparing the Oracle E-Business Suite Instances
+Purchasing Instance</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_exconnectxml">Establishing an Oracle E-Businss Suite
+Connection for Publishing XML Gateway Messages</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_usexmlintegrat">Creating an Integration</A></p>
+
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_usexmltrigger">Adding the Oracle E-Business Suite Adapter
+as a Trigger (Source) Connection</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_exxmltracking">Assigning Business Identifier for Tracking</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_usexmlactivate">Activating the Integration</A></p>
+
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_usexmltp">Configuring Trading Partner Information for
+Post Integration</A></p>
+  </li><li>
+	<p><A HREF="T657359T661816.htm#ics_examltesting">Testing and Validating the Integration</A></p></li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352716"></a><a id="T662000"></a><B>Preparing the Oracle E-Business
+Suite Instances Purchasing Instance</B></H2>
+
+<a name="d0e6080"></a><A NAME="ics_exxmlinst"></A>
+
+
+
+	<p>This example uses the Oracle
+E-Business Suite Purchasing application to approve a purchase order.
+Before creating a connection, you must prepare the Oracle E-Business
+Suite Purchasing instance to ensure the required setup or configuration
+is in place.</p>
+
+  <ol>
+  <li>
+	<p>Configure Oracle E-Business
+Suite REST services provided through Oracle E-Business Suite Integrated
+SOA Gateway.</p>
+	<p>Follow the
+setup tasks, as described in My Oracle Support Knowledge Document
+556540.1, to configure Oracle E-Business Suite Integrated SOA Gateway
+Release 12.1.3 and apply the REST service patches to enable the REST
+service feature. For more information, see step 1, as described in <A HREF="T657359T657339.htm#ics_setup">Setup Tasks for Enabling the Oracle E-Business
+Suite Adapter</A>.</p>
+
+  </li><li>
+	<p>(Optional) Import SSL
+certificates of Oracle Integration Cloud Service to Oracle E-Business
+Suite if required.</p>
+	<p>For information on importing SSL certificates, refer
+to step 4 as described in <A HREF="T657359T657339.htm#ics_setupevent">Setup Tasks for Using the Oracle E-Business
+Suite Adapter as a Trigger (Source) Connection</A>.</p>
+
+  </li><li>
+	<p>(Optional) Set up proxy
+URLs in Oracle E-Business Suite if required.</p>
+	<p>For information on the proxy setup, refer to step 2
+as described in <A HREF="T657359T657339.htm#ics_setupevent">Setup Tasks for Using the Oracle E-Business
+Suite Adapter as a Trigger (Source) Connection</A>.</p>
+
+  </li><li>
+	<p>Deploy the Metadata
+Provider API as a REST service with the following requirements and
+grant the method access privileges to the <B>operations</B> user:</p>
+
+  <ul>
+  <li>
+	<p>Deploy the API with
+"<B>provider</B>" as
+the service alias name</p>
+  </li><li>
+	<p>Deploy the API with <B>GET</B> HTTP verb for <B>all</B> the methods contained in the API</p>
+  </li><li>
+	<p>Grant the access privileges
+for <B>all</B> the methods contained in
+the Metadata Provider API to the <B>operations</B> user</p></li></ul>
+
+
+	<p>For information on deploying
+REST services, see Deploying REST Web Services, Administering Native
+Integration Interfaces and Services chapter, <I>Oracle E-Business Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+
+	<p>For information on creating security
+grants for REST services, see Managing Grants for Interfaces with
+Support for SOAP and REST Web Services, Administering Native Integration
+Interfaces and Services chapter, <I>Oracle E-Business
+Suite Integrated SOA Gateway Implementation Guide</I>.</p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8350504"></a><a id="T661830"></a><B>Establishing an Oracle E-Businss
+Suite Connection for Publishing XML Gateway Messages</B></H2>
+
+<a name="d0e6188"></a><A NAME="ics_exconnectxml"></A>
+
+
+
+	<p>Perform the following steps to
+establish the connection for Oracle E-Businss Suite in Oracle Integration
+Cloud Service:</p>
+
+  <ol>
+  <li>
+	<p>Click <B>Connections</B>.</p>
+  </li><li>
+	<p>Click <B>Create New Connection</B>.</p>
+  </li><li>
+	<p>In the Create Connection
+- Select Adapter dialog appears. </p>
+	<p>You can locate the Oracle E-Business Suite Adapter by
+entering a full or partial name to locate "Oracle E-Business Suite"
+from the dialog. </p>
+
+	<p>Click the <B>Select</B> button for "Oracle E-Business Suite". The New Connection
+- Information dialog appears. </p>
+
+  </li><li>
+	<p>Enter the following
+information for your connection:</p>
+
+	<p><B>Creating the Purchasing Connection</B></p><p><img width="683" height="360" src="./img/ics_exxmlcon1.gif" alt="the picture is described in the document text" ></p>
+
+  <ul>
+  <li>
+	<p><B>Connection Name:</B> Enter "Purchasing" as the connection
+name.</p>
+  </li><li>
+	<p><B>Identifier:</B> Accept the default identifier for your Oracle
+E-Business Suite connection, such as "PURCHASING".</p>
+  </li><li>
+	<p><B>Connection Role:</B> Select "Trigger and Invoke" role for
+this connection.</p>
+  </li><li>
+	<p><B>Description:</B> Enter description information for your connection,
+such as "Create an Oracle E-Business Suite Purchasing connection".</p>
+</li></ul>
+
+
+	<p>Click <B>Create</B> to create the connection. The Connection Details page is displayed
+for the "Purchasing" connection. </p>
+
+  </li><li>
+	<p>Enter additional connection
+details by specifying the following information:</p>
+
+  <ul>
+  <li>
+	<p>Email Address: Enter
+an administrator's email address to receive  notifications if problems
+or changes occur in this connection.</p>
+  </li><li>
+	<p>Connection Properties:
+Click <B>Configure Connectivity</B> to open
+the Connection Properties dialog where you enter a URL (http://&lt;ebs
+host name&gt;:&lt;port&gt;) to connect to an Oracle E-Business
+Suite instance.</p>
+	<p>Click <B>OK</B> to save your work.</p>
+
+  </li><li>
+	<p>Security: Click <B>Configure Security</B> to open the Credentials
+dialog. </p>
+	<p>Ensure that "Basic
+Authentication" is selected as the security policy.</p>
+
+	<p>Enter operations as the username and its associated password in the Credentials dialog
+to access the Oracle E-Business Suite Purchasing instance you specified
+earlier in the Connection Properties dialog.</p>
+
+	<p>Click <B>OK</B>.</p>
+</li></ul>
+
+
+  </li><li>
+	<p>Click <B>Test</B> to test the "Purchasing" connection you
+just specified.</p>
+  </li><li>
+	<p>Click <B>Save</B> to save your connection. </p>
+	<p>Click <B>Exit Connection</B>.</p>
+</li></ol>
+
+
+
+
+
+
+		<H2> <a name="8350505"></a><a id="T661831"></a><B>Creating an Integration</B></H2><a name="d0e6362"></a><A NAME="ics_usexmlintegrat"></A>
+	<p>This section provides the instructions on creating an integration called "PROCESS PO" with the "Publish To ICS" integration pattern. This pattern allows you to add the Oracle E-Business Suite Purchasing connection specified earlier as a trigger in the integration.</p>
+	<p>Perform the following steps to create an integration:</p>
+  <ol>
+  <li>
+	<p>In the Integration Cloud Service toolbar, click <B>Designer</B>.</p>
+  </li><li>
+	<p>In the Designer Portal, click <B>Integrations</B>.</p>
+  </li><li>
+	<p>In the Integrations page, click <B>New Integration</B>.</p>
+	<p>The Create Integration - Select a Style/Pattern dialog appears.</p>
+	<p>Click <B>Select</B> for the "Publish To ICS" integration pattern. </p>
+	<p><B>Selecting the "Publish To ICS" Pattern for the Integration</B></p><p><img width="723" height="416" src="./img/ics1711_pubishtoics3.gif" alt="the picture is described in the document text" ></p>
+  </li><li>
+	<p>The New Integration - Information dialog appears. Enter the following information:</p>
+  <ul>
+  <li>
+	<p><B>What do you want to call your integration?</B> Enter "PROCESS PO" as the integration name.</p>
+  </li><li>
+	<p><B>Identifier</B>: Accept the default identifier value, such as "PROCESS_PO".</p>
+  </li><li>
+	<p><B>Version</B>: Accept the default version number. </p>
+  </li><li>
+	<p><B>What does this integration do?</B> Enter description information for your integration, such as "Create an integration for processing a purchase order in Oracle Purchasing".</p></li></ul>
+
+	<p><B>Entering Integration Information in the New Integration - Information Dialog</B></p><p><img width="875" height="522" src="./img/ics1633_integECX.gif" alt="the picture is described in the document text" ></p>
+  </li><li>
+	<p>Click <B>Create</B> and <B>Save</B>.</p></li></ol>
+
+	<p>To complete the integration, you need to add the following tasks that are described in the next few sections:</p>
+  <ul>
+  <li>
+	<p>Add the desired connections to the integration you just created.</p>
+	<p>See: <A HREF="T657359T661816.htm#ics_usexmltrigger">Adding the Oracle E-Business Suite Adapter as a Trigger (Source) Connection</A>.</p>
+  </li><li>
+	<p>Assign business identifiers for tracking. </p>
+	<p>See: <A HREF="T657359T661816.htm#ics_exxmltracking">Assigning Business Identifier for Tracking</A>.</p></li></ul>
+
+
+
+
+
+		<H2> <a name="8350506"></a><a id="T661832"></a><B>Adding the Oracle E-Business
+Suite Adapter as a Trigger (Source) Connection</B></H2>
+
+<a name="d0e6473"></a><A NAME="ics_usexmltrigger"></A>
+
+
+
+	<p>Once the "PROCESS PO" integration
+is created, you can add the "Purchasing" connection that you just
+created by using the Oracle E-Business Suite Adapter as a trigger
+(source). </p>
+
+	<p>Perform the following steps to
+add the Oracle E-Business Suite Adapter as a trigger in the integration:</p>
+
+  <ol>
+  <li>
+	<p>In the "PROCESS PO"
+integration page, search the "Purchasing" connection that you created
+earlier from the Connections panel.</p>
+  </li><li>
+	<p>In the Integration
+Designer, drag "Purchasing" from the Connections panel on the right
+to the Trigger (Source) area on the canvas. The Configure Oracle E-Business
+Suite Adapter Endpoint wizard appears.</p>
+  </li><li>
+	<p>Enter the following
+information In the Basic Info page:</p>
+
+  <ul>
+  <li>
+	<p><B>What do you want to call your endpoint?</B> - Enter "EBS_Source"
+as the endpoint name.</p>
+  </li><li>
+	<p><B>What does this endpoint do?</B> - Enter "Process a purchase
+order in Oracle E-Business Suite".</p>
+  </li><li>
+	<p><B>What do you want to configure the endpoint for?</B> - Select <B>XML Gateway Map</B>.</p></li></ul>
+
+
+	<p><B>Entering the Basic Information
+for the Adapter Endpoint with XML Gateway Message</B></p><p><img width="927" height="693" src="./img/ics_exxml1.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B> to proceed with the rest of the configuration for your integration.</p>
+
+  </li><li>
+	<p>In the XML Gateway
+Message page, specify the following information for your trigger (source)
+connection:</p>
+
+  <ul>
+  <li>
+	<p><B>Product Family:</B> Select "Procurement" from the product
+family.</p>
+  </li><li>
+	<p><B>Product:</B> Select "Internet Procurement Enterprise Connector"
+from the list of product names.</p>
+  </li><li>
+	<p><B>XML Gateway Map:</B> Select a desired XML Gateway message
+name from the drop-down list. For example, select "Purchase Order
+XML message".</p>
+	<p>After you
+select the message map, the corresponding information is automatically
+populated in this page. This includes the Integration Repository name
+(PO:PRO), internal name (itg_process_po_007_out), integration standard (OAG 7.2) and the message
+map description.</p>
+</li></ul>
+
+
+	<p><B>Selecting a Desired XML Gateway
+Message Map</B></p><p><img width="927" height="693" src="./img/ics_exxml2.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>Next</B>. </p>
+
+  </li><li>
+	<p>The Summary page appears
+with the selected XML Gateway message information that you specified.
+This includes the XML Gateway message name itg_process_po_007_out from the selected "Procurement" product family and the "Internet
+Procurement Enterprise Connector" product, as well as the "Request
+Only" interaction pattern.</p>
+
+	<p><B>Viewing the Selected XML Gateway
+Message Information in the Summary Page</B></p><p><img width="920" height="694" src="./img/ics_exxml34.gif" alt="the picture is described in the document text" ></p>
+
+	<p>The Oracle E-Business Suite Adapter
+Source Endpoint configuration is successfully created with the selected
+XML Gateway message.</p>
+
+	<p>Click <B>Done</B>. </p>
+
+	<p>The connection for Oracle E-Businses
+Suite (called "Purchasing" in this example) now appears in the Trigger
+(Source) area on the canvas.</p>
+
+	<p><B>Displaying "Purchasing" in the
+Trigger Area with XML Gateway Map in the Integration</B></p><p><img width="876" height="455" src="./img/ics_exxmldone.gif" alt="the picture is described in the document text" ></p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352788"></a><a id="T662004"></a><B>Assigning Business Identifier
+for Tracking</B></H2>
+
+<a name="d0e6673"></a><A NAME="ics_exxmltracking"></A>
+
+
+
+	<p>Perform the following steps to
+track payload fields in messages during runtime:</p>
+
+  <ol>
+  <li>
+	<p>In the Create Order
+Integration page, click <B>Tracking</B>.</p>
+
+	<p>The Business Identifiers For
+Tracking dialog appears.</p>
+
+  </li><li>
+	<p>From the Available
+Source Fields section, expand the <B>XmlGateway_Input</B> node, then the <B>PROCESS_PO_007</B> node,
+then the <B>DATAAREA</B> node, then the <B>PROCESS_PO</B> node, and then the <B>POORDERHDR</B> node.</p>
+	<p>Drag the <B>POID</B> element
+to the Tracking Field column in the table.</p>
+
+	<p>The <B>POID</B> is displayed in the Tracking Field with a green check mark next
+to it in the table.</p>
+
+	<p><B>Displaying the Selected Identifier
+for Tracking </B></p><p><img width="993" height="660" src="./img/ics_exxmltrackin.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click <B>Done</B>. </p>
+  </li><li>
+	<p>Save your work and
+then click <B>Exit Integration</B>.</p>
+</li></ol>
+
+
+
+
+
+
+		<H2> <a name="8350507"></a><a id="T661833"></a><B>Activating the Integration</B></H2><a name="d0e6768"></a><A NAME="ics_usexmlactivate"></A>
+	<p><B>Activating the Integration</B></p>
+	<p>After you complete the integration with a desired XML Gateway message, you can activate the integration.</p>
+  <ol>
+  <li>
+	<p>In the Integrations page, click <B>Activate</B> for the "PROCESS PO" integration that you created earlier.</p>
+  </li><li>
+	<p>The Confirmation dialog appears. Click <B>Activate</B> to confirm the action. </p>
+	<p>Notice that the status of the "PROCESS PO" integration changes to <B>ACTIVE</B>.</p></li></ol>
+
+	<p><B>Recording the Integration Endpoint in Oracle Integration Cloud Service</B></p>
+	<p>After activating the integration, you need to obtain the integration endpoint URL by clicking the Integration Details icon ("<B>i</B>") for the "PROCESS PO" integration. A pop-up window appears. Record the endpoint URL information. </p>
+	<p>In this example, the endpoint URL should be like:</p>
+	<p>https://&lt;ICS Host&gt;:&lt;Port&gt;/integration/flowapi/rest/PROCESS_PO/v01/</p>
+  <P><p><STRONG><span>Note: </span></STRONG>The metadata at the end of the URL is not required.</p></P>
+	<p><B>Obtaining the Integration Endpoint URL in the Integrations Page</B></p><p><img width="880" height="306" src="./img/ics1711_xmlurl.gif" alt="the picture is described in the document text" ></p>
+	<p>This recorded integration endpoint URL will be used as the protocol address value when defining a trading partner in the post integration configuration, as described in <A HREF="T657359T661816.htm#ics_usexmltp">Configuring Trading Partner Information for Post Integration</A>.</p>
+
+
+
+
+		<H2> <a name="8350508"></a><a id="T661834"></a><B>Configuring Trading Partner
+Information for Post Integration</B></H2>
+
+<a name="d0e6837"></a><A NAME="ics_usexmltp"></A>
+
+
+
+	<p>After you activate the integration,
+you must perform manual tasks to configure the trading partner ("Advanced
+Network Devices" in this example) for the outbound transaction message
+selected in the integration. This includes specifying the communication
+protocol and address as well as the user credentials in Oracle E-Business
+Suite.</p>
+
+	<p>Additionally, obtain the integration
+endpoint URL you recorded earlier, such as https://&lt;ICS
+Host&gt;:&lt;Port&gt;/integration/flowapi/rest/PROCESS_PO/v01/. </p>
+
+	<p>Perform the following steps to
+configure the trading partner in Oracle E-Business Suite:</p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle E-Business
+Suite as a user (such as sysadmin) who has the
+XML Gateway responsibility.</p>
+  </li><li>
+	<p>Select the XML Gateway
+responsibility and then select <B>Define Trading
+Partners</B> from the navigation menu. The Define
+Trading Partner Setup form appears.</p>
+  </li><li>
+	<p>In the Trading Partner
+Setup form, search and locate the desired trading partner called "Advanced
+Network Devices".</p>
+  </li><li>
+	<p>In the Trading Partner
+Details region, add the following information for the trading partner:</p>
+
+  <ul>
+  <li>
+	<p>Transaction Type: PO </p>
+
+  </li><li>
+	<p>Transaction Subtype:
+PRO 	</p>
+  </li><li>
+	<p>Standard Code: OAG </p>
+
+  </li><li>
+	<p>External Transaction
+Type: PO 	</p>
+  </li><li>
+	<p>External Transaction
+Subtype: PROCESS 	</p>
+  </li><li>
+	<p>Direction: OUT 	</p>
+
+  </li><li>
+	<p>Map: itg_process_po_007_out
+	</p>
+  </li><li>
+	<p>Connection/Hub : DIRECT
+	</p>
+  </li><li>
+	<p>Protocol: HTTPS</p>
+
+  </li><li>
+	<p>Protocol address:https://&lt;ICS Host&gt;:&lt;Port&gt;/integration/flowapi/rest/PROCESS_PO/v01/</p>
+	<p>Enter the integration
+endpoint URL you recorded earlier.</p>
+
+  </li><li>
+	<p>Username: &lt;ICS Username&gt;</p>
+	<p>Enter the Oracle E-Business Suite user credentials used to create
+an Oracle E-Business Suite connection in Oracle Integration Cloud
+Service.</p>
+
+  </li><li>
+	<p>Password: &lt;ICS Password&gt;</p></li></ul>
+
+
+	<p><B>Updating the Trading Partner
+Details in the Trading Partner Setup Form</B></p><p><img width="858" height="599" src="./img/ics_exxmlpo5.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Save your work.</p>
+</li></ol>
+
+
+
+
+
+
+
+
+
+		<H2> <a name="8352890"></a><a id="T662011"></a><B>Testing and Validating the Integration</B></H2>
+
+<a name="d0e6982"></a><A NAME="ics_examltesting"></A>
+
+
+
+	<p>Based on the example scenario,
+once a purchase order is approved in the Oracle E-Business Suite Purchasing
+application, Oracle Purchasing will initiate XML Gateway outbound
+processing and publish XML message to Oracle Integration Cloud Service.
+Therefore, you need to create a purchase order first and then approve
+the order to trigger the outbound processing from Oracle E-Business
+Suite.</p>
+
+	<p>Perform the following steps to
+create and approve a new purchase order:</p>
+
+  <ol>
+  <li>
+	<p>Log in to the Oracle
+E-Business Suite Purchasing instance as the operations user who has the Purchasing, Vision Operations (USA) responsibility. </p>
+
+	<p>Select <B>Purchase Orders</B> and then <B>Purchase
+Orders</B> from the navigation menu. </p>
+
+  </li><li>
+	<p>In the Purchase Orders
+form, create a new purchase order for the configured trading partner
+or supplier called "Advanced Network Devices" with the following information:</p>
+
+  <ul>
+  <li>
+	<p>Supplier: Advanced
+Network Devices </p>
+  </li><li>
+	<p>Type: Standard Purchase
+Order</p>
+  </li><li>
+	<p>Site: SANTA CLARA-ERS</p>
+
+  </li><li>
+	<p>Ship-To: M1- Seattle
+Mfg</p>
+  </li><li>
+	<p>Bill-To: V1- New York
+City</p></li></ul>
+
+
+  </li><li>
+	<p>In the Line tab, add
+one line item:</p>
+
+  <ul>
+  <li>
+	<p>Num: 1</p>
+  </li><li>
+	<p>Item: AS10000</p>
+
+  </li><li>
+	<p>Description: 405 Digital
+Camera</p>
+  </li><li>
+	<p>UOM: Each</p>
+
+  </li><li>
+	<p>Quantity: 1</p>
+
+  </li><li>
+	<p>Price: 1</p>
+
+  </li><li>
+	<p>Freight: Accept the
+default value</p>
+  </li><li>
+	<p>FOB: Accept the default
+value</p>
+  </li><li>
+	<p>Promised Date: Enter
+a desired date</p>
+  </li><li>
+	<p>Need By Date: Enter
+a desired date</p></li></ul>
+
+
+	<p><B>Entering a Purchase Order Line
+Item Information in the Purchasing Orders Form</B></p><p><img width="938" height="567" src="./img/ics_exxmlpo1.gif" alt="the picture is described in the document text" ></p>
+
+  </li><li>
+	<p>Click <B>Save</B>.  </p>
+	<p>Purchase order is created with "Incomplete" status.  </p>
+
+  </li><li>
+	<p>Click <B>Approve</B>.</p>
+	<p>The Approve Document form appears.</p>
+
+  </li><li>
+	<p>In the Approval Details
+tab, select the "Submit for Approval" check box and ensure that the <B>XML</B> button is selected in the Transmission
+Method region.</p>
+
+	<p><B>Approving a Purchase Order with
+Approval Details</B></p><p><img width="858" height="623" src="./img/ics_exxmlpo2.gif" alt="the picture is described in the document text" ></p>
+
+	<p>Click <B>OK</B>. The order status is now updated from "Incomplete" to "Approved".</p>
+
+	<p>This status change will internally
+trigger the XML Gateway engine for outbound transactions. Additionally,
+it will trigger the "PROCESS PO" integration you created in Oracle
+Integration Cloud Service.  </p>
+</li></ol>
+
+
+	<p><B>Monitoring
+the Result in Oracle Integration Cloud Service</B></p>
+
+  <ol>
+  <li>
+	<p>Log in to Oracle Integration
+Cloud Service. </p>
+	<p>On the
+Integration Cloud Service toolbar, click <B>Monitoring</B>.</p>
+
+  </li><li>
+	<p>In the navigator, click <B>Integrations</B>. </p>
+	<p>Click the instance created for the "PROCESS PO" integration
+to monitor the result.</p>
+</li></ol>
+
+
+
+
+
+
+
+<!-- Start Footer --></div></div><footer>
+</footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+<script>$(document).foundation();</script>
+</body>
+</html>

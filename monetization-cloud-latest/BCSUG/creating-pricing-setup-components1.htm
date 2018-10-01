@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating pricing setup components</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="designing-product-offerings1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-charge-offers1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-CE5F2230-C5D0-484E-BF17-F9CEC47DA32C"></a> <span id="PAGE" style="display:none;">20/67</span> <!-- End Header -->
+<a id="BCSUG814"></a><a id="BCSUG424"></a>
+<h1 id="BCSUG-GUID-CE5F2230-C5D0-484E-BF17-F9CEC47DA32C" class="sect1"><span class="enumeration_chapter">15</span> Creating pricing setup components</h1>
+<div>
+<p>Setup components, such as services, events, and balance elements, are the prerequisite data used to create pricing components in Oracle Monetization Cloud.</p>
+<p>For background information, see <a href="designing-product-offerings1.htm#GUID-83A00E63-8C99-4175-9131-E04BFE3B95E6">About pricing setup components</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-1F1D12EF-7019-49A9-96FF-6D9FC2AC5DCC">Creating services</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-42990CDE-0175-4B9B-93E0-1A8AB7D9FB45">Creating events</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-5CE2A1BB-1D75-4671-8B0E-F873C993281C">Creating ratable usage metrics (RUMs)</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-B287450B-9222-4738-94AD-B90585D32E13">Creating balance elements</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-1CED6ACB-7F3A-430B-B5E8-055EBFD066EB">Creating and editing rounding rules</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-9FE53936-E2F6-44F0-B005-1EF7AF6F6F3F">Adding custom attributes to services and events</a></p>
+</li>
+<li>
+<p><a href="creating-pricing-setup-components1.htm#GUID-8AE8D659-2FED-4352-8D03-DA0A872D3DF9">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG426"></a>
+<div class="props_rev_3"><a id="GUID-1F1D12EF-7019-49A9-96FF-6D9FC2AC5DCC"></a>
+<h2 id="BCSUG-GUID-1F1D12EF-7019-49A9-96FF-6D9FC2AC5DCC" class="sect2">Creating services</h2>
+<div>
+<p>Services define what you base your charges on. For example, to charge customers for movie downloads, you might create a service named Movie Download.</p>
+<p>Use Business Configuration to create services. Select <span class="bold">Service Design</span> and then <span class="bold">Create Service</span>. When you create a service:</p>
+<ol>
+<li>
+<p>Choose an existing service to include attributes from. The predefined service named Service contains basic attributes necessary for all services.</p>
+</li>
+<li>
+<p>Add attributes to the service.</p>
+</li>
+<li>
+<p>Add events to use when charging for this service. Purchase, cancel, and recurring events such as monthly charges are already part of the service's event configuration. You can also create a new event. See <a href="creating-pricing-setup-components1.htm#GUID-42990CDE-0175-4B9B-93E0-1A8AB7D9FB45">Creating events</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSUG427"></a>
+<div class="props_rev_3"><a id="GUID-42990CDE-0175-4B9B-93E0-1A8AB7D9FB45"></a>
+<h2 id="BCSUG-GUID-42990CDE-0175-4B9B-93E0-1A8AB7D9FB45" class="sect2">Creating events</h2>
+<div>
+<p>An event is an online action that's recognized by Oracle Monetization Cloud and can be charged for; for example, a phone call, an SMS message, or a data download.</p>
+<p>When you create a service and you want to charge customers for using the service, you need to create usage events and associate them with the service.</p>
+<p>An event definition includes a set of attributes that record the usage; for example, the amount of data downloaded, or the duration of a session.</p>
+<p>Use Business Configuration to create events. Select <span class="bold">Service Design</span> and then <span class="bold">Create Event</span>.</p>
+<p>When creating an event, you choose an existing event type to base the new event on. The predefined usage event contains basic attributes that are necessary for usage events.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If you're creating a recurring event:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Specify the frequency in number of days, weeks, months, or years.</p>
+</li>
+<li>
+<p>Specify whether to charge in advance (Cycle Forward) or in arrears (Cycle Arrears).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If you're creating a usage event, specify how to measure the event; for example, by duration or occurrence.</p>
+</li>
+</ul>
+<p>You can also create a usage metric for measuring the event. See <a href="creating-pricing-setup-components1.htm#GUID-5CE2A1BB-1D75-4671-8B0E-F873C993281C">Creating ratable usage metrics (RUMs)</a>.</p>
+</div>
+</div>
+<a id="BCSUG429"></a>
+<div class="props_rev_3"><a id="GUID-5CE2A1BB-1D75-4671-8B0E-F873C993281C"></a>
+<h2 id="BCSUG-GUID-5CE2A1BB-1D75-4671-8B0E-F873C993281C" class="sect2">Creating ratable usage metrics (RUMs)</h2>
+<div>
+<p>A RUM specifies how to measure an event. You create RUMs when you create events in Business Configuration. Two predefined RUMs, Duration and Occurrence, are provided.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="italic">Duration</span> RUM is calculated as the amount of time that passed between when the event started and ended.</p>
+</li>
+<li>
+<p>The <span class="italic">Occurrence</span> RUM is set to 1 because the charge is for one occurrence of the whole event, not for a quantity.</p>
+</li>
+</ul>
+<p>You can create a RUM when you create a usage event. In the Event Measured by section, select <span class="bold">New RUM</span> and then do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a name and code. The code is a unique, three-letter code for external reference to the RUM.</p>
+</li>
+<li>
+<p>Select the unit of measurement, such as bytes, megabytes, or minutes. For example, to rate duration, you might select seconds or minutes.</p>
+</li>
+<li>
+<p>Select how to round quantities:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Half up:</span> A fraction of 0.5 or greater is rounded up. For example 1.5 is rounded to 2.</p>
+</li>
+<li>
+<p><span class="bold">Half down:</span> A fraction of 0.5 or less is rounded down. For example, 1.5 is rounded to 1.</p>
+</li>
+<li>
+<p><span class="bold">None:</span> The number isn't rounded.</p>
+</li>
+<li>
+<p><span class="bold">Round up:</span> Any fraction is always rounded up.</p>
+</li>
+<li>
+<p><span class="bold">Round down:</span> Any fraction is always rounded down.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Whole:</span> Select this type if the RUM can't be split; for example, when it's measured by occurrence.</p>
+</li>
+<li>
+<p><span class="bold">Partial:</span> Select this type if the RUM can be split; for example, when it's measured by duration.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG428"></a>
+<div class="props_rev_3"><a id="GUID-B287450B-9222-4738-94AD-B90585D32E13"></a>
+<h2 id="BCSUG-GUID-B287450B-9222-4738-94AD-B90585D32E13" class="sect2">Creating balance elements</h2>
+<div>
+<p>A balance element represents a currency or noncurrency asset, such as US dollars or minutes. When you configure pricing in a charge offer or a discount offer, you specify the balance elements that are debited or credited. For example, a charge of 1 dollar per minute for a phone call debits the USD balance element.</p>
+<p>Use Business Configuration to create balance elements. Select <span class="bold">Charging</span>. In the <span class="bold">Balance Elements</span> section, select the <span class="bold">Add Currency Balance Element</span> (plus) icon or select the <span class="bold">Add Non-currency Balance Element</span> icon.</p>
+<div class="figure" id="GUID-B287450B-9222-4738-94AD-B90585D32E13__GUID-901EFAB5-D14E-42E3-AEFB-8F18D8ED8AE8"><br />
+<div class="imageleft"><img class="imageleft" width="32" height="31" src="img/non_curr_icon.gif" alt="This figure shows the Add non-currency balance element icon." title="This figure shows the Add non-currency balance element icon." /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>When creating balance elements, you do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a balance element name, such as US Dollars.</p>
+</li>
+<li>
+<p>Enter the ISO alphabetic currency code, such as USD or EUR.</p>
+</li>
+<li>
+<p>Enter the ISO numeric currency code, such as 840 or 978.</p>
+</li>
+<li>
+<p>Enter the currency symbol, such as $.</p>
+</li>
+<li>
+<p>For a noncurrency balance element, select whether it's a counter.</p>
+<p>Counters allow you to track balances, such as the amount spent or megabytes downloaded by a customer. Counters are added to charges, discounts, and trackers.</p>
+</li>
+<li>
+<p>For a noncurrency balance element, select whether it can be temporary.</p>
+<p>Temporary balance elements retain their balances while processing the discounts for one event. After all discounts for an event are completed, temporary balance elements are reset to 0. See <a href="creating-discount-offers2.htm#GUID-70610DC5-CE6B-4572-B6C5-B3A2343763FA">About using temporary balances in discounts</a>.</p>
+</li>
+<li>
+<p>Select the consumption rule, which specifies the order in which to consume balances. For example, if a customer is granted minutes with different validity periods, the minutes for each validity period are stored in separate balances. You specify which balance of minutes to use first, according to the starting validity date or ending validity date.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-B287450B-9222-4738-94AD-B90585D32E13__GUID-F659F517-2E76-4CEB-8784-92AC7C1CF9F3">
+<p class="notep1">Note:</p>
+<p>The <span class="bold">Can Be Folded</span> option is not applicable.</p>
+</div>
+<p>This table describes the consumption rules:</p>
+<div class="tblformalwide" id="GUID-B287450B-9222-4738-94AD-B90585D32E13__GUID-87FC8425-4423-48D6-85BC-FDB0E5C617BB">
+<table class="cellalignment201" summary="This table shows balance consumption rules.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment204" id="d8160e279">Consumption rule</th>
+<th class="cellalignment204" id="d8160e282">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e287" headers="d8160e279">
+<p>Earliest start time (EST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e287 d8160e282">
+<p>Consume the balance with the earliest validity start time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e294" headers="d8160e279">
+<p>Latest start time (LST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e294 d8160e282">
+<p>Consume the balance with the latest validity start time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e301" headers="d8160e279">
+<p>Earliest expiration time (EET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e301 d8160e282">
+<p>Consume the balance with the earliest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e308" headers="d8160e279">
+<p>Latest expiration time (LET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e308 d8160e282">
+<p>Consume the balance with the latest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e315" headers="d8160e279">
+<p>Earliest start time and latest expiration time (ESTLET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e315 d8160e282">
+<p>Consume the balance with the earliest validity start time first. If multiple balances have the same start time, use the one with the latest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e322" headers="d8160e279">
+<p>Earliest start time and earliest expiration time (ESTEET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e322 d8160e282">
+<p>Consume the balance with the earliest validity start time first. If multiple balances have the same start time, use the one with the earliest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e329" headers="d8160e279">
+<p>Latest start time and earliest expiration time (LSTEET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e329 d8160e282">
+<p>Consume the balance with the latest validity start time first. If multiple balances have the same start time, use the one with the earliest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e336" headers="d8160e279">
+<p>Latest start time and latest expiration time (LSTLET)</p>
+</td>
+<td class="cellalignment207" headers="d8160e336 d8160e282">
+<p>Consume the balance with the latest validity start time first. If multiple balances have the same start time, use the one with the latest validity end time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e343" headers="d8160e279">
+<p>Earliest expiration time and earliest start time (EETEST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e343 d8160e282">
+<p>Consume the balance with the earliest validity end time first. If multiple balances have the same end time, use the one with the earliest validity start time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e350" headers="d8160e279">
+<p>Earliest expiration time and latest start time (EETLST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e350 d8160e282">
+<p>Consume the balance with the earliest validity end time first. If multiple balances have the same end time, use the one with the latest validity start time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e357" headers="d8160e279">
+<p>Latest expiration time and earliest start time (LETEST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e357 d8160e282">
+<p>Consume the balance with the latest validity end time first. If multiple balances have the same end time, use the one with the earliest validity start time first.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d8160e365" headers="d8160e279">
+<p>Latest expiration time and latest start time (LETLST)</p>
+</td>
+<td class="cellalignment207" headers="d8160e365 d8160e282">
+<p>Consume the balance with the latest validity end time first. If multiple balances have the same end time, use the one with the latest validity start time first.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSUG617"></a>
+<div class="props_rev_3"><a id="GUID-1CED6ACB-7F3A-430B-B5E8-055EBFD066EB"></a>
+<h2 id="BCSUG-GUID-1CED6ACB-7F3A-430B-B5E8-055EBFD066EB" class="sect2">Creating and editing rounding rules</h2>
+<div>
+<p>Rounding rules allow you to control the precision of charge calculations.</p>
+<p>Use Business Configuration to create rounding rules. Select <span class="bold">Charging</span>. In the Rounding Rules section, select the <span class="bold">Add Rounding Rule</span> (plus) icon.</p>
+<p>When creating a rounding rule, you do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select the processing stage in which to apply the rounding rule:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Processing accounts receivable</p>
+</li>
+<li>
+<p>Charging</p>
+</li>
+<li>
+<p>Discounting</p>
+</li>
+<li>
+<p>Calculating taxes</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the event category that the rounding rule applies to:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Billing time</p>
+</li>
+<li>
+<p>One-time</p>
+</li>
+<li>
+<p>Recurring</p>
+</li>
+<li>
+<p>Usage</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the event that the rounding rule applies to. The list of events that are listed is based on the event category. For example, Basic Usage is listed for the Usage event category.</p>
+</li>
+</ul>
+<p>To edit a rounding rule, select the balance element in the <span class="bold">Balance Elements</span> table. Then, configure the following in the Rounding Rules table:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the selected event has child events, select <span class="bold">Apply To Child Events</span> if you want to use the rounding rule for both parent and child events.</p>
+</li>
+<li>
+<p>Select how to round additional numbers beyond the precision value:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Up:</span> For example, 10.151 rounds to 10.16.</p>
+</li>
+<li>
+<p><span class="bold">Down:</span> For example, 10.159 rounds to 10.15.</p>
+</li>
+<li>
+<p><span class="bold">Nearest:</span> If the additional digit is 0 through 4, the last significant digit remains the same. If the additional digit is 5 through 9, the last significant digit is rounded up. For example, 10.144 rounds to 10.14, and 10.145 rounds to 10.15.</p>
+</li>
+<li>
+<p><span class="bold">Even:</span> If the additional digit is 0 through 4, the last significant digit remains the same. If the additional digit is 6 through 9, the last significant digit is rounded up. If the additional digit is 5, the last significant digit is rounded to the nearest even digit. For example, 10.155 rounds to 10.16, and 10.165 rounds to 10.16.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the rounding precision. For example, to round US dollars to cents, specify a precision value of two places after the decimal point.</p>
+</li>
+<li>
+<p>In the <span class="bold">Tolerance Min</span>, <span class="bold">Tolerance Max</span>, and <span class="bold">Tolerance%</span> columns, enter the minimum and maximum tolerance values and the tolerance percentage that determines how the rounding rule is applied to the balance element. For example, you can specify a tolerance of 4 digits after the decimal point.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG815"></a>
+<div class="props_rev_3"><a id="GUID-9FE53936-E2F6-44F0-B005-1EF7AF6F6F3F"></a>
+<h2 id="BCSUG-GUID-9FE53936-E2F6-44F0-B005-1EF7AF6F6F3F" class="sect2">Adding custom attributes to services and events</h2>
+<div>
+<p>You can add custom attributes to services and events; for example, to track the number of bonus points a customer earned during a movie download.</p>
+<p>Use Business Configuration to add custom attributes to a service or event. Select <span class="bold">Service Design</span>. In the <span class="bold">Services and Events</span> tab, select the name of the service or event and then do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Add a custom attribute by entering the attribute's name and selecting the <span class="bold">Add</span> icon.</p>
+</li>
+<li>
+<p>Select the data type of the attribute, such as decimal or string.</p>
+</li>
+<li>
+<p>Specify whether the attribute will be used by pricing.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG656"></a>
+<div class="props_rev_3"><a id="GUID-8AE8D659-2FED-4352-8D03-DA0A872D3DF9"></a>
+<h2 id="BCSUG-GUID-8AE8D659-2FED-4352-8D03-DA0A872D3DF9" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a></p>
+</li>
+<li>
+<p><a href="pricing-scenarios1.htm#GUID-E3143009-C6D6-42B8-865D-E7A46B39E13F" title="This document describes how to configure common pricing scenarios in Oracle Monetization Cloud.">Pricing scenarios</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="designing-product-offerings1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-charge-offers1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

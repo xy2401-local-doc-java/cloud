@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Patching the service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When a patch is available, the Maintenance tab displays a notification and a link to download the patch files. Once you have the files, you can copy them to your node and apply the patch. You can also apply WebLogic patches at the same time." />
+<meta name="dcterms.created" content="2016-11-21T17:21:17Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Big Data Discovery Cloud Service Getting Started Guide" />
+<meta name="dcterms.identifier" content="E65362-05" />
+<meta name="dcterms.isVersionOf" content="BDDGS" />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="cgs_subscribe_data_loading_bddcs_pointers.htm" title="Previous" type="text/html" />
+<link rel="Next" href="tgs_cloud_patch_rollback.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDDGS.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDDGS.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDDGS.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="task_DDE17B2F63BB4F32965313FE59CC13FF"></a> <span id="PAGE" style="display:none;">36/77</span> <!-- End Header -->
+<h1 id="BDDGS-task_DDE17B2F63BB4F32965313FE59CC13FF" class="sect1">Patching the service</h1>
+<div>
+<p>When a patch is available, the <span class="bold">Maintenance</span> tab displays a notification and a link to download the patch files. Once you have the files, you can copy them to your node and apply the patch. You can also apply WebLogic patches at the same time.</p>
+<div class="section" id="task_DDE17B2F63BB4F32965313FE59CC13FF__context_1C97AC3B7F1840169312AEF505AAA172">
+<div class="p">
+<div class="infobox-note">
+<p class="notep1">Important</p>
+To apply the patch, you must SSH into the BDDCS node as the <code>opc</code> user, then switch to the <code>bdd</code> user. For information, see <a href="tgs_lifecycle_accessing_bddcs_node_in_bdcs.htm#task_accyyhhgrepklj32187jhgr4" title="To access Big Data Discovery Cloud Service, log into the service node of the Big Data Cloud Service cluster as the opc user and change the user to bdd to perform any service-specific operations, such as restoring from a backup, or applying patches.">Accessing the service node in a cluster</a>.</div>
+</div>
+<p>You apply the patch by running a single script on your BDDCS node. In addition to patching your instance, the script makes a backup of your current instance, which you can use to roll back the patch if it fails. When the script completes, your instance will be completely updated and running.</p>
+<p><a id="d5956e40" class="indexterm-anchor"></a>To patch your BDDCS instance:</p>
+</div>
+<!-- class="section" -->
+<ol id="task_DDE17B2F63BB4F32965313FE59CC13FF__steps_A43459F769834E7DA2C92EC21997EE1C">
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_8148FF7658D04AA0A0A5AFFB6BDAB957"><span>Go to the <span class="bold">Maintenance</span> tab of the <span class="bold">Administration</span> page and click the link for the BDDCS patch.</span>
+<div>The patch request on the Oracle Automated Release Updates site displays.</div>
+<div>
+<div class="infobox-note">
+<p class="notep1">Note:</p>
+On this page, there is also a heading <span class="bold">Available Patches</span>. This is a placeholder for patches that will be available for the future release. A heading <span class="bold">Patch History</span> is present but is also empty.</div>
+</div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_AC819AA7D58D41C0A88B9F4FFA939E77"><span>Download all of the patch files in the table at the bottom of the page.</span>
+<div>The files are named <code>p<span class="variable">&lt;patch_number&gt;</span>_Generic_XofX.zip.</code></div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_3CE6AD95B5BF41149D90FF31C6E6AE6F"><span>If you want to patch WebLogic Server:</span>
+<ol id="task_DDE17B2F63BB4F32965313FE59CC13FF__substeps_FD8D3A06FB9E4DC7B5E2DE267F38BFB9">
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__substep_2EC5DE8EA84E490EB2FAC22ACDB651B3"><span>Log in to <a href="https://support.oracle.com/epmos/faces/MosIndex.jspx?_afrLoop=397050595696468&amp;_afrWindowMode=0&amp;_adf.ctrl-state=1bzz7f1ek9_4" target="_blank">My Oracle Support</a> and click the <span class="bold">Patches &amp; Updates</span> tab.</span></li>
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__substep_7E60087A28064BA79DA0B07973DB2C4E"><span>Use the <span class="bold">Patch Search</span> section to locate and download the patch you want.</span></li>
+</ol>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_F5A7DF84DDA44068B0086ADD90B7C746"><span>Open a command prompt and SSH into the BDDCS node as the <code>opc</code> user:</span>
+<div>
+<pre dir="ltr">
+ssh -i ~/.ssh/id_rsa opc@<span class="variable">&lt;hostname&gt;</span>
+</pre>
+Where <code><span class="variable">&lt;hostname&gt;</span></code> is the hostname of the BDDCS node. This is listed on the <span class="bold">Overview</span> page under <span class="bold">BDD nodes</span>.</div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_A20821F3187C4F4DAD897AB4886001F4"><span>Switch to the <code>bdd</code> user:</span>
+<div>
+<pre dir="ltr">
+sudo su bdd
+</pre></div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_B23A8DD57382416BB188CFF502567C53"><span>Go to <code>/opt/oracle/bdd</code> and create a new directory called <code>&lt;patch_number&gt;</code>:</span>
+<div>
+<pre dir="ltr">
+cd /opt/oracle/bdd
+mkdir &lt;patch_number&gt;
+</pre></div>
+<div>This should be the number from the patch filenames.</div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_3D419C551A92421EB4B63C3980F831F9"><span>Copy the patch files from your local machine to <code>&lt;patch_number&gt;</code>:</span>
+<div>
+<pre dir="ltr">
+scp -r <span class="variable">&lt;user&gt;</span>@<span class="variable">&lt;local_hostname&gt;</span>:<span class="variable">&lt;/path/to/BDDCS/patches&gt;</span> /opt/oracle/bdd/<span class="variable">&lt;patch_number&gt;</span>
+                        scp -r <span class="variable">&lt;user&gt;</span>@<span class="variable">&lt;local_hostname&gt;</span>:<span class="variable">&lt;/path/to/WLS/patches&gt;</span> /opt/oracle/bdd/<span class="variable">&lt;patch_number&gt;</span>/WLSPatches
+</pre></div>
+<div>Where:
+<ul style="list-style-type: disc;" id="task_DDE17B2F63BB4F32965313FE59CC13FF__ul_F8ADBD5500054F72B5CAA3A4996B15FD">
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__li_BD1AD2F6DE644901B4B2370068FD8042"><code><span class="variable">&lt;user&gt;</span></code> is your Linux username</li>
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__li_760C81C674B74613B90975C4DEC69768"><code><span class="variable">&lt;local_hostname&gt;</span></code> is your local machine's hostname</li>
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__li_E5362A2586D54D9BBFD39C8F554EA511"><code><span class="variable">&lt;/path/to/BDDCS/patches&gt;</span></code> is the absolute path to the location of the BDDCS patches on your machine</li>
+<li id="task_DDE17B2F63BB4F32965313FE59CC13FF__li_E8A7418D658C41518F7A649C36A2A3B9"><code><span class="variable">&lt;/path/to/WLS/patches&gt;</span></code> is the absolute path to the location of the WebLogic Server patches on your machine</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_D04446F0D7154A9797DCB8D4394FAAF3"><span>Go into the <code>&lt;patch_number&gt;</code> directory and extract the patch tools:</span>
+<div>
+<pre dir="ltr">
+cd &lt;patch_number&gt;
+unzip bddcs_tools.zip
+</pre></div>
+<div>This creates a directory called <code>/bddcs/bin</code>, which contains the scripts that install the patch.</div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_0FECAE57F6454027891562DA6C164D8B"><span>Set the following environment variables:</span>
+<table class="cellalignment25" id="task_DDE17B2F63BB4F32965313FE59CC13FF__choicetable_07CB127951154CF2A7A8FA93E58C6C83">
+<thead>
+<tr>
+<th class="cellalignment26" id="d5956e227-option">Environment variable</th>
+<th class="cellalignment26" id="d5956e227-desc">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e234"><strong><code>BDD_HADOOP_UI_USERNAME</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e234">Username for the Cloudera Manager admin</td>
+</tr>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e240"><strong><code>BDD_HADOOP_UI_PASSWORD</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e240">Password for the Cloudera Manager admin</td>
+</tr>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e246"><strong><code>BDD_WLS_USERNAME</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e246">Username for the WebLogic Server admin</td>
+</tr>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e252"><strong><code>BDD_WLS_PASSWORD</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e252">Password for the WebLogic Server admin</td>
+</tr>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e258"><strong><code>BDD_STUDIO_ADMIN_USERNAME</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e258">Username for the Studio admin</td>
+</tr>
+<tr>
+<td class="cellalignment24" headers="d5956e227-option" id="d5956e264"><strong><code>BDD_STUDIO_ADMIN_PASSWORD</code></strong></td>
+<td class="cellalignment24" headers="d5956e227-desc d5956e264">Password for the Studio admin</td>
+</tr>
+</tbody>
+</table>
+<div>These are required by the upgrade script. You can set them by running:
+<pre dir="ltr">
+export <span class="variable">VARIABLE_NAME</span>=<span class="variable">&lt;value&gt;</span>
+</pre></div>
+</li>
+<li class="stepexpand" id="task_DDE17B2F63BB4F32965313FE59CC13FF__step_49C716674352451FB0028E7840E2FF54"><span>Go to <code>/opt/oracle/bdd/&lt;patch_number&gt;/bddcs/bin</code> and run the patch script:</span>
+<div>
+<pre dir="ltr">
+./bdd-cloud.sh upgrade bdd --old_bdd_dir=/home/bdd/Oracle/Middleware/BDD --new_bdd_package_dir=/opt/oracle/bdd/<span class="variable">&lt;patch_number&gt;</span>
+</pre></div>
+</li>
+</ol>
+<div class="section" id="task_DDE17B2F63BB4F32965313FE59CC13FF__postreq_5FCC4042879D4728844ECD0DD24BB423">
+<p>When the patch script completes, your instance is fully updated and running. The <span class="bold">Overview</span> page should display the new version number. Note that your system still contains some files and directories associated with the previous version of BDDCS; you can remove these if you want.</p>
+<p>If the patch fails, you should roll it back and restore your previous cluster. For more information, see <a href="tgs_cloud_patch_rollback.htm" title="If the patch fails, you should run the rollback script to remove the patch and restore your old instance. You can then fix the errors that caused the failure and reapply the patch.">Rolling back a failed patch</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment13">
+<tr>
+<td class="cellalignment20">
+<table class="cellalignment18">
+<tr>
+<td class="cellalignment17"><a href="cgs_subscribe_data_loading_bddcs_pointers.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment17"><a href="tgs_cloud_patch_rollback.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment22">
+<table class="cellalignment16">
+<tr>
+<td class="cellalignment17"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment17"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment17"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment17"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

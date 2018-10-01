@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Working with People and Groups in the Add-In for Outlook</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-04-26T11:27:29Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Social Network" />
+<meta name="dcterms.identifier" content="E85025-01" />
+<meta name="dcterms.isVersionOf" content="OSNUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="oa_dandf.htm" title="Previous" type="text/html" />
+<link rel="Next" href="oa_so.htm" title="Next" type="text/html" />
+<link rel="alternate" href="OSNUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"181f4e1",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"181f4e1",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-179F3A81-E7F8-4BB0-89BD-95E88401AD0D"></a> <span id="PAGE" style="display:none;">160/367</span> <!-- End Header -->
+<a id="OSNUG2059"></a>
+<h1 id="OSNUG-GUID-179F3A81-E7F8-4BB0-89BD-95E88401AD0D" class="sect1">Working with People and Groups in the Add-In for Outlook</h1>
+<div>
+<p>This section describes how to work with people and grounds in the add-in for Outlook:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oa_people_groups.htm#GUID-B41CFE5C-F419-4B2C-989E-FD1F3D3045BD">What is the People and Groups panel?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-D279F73D-640F-40A0-84C3-8AE78404B14E">What are "outside users"?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-D0D22419-0B13-4EB7-8505-B6F2B81E4E89">What are "unregistered users"?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-5BDE8D9E-6C92-4336-B9A7-9620AC38CD6A">How do I navigate to a person's profile?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-E70D141B-296C-4BEA-A12C-2D5E13204902">How can I view my list of contacts?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-D1B912F6-F179-4CC7-BC68-C35C0DB7545B">How do I add new contacts?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-55C2DCCE-CBE7-47CE-855B-F11598B3D290">How do I invite my contacts from my Outlook address book to join Oracle Social Network?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-AC3D6707-B313-4921-B365-786B6740178B">How do I remove a contact?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-4999235A-9B39-4243-B30F-0F757AF677A0">How do I follow people and add them as contacts?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-3D988E48-68DF-4542-BE57-0DDB45A78062">How can I view a list of the people I follow?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-0A555B7A-105C-4B3F-B093-4DDB14FEBCF3">How can I view a list of the people who follow me?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-747124BA-F0F7-4F42-9BB0-AEDEE5A99679">What are groups?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518">How do I view a group's details?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-CA04B838-BF76-41B6-BA0A-F6218824FB89">How do I navigate to a group's wall?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-4B79A4B0-186D-45EB-861B-440711B0E96F">How can I view a group's membership?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-391CF14D-C780-415E-9F56-C11262460F42">How do I create a group?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-6DB3155E-5AA8-4D0B-B351-969376E819FC">How do I add people to a group?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-9EB1ABBB-9EAA-4116-8928-D389F8ADA61E">How do I revise a group's membership?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-FDCD39DF-E6EA-47CE-944A-EBC1E24A3401">How do I hide membership messages on a group wall?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-E292AFFE-699A-44F1-A3D0-4C3E48EBC00D">How do I rename a group or revise its description?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-5159A27C-6366-4D8C-9272-209E0FB8D4FB">How do I add or change a group's profile picture?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-C11F18D7-C603-4076-9631-C0AFBABC7DF0">How do I deactivate a group?</a></p>
+</li>
+<li>
+<p><a href="oa_people_groups.htm#GUID-34A5C5C4-F9EC-43EC-85B1-A530A26F8A48">Is there a way to reactivate a deactivated group?</a></p>
+</li>
+</ul>
+</div>
+<a id="OSNUG2060"></a>
+<div class="props_rev_3"><a id="GUID-B41CFE5C-F419-4B2C-989E-FD1F3D3045BD"></a>
+<h2 id="OSNUG-GUID-B41CFE5C-F419-4B2C-989E-FD1F3D3045BD" class="sect2">What is the People and Groups panel?</h2>
+<div>
+<p>The <span class="bold">People and Groups</span> panel gives you quick access to your entire social network. Your network includes your contacts, the people you follow, the people who follow you, and the groups you are a member of.</p>
+<p>To open the <span class="bold">People and Groups</span> panel, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" /> in the navigation bar.</p>
+<p>The <span class="bold">People and Groups</span> panel has five tabs:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Contacts</span> (<img width="15" height="17" src="img/GUID-5DC36786-1C68-4585-A1B3-FBBCAA31C477-default.gif" alt="Contacts tab" title="Contacts tab" />)&mdash;People you selected as contacts</p>
+</li>
+<li>
+<p><span class="bold">Groups</span> (<img width="17" height="12" src="img/GUID-97B29EF8-3DAB-4506-A38B-067E87145651-default.gif" alt="Groups tab" title="Groups tab" />)&mdash;The groups you belong to</p>
+</li>
+<li>
+<p><span class="bold">People You Follow</span> (<img width="18" height="13" src="img/GUID-BB8E0FEC-B66B-481A-A95D-FE3DF8FC6AE7-default.gif" alt="People You Follow tab" title="People You Follow tab" />)&mdash;People you have selected to follow</p>
+</li>
+<li>
+<p><span class="bold">Your Followers</span> (<img width="18" height="13" src="img/GUID-9BD4E0CF-3431-4ADC-B2AD-AFE5809D1400-default.gif" alt="Your Followers tab" title="Your Followers tab" />)&mdash;People who have selected to follow you</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="OSNUG3040"></a>
+<div class="props_rev_3"><a id="GUID-D279F73D-640F-40A0-84C3-8AE78404B14E"></a>
+<h2 id="OSNUG-GUID-D279F73D-640F-40A0-84C3-8AE78404B14E" class="sect2">What are "outside users"?</h2>
+<div>
+<p>Outside users are people who don't work for your company, but who collaborate with you and your co-workers in Oracle Social Network. They are members of Oracle Social Network with limited privileges. For example, outside users can <span class="italic">be</span> contacts but they can't <span class="italic">have</span> contacts in Oracle Social Network. They can participate in Conversations only when they are added by you or some other member of the Conversation.</p>
+<p><span class="bold">Note:</span> One outside user can't add another to a Conversation.</p>
+<p>Wherever an outside user is a member of a Conversation, a banner appears at the top of the page to alert you. All outside users have the same avatar (<img width="51" height="42" src="img/GUID-BF59256C-DBCE-4393-8C5E-A4BE59F4DCB4-default.gif" alt="Outside user avatar" title="Outside user avatar" />) and their names are in purple text so you can easily tell who they are.</p>
+<p>When you open an outside user's wall, you'll notice that you can't post to it. However, you can still view profile information (if the user has added any).</p>
+<p>Since outside users do not have walls they can post to, you won't see <span class="bold">Follow</span> or <span class="bold">Following</span> buttons on their profile page. Instead, you'll see <span class="bold">Add as Contact</span> or <span class="bold">Remove from Contacts</span> options.</p>
+</div>
+</div>
+<a id="OSNUG10446"></a>
+<div class="props_rev_3"><a id="GUID-D0D22419-0B13-4EB7-8505-B6F2B81E4E89"></a>
+<h2 id="OSNUG-GUID-D0D22419-0B13-4EB7-8505-B6F2B81E4E89" class="sect2">What are "unregistered users"?</h2>
+<div>
+<p>Unregistered users are people who are in your company's directory but are not yet members of Oracle Social Network. When you add people to a Conversation or wall, the word <span class="italic">unregistered</span> appears next the names of the unregistered in the Manage Members dialog. When you try to add an unregistered user, a warning alerts you to their unregistered status.</p>
+<p>When you add an unregistered person to a Conversation, they receive an email with a link to set up their account.</p>
+</div>
+</div>
+<a id="OSNUG10553"></a>
+<div class="props_rev_3"><a id="GUID-5BDE8D9E-6C92-4336-B9A7-9620AC38CD6A"></a>
+<h2 id="OSNUG-GUID-5BDE8D9E-6C92-4336-B9A7-9620AC38CD6A" class="sect2">How do I navigate to a person's profile?</h2>
+<div>
+<div class="section">
+<p>Wherever you see a person's picture or name, you can click it to go to the person's profile.</p>
+<p>Alternatively, you can right-click a person and select <span class="bold">Go To &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;'s Wall</span>. You can also open a contact in Outlook, and click <span class="bold">Go to Wall</span> in the ribbon.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2061"></a>
+<div class="props_rev_3"><a id="GUID-E70D141B-296C-4BEA-A12C-2D5E13204902"></a>
+<h2 id="OSNUG-GUID-E70D141B-296C-4BEA-A12C-2D5E13204902" class="sect2">How can I view my list of contacts?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Contacts</span> tab (<img width="15" height="17" src="img/GUID-5DC36786-1C68-4585-A1B3-FBBCAA31C477-default.gif" alt="Contacts tab" title="Contacts tab" />).</span></li>
+<li class="stepexpand"><span>Optionally, arrange your list of contacts. Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, then select your options:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select or clear <span class="bold">Show Offline Contacts</span> to either show (select) or hide (clear) your contacts who are currently offline.</p>
+</li>
+<li>
+<p>Select <span class="bold">Arrange By</span> then either <span class="bold">Name</span>, to arrange your list of contacts by a contact's first name, or <span class="bold">Presence Status</span>, to arrange the list by the person's online status: active, away, and offline.</p>
+</li>
+<li>
+<p>Select <span class="bold">Sort</span> and choose from either <span class="bold">Ascending</span> (from 0 to 9 and A to Z or active to offline) or <span class="bold">Descending</span> (from Z to A and 9 to 0 or offline to active).</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2062"></a>
+<div class="props_rev_3"><a id="GUID-D1B912F6-F179-4CC7-BC68-C35C0DB7545B"></a>
+<h2 id="OSNUG-GUID-D1B912F6-F179-4CC7-BC68-C35C0DB7545B" class="sect2">How do I add new contacts?</h2>
+<div>
+<div class="section">
+<p>You can add a new contact on the <span class="bold">Contacts</span> tab of the <span class="bold">People and Groups</span> panel or by following them (see <a href="oa_people_groups.htm#GUID-4999235A-9B39-4243-B30F-0F757AF677A0">How do I follow people and add them as contacts?</a>).</p>
+<p><span class="bold">Note:</span> You can add an outside user as a contact, but outside users can't add you. Outside users can't have contacts in Oracle Social Network.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Contacts</span> tab (<img width="15" height="17" src="img/GUID-5DC36786-1C68-4585-A1B3-FBBCAA31C477-default.gif" alt="Contacts tab" title="Contacts tab" />).</span></li>
+<li class="stepexpand"><span>On the <span class="bold">Contacts</span> banner, click <img width="16" height="17" src="img/GUID-77EB1A96-EB33-47CA-9EF1-B8BA4AE563D1-default.gif" alt="Add Members icon" title="Add Members icon" /> to open the Select Members dialog.</span></li>
+<li class="stepexpand"><span>Add users in any of the following ways:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>To search for a particular person, enter a name in the <span class="bold">Search</span> field, then select from the results.</p>
+</li>
+<li>
+<p>If your administrator has configured the system to allow you to invite users, you can invite people from your Outlook address book.</p>
+<p>To add a contact from your Outlook address book, click <span class="bold">Outlook Contacts</span>, then double-click the person you want to add.</p>
+<p><span class="bold">Note:</span> Only contacts that include email addresses appear on the <span class="bold">Outlook Contacts</span> tab.</p>
+<p>Confirm that you want to invite the person. When you click <span class="bold">OK</span>, an email is sent to the contact inviting them to join Oracle Social Network.</p>
+<p><span class="bold">Note:</span> You can also invite someone from the Outlook ribbon while viewing the contact's card. See <a href="oa_people_groups.htm#GUID-55C2DCCE-CBE7-47CE-855B-F11598B3D290">How do I invite my contacts from my Outlook address book to join Oracle Social Network?</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to add the people you selected as your contacts.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG10916"></a>
+<div class="props_rev_3"><a id="GUID-55C2DCCE-CBE7-47CE-855B-F11598B3D290"></a>
+<h2 id="OSNUG-GUID-55C2DCCE-CBE7-47CE-855B-F11598B3D290" class="sect2">How do I invite my contacts from my Outlook address book to join Oracle Social Network?</h2>
+<div>
+<p>If your administrator has configured the system to allow you to invite users, you can invite people from your Outlook address book. Inviting users to join Oracle Social Network makes it easier to collaborate with them.</p>
+<ol>
+<li>
+<p>From your Outlook address book, open the contact you want to add to Oracle Social Network.</p>
+<p><span class="bold">Note:</span> The contact must include an email address.</p>
+</li>
+<li>
+<p>In the Outlook ribbon, click <span class="bold">Invite</span> from the Oracle Social Network actions.</p>
+<p>An email is sent to the contact inviting them to join Oracle Social Network.</p>
+</li>
+</ol>
+<p><span class="bold">Note:</span> If the contact is already an Oracle Social Network user, you see <span class="bold">Go to Wall</span> in the Outlook ribbon.</p>
+<p>Alternatively, you can invite multiple Outlook contacts from the <span class="bold">Contacts</span> tab of the <span class="bold">People and Groups</span> panel. See <a href="oa_people_groups.htm#GUID-D1B912F6-F179-4CC7-BC68-C35C0DB7545B">How do I add new contacts?</a></p>
+</div>
+</div>
+<a id="OSNUG2063"></a>
+<div class="props_rev_3"><a id="GUID-AC3D6707-B313-4921-B365-786B6740178B"></a>
+<h2 id="OSNUG-GUID-AC3D6707-B313-4921-B365-786B6740178B" class="sect2">How do I remove a contact?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Contacts</span> tab (<img width="15" height="17" src="img/GUID-5DC36786-1C68-4585-A1B3-FBBCAA31C477-default.gif" alt="Contacts tab" title="Contacts tab" />).</span></li>
+<li class="stepexpand"><span>Right-click the person, and select <span class="bold">Remove from Contacts</span>.</span></li>
+<li class="stepexpand"><span>If you're also following the person, specify whether to also stop following them.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Click <span class="bold">Yes</span> to also stop following the person.</p>
+</li>
+<li>
+<p>Click <span class="bold">No</span> to remove the person as a contact but continue to follow them.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2066"></a>
+<div class="props_rev_3"><a id="GUID-4999235A-9B39-4243-B30F-0F757AF677A0"></a>
+<h2 id="OSNUG-GUID-4999235A-9B39-4243-B30F-0F757AF677A0" class="sect2">How do I follow people and add them as contacts?</h2>
+<div>
+<div class="section">
+<p>Following someone:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>Adds them to your list of contacts</p>
+</li>
+<li>
+<p>Lets you post messages to their wall</p>
+</li>
+<li>
+<p>Includes information about their wall activity on the <span class="bold">Overview</span> panel.</p>
+</li>
+<li>
+<p>Includes information about the activity on their walls in your daily email digest.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Your Followers</span> tab (<img width="18" height="13" src="img/GUID-9BD4E0CF-3431-4ADC-B2AD-AFE5809D1400-default.gif" alt="Your Followers tab" title="Your Followers tab" />) to view a list of people you are not already following.</span></li>
+<li class="stepexpand"><span>Then either:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Click <img width="24" height="24" src="img/GUID-574C2062-7F6E-4FC6-8E3D-301AD4A7C95F-default.gif" alt="Follow icon" title="Follow icon" /> next to the person; or</p>
+</li>
+<li>
+<p>Right-click the person, and select <span class="bold">Follow &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2067"></a>
+<div class="props_rev_3"><a id="GUID-3D988E48-68DF-4542-BE57-0DDB45A78062"></a>
+<h2 id="OSNUG-GUID-3D988E48-68DF-4542-BE57-0DDB45A78062" class="sect2">How can I view a list of the people I follow?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li><span>Click the <span class="bold">People You Follow</span> tab (<img width="18" height="13" src="img/GUID-BB8E0FEC-B66B-481A-A95D-FE3DF8FC6AE7-default.gif" alt="People You Follow tab" title="People You Follow tab" />).</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2068"></a>
+<div class="props_rev_3"><a id="GUID-0A555B7A-105C-4B3F-B093-4DDB14FEBCF3"></a>
+<h2 id="OSNUG-GUID-0A555B7A-105C-4B3F-B093-4DDB14FEBCF3" class="sect2">How can I view a list of the people who follow me?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />.</span></li>
+<li><span>Click the <span class="bold">Your Followers</span> tab (<img width="18" height="13" src="img/GUID-9BD4E0CF-3431-4ADC-B2AD-AFE5809D1400-default.gif" alt="Your Followers tab" title="Your Followers tab" />).</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2070"></a>
+<div class="props_rev_3"><a id="GUID-747124BA-F0F7-4F42-9BB0-AEDEE5A99679"></a>
+<h2 id="OSNUG-GUID-747124BA-F0F7-4F42-9BB0-AEDEE5A99679" class="sect2">What are groups?</h2>
+<div>
+<p>Groups provide a way to organize a set of people into one entity: the group. All members of a group can be added to a Conversation, collection, or Social Object in one operation.</p>
+<p>Every group has its own wall where group members can post content of interest to the group (for more information, see <a href="oa_people_groups.htm#GUID-391CF14D-C780-415E-9F56-C11262460F42">How do I create a group?</a> and <a href="oa_people_groups.htm#GUID-CA04B838-BF76-41B6-BA0A-F6218824FB89">How do I navigate to a group's wall?</a>).</p>
+<p>Just as each person has a profile in Oracle Social Network, a group has a profile with its own unique set of details: its name and description and a group image or avatar. Any member of the group can revise a group's profile details and image.</p>
+</div>
+</div>
+<a id="OSNUG2071"></a>
+<div class="props_rev_3"><a id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518"></a>
+<h2 id="OSNUG-GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518" class="sect2">How do I view a group's details?</h2>
+<div>
+<div class="section">
+<p>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</p>
+<p>Double-click a group to see its details, like its wall, its members, the Conversations and walls it belongs to, and so on. The area at the top of a group has tabs you can use to navigate to these views:</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Posts</span>&mdash;View everything posted to the group's wall.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-9288EBD7-88E4-40CB-B3D4-5450B373D20E"><img width="195" height="45" src="img/GUID-70D69969-7223-4184-9B28-C78A5AE4479B-default.gif" alt="Posts tab" title="Posts tab" /></div>
+<!-- class="figure" --></li>
+<li>
+<p><span class="bold">Documents</span>&mdash;View the documents posted to the group's wall.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-5A1C617F-C909-4907-A5F1-60D56E0BFE75"><img width="195" height="45" src="img/GUID-5E805E64-9B38-4B79-8D19-A0924067C463-default.gif" alt="Documents tab" title="Documents tab" /></div>
+<!-- class="figure" --></li>
+<li>
+<p><span class="bold">Members</span>&mdash;View all members of the group.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-6283CD13-3C31-49DB-8CC1-6625083CCB1F"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Member Of&mdash;View a list of the Conversations and walls this group is a member of.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-F0711E91-98DF-4A27-BAC3-C9AC97DE2AC7"><img width="195" height="45" src="img/GUID-E96424F0-EF38-40AD-9A89-62632F4AB477-default.gif" alt="Member Of tab" title="Member Of tab" /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Belongs To&mdash;View a list of the other groups that this group is a member of.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-486D4D80-0848-41E7-84E5-71481A0801C9"><img width="195" height="45" src="img/GUID-B3F7C4AB-FED9-44B6-8552-6A63DFCA523F-default.gif" alt="Related Items tab" title="Related Items tab" /></div>
+<!-- class="figure" --></li>
+<li>
+<p><span class="bold">Referring Items</span>&mdash;View a list of the items that link to this group.</p>
+<div class="figure" id="GUID-3DE9CFCB-1DDB-4619-94EE-75B6795D5518__GUID-C1816C84-79D4-4ABC-B696-20F36F6E6FD5"><img width="195" height="45" src="img/GUID-4AF70CA7-6042-4997-86E4-48D51FA28E19-default.gif" alt="Referring Items tab" title="Referring Items tab" /></div>
+<!-- class="figure" --></li>
+</ul>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="OSNUG2072"></a>
+<div class="props_rev_3"><a id="GUID-CA04B838-BF76-41B6-BA0A-F6218824FB89"></a>
+<h2 id="OSNUG-GUID-CA04B838-BF76-41B6-BA0A-F6218824FB89" class="sect2">How do I navigate to a group's wall?</h2>
+<div>
+<div class="section">
+<p>Whenever a group is created, it is automatically given its own wall. Here group members can post information of particular interest to the group.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>Double-click a group, or right-click a group and select <span class="bold">Go To &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;'s Wall</span>.</span></li>
+<li><span>Post content to the group's wall as you would to any Conversation or wall.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2073"></a>
+<div class="props_rev_3"><a id="GUID-4B79A4B0-186D-45EB-861B-440711B0E96F"></a>
+<h2 id="OSNUG-GUID-4B79A4B0-186D-45EB-861B-440711B0E96F" class="sect2">How can I view a group's membership?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a group to open its wall.</span></li>
+<li class="stepexpand"><span>In the tab bar above the wall, click the <span class="bold">Members</span> tab to see who's in the group.</span>
+<div>
+<div class="figure" id="GUID-4B79A4B0-186D-45EB-861B-440711B0E96F__GUID-F12D8ECE-E1E8-4AA6-B6DD-AF8BD59394E5"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2074"></a>
+<div class="props_rev_3"><a id="GUID-391CF14D-C780-415E-9F56-C11262460F42"></a>
+<h2 id="OSNUG-GUID-391CF14D-C780-415E-9F56-C11262460F42" class="sect2">How do I create a group?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>On the <span class="bold">Groups</span> banner, click <img width="16" height="16" src="img/GUID-C86EEDE7-DFC9-438D-A546-1BC1113E9688-default.gif" alt="Create New Group icon" title="Create New Group icon" />.</span></li>
+<li><span>In the <span class="bold">Name</span> field, enter a name for the group, and click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2075"></a>
+<div class="props_rev_3"><a id="GUID-6DB3155E-5AA8-4D0B-B351-969376E819FC"></a>
+<h2 id="OSNUG-GUID-6DB3155E-5AA8-4D0B-B351-969376E819FC" class="sect2">How do I add people to a group?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a group to open its wall.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Members</span> tab.</span>
+<div>
+<div class="figure" id="GUID-6DB3155E-5AA8-4D0B-B351-969376E819FC__GUID-AE571FB9-2B6A-49F1-84CB-66A81D473F5F"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>On the <span class="bold">Members</span> banner, click <img width="16" height="17" src="img/GUID-77EB1A96-EB33-47CA-9EF1-B8BA4AE563D1-default.gif" alt="Add Member icon" title="Add Member icon" />.</span></li>
+<li class="stepexpand"><span>Select a source of potential members.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Click <span class="bold">Groups &amp; Contacts</span> to select from your contacts and other groups.</p>
+<p>In this dialog, you can expand a group and pick individual members.</p>
+</li>
+<li>
+<p>Click <span class="bold">Search</span> to enter search terms; click the <span class="bold">Search</span> icon to show all results.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Double-click a person or a group to add them to the <span class="bold">Select</span> list.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span> to add your selections to the group membership.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2076"></a>
+<div class="props_rev_3"><a id="GUID-9EB1ABBB-9EAA-4116-8928-D389F8ADA61E"></a>
+<h2 id="OSNUG-GUID-9EB1ABBB-9EAA-4116-8928-D389F8ADA61E" class="sect2">How do I revise a group's membership?</h2>
+<div>
+<ol>
+<li class="stepexpand"><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li class="stepexpand"><span>Double-click a group to open its wall.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Members</span> tab.</span>
+<div>
+<div class="figure" id="GUID-9EB1ABBB-9EAA-4116-8928-D389F8ADA61E__GUID-28453EB7-232F-4DC6-84DD-0EFB31FEF8A0"><img width="195" height="45" src="img/GUID-EE9FC987-37CB-4436-9611-FF73FEA90085-default.gif" alt="Members tab" title="Members tab" /></div>
+<!-- class="figure" --></div>
+</li>
+<li class="stepexpand"><span>Revise the group:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>To add members, start with step 5 in <a href="oa_people_groups.htm#GUID-6DB3155E-5AA8-4D0B-B351-969376E819FC">How do I add people to a group?</a></p>
+</li>
+<li>
+<p>To remove members, right-click a person or group, and select <span class="bold">Remove from Membership</span>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="OSNUG10917"></a>
+<div class="props_rev_3"><a id="GUID-FDCD39DF-E6EA-47CE-944A-EBC1E24A3401"></a>
+<h2 id="OSNUG-GUID-FDCD39DF-E6EA-47CE-944A-EBC1E24A3401" class="sect2">How do I hide membership messages on a group wall?</h2>
+<div>
+<p>When a user is added to or removed from an item a membership message is posted to the item (for example, <span class="italic">This wall is now accessible to: Jane Doe</span>). If you'd prefer not to show those messages, you can hide them. See <a href="oa_conv.htm#GUID-4B0D1A16-3897-4DFE-95EF-06A5D6F1BB25">How do I hide membership messages?</a></p>
+</div>
+</div>
+<a id="OSNUG2077"></a>
+<div class="props_rev_3"><a id="GUID-E292AFFE-699A-44F1-A3D0-4C3E48EBC00D"></a>
+<h2 id="OSNUG-GUID-E292AFFE-699A-44F1-A3D0-4C3E48EBC00D" class="sect2">How do I rename a group or revise its description?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>Double-click a group, or right-click a group and select <span class="bold">Go To &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;'s Wall</span>.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select <span class="bold">Edit Profile</span>.</span></li>
+<li><span>In the Group Profile dialog, revise the group's name and description.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2078"></a>
+<div class="props_rev_3"><a id="GUID-5159A27C-6366-4D8C-9272-209E0FB8D4FB"></a>
+<h2 id="OSNUG-GUID-5159A27C-6366-4D8C-9272-209E0FB8D4FB" class="sect2">How do I add or change a group's profile picture?</h2>
+<div>
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>Double-click a group, or right-click a group and select <span class="bold">Go To &lt;</span><span class="italic"><span class="bold">name</span></span><span class="bold">&gt;'s Wall</span>.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, and select <span class="bold">Edit Profile</span>.</span></li>
+<li><span>In the Group Profile dialog, click <span class="bold">Change</span>.</span></li>
+<li><span>Navigate to and select a group profile picture.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2079"></a>
+<div class="props_rev_3"><a id="GUID-C11F18D7-C603-4076-9631-C0AFBABC7DF0"></a>
+<h2 id="OSNUG-GUID-C11F18D7-C603-4076-9631-C0AFBABC7DF0" class="sect2">How do I deactivate a group?</h2>
+<div>
+<div class="section">
+<p>When you deactivate a group, the group keeps its memberships in Conversations and walls, but it can't be added to additional Conversations and walls. Deactivating a group also prevents further additions to the group's wall. When deactivated, a group's icon and name are grayed out (the group name is grayed out on membership lists and on the <span class="bold">Groups</span> tab).</p>
+<p><span class="bold">Note:</span> You can reactivate a deactivated group at any time. For more information, see <a href="oa_people_groups.htm#GUID-34A5C5C4-F9EC-43EC-85B1-A530A26F8A48">Is there a way to reactivate a deactivated group?</a></p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>Double-click a group to open its wall.</span></li>
+<li><span>In the groups banner, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, then select <span class="bold">Deactivate</span>.</span></li>
+<li><span>In the confirmation dialog, click <span class="bold">Yes</span>.</span></li>
+</ol>
+</div>
+</div>
+<a id="OSNUG2080"></a>
+<div class="props_rev_3"><a id="GUID-34A5C5C4-F9EC-43EC-85B1-A530A26F8A48"></a>
+<h2 id="OSNUG-GUID-34A5C5C4-F9EC-43EC-85B1-A530A26F8A48" class="sect2">Is there a way to reactivate a deactivated group?</h2>
+<div>
+<div class="section">
+<p>Enabling a deactivated group makes the group available for adding to Conversation and other types of membership lists.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>On the navigation bar, click <img width="33" height="31" src="img/GUID-7A7A07F2-366E-4D28-BBB6-178C7FB6E578-default.gif" alt="People and Groups icon" title="People and Groups icon" />, then click <img width="24" height="21" src="img/GUID-C5CF58A1-0343-4FD9-BFD5-B5BF6E821848-default.gif" alt="Groups tab icon" title="Groups tab icon" />.</span></li>
+<li><span>In the groups banner, click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, then select <span class="bold">Deactivated</span> to show all deactivated groups.</span></li>
+<li><span>Double-click the deactivated group to open its wall.</span></li>
+<li><span>Click <img width="11" height="10" src="img/GUID-E4E1B1F6-D022-4873-AFD8-E9EAE0F28D37-default.gif" alt="Options menu icon" title="Options menu icon" />, then select <span class="bold">Activate</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment1">
+<tr>
+<td class="cellalignment8">
+<table class="cellalignment6">
+<tr>
+<td class="cellalignment5"><a href="oa_dandf.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment5"><a href="oa_so.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2012, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment10">
+<table class="cellalignment4">
+<tr>
+<td class="cellalignment5"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment5"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

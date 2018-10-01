@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Typical Workflow for Using MySQL Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-3E097002-8B5C-45EB-AB93-1D6E8AA24433.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"322179",ustr:"",originlat:"0",clientrtt:"1",ghostip:"23.212.3.15",ipv6:false,pct:"10",clientip:"45.78.37.67",requestid:"1420da5",region:"32996",protocol:"",blver:14,akM:"dsca",akN:"ae",akTT:"O",akTX:"1",akTI:"1420da5",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3"></a> <span id="PAGE" style="display:none;">11/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3" class="sect1">Typical Workflow for Using <span id="MYSQLCSHORT">MySQL Cloud Service</span></h1>
+<div>
+<p>To start using <span id="GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3__MYSQLCSHORT">MySQL Cloud Service</span>, refer to the following tasks as a guide:</p>
+<div class="tblformalwide" id="GUID-69B2BBB6-57C5-488D-80AD-2BF31F554ED3__GUID-C76037B1-AEBC-4736-B6B7-2DDA44F24404">
+<table class="cellalignment30" summary="Use this table as a guide to typical tasks when using MySQL Cloud Service.">
+<thead>
+<tr class="cellalignment21">
+<th class="cellalignment36" id="d2930e24">Task</th>
+<th class="cellalignment53" id="d2930e27">Description</th>
+<th class="cellalignment54" id="d2930e30">More Information</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e35" headers="d2930e24">
+<p>Sign up for a free credit promotion or purchase a subscription</p>
+<p>(Does not apply to Oracle Cloud Machine)</p>
+</td>
+<td class="cellalignment55" headers="d2930e35 d2930e27">
+<p>Provide your information, and sign up for a free trial or purchase a subscription to Oracle <span>MySQL Cloud Service</span></p>
+</td>
+<td class="cellalignment56" headers="d2930e35 d2930e30">
+<p><a href="GUID-9B1B518D-4550-4228-A0B1-6F33F5040B9E.htm" title="Here&rsquo;s how to get started with MySQL Cloud Service trials and paid subscriptions:">How to Begin with MySQL Cloud Service Subscriptions</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e56" headers="d2930e24">
+<p>Add and manage users and roles</p>
+</td>
+<td class="cellalignment55" headers="d2930e56 d2930e27">
+<p>Create accounts for your users and assign them appropriate privileges. Assign the necessary <span>MySQL Cloud Service</span> roles.</p>
+</td>
+<td class="cellalignment56" headers="d2930e56 d2930e30">
+<p><a class="olink CSGSG177" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSGSG177">Managing User Accounts</a> and <a class="olink CSGSG193" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSGSG193">Managing User Roles</a> in <span class="italic">Managing and Monitoring Oracle Cloud</span>, and <a href="GUID-79FCAA87-6B6E-442A-BC5D-46DD6F1D53C7.htm">About MySQL Cloud Service Roles and Users</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e81" headers="d2930e24">
+<p>Create an SSH key pair</p>
+</td>
+<td class="cellalignment55" headers="d2930e81 d2930e27">
+<p>Create SSH public/private key pairs to facilitate secure access to the compute nodes associated with your database deployments.</p>
+</td>
+<td class="cellalignment56" headers="d2930e81 d2930e30">
+<p><a href="GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1.htm#GUID-466753EF-D98A-4F30-B8C3-1B1E838D91B1">Generating a Secure Shell (SSH) Public/Private Key Pair</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e92" headers="d2930e24">
+<p>Create a MySQL Server deployment</p>
+</td>
+<td class="cellalignment55" headers="d2930e92 d2930e27">
+<p>Use a wizard to create a new MySQL Server deployment.</p>
+</td>
+<td class="cellalignment56" headers="d2930e92 d2930e30">
+<p><a href="GUID-D03FE523-AD8D-4C53-935C-D5D6513D2A24.htm" title="To create a database deployment on MySQL Cloud Service, use the Create MySQL Cloud Service wizard as described in the following procedure.">Creating a MySQL Server Deployment</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e112" headers="d2930e24">
+<p>Enable network access</p>
+</td>
+<td class="cellalignment55" headers="d2930e112 d2930e27">
+<p>Permit access to network services associated with your MySQL Server deployments.</p>
+</td>
+<td class="cellalignment56" headers="d2930e112 d2930e30">
+<p><a href="GUID-4A6969B7-E9EE-412F-8E4E-06E1E6FC589E.htm" title="By default, network access to the compute nodes associated with MySQL Cloud Service is provided by Secure Shell (SSH) connections on port 22. To access other network protocols and services requires additional configuration.">About Network Access to MySQL Cloud Service</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e129" headers="d2930e24">
+<p>Load data into the database</p>
+</td>
+<td class="cellalignment55" headers="d2930e129 d2930e27">
+<p>Use standard MySQL Server tools to load data into your databases.</p>
+</td>
+<td class="cellalignment56" headers="d2930e129 d2930e30">
+<p><a href="GUID-CA106D22-B2EC-4EF3-9E72-6846CC291DA4.htm">Loading Data into the MySQL Database</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e140" headers="d2930e24">
+<p>Monitor database deployments</p>
+</td>
+<td class="cellalignment55" headers="d2930e140 d2930e27">
+<p>Check on the health and performance of individual MySQL Server deployments.</p>
+</td>
+<td class="cellalignment56" headers="d2930e140 d2930e30">
+<p><a href="https://dev.mysql.com/doc/mysql-monitor/4.0/en/" target="_blank">MySQL Enterprise Monitor 4.0 Manual</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e152" headers="d2930e24">
+<p>Monitor the service</p>
+</td>
+<td class="cellalignment55" headers="d2930e152 d2930e27">
+<p>Check on the day-to-day operation of your service, monitor performance, and review important notifications.</p>
+</td>
+<td class="cellalignment56" headers="d2930e152 d2930e30">
+<p><a class="olink CSGSG652" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=cloud&amp;id=CSGSG652">Managing and Monitoring Oracle Cloud Services</a> in <span class="italic">Managing and Monitoring Oracle Cloud</span></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e167" headers="d2930e24">
+<p>Patch a database deployment</p>
+</td>
+<td class="cellalignment55" headers="d2930e167 d2930e27">
+<p>Apply a patch or roll back a patch.</p>
+</td>
+<td class="cellalignment56" headers="d2930e167 d2930e30">
+<p><a href="GUID-F7A6B431-51A3-432A-A5CA-9C13005F4108.htm" title="This section explains how to apply a patch to MySQL Cloud Service, and roll back the patch as necessary.">Patching MySQL Cloud Service</a></p>
+</td>
+</tr>
+<tr class="cellalignment21">
+<td class="cellalignment38" id="d2930e184" headers="d2930e24">
+<p>Back up a database deployment</p>
+</td>
+<td class="cellalignment55" headers="d2930e184 d2930e27">
+<p>Back up a database or restore a database from a backup.</p>
+</td>
+<td class="cellalignment56" headers="d2930e184 d2930e30">
+<p><a href="GUID-23702231-DB98-420C-AF92-5A7F3F13BBCB.htm" title="This section explains how to back up and restore MySQL databases on MySQL Cloud Service.">Backing Up and Restoring Databases on MySQL Cloud Service</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-3E097002-8B5C-45EB-AB93-1D6E8AA24433.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-7F197ECD-1EA0-4423-B9C2-75B39C57E984.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

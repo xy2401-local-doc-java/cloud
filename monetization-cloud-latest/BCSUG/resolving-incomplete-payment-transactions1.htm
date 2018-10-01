@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Resolving incomplete payment transactions</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When connections to your payment processor are lost during payment processing, the payment transactions can remain incomplete. You use Oracle Monetization Cloud Business Operations to resolve incomplete transactions due to lost connections." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="suspending-and-correcting-payments1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="calculating-taxes1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0814EE0D-ADC8-47B1-AE70-64C0867D1060"></a> <span id="PAGE" style="display:none;">54/67</span> <!-- End Header -->
+<a id="BCSUG1041"></a><a id="BCSUG894"></a><a id="BCSUG777"></a>
+<h1 id="BCSUG-GUID-0814EE0D-ADC8-47B1-AE70-64C0867D1060" class="sect1"><span class="enumeration_chapter">46</span> Resolving incomplete payment transactions</h1>
+<div>
+<p>When connections to your payment processor are lost during payment processing, the payment transactions can remain incomplete. You use Oracle Monetization Cloud Business Operations to resolve incomplete transactions due to lost connections.</p>
+<p>For background information, see <a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-3874106A-A1B6-4D68-98E1-46FC2DB23476">About resolving incomplete payment transactions</a></p>
+</li>
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-DEDAE947-B5A2-4855-AB43-7ACD370BB76E">Viewing information about incomplete payment transactions</a></p>
+</li>
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-0BCCF07A-7AC6-414B-B81E-DFF350E17368">Resolving incomplete transactions due to lost connections</a></p>
+</li>
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-3D7DAB2C-5E15-4EC6-800D-D39354C2849F">Applying unresolved payments</a></p>
+</li>
+<li>
+<p><a href="resolving-incomplete-payment-transactions1.htm#GUID-74B1F570-79CB-4112-9AA8-8469EF44BB8C">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG778"></a>
+<div class="props_rev_3"><a id="GUID-3874106A-A1B6-4D68-98E1-46FC2DB23476"></a>
+<h2 id="BCSUG-GUID-3874106A-A1B6-4D68-98E1-46FC2DB23476" class="sect2">About resolving incomplete payment transactions</h2>
+<div>
+<p>When a connection is lost during an online transaction, these problems can occur:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Credit card authentication errors</span>. Since no charges are made during authentications, you resolve these errors by clearing the transaction in Oracle Monetization Cloud.</p>
+</li>
+<li>
+<p><span class="bold">Credit card authorization errors</span>. You resolve these errors by clearing the transaction in Oracle Monetization Cloud and then resubmitting the charge to the credit card processor. Because the first transaction failed, the customer won't be charged twice.</p>
+</li>
+<li>
+<p><span class="bold">Unresolved payments</span>. Unresolved payments occur when the credit card number is reported as charged in both Oracle Monetization Cloud and the payment clearing house, but the bill hasn't been recorded as paid in Oracle Monetization Cloud. You resolve these payments by marking the customer's bill as paid.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG779"></a>
+<div class="props_rev_3"><a id="GUID-DEDAE947-B5A2-4855-AB43-7ACD370BB76E"></a>
+<h2 id="BCSUG-GUID-DEDAE947-B5A2-4855-AB43-7ACD370BB76E" class="sect2">Viewing information about incomplete payment transactions</h2>
+<div>
+<p>Use Business Operations to get information about the accounts whose payments failed and the reasons for the failures.</p>
+<ol>
+<li>
+<p>Select the <span class="bold">History</span> icon.</p>
+</li>
+<li>
+<p>Find the job that failed. Select the <span class="bold">Failed</span> status to see only the jobs that failed.</p>
+</li>
+<li>
+<p>In the job card, select <span class="bold">View failure report</span>.</p>
+<div class="infobox-note" id="GUID-DEDAE947-B5A2-4855-AB43-7ACD370BB76E__GUID-FDC0BFA3-459D-4C8D-9F4D-3029AF466363">
+<p class="notep1">Note:</p>
+<p>The <span class="bold">View failure report</span> link is only present for jobs that have incomplete payment transactions.</p>
+</div>
+</li>
+<li>
+<p>Select <span class="bold">Export</span> to save the list of accounts and the reason for the failure to a file.</p>
+</li>
+<li>
+<p>Select an account number to view details about the account.</p>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSUG780"></a>
+<div class="props_rev_3"><a id="GUID-0BCCF07A-7AC6-414B-B81E-DFF350E17368"></a>
+<h2 id="BCSUG-GUID-0BCCF07A-7AC6-414B-B81E-DFF350E17368" class="sect2">Resolving incomplete transactions due to lost connections</h2>
+<div>
+<p>Use Business Operations to resolve failed credit card transactions. From the Home page, select <span class="bold">Failed BRM-initiated Payment Transactions</span> and then <span class="bold">Real-Time Checkpoints</span>. You'll see a list of failed transactions. You can then:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Export the list of transactions to a file.</p>
+</li>
+<li>
+<p>Select <span class="bold">Clear</span> to delete the transactions from Oracle Monetization Cloud.</p>
+</li>
+</ul>
+<p>You can resubmit the charges that failed authorization to the credit card processor again.</p>
+</div>
+</div>
+<a id="BCSUG782"></a>
+<div class="props_rev_3"><a id="GUID-3D7DAB2C-5E15-4EC6-800D-D39354C2849F"></a>
+<h2 id="BCSUG-GUID-3D7DAB2C-5E15-4EC6-800D-D39354C2849F" class="sect2">Applying unresolved payments</h2>
+<div>
+<p>In rare cases, a credit card charge is made, but the payment isn't applied to the customer's account in Oracle Monetization Cloud. This might happen because of a network failure. In these cases, the payments are categorized as unresolved.</p>
+<p>Use Business Operations to apply unresolved payments. From the Home page, select <span class="bold">Failed BRM-initiated Payment Transactions</span> and then <span class="bold">Unresolved Payments</span>. You can then:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Select <span class="bold">Resolve</span> to record that the payment was processed.</p>
+</li>
+<li>
+<p>Export all unresolved payments to a file for further investigation.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG895"></a>
+<div class="props_rev_3"><a id="GUID-74B1F570-79CB-4112-9AA8-8469EF44BB8C"></a>
+<h2 id="BCSUG-GUID-74B1F570-79CB-4112-9AA8-8469EF44BB8C" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="processing-payments.htm#GUID-97E3B42B-09D4-4A12-802A-0DCE64BB25A9" title="This document provides an overview of payment processing in Oracle Monetization Cloud.">About payments</a></p>
+</li>
+<li>
+<p><a href="reversing-payments2.htm#GUID-EBFACF29-E060-4DA6-AC4E-17AAC86E654D" title="You must reverse a payment when it's recorded in Oracle Monetization Cloud, but the payment isn't deposited (for example, when a check doesn't clear). Reversing the payment enables Oracle Monetization Cloud to treat the payment as if it never happened.">Reversing payments</a></p>
+</li>
+<li>
+<p><a href="suspending-and-correcting-payments1.htm#GUID-C95EA667-EBED-4DC4-9F66-62B881079246" title="Oracle Monetization Cloud automatically suspends payments that it can't post to customers' accounts. You can manually suspend payments that are posted incorrectly. You might also suspend payments when you need to redistribute them. You use Subscriber Management to suspend payments and apply them to your customers' bills when the payment errors are resolved.">Suspending and correcting payments</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="suspending-and-correcting-payments1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="calculating-taxes1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

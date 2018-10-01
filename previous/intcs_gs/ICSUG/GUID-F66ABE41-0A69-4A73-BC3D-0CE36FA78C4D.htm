@@ -1,0 +1,2277 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating Integrations</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Integrations use the connections you created to your applications, and define how information is shared between those applications. You can create new integrations, import integrations, modify or delete integrations, create integrations to publish messages, create integrations to subscribe to messages, and add and remove request and response enrichment triggers. Click one of the following topics for more information." />
+<meta name="dcterms.created" content="2016-11-27T13:04:14Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55390-23" />
+<meta name="dcterms.isVersionOf" content="ICSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-268D7A7B-1024-4076-BC50-766E79E218C2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSUG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSUG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSUG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D"></a> <span id="PAGE" style="display:none;">20/95</span> <!-- End Header -->
+<h1 id="ICSUG-GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D" class="sect1">Creating Integrations</h1>
+<div>
+<p>Integrations use the connections you created to your applications, and define how information is shared between those applications. You can create new integrations, import integrations, modify or delete integrations, create integrations to publish messages, create integrations to subscribe to messages, and add and remove request and response enrichment triggers. Click one of the following topics for more information.</p>
+<div class="section">
+<p class="subhead1">Topics</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-96A30983-2F8F-4A78-938F-3B2002826907" title="You can edit the endpoint information in an integration that is not active. The changes that you make can impact your mappings. For example, minor edits such as changing the endpoint description do not delete the existing mappings. Major edits such as changing the selected business objects or operations delete the mappings. In these cases, you must recreate your mappings. Before you save your updates, you are prompted to confirm your changes.">Editing the Endpoint Information in an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01" title="You can select from several types of patterns when creating an integration in the Create Integration &mdash; Select a Pattern dialog.">Understanding Integration Patterns</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-FC613C76-F566-4673-BC10-CC893958C8D6" title="You can import prebuilt integrations into your Integration Cloud Service environment.">Importing a Prebuilt Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D" title="The trigger (source) connection sends requests to Integration Cloud Service. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the incoming data.">Adding a Trigger (Source) Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2" title="Integration Cloud Service sends requests or information to the invoke (target) connection. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the data.">Adding an Invoke (Target) Connection</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-36A90FF0-F0D4-4F81-9028-41971C7D100B" title="You can create orchestrated integrations in Oracle Integration Cloud Service that use Oracle BPEL Process Manager capabilities. Oracle BPEL Process Manager enables you to define how a business process that involves web services is executed. BPEL messages invoke remote services and orchestrate process execution. When designing your integration, you can add switch activities in your integration to create multiple routing expressions. You can create ad-hoc mappings on switch branches. You can also add callback activities (to end an integration and respond back to the sender) and end activities (to end an integration without responding back to the sender) in asynchronous integrations.">Creating Orchestrated Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" title="You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Subscribe to Integration Cloud Service</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E" title="When you create an integration, you also have the option of adding both request and response message enrichment points to the overall integration flow. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke.">Adding Request and Response Enrichments</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-69DF610E-01AD-46F0-927A-964750B80242" title="You can delete the request and response message enrichment point mappings added to an integration. After deleting the enrichment point mappings, the integration is returned to its original pre-enrichment state.">Deleting Request and Response Enrichments</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-E7431EFE-9BE6-4AD0-AE9A-7DDB8E47FEAA" title="You can create an integration in which you define routing paths for two different invoke endpoints. During runtime, the expression filtering logic for the routing paths is evaluated and, based on the results, the path to one of the invoke endpoints is taken. If the filtering logic for neither routing path is satisfied, then neither invoke endpoint is contacted.">Creating Routing Paths for Two Different Invoke Endpoints in Integrations</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD" title="You can create XPath expressions for routing conditions in two different user interface modes:">Creating Routing Expression Logic in Both Expression Mode and Condition Mode</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-45111C54-3A08-4B16-9F63-72619541C257" title="You can delete routing paths that have been created on different target endpoints in an integration.">Deleting Routing Paths</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-96A30983-2F8F-4A78-938F-3B2002826907" title="You can edit the endpoint information in an integration that is not active. The changes that you make can impact your mappings. For example, minor edits such as changing the endpoint description do not delete the existing mappings. Major edits such as changing the selected business objects or operations delete the mappings. In these cases, you must recreate your mappings. Before you save your updates, you are prompted to confirm your changes.">Editing the Endpoint Information in an Integration</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect2"><a id="GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954"></a>
+<h2 id="ICSUG-GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" class="sect2">Creating an Integration</h2>
+<div>
+<p>Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.</p>
+<div class="p">If you want to use a lookup table in your data mapping, create the lookup first. See <a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C" title="A lookup associates values used by one application for a specific field to the values used by other applications for the same field. This provides the capability to map values across vocabularies or systems. For example, you can map country codes, city codes, currency codes, and so on.">Creating Lookups</a> for instructions.</div>
+<!-- class="section" -->
+<div class="section">To create an integration:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Integrations</span>.</span></li>
+<li class="stepexpand"><span>On the Integrations page, click <span class="bold">New Integration</span>.</span>
+<div>The Create New integration dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select the type of integration pattern applicable to your business needs. For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01" title="You can select from several types of patterns when creating an integration in the Create Integration &mdash; Select a Pattern dialog.">Understanding Integration Patterns</a>.</span>
+<div>The New Integration &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the following information:</span>
+<div>
+<div class="tblformal" id="GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954__GUID-4CA51181-77E7-412E-8C58-035383862B65">
+<table class="cellalignment926" summary="New Integration &mdash; Information dialog field descriptions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d12707e216">Field</th>
+<th class="cellalignment927" id="d12707e218">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d12707e222" headers="d12707e216">
+<p><span class="bold">What triggers this integration?</span></p>
+<p><span class="bold">Note</span>: This field is only displayed if you selected <span class="bold">Orchestration</span> on the Create Integration - Select a Style/Pattern dialog.</p>
+</td>
+<td class="cellalignment927" headers="d12707e222 d12707e218">
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Application event or business object</span>: This integration uses an event or a business object to trigger the integration. For example, you create an integration with an Oracle RightNow Adapter as a trigger and an Oracle Sales Cloud Adapter as an invoke. The Oracle RightNow Adapter subscribes to an event from the Oracle RightNow application to trigger the integration.</p>
+</li>
+<li>
+<p><span class="bold">Schedule</span>: This integration uses a schedule to trigger the integration instead of an adapter. For example, you add an initial invoke adapter to read a trigger file and a second FTP adapter to download the file for further processing. After designing this integration, you schedule when to run it. For more information, see <a href="GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8.htm#GUID-622B74FE-D9EC-4A62-8DF1-1E96912C8FB8" title="You can schedule the running of integrations. For example, you can create an orchestrated integration that is triggered by a schedule or create a basic map data integration in which a trigger FTP Adapter reads a file and an invoke FTP Adapter writes the file. You can schedule this integration run to copy files at a date and time of your choosing. You can also define the frequency of the integration. When you create either of these types of integrations, a schedule icon is displayed with the integration entry on the Integrations page.">Scheduling Integration Runs</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e253" headers="d12707e216">
+<p><span class="bold">What do you want to call your integration?</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e253 d12707e218">
+<p>Provide a meaningful name so that others can understand the integration. You can include English alphabetic characters, numbers, underscores, and dashes in the identifier.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e261" headers="d12707e216">
+<p><span class="bold">Identifier</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e261 d12707e218">
+<p>Accept the default identifier value. The identifier is the same as the integration name you provided, but in upper case.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e269" headers="d12707e216">
+<p><span class="bold">Version</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e269 d12707e218">
+<p>Accept the default version number of <code>01.00.0000</code>. Or, if you want to change the version number, enter the version using numbers only in this format: <code>xx.xx.xxxx</code>.</p>
+<p>Integrations are uniquely identified by an identifier and version. Note the version format of <code>xx.yy.zzzz</code>, where <code>xx</code> is the major version and <code>yy.zzzz</code> is the minor version.</p>
+<p>Integrations having the same identifier, but a different major version, can be active at the same time. For example, <code>INT-A/1.00.0000</code> and <code>INT-A/2.00.0000</code> can be active at the same time.</p>
+<p>When activating an integration while another integration of the same identifier and same major version is already active, the currently activated integration is deactivated prior to activating the selected integration.</p>
+<div class="p">For example, if two integrations have the following integration states:
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INT-A/2.00.0000</code> - Not active</p>
+</li>
+<li>
+<p><code>INT-A/2.10.0000</code> - Not active</p>
+</li>
+</ul>
+</div>
+<div class="p">Integration <code>INT-A/2.00.0000</code> is then activated.
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INT-A/2.00.0000</code> is now active.</p>
+</li>
+<li>
+<p><code>INT-A/2.10.0000</code> is not active.</p>
+</li>
+</ul>
+</div>
+<div class="p">Integration <code>2.10.0000</code> is then activated.
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INT-A/2.00.0000</code> is now not active.</p>
+</li>
+<li>
+<p><code>INT-A/2.10.0000</code> is now active.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e349" headers="d12707e216">
+<p><span class="bold">What does this integration do?</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e349 d12707e218">
+<p>Provide a meaningful description so that others can understand the integration.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e357" headers="d12707e216">
+<p><span class="bold">Which package does this integration belong to?</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e357 d12707e218">
+<p>Enter a new or existing package name in which to place your integration. As you enter the initial letters of an existing package, it is displayed for selection. For more information about packages, see <a href="GUID-9FD8FF86-6E03-4B33-BA48-1857652958EE.htm" title="You can group integrations into a package. When you import or export the package to or from Integration Cloud Service, all integrations in that package are imported or exported.">Managing Packages</a> and <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-39554E12-FB31-4A78-A92A-79C552B8AE1D" title="You can group one or more integrations into a single structure called a package. Packages enable you to easily import and export a group of integrations to and from Integration Cloud Service. You can import packages from the Oracle Marketplace. These packages consist of a series of prebuilt integrations provided by Oracle. You can also import and export packages that consist of integrations that you or other users created. Packages are optional, meaning that integrations do not need to be part of packages. However, for a package to exist, it must include at least one integration. Packages cannot be locked to exclude other users of your Integration Cloud Service instance.">About Integration Cloud Service Packages</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>The integration designer is displayed with the type of integration pattern you selected in the previous step.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span></li>
+<li class="stepexpand"><span>If creating an integration pattern with blank trigger and invoke connections in which to add your own adapters:</span>
+<ol>
+<li><span>Create the trigger connection, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D" title="The trigger (source) connection sends requests to Integration Cloud Service. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the incoming data.">Adding a Source Connection</a>.</span></li>
+<li><span>Create the invoke connection, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2" title="Integration Cloud Service sends requests or information to the invoke (target) connection. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the data.">Adding a Target Connection</a>.</span></li>
+<li><span>Map data between the two connections, as described in <a class="olink GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If creating an integration in which to publish to Integration Cloud Service:</span>
+<ol>
+<li><span>Create an integration in which you add a trigger adapter to publish messages to Integration Cloud Service through a predefined Integration Cloud Service Messaging invoke, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a>. No data mapping between the trigger and invoke is permitted.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>If creating an integration in which to subscribe to Integration Cloud Service:</span>
+<ol>
+<li><span>Create an integration in which you add an invoke adapter to subscribe to messages from Integration Cloud Service through an Integration Cloud Service Messaging trigger, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" title="You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Subscribe to Integration Cloud Service</a>.</span></li>
+<li><span>Map data between the invoke adapter and the Integration Cloud Service Messaging trigger to which to subscribe, as described in <a class="olink GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span> and then click <span class="bold">Exit Integration</span>.</span></li>
+</ol>
+<div class="section">You now see your new integration in the Integrations list ready to be activated. See <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a> for instructions.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01"></a>
+<h2 id="ICSUG-GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01" class="sect2">Understanding Integration Patterns</h2>
+<div>
+<p>You can select from several types of patterns when creating an integration in the Create Integration &mdash; Select a Pattern dialog.</p>
+<div class="p">
+<div class="tblformal" id="GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01__GUID-6B1ACF0E-1DDB-41B3-B920-90F749D90303">
+<table class="cellalignment926" summary="Integration pattern descriptions.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d12707e511">Pattern</th>
+<th class="cellalignment927" id="d12707e513">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d12707e517" headers="d12707e511">
+<p><span class="bold">Basic Map Data</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e517 d12707e513">
+<p>Create an integration with a blank trigger and invoke in which to add your own adapters. You can also create a single routing expression and request and response enrichments, as needed. You cannot create multiple routing expressions. If your integration requires this feature, create an orchestrated integration.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e525" headers="d12707e511">
+<p><span class="bold">Orchestration</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e525 d12707e513">
+<p>Create a synchronous, asynchronous, or fire-and-forget orchestrated integration in Oracle Integration Cloud Service that uses Oracle BPEL Process Manager capabilities. Orchestration integration features include the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Switch activities to create multiple routing expressions.</p>
+</li>
+<li>
+<p>For-each activities for looping over repeating elements.</p>
+</li>
+<li>
+<p>Assign activities for assigning values to scalar variables.</p>
+</li>
+<li>
+<p>Ad-hoc mappings on switch branches.</p>
+</li>
+<li>
+<p>Callback activities (to end a process and respond back to the sender) and end activities (to end a process without responding back to the sender) in asynchronous integrations.</p>
+</li>
+<li>
+<p>Schedule-based integrations</p>
+</li>
+</ul>
+<p>For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-36A90FF0-F0D4-4F81-9028-41971C7D100B" title="You can create orchestrated integrations in Oracle Integration Cloud Service that use Oracle BPEL Process Manager capabilities. Oracle BPEL Process Manager enables you to define how a business process that involves web services is executed. BPEL messages invoke remote services and orchestrate process execution. When designing your integration, you can add switch activities in your integration to create multiple routing expressions. You can create ad-hoc mappings on switch branches. You can also add callback activities (to end an integration and respond back to the sender) and end activities (to end an integration without responding back to the sender) in asynchronous integrations.">Creating Orchestrated Integrations</a>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e563" headers="d12707e511">
+<p><span class="bold">Basic Publish to ICS</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e563 d12707e513">
+<p>Create an integration in which you add a trigger adapter to publish messages to Integration Cloud Service through a predefined Integration Cloud Service Messaging invoke. No configuration of the invoke subscriber is required.</p>
+<p>The publisher and subscribers participating in this integration pattern can be activated and deactivated independently of each other.</p>
+<p>For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e581" headers="d12707e511">
+<p><span class="bold">Basic Subscribe to ICS</span></p>
+</td>
+<td class="cellalignment927" headers="d12707e581 d12707e513">
+<p>Create an integration in which you add an invoke adapter to subscribe to messages from Integration Cloud Service through an Integration Cloud Service Messaging trigger. You are prompted to select the publisher to which to subscribe. You must have already created a publisher to which to subscribe. The publisher does not need to be active, but must already be completely configured.</p>
+<p>Any business identifiers defined on fields in the published integration are copied to the subscriber. Any changes made to the published integration&rsquo;s business identifiers <span class="italic">after</span> copying are not reflected in the subscriber. The publisher and subscribers participating in this integration pattern can be activated and deactivated independently of each other.</p>
+<p>For more information, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" title="You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Subscribe to Integration Cloud Service</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+<p>For more information, see <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-22CFB686-94D2-41B7-8167-867D86AF3192" title="Integration Cloud Service Messaging enables you to publish messages to and subscribe to messages from Integration Cloud Service.">Integration Cloud Service Messaging</a>.</p>
+</div>
+</div>
+<div class="sect2"><a id="GUID-FC613C76-F566-4673-BC10-CC893958C8D6"></a>
+<h2 id="ICSUG-GUID-FC613C76-F566-4673-BC10-CC893958C8D6" class="sect2">Importing a Prebuilt Integration</h2>
+<div>
+<p>You can import prebuilt integrations into your Integration Cloud Service environment.</p>
+<div class="section">There are two types of prebuilt integrations:
+<ul style="list-style-type: disc;">
+<li>
+<p>User-created integrations. These are integrations that you or another user created.</p>
+</li>
+<li>
+<p>Oracle-created integrations from the Oracle Marketplace. You import integrations from the Oracle Marketplace as part of a package. These integrations are designated with a <span class="bold">BUILT BY ORACLE</span> message that is displayed next to the integration name on the Integrations page. You cannot edit these integrations, but you can view their contents, including mappings and business identifiers. You must edit the connections in these integrations to include endpoint credentials relevant to your business requirements. You can also clone these integrations, which enables you to edit the cloned version of the integration.<br />
+<img width="415" height="108" src="img/GUID-E3AEBD54-7D1D-4581-9ABC-D5F40CEE963B-default.png" alt="Description of GUID-E3AEBD54-7D1D-4581-9ABC-D5F40CEE963B-default.png follows" title="Description of GUID-E3AEBD54-7D1D-4581-9ABC-D5F40CEE963B-default.png follows" /><br />
+<a href="img_text/GUID-E3AEBD54-7D1D-4581-9ABC-D5F40CEE963B-default.htm">Description of the illustration GUID-E3AEBD54-7D1D-4581-9ABC-D5F40CEE963B-default.png</a><br /></p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Importing a User-Created Integration</p>
+<p>To import a user-created integration:</p>
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Integrations</span>.</p>
+</li>
+<li>
+<p>In the banner, click <span class="bold">Import</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Browse</span> to select the file to import. If you are importing a single integration, select the JAR file to import. If you are importing a package of integrations, select the PAR file to import.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Importing a Prebuilt Integration from Oracle Marketplace</p>
+<div class="p">To import a prebuilt integration from Oracle Marketplace.
+<ol>
+<li>
+<p>In the upper right corner of the page, click the <span class="bold">Oracle Marketplace</span> icon.</p>
+</li>
+<li>
+<p>The Oracle Marketplace is displayed.</p>
+</li>
+<li>
+<p>Click <span class="bold">Applications</span>.</p>
+</li>
+<li>
+<p>Browse through the list of applications and select the prebuilt integration package to import.</p>
+</li>
+<li>
+<p>When prompted, select the server to which to upload the prebuilt integration file.</p>
+<p>The prebuilt integration is imported as a package file that is visible on the Packages page in Integration Cloud Service. If you go to the Integrations page, the individual integrations of that imported package file are designated with a <span class="bold">BUILT BY ORACLE</span> message to the right of the integration name.</p>
+</li>
+</ol>
+</div>
+You can customize the mappings in the prebuilt integrations imported from Oracle Marketplace. See <a href="GUID-8C6DB0E6-9069-4055-A1F3-C39A1E0A6265.htm" title="It is a common practice to customize the application endpoints of the prebuilt integrations that you import into Integration Cloud Service from the Oracle Marketplace (for example, adding custom fields). As a result, you must customize the integration mappings to take advantage of these custom fields. Integration Cloud Service enables you to customize the mappings in the prebuilt integrations that you import from the Oracle Marketplace. This action creates a customized mapping layer on top of the base mapping file, which is not modified. You can only add customized mappings to prebuilt integrations imported from the Oracle Marketplace, and not to integrations you or another user created.">Adding Customized Mappings to Prebuilt Integrations</a>.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D"></a>
+<h2 id="ICSUG-GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D" class="sect2">Adding a Trigger (Source) Connection</h2>
+<div>
+<p>The trigger (source) connection sends requests to Integration Cloud Service. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the incoming data.</p>
+<div class="section">To add a trigger connection:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Designer, drag a connection from the Connections or Technologies panel on the right to the <span class="bold">Trigger</span> (source) area on the canvas.<br />
+<img width="1260" height="449" src="img/GUID-922D28E0-4153-454F-8165-B7E11AD95F91-default.png" alt="Description of GUID-922D28E0-4153-454F-8165-B7E11AD95F91-default.png follows" title="Description of GUID-922D28E0-4153-454F-8165-B7E11AD95F91-default.png follows" /><br />
+<a href="img_text/GUID-922D28E0-4153-454F-8165-B7E11AD95F91-default.htm">Description of the illustration GUID-922D28E0-4153-454F-8165-B7E11AD95F91-default.png</a><br /></span>
+<div>The wizard for the selected connection is displayed.</div>
+</li>
+<li class="stepexpand"><span>See the following guides for instructions:</span>
+<div>
+<div class="tblformal" id="GUID-62AFF252-7F1C-4D9E-A230-72303A9D586D__GUID-0AA741B4-7837-4D75-946A-794144A83182">
+<table class="cellalignment926" summary="List of the available adapters.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e764">Adapter</th>
+<th class="cellalignment929" id="d12707e766">For Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e770" headers="d12707e764">
+<p>DB2 Adapter</p>
+</td>
+<td class="cellalignment929" headers="d12707e770 d12707e766"><a class="olink ICSDB-GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4" target="_blank" href="../ICSDB/GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4.htm#ICSDB-GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4"><span class="italic">Using the DB2 Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e779" headers="d12707e764"><span>File Adapter</span></td>
+<td class="cellalignment929" headers="d12707e779 d12707e766"><a class="olink ICSFI-GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D" target="_blank" href="../ICSFI/GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D.htm#ICSFI-GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D"><span class="italic">Using the File Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e788" headers="d12707e764"><span>FTP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e788 d12707e766"><a href="http://docs.oracle.com/cloud/latest/intcs_gs/ICSFT/GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE.htm#ICSFT-GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE" target="_blank"><span class="italic">Using the FTP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e797" headers="d12707e764"><span>Oracle JD Edwards EnterpriseOne Adapter</span></td>
+<td class="cellalignment929" headers="d12707e797 d12707e766"><a class="olink ICSJD-GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8" target="_blank" href="../ICSJD/GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8.htm#ICSJD-GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8"><span class="italic">Using the JD Edwards EnterpriseOne Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e806" headers="d12707e764"><span>MySQL Adapter</span></td>
+<td class="cellalignment929" headers="d12707e806 d12707e766"><a class="olink ICSSQ-GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F" target="_blank" href="../ICSSQ/GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F.htm#ICSSQ-GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F"><span class="italic">Using the MySQL Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e815" headers="d12707e764"><span>Oracle Advanced Queuing (AQ) Adapter</span></td>
+<td class="cellalignment929" headers="d12707e815 d12707e766"><a class="olink ICSAQ-GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08" target="_blank" href="../ICSAQ/GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08.htm#ICSAQ-GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08"><span class="italic">Using the Oracle Advanced Queuing (AQ) Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e824" headers="d12707e764"><span>Oracle Commerce Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e824 d12707e766"><a class="olink ICSCC-GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880" target="_blank" href="../ICSCC/GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880.htm#ICSCC-GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e833" headers="d12707e764"><span>Oracle CPQ Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e833 d12707e766"><a class="olink ICSCP-GUID-A5FD6E1C-BEFB-4D5A-BA87-CC05A751EDA0" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSCP-GUID-A5FD6E1C-BEFB-4D5A-BA87-CC05A751EDA0"><span class="italic">Using the Oracle CPQ Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e842" headers="d12707e764"><span>Oracle Database Adapter</span></td>
+<td class="cellalignment929" headers="d12707e842 d12707e766"><a class="olink ICSSB-GUID-914298EF-BDAF-499A-8D1E-68725000D173" target="_blank" href="../ICSSB/GUID-914298EF-BDAF-499A-8D1E-68725000D173.htm#ICSSB-GUID-914298EF-BDAF-499A-8D1E-68725000D173"><span class="italic">Using the Oracle Database Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e851" headers="d12707e764"><span>Oracle E-Business Suite Adapter</span></td>
+<td class="cellalignment929" headers="d12707e851 d12707e766"><a class="olink ics_ebs_guide" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ics_ebs_guide"><span class="italic">Using Oracle E-Business Suite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e860" headers="d12707e764"><span>Oracle ERP Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e860 d12707e766"><a class="olink ICSER-GUID-85F18D19-43F2-4813-ABE7-E365A93C968A" target="_blank" href="../ICSER/GUID-85F18D19-43F2-4813-ABE7-E365A93C968A.htm#ICSER-GUID-85F18D19-43F2-4813-ABE7-E365A93C968A"><span class="italic">Using the Oracle ERP Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e870" headers="d12707e764"><span>Oracle HCM Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e870 d12707e766"><a class="olink ICSHC-GUID-36133B1B-245B-43FF-9148-974F4C51E770" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSHC-GUID-36133B1B-245B-43FF-9148-974F4C51E770"><span class="italic">Using the Oracle HCM Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e879" headers="d12707e764"><span>Oracle Messaging Cloud Service</span></td>
+<td class="cellalignment929" headers="d12707e879 d12707e766"><a class="olink ICSMC-GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E" target="_blank" href="../ICSMC/GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E.htm#ICSMC-GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E"><span class="italic">Using the Oracle Messaging Cloud Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e888" headers="d12707e764"><span>Oracle RightNow Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e888 d12707e766"><a class="olink ICSRN-GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB" target="_blank" href="../ICSRN/GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB.htm#ICSRN-GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB"><span class="italic">Using the Oracle RightNow Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e897" headers="d12707e764"><span>Oracle Sales Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e897 d12707e766"><a class="olink ICSSC-GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE" target="_blank" href="../ICSSC/GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE.htm#ICSSC-GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE"><span class="italic">Using the Oracle Sales Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e906" headers="d12707e764"><span>Oracle Siebel Adapter</span></td>
+<td class="cellalignment929" headers="d12707e906 d12707e766"><a class="olink ICSSI-GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C" target="_blank" href="../ICSSI/GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C.htm#ICSSI-GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C"><span class="italic">Using the Oracle Siebel Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e915" headers="d12707e764"><span>REST Adapter</span></td>
+<td class="cellalignment929" headers="d12707e915 d12707e766"><a class="olink ICSRE-GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1" target="_blank" href="../ICSRE/GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1.htm#ICSRE-GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1"><span class="italic">Using the REST Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e924" headers="d12707e764"><span>Salesforce Adapter</span></td>
+<td class="cellalignment929" headers="d12707e924 d12707e766"><a class="olink ICSSF-GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E" target="_blank" href="../ICSSF/GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E.htm#ICSSF-GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E"><span class="italic">Using the Salesforce Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e933" headers="d12707e764"><span>SAP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e933 d12707e766"><a class="olink ICSSA-GUID-4D018278-96B1-4F67-92AE-D664C6086EFA" target="_blank" href="../ICSSA/GUID-4D018278-96B1-4F67-92AE-D664C6086EFA.htm#ICSSA-GUID-4D018278-96B1-4F67-92AE-D664C6086EFA"><span class="italic">Using the SAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e942" headers="d12707e764"><span>SOAP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e942 d12707e766"><a class="olink ICSSO-GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5" target="_blank" href="../ICSSO/GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5.htm#ICSSO-GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5"><span class="italic">Using the SOAP Adapter</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2"></a>
+<h2 id="ICSUG-GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2" class="sect2">Adding an Invoke (Target) Connection</h2>
+<div>
+<p>Integration Cloud Service sends requests or information to the invoke (target) connection. The information required to connect to the application is already defined in the connection. However, you still must specify certain information, such as the business object and operation to use for the request and how to process the data.</p>
+<div class="section">To add an invoke (target) connection:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>In the Integration Designer, drag a connection from the Connections or Technologies panel on the right to the <span class="bold">Invoke</span> (target) area on the canvas.<br />
+<img width="1241" height="431" src="img/GUID-76CAE018-B785-4BCA-A6AE-8D52BDCD8919-default.png" alt="Description of GUID-76CAE018-B785-4BCA-A6AE-8D52BDCD8919-default.png follows" title="Description of GUID-76CAE018-B785-4BCA-A6AE-8D52BDCD8919-default.png follows" /><br />
+<a href="img_text/GUID-76CAE018-B785-4BCA-A6AE-8D52BDCD8919-default.htm">Description of the illustration GUID-76CAE018-B785-4BCA-A6AE-8D52BDCD8919-default.png</a><br /></span>
+<div>The wizard for the selected connection is displayed.</div>
+</li>
+<li class="stepexpand"><span>See the following guides for instructions:</span>
+<div>
+<div class="tblformal" id="GUID-74F9A7EC-1669-4BD4-A269-04F51736ADC2__GUID-0AA741B4-7837-4D75-946A-794144A83182">
+<table class="cellalignment926" summary="List of the available adapters.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e999">Adapter</th>
+<th class="cellalignment929" id="d12707e1001">For Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e1005" headers="d12707e999"><span>Adobe eSign Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1005 d12707e1001"><a class="olink ICSAE-GUID-5D3CC78B-8304-4BEE-8C6D-B1AB2AA6DEC0" target="_blank" href="../ICSAE/GUID-5D3CC78B-8304-4BEE-8C6D-B1AB2AA6DEC0.htm#ICSAE-GUID-5D3CC78B-8304-4BEE-8C6D-B1AB2AA6DEC0"><span class="italic">Using the Adobe eSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1014" headers="d12707e999"><span>Concur Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1014 d12707e1001"><a class="olink ICSCO-GUID-699A8E2E-2709-4A71-9EB4-05887A782684" target="_blank" href="../ICSCO/GUID-699A8E2E-2709-4A71-9EB4-05887A782684.htm#ICSCO-GUID-699A8E2E-2709-4A71-9EB4-05887A782684"><span class="italic">Using the Concur Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1023" headers="d12707e999">
+<p>DB2 Adapter</p>
+</td>
+<td class="cellalignment929" headers="d12707e1023 d12707e1001"><a class="olink ICSDB-GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4" target="_blank" href="../ICSDB/GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4.htm#ICSDB-GUID-ADA222DA-BCCD-4D94-BB92-2ED07C74B6C4"><span class="italic">Using the DB2 Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1032" headers="d12707e999"><span>DocuSign Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1032 d12707e1001"><a class="olink ICSDS-GUID-60C8729C-3BF8-4651-BD3F-9947B54D6FC0" target="_blank" href="../ICSDS/GUID-60C8729C-3BF8-4651-BD3F-9947B54D6FC0.htm#ICSDS-GUID-60C8729C-3BF8-4651-BD3F-9947B54D6FC0"><span class="italic">Using the DocuSign Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1041" headers="d12707e999"><span>Eventbrite Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1041 d12707e1001"><a class="olink ICSEB-GUID-F4859EC3-DB26-4840-BB1A-756173EE2F1A" target="_blank" href="../ICSEB/GUID-F4859EC3-DB26-4840-BB1A-756173EE2F1A.htm#ICSEB-GUID-F4859EC3-DB26-4840-BB1A-756173EE2F1A"><span class="italic">Using the Eventbrite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1050" headers="d12707e999"><span>Evernote Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1050 d12707e1001"><a class="olink ICSEN-GUID-417FD5C2-70C5-4933-835E-42EF76E5FBA6" target="_blank" href="../ICSEN/GUID-417FD5C2-70C5-4933-835E-42EF76E5FBA6.htm#ICSEN-GUID-417FD5C2-70C5-4933-835E-42EF76E5FBA6"><span class="italic">Using the Evernote Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1059" headers="d12707e999"><span>Facebook Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1059 d12707e1001"><a class="olink ICSFB-GUID-45DFBD39-4AE9-40C0-A8EB-6AF802F68CF7" target="_blank" href="../ICSFB/GUID-45DFBD39-4AE9-40C0-A8EB-6AF802F68CF7.htm#ICSFB-GUID-45DFBD39-4AE9-40C0-A8EB-6AF802F68CF7"><span class="italic">Using the Facebook Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1068" headers="d12707e999"><span>File Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1068 d12707e1001"><a class="olink ICSFI-GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D" target="_blank" href="../ICSFI/GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D.htm#ICSFI-GUID-E7103D3B-70B7-4822-8B9D-57A2CBB6690D"><span class="italic">Using the File Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1077" headers="d12707e999"><span>FTP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1077 d12707e1001"><a class="olink ICSFT-GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE" target="_blank" href="../ICSFT/GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE.htm#ICSFT-GUID-4C28B3D6-756E-4449-859B-E205BE6A77BE"><span class="italic">Using the FTP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1086" headers="d12707e999"><span>Gmail Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1086 d12707e1001"><a class="olink ICSCO-GUID-699A8E2E-2709-4A71-9EB4-05887A782684" target="_blank" href="../ICSCO/GUID-699A8E2E-2709-4A71-9EB4-05887A782684.htm#ICSCO-GUID-699A8E2E-2709-4A71-9EB4-05887A782684"><span class="italic">Using the Concur Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1095" headers="d12707e999"><span>Google Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1095 d12707e1001"><a class="olink ICSGO-GUID-E9821703-F0C9-4804-9EAE-A8E5428B258C" target="_blank" href="../ICSGO/GUID-E9821703-F0C9-4804-9EAE-A8E5428B258C.htm#ICSGO-GUID-E9821703-F0C9-4804-9EAE-A8E5428B258C"><span class="italic">Using the Google Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1105" headers="d12707e999"><span>Google Task Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1105 d12707e1001"><a class="olink ICSGT-GUID-A2CB37AF-230D-4382-91C3-15FC9EF05765" target="_blank" href="../ICSGT/GUID-A2CB37AF-230D-4382-91C3-15FC9EF05765.htm#ICSGT-GUID-A2CB37AF-230D-4382-91C3-15FC9EF05765"><span class="italic">Using the Google Task Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1114" headers="d12707e999"><span>JMS Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1114 d12707e1001"><a class="olink ICSJM-GUID-E4A476EF-6E07-4E3B-B9BD-E3D9F0EDF852" target="_blank" href="../ICSJM/GUID-E4A476EF-6E07-4E3B-B9BD-E3D9F0EDF852.htm#ICSJM-GUID-E4A476EF-6E07-4E3B-B9BD-E3D9F0EDF852"><span class="italic">Using the JMS Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1123" headers="d12707e999"><span>LinkedIn Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1123 d12707e1001"><a class="olink ICSLI-GUID-63E89917-8072-4463-B535-4EDCA55BD607" target="_blank" href="../ICSLI/GUID-63E89917-8072-4463-B535-4EDCA55BD607.htm#ICSLI-GUID-63E89917-8072-4463-B535-4EDCA55BD607"><span class="italic">Using the LinkedIn Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1132" headers="d12707e999"><span>MailChimp Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1132 d12707e1001"><a class="olink ICSCH-GUID-4093946C-8B28-49D6-9DA5-2F4F5FEB54D7" target="_blank" href="../ICSCH/GUID-4093946C-8B28-49D6-9DA5-2F4F5FEB54D7.htm#ICSCH-GUID-4093946C-8B28-49D6-9DA5-2F4F5FEB54D7"><span class="italic">Using the MailChimp Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1141" headers="d12707e999"><span>Microsoft Calendar Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1141 d12707e1001"><a class="olink ICSMS-GUID-32F02086-19AE-42E4-ABBF-65843023C211" target="_blank" href="../ICSMS/GUID-32F02086-19AE-42E4-ABBF-65843023C211.htm#ICSMS-GUID-32F02086-19AE-42E4-ABBF-65843023C211"><span class="italic">Using the Microsoft Calendar Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1150" headers="d12707e999"><span>Microsoft Contact Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1150 d12707e1001"><a class="olink ICSMT-GUID-8D8AC9DC-C543-4F92-9D5F-72D0B6FF18B5" target="_blank" href="../ICSMT/GUID-8D8AC9DC-C543-4F92-9D5F-72D0B6FF18B5.htm#ICSMT-GUID-8D8AC9DC-C543-4F92-9D5F-72D0B6FF18B5"><span class="italic">Using the Microsoft Contact Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1159" headers="d12707e999"><span>Microsoft Email Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1159 d12707e1001"><a class="olink ICSME-GUID-70B6411D-DEFA-41D3-A4C6-FBE0BCDFADBC" target="_blank" href="../ICSME/GUID-70B6411D-DEFA-41D3-A4C6-FBE0BCDFADBC.htm#ICSME-GUID-70B6411D-DEFA-41D3-A4C6-FBE0BCDFADBC"><span class="italic">Using the Microsoft Email Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1168" headers="d12707e999"><span>Microsoft SQL Server Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1168 d12707e1001"><a class="olink ICSSS-GUID-2209071E-C1DD-4E99-8258-22B6F19006A6" target="_blank" href="../ICSSS/GUID-2209071E-C1DD-4E99-8258-22B6F19006A6.htm#ICSSS-GUID-2209071E-C1DD-4E99-8258-22B6F19006A6"><span class="italic">Using the Microsoft SQL Server Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1177" headers="d12707e999"><span>MySQL Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1177 d12707e1001"><a class="olink ICSSQ-GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F" target="_blank" href="../ICSSQ/GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F.htm#ICSSQ-GUID-4E47D7F2-E347-4519-8D69-B2A26F116B4F"><span class="italic">Using the MySQL Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1186" headers="d12707e999"><span>NetSuite Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1186 d12707e1001"><a class="olink ICSNS-GUID-62FA92E1-E42F-4737-9B0D-B79DD5DFEC0A" target="_blank" href="../ICSNS/GUID-62FA92E1-E42F-4737-9B0D-B79DD5DFEC0A.htm#ICSNS-GUID-62FA92E1-E42F-4737-9B0D-B79DD5DFEC0A"><span class="italic">Using the NetSuite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1195" headers="d12707e999"><span>Oracle Advanced Queuing (AQ) Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1195 d12707e1001"><a class="olink ICSAQ-GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08" target="_blank" href="../ICSAQ/GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08.htm#ICSAQ-GUID-A6FCD862-D838-44A8-AFE8-BF7394975B08"><span class="italic">Using the Oracle Advanced Queuing (AQ) Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1205" headers="d12707e999"><span>Oracle Commerce Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1205 d12707e1001"><a class="olink ICSCC-GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880" target="_blank" href="../ICSCC/GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880.htm#ICSCC-GUID-3A94C1FF-4EB2-4869-B501-D32010F5D880"><span class="italic">Using the Oracle Commerce Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1214" headers="d12707e999"><span>Oracle CPQ Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1214 d12707e1001"><a class="olink ICSCP-GUID-A5FD6E1C-BEFB-4D5A-BA87-CC05A751EDA0" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSCP-GUID-A5FD6E1C-BEFB-4D5A-BA87-CC05A751EDA0"><span class="italic">Using the Oracle CPQ Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1223" headers="d12707e999"><span>Oracle Database Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1223 d12707e1001"><a class="olink ICSSB-GUID-914298EF-BDAF-499A-8D1E-68725000D173" target="_blank" href="../ICSSB/GUID-914298EF-BDAF-499A-8D1E-68725000D173.htm#ICSSB-GUID-914298EF-BDAF-499A-8D1E-68725000D173"><span class="italic">Using the Oracle Database Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1232" headers="d12707e999"><span>Oracle Eloqua Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1232 d12707e1001"><a class="olink ICSEL-GUID-14F3EDFA-F44E-4341-9F46-54AF511262C6" target="_blank" href="../ICSEL/GUID-14F3EDFA-F44E-4341-9F46-54AF511262C6.htm#ICSEL-GUID-14F3EDFA-F44E-4341-9F46-54AF511262C6"><span class="italic">Using the Oracle Eloqua Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1241" headers="d12707e999"><span>Oracle E-Business Suite Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1241 d12707e1001"><a class="olink ics_ebs_guide" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ics_ebs_guide"><span class="italic">Using Oracle E-Business Suite Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1250" headers="d12707e999"><span>Oracle ERP Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1250 d12707e1001"><a class="olink ICSER-GUID-85F18D19-43F2-4813-ABE7-E365A93C968A" target="_blank" href="../ICSER/GUID-85F18D19-43F2-4813-ABE7-E365A93C968A.htm#ICSER-GUID-85F18D19-43F2-4813-ABE7-E365A93C968A"><span class="italic">Using the Oracle ERP Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1259" headers="d12707e999"><span>Oracle Field Service Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1259 d12707e1001"><a class="olink ICSFS-GUID-65253172-9D19-4176-BF31-DB431FB015B9" target="_blank" href="../ICSFS/GUID-65253172-9D19-4176-BF31-DB431FB015B9.htm#ICSFS-GUID-65253172-9D19-4176-BF31-DB431FB015B9"><span class="italic">Using the Oracle Field Service Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1268" headers="d12707e999"><span>Oracle HCM Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1268 d12707e1001"><a class="olink ICSHC-GUID-36133B1B-245B-43FF-9148-974F4C51E770" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=ics1645&amp;id=ICSHC-GUID-36133B1B-245B-43FF-9148-974F4C51E770"><span class="italic">Using the Oracle HCM Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1277" headers="d12707e999"><span>Oracle JD Edwards EnterpriseOne Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1277 d12707e1001"><a class="olink ICSJD-GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8" target="_blank" href="../ICSJD/GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8.htm#ICSJD-GUID-C7B62BBF-E97F-467C-9E58-0F1FC2531ED8"><span class="italic">Using the JD Edwards EnterpriseOne Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1286" headers="d12707e999"><span>Oracle Messaging Cloud Service</span></td>
+<td class="cellalignment929" headers="d12707e1286 d12707e1001"><a class="olink ICSMC-GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E" target="_blank" href="../ICSMC/GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E.htm#ICSMC-GUID-14ACF885-64FB-4EAE-8E60-0B6C1F04642E"><span class="italic">Using the Oracle Messaging Cloud Service Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1295" headers="d12707e999"><span>Oracle Responsys Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1295 d12707e1001"><a class="olink ICSRS-GUID-BFB81A40-58D1-46B2-BD95-E379A096AB42" target="_blank" href="../ICSRS/GUID-BFB81A40-58D1-46B2-BD95-E379A096AB42.htm#ICSRS-GUID-BFB81A40-58D1-46B2-BD95-E379A096AB42"><span class="italic">Using the Oracle Responsys Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1305" headers="d12707e999"><span>Oracle RightNow Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1305 d12707e1001"><a class="olink ICSRN-GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB" target="_blank" href="../ICSRN/GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB.htm#ICSRN-GUID-375A0C33-F921-44BF-AA24-2FA00A9BC8FB"><span class="italic">Using the Oracle RightNow Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1314" headers="d12707e999"><span>Oracle Sales Cloud Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1314 d12707e1001"><a class="olink ICSSC-GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE" target="_blank" href="../ICSSC/GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE.htm#ICSSC-GUID-ED808FD5-B079-47DE-9B54-3BA6257559FE"><span class="italic">Using the Oracle Sales Cloud Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1323" headers="d12707e999"><span>Oracle Siebel Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1323 d12707e1001"><a class="olink ICSSI-GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C" target="_blank" href="../ICSSI/GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C.htm#ICSSI-GUID-EA4347CE-D061-483B-92FB-D7A3C9C8B89C"><span class="italic">Using the Oracle Siebel Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1332" headers="d12707e999"><span>REST Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1332 d12707e1001"><a class="olink ICSRE-GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1" target="_blank" href="../ICSRE/GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1.htm#ICSRE-GUID-BC07EE31-82C9-4910-A26B-1B698CDCFBE1"><span class="italic">Using the REST Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1341" headers="d12707e999"><span>Salesforce Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1341 d12707e1001"><a class="olink ICSSF-GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E" target="_blank" href="../ICSSF/GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E.htm#ICSSF-GUID-35538CEC-AA01-44B3-8FC3-18C56DA4B82E"><span class="italic">Using the Salesforce Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1350" headers="d12707e999"><span>SAP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1350 d12707e1001"><a class="olink ICSSA-GUID-4D018278-96B1-4F67-92AE-D664C6086EFA" target="_blank" href="../ICSSA/GUID-4D018278-96B1-4F67-92AE-D664C6086EFA.htm#ICSSA-GUID-4D018278-96B1-4F67-92AE-D664C6086EFA"><span class="italic">Using the SAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1359" headers="d12707e999"><span>SAP Ariba Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1359 d12707e1001"><a class="olink ICSAR-GUID-4B5548D5-C184-4F1E-983B-6887C4A1C705" target="_blank" href="../ICSAR/GUID-4B5548D5-C184-4F1E-983B-6887C4A1C705.htm#ICSAR-GUID-4B5548D5-C184-4F1E-983B-6887C4A1C705"><span class="italic">Using the SAP Ariba Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1368" headers="d12707e999"><span>SOAP Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1368 d12707e1001"><a class="olink ICSSO-GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5" target="_blank" href="../ICSSO/GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5.htm#ICSSO-GUID-80B6AB84-AC17-4364-B73B-42BC627E04C5"><span class="italic">Using the SOAP Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1377" headers="d12707e999"><span>SuccessFactors Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1377 d12707e1001"><a class="olink ICSSU-GUID-487DCF5C-7742-443F-9DAD-EF1D8B584721" target="_blank" href="../ICSSU/GUID-487DCF5C-7742-443F-9DAD-EF1D8B584721.htm#ICSSU-GUID-487DCF5C-7742-443F-9DAD-EF1D8B584721"><span class="italic">Using the SuccessFactors Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1386" headers="d12707e999"><span>SurveyMonkey Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1386 d12707e1001"><a class="olink ICSSM-GUID-B3340933-3423-4CDC-BA64-4973701567B2" target="_blank" href="../ICSSM/GUID-B3340933-3423-4CDC-BA64-4973701567B2.htm#ICSSM-GUID-B3340933-3423-4CDC-BA64-4973701567B2"><span class="italic">Using the SurveyMonkey Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1395" headers="d12707e999"><span>Twilio Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1395 d12707e1001"><a class="olink ICSTL-GUID-AA9A3E30-4098-45CF-8A35-FCCD61C8898A" target="_blank" href="../ICSTL/GUID-AA9A3E30-4098-45CF-8A35-FCCD61C8898A.htm#ICSTL-GUID-AA9A3E30-4098-45CF-8A35-FCCD61C8898A"><span class="italic">Using the Twilio Adapter</span></a></td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e1405" headers="d12707e999"><span>Twitter Adapter</span></td>
+<td class="cellalignment929" headers="d12707e1405 d12707e1001"><a class="olink ICSTW-GUID-740EA4C7-3775-4ED1-A9A5-A9456C9E794E" target="_blank" href="../ICSTW/GUID-740EA4C7-3775-4ED1-A9A5-A9456C9E794E.htm#ICSTW-GUID-740EA4C7-3775-4ED1-A9A5-A9456C9E794E"><span class="italic">Using the Twitter Adapter</span></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>After you configure the connection, the Summary page appears.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Done</span>, then click <span class="bold">Save</span>.</span></li>
+</ol>
+<div class="section">The connection information appears on the canvas, along with arrows depicting the configured operations. Because of space limitations on the canvas, names of connections that are more than 15 characters are truncated and ellipses are added. If you hover over a name, the complete name is displayed in a tool tip.<br />
+<img width="1068" height="256" src="img/GUID-84861421-D3F2-4EB1-B8B6-3C580A536A5E-default.png" alt="Description of GUID-84861421-D3F2-4EB1-B8B6-3C580A536A5E-default.png follows" title="Description of GUID-84861421-D3F2-4EB1-B8B6-3C580A536A5E-default.png follows" /><br />
+<a href="img_text/GUID-84861421-D3F2-4EB1-B8B6-3C580A536A5E-default.htm">Description of the illustration GUID-84861421-D3F2-4EB1-B8B6-3C580A536A5E-default.png</a><br /></div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-36A90FF0-F0D4-4F81-9028-41971C7D100B"></a>
+<h2 id="ICSUG-GUID-36A90FF0-F0D4-4F81-9028-41971C7D100B" class="sect2">Creating Orchestrated Integrations</h2>
+<div>
+<p>You can create orchestrated integrations in <span id="INTCS">Oracle Integration Cloud Service</span> that use Oracle BPEL Process Manager capabilities. Oracle BPEL Process Manager enables you to define how a business process that involves web services is executed. BPEL messages invoke remote services and orchestrate process execution. When designing your integration, you can add switch activities in your integration to create multiple routing expressions. You can create ad-hoc mappings on switch branches. You can also add callback activities (to end an integration and respond back to the sender) and end activities (to end an integration without responding back to the sender) in asynchronous integrations.</p>
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-D0E196EF-3DCF-4F05-9E36-97EAF792B136" title="This section provides an example of how to design an orchestrated integration that includes a switch activity and multiple ad-hoc mappers.">Creating an Orchestrated Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-A43E50D1-5A83-4B67-A952-CF04BD6B6369" title="To define inbound triggers and outbound invokes:">Defining Inbound Triggers and Outbound Invokes</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-3A133159-97B5-4463-A07D-54F0FFDCBCEB" title="You can define switch branches to add routing expressions in your integration.">Defining Switch Branches</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6B1CFABC-1635-44A2-A93C-D7E1B6150F54" title="As you add switches and their associated invoke connections to the switch branches, you can add ad-hoc mappers, as needed. You can also delete the mappers that were automatically created when you added your first trigger to the integration, if they are not needed.">Defining Ad-Hoc Mappings</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-64587C1E-2A87-459A-A2ED-52A79944D2BE" title="You can import an XSL map file that was previously exported from the same integration. This action overwrites the existing mapping file. Once imported, the map file cannot be edited. For example, you can export the map from a specific integration, edit the XSL file as per a user requirement, save it, and import it back into the same integration. You cannot import an XSL map file into an orchestrated integration that was exported from a different integration in Oracle Integration Cloud Service or from an application in Oracle JDeveloper.">Importing a Map File into an Orchestrated Integration</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-47F539D1-4220-4782-9F99-C3B3F3FCBA33" title="You can assign values to scalar variables in orchestrated integrations using the Expression Builder.">Assigning Values to Scalar Variables</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-7818373C-7216-4D4D-B760-F701F7BD584C" title="You can include XPath axis and wildcard expressions in actions that support the Expression Builder (for example, assign and switch actions support the Expression Builder).">Using XPath Axis and Wildcard Expressions in the Expression Builder</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-D676DF2E-B024-41B3-8DAE-1C733AFEB53F" title="You can create variable assignments that use lookups in the Expression Builder.">Using Lookups in Variable Assignments</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-78188DC6-AE1E-474C-A3C4-A46B473C05E8" title="Business identifiers enable you to track payload fields in messages during runtime. You must assign business identifiers before you can activate an orchestrated integration.">Assigning Business Identifiers for Tracking Fields</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-B3669509-4995-410A-B2D4-70D9B3EAC374" title="The for-each action enables you to loop over a repeating element and execute one or more actions within the scope of the for-each action. The number of loop iterations is based on a user-selected repeating element. For example, you may have an integration in which you have downloaded a number of files and want to loop over the output of the files. The for-each action enables you to perform this task.">Looping over Repeating Elements with a For-Each Action</a></p>
+</li>
+<li>
+<p><a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-255DD910-8EDC-424A-856B-A180FFC01902" title="If there are errors or warnings in an integration (for example, an empty or invalid map, a missing tracking attribute, or an invalid assign or switch action), an ERRORS section is displayed on the left side. These errors and warnings prevent you from activating an integration. You must first resolve these issues to activate an integration.">Displaying Errors and Warnings in an Integration</a></p>
+</li>
+</ul>
+</div>
+<!-- class="section" --></div>
+<div class="sect3"><a id="GUID-D0E196EF-3DCF-4F05-9E36-97EAF792B136"></a>
+<h3 id="ICSUG-GUID-D0E196EF-3DCF-4F05-9E36-97EAF792B136" class="sect3">Creating an Orchestrated Integration</h3>
+<div>
+<p>This section provides an example of how to design an orchestrated integration that includes a switch activity and multiple ad-hoc mappers.</p>
+<div class="section">
+<p>To create an orchestrated integration:</p>
+<ol>
+<li>
+<p>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</p>
+</li>
+<li>
+<p>On the Designer Portal, click <span class="bold">Integrations</span>.</p>
+</li>
+<li>
+<p>On the Integrations page, click <span class="bold">New Integration</span>.</p>
+<p>The Create Integration &mdash; Select a Style/Pattern dialog is displayed.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Orchestration</span> integration pattern. For more information about integration patterns, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-1A999E19-4505-4059-AC38-D4F1E16A6F01" title="You can select from several types of patterns when creating an integration in the Create Integration &mdash; Select a Pattern dialog.">Understanding Integration Patterns</a>.</p>
+<p>The Create New Integration dialog is displayed.</p>
+</li>
+<li>
+<p>Complete the fields in this dialog, and click <span class="bold">Create</span>. For more information about this dialog, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</p>
+<div class="p">An empty integration canvas with the following sections is displayed:
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">TRIGGERS</span> section in the upper left corner shows the type (for example, Oracle RightNow Adapter) and number of configured adapters available for adding to an integration. A trigger enables you to create an inbound connection in an integration.</p>
+</li>
+<li>
+<p>The empty integration is identified by a <span class="bold">START</span> label and <span class="bold">plus</span> sign within a circle in which you drag the trigger to define the inbound part of the integration.</p>
+</li>
+<li>
+<p>Several icons are provided in the upper right corner of the integration for adjusting the size of the integration.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">zoom out</span>: Click to decrease the size of the integration.</p>
+</li>
+<li>
+<p><span class="bold">zoom in</span>: Click to increase the size of the integration.</p>
+</li>
+<li>
+<p><span class="bold">zoom to fit</span>: Click to make the entire integration visible on the page.</p>
+</li>
+<li>
+<p><span class="bold">Home</span>: Click to align the integration in normal size in the upper left corner of the page.</p>
+</li>
+<li>
+<p><span class="bold">Reset the Diagram</span>: Click to reset the integration to its normal size and place it in the upper left corner of the page.</p>
+</li>
+<li>
+<p><span class="bold">Multiple Select</span>: Click and then drag the cursor around parts of the integration to select them. This action highlights the selected sections in blue.</p>
+</li>
+<li>
+<p>A box below these icons shows a scale model of the undefined integration. You can place you cursor within the box or anywhere in the canvas to move your integration. You can also drag parts of the integration (such as the switch activities) around the canvas to redraw the integration. However, the order of the integration does not change.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<br />
+<img width="1340" height="324" src="img/GUID-CF00F8DD-2046-4706-BFDA-59658F48128F-default.png" alt="Description of GUID-CF00F8DD-2046-4706-BFDA-59658F48128F-default.png follows" title="Description of GUID-CF00F8DD-2046-4706-BFDA-59658F48128F-default.png follows" /><br />
+<a href="img_text/GUID-CF00F8DD-2046-4706-BFDA-59658F48128F-default.htm">Description of the illustration GUID-CF00F8DD-2046-4706-BFDA-59658F48128F-default.png</a><br /></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-A43E50D1-5A83-4B67-A952-CF04BD6B6369"></a>
+<h3 id="ICSUG-GUID-A43E50D1-5A83-4B67-A952-CF04BD6B6369" class="sect3">Defining Inbound Triggers and Outbound Invokes</h3>
+<div>
+<p>To define inbound triggers and outbound invokes:</p>
+<div class="section">
+<ol>
+<li>
+<p>On the left side of the canvas, click <span class="bold">TRIGGERS</span> to expand the panel.</p>
+</li>
+<li>
+<p>Click the adapter type to display the specific type and number of configured adapters. Synchronous, asynchronous, and fire-and-forget (no response) triggers are supported.</p>
+</li>
+<li>
+<p>Drag the configured adapter to the large <span class="bold">+</span> section within the circle in the integration canvas.</p>
+<p>This invokes the Adapter Endpoint Configuration Wizard.</p>
+</li>
+<li>
+<p>Complete the pages of the wizard to configure the selected adapter. For this example, an Oracle RightNow adapter is selected in which a request opportunity business object and an immediate response are configured.</p>
+<p>When complete, a configured trigger is displayed in the canvas. An unconfigured mapper icon (indicated by blue) is displayed in the middle. Because this trigger was configured to send a response, a return icon is displayed in green in the integration canvas. Green indicates that design is complete.<br />
+<img width="354" height="402" src="img/GUID-F69E9F84-4CFA-452D-BEF4-90985B160ED4-default.png" alt="Description of GUID-F69E9F84-4CFA-452D-BEF4-90985B160ED4-default.png follows" title="Description of GUID-F69E9F84-4CFA-452D-BEF4-90985B160ED4-default.png follows" /><br />
+<a href="img_text/GUID-F69E9F84-4CFA-452D-BEF4-90985B160ED4-default.htm">Description of the illustration GUID-F69E9F84-4CFA-452D-BEF4-90985B160ED4-default.png</a><br /></p>
+<div class="infobox-note" id="GUID-A43E50D1-5A83-4B67-A952-CF04BD6B6369__GUID-D20DC6EF-0A46-4CC3-A551-85EA96048C2F">
+<p class="notep1">Note:</p>
+Asynchronous responses are also supported. You can select the <span class="bold">Delayed</span> (asynchronous) option on the Response page in the Adapter Endpoint Configuration Wizard for the Oracle RightNow Cloud Adapter. Creating an asynchronous response creates a return (<span class="bold">Receive</span>) activity in the integration. On the left side, the <span class="bold">TRIGGERS</span> section is replaced by an <span class="bold">INVOKES</span> section that enables you to add multiple outbound invoke connections to the integration.</div>
+<div class="p">An <span class="bold">ACTIONS</span> section is now displayed below <span class="bold">INVOKES</span>. When expanded, this section displays the following options:
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Assign</span>: Enables you to assign variables to integrations.</p>
+</li>
+<li>
+<p><span class="bold">Callback</span>: Enables you to end a process and return to the trigger. For example, you can add a switch activity and define a branch in which you add a <span class="bold">Callback</span>. If some defined expression logic is not met, this branch is taken. The integration is stopped and the trigger receives a response indicating that the integration is not continuing.</p>
+</li>
+<li>
+<p><span class="bold">For Each</span>: Enables you to loop over a repeating element and execute one or more actions within the scope of the for-each action.</p>
+</li>
+<li>
+<p><span class="bold">Map</span>: Enables you to add ad-hoc mappers to the integration.</p>
+</li>
+<li>
+<p><span class="bold">Return</span>: Enables you to return an immediate response.</p>
+</li>
+<li>
+<p><span class="bold">Stop</span>: Enables you to terminate the integration. No response message is returned to the trigger.</p>
+</li>
+<li>
+<p><span class="bold">Switch</span>: Enables you to add a switch activity for defining routing expression branches in the integration.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>On the left side of the canvas, click <span class="bold">INVOKES</span> to expand the panel.</p>
+</li>
+<li>
+<p>Click the adapter type to display the specific type and number of configured adapters.</p>
+</li>
+<li>
+<p>Drag the specific configured adapter to the integration canvas. As you do, two large <span class="bold">+</span> sections within circles are displayed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A section before the request mapper (this is similar to the enrichment feature that you can define in integrations that are not orchestrated).</p>
+</li>
+<li>
+<p>A section after the request mapper.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Drop the adapter in the appropriate section. For this example, the invoke is added before the request mapper.</p>
+<p>This invokes the Adapter Endpoint Configuration Wizard.</p>
+</li>
+<li>
+<p>Complete the pages of the wizard to configure the selected adapter. For this example, an Oracle Sales Cloud Adapter named Order with a selected business object is defined for a synchronous response.</p>
+<p>When complete, a configured invoke connection is displayed in the canvas. You can click the invoke connection to edit or view its contents. You can place your cursor anywhere in the canvas to move the integration as needed. You can also move the integration from within the large box in the upper right corner or click the two icons in the upper left corner to further adjust the display of the integration.<br />
+<img width="234" height="621" src="img/GUID-5DB06CB9-9C2E-4CF9-BCA0-3640CE67B271-default.png" alt="Description of GUID-5DB06CB9-9C2E-4CF9-BCA0-3640CE67B271-default.png follows" title="Description of GUID-5DB06CB9-9C2E-4CF9-BCA0-3640CE67B271-default.png follows" /><br />
+<a href="img_text/GUID-5DB06CB9-9C2E-4CF9-BCA0-3640CE67B271-default.htm">Description of the illustration GUID-5DB06CB9-9C2E-4CF9-BCA0-3640CE67B271-default.png</a><br /></p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-3A133159-97B5-4463-A07D-54F0FFDCBCEB"></a>
+<h3 id="ICSUG-GUID-3A133159-97B5-4463-A07D-54F0FFDCBCEB" class="sect3">Defining Switch Branches</h3>
+<div>
+<p>You can define switch branches to add routing expressions in your integration.</p>
+<div class="section">
+<p>To define switch branches:</p>
+<ol>
+<li>
+<p>On the left side of the canvas, click <span class="bold">ACTIONS</span> to expand the panel.</p>
+</li>
+<li>
+<div class="p">Drag the <span class="bold">SWITCH</span> icon to the integration canvas. As you do, large <span class="bold">+</span> sections within circles are displayed that indicate where you can drop the switch activity. For this example, the switch activity is added immediately after the trigger connection.
+<div class="infobox-note" id="GUID-3A133159-97B5-4463-A07D-54F0FFDCBCEB__GUID-F75BD7D0-A4FA-4D99-8711-6E148B60128C">
+<p class="notep1">Note:</p>
+Nested switches are not supported. If you attempt to create a nested switch, you receive an error message at the top of the page.</div>
+</div>
+<div class="p">Two branches are automatically created:
+<ul style="list-style-type: disc;">
+<li>
+<p>Undefined (first) branch: You must define a routing expression for this branch.</p>
+</li>
+<li>
+<p>Otherwise (second) branch: This branch is taken if the routing expression for the initial branch does not resolve to true.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-3A133159-97B5-4463-A07D-54F0FFDCBCEB__GUID-F52017FB-10F7-4A25-B231-2B3F94E61A04">
+<p class="notep1">Note:</p>
+To add more branches, click the question mark in the switch activity to invoke a menu.</div>
+</div>
+</li>
+<li>
+<p>Click the <span class="bold">Undefined</span> branch icon.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Edit</span> icon from the menu that is displayed. This invokes the Expression Builder.</p>
+</li>
+<li>
+<p>Define a routing expression, then click <span class="bold">Save</span> and <span class="bold">Exit Expression Builder</span>. XPath version 2.0 functions are supported. For more information about the Expression Builder, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD" title="You can create XPath expressions for routing conditions in two different user interface modes:">Creating Routing Expression Logic in Both Expression Mode and Condition Mode</a>.</p>
+<div class="p">For this example, the following expression is defined:
+<pre dir="ltr">
+/nssrcmpr:process/nssrcmpr:Contact_CustomObj/rnb_v1_3:LookupName = "Denver"
+</pre></div>
+<p>You can now define different data flows for both the defined and otherwise branches in the switch activity.</p>
+</li>
+<li>
+<p>Return to the left side of the canvas, and click <span class="bold">INVOKES</span> to expand the panel.</p>
+</li>
+<li>
+<p>Drag an adapter to the appropriate <span class="bold">+</span> section within the circle. Two are available: one for the defined branch and another for the otherwise branch. For this example, the section for the otherwise branch is selected.<br />
+<img width="458" height="285" src="img/GUID-202F8456-93A9-4BF7-84B6-6F3C81E312DA-default.png" alt="Description of GUID-202F8456-93A9-4BF7-84B6-6F3C81E312DA-default.png follows" title="Description of GUID-202F8456-93A9-4BF7-84B6-6F3C81E312DA-default.png follows" /><br />
+<a href="img_text/GUID-202F8456-93A9-4BF7-84B6-6F3C81E312DA-default.htm">Description of the illustration GUID-202F8456-93A9-4BF7-84B6-6F3C81E312DA-default.png</a><br /></p>
+<p>This invokes the Adapter Endpoint Configuration Wizard.</p>
+</li>
+<li>
+<p>Complete the pages of the wizard to configure the selected adapter.</p>
+<p>This creates an extra invoke connection on the otherwise branch. You can use the data from this invoke connection to initiate an order with the endpoint.<br />
+<img width="587" height="268" src="img/GUID-ABBB9DEC-C0FD-457E-B22A-1B0E43ECAA5C-default.png" alt="Description of GUID-ABBB9DEC-C0FD-457E-B22A-1B0E43ECAA5C-default.png follows" title="Description of GUID-ABBB9DEC-C0FD-457E-B22A-1B0E43ECAA5C-default.png follows" /><br />
+<a href="img_text/GUID-ABBB9DEC-C0FD-457E-B22A-1B0E43ECAA5C-default.htm">Description of the illustration GUID-ABBB9DEC-C0FD-457E-B22A-1B0E43ECAA5C-default.png</a><br /></p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-6B1CFABC-1635-44A2-A93C-D7E1B6150F54"></a>
+<h3 id="ICSUG-GUID-6B1CFABC-1635-44A2-A93C-D7E1B6150F54" class="sect3">Defining Ad-Hoc Mappings</h3>
+<div>
+<p>As you add switches and their associated invoke connections to the switch branches, you can add ad-hoc mappers, as needed. You can also delete the mappers that were automatically created when you added your first trigger to the integration, if they are not needed.</p>
+<div class="section">
+<p>To define ad-hoc mappings:</p>
+<ol>
+<li>
+<p>Delete any mappings that are not needed. For this example, the following mapping is deleted to create two mappings for the defined and otherwise branches that output to the order invoke connection.<br />
+<img width="560" height="239" src="img/GUID-F0429B4E-A1B4-43C8-9B69-662D0A7025BA-default.png" alt="Description of GUID-F0429B4E-A1B4-43C8-9B69-662D0A7025BA-default.png follows" title="Description of GUID-F0429B4E-A1B4-43C8-9B69-662D0A7025BA-default.png follows" /><br />
+<a href="img_text/GUID-F0429B4E-A1B4-43C8-9B69-662D0A7025BA-default.htm">Description of the illustration GUID-F0429B4E-A1B4-43C8-9B69-662D0A7025BA-default.png</a><br /></p>
+</li>
+<li>
+<p>On the left side, expand the <span class="bold">ACTIONS</span> section.</p>
+</li>
+<li>
+<p>Drag a <span class="bold">MAP</span> icon to a branch of the switch activity. For this example, the map is first dragged to the <span class="bold">+</span> sign of the defined branch.<br />
+<img width="459" height="247" src="img/GUID-0A6B0C31-3C88-48F7-92D6-A5B92C7DEF58-default.png" alt="Description of GUID-0A6B0C31-3C88-48F7-92D6-A5B92C7DEF58-default.png follows" title="Description of GUID-0A6B0C31-3C88-48F7-92D6-A5B92C7DEF58-default.png follows" /><br />
+<a href="img_text/GUID-0A6B0C31-3C88-48F7-92D6-A5B92C7DEF58-default.htm">Description of the illustration GUID-0A6B0C31-3C88-48F7-92D6-A5B92C7DEF58-default.png</a><br /></p>
+<p>The Select Output dialog is displayed.<br />
+<img width="434" height="281" src="img/GUID-A8BC907A-98A5-4954-AAB5-10031CE39394-default.png" alt="Description of GUID-A8BC907A-98A5-4954-AAB5-10031CE39394-default.png follows" title="Description of GUID-A8BC907A-98A5-4954-AAB5-10031CE39394-default.png follows" /><br />
+<a href="img_text/GUID-A8BC907A-98A5-4954-AAB5-10031CE39394-default.htm">Description of the illustration GUID-A8BC907A-98A5-4954-AAB5-10031CE39394-default.png</a><br /></p>
+</li>
+<li>
+<p>Select the endpoint to which to map. For this example, the <span class="bold">Order</span> endpoint is selected.</p>
+<p>The mapper is displayed.</p>
+</li>
+<li>
+<p>Map appropriate elements from the source data structure to the target data structure.</p>
+</li>
+<li>
+<p>When complete, click <span class="bold">Save</span>, then click <span class="bold">Exit Mapper</span>.</p>
+</li>
+<li>
+<p>Drag a <span class="bold">MAP</span> icon to the otherwise branch of the switch activity.</p>
+<p>The Select Output dialog is displayed.</p>
+</li>
+<li>
+<p>Select the endpoint to which to map, and click <span class="bold">Select</span>. For this example, the <span class="bold">Order</span> endpoint is also selected.</p>
+<p>The mapper is displayed.</p>
+</li>
+<li>
+<p>Map appropriate elements from the source data structure to the target data structure.</p>
+</li>
+<li>
+<p>When complete, click <span class="bold">Save</span>, then click <span class="bold">Exit Mapper</span>.</p>
+<div class="p">Mappings for both branches of the switch activity are now displayed.
+<ul style="list-style-type: disc;">
+<li>
+<p>The inbound trigger connection is configured with an opportunity business object.</p>
+</li>
+<li>
+<p>A switch activity is defined with two branches:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the routing expression for the defined branch resolves to true, the mapping for that data is performed for the outbound invoke connection.</p>
+</li>
+<li>
+<p>If the routing expression for the defined branch does not resolve to true, the otherwise branch is taken and the mapping for that data is performed for the outbound invoke connection.</p>
+</li>
+</ul>
+<p>You can click the mappers to display a menu for editing or viewing the mapper. You can also click the invoke connections to edit or view their contents.</p>
+</li>
+</ul>
+<br />
+<img width="727" height="374" src="img/GUID-DB160AC8-6651-41EE-AD6F-1DA1876CB78A-default.png" alt="Description of GUID-DB160AC8-6651-41EE-AD6F-1DA1876CB78A-default.png follows" title="Description of GUID-DB160AC8-6651-41EE-AD6F-1DA1876CB78A-default.png follows" /><br />
+<a href="img_text/GUID-DB160AC8-6651-41EE-AD6F-1DA1876CB78A-default.htm">Description of the illustration GUID-DB160AC8-6651-41EE-AD6F-1DA1876CB78A-default.png</a><br /></div>
+<div class="p">You can make the integration as complex as is required. For example, you can:
+<ul style="list-style-type: disc;">
+<li>
+<p>Add additional switches to other parts of the integration.</p>
+</li>
+<li>
+<p>Add additional ad-hoc mappings to the branches of the switches.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-64587C1E-2A87-459A-A2ED-52A79944D2BE"></a>
+<h3 id="ICSUG-GUID-64587C1E-2A87-459A-A2ED-52A79944D2BE" class="sect3">Importing a Map File into an Orchestrated Integration</h3>
+<div>
+<p>You can import an XSL map file that was previously exported from the <span class="italic">same</span> integration. This action overwrites the existing mapping file. Once imported, the map file cannot be edited. For example, you can export the map from a specific integration, edit the XSL file as per a user requirement, save it, and import it back into the same integration. You cannot import an XSL map file into an orchestrated integration that was exported from a different integration in Oracle Integration Cloud Service or from an application in Oracle JDeveloper.</p>
+<div class="section">
+<ol>
+<li>
+<p>Right-click the map in which you want to import an integration, and select <span class="bold">Import</span>.<br />
+<img width="228" height="162" src="img/GUID-1AC8C912-F532-4DAE-B601-29549E57C1AA-default.png" alt="Description of GUID-1AC8C912-F532-4DAE-B601-29549E57C1AA-default.png follows" title="Description of GUID-1AC8C912-F532-4DAE-B601-29549E57C1AA-default.png follows" /><br />
+<a href="img_text/GUID-1AC8C912-F532-4DAE-B601-29549E57C1AA-default.htm">Description of the illustration GUID-1AC8C912-F532-4DAE-B601-29549E57C1AA-default.png</a><br /></p>
+</li>
+<li>
+<p>Browse for the map file to import, then click <span class="bold">Import</span>. You only import the map file of an exported integration into Integration Cloud Service. You do <span class="italic">not</span> import the entire integration in which the map file is included into Oracle Integration Cloud Service.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-47F539D1-4220-4782-9F99-C3B3F3FCBA33"></a>
+<h3 id="ICSUG-GUID-47F539D1-4220-4782-9F99-C3B3F3FCBA33" class="sect3">Assigning Values to Scalar Variables</h3>
+<div>
+<p>You can assign values to scalar variables in orchestrated integrations using the Expression Builder.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-47F539D1-4220-4782-9F99-C3B3F3FCBA33__GUID-195B12C2-364A-4254-9C9A-FCF1A14D68AE">
+<p class="notep1">Note:</p>
+Values cannot be assigned to other variable types, such as complex types.</div>
+<ol>
+<li>
+<p>On the left side of the canvas, click <span class="bold">ACTIONS</span> to expand the panel.</p>
+</li>
+<li>
+<p>Drag the <span class="bold">ASSIGN</span> icon to the appropriate <span class="bold">plus</span> sign location in the integration canvas.</p>
+</li>
+<li>
+<p>Enter an assignment name and optional description when prompted by the Assignments dialog, then click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Enter a name for the assignment in the <span class="bold">Name</span> field, then click the <span class="bold">Expression Builder</span> icon at the far right. Assignment names are case sensitive.</p>
+</li>
+<li>
+<p>Build an expression, then click <span class="bold">Exit Expression Builder</span>. The expression is automatically saved in edit mode. For information on using the Expression Builder, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD" title="You can create XPath expressions for routing conditions in two different user interface modes:">Creating Routing Expression Logic in Both Expression Mode and Condition Mode</a>.<br />
+<img width="565" height="199" src="img/GUID-81D4400A-293C-4028-8ED2-2A54A9F87E87-default.png" alt="Description of GUID-81D4400A-293C-4028-8ED2-2A54A9F87E87-default.png follows" title="Description of GUID-81D4400A-293C-4028-8ED2-2A54A9F87E87-default.png follows" /><br />
+<a href="img_text/GUID-81D4400A-293C-4028-8ED2-2A54A9F87E87-default.htm">Description of the illustration GUID-81D4400A-293C-4028-8ED2-2A54A9F87E87-default.png</a><br />
+The expression value is displayed in the <span class="bold">Value</span> field. <img width="1043" height="99" src="img/GUID-2984D12A-3C65-4878-B4E3-4CA5117A5ACF-default.png" alt="Description of GUID-2984D12A-3C65-4878-B4E3-4CA5117A5ACF-default.png follows" title="Description of GUID-2984D12A-3C65-4878-B4E3-4CA5117A5ACF-default.png follows" /><br />
+<a href="img_text/GUID-2984D12A-3C65-4878-B4E3-4CA5117A5ACF-default.htm">Description of the illustration GUID-2984D12A-3C65-4878-B4E3-4CA5117A5ACF-default.png</a></p>
+</li>
+<li>
+<p>Click the <span class="bold">Add</span> icon to add multiple assignments to the <span class="bold">ASSIGN</span> node. You can also define an assignment with a value from a previously defined assignment. In the following example, <span class="bold">AccountId</span> (the previously created assignment) is assigned as the value of assignment <span class="bold">AccountIdNow</span>.<br />
+<img width="1041" height="128" src="img/GUID-3D814D01-75B9-41F5-9BF5-1B4B907A2FE3-default.png" alt="Description of GUID-3D814D01-75B9-41F5-9BF5-1B4B907A2FE3-default.png follows" title="Description of GUID-3D814D01-75B9-41F5-9BF5-1B4B907A2FE3-default.png follows" /><br />
+<a href="img_text/GUID-3D814D01-75B9-41F5-9BF5-1B4B907A2FE3-default.htm">Description of the illustration GUID-3D814D01-75B9-41F5-9BF5-1B4B907A2FE3-default.png</a><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Exit Assignments</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Save</span>.</p>
+</li>
+</ol>
+<p>Variable assignments can be of greater complexity. For example, you can use assignments in switch activities and in maps. For example, in the following orchestration, the next organization ID is assigned.<br />
+<img width="409" height="425" src="img/GUID-0C5C483D-4F77-4D98-88A3-20E3DF90D43A-default.png" alt="Description of GUID-0C5C483D-4F77-4D98-88A3-20E3DF90D43A-default.png follows" title="Description of GUID-0C5C483D-4F77-4D98-88A3-20E3DF90D43A-default.png follows" /><br />
+<a href="img_text/GUID-0C5C483D-4F77-4D98-88A3-20E3DF90D43A-default.htm">Description of the illustration GUID-0C5C483D-4F77-4D98-88A3-20E3DF90D43A-default.png</a><br /></p>
+<ol>
+<li>
+<p>Click the <span class="bold">ASSIGN</span> node. <span class="bold">NewOrgID</span> is assigned a value of <span class="bold">OrganizationId + 1.0</span>. <span class="bold">OrganizationId</span> is the business object that comes from the trigger element that initiates this orchestration.</p>
+<br />
+<img width="1058" height="138" src="img/GUID-9F88323C-BD1F-4A6C-BD60-5A1C0F299F08-default.png" alt="Description of GUID-9F88323C-BD1F-4A6C-BD60-5A1C0F299F08-default.png follows" title="Description of GUID-9F88323C-BD1F-4A6C-BD60-5A1C0F299F08-default.png follows" /><br />
+<a href="img_text/GUID-9F88323C-BD1F-4A6C-BD60-5A1C0F299F08-default.htm">Description of the illustration GUID-9F88323C-BD1F-4A6C-BD60-5A1C0F299F08-default.png</a><br /></li>
+<li>
+<p>View the switch activity in the orchestration. While <span class="bold">OrganizationId</span> is less than or equal to 15.0, another assignment is performed in <span class="bold">VarNodeInSwitch</span>.</p>
+<br />
+<img width="353" height="270" src="img/GUID-1A20D748-EAFC-48AB-AB5E-7635F8BD59EB-default.png" alt="Description of GUID-1A20D748-EAFC-48AB-AB5E-7635F8BD59EB-default.png follows" title="Description of GUID-1A20D748-EAFC-48AB-AB5E-7635F8BD59EB-default.png follows" /><br />
+<a href="img_text/GUID-1A20D748-EAFC-48AB-AB5E-7635F8BD59EB-default.htm">Description of the illustration GUID-1A20D748-EAFC-48AB-AB5E-7635F8BD59EB-default.png</a><br /></li>
+<li>
+<p>Click <span class="bold">VarNodeInSwitch</span> and note that it reverts to the original value.</p>
+<br />
+<img width="1044" height="61" src="img/GUID-74D8DC70-9761-428A-801B-8158C6C6F589-default.png" alt="Description of GUID-74D8DC70-9761-428A-801B-8158C6C6F589-default.png follows" title="Description of GUID-74D8DC70-9761-428A-801B-8158C6C6F589-default.png follows" /><br />
+<a href="img_text/GUID-74D8DC70-9761-428A-801B-8158C6C6F589-default.htm">Description of the illustration GUID-74D8DC70-9761-428A-801B-8158C6C6F589-default.png</a><br />
+<p>You can also map assignment values in the mapper.</p>
+<p>If there is an error in your assignments, an identifier is displayed next to the <span class="bold">ASSIGN</span> node and also in the mapper.</p>
+<img width="102" height="101" src="img/GUID-73826B6F-D71C-4CCE-B7A4-800E8232E433-default.png" alt="Description of GUID-73826B6F-D71C-4CCE-B7A4-800E8232E433-default.png follows" title="Description of GUID-73826B6F-D71C-4CCE-B7A4-800E8232E433-default.png follows" /><br />
+<a href="img_text/GUID-73826B6F-D71C-4CCE-B7A4-800E8232E433-default.htm">Description of the illustration GUID-73826B6F-D71C-4CCE-B7A4-800E8232E433-default.png</a></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-7818373C-7216-4D4D-B760-F701F7BD584C"></a>
+<h3 id="ICSUG-GUID-7818373C-7216-4D4D-B760-F701F7BD584C" class="sect3">Using XPath Axis and Wildcard Expressions in the Expression Builder</h3>
+<div>
+<p>You can include XPath axis and wildcard expressions in actions that support the Expression Builder (for example, assign and switch actions support the Expression Builder).</p>
+<div class="section">
+<ol>
+<li>
+<p>Create an assign action or switch action and navigate to the Expression Builder.</p>
+</li>
+<li>
+<div class="p">In the <span class="bold">Expression</span> field for an assign or switch action, build an expression using either option:
+<ul style="list-style-type: disc;">
+<li>
+<p>Wildcard expression:</p>
+<p>For this example, a wildcard is entered to select all elements below <code>Answer</code>.</p>
+<pre dir="ltr">
+/nssrcmpr:process/nssrcmpr:Answer/*
+</pre>
+<p>Or, to select all elements:</p>
+<pre dir="ltr">
+/*
+</pre></li>
+<li>
+<p>Axis expression:</p>
+<p>For this example, <code>descendant</code> is entered to select all descendants (child, grandchildren, and so on) of the current node. Any descendant with this ID and namespace (<code>mb_v1_3:ID</code>) are retrieved by the expression.</p>
+<pre dir="ltr">
+/nssrcmpr:process/nssrcmpr:Answer/descendant::mb_v1_3:ID
+</pre>
+<p>Axis expressions adhere to the following syntax:</p>
+<pre dir="ltr">
+<span class="italic">axisname</span>::<span class="italic">nodetest</span>[<span class="italic">predicate</span>]
+</pre>
+<p>The following table provides examples of axis expressions:</p>
+<div class="tblformal" id="GUID-7818373C-7216-4D4D-B760-F701F7BD584C__GUID-584270D1-43D2-4A31-BC5F-94866EDD8226">
+<table class="cellalignment926" summary="Axis examples">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e2347">Syntax</th>
+<th class="cellalignment929" id="d12707e2349">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e2353" headers="d12707e2347">
+<pre dir="ltr">
+child::book
+</pre></td>
+<td class="cellalignment929" headers="d12707e2353 d12707e2349">
+<p>Selects all <code>book</code> nodes that are children of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2363" headers="d12707e2347">
+<pre dir="ltr">
+attribute::lang
+</pre></td>
+<td class="cellalignment929" headers="d12707e2363 d12707e2349">
+<p>Selects the <code>lang</code> attribute of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2373" headers="d12707e2347">
+<pre dir="ltr">
+child::*
+</pre></td>
+<td class="cellalignment929" headers="d12707e2373 d12707e2349">
+<p>Selects all element children of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2380" headers="d12707e2347">
+<pre dir="ltr">
+attribute::*
+</pre></td>
+<td class="cellalignment929" headers="d12707e2380 d12707e2349">
+<p>Selects all attributes of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2387" headers="d12707e2347">
+<pre dir="ltr">
+child::text()
+</pre></td>
+<td class="cellalignment929" headers="d12707e2387 d12707e2349">
+<p>Selects all <code>text</code> node children of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2397" headers="d12707e2347">
+<pre dir="ltr">
+child::node()
+</pre></td>
+<td class="cellalignment929" headers="d12707e2397 d12707e2349">
+<p>Selects all children of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2404" headers="d12707e2347">
+<pre dir="ltr">
+descendant::book
+</pre></td>
+<td class="cellalignment929" headers="d12707e2404 d12707e2349">
+<p>Selects all <code>book</code> descendants of the current node</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2414" headers="d12707e2347">
+<pre dir="ltr">
+ancestor::book
+</pre></td>
+<td class="cellalignment929" headers="d12707e2414 d12707e2349">
+<p>Selects all <code>book</code> ancestors of the current node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2424" headers="d12707e2347">
+<pre dir="ltr">
+ancestor-or-self::book
+</pre></td>
+<td class="cellalignment929" headers="d12707e2424 d12707e2349">
+<p>Selects all <code>book</code> ancestors of the current node and the current if it is a <code>book</code> node.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e2437" headers="d12707e2347">
+<pre dir="ltr">
+child::*/child::price
+</pre></td>
+<td class="cellalignment929" headers="d12707e2437 d12707e2349">
+<p>Selects all <code>price</code> grandchildren of the current node.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>For more information about using axis expressions, see <a href="http://www.w3schools.com/xsl/xpath_axes.asp" target="_blank">XPath Axes</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click the <span class="bold">Expression Summary</span> icon to validate the expression.</p>
+</li>
+<li>
+<p>When complete, click <span class="bold">Exit Expression Builder</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-D676DF2E-B024-41B3-8DAE-1C733AFEB53F"></a>
+<h3 id="ICSUG-GUID-D676DF2E-B024-41B3-8DAE-1C733AFEB53F" class="sect3">Using Lookups in Variable Assignments</h3>
+<div>
+<p>You can create variable assignments that use lookups in the Expression Builder.</p>
+<div class="section">
+<ol>
+<li>
+<p>Create a lookup in Integration Cloud Service. For information, see <a href="GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C.htm#GUID-084B7E40-542A-4CDD-A1B0-282B1DAD026C" title="A lookup associates values used by one application for a specific field to the values used by other applications for the same field. This provides the capability to map values across vocabularies or systems. For example, you can map country codes, city codes, currency codes, and so on.">Creating Lookups</a>.</p>
+<p>For this example, a lookup named <span class="bold">ZIP_CITY_DVM</span> is created to map the ZIP codes (using a SOAP Adapter) and the city names (using a domain name).</p>
+<div class="tblformal" id="GUID-D676DF2E-B024-41B3-8DAE-1C733AFEB53F__GUID-23268049-75FC-4CD6-A88F-7595DC786B4D">
+<table class="cellalignment926" summary="SOAP Adapter and SOAPCITY (domain name) values.">
+<thead align="left">
+<tr>
+<th class="cellalignment927" id="d12707e2512">SOAP (Adapter)</th>
+<th class="cellalignment927" id="d12707e2514">SOAPCITY (Domain Name)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment927" id="d12707e2518" headers="d12707e2512">80112</td>
+<td class="cellalignment927" headers="d12707e2518 d12707e2514">Englewood</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e2523" headers="d12707e2512">85003</td>
+<td class="cellalignment927" headers="d12707e2523 d12707e2514">Phoenix</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e2528" headers="d12707e2512">80007</td>
+<td class="cellalignment927" headers="d12707e2528 d12707e2514">Arvada</td>
+</tr>
+<tr>
+<td class="cellalignment927" id="d12707e2533" headers="d12707e2512">80220</td>
+<td class="cellalignment927" headers="d12707e2533 d12707e2514">Denver</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></li>
+<li>
+<p>Create an orchestration into which a SOAP Adapter is added as the trigger.</p>
+</li>
+<li>
+<p>Drag the <span class="bold">ASSIGN</span> icon to the <span class="bold">plus</span> sign for the SOAP Adapter in the integration canvas.</p>
+</li>
+<li>
+<p>Enter an assignment name and optional description when prompted by the Assignments dialog, then click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Enter a name for the assignment in the <span class="bold">Name</span> field, then click the <span class="bold">Expression Builder</span> icon at the far right.</p>
+</li>
+<li>
+<p>In the Expression Builder, expand <span class="bold">Functions</span> &gt; <span class="bold">ICS</span>.</p>
+</li>
+<li>
+<p>Drag the <span class="bold">lookupValue</span> function to the <span class="bold">Expression</span> field.</p>
+<p>This starts the Build Lookup Function wizard.</p>
+</li>
+<li>
+<p>Select the lookup table, and click <span class="bold">Next</span>. For this example, the lookup created in Step 1 (<span class="bold">ZIP_CITY_DVM</span>) is selected.</p>
+</li>
+<li>
+<p>Select the source and target columns. For example, select to pass the city to the ZIP code.</p>
+<br />
+<img width="474" height="158" src="img/GUID-77EA83C9-BB86-4C24-B32F-0F52221089C0-default.png" alt="Description of GUID-77EA83C9-BB86-4C24-B32F-0F52221089C0-default.png follows" title="Description of GUID-77EA83C9-BB86-4C24-B32F-0F52221089C0-default.png follows" /><br />
+<a href="img_text/GUID-77EA83C9-BB86-4C24-B32F-0F52221089C0-default.htm">Description of the illustration GUID-77EA83C9-BB86-4C24-B32F-0F52221089C0-default.png</a><br /></li>
+<li>
+<p>Complete the remaining pages of the wizard, then click <span class="bold">Done</span>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Source</span> tree, select the element to map. For this example, <span class="bold">ZIP</span> is dragged on top of <span class="bold">srcValue</span> in the <span class="bold">Expression</span> field.</p>
+</li>
+<li>
+<p>Click <span class="bold">Exit Expression Builder</span>.</p>
+<p>The completed variable assignment is displayed.<br />
+<img width="1156" height="145" src="img/GUID-ECE66CC3-154C-48BE-AAC0-09B9706F1AD0-default.png" alt="Description of GUID-ECE66CC3-154C-48BE-AAC0-09B9706F1AD0-default.png follows" title="Description of GUID-ECE66CC3-154C-48BE-AAC0-09B9706F1AD0-default.png follows" /><br />
+<a href="img_text/GUID-ECE66CC3-154C-48BE-AAC0-09B9706F1AD0-default.htm">Description of the illustration GUID-ECE66CC3-154C-48BE-AAC0-09B9706F1AD0-default.png</a><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Exit Assignments</span>.</p>
+</li>
+<li>
+<p>In the orchestrated integration, click the <span class="bold">mapper</span> icon, then click the <span class="bold">Edit</span> icon.</p>
+</li>
+<li>
+<p>Assign the variable you created to the city, then click <span class="bold">Save</span>.<br />
+<img width="731" height="160" src="img/GUID-A49D5B1A-D706-4ECC-801F-3268A3C3C5D4-default.png" alt="Description of GUID-A49D5B1A-D706-4ECC-801F-3268A3C3C5D4-default.png follows" title="Description of GUID-A49D5B1A-D706-4ECC-801F-3268A3C3C5D4-default.png follows" /><br />
+<a href="img_text/GUID-A49D5B1A-D706-4ECC-801F-3268A3C3C5D4-default.htm">Description of the illustration GUID-A49D5B1A-D706-4ECC-801F-3268A3C3C5D4-default.png</a><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Exit Mapper</span>.</p>
+<br />
+<img width="170" height="399" src="img/GUID-71561453-1DB0-4893-8CE8-428ECAB113A5-default.png" alt="Description of GUID-71561453-1DB0-4893-8CE8-428ECAB113A5-default.png follows" title="Description of GUID-71561453-1DB0-4893-8CE8-428ECAB113A5-default.png follows" /><br />
+<a href="img_text/GUID-71561453-1DB0-4893-8CE8-428ECAB113A5-default.htm">Description of the illustration GUID-71561453-1DB0-4893-8CE8-428ECAB113A5-default.png</a><br /></li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-78188DC6-AE1E-474C-A3C4-A46B473C05E8"></a>
+<h3 id="ICSUG-GUID-78188DC6-AE1E-474C-A3C4-A46B473C05E8" class="sect3">Assigning Business Identifiers for Tracking Fields</h3>
+<div>
+<p>Business identifiers enable you to track payload fields in messages during runtime. You must assign business identifiers before you can activate an orchestrated integration.</p>
+<div class="section">
+<ol>
+<li>
+<p>Click the <span class="bold">Tracking</span> icon in the upper right part of the page to assign business identifiers for tracking fields. For more information, see <a href="GUID-F54D8654-15FE-4CC6-A14D-258FD7AE487D.htm" title="This section describes how to manage business identifiers that enable you to track fields in messages during runtime.">Assigning Business Identifiers for Tracking Fields in Messages</a>.</p>
+</li>
+<li>
+<p>When complete, click <span class="bold">Done</span>.</p>
+</li>
+<li>
+<p>When the orchestrated integration is complete, click <span class="bold">Save</span>, then click <span class="bold">Exit Integration</span>.</p>
+</li>
+<li>
+<p>Activate your integration. For more information, see <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a>.</p>
+</li>
+<li>
+<p>Manage and monitor your integration. For more information, see <a href="GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E" title="Use the Integration Cloud Service dashboard to see how your integrations are performing. The dashboard provides multiple views for you to check your running services.">Monitoring Integration Cloud Services</a> and <a href="GUID-02C9A46A-9069-464B-A9CC-A2995A0E14D5.htm" title="You can track fields in messages on which you have defined business identifiers on the Tracking page during runtime. These fields are only available for tracking on the Tracking page if you defined a primary business identifier in the Business Identifiers for Tracking dialog during design time.">Tracking Business Identifiers in Integrations During Runtime</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-B3669509-4995-410A-B2D4-70D9B3EAC374"></a>
+<h3 id="ICSUG-GUID-B3669509-4995-410A-B2D4-70D9B3EAC374" class="sect3">Looping over Repeating Elements with a For-Each Action</h3>
+<div>
+<p>The for-each action enables you to loop over a repeating element and execute one or more actions within the scope of the for-each action. The number of loop iterations is based on a user-selected repeating element. For example, you may have an integration in which you have downloaded a number of files and want to loop over the output of the files. The for-each action enables you to perform this task.</p>
+<div class="section">
+<ol>
+<li>
+<p>On the left side of the canvas, click <span class="bold">ACTIONS</span> to expand the panel.</p>
+</li>
+<li>
+<p>Drag the <span class="bold">For Each</span> icon to the <span class="bold">plus</span> sign where you want to loop over an element.</p>
+<p>The For Each dialog is displayed.</p>
+</li>
+<li>
+<p>Expand the <span class="bold">Source</span> tree to select an element.</p>
+</li>
+<li>
+<p>Drag a repeatable element to the <span class="bold">Repeating Element</span> field. This is the element over which to loop.</p>
+<div class="infobox-note" id="GUID-B3669509-4995-410A-B2D4-70D9B3EAC374__GUID-C1DE54DE-B6E2-4453-BB00-FAE7B97AD55E">
+<p class="notep1">Note:</p>
+Note the following restrictions:
+<ul style="list-style-type: disc;">
+<li>
+<p>The selected element must be repetitive. You can identify repetitive elements by the two-bar icon to the left of the element name.<br />
+<img width="137" height="64" src="img/GUID-9B0FE9DB-4E3A-4A1F-9BA1-67AC5DD05588-default.png" alt="Description of GUID-9B0FE9DB-4E3A-4A1F-9BA1-67AC5DD05588-default.png follows" title="Description of GUID-9B0FE9DB-4E3A-4A1F-9BA1-67AC5DD05588-default.png follows" /><br />
+<a href="img_text/GUID-9B0FE9DB-4E3A-4A1F-9BA1-67AC5DD05588-default.htm">Description of the illustration GUID-9B0FE9DB-4E3A-4A1F-9BA1-67AC5DD05588-default.png</a><br /></p>
+</li>
+<li>
+<p>Any parent of the selected element must not be repetitive.</p>
+</li>
+<li>
+<p>The data type of the selected element must be scalar.</p>
+</li>
+<li>
+<p>Global and nonglobal repeated elements can be selected.</p>
+</li>
+<li>
+<p>If we have a repeating element within another repeating element (that is, a list within a list), you must first create a for-each action and loop over the parent list. This gives you access to the child list during every iteration. You can then create a second for-each action within the scope of the first for-each action and loop over the child list.</p>
+</li>
+</ul>
+</div>
+<p>For this example, the element over which to loop is <span class="bold">ICSFile</span>.</p>
+</li>
+<li>
+<p>Enter a name in the <span class="bold">Name</span> field and an optional description of the action in the <span class="bold">Description</span> field.</p>
+<p>For every iteration of the loop, there is a single reference to the repeating element (<span class="bold">ICSFile</span>). A current element name file is required for this to occur.</p>
+</li>
+<li>
+<p>Enter an alias for the current file of the iteration in the <span class="bold">Current Element Name</span> field.<br />
+<img width="837" height="265" src="img/GUID-B13D7E0D-3EBF-42D4-B42D-65931FA35ED4-default.png" alt="Description of GUID-B13D7E0D-3EBF-42D4-B42D-65931FA35ED4-default.png follows" title="Description of GUID-B13D7E0D-3EBF-42D4-B42D-65931FA35ED4-default.png follows" /><br />
+<a href="img_text/GUID-B13D7E0D-3EBF-42D4-B42D-65931FA35ED4-default.htm">Description of the illustration GUID-B13D7E0D-3EBF-42D4-B42D-65931FA35ED4-default.png</a><br /></p>
+</li>
+<li>
+<p>Click <span class="bold">Done</span>.</p>
+<p>The for-each action is displayed in the canvas. A looping arrow indicates that this action performs repetitive looping.<br />
+<img width="262" height="329" src="img/GUID-420E1515-A783-4235-A341-B8CE8E28DF6B-default.png" alt="Description of GUID-420E1515-A783-4235-A341-B8CE8E28DF6B-default.png follows" title="Description of GUID-420E1515-A783-4235-A341-B8CE8E28DF6B-default.png follows" /><br />
+<a href="img_text/GUID-420E1515-A783-4235-A341-B8CE8E28DF6B-default.htm">Description of the illustration GUID-420E1515-A783-4235-A341-B8CE8E28DF6B-default.png</a><br /></p>
+</li>
+<li>
+<p>Drag other actions inside the for-each action to define what should happen during each iteration of the loop. For this example, an assign action is dragged to the <span class="bold">Plus</span> sign below the for-each action.</p>
+<p>Enter a name for the assign action, and click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Edit</span> icon.</p>
+<p>The Expression Builder is displayed. Note that the value you entered in the <span class="bold">Current Element Name</span> field in Step 6 (<span class="bold">currentFileName</span>) is displayed as an expandable element in the <span class="bold">Source</span> tree.</p>
+</li>
+<li>
+<p>Expand <span class="bold">$currentFileName</span> in the <span class="bold">Source</span> tree.</p>
+<p>The repeatable element you added in Step 5 (<span class="bold">ICSFile</span>) is displayed.</p>
+</li>
+<li>
+<p>Drag the <span class="bold">ICSFile</span> element to the <span class="bold">Expression</span> field, and click <span class="bold">Exit Expression Builder</span>.</p>
+</li>
+<li>
+<p>In the Assign dialog, enter a variable name in the <span class="bold">Name</span> field, and click <span class="bold">Exit Assignments</span>.</p>
+<p>The assign action is added to the scope of the for-each action. After integration activation, the for-each action loops over the assign action for each downloaded file.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect3"><a id="GUID-255DD910-8EDC-424A-856B-A180FFC01902"></a>
+<h3 id="ICSUG-GUID-255DD910-8EDC-424A-856B-A180FFC01902" class="sect3">Displaying Errors and Warnings in an Integration</h3>
+<div>
+<p>If there are errors or warnings in an integration (for example, an empty or invalid map, a missing tracking attribute, or an invalid assign or switch action), an <span class="bold">ERRORS</span> section is displayed on the left side. These errors and warnings prevent you from activating an integration. You must first resolve these issues to activate an integration.</p>
+<div class="section">
+<div class="infobox-note" id="GUID-255DD910-8EDC-424A-856B-A180FFC01902__GUID-87357F2C-3080-4E3E-BBFF-4383A7A94B0E">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>For integrations created prior to version 16.4.5, you <span class="italic">must</span> first save the integration once to enable error and warning validation functionality.</p>
+</li>
+<li>
+<p>Error and warning validation of for-each actions is not supported.</p>
+</li>
+</ul>
+</div>
+<ol>
+<li>
+<p>Design an orchestrated integration.</p>
+<p>If there are errors or warnings, an <span class="bold">ERRORS</span> section is displayed on the left side.</p>
+</li>
+<li>
+<p>Click the <span class="bold">ERRORS</span> section to display error and warning details. For this example, an invoke adapter was deleted for which mapping had previously been configured, causing the mapper to be invalidated. In addition, tracking is not configured.<br />
+<img width="737" height="535" src="img/GUID-E2F7EA04-3A8B-4626-85BB-CDFD222851B8-default.png" alt="Description of GUID-E2F7EA04-3A8B-4626-85BB-CDFD222851B8-default.png follows" title="Description of GUID-E2F7EA04-3A8B-4626-85BB-CDFD222851B8-default.png follows" /><br />
+<a href="img_text/GUID-E2F7EA04-3A8B-4626-85BB-CDFD222851B8-default.htm">Description of the illustration GUID-E2F7EA04-3A8B-4626-85BB-CDFD222851B8-default.png</a><br /></p>
+</li>
+<li>
+<p>If you return to the Integrations page, note that the status of the integration is <span class="bold">DRAFT</span>. You cannot activate integrations in the <span class="bold">DRAFT</span> state.</p>
+</li>
+<li>
+<p>Return to the integration canvas and resolve any errors and warnings. Once these issues are resolved, the <span class="bold">ERRORS</span> section disappears.</p>
+</li>
+<li>
+<p>Save the integration and return to the Integrations page. Note that the <span class="bold">DRAFT</span> status is replaced with <span class="bold">PENDING ACTIVATION</span>. You can now activate the integration.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6E452D2D-2310-47B5-8523-E607C2B27838"></a>
+<h2 id="ICSUG-GUID-6E452D2D-2310-47B5-8523-E607C2B27838" class="sect2">Creating an Integration to Publish Messages to Integration Cloud Service</h2>
+<div>
+<p>You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.</p>
+<div class="section">To create an integration to publish messages to Integration Cloud Service:
+<div class="infobox-note" id="GUID-6E452D2D-2310-47B5-8523-E607C2B27838__GUID-CB6CD6C3-F577-4353-8B0E-71E7AFAAD9AC">
+<p class="notep1">Note:</p>
+Integration Cloud Service Messaging supports messages of up to 10 MB.</div>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Select <span class="bold">Publish To ICS</span> in the Create Integration &mdash; Select a Pattern dialog, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</span></li>
+<li class="stepexpand"><span>Complete the fields of the New Integration &mdash; Information dialog, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</span>
+<div>This creates an integration pattern with a predefined Integration Cloud Service Messaging invoke that enables you to publish messages to Integration Cloud Service.</div>
+</li>
+<li class="stepexpand"><span>In the integration designer, drag an adapter from the Connections panel on the right to the trigger (source) area on the canvas. For this example, an Oracle Sales Cloud Adapter is selected.</span>
+<div>The wizard for the Oracle Sales Cloud Adapter is displayed.</div>
+</li>
+<li class="stepexpand"><span>On the Basic Info page, enter an endpoint name and optional identifier for this connection. See <a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F" title="You can enter a name and description on the Basic Info page of each adapter in your integration.">Configuring Basic Information Properties</a> for instructions.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>On the Request page, select a business object (for this example, <span class="bold">Account</span> is selected), then click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>On the Response page, select <span class="bold">None</span> as the response type, then click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>On the Summary page, click <span class="bold">Done</span>.</span>
+<div>The Oracle Sales Cloud Adapter is configured to publish messages to Integration Cloud Service through use of Integration Cloud Service Messaging. Note that there is no request mapper available with this type of integration pattern.<br />
+<div class="imageleft"><img class="imageleft" width="1160" height="228" src="img/GUID-4B27421B-299E-448F-B0ED-CCF147E6E61F-default.png" alt="Description of GUID-4B27421B-299E-448F-B0ED-CCF147E6E61F-default.png follows" title="Description of GUID-4B27421B-299E-448F-B0ED-CCF147E6E61F-default.png follows" /><br />
+<a href="img_text/GUID-4B27421B-299E-448F-B0ED-CCF147E6E61F-default.htm">Description of the illustration GUID-4B27421B-299E-448F-B0ED-CCF147E6E61F-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Integration</span>.</span>
+<div>To subscribe to the message configured in this section, you must now configure Integration Cloud Service to act as a publisher. This enables Integration Cloud Service to publish the messages to which other adapters can then subscribe. For instructions, see <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" title="You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Subscribe to Integration Cloud Service</a>.</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF"></a>
+<h2 id="ICSUG-GUID-9A2BE814-3363-4522-94AF-806C56D5EBAF" class="sect2">Creating an Integration to Subscribe to Integration Cloud Service</h2>
+<div>
+<p>You can create integrations that enable you to subscribe to messages from Integration Cloud Service. Message subscription is accomplished through use of Integration Cloud Service Messaging.</p>
+<div class="section">To create an integration to subscribe to Integration Cloud Service:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Complete the steps in section <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a> to first configure Integration Cloud Service as a subscriber to messages from an adapter.</span></li>
+<li class="stepexpand"><span>Select <span class="bold">Subscribe To ICS</span> in the Create Integration &mdash; Select a Pattern dialog, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>.</span></li>
+<li class="stepexpand"><span>Complete the fields of the New Integration &mdash; Information dialog, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-22FA3D3E-1E3A-4E2B-BC3B-C8CB9CA8C954" title="Creating an integration includes defining the trigger and invoke application connections, and defining how data is mapped between the two applications. The procedure below provides general instructions for creating an integration, with links to more detailed information for certain steps. As you perform each step, the progress indicator changes to let you know how close you are to completing the integration.">Creating an Integration</a>. This creates an integration pattern with Integration Cloud Service Messaging that enables you to subscribe to messages from Integration Cloud Service.</span>
+<div>The Select a Publisher dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select the integration to which to subscribe, then click <span class="bold">Use</span>. For an integration to be displayed for selection, you must first configure Integration Cloud Service as a subscriber, as described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a>. Only integrations that are 100% completed and unlocked are displayed. Integrations that are locked (meaning that they are being edited) are not displayed.<br /></span>
+<div class="imageleft"><img class="imageleft" width="683" height="604" src="img/GUID-60F4C093-0502-49C1-B082-296DA9C6C6D5-default.png" alt="Description of GUID-60F4C093-0502-49C1-B082-296DA9C6C6D5-default.png follows" title="Description of GUID-60F4C093-0502-49C1-B082-296DA9C6C6D5-default.png follows" /><br />
+<a href="img_text/GUID-60F4C093-0502-49C1-B082-296DA9C6C6D5-default.htm">Description of the illustration GUID-60F4C093-0502-49C1-B082-296DA9C6C6D5-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Drag an adapter to the invoke (target) area of the integration designer. For this example, an Oracle RightNow Cloud Adapter is added.</span></li>
+<li class="stepexpand"><span>On the Basic Info page, enter a name and optional identifier for this connection. See <a href="GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F.htm#GUID-D1BCD094-7FBD-4BFC-A82B-CF6C090AFE4F" title="You can enter a name and description on the Basic Info page of each adapter in your integration.">Basic Info Tab Properties</a> for instructions.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand"><span>On the Operations page, select an appropriate operation and business object, then click <span class="bold">Next</span>. For this example, a CRUD <span class="bold">Create</span> operation and <span class="bold">Organization</span> business object are selected.<br /></span>
+<div class="imageleft"><img class="imageleft" width="747" height="223" src="img/GUID-609AD1E7-57FA-47E0-9A1B-97B851FF7243-default.png" alt="Description of GUID-609AD1E7-57FA-47E0-9A1B-97B851FF7243-default.png follows" title="Description of GUID-609AD1E7-57FA-47E0-9A1B-97B851FF7243-default.png follows" /><br />
+<a href="img_text/GUID-609AD1E7-57FA-47E0-9A1B-97B851FF7243-default.htm">Description of the illustration GUID-609AD1E7-57FA-47E0-9A1B-97B851FF7243-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>On the Summary page, review your changes, then click <span class="bold">Done</span>.</span>
+<div>The request mapper is available with this type of integration pattern.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Request Mapping</span> icon, then click <span class="bold">Create</span>.</span></li>
+<li class="stepexpand"><span>Map source fields to the corresponding target fields. For information, see <a class="olink GUID-1845D8CE-B126-4891-AE04-EACB935BD10F" target="_blank" href="../OCMAP/GUID-1845D8CE-B126-4891-AE04-EACB935BD10F.htm#GUID-1845D8CE-B126-4891-AE04-EACB935BD10F">Mapping Data</a> of <span class="italic">Using the Oracle Mapper</span>.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>, then click <span class="bold">Exit Mapper</span>.</span>
+<div>The Oracle RightNow Cloud Adapter is configured to subscribe to messages from Integration Cloud Service through use of Integration Cloud Service Messaging.<br />
+<div class="imageleft"><img class="imageleft" width="1378" height="216" src="img/GUID-324D495E-B91C-4C63-9DEF-869B9FAA1450-default.png" alt="Description of GUID-324D495E-B91C-4C63-9DEF-869B9FAA1450-default.png follows" title="Description of GUID-324D495E-B91C-4C63-9DEF-869B9FAA1450-default.png follows" /><br />
+<a href="img_text/GUID-324D495E-B91C-4C63-9DEF-869B9FAA1450-default.htm">Description of the illustration GUID-324D495E-B91C-4C63-9DEF-869B9FAA1450-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Integration</span>.</span></li>
+<li class="stepexpand"><span>Activate the publishing integration described in <a href="GUID-F66ABE41-0A69-4A73-BC3D-0CE36FA78C4D.htm#GUID-6E452D2D-2310-47B5-8523-E607C2B27838" title="You can create integrations that enable you to publish messages to Integration Cloud Service. Message publishing is accomplished through use of Integration Cloud Service Messaging.">Creating an Integration to Publish Messages to Integration Cloud Service</a> and the subscribing integration described in this section. For instructions, see <a href="GUID-5A46810A-78EF-4B65-A822-24539C1B97C9.htm#GUID-7DC28681-FB67-4925-B7AA-0A118961A952" title="Once you create an integration and the progress indicator shows 100 percent, you can activate that integration to the runtime environment. An integration shows as 100% and is eligible for activation after you have specified the source connection, the target connection, the data mappings, and the tracking fields.">Activating an Integration</a>.</span>
+<div>The completed publishing and subscription integrations enable you to:
+<ul style="list-style-type: disc;">
+<li>
+<p>Create an object in one application that causes the object to be created in other applications.</p>
+</li>
+<li>
+<p>Enable multiple applications to subscribe to Integration Cloud Service and be registered for updates.</p>
+</li>
+<li>
+<p>Enable additional subscribers to be added or removed without impacting other subscribers or publishers.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="section">Business identifier tracking data is copied when a subscriber is created. If a publishing integration is updated later, you must update the subscribing integration.
+<p>For example, assume you create a publishing integration, then create a subscribing integration and select to subscribe to the publishing integration. Select the <span class="bold">Tracking</span> icon, and note that the tracking attributes of the selected publishing integration are displayed. Assume you then edit the publishing integration and change the operation of the trigger adapter (as an example), save, and exit the canvas. If you then edit the subscribing integration and click the <span class="bold">Tracking</span> icon, note that the business identifier tracking attributes of the publishing integration that are displayed are those that existed <span class="italic">before</span> the updates were made. The tracking fields are not updated as per the updated publisher integration. This is the expected behavior.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E"></a>
+<h2 id="ICSUG-GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E" class="sect2">Adding Request and Response Enrichments</h2>
+<div>
+<p>When you create an integration, you also have the option of adding both request and response message enrichment points to the overall integration flow. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke.</p>
+<div class="section">To add request and response enrichments:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Design an integration with trigger and invoke connections and request and response mappings. For this example, the integration looks as follows when complete. Note the two enrichment point circles in the design; one appears on the inbound (request) side and the other appears on the outbound (response) side.<br /></span>
+<div class="imageleft"><span><img class="imageleft" width="1162" height="203" src="img/GUID-8F5A00AE-4803-48A4-8461-271C50556E4B-default.png" alt="Description of GUID-8F5A00AE-4803-48A4-8461-271C50556E4B-default.png follows" title="Description of GUID-8F5A00AE-4803-48A4-8461-271C50556E4B-default.png follows" /><br />
+<a href="img_text/GUID-8F5A00AE-4803-48A4-8461-271C50556E4B-default.htm">Description of the illustration GUID-8F5A00AE-4803-48A4-8461-271C50556E4B-default.png</a></span></div>
+<span><br /></span>
+<div>The request and response mappings for this example are as follows:
+<div class="tblformal" id="GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E__GUID-965874AB-5299-44AA-869E-AA80A24860FE">
+<table class="cellalignment926" summary="Request and response mappings.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e3350">Mapping</th>
+<th class="cellalignment929" id="d12707e3352">Source</th>
+<th class="cellalignment929" id="d12707e3354">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e3358" headers="d12707e3350">Request</td>
+<td class="cellalignment929" headers="d12707e3358 d12707e3352">HelloRequest/FirstName</td>
+<td class="cellalignment929" headers="d12707e3358 d12707e3354">sayHello/name</td>
+</tr>
+<tr>
+<td class="cellalignment929" id="d12707e3365" headers="d12707e3350">Response</td>
+<td class="cellalignment929" headers="d12707e3365 d12707e3352">sayHelloResponse/sayHelloReturn</td>
+<td class="cellalignment929" headers="d12707e3365 d12707e3354">HelloResponse/Greeting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+You are now ready to add enrichments to the integration. For this example, a response message enrichment is added to the <span class="bold">Drag and drop an enrichment source for the response message</span> area. You can also add request message enrichments on the request (inbound) side.<br />
+<div class="imageleft"><img class="imageleft" width="636" height="193" src="img/GUID-405A0ADC-0926-4D25-B8DF-6D2B43957D85-default.png" alt="Description of GUID-405A0ADC-0926-4D25-B8DF-6D2B43957D85-default.png follows" title="Description of GUID-405A0ADC-0926-4D25-B8DF-6D2B43957D85-default.png follows" /><br />
+<a href="img_text/GUID-405A0ADC-0926-4D25-B8DF-6D2B43957D85-default.htm">Description of the illustration GUID-405A0ADC-0926-4D25-B8DF-6D2B43957D85-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>From the Connections panel on the right, drag an adapter to the enrichment area on the response message shown below.</span>
+<div>For this example, a SOAP Adapter is dragged to the <span class="bold">Drag and drop an enrichment source for the response message</span> area. This action invokes the wizard for configuring the SOAP Adapter.<br />
+<div class="imageleft"><img class="imageleft" width="619" height="222" src="img/GUID-BEB69D72-9F52-4271-B2E2-DE4C2344E010-default.png" alt="Description of GUID-BEB69D72-9F52-4271-B2E2-DE4C2344E010-default.png follows" title="Description of GUID-BEB69D72-9F52-4271-B2E2-DE4C2344E010-default.png follows" /><br />
+<a href="img_text/GUID-BEB69D72-9F52-4271-B2E2-DE4C2344E010-default.htm">Description of the illustration GUID-BEB69D72-9F52-4271-B2E2-DE4C2344E010-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Complete the pages of the wizard to configure the SOAP Adapter, then click <span class="bold">Done</span>. For this configuration, a different operation for selecting timestamp details is chosen.</span>
+<div>You are prompted with a dialog to delete any impacted response mappings that you previously configured for the response mapper. The response mapper requires updates because of the enrichment response adapter configuration you just performed.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span>. You recreate the response mappings later in these steps.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>.</span>
+<div>A SOAP Adapter icon and response enrichment mapper are added to the response side of the integration. Note that because you deleted the response mappings in the previous step, that icon is no longer shaded in green. This indicates that the response mapper requires configuration.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Response Enrichment Mapping</span> icon between the trigger and invoke.</span>
+<div><br />
+<div class="imageleft"><img class="imageleft" width="617" height="209" src="img/GUID-3B036893-A595-403E-9DD8-3F0CB21D8252-default.png" alt="Description of GUID-3B036893-A595-403E-9DD8-3F0CB21D8252-default.png follows" title="Description of GUID-3B036893-A595-403E-9DD8-3F0CB21D8252-default.png follows" /><br />
+<a href="img_text/GUID-3B036893-A595-403E-9DD8-3F0CB21D8252-default.htm">Description of the illustration GUID-3B036893-A595-403E-9DD8-3F0CB21D8252-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Create</span> icon that is displayed. This invokes the mapper.<br /></span>
+<div class="imageleft"><img class="imageleft" width="264" height="101" src="img/GUID-7A04B782-1FAE-42CA-9096-0F1E81BBE348-default.png" alt="Description of GUID-7A04B782-1FAE-42CA-9096-0F1E81BBE348-default.png follows" title="Description of GUID-7A04B782-1FAE-42CA-9096-0F1E81BBE348-default.png follows" /><br />
+<a href="img_text/GUID-7A04B782-1FAE-42CA-9096-0F1E81BBE348-default.htm">Description of the illustration GUID-7A04B782-1FAE-42CA-9096-0F1E81BBE348-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Map source elements to target elements to include a timestamp with the response, then click <span class="bold">Save</span> when complete.</span>
+<div>The response enrichment mappings are as follows:
+<div class="tblformal" id="GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E__GUID-381B311A-BC76-43EB-98E7-84BFE7B41C1A">
+<table class="cellalignment926" summary="Response enrichment mappings.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e3443">Mapping</th>
+<th class="cellalignment929" id="d12707e3445">Source</th>
+<th class="cellalignment929" id="d12707e3447">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e3451" headers="d12707e3443">Response Enrichment</td>
+<td class="cellalignment929" headers="d12707e3451 d12707e3445">sayHelloResponse/sayHelloReturn</td>
+<td class="cellalignment929" headers="d12707e3451 d12707e3447">visitTimestampReq &gt; reqMsg</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+The <span class="bold">Response Mapping</span> icon is displayed in green, indicating that it has been configured.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Response Mapping</span> icon to invoke the mapper again. This mapper requires updates because of the enrichment response mapping you performed.<br /></span>
+<div class="imageleft"><img class="imageleft" width="171" height="193" src="img/GUID-70298F36-E58C-4B4B-9246-DEA8BCB7E4CE-default.png" alt="Description of GUID-70298F36-E58C-4B4B-9246-DEA8BCB7E4CE-default.png follows" title="Description of GUID-70298F36-E58C-4B4B-9246-DEA8BCB7E4CE-default.png follows" /><br />
+<a href="img_text/GUID-70298F36-E58C-4B4B-9246-DEA8BCB7E4CE-default.htm">Description of the illustration GUID-70298F36-E58C-4B4B-9246-DEA8BCB7E4CE-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Remap the source elements to target elements in the response mapper.</span>
+<div>The response mappings are updated. Note that a different source is now mapped to the original target of HelloResponse/Greeting.
+<div class="tblformal" id="GUID-416D4FD7-FCF1-4564-96C7-32C670A2838E__GUID-2D0E8AF3-A2FE-41F8-9732-D1E373661E47">
+<table class="cellalignment926" summary="Updated response mappings.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e3483">Mapping</th>
+<th class="cellalignment929" id="d12707e3485">Source</th>
+<th class="cellalignment929" id="d12707e3487">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e3491" headers="d12707e3483">Response</td>
+<td class="cellalignment929" headers="d12707e3491 d12707e3485">$ResponseEnrichmentApplicationObject &gt; visitTimestampResp &gt; respMsg</td>
+<td class="cellalignment929" headers="d12707e3491 d12707e3487">HelloResponse/Greeting</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+The <span class="bold">Response Enrichment Mapping</span> icon is displayed in green, indicating that it has been reconfigured.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Mapper</span> when complete.</span>
+<div>The integration with response enrichments added to the invoke (target) area looks as follows:<br />
+<div class="imageleft"><img class="imageleft" width="620" height="94" src="img/GUID-C6AAD1FD-7FDC-42DC-89DB-31A72C044809-default.png" alt="Description of GUID-C6AAD1FD-7FDC-42DC-89DB-31A72C044809-default.png follows" title="Description of GUID-C6AAD1FD-7FDC-42DC-89DB-31A72C044809-default.png follows" /><br />
+<a href="img_text/GUID-C6AAD1FD-7FDC-42DC-89DB-31A72C044809-default.htm">Description of the illustration GUID-C6AAD1FD-7FDC-42DC-89DB-31A72C044809-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Integration</span> when complete.</span>
+<div>You are ready to activate the integration. While not demonstrated in this example, you can also configure the enrichment area on the request message shown below by dragging and dropping an adapter to the <span class="bold">Drag and drop an enrichment source for the request message</span> area. This invokes the adapter configuration wizard.<br />
+<div class="imageleft"><img class="imageleft" width="872" height="121" src="img/GUID-7B7BFDB0-DA9D-40BB-83C3-71240B232367-default.png" alt="Description of GUID-7B7BFDB0-DA9D-40BB-83C3-71240B232367-default.png follows" title="Description of GUID-7B7BFDB0-DA9D-40BB-83C3-71240B232367-default.png follows" /><br />
+<a href="img_text/GUID-7B7BFDB0-DA9D-40BB-83C3-71240B232367-default.htm">Description of the illustration GUID-7B7BFDB0-DA9D-40BB-83C3-71240B232367-default.png</a></div>
+<br /></div>
+</li>
+</ol>
+<div class="section">You can also update existing enrichments at a later time, such as the objects selected in the adapter configuration wizard and the enrichment mappings.</div>
+<!-- class="section" -->
+<div class="section">For more information about enrichments, see <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-90617019-7815-4AF7-AEFE-C64E6FCFE7EB" title="You may have business use cases in which you need to enhance data by calling another service before sending data to an invoke service or before sending data back to a requestor. To address this business requirement, you can optionally add enrichment data sources to the request part, the response part, or both parts of an integration. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke services. Enrichments subscribe to a synchronous request and response message pattern.">About Integration Cloud Service Enrichments</a>.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-69DF610E-01AD-46F0-927A-964750B80242"></a>
+<h2 id="ICSUG-GUID-69DF610E-01AD-46F0-927A-964750B80242" class="sect2">Deleting Request and Response Enrichments</h2>
+<div>
+<p>You can delete the request and response message enrichment point mappings added to an integration. After deleting the enrichment point mappings, the integration is returned to its original pre-enrichment state.</p>
+<div class="section">To delete request and response enrichments:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integration page, select the integration. The integration must not be active.</span></li>
+<li class="stepexpand"><span>Click the enrichment area on the request message or response message to delete.</span></li>
+<li class="stepexpand"><span>Select the <span class="bold">Delete</span> icon that is displayed.</span>
+<div>This deletes the mappings.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Yes</span> when prompted to confirm.</span>
+<div>Click <span class="bold">Save</span>, then click <span class="bold">Exit Integration</span>.</div>
+</li>
+</ol>
+<div class="section">For more information about enrichments, see <a href="GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#GUID-90617019-7815-4AF7-AEFE-C64E6FCFE7EB" title="You may have business use cases in which you need to enhance data by calling another service before sending data to an invoke service or before sending data back to a requestor. To address this business requirement, you can optionally add enrichment data sources to the request part, the response part, or both parts of an integration. Enrichments participate in the overall integration flow and can be used in the request and/or response payloads between the trigger and invoke services. Enrichments subscribe to a synchronous request and response message pattern.">About Integration Cloud Service Enrichments</a>.</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-E7431EFE-9BE6-4AD0-AE9A-7DDB8E47FEAA"></a>
+<h2 id="ICSUG-GUID-E7431EFE-9BE6-4AD0-AE9A-7DDB8E47FEAA" class="sect2">Creating Routing Paths for Two Different Invoke Endpoints in Integrations</h2>
+<div>
+<p>You can create an integration in which you define routing paths for two different invoke endpoints. During runtime, the expression filtering logic for the routing paths is evaluated and, based on the results, the path to one of the invoke endpoints is taken. If the filtering logic for neither routing path is satisfied, then neither invoke endpoint is contacted.</p>
+<div class="section">The expression logic works as follows:
+<ul style="list-style-type: disc;">
+<li>
+<p>You define an expression filter on the first (upper) invoke endpoint.</p>
+</li>
+<li>
+<p>You define either an ELSE condition or an expression filter on the second (lower) invoke endpoint.</p>
+</li>
+</ul>
+<p>During runtime, if the expression filtering logic for the first (upper) invoke endpoint evaluates to true, then the path to that invoke endpoint is taken. If the expression evaluates to false, then that invoke endpoint is skipped, and the path to the second (lower) invoke endpoint is taken through either an ELSE condition or an expression filter.</p>
+<p>In addition to creating routing paths, you also define request and response (and optionally, enrichment) mappings on both invoke endpoints.</p>
+<p>To create routing paths for two different invoke endpoints in integrations:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>On the Integrations page, select the integration in which to define a routing filter. Ensure that the integration is fully defined with trigger and invoke connections, business identifier tracking, and mappings.</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Filter</span> icon on the trigger side of the integration to create a filtering expression. Routing is created after any defined request enrichment and before the initial request mapping.<br />
+<img width="371" height="61" src="img/GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png" alt="Description of GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png follows" title="Description of GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png follows" /><br />
+<a href="img_text/GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.htm">Description of the illustration GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Routing</span> icon in the menu that is displayed.</span>
+<div>The Expression Builder is displayed for building routing expressions. The Expression Builder supports multiple source structures. You can create OR expressions using both source structures. You can also name expressions and calculate expression summaries with the <span class="bold">Expression Summary</span> icon. Elements and attributes with and without namespace prefixes are also supported.
+<p>You can filter the display of source structures by clicking the <span class="bold">Filter</span> link. This enables you to filter on whether or not fields are used and on the type of field (required fields, custom fields, or all fields). You can also select to filter both required and custom fields together.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Drag an element from the <span class="bold">Source</span> area to the <span class="bold">Expression</span> field.</span></li>
+<li class="stepexpand"><span>Define a value.</span>
+<div>For this example, the <span class="bold">ClassificationCode</span> element is defined as equal to <code>Org</code>. This means that <code>Org</code> is retrieved when this expression evaluates to true.</div>
+</li>
+<li class="stepexpand"><span>If you want to calculate the expression, click the <span class="bold">Expression Summary</span> icon. This shows the summary of the expression and defines a more user-friendly, readable version of the expression you just created.</span></li>
+<li class="stepexpand"><span>If that name is not sufficiently user-friendly, copy and paste the expression to the <span class="bold">Expression Name</span> field for additional editing.<br />
+<img width="345" height="218" src="img/GUID-3BF73809-D1B0-488E-8588-B65256C1137C-default.png" alt="Description of GUID-3BF73809-D1B0-488E-8588-B65256C1137C-default.png follows" title="Description of GUID-3BF73809-D1B0-488E-8588-B65256C1137C-default.png follows" /><br />
+<a href="img_text/GUID-3BF73809-D1B0-488E-8588-B65256C1137C-default.htm">Description of the illustration GUID-3BF73809-D1B0-488E-8588-B65256C1137C-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Expression Builder</span>.</span>
+<div>The defined expression is displayed above the integration. The <span class="bold">Filter</span> icon has now changed to indicate that an expression is defined.<br />
+<img width="709" height="166" src="img/GUID-339675AF-37F6-4FAD-B608-72A1E59969B5-default.png" alt="Description of GUID-339675AF-37F6-4FAD-B608-72A1E59969B5-default.png follows" title="Description of GUID-339675AF-37F6-4FAD-B608-72A1E59969B5-default.png follows" /><br />
+<a href="img_text/GUID-339675AF-37F6-4FAD-B608-72A1E59969B5-default.htm">Description of the illustration GUID-339675AF-37F6-4FAD-B608-72A1E59969B5-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>On the right side of the integration, click the <span class="bold">Routing Drawer</span> icon to display a graphical routing diagram with two potential paths. The first route that you just defined (the upper trigger and invoke) shows the defined expression above the line. The second route (the lower trigger and invoke) is displayed as a dotted line because it is not yet defined.<br /></span>
+<div class="imageleft"><img class="imageleft" width="579" height="83" src="img/GUID-EDD24BA5-5949-4590-B9C5-4D0D15C01512-default.png" alt="Description of GUID-EDD24BA5-5949-4590-B9C5-4D0D15C01512-default.png follows" title="Description of GUID-EDD24BA5-5949-4590-B9C5-4D0D15C01512-default.png follows" /><br />
+<a href="img_text/GUID-EDD24BA5-5949-4590-B9C5-4D0D15C01512-default.htm">Description of the illustration GUID-EDD24BA5-5949-4590-B9C5-4D0D15C01512-default.png</a></div>
+<br />
+<div>You can activate the integration now if additional filtering is not required or define an additional routing filter. For this example, a second route is defined.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">bull&rsquo;s eye</span> icon in the lower trigger icon to define routing on the second trigger and invoke route.<br />
+<img width="319" height="63" src="img/GUID-A3F8891D-E1DA-4A96-8E37-F623AF3BF8AA-default.png" alt="Description of GUID-A3F8891D-E1DA-4A96-8E37-F623AF3BF8AA-default.png follows" title="Description of GUID-A3F8891D-E1DA-4A96-8E37-F623AF3BF8AA-default.png follows" /><br />
+<a href="img_text/GUID-A3F8891D-E1DA-4A96-8E37-F623AF3BF8AA-default.htm">Description of the illustration GUID-A3F8891D-E1DA-4A96-8E37-F623AF3BF8AA-default.png</a><br /></span>
+<div>This refreshes the integration to display the lower trigger and invoke route in the integration. The trigger side remains as defined for the first route, but the invoke route is undefined.</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Show Palette</span> to display the list of available connections and technologies.</span></li>
+<li class="stepexpand"><span>Drag an adapter to the invoke (target) area of the integration (for this example, an Oracle RightNow adapter is added).</span>
+<div>The Adapter Configuration Wizard is invoked.</div>
+</li>
+<li class="stepexpand"><span>Configure the pages of the wizard for the Oracle RightNow adapter. For this example, the <span class="bold">Get</span> operation and <span class="bold">Account</span> business object are selected on the Operations page.<br />
+<img width="480" height="247" src="img/GUID-C6F03948-3D9A-4886-AF4F-18ED29D1B785-default.png" alt="Description of GUID-C6F03948-3D9A-4886-AF4F-18ED29D1B785-default.png follows" title="Description of GUID-C6F03948-3D9A-4886-AF4F-18ED29D1B785-default.png follows" /><br />
+<a href="img_text/GUID-C6F03948-3D9A-4886-AF4F-18ED29D1B785-default.htm">Description of the illustration GUID-C6F03948-3D9A-4886-AF4F-18ED29D1B785-default.png</a><br /></span>
+<div>The integration is now defined for the second invoke. You now need to create a filtering expression for the second invoke.</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Filter</span> icon to create a filtering expression.</span></li>
+<li class="stepexpand"><span>If no additional expression is required, click the <span class="bold">E</span> icon (to create an ELSE condition).<br />
+<img width="403" height="116" src="img/GUID-2618C32F-7742-41BE-8D07-5687475D7DEC-default.png" alt="Description of GUID-2618C32F-7742-41BE-8D07-5687475D7DEC-default.png follows" title="Description of GUID-2618C32F-7742-41BE-8D07-5687475D7DEC-default.png follows" /><br />
+<a href="img_text/GUID-2618C32F-7742-41BE-8D07-5687475D7DEC-default.htm">Description of the illustration GUID-2618C32F-7742-41BE-8D07-5687475D7DEC-default.png</a><br /></span>
+<div>This defines an ELSE condition for the second trigger and invoke. The ELSE condition is taken if the first route evaluates to false (that is <span class="bold">ClassificationCode</span> does not equal <span class="bold">Org</span>). You can toggle back and forth between the two trigger routes by clicking the adapter icon on the individual line. The line in blue is the currently visible invoke in the integration.<br />
+<img width="364" height="74" src="img/GUID-BF479DE7-495B-4F97-BB36-FE0819CF231E-default.png" alt="Description of GUID-BF479DE7-495B-4F97-BB36-FE0819CF231E-default.png follows" title="Description of GUID-BF479DE7-495B-4F97-BB36-FE0819CF231E-default.png follows" /><br />
+<a href="img_text/GUID-BF479DE7-495B-4F97-BB36-FE0819CF231E-default.htm">Description of the illustration GUID-BF479DE7-495B-4F97-BB36-FE0819CF231E-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>If you want to define your own expression filter for the second route instead of using the ELSE condition, perform the following steps:</span>
+<ol>
+<li class="substepexpand"><span>Click the <span class="bold">Filter</span> icon.</span></li>
+<li class="substepexpand"><span>Select <span class="bold">Clear Expression</span> to remove the ELSE condition.</span>
+<div><br />
+<img width="134" height="75" src="img/GUID-9C8FA070-4D13-4CD4-96DB-3AB5BB955E3E-default.png" alt="Description of GUID-9C8FA070-4D13-4CD4-96DB-3AB5BB955E3E-default.png follows" title="Description of GUID-9C8FA070-4D13-4CD4-96DB-3AB5BB955E3E-default.png follows" /><br />
+<a href="img_text/GUID-9C8FA070-4D13-4CD4-96DB-3AB5BB955E3E-default.htm">Description of the illustration GUID-9C8FA070-4D13-4CD4-96DB-3AB5BB955E3E-default.png</a><br /></div>
+</li>
+<li class="substepexpand"><span>Click <span class="bold">Yes</span> when prompted to confirm.</span></li>
+<li class="substepexpand"><span>Click the <span class="bold">Filter</span> icon again and select the <span class="bold">Edit</span> icon to invoke the Expression Builder as you did in Step 3.</span></li>
+<li class="substepexpand"><span>Define an expression.</span></li>
+<li class="substepexpand"><span>Click <span class="bold">Save</span>, then click <span class="bold">Exit Expression Builder</span>.</span>
+<div>Request and response mappings must now be defined.</div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Request Mapper</span> icon to define the mapping.</span>
+<div>For this example, the following mapping is defined.
+<div class="tblformal" id="GUID-E7431EFE-9BE6-4AD0-AE9A-7DDB8E47FEAA__GUID-DF40C661-70F3-430E-AF1C-057F446883E6">
+<table class="cellalignment926" summary="Mapping definitions.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e3868">Source</th>
+<th class="cellalignment929" id="d12707e3870">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e3874" headers="d12707e3868">
+<p>process &gt; Organization &gt; Organizationid</p>
+</td>
+<td class="cellalignment929" headers="d12707e3874 d12707e3870">
+<p>Get &gt; Account &gt; ID &gt; id</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Response Mapper</span> icon to define the mapping.</span>
+<div>For this example, the following mapping is defined.
+<div class="tblformal" id="GUID-E7431EFE-9BE6-4AD0-AE9A-7DDB8E47FEAA__GUID-CD13298C-D571-4E38-9D22-B291E5FEF7E9">
+<table class="cellalignment926" summary="Mapping definitions.">
+<thead align="left">
+<tr>
+<th class="cellalignment929" id="d12707e3896">Source</th>
+<th class="cellalignment929" id="d12707e3898">Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment929" id="d12707e3902" headers="d12707e3896">
+<p>process &gt; GetResponse &gt; Account &gt; ID &gt; LookupName</p>
+</td>
+<td class="cellalignment929" headers="d12707e3902 d12707e3898">
+<p>processResponse &gt; Organization &gt; Name</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>Integration design in now 100% complete.</p>
+</div>
+</li>
+<li class="stepexpand"><span>Activate the integration.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD"></a>
+<h2 id="ICSUG-GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD" class="sect2">Creating Routing Expression Logic in Both Expression Mode and Condition Mode</h2>
+<div>
+<p>You can create XPath expressions for routing conditions in two different user interface modes:</p>
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p>Expression mode: This mode provides an interface for creating and viewing the entire XPath expression.</p>
+</li>
+<li>
+<p>Condition mode: This mode provides an easier-to-read interface to create and view XPath condition expressions. This mode is useful for business analysts who may be less experienced with XPath expressions.</p>
+</li>
+</ul>
+<div class="p">You can toggle between expression mode and condition mode when creating and viewing your expressions. Elements and attributes for which mapping is required are identified by a blue asterisk (*) to the left of their names. You can also place your cursor over elements and attributes to display specific schema details such as the data type, if mapping is required, and so on. When creating an expression, note the following functionality in the tree:
+<ul style="list-style-type: disc;">
+<li>
+<p>Three levels of elements are loaded by default in the tree in the <span class="bold">Source</span> area. When you reach the third level, a <span class="bold">Load more</span> link is displayed. Click this link to display all the direct children of that element. Only base types are loaded automatically. To load the extended types of the base type, click the base type, which is identified by a unique icon. This invokes a menu of extended types that you can select to load one by one into the tree.<br />
+<img width="246" height="147" src="img/GUID-F683F4B2-71E1-413C-9D63-CAAFA180F688-default.png" alt="Description of GUID-F683F4B2-71E1-413C-9D63-CAAFA180F688-default.png follows" title="Description of GUID-F683F4B2-71E1-413C-9D63-CAAFA180F688-default.png follows" /><br />
+<a href="img_text/GUID-F683F4B2-71E1-413C-9D63-CAAFA180F688-default.htm">Description of the illustration GUID-F683F4B2-71E1-413C-9D63-CAAFA180F688-default.png</a><br /></p>
+</li>
+<li>
+<p>Elements in the tree in the <span class="bold">Source</span> area that you have already dragged to an expression are identified by green checkboxes. These elements are displayed even if they are deeper than three levels in the tree.</p>
+</li>
+<li>
+<p>You can search for an element that is not yet loaded in the tree by entering the name in the <span class="bold">Find</span> field and clicking the <span class="bold">Search</span> icon. This action loads that specific element into the tree.</p>
+</li>
+</ul>
+</div>
+<p>This section provides an example of building an expression using both modes.</p>
+<p>To create routing expressions in both expression mode and condition mode:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Click the <span class="bold">Filter</span> icon on the source side of an integration to create a filtering expression.<br />
+<img width="371" height="61" src="img/GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png" alt="Description of GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png follows" title="Description of GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png follows" /><br />
+<a href="img_text/GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.htm">Description of the illustration GUID-87CBBFAC-E79E-462B-A37F-3EEC4D05F366-default.png</a><br /></span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Routing</span> icon in the menu that is displayed.</span>
+<div>The Expression Builder is displayed for building routing expressions. Expression mode is the default mode.</div>
+</li>
+<li class="stepexpand"><span>In the field immediately below <span class="bold">Expression Name</span>, optionally enter a short description about the expression you want to build.<br /></span>
+<div class="imageleft"><img class="imageleft" width="166" height="53" src="img/GUID-084D0FAF-BFFD-40FD-8E65-80B4B7EF4188-default.png" alt="Description of GUID-084D0FAF-BFFD-40FD-8E65-80B4B7EF4188-default.png follows" title="Description of GUID-084D0FAF-BFFD-40FD-8E65-80B4B7EF4188-default.png follows" /><br />
+<a href="img_text/GUID-084D0FAF-BFFD-40FD-8E65-80B4B7EF4188-default.htm">Description of the illustration GUID-084D0FAF-BFFD-40FD-8E65-80B4B7EF4188-default.png</a></div>
+<br /></li>
+<li class="stepexpand"><span>Add an element from the <span class="bold">Source</span> area on the left side to the expression field immediately below the short description field. If needed, you can also add functions from the <span class="bold">Components</span> section.</span>
+<div>There are two ways to add an element to the expression field:</div>
+<ol>
+<li class="substepexpand"><span>Drag the element from the <span class="bold">Source</span> area.</span></li>
+<li class="substepexpand"><span>Select the row of the element in the <span class="bold">Source</span> area, then click the <span class="bold">Move</span> icon in the middle of the page to move the element.<br /></span>
+<div class="imageleft"><img class="imageleft" width="257" height="90" src="img/GUID-49A0B3CD-46DC-4A12-ADED-5D8C03FD25ED-default.png" alt="Description of GUID-49A0B3CD-46DC-4A12-ADED-5D8C03FD25ED-default.png follows" title="Description of GUID-49A0B3CD-46DC-4A12-ADED-5D8C03FD25ED-default.png follows" /><br />
+<a href="img_text/GUID-49A0B3CD-46DC-4A12-ADED-5D8C03FD25ED-default.htm">Description of the illustration GUID-49A0B3CD-46DC-4A12-ADED-5D8C03FD25ED-default.png</a></div>
+<br />
+<div>The expression for the selected element is displayed in the expression field (for this example, the expression for the <span class="bold">Country</span> element was added). The selected element is identified by green checkbox in the <span class="bold">Source</span> area.<br />
+<div class="imageleft"><img class="imageleft" width="329" height="117" src="img/GUID-869CA9C5-5586-464D-B2B2-713B0EBAB83C-default.png" alt="Description of GUID-869CA9C5-5586-464D-B2B2-713B0EBAB83C-default.png follows" title="Description of GUID-869CA9C5-5586-464D-B2B2-713B0EBAB83C-default.png follows" /><br />
+<a href="img_text/GUID-869CA9C5-5586-464D-B2B2-713B0EBAB83C-default.htm">Description of the illustration GUID-869CA9C5-5586-464D-B2B2-713B0EBAB83C-default.png</a></div>
+<br /></div>
+</li>
+</ol>
+</li>
+<li class="stepexpand"><span>To the right of the added expression, define an operator and a value within single or double quotes (for this example, <code>= &ldquo;USA&rdquo;</code> is defined).</span></li>
+<li class="stepexpand"><span>Click the <span class="bold">Expression Summary</span> icon to view a simplified, user-friendly version of the expression. Easy-to-read output is displayed.<br />
+<img width="718" height="335" src="img/GUID-2F29392D-2743-4A82-AD86-7E43453750C9-default.png" alt="Description of GUID-2F29392D-2743-4A82-AD86-7E43453750C9-default.png follows" title="Description of GUID-2F29392D-2743-4A82-AD86-7E43453750C9-default.png follows" /><br />
+<a href="img_text/GUID-2F29392D-2743-4A82-AD86-7E43453750C9-default.htm">Description of the illustration GUID-2F29392D-2743-4A82-AD86-7E43453750C9-default.png</a><br /></span>
+<div>
+<div class="infobox-note" id="GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD__GUID-0C1678FA-57DC-46D5-8A93-CF2C020961D0">
+<p class="notep1">Note:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>To add additional elements to the expression, you can place your cursor in the exact location of the expression, select the row of an element in the <span class="bold">Source</span> area, and click the <span class="bold">Move</span> icon. These actions add that element to the exact location of your cursor.</p>
+</li>
+<li>
+<p>You can drag an element to the exact location of your cursor in the expression, and the expression of the element is added to the cursor location, and not the location in which you drop the element.</p>
+</li>
+<li>
+<p>You can drag an element on top of an existing expression element to replace it.</p>
+</li>
+</ul>
+</div>
+</div>
+</li>
+<li class="stepexpand"><span>In the upper right corner, click <span class="bold">Condition Mode</span> to view the expression you created in condition mode. Condition mode provides an easy-to-read interface for creating and viewing your expressions.</span>
+<div>
+<p>Note the following details about accessing condition mode:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Condition mode can only be accessed if the expression field is empty or completely defined with an expression that returns true or false. If you only partially define an expression (for example, you drag an element to the expression field, but forget to define expression logic and a value such as <code>= &ldquo;USA&rdquo;</code>), you receive an error saying that you must provide a valid condition to access condition mode.</p>
+</li>
+<li>
+<p>The <span class="bold">Condition Mode</span> button toggles to <span class="bold">Expression Mode</span>.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-9A4F5DE9-C549-4E01-A6F4-39EFE9729CCD__GUID-07629B25-4E16-4103-94D9-8F6EB497A991">
+<p class="notep1">Note:</p>
+At any time, you can click <span class="bold">Expression Mode</span> to view the entire XPath expression.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click the expression.</span>
+<div><br />
+<img width="189" height="122" src="img/GUID-E1D0F8AA-950E-445C-912C-979591A34E8A-default.png" alt="Description of GUID-E1D0F8AA-950E-445C-912C-979591A34E8A-default.png follows" title="Description of GUID-E1D0F8AA-950E-445C-912C-979591A34E8A-default.png follows" /><br />
+<a href="img_text/GUID-E1D0F8AA-950E-445C-912C-979591A34E8A-default.htm">Description of the illustration GUID-E1D0F8AA-950E-445C-912C-979591A34E8A-default.png</a><br />
+<p>This refreshes the page to display icons for adding additional conditions and conditions groups. Groups enable you to combine multiple conditions into a single logical expression.</p>
+<br />
+<img width="358" height="239" src="img/GUID-6851086F-D4C7-40AE-BAEE-F422BA3DCBAE-default.png" alt="Description of GUID-6851086F-D4C7-40AE-BAEE-F422BA3DCBAE-default.png follows" title="Description of GUID-6851086F-D4C7-40AE-BAEE-F422BA3DCBAE-default.png follows" /><br />
+<a href="img_text/GUID-6851086F-D4C7-40AE-BAEE-F422BA3DCBAE-default.htm">Description of the illustration GUID-6851086F-D4C7-40AE-BAEE-F422BA3DCBAE-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Add Condition</span> icon (first icon) to add additional condition expressions.</span>
+<div>This creates an additional field for entering additional expression logic. The message <span class="bold">Drag and drop or type here</span> is displayed in this field.<br />
+<img width="356" height="292" src="img/GUID-0D61CF81-A628-4AD8-B17F-CEDA1ECBF16D-default.png" alt="Description of GUID-0D61CF81-A628-4AD8-B17F-CEDA1ECBF16D-default.png follows" title="Description of GUID-0D61CF81-A628-4AD8-B17F-CEDA1ECBF16D-default.png follows" /><br />
+<a href="img_text/GUID-0D61CF81-A628-4AD8-B17F-CEDA1ECBF16D-default.htm">Description of the illustration GUID-0D61CF81-A628-4AD8-B17F-CEDA1ECBF16D-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Drag an element from the <span class="bold">Source</span> area to the first <span class="bold">Drag and drop or type here</span> field (for this example, the <span class="bold">Country</span> element is again added).</span></li>
+<li class="stepexpand"><span>Select an operator (for example, <span class="bold">=</span>, <span class="bold">&gt;</span>,<span class="bold">!=</span>, and so on) and enter a value (for this example, <code>&ldquo;Mexico&rdquo;</code> is added).</span></li>
+<li class="stepexpand"><span>From the <span class="bold">Match</span> list, select an option. This list is hidden until at least two conditions are defined.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Any of</span>: Select if any of the added expressions must be true. This equates to an OR condition in the entire XPath expression shown in expression mode.</p>
+</li>
+<li>
+<p><span class="bold">All of</span>: Select if all expressions must be true. This equates to an AND condition in the entire XPath expression shown in expression mode.</p>
+</li>
+</ul>
+<br />
+<div class="imageleft"><img class="imageleft" width="136" height="81" src="img/GUID-7395D39E-6729-474D-A10F-C2751C9ACAE4-default.png" alt="Description of GUID-7395D39E-6729-474D-A10F-C2751C9ACAE4-default.png follows" title="Description of GUID-7395D39E-6729-474D-A10F-C2751C9ACAE4-default.png follows" /><br />
+<a href="img_text/GUID-7395D39E-6729-474D-A10F-C2751C9ACAE4-default.htm">Description of the illustration GUID-7395D39E-6729-474D-A10F-C2751C9ACAE4-default.png</a></div>
+<br /></div>
+</li>
+<li class="stepexpand"><span>Select the <span class="bold">Add Group</span> icon (second icon) to group a series of conditions. This option enables you to build a number of conditions within a single group. The group is identified by the gray outline and the indentation.</span>
+<div><br />
+<img width="380" height="288" src="img/GUID-62CB69BE-F049-40A6-B781-A9CCD4A7C7EC-default.png" alt="Description of GUID-62CB69BE-F049-40A6-B781-A9CCD4A7C7EC-default.png follows" title="Description of GUID-62CB69BE-F049-40A6-B781-A9CCD4A7C7EC-default.png follows" /><br />
+<a href="img_text/GUID-62CB69BE-F049-40A6-B781-A9CCD4A7C7EC-default.htm">Description of the illustration GUID-62CB69BE-F049-40A6-B781-A9CCD4A7C7EC-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Add an element from the <span class="bold">Source</span> area.</span>
+<div>For this example:
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">DisplayName</span> element is added to the first <span class="bold">Drag and drop or type here</span> field.</p>
+</li>
+<li>
+<p>The not equal operator (<span class="bold">!=</span>) is selected.</p>
+</li>
+<li>
+<p>The <span class="bold">Country</span> element is added to the second <span class="bold">Drag and drop or type here</span> field.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click the <span class="bold">Add Condition</span> icon (first icon) to add an additional condition expression within the group.</span>
+<div>For this example:
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">DisplayOrder</span> element is added to the first <span class="bold">Drag and drop or type here</span> field.</p>
+</li>
+<li>
+<p>The less than operator (<span class="bold">&lt;</span>) is selected.</p>
+</li>
+<li>
+<p>A value of <code>10</code> is entered in the second <span class="bold">Drag and drop or type here</span> field.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Continue building your group condition, as necessary.</span>
+<div>When complete, the expression is displayed. For this example, there are the conditions: if <span class="bold">Country</span> is <span class="bold">USA</span> OR <span class="bold">Country</span> is <span class="bold">Mexico</span> OR <span class="bold">DisplayName</span> does not equal country and <span class="bold">DisplayCount</span> is less than <span class="bold">10</span>, the integration continues.<br />
+<img width="274" height="242" src="img/GUID-6C9F8E88-EAF4-470D-891F-4B32845E9E38-default.png" alt="Description of GUID-6C9F8E88-EAF4-470D-891F-4B32845E9E38-default.png follows" title="Description of GUID-6C9F8E88-EAF4-470D-891F-4B32845E9E38-default.png follows" /><br />
+<a href="img_text/GUID-6C9F8E88-EAF4-470D-891F-4B32845E9E38-default.htm">Description of the illustration GUID-6C9F8E88-EAF4-470D-891F-4B32845E9E38-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Expression Mode</span>.</span>
+<div>Note the entire XPath expression and the expression summary at the bottom. The selected elements are displayed (no matter their level of depth in the tree) and identified by green checkboxes in the <span class="bold">Source</span> area.<br />
+<img width="1169" height="448" src="img/GUID-2325D7F0-B6CC-4908-8C1C-76A1F1D17ADD-default.png" alt="Description of GUID-2325D7F0-B6CC-4908-8C1C-76A1F1D17ADD-default.png follows" title="Description of GUID-2325D7F0-B6CC-4908-8C1C-76A1F1D17ADD-default.png follows" /><br />
+<a href="img_text/GUID-2325D7F0-B6CC-4908-8C1C-76A1F1D17ADD-default.htm">Description of the illustration GUID-2325D7F0-B6CC-4908-8C1C-76A1F1D17ADD-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>If you want, you can place your cursor in the XPath expression and edit it as necessary (for example, change <code>USA</code> to <code>Canada</code>), then click the <span class="bold">Expression Summary</span> icon to refresh the calculation. If you make an error when editing the XPath expression (for example, forget to add a double quote to a value), an error message is displayed.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Save</span> to view the expression in read-only mode. You can also click <span class="bold">Done Editing</span> at any time during the creation process to view the expression in read-only mode.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Exit Expression Builder</span> to return to the integration. The user-friendly expression is displayed in the blue banner above the integration.</span>
+<div><br />
+<div class="imageleft"><img class="imageleft" width="713" height="434" src="img/GUID-7729F1C6-0C82-4108-86B4-797025A350F6-default.png" alt="Description of GUID-7729F1C6-0C82-4108-86B4-797025A350F6-default.png follows" title="Description of GUID-7729F1C6-0C82-4108-86B4-797025A350F6-default.png follows" /><br />
+<a href="img_text/GUID-7729F1C6-0C82-4108-86B4-797025A350F6-default.htm">Description of the illustration GUID-7729F1C6-0C82-4108-86B4-797025A350F6-default.png</a></div>
+<br /></div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-45111C54-3A08-4B16-9F63-72619541C257"></a>
+<h2 id="ICSUG-GUID-45111C54-3A08-4B16-9F63-72619541C257" class="sect2">Deleting Routing Paths</h2>
+<div>
+<p>You can delete routing paths that have been created on different target endpoints in an integration.</p>
+<div class="p">
+<div class="p">There are two methods for deleting routing paths:
+<ul style="list-style-type: disc;">
+<li>
+<p>Delete the routing path and expression filter.</p>
+</li>
+<li>
+<p>Delete the endpoint and routing path, but retain the expression filter.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Deleting the Routing Path and Expression Filter</p>
+<p>To delete the routing path and expression filter:</p>
+<ol>
+<li>
+<p>In the Integrations page, select the integration in which to delete a routing path.</p>
+</li>
+<li>
+<p>Expand the <span class="bold">Routing Drawer</span> icon to display the diagram of routing paths.</p>
+</li>
+<li>
+<p>Above the integration, select the routing path to delete.<br />
+<img width="364" height="73" src="img/GUID-FAA6A13F-18B9-4E42-A7AA-80FF05587F18-default.png" alt="Description of GUID-FAA6A13F-18B9-4E42-A7AA-80FF05587F18-default.png follows" title="Description of GUID-FAA6A13F-18B9-4E42-A7AA-80FF05587F18-default.png follows" /><br />
+<a href="img_text/GUID-FAA6A13F-18B9-4E42-A7AA-80FF05587F18-default.htm">Description of the illustration GUID-FAA6A13F-18B9-4E42-A7AA-80FF05587F18-default.png</a><br /></p>
+</li>
+<li>
+<p>Click the <span class="bold">Filter</span> icon.</p>
+</li>
+<li>
+<p>Select <span class="bold">Delete Route</span> from the menu that is displayed.</p>
+<br />
+<img width="321" height="137" src="img/GUID-126304B0-7FA9-4135-8E3A-ADDD2B0CB6A8-default.png" alt="Description of GUID-126304B0-7FA9-4135-8E3A-ADDD2B0CB6A8-default.png follows" title="Description of GUID-126304B0-7FA9-4135-8E3A-ADDD2B0CB6A8-default.png follows" /><br />
+<a href="img_text/GUID-126304B0-7FA9-4135-8E3A-ADDD2B0CB6A8-default.htm">Description of the illustration GUID-126304B0-7FA9-4135-8E3A-ADDD2B0CB6A8-default.png</a><br /></li>
+<li>
+<p>Click <span class="bold">Yes</span> when prompted to confirm.</p>
+<p>This action deletes the routing path, including the expression filter and the request mapping for the selected path. The diagram above the integration shows that the routing path is deleted.<br />
+<img width="315" height="70" src="img/GUID-4DD73D66-5704-4ECC-AAE2-EF31A93C6C53-default.png" alt="Description of GUID-4DD73D66-5704-4ECC-AAE2-EF31A93C6C53-default.png follows" title="Description of GUID-4DD73D66-5704-4ECC-AAE2-EF31A93C6C53-default.png follows" /><br />
+<a href="img_text/GUID-4DD73D66-5704-4ECC-AAE2-EF31A93C6C53-default.htm">Description of the illustration GUID-4DD73D66-5704-4ECC-AAE2-EF31A93C6C53-default.png</a><br /></p>
+</li>
+</ol>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead2">Deleting the Endpoint and Routing Path</p>
+<p>To delete the endpoint and routing path:</p>
+<ol>
+<li>
+<p>In the integration, click the target endpoint to delete.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span> in the menu that is displayed.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> when prompted to confirm.</p>
+<p>This action deletes the target endpoint and routing path. The diagram above the integration shows that the routing path is deleted. Within the integration, only the expression remains defined in the integration because it is not using anything from the deleted target endpoint.<br />
+<img width="246" height="167" src="img/GUID-CA8392F4-A169-45AC-A223-AD0CB739F997-default.png" alt="Description of GUID-CA8392F4-A169-45AC-A223-AD0CB739F997-default.png follows" title="Description of GUID-CA8392F4-A169-45AC-A223-AD0CB739F997-default.png follows" /><br />
+<a href="img_text/GUID-CA8392F4-A169-45AC-A223-AD0CB739F997-default.htm">Description of the illustration GUID-CA8392F4-A169-45AC-A223-AD0CB739F997-default.png</a><br /></p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<div class="sect2"><a id="GUID-96A30983-2F8F-4A78-938F-3B2002826907"></a>
+<h2 id="ICSUG-GUID-96A30983-2F8F-4A78-938F-3B2002826907" class="sect2">Editing the Endpoint Information in an Integration</h2>
+<div>
+<p>You can edit the endpoint information in an integration that is not active. The changes that you make can impact your mappings. For example, minor edits such as changing the endpoint description do not delete the existing mappings. Major edits such as changing the selected business objects or operations delete the mappings. In these cases, you must recreate your mappings. Before you save your updates, you are prompted to confirm your changes.</p>
+<div class="p">The impact of major and minor endpoint changes on an integration are as follows:
+<ul style="list-style-type: disc;">
+<li>
+<p>If a minor change is detected, for example:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If a map is using either the request or response of the application as a primary input, output, or secondary input, the map is validated.</p>
+</li>
+<li>
+<p>If a map is using a fault of the application as a primary input or output, the map is deleted.</p>
+</li>
+<li>
+<p>If a map is only using a fault of the application as a secondary input, the secondary input is removed.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>If a major change is detected, for example:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If a map is using a request, response, or fault of the application as a primary input or output, the map is deleted.</p>
+</li>
+<li>
+<p>If a map is only using a request, response, or fault of the application as a secondary input, the secondary input is removed.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The following are examples of major endpoint changes:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the application message exchange pattern changes (for example, from synchronous to asynchronous).</p>
+</li>
+<li>
+<p>If a root element name or root element namespace of the input request changes.</p>
+</li>
+<li>
+<p>If a root element name or root element namespace of the output response changes.</p>
+</li>
+</ul>
+<p>If none of the above changes occur, then the change is considered minor.</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li><span>On the Designer Portal, click <span class="bold">Integrations</span>.</span></li>
+<li><span>Select the integration to edit.</span></li>
+<li><span>In the integration, select the trigger or invoke endpoint to edit, then click the <span class="bold">Edit</span> icon.</span></li>
+<li><span>Make appropriate changes in the Adapter Endpoint Configuration Wizard, then click <span class="bold">Done</span>.</span></li>
+<li><span>Select to confirm your changes when prompted. Minor edits do not delete your mappings. Major edits delete your mappings.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment916">
+<tr>
+<td class="cellalignment923">
+<table class="cellalignment921">
+<tr>
+<td class="cellalignment920"><a href="GUID-8EC9D802-9DD6-485B-9C2A-218C61E9F1FB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment920"><a href="GUID-268D7A7B-1024-4076-BC50-766E79E218C2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment925">
+<table class="cellalignment919">
+<tr>
+<td class="cellalignment920"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment920"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment920"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

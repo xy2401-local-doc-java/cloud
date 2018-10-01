@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a data set from a file</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can create a new data set in Studio by uploading personal data from files. After upload, the data is available as a data set in the Catalog." />
+<meta name="dcterms.created" content="2016-11-21T17:03:23Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Oracle&reg; Big Data Discovery Cloud Service Studio User's Guide" />
+<meta name="dcterms.identifier" content="E65365-05" />
+<meta name="dcterms.isVersionOf" content="BDDDE" />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="csu_about_creating_data_set.htm" title="Previous" type="text/html" />
+<link rel="Next" href="tsu_data_set_create_from_data_library.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BDDDE.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BDDDE.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BDDDE.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="task_9164D3B36E82443EBE145D0C48FD63C3"></a> <span id="PAGE" style="display:none;">41/380</span> <!-- End Header -->
+<h1 id="BDDDE-task_9164D3B36E82443EBE145D0C48FD63C3" class="sect1">Creating a data set from a file</h1>
+<div>
+<p>You can create a new data set in Studio by uploading personal data from files. After upload, the data is available as a data set in the Catalog.</p>
+<div class="section" id="task_9164D3B36E82443EBE145D0C48FD63C3__context_1C97AC3B7F1840169312AEF505AAA172">
+<p><a id="d9953e10" class="indexterm-anchor"></a>Studio supports Microsoft Excel files, delimited files such as CSV, TSV, and TXT, and also compressed file such as ZIP, GZ and GZIP. A compressed file may include only one delimited file.</p>
+<div class="p"><a id="d9953e17" class="indexterm-anchor"></a>Microsoft Excel files must have a suffix of XLS or XLSX and may have been created using any of the following versions:
+<ul style="list-style-type: disc;" id="task_9164D3B36E82443EBE145D0C48FD63C3__ul_6BA2863DF8EA487C86B873F50DFA5D51">
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__li_7D6FAD6AA2E24B64B58FBEB1BDD6D013">Excel 2016</li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__li_02FBB95379BC42B291BBEEE0C17AEBC2">Excel 2013</li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__li_EA97F7E021AB47ABB92A5E1D1F32A49C">Excel 2010</li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__li_363389BC3B014A6A9C62AB496DE63C3C">Excel 2007</li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__li_5022DF00652B45F59394FD186CA5BC3E">Excel 97 - 2003</li>
+</ul>
+</div>
+<p>To create a data set from a file:</p>
+</div>
+<!-- class="section" -->
+<ol id="task_9164D3B36E82443EBE145D0C48FD63C3__steps_A43459F769834E7DA2C92EC21997EE1C">
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_8148FF7658D04AA0A0A5AFFB6BDAB957"><span>Click the <span class="bold">Add Data Set</span> option on the Catalog.</span>
+<div>
+<p>This option adds the new data set to the Catalog. You can also add a new data set from within a project.</p>
+</div>
+</li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_D12EB86E34A7400BB0C473B29C32003C"><span>Click <span class="bold">Create a data set from a file</span>.</span></li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_CAC8986B57074927B195D7F5ABB66442"><span>Click <span class="bold">Browse</span>, locate the file, and click <span class="bold">Open</span>.</span></li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_F9EBF264BE5344A99774F408118705D9"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_5100A6C3CC42405BB4D28BC726B0B1AD"><span>In the <span class="bold">Preview</span> page, you can both edit attributes and limit the data before you upload it.</span>
+<ol id="task_9164D3B36E82443EBE145D0C48FD63C3__substeps_3168E84DE06D4348A40254CE3924340B">
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__substep_A6E6F16A0FBD4BEFBB7C8FB33105C646"><span>To exclude an attribute from the data set, deselect its check box.</span></li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__substep_814CA76A75244F4B935DEE82070F50E4"><span>To modify the name of an attribute as it appears in the data set, select the column header and edit the name of the attribute.</span></li>
+</ol>
+</li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_A68B40DBB9A64C569E487EDB6DA8FBA2"><span>Expand <span class="bold">Basic Settings</span> and set the following options:</span>
+<div>
+<div class="tblformal" id="task_9164D3B36E82443EBE145D0C48FD63C3__table_396EBE55A307444795E709BB33088DA0">
+<table class="cellalignment82" summary="A table of all settings list in the Basic Settings section.">
+<thead align="left">
+<tr>
+<th class="cellalignment83" id="d9953e100">Setting</th>
+<th class="cellalignment83" id="d9953e102">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment83" id="d9953e106" headers="d9953e100"><span class="bold">My data includes header row</span></td>
+<td class="cellalignment83" headers="d9953e106 d9953e102">Specify if the file includes a header row. If you deselect this option, Studio creates an alphabetized list in place of attribute names.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e113" headers="d9953e100"><span class="bold">Skip the first 0 rows</span></td>
+<td class="cellalignment83" headers="d9953e113 d9953e102">If necessary, you can indicate how many rows to skip from the top of the file.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e120" headers="d9953e100"><span class="bold">Sheet</span></td>
+<td class="cellalignment83" headers="d9953e120 d9953e102"><span class="italic">Microsoft Excel files only</span>. Select which sheet to load from the list. A data set corresponds to one sheet. Run the wizard again if you need to process multiple sheets.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e129" headers="d9953e100"><span class="bold">Fields are delimited by</span></td>
+<td class="cellalignment83" headers="d9953e129 d9953e102"><span class="italic">Delimited file formats only</span>. Select a field delimiter from the list. This selection often corresponds to the file format, comma separated (CSV), tab separated (TSV/TAB), etc.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e138" headers="d9953e100"><span class="bold">Fields are quoted</span></td>
+<td class="cellalignment83" headers="d9953e138 d9953e102"><span class="italic">Delimited file formats only</span>. Specify whether the fields contain quoted values.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e147" headers="d9953e100"><span class="bold">Quote Character</span></td>
+<td class="cellalignment83" headers="d9953e147 d9953e102"><span class="italic">Delimited file formats only</span>. If you enabled <span class="bold">Fields are quoted</span>, select the quote character.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e159" headers="d9953e100"><span class="bold">Quote escape character</span></td>
+<td class="cellalignment83" headers="d9953e159 d9953e102"><span class="italic">Delimited file formats only</span>. If you enabled <span class="bold">Fields are quoted</span>, select the quote escape character.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_E44135F3B04B4441BA460408F7F42B79"><span>Expand <span class="bold">Advanced Settings</span> and set the following options:</span>
+<div>
+<div class="tblformal" id="task_9164D3B36E82443EBE145D0C48FD63C3__table_04E681CA2C7B4E64ABE6D0D5DDB1A7C0">
+<table class="cellalignment82" summary="A table of all settings list in the Advanced Settings section.">
+<thead align="left">
+<tr>
+<th class="cellalignment83" id="d9953e187">Setting</th>
+<th class="cellalignment83" id="d9953e189">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment83" id="d9953e193" headers="d9953e187"><span class="bold">Character Encoding</span></td>
+<td class="cellalignment83" headers="d9953e193 d9953e189"><span class="italic">Delimited file formats only</span>. Select the file encoding. If you are unsure, you may have to open the file in a full featured text editor and use the editor to detect the encoding.</td>
+</tr>
+<tr>
+<td class="cellalignment83" id="d9953e202" headers="d9953e187"><span class="bold">Language</span></td>
+<td class="cellalignment83" headers="d9953e202 d9953e189">Specify the language of text data in your file. This setting is used during data processing and then used for value and keyword searches.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_FEF048C659AD4022A7C7C2BA0503B78F"><span>Click <span class="bold">Next</span>.</span></li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_9533D77C635F42078188E78BAC013F39"><span>On the <span class="bold">Create your data set</span> page:</span>
+<ol id="task_9164D3B36E82443EBE145D0C48FD63C3__substeps_784ACAE97051407C9F1029A4FA37F287">
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__substep_B5E8A070C3A04591814E4B6E244BCA0F"><span>Specify a name for the data set as it appears in the Catalog.</span></li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__substep_BB30DC6C2B7A4DAF8F573C07543AE9F5"><span>Optionally, specify a description for the data set.</span></li>
+<li id="task_9164D3B36E82443EBE145D0C48FD63C3__substep_B5E2A2D5CC3B473189B365C05777BEFB"><span>Optionally, specify a Hive table name. By default, the Hive table name is the same as the data set name. If you create a data set by the same name as an existing data set, you must specify a different Hive table name. Studio maps the data set name to a unique table name.</span></li>
+</ol>
+</li>
+<li class="stepexpand" id="task_9164D3B36E82443EBE145D0C48FD63C3__step_AD3FE0B563CE4B10B6FB0DD2FC6707C6"><span>Click <span class="bold">Create</span> and then click <span class="bold">Add Another Data Set</span> if you have more files to upload or click <span class="bold">Return to Catalog</span> while the file is being processed.</span></li>
+</ol>
+<div class="section" id="task_9164D3B36E82443EBE145D0C48FD63C3__result_2C737C38F6C54D228AA512F2967A137E">A new data set based on the file is available in the Catalog.</div>
+<!-- class="section" -->
+<div class="section" id="task_9164D3B36E82443EBE145D0C48FD63C3__postreq_6BA624261DBD46BA9871662A21A0F3A5">
+<p>If the file upload fails due to a connection timeout, the file may be too large to upload from Studio. You can work around this issue by asking your Hive database administrator to import the source file into a Hive table, and then you run the Data Processing CLI utility to process the table. After data processing, a new data set, based on the file, is available in the Catalog .</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment72">
+<tr>
+<td class="cellalignment79">
+<table class="cellalignment77">
+<tr>
+<td class="cellalignment76"><a href="csu_about_creating_data_set.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment76"><a href="tsu_data_set_create_from_data_library.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment81">
+<table class="cellalignment75">
+<tr>
+<td class="cellalignment76"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment76"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment76"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment76"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

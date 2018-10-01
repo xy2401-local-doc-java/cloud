@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Integration Cloud Service, Version 2</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <meta property="og:description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Status%20Codes.html" title="Previous" type="text/html">
+        <link rel="next" href="api-adapters.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Status%20Codes.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="api-adapters.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Integration Cloud Service, Version 2</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">cURL Access</h2> 
+<div class="body refbody">
+ <p class="shortdesc">The examples within this document use cURL to demonstrate how to access the Oracle Integration Cloud Service REST API. </p> 
+ <div class="section">
+  <p class="p">To use cURL to access the Oracle Integration Cloud Service REST API:</p> 
+  <ul class="ul"> 
+   <li class="li"><p class="p">Install cURL, as described in <a class="xref" href="QuickStart.html" title="Set up your environment and retrieve your first list of integrations for Oracle Integration Cloud Service using the REST API by performing the following tasks.">Quick Start</a>.</p> </li> 
+   <li class="li"><p class="p">In a command window, set the cURL environment variable, <samp class="ph codeph">CURL_CA_BUNDLE</samp>, to the location of your local CA certificate bundle. For information about CA certificate verification using cURL, see: <a class="xref" href="http://curl.haxx.se/docs/sslcerts.html" target="_blank">http://curl.haxx.se/docs/sslcerts.html</a>.</p> </li> 
+   <li class="li"><p class="p">Invoke cURL and specify one or more of the command-line options defined in the following table, as required, to direct its execution</p> 
+    <div class="tablenoborder">
+     <span class="desc tabledesc">This table summarizes the cURL options used in the command examples.</span>
+     <table cellpadding="4" cellspacing="0" summary="" id="GUID-C2F89000-9F97-4BD3-8504-650272FE9871__GUID-B24C5B76-D417-4590-825E-37B82C966FEC" class="table" width="90%" frame="hsides" border="1" rules="rows"> 
+      <thead class="thead" align="left"> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e58"><p class="p">cURL Option</p> </th> 
+        <th class="entry" valign="top" width="70%" id="d1971e62"><p class="p">Description</p> </th> 
+       </tr> 
+      </thead> 
+      <tbody class="tbody"> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e72" headers="d1971e58 "><samp class="ph codeph">-d, --data @<em class="ph i">file</em>.json</samp> </th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e72 d1971e62 ">Identifies the request document, in JSON format, on the local machine.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e86" headers="d1971e58 "><samp class="ph codeph">-F file=@<em class="ph i">path</em></samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e86 d1971e62 ">Identifies a file on the local machine. Use this option for import operations.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e98" headers="d1971e58 "><samp class="ph codeph">-H, --header</samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e98 d1971e62 ">Defines the content type of the request document.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e108" headers="d1971e58 "><samp class="ph codeph">-i</samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e108 d1971e62 ">Displays response header information.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e118" headers="d1971e58 "><samp class="ph codeph">-o <em class="ph i">path</em></samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e118 d1971e62 ">Identifies the response output on the local machine. Use this option for export operations.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e131" headers="d1971e58 "><samp class="ph codeph">-u, --user <em class="ph i">username</em>:<em class="ph i">password</em></samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e131 d1971e62 ">Specifies the user name and password for the Oracle Integration Cloud Service account.</td> 
+       </tr> 
+       <tr class="row"> 
+        <th class="firstcol" valign="top" width="30%" id="d1971e147" headers="d1971e58 "><samp class="ph codeph">-X, --request</samp></th> 
+        <td class="entry" valign="top" width="70%" headers="d1971e147 d1971e62 ">Indicates the type of request (for example, GET, POST, and so on).</td> 
+       </tr> 
+      </tbody> 
+     </table> 
+    </div> </li> 
+  </ul> 
+  <div class="p">
+   The following example cURL command exports an integration: 
+   <pre class="pre">curl -u jstein:welcome1
+ -X GET
+ -o ./TestProject.iar
+ https://example.com/icsapis/v1/integrations/TEST/01.00.0000/export</pre> 
+  </div> 
+  <div class="p">
+   The following example cURL command imports and adds an integration: 
+   <pre class="pre">curl -u jstein:welcome1
+ -H "Accept: application/json"
+ -X POST
+ -F "file=@TestProject.iar;type=application/octet-stream"
+ https://example.com/icsapis/v1/integrations/import</pre> 
+  </div> 
+  <p class="p">Change <samp class="ph codeph">example.com</samp> to the host in your Service URL as described in <a class="xref" href="SendRequests.html">Send Requests</a>.</p> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>REST API for Oracle SOA Cloud Service</title>
+		<link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+		<meta name="dcterms.dateCopyrighted" content="2018">
+		
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+			
+
+        <meta name="description" content="Use the Oracle SOA Cloud Service REST API to create and manage WebLogic Server instances on Oracle Cloud.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle SOA Cloud Service">
+        <meta property="og:description" content="Use the Oracle SOA Cloud Service REST API to create and manage WebLogic Server instances on Oracle Cloud.">
+        <meta name="generator" content="Oracle REST API Publisher 1.6.0">
+		<meta name="date" content="2018-09-07 10:57:47 UTC">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle SOA Cloud Service">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="Create_the_Request_Document.html" title="Previous" type="text/html">
+        <link rel="next" href="Authentication.html" title="Next" type="text/html">
+    
+    <meta name="dcterms.created" content="2018-09-07T10:58:37+00:00">
+    <meta name="dcterms.title" content="REST API for Oracle SOA Cloud Service">
+    <meta name="dcterms.category" content="cloud">
+    <meta name="dcterms.isVersionOf" content="SCSAP">
+    <meta name="dcterms.product" content="en/cloud/paas/soa-cloud">
+    <meta name="dcterms.identifier" content="E69242-28">
+    <meta name="dcterms.release" content="Latest Cloud Release">
+  <script id="ssot-metadata" type="application/json"> {"primary":{"category":{"short_name":"cloud","element_name":"Cloud","display_in_url":true},"suite":{"short_name":"paas","element_name":"Platform as a Service (PaaS)","display_in_url":true},"product_group":{"short_name":"integration-cloud","element_name":"Integration","display_in_url":false},"product":{"short_name":"soa-cloud","element_name":"SOA Cloud Service","display_in_url":true},"release":{"short_name":"latest","element_name":"Latest Cloud Release","display_in_url":false}}} </script>
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="Create_the_Request_Document.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Authentication.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList"> 
+ <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">REST API for Oracle SOA Cloud ServiceREST API for Oracle SOA Cloud Service</span></a></li> 
+ <li class="active" property="itemListElement" typeof="ListItem">Send Requests</li> 
+</ol> 
+<a id="GUID-446D467D-7FD4-45E2-85EB-E617B34D48E8" name="GUID-446D467D-7FD4-45E2-85EB-E617B34D48E8"></a> 
+<h2 id="null-GUID-446D467D-7FD4-45E2-85EB-E617B34D48E8" class="sect2">Send Requests</h2>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><div> 
+ <p>Use the following guidelines when sending requests using the Oracle SOA Cloud Service REST API. </p> 
+ <div class="section" id="GUID-446D467D-7FD4-45E2-85EB-E617B34D48E8__URLStructure-4AE44A29"> 
+  <p class="subhead1">URL Structure</p> 
+  <div class="p">
+   Access the Oracle SOA Cloud Service REST resources using the following URL structure:
+   <pre class="oac_no_warn" dir="ltr">https://<span class="italic">rest_server/resource-path </span></pre>
+  </div> 
+  <div class="p">
+   Where: 
+   <ul style="list-style-type: disc;"> 
+    <li> <p><code class="codeph"><span class="codeinlineitalic">rest_server</span></code> is the REST server to contact for your identity domain or Cloud Account. </p> 
+     <div class="p">
+      To find the server name: 
+      <ol> 
+       <li> <p>Sign in to the My Services dashboard for your identity domain or Cloud Account.</p> </li> 
+       <li> <p>In the list of services, click SOA.</p> </li> 
+       <li> <p>Locate the <span class="bold">REST Endpoint</span> field, which shows the URL to the REST server. </p> </li> 
+      </ol> 
+     </div> <p>For example: <code class="codeph">https://psm.us.oraclecloud.com:443 </code> or <code class="codeph">https://psm.europe.oraclecloud.com:443</code></p> <p>If you do not have access to the My Services dashboard, get the REST server URL from your Oracle Cloud Account administrator.</p> </li> 
+    <li> <p><code class="codeph"><span class="codeinlineitalic">resource-path</span></code> is the relative path that defines the REST endpoint. For a complete list of REST endpoints, see <a href="rest-endpoints.html" target="_blank">All REST Endpoints</a>. </p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <!-- class="section" --> 
+ <div class="section"> 
+  <p class="subhead1">Supported Methods</p> 
+  <p>You can perform basic CRUD operations (create, read, update, and delete) on your Oracle SOA Cloud Service instances using standard HTTP method requests, as summarized in the following table.</p> 
+  <div class="p"> 
+   <div class="tblformal"> 
+    <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes HTTP methods supported in the Oracle SOA Cloud Service REST API." frame="hsides" border="1" rules="rows"> 
+     <thead> 
+      <tr align="left" valign="top"> 
+       <th align="left" valign="bottom" width="20%" id="d2465e74"><span class="bold">HTTP Method</span></th> 
+       <th align="left" valign="bottom" width="20%" id="d2465e77"><span class="bold">Description</span></th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e82" headers="d2465e74 "><code class="codeph">GET</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e82 d2465e77 ">Retrieve information about the Oracle SOA Cloud Service instance or a service instance component, for example, a Managed Server.</td> 
+      </tr> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e88" headers="d2465e74 "><code class="codeph">POST</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e88 d2465e77 ">Create, stop, start, scale, backup, restore, or patch an Oracle SOA Cloud Service instance.</td> 
+      </tr> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e94" headers="d2465e74 "><code class="codeph">PUT</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e94 d2465e77 ">Update or delete an Oracle SOA Cloud Service instance, for example, scale up a node or apply a patch.</td> 
+      </tr> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e100" headers="d2465e74 "><code class="codeph">DELETE</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e100 d2465e77 ">Delete an Oracle SOA Cloud Service instance component, for example, delete a backup or Managed Server node.</td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <!-- class="inftblhruleinformal" --> 
+  </div> 
+ </div> 
+ <!-- class="section" --> 
+ <div class="section"> 
+  <p class="subhead1">Supported Headers</p> 
+  <p>The Oracle SOA Cloud Service REST API supports the following headers that may be passed in the header section of the HTTP request or response.</p> 
+  <div class="p"> 
+   <div class="tblformal"> 
+    <table cellpadding="4" cellspacing="0" class="Formal" title summary="This table describes HTTP request and response headers supported in the Oracle SOA Cloud Service REST API." frame="hsides" border="1" rules="rows"> 
+     <thead> 
+      <tr align="left" valign="top"> 
+       <th align="left" valign="bottom" width="20%" id="d2465e120"><span class="bold">Header</span></th> 
+       <th align="left" valign="bottom" width="20%" id="d2465e123"><span class="bold">Description</span></th> 
+       <th align="left" valign="bottom" width="20%" id="d2465e126"><span class="bold">Example</span></th> 
+      </tr> 
+     </thead> 
+     <tbody> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e131" headers="d2465e120 "><code class="codeph">Content-type</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e131 d2465e123 ">Media type of the request body. Required for POST and PUT requests.</td> 
+       <td align="left" valign="top" width="20%" headers="d2465e131 d2465e126 "><code class="codeph">Content-type: application/json</code></td> 
+      </tr> 
+      <tr align="left" valign="top"> 
+       <td align="left" valign="top" width="20%" id="d2465e140" headers="d2465e120 "><code class="codeph">X-ID-TENANT-NAME</code></td> 
+       <td align="left" valign="top" width="20%" headers="d2465e140 d2465e123 ">Identity domain name of the Oracle SOA Cloud Service instance, used for authentication.</td> 
+       <td align="left" valign="top" width="20%" headers="d2465e140 d2465e126 "><code class="codeph">X-ID-TENANT-NAME:ExampleIdentityDomain</code></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+   <!-- class="inftblhruleinformal" --> 
+  </div> 
+ </div> 
+ <!-- class="section" --> 
+</div></div>
+        </article>
+    </body>
+</html>

@@ -1,0 +1,1144 @@
+@charset "utf-8";
+/* CSS Document */
+
+html{margin: 0; padding: 0; height: 100%;}
+
+body {
+	font-size:11px;
+	font-family:  Geneva, Arial, Helvetica, sans-serif;
+	margin: 0px; /* it's good practice to zero the margin and padding of the body element to account for differing browser defaults */
+	padding: 0px;
+	text-align: left; /* this centers the container in IE 5* browsers. The text is then set to the left aligned default in the #container selector */
+	color: #333333;
+	background-image: url(../img-cloud/cloud-back-mobile.jpg);
+	background-repeat:repeat-x;
+}
+
+
+.bodyContent img{
+border:0;
+max-width:100%;
+height:auto;
+}
+
+	
+.fixedback{
+background-color: #FFFFFF;}
+
+	
+.hidden{
+position:absolute; 
+top:-999px
+}
+
+a:link{color:#000000; }
+a:visited{color:#000000; }
+a:hover{color:#1466B2;}
+
+.anchor{
+text-decoration:none;
+display:block;}
+
+.anchor a{text-decoration:none;}
+
+
+
+
+
+pre{
+	background-color:#efefef;
+	width:auto;
+	overflow: auto;
+	border-radius: 5px;
+	padding:8px;
+	z-index:1;
+	position:relative;
+	margin-left:15px;
+	margin-bottom:2em;
+	display:block;
+	}
+	
+	.hr{
+	width:100%;
+	height:1px;
+	border-bottom:1px solid #cccccc;
+	margin-top:10px;
+	margin-bottom:10px;
+	clear:both;
+	}
+	
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Header Styles  */  
+
+#container {
+	width: auto;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-left: 5px;
+	padding-top:0px;
+/*	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;*/}
+
+.container {
+	width:auto;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
+/*	margin: 0 auto;*/ /* the auto margins (in conjunction with a width) center the page */
+	text-align: left; /* this overrides the text-align: center on the body element. */
+	padding-top:0px;
+	padding-bottom:0px;
+	position: relative;}
+	
+	
+#headerbox{
+	position:relative;
+	top:0px;
+	width:auto;
+	border-bottom:1px solid  #cccccc;
+	background-image: none;
+
+}
+
+#headwrap{
+padding:8px;
+}
+
+#doclinks{
+width:130px;
+text-align:left; 
+float:left; 
+clear:both;
+padding-left:8px; 
+padding-top:4px; 
+font-size:10px;
+}
+#PrevNext{
+width:100%;
+float:left; 
+display:block;
+min-height:30px;
+}
+.next{
+float:right;
+display:inline;
+min-height:30px;
+}
+.prev{
+float:right;
+display:inline;
+min-height:30px;
+}
+#toggletoc{
+display:inline;
+float:right;
+z-index:1000; 
+border-bottom:0px; 
+min-height:30px;
+}
+
+#ContentOverlay{
+visibility:hidden;
+height:1px;
+}
+
+
+#navSpacer{
+visibility:hidden;
+position:inherit;
+height:1px;
+}
+
+#navSpacerfixed{
+visibility:hidden;
+position:inherit;
+height:1px;
+}
+
+#logobar{
+background: #000000 url(../img-cloud/logo.png);
+background-repeat:no-repeat;
+background-position:5px 0px;
+height:34px;
+width:100%;
+z-index:120;
+}
+
+
+#logoarea{
+float:left;
+width:175px;
+height:32px;
+}
+	
+/*  Breadcrumb Styles  */
+.breadcrumbs{
+font-size:1em;
+text-decoration:none;
+float:left;
+color:#000000;
+width:100%;
+height:auto;
+}
+
+.breadcrumbs a:link, .breadcrumbs a:active, .breadcrumbs a:visited{
+/*text-decoration:underline;
+*/color:#000000;
+}
+
+
+#advancedsearch{
+font-size:10px;
+float:right;
+z-index:1070;
+padding-top:1px;
+color:#000000;
+}
+#advancedsearch a{
+color:#000000;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*MISC LINKS IN HEADER*/
+#misclinks {
+width: 80%;
+float:left;
+clear:both;
+text-align:left;
+}
+#misclinks li{
+list-style: none;
+margin: 0;
+display:inline;
+}
+/*/////////////////////////////////*/
+
+.email a{
+background-image: url(../img-fmw/icn_email.gif);
+background-repeat: no-repeat;
+height: 17px;
+width: 74px;
+display: block;
+display:inline-block;
+cursor: pointer;
+}
+
+
+/*/////////////////////////////////*/
+.allbooks a{
+background-image: url(../img-fmw/icn_allbooks.gif);
+background-repeat: no-repeat;
+height: 17px;
+width: 83px;
+display:inline-block;
+cursor: pointer;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Tab SUB MENU */  
+
+ #tabsubmenu{ float:left; }
+ #tabsubmenu ul {
+		list-style: none;
+		float:left;
+		padding: 0;
+		margin: 0;
+		font-size:1em;
+		font-weight:bold;
+		text-align: center; 
+				width:100%;
+			}
+    
+	#tabsubmenu li {
+		float: left;
+		border: 1px solid #dfdfdf;
+		clear:both;
+		margin: 0;	
+		margin-right:3px;
+		text-align: center; 
+				width:100%;
+		}
+    
+	#tabsubmenu a {
+		text-decoration: none;
+		display: block;
+				background:#dfe4e7;
+		padding: 0.24em 1em;
+		color: #666;
+		text-align: center; 
+				width:100%;
+		
+	 }
+	
+	#tabsubmenu a:hover {
+		background: #fefefe;
+		color:#333333;
+	}
+	
+	#tabsubmenu #selected {
+		border-color: #cccccc;
+
+
+	}
+	
+	#tabsubmenu #selected a {
+	float:left;
+		color: black;
+		font-weight: bold;
+				background-color:#fff;
+	}
+	
+	#tabsubmenubottom {
+	clear: both;
+	}
+	
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*   SEARCH STYLES    */
+
+#mainSearch{
+	float:right;
+	position:relative;
+	margin:0px;
+/*	padding-top:8px;*/
+	z-index:3;
+
+}
+
+.searchitems{
+	display:inline-block;
+	float:right;
+}
+
+#topsearch{
+text-align:left; float:left; padding-top:5px; padding-left:5px;
+}
+.gobut{
+	margin-top:1px;
+	vertical-align:top;
+	margin-top:0px;
+	display:inline;
+}
+
+input{
+	border: 1px solid #efefef;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*   Content Styles*/
+
+
+#mainContent {/* Dont add padding*/
+	width:auto;
+	clear: both;
+}
+
+#mainContent2 {
+	padding: 0px; 
+	background: #fff;
+	width:100%;
+	overflow:visible;
+	padding-bottom:5px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  block styles */
+
+.bodyContent{
+	padding-top:8px;
+	display:block;
+	line-height:normal;
+	z-index:1;
+	position:relative;
+	clear:both;
+	font-size:1.2em;
+	padding-bottom: 5px;
+	width:auto;
+}
+
+
+
+#slick-toggle{
+/*background-color:#efefef;*/
+padding:3px; /*size of toc box before */
+width:100%;  
+text-decoration:none;
+}
+#slick-toggle a, #slick-toggle a:link, #slick-toggle a:active{
+text-decoration:none;
+}
+
+
+#toc{
+padding-top:5px;
+padding-bottom:5px;
+clear:both;
+/*visibility:hidden;*/
+}
+
+#tocflipnav{
+	position:relative;
+	right:0px;
+	height:auto;
+	border:1px solid #cccccc;
+	z-index:50;
+	padding:0px; /* size of toc drop down */
+	font-size:11px;
+	height:0px;
+	visibility:hidden;
+}
+
+tocflipnavMain{/* used for Main TOC page only */
+	position:relative;
+	/*top:0px;*/
+	right:0px;/*660*/
+	/*max-height:95%;*/
+	/*width:248px;*/
+	overflow:visible;
+	z-index:50;
+	padding:10px;
+}
+
+#tocflipnavflat{/* used for flat page only */
+	top:0px;
+	right:0px;
+	border-right-width:1px;
+	border-bottom-width:1px;
+	border-left-width:1px;
+	border-top-width:0;
+	border-color:#CCCCCC;
+	border-style:solid;
+	z-index:50;
+	position:relative;
+	padding:10px;
+	background-color:#ffffff;
+}
+
+#tocinpage{
+	width:auto;
+	padding:10px;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+.mainPage{
+position:relative;
+display:inline-block;
+float:left;
+line-height:1.5em;
+margin-bottom:15px;
+margin-left:0;
+padding-left:90px;
+padding-right:70px;
+padding-top:10px;
+}
+
+
+.DocList ul{
+margin:0;
+padding-left:15px; 
+left:-10px;
+float:none;
+margin-bottom:20px;
+
+}
+
+.DocList ul li{
+float:none;
+list-style-image: url(../img-common/303146.gif); /*red arrow*/
+/*list-style:none;*/
+
+font-weight:bold;
+font-size:14px;
+vertical-align:top;
+
+padding-left:0;
+margin:0px;
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+.DocList ul li ul {
+    padding-bottom:0px;
+    margin-bottom:0px;
+}
+.DocList ul li ul li{
+float:none;
+list-style-image:none;
+list-style:disc;
+font-weight:normal;
+font-size:12px;
+vertical-align: top;
+width: 100%;
+
+    padding-bottom:0px;
+    margin-bottom:0px;
+margin-top:0;
+}
+
+.DocList ul li ul li ul li,.DocList ul li ul li ul li a:link{
+
+	list-style-image: url(../img-common/bullet2.png); 
+    list-style-type:disc;
+	font-weight:normal;
+	color: #363636;
+	top: 3px;
+	vertical-align: top;
+	font-size:11px;
+	
+    padding-bottom:0px;
+    margin-bottom:0px;
+	
+}
+.DocList ul li ul li ul li a:hover{
+color:#1466B2;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  reused 3-col.  */  
+
+.left {
+    float: left;
+    width: auto;
+	font-size:12px;
+    margin: 0;
+	padding:0;
+	clear:both;
+}
+
+.right {
+    float: left;
+    width: auto;
+	font-size:12px;
+    margin: 0;
+	padding:0;
+	clear:both;
+}
+
+.middle {
+    float: left;
+    width: auto;
+	font-size:12px;
+    margin: 0;
+	padding:0;
+	clear:both;	
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*// mainBlurbs /*/
+
+.mainBlurbs{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	padding-left:40px;
+	padding-top:10px;
+	width:auto;
+}
+
+.mainBlurbs ul{
+	position: relative;
+	padding-left: 0px;
+	margin-left:0px;
+	margin-right:0px;
+}
+
+/*Top level list items*/
+.mainBlurbs ul li{
+	float: left;
+	list-style:none;
+	font-size:1.5em;
+	font-weight: bold;
+	color:#333333;
+	width:230px;
+	text-align:left;
+	padding-bottom:10px;
+	padding-right:5px;
+	padding-left: 0;
+	margin-top:0px;
+	margin-bottom:6px;
+	margin-right:40px;
+}
+
+/*Top level list items*/
+.mainBlurbs ul li ul li{
+	position: relative;
+	float: left;
+	list-style-type:disc;
+	font-size:12px;
+	font-weight:normal;
+	color:#666666;
+	text-align:left;
+	padding-top:0px;
+	padding-bottom:0px;
+	padding-left:0px;
+	margin-left:15px;
+	margin-top:6px;
+	margin-bottom:0px;
+	margin-right: 0px;
+}
+
+.mainBlurbs ul li ul li ul li{
+	position: relative;
+	float: left;
+	list-style-image: url(../img-common/bullet2.png); 
+    list-style-type: none;
+	font-weight:normal;
+	color:#666666;
+	width:180px;
+	text-align:left;
+	margin-top:6px;	
+}
+
+/*Top level menu link items style*/
+.mainBlurbs ul li a{
+	color:#333333;
+}
+.mainBlurbs ul li a:hover{
+color:#1466B2;
+}
+
+.mainBlurbs ul li  ul li  ul li a{
+}
+
+/*Similar to mainBlurbs */
+
+.mainBlock{
+	position:relative;
+	/*display:inline-block;*/
+	float:left;
+	line-height:1.5em;
+	padding-left:20px;
+	padding-top:20px;
+	width:auto;
+	list-style-type:disc;
+	font-size:12px;
+	padding-bottom:20px;
+	margin-bottom:0px;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*///// Library home tasks ul li /////*/
+
+#GreyHeaderBox {
+	background:#F7F7F7;
+	width:880px;
+	overflow:visible;
+	border:1px solid #CCCCCC;
+	float:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left: 50px;
+	
+	margin:0px;
+	color:#333333;
+	font-size:1.1em;
+}
+#GreyHeaderBox ul{
+  width:100%;
+  margin-bottom:20px;
+  overflow:hidden;
+ padding-left:0px;
+  margin-left:0px;
+}
+#GreyHeaderBox ul li{
+  float:left;
+  display:inline;
+  width:48%;
+  padding-bottom:4px;
+  padding-top:4px;
+
+ padding-left:0px;
+  margin-left:0px;
+
+
+
+}
+#GreyHeaderBox a:link, #GreyHeaderBox a:active{
+
+}
+
+/*///// Library home tasks ul li /////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+
+.FMWtitle {
+font-size:24px;
+line-height:24px;
+font-weight:bold;
+color:#000000;
+padding-right:6px;
+float:left;
+text-shadow: none;
+height:auto;
+width:100%;
+max-width:480px;
+}
+
+#versionselect{ 
+height:30px; 
+float:left; 
+margin:0; 
+padding:0; 
+margin-top:3px; 
+z-index:120;
+clear:both;
+}
+
+.wrapspacer{padding-left:40px;	}
+
+.FMWtasks{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	width:100%;
+	
+	margin-top:20px;
+	margin-bottom:15px;
+	padding-top:10px;
+	padding-bottom:15px;
+
+	border:1px solid #cccccc;
+	background-color:#fcfcfc;
+}
+.FMWtasks ul{
+	position:relative;
+	display:block;
+	list-style:none;
+	padding:0px;
+	margin:0px;
+
+}
+/*Top level list items*/
+.FMWtasks ul li{
+	float: left;
+	list-style:none;
+	text-align:left;
+	width:400px;
+	color:#333333;
+	padding-right:5px;
+	margin-right: 15px;
+}
+/*Top level list items*/
+.FMWtasks ul li ul li{
+	
+	color:#666666;
+	width:380px;
+	
+	padding-top:2px;
+	padding-bottom:2px;
+	
+	list-style:none;
+}
+
+/*Top level menu link items style*/
+.FMWtasks ul li a{
+	color:#333333;
+	/*text-decoration:none;*/
+
+}
+.FMWtasks ul li a:hover{
+color:#1466B2;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*// FMW LISTS ///////////////////////////////////////////////////////////////////////////////*/
+
+.FMWlists{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	margin-left:0px;
+	padding-left:50px;
+	padding-bottom:30px;
+	padding-top: 10px;
+	
+}
+.FMWlists ul{
+position: relative;
+display:block;
+list-style:none;
+padding: 0;
+margin:15px 0px 0px 0px;
+}
+/*Top level list items*/
+.FMWlists ul li{
+	float: left;
+	list-style:none;	
+	text-align:left;
+	font-size:14px;
+	width:380px;
+	color:#333333;
+	padding-right:5px;
+}
+
+/*Top level list items*/
+.FMWlists ul li ul li{
+	position: relative;
+	float:left;
+	display:block;
+	list-style:none;
+	font-size:13px;
+	line-height:15px;
+	color:#666666;
+	width:90%;
+	text-align:left;
+	padding-top:2px;
+	padding-bottom:18px;
+}
+
+/*Top level menu link items style*/
+.FMWlists ul li a{
+color:#333333;
+/*text-decoration:none;*/
+}
+
+.FMWlists ul li a:hover{
+color:#1466B2;
+}
+
+/*////////////////////////////////////////*/
+.FMWlists1col{
+	position:relative;
+	display:inline-block;
+	float:left;
+	line-height:1.5em;
+	margin-left:0px;
+	padding-bottom:30px;
+	padding-left:0px;
+}
+
+.FMWlists1col ul li {
+	position: relative;
+	float:left;
+	display:block;
+	list-style:none;
+	font-size:13px;
+	line-height:15px;
+	color:#666666;
+	width:80%;
+	text-align:left;
+	padding-top:2px;
+	padding-bottom:18px;
+}
+
+
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  Misc.  */  
+
+#pageTitle{
+padding-top:10px;
+font-size:24px; 
+color:#333333; 
+float:left;
+clear:both;
+width:auto;
+margin-bottom:20px;
+margin-top:10px;}
+
+
+.title {
+	font-weight:bold;
+	float:left;
+	color:#333333;
+	font-size:21px;
+	padding-top:10px;
+	line-height:1.5em;
+	clear:both;
+	width:100%;
+	}
+	
+	
+.title-product{
+	font-size:22px; 
+	margin:20px 0px 20px 0px; 
+	display:block; 
+	font-weight:bold;
+	}
+	
+	#bookicon{
+	visibility:hidden;
+	width:1px;
+	padding:0px;
+	background-image:none;
+	height:1px;
+	}
+	
+	
+	
+#booktitle{
+float:left; 
+padding-left:8px; 
+display:inline; 
+font-weight: bold;
+line-height:1.5em;
+font-size:14px;	
+padding-top:5px;
+color:#000000;
+width:100%;
+}
+	
+.title a:link, .title a:visited{
+text-decoration:none;
+}	
+
+#subtitle{
+	float:left;
+	display:block;
+	font-size:22px;
+	font-weight:normal;
+	color: #000000;
+	line-height:auto;
+	padding-left:5px;
+	padding-top:10px;
+	margin-top:10px;
+	width:100%;
+	height:auto;
+	}
+.subtitle{
+	float:left;
+	display:block;
+	font-size:22px;
+	font-weight:normal;
+	color: #000000;
+	padding-top:4px;
+	margin:0;
+	line-height:1.5em;
+	padding-left:5px;
+	max-width:480px;
+	height:auto;
+	}
+	
+.heading {
+	font-size:1.3em;
+	font-weight:bold;
+	color: #333333;
+	padding-top:10px;
+	/*padding-left:6px;  removed for all-bak page*/
+	line-height:1.5em;
+	}
+	
+	
+.smalltext{
+font-size:11px;}
+
+
+.icn1{
+float:left;}
+
+.icn1txt{
+float:left;
+margin-left:30px;}
+
+
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain a float */
+	clear:both;
+	overflow:auto;
+    height:0px;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.noborder{
+border:none;
+}
+
+.bold{
+font-weight:bold;
+}
+
+.greytype, .greytype a:link{
+	color:#7E7E7E;
+}
+.greytype a:hover{
+color:#1466B2;
+}
+
+.searchlabel{
+font-size:13px; 
+font-weight:bold;
+color:#000000;
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////////////////////////////////////////////*/
+/*  FOOTER  */
+
+
+.FootBookNav{
+	position:relative;
+	float:left;
+	line-height:1.5em;
+	width:auto;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	padding-left: 0px;
+	border-top:1px #cccccc solid;
+	/*border-bottom:1px #cccccc solid;
+	background-color:#f7f7f7;*/
+	/*border-bottom:1px #cccccc solid;*/ 
+}
+.BookNav{
+	position:relative;
+	/*	display:inline-block;*/
+	float:left;
+	line-height:1.5em;
+	width:928px;
+	padding-top:0px;
+	padding-right:0px;
+	padding-bottom:0px;
+	padding-left: 0px;
+	/*border-top:1px #cccccc solid;*/
+	background-color:#ffffff;
+	/*border-bottom:1px #cccccc solid;*/ 
+}
+
+#footer{background:#b9d6fe;
+	background-image:url(../img-cloud/cloud-footer.jpg);
+	background-repeat:repeat-x;
+	border:1px solid #b1bbca;}
+
+
+ #footer a:link, #footer a:hover, #footer a:visited, #footer a:active  {
+	padding: 0; /* this padding matches the left alignment of the elements in the divs that appear above it. */
+	/*background:#333333;*/
+	clear:both;
+	color:#333333;
+	}
+#footer p {
+	margin: 0; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	padding: 10px 0; /* padding on this element will create space, just as the the margin would have, without the margin collapse issue */
+}
+
+
+.footerBlurbs{
+	margin-left:0px;
+padding-bottom:10px;
+padding-top:10px;
+}
+.footerBlurbs ul{
+	position: relative;
+	float:left;
+	clear:both;
+	list-style:none;
+	padding-left: 0;
+	margin-left:0;
+	text-align:left;
+/*	margin-bottom:15px;
+	padding-bottom:10px;*/
+}
+/*Top level list items*/
+.footerBlurbs ul li{
+	float: left;
+	clear:both;
+	list-style:none;
+	font-size:14px;
+	color:#ffffff;
+	width:auto;
+	margin-left:10px;
+	/*margin-bottom: 5px;*/
+	margin-right:10px;
+/*	padding-left: 0;
+	padding-right:5px;*/
+
+}
+
+/*Top level list items*/
+.footerBlurbs ul li ul li{
+	position: relative;
+	float: left;
+	list-style:none;
+	font-size:12px;
+	color:#666666;
+	width:auto;
+	text-align:left;
+	padding-top:4px;
+	/*padding-bottom:3px;
+	padding-left:0px;
+	padding-right:20px;
+	margin-right:25px;
+	margin-left:0px;*/
+	border-bottom:solid;
+	border-bottom-color:#b1bbca;
+	border-bottom-width:1px;
+	}
+	
+/*Top level menu link items style*/
+.footerBlurbs ul li {
+color:#CCCCCC;
+text-decoration:none;
+display:block;
+}
+
+.footerBlurbs ul li a:active, .footerBlurbs ul li a:link,.footerBlurbs ul li a:visited{
+color: #ADADAD;
+text-decoration:none;
+}
+
+.footerBlurbs ul li a:hover{
+color:#ffffff;
+text-decoration:none;
+}
+
+
+/* social icons */
+
+img.socialIcon{width:16px;height:16px;background-image:url(../img-common/social_sprite.png);background-repeat:no-repeat;background-color:transparent}
+img.socialIcon.linkedin{background-position:-72px -20px}
+img.socialIcon.rss{background-position:-88px -20px}
+img.socialIcon.twitter{background-position:-104px -20px}
+img.socialIcon.youtube{background-position:-120px -20px}
+img.socialIcon.facebook{background-position:-136px -20px}
+
+/*///////////////////////////////////*/
+
+.doclistlinks, .doclistlinks a:link{
+	font-size:10px;
+	text-align:right;
+	padding-left: 4px;
+	padding-left: 4px;
+	color: #666666;
+	text-decoration:none;
+}
+
+
+.doclistlinks a:hover{
+color:#1466B2;
+font-size:10px;
+}
+
+.linktype, .linktype a:link, .linktype a:active{
+	color:#333333;
+	font-size:12px;
+	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.linktype a:hover{
+	color: #0066CC;
+	font-size:12px;
+
+}
+
+.copyright{
+margin-top:20px}

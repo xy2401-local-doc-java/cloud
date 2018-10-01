@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- saved from url=(0023)https://docs.oracle.com -->
+        <title>REST API for Oracle Integration Cloud Service, Version 2</title>
+        <link rel="stylesheet" href="/sp_common/rest-template/ohc-rest-template/css/rest.css">
+        <script>
+            document.write('<style type="text/css">');
+            document.write('body > .noscript, body > .noscript ~ * { opacity: 0; }');
+            document.write('</style>');
+        </script>
+        <script data-main="/sp_common/rest-template/ohc-rest-template/js/rest-config" src="/sp_common/rest-template/requirejs/require.js"></script>
+        <script>
+            if(window.require === undefined) {
+                document.write('<script data-main="sp_common/rest-template/ohc-rest-template/js/rest-config" src="sp_common/rest-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/rest-template/ohc-rest-template/css/rest.css" rel="stylesheet">');
+            }
+        </script>
+        <meta name="description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta property="og:site_name" content="Oracle Help Center">
+        <meta property="og:title" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <meta property="og:description" content="Use the Oracle Integration Cloud Service REST API to manage and monitor integrations, adapters, connections, lookups, and packages.">
+        <meta name="generator" content="Oracle REST API Publisher">
+        <link rel="shortcut icon" href="/sp_common/rest-template/ohc-common/img/favicon.ico">
+        <meta name="application-name" content="REST API for Oracle Integration Cloud Service, Version 2">
+        <link type="application/swagger+json" title="Swagger 2.0" href="swagger.json" rel="alternate">
+        <link rel="prev" href="QuickStart.html" title="Previous" type="text/html">
+        <link rel="next" href="Authentication.html" title="Next" type="text/html">
+    <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+    <body>
+        <div class="noscript alert alert-danger text-center" role="alert">
+            <a class="pull-left" href="QuickStart.html"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+            <a class="pull-right" href="Authentication.html">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+            <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        </div>
+        <article>
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">REST API for Oracle Integration Cloud Service, Version 2</a></li>
+                    <li class="active">Get Started</li>
+                </ol>
+		<p class="draftsubtitle"></p>
+            </header>
+            <div class="dita-content"><h2 class="title topictitle1">Send Requests</h2> 
+<div class="body conbody">
+ <p class="p">Use the following guidelines when sending requests using the Oracle Integration Cloud Service REST API.</p> 
+ <div class="section">
+  <h3 class="title sectiontitle">URL Structure</h3>
+  <div class="p">
+   Access the Oracle Integration Cloud Service REST resources using the following URL structure:
+   <pre class="pre">https://example.com/icsapis/v1/</pre> 
+  </div> 
+  <div class="p">
+   Where:
+   <ul class="ul">
+    <li class="li"><p class="p"><samp class="ph codeph">example.com</samp> - Host where Oracle Integration Cloud Service is running.</p> <p class="p">The Service URL listed in the welcome email you receive with your trial or purchased subscription contains this host. Here is an example Service URL:</p> <pre class="pre">https://icssvc-acme.ics.dc1.dn1.oraclecorp.com/ics</pre> <p class="p">The host in this case is <samp class="ph codeph">icssvc-acme.ics.dc1.dn1.oraclecorp.com</samp>. You use the same host to access the Oracle Integration Cloud Service REST API as you do to access Oracle Integration Cloud Service itself.</p> <p class="p">All the examples in this document use <samp class="ph codeph">example.com</samp> as the host for brevity.</p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph">/icsapis/v1/</samp> - Fixed prefix for Oracle Integration Cloud Service REST resources. For a complete list of resources, see <a class="xref" href="rest-endpoints.html">REST Endpoints</a>.</p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Common Path Parameters</h3>
+  <p class="p">The following table describes each common path parameter. The path parameters are supported with some API operations, but not all.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table describes common path parameters in the Oracle Integration Cloud Service REST API.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e64"><strong class="ph b">Name</strong></th> 
+       <th class="entry" valign="top" width="80%" id="d383e67"><strong class="ph b">Description</strong></th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e72" headers="d383e64 "><samp class="ph codeph">id</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e72 d383e67 "><p class="p">The ID, also called the identifier, is the same as the connection or integration name, but in upper case.</p> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e80" headers="d383e64 "><samp class="ph codeph">version</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e80 d383e67 "><p class="p">Version numbers are in the format <samp class="ph codeph">xx.yy.zzzz</samp>, where <samp class="ph codeph">xx</samp> is the major version and <samp class="ph codeph">yy.zzzz</samp> is the minor version.</p> <p class="p">If you don't know the version number, you can try the default version number, which is <samp class="ph codeph">01.00.0000</samp>.</p> <p class="p">Integrations having the same code, but a different major version, can be active at the same time.</p> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Common Query Parameters</h3>
+  <p class="p">The following table describes each common query parameter. Pass the parameters in URL-encoded format. The query parameters are supported with some API operations, but not all.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table describes common query parameters in the Oracle Integration Cloud Service REST API.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e116"><strong class="ph b">Name</strong></th> 
+       <th class="entry" valign="top" width="80%" id="d383e119"><strong class="ph b">Description</strong></th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e124" headers="d383e116 "><samp class="ph codeph">q</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e124 d383e119 "><pre class="pre codeblock">{name like '<em class="ph i">QUERY</em>'} &amp; {status like '<em class="ph i">STATUS</em>'} &amp; {type like '<em class="ph i">TYPE</em>'}</pre> 
+        <div class="p">
+         where:
+         <ul class="ul">
+          <li class="li"><p class="p"><em class="ph i"><samp class="ph codeph">QUERY</samp></em> is a text query string.</p> </li> 
+          <li class="li"><p class="p"><em class="ph i"><samp class="ph codeph">STATUS</samp></em> is one of the following:</p> 
+           <ul class="ul">
+            <li class="li"><p class="p"><samp class="ph codeph">ALL</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">INPROGRESS</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">CONFIGURED</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">ACTIVATED</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">FAILEDACTIVATION</samp></p> </li> 
+           </ul> </li> 
+          <li class="li"><p class="p"><em class="ph i"><samp class="ph codeph">TYPE</samp></em> is one of the following:</p> 
+           <ul class="ul">
+            <li class="li"><p class="p"><samp class="ph codeph">developed</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">custom</samp></p> </li> 
+            <li class="li"><p class="p"><samp class="ph codeph">prebuilt</samp></p> </li> 
+           </ul> </li> 
+         </ul> 
+        </div> 
+        <div class="p">
+         Not all endpoints that use this parameter support name, status, and type. Some endpoints support name only or name and status only. If this parameter is omitted, all items are returned. The wild card character is 
+         <samp class="ph codeph">*</samp>.
+         <pre class="pre codeblock">q={name like 'org'} 
+   q=%7Bname%20like%20%27org%27%7D
+q={status like 'INPROGRESS'} 
+   q=%7Bstatus%20like%20%27INPROGRESS%27%7D
+q={name like 'org'} &amp; {status like 'all'}
+   q=%7Bname%20like%20%27org%27%7D%20%26%20%7Bstatus%20like%20%27all%27%7D
+</pre> 
+        </div> </td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e202" headers="d383e116 "><samp class="ph codeph">orderBy</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e202 d383e119 ">
+        <div class="p">
+         Either 
+         <samp class="ph codeph">name</samp> or 
+         <samp class="ph codeph">time</samp>. If this parameter is omitted, the returned items are sorted by time in descending order.
+         <pre class="pre codeblock">orderBy=name
+orderBy=time
+</pre> 
+        </div> </td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Methods</h3>
+  <p class="p">You can perform basic CRUD operations (create, read, update, and delete) on Oracle Integration Cloud Service using standard HTTP method requests, as summarized in the following table.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table describes HTTP methods supported in the Oracle Integration Cloud Service REST API.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e230"><strong class="ph b">HTTP Method</strong></th> 
+       <th class="entry" valign="top" width="80%" id="d383e233"><strong class="ph b">Description</strong></th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e238" headers="d383e230 "><samp class="ph codeph">GET</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e238 d383e233 ">Retrieve information about integration states, monitoring, and packaging.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e244" headers="d383e230 "><samp class="ph codeph">POST</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e244 d383e233 ">Import, activate, or deactivate integrations and retrieve or create lookups.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e250" headers="d383e230 "><samp class="ph codeph">PUT</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e250 d383e233 ">Import (update) integrations.</td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e256" headers="d383e230 "><samp class="ph codeph">DELETE</samp></th> 
+       <td class="entry" valign="top" width="80%" headers="d383e256 d383e233 ">Delete integrations.</td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Media Types</h3>
+  <p class="p">The following media types are supported by the Oracle Integration Cloud Service REST API:</p> 
+  <div class="p">
+   <ul class="ul">
+    <li class="li"><p class="p"><samp class="ph codeph">application/json</samp></p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph">application/xml</samp></p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph">application/octet-stream</samp></p> </li> 
+    <li class="li"><p class="p"><samp class="ph codeph">multipart/form-data</samp></p> </li> 
+   </ul> 
+  </div> 
+ </div> 
+ <div class="section">
+  <h3 class="title sectiontitle">Supported Headers</h3>
+  <p class="p">The Oracle Integration Cloud Service REST API supports the following headers that may be passed in the header section of the HTTP request or response.</p> 
+  <div class="p"> 
+   <div class="tablenoborder">
+    <span class="desc tabledesc">This table describes HTTP request and response headers supported in the Oracle Integration Cloud Service REST API.</span>
+    <table cellpadding="4" cellspacing="0" summary="" class="table" frame="border" border="1" rules="all">
+     <thead class="thead" align="left">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e300"><strong class="ph b">Header</strong></th> 
+       <th class="entry" valign="top" width="45%" id="d383e303"><strong class="ph b">Description</strong></th> 
+       <th class="entry" valign="top" width="35%" id="d383e306"><strong class="ph b">Example</strong></th> 
+      </tr> 
+     </thead> 
+     <tbody class="tbody">
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e311" headers="d383e300 "><samp class="ph codeph">Content-Type</samp></th> 
+       <td class="entry" valign="top" width="45%" headers="d383e311 d383e303 ">Media type of the body of the request. Required for POST and PUT requests.</td> 
+       <td class="entry" valign="top" width="35%" headers="d383e311 d383e306 "><samp class="ph codeph">Content-Type: application/json</samp></td> 
+      </tr> 
+      <tr class="row">
+       <th class="firstcol" valign="top" width="20%" id="d383e320" headers="d383e300 "><samp class="ph codeph">Accept</samp></th> 
+       <td class="entry" valign="top" width="45%" headers="d383e320 d383e303 ">Media type of the body of the response.</td> 
+       <td class="entry" valign="top" width="35%" headers="d383e320 d383e306 "><samp class="ph codeph">Accept: application/json</samp></td> 
+      </tr> 
+     </tbody> 
+    </table> 
+   </div> 
+  </div> 
+ </div> 
+</div></div>
+        </article>
+    </body>
+</html>

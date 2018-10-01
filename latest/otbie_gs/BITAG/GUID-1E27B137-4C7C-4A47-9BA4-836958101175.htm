@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Importing a Batch of User Accounts</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5" />
+<meta name="description" content="Identity domain administrator can import a batch of users accounts by using a comma-separated values (CSV) file that lists the information required to set up each user account. Make sure the user logins match the Fusion user name." />
+<meta name="dcterms.created" content="2015-11-27T05:27:18Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Administering Your Deployment for Oracle Transactional Business Intelligence Enterprise" />
+<meta name="dcterms.identifier" content="E54436-04" />
+<meta name="dcterms.isVersionOf" content="BITAG" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-2C7EF4C3-36CB-4D1A-AD76-B92D89E55D53.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-5A6B7ECB-07D3-456E-B50C-D24FC83A49FC.htm" title="Next" type="text/html" />
+<link rel="alternate" href="BITAG.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="BITAG.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="BITAG.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Skip Headers</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns"><a id="GUID-1E27B137-4C7C-4A47-9BA4-836958101175"></a> <span id="PAGE" style="display:none;">21/47</span> <!-- End Header -->
+<h1 id="BITAG-GUID-1E27B137-4C7C-4A47-9BA4-836958101175" class="sect1">Importing a Batch of User Accounts</h1>
+<div>
+<p>Identity domain administrator can import a batch of users accounts by using a comma-separated values (CSV) file that lists the information required to set up each user account. Make sure the user logins match the Fusion user name.</p>
+<div class="section">
+<p class="subhead1">Task 1: Create a Comma-Separated Values File</p>
+<p>The CSV file is a simple text file in a tabular format (rows and columns). The first row in the file, which defines the columns (fields) in your table, must have these exact column headings:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>First Name</p>
+</li>
+<li>
+<p>Last Name</p>
+</li>
+<li>
+<p>Email</p>
+</li>
+<li>
+<p>User Login</p>
+</li>
+</ul>
+<p>For each user account, you create a new row (line) and enter data into each column (field). Each row equals one record.</p>
+<p>To create a CSV file, you can use a standard spreadsheet application, such as Microsoft Excel or Google Spreadsheet, or you can use a text editor, such as Notepad or TextPad. You must be sure to save the file in a valid CSV format.</p>
+<p>Spreadsheet applications make it easy to create, edit, and save CSV files. You can use standard features to add and delete rows of data, edit individual fields, search for records, or sort the list. The illustration shows an example of user account data defined in a Microsoft Excel file. The layout lets you easily review the data.</p>
+<div class="figure" id="GUID-1E27B137-4C7C-4A47-9BA4-836958101175__GUID-2DEC1E10-4AED-4EE1-8BB5-7797C86CAD6F"><img width="508" height="262" src="img/GUID-2908FBA7-0D17-4AC5-99BC-4617E9106653-default.gif" alt="Description of the Microsoft Excel File follows" title="Description of the Microsoft Excel File follows" /><br />
+<a href="img_text/GUID-472344A3-7E03-4C4A-90D0-A2D64AF2CDEA.htm">Description of the Microsoft Excel File</a></div>
+<!-- class="figure" -->
+<p>When you save your spreadsheet as type <span class="bold">CVS (Comma delimited) (*.csv)</span>, a comma separates the values in each row. For example, the illustration shows the data from the Microsoft Excel spreadsheet, saved as a CSV file, and opened in Notepad:</p>
+<div class="figure" id="GUID-1E27B137-4C7C-4A47-9BA4-836958101175__GUID-D3060F5C-972B-4206-B67F-34E83BD6CB2B"><img width="446" height="180" src="img/GUID-00EBF273-C25B-4720-89F9-88EBAF5A1336-default.gif" alt="Description of the Notepad File follows" title="Description of the Notepad File follows" /><br />
+<a href="img_text/GUID-B5AAB0E6-0032-4455-9D8E-27D0315C9AF6.htm">Description of the Notepad File</a></div>
+<!-- class="figure" -->
+<div class="p">The CSV file must adhere to the following requirements:
+<ul style="list-style-type: disc;">
+<li>
+<p>Must be ANSI or UTF-8 encoded.</p>
+</li>
+<li>
+<p>Must not be larger than 256 KB (maximum file size).</p>
+</li>
+<li>
+<p>Must use a comma as the delimiter between the values.</p>
+</li>
+<li>
+<p>Must include three columns with these exact headings: <span class="bold">First Name</span>, <span class="bold">Last Name</span>, and <span class="bold">Email</span>.</p>
+</li>
+<li>
+<p>May include an optional fourth column with this exact heading: <span class="bold">User Login</span>. The User Login should be the same as the FUSION user name, as it will in some cases affect the data security applied to the user. For example, for My Territories in sales the username is used to enforce data security.</p>
+<div class="infobox-note" id="GUID-1E27B137-4C7C-4A47-9BA4-836958101175__GUID-291A5FA5-61E9-439A-BF57-4FB6E1F0C134">
+<p class="notep1">Note:</p>
+<p>In the CSV file, the column heading is User Login. However, the value you enter in the User Login column maps to the User Name on the Users page in My Services. This value, also called the user name, is the name the user enters on the Sign In page.</p>
+</div>
+<p>The user name (that is, the value in the User Login column), along with the password and the name of the identity domain, define a user's sign-in credentials.</p>
+<p>If you do not include a value in the User Login column, the system makes the user name the same as the email address unless the user name is currently in use or had previously been in use within the current domain. For these cases, the system adds a number to the email address to create a unique value for the user name.</p>
+<p>The maximum length of the user name is 80 characters.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Task 2: Import the Comma-Separated Values File</p>
+<div class="p">To import a comma-separated values (CSV) file and automatically add a batch of user accounts to the identity management system:
+<ol>
+<li>
+<p>Sign in to My Services. Be sure to specify the appropriate identity domain.</p>
+</li>
+<li>
+<p>Click <span class="bold">Users</span>.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Users</span> tab.</p>
+</li>
+<li>
+<p>Click <span class="bold">Import</span>.</p>
+</li>
+<li>
+<p>Enter the name of the CSV file to import. Alternatively, you can click <span class="bold">Browse</span> to locate and select the CSV file to use.</p>
+</li>
+<li>
+<p>Click <span class="bold">Import</span>. A message confirms that the import is in progress.</p>
+<p>The system begins the process of creating the user accounts. The time required to create the user accounts depends on several factors such as system load, import requests in progress, and number of user entries in the CSV file.</p>
+<p>When the processing of the CSV file is finished, you receive an email with the following subject line:</p>
+<p><span class="bold">User Loading completed</span></p>
+<p>The email provides the following information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The total number of user records processed in the CSV file</p>
+</li>
+<li>
+<p>The number of user records successfully uploaded</p>
+</li>
+<li>
+<p>The number of user records that failed</p>
+</li>
+<li>
+<p>Details about failure and errors, if any</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Task 3: Review and Fix Any Reported Errors</p>
+<p>In the <span class="bold">User Loading completed</span> email that you receive from Oracle Transactional Business Intelligence Enterprise, review the list of errors, if any. Some of the reasons the system could not create a user account include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Invalid email format</p>
+</li>
+<li>
+<p>Missing information</p>
+</li>
+<li>
+<p>User account already exists</p>
+</li>
+<li>
+<p>Invalid CSV file</p>
+</li>
+</ul>
+<p>If there are only a few invalid accounts, you may want to create these user accounts manually. See <a href="GUID-2C7EF4C3-36CB-4D1A-AD76-B92D89E55D53.htm" title="Create one user account.">Creating One User Account at a Time</a> for details.</p>
+<p>If there are many invalid accounts, you may want to create a new CSV file and import the file again.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Task 4: Assign Roles and Provide Access Details to Users</p>
+<p>After the user accounts are created, you must explicitly assign one or more roles to the users. Roles control access to applications, resources, and services. For more information, see .</p>
+<p>When you use the Import function in My Services to add user accounts, the system automatically generates a temporary password for each user. After the processing of the CSV file is finished and the user accounts are created, Oracle Transactional Business Intelligence Enterprise automatically sends your users an email with details about the account created for them.</p>
+<div class="p">The email includes the following sign-in credentials:
+<ul style="list-style-type: disc;">
+<li>
+<p>The user's sign-in name (also referred to as the user login).</p>
+</li>
+<li>
+<p>A temporary password. Users are forced to change their temporary password when they sign in the first time.</p>
+<p>If users forget their password, identity domain administrators can reset it.</p>
+</li>
+<li>
+<p>The name of the identity domain.</p>
+</li>
+</ul>
+</div>
+<div class="p">The user has the required credentials to sign in, but needs to know the appropriate URLs. The identity domain administrator or the service administrator must:
+<ul style="list-style-type: disc;">
+<li>
+<p>Provide the URL for the My Services application to the user.</p>
+</li>
+<li>
+<p>Provide the Oracle Transactional Business Intelligence Enterprise URL to the user.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment24">
+<tr>
+<td class="cellalignment34">
+<table class="cellalignment29">
+<tr>
+<td class="cellalignment28"><a href="GUID-2C7EF4C3-36CB-4D1A-AD76-B92D89E55D53.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment28"><a href="GUID-5A6B7ECB-07D3-456E-B50C-D24FC83A49FC.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright &nbsp;&copy;&nbsp;2015, Oracle and/or its affiliates. All rights reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment36">
+<table class="cellalignment27">
+<tr>
+<td class="cellalignment28"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment28"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

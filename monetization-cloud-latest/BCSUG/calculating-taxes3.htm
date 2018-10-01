@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Calculating taxes</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="You can configure Oracle Monetization Cloud to calculate the amount of taxes that your customers owe when they purchase and use your products and services." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="calculating-taxes1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="general-ledger.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C9C93C86-8EC0-4FEB-BB8C-8BECD046B387"></a> <span id="PAGE" style="display:none;">56/67</span> <!-- End Header -->
+<a id="BCSUG1042"></a><a id="BCSUG896"></a><a id="BCSUG539"></a>
+<h1 id="BCSUG-GUID-C9C93C86-8EC0-4FEB-BB8C-8BECD046B387" class="sect1"><span class="enumeration_chapter">47</span> Calculating taxes</h1>
+<div>
+<p>You can configure Oracle Monetization Cloud to calculate the amount of taxes that your customers owe when they purchase and use your products and services.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="calculating-taxes3.htm#GUID-7D30EB4A-71E2-47A2-86E8-5A244B233254">Calculating taxes</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-C582CC4D-2676-43D4-A456-9E935F730848">Creating tax codes</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-1B2CD99B-A0C8-4823-B69B-9E21CBADF60A">Creating tax suppliers</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-117714A2-AF43-43F6-88C8-48446DB3D28F">When to calculate taxes</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-6EFF497A-9F5F-42AB-A6E5-993BBA602643">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG540"></a>
+<div class="props_rev_3"><a id="GUID-7D30EB4A-71E2-47A2-86E8-5A244B233254"></a>
+<h2 id="BCSUG-GUID-7D30EB4A-71E2-47A2-86E8-5A244B233254" class="sect2">Calculating taxes</h2>
+<div>
+<div class="section">To specify how Oracle Monetization Cloud calculates the taxes your customers owe, you do the following:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create one or more tax codes, which define the tax rate.</span></li>
+<li class="stepexpand"><span>Define one or more tax suppliers.</span></li>
+<li class="stepexpand"><span>Specify how to handle taxes when you:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Create charge offers. In a charge offer, you specify the tax supplier. In a charge, you specify the tax code to use and when to apply taxes: either when the charge is calculated or during billing. See <a href="calculating-taxes3.htm#GUID-117714A2-AF43-43F6-88C8-48446DB3D28F">When to calculate taxes</a>.</p>
+</li>
+<li>
+<p>Create a billing-time discount. When you add a billing-time discount, you can specify the tax code to use and when to apply taxes (never or during billing). See <a href="creating-discount-offers2.htm#GUID-59C2E661-D042-4D88-813A-3C10F2A22CB8">Applying taxes to billing-time discounts</a>.</p>
+</li>
+<li>
+<p>Create an account. For example, you can specify that an account is exempt from city taxes. See <a href="managing-customer-tax-settings1.htm#GUID-E38DB37A-2067-47FF-BE75-CAB4A006F61D">Changing your customer's tax settings</a>.</p>
+</li>
+<li>
+<p>Perform an adjustment, dispute, or settlement on a customer's bill. You can choose whether to apply taxes when you perform these actions. Taxed adjustments, disputes, and settlements effectively reverse whatever tax was levied on the original item. See <a href="adjusting-balances1.htm#GUID-84CC0D77-4C6C-4015-8EC2-827802753095" title="A CSR usually performs an adjustment to correct a problem. For example, a CSR might adjust a customer's balance when your company charged the entire monthly fee for a service that was unavailable for a few days.">Adjusting balances</a> and <a href="managing-disputes-and-settlements1.htm#GUID-37FE2F75-9EA6-4E38-9C16-E015FDAC6382" title="A CSR creates a dispute in Oracle Monetization Cloud when a customer disagrees with the amount he or she is asked to pay and the problem requires investigation before it can be resolved. Disputes and settlements credit or debit the customer's balance, but don't return money to the customer directly.">Managing disputes and settlements</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<a id="BCSUG897"></a>
+<div class="props_rev_3"><a id="GUID-C582CC4D-2676-43D4-A456-9E935F730848"></a>
+<h2 id="BCSUG-GUID-C582CC4D-2676-43D4-A456-9E935F730848" class="sect2">Creating tax codes</h2>
+<div>
+<p>Tax codes define the amount or percentage of tax to apply to a charge, and the tax jurisdiction (state or local). When you create pricing components, you specify the tax code to apply to charges. For example, when you create a charge offer for a phone service, you might use different tax codes for the purchase fee and the monthly subscription fee.</p>
+<p>You can create tax codes to support different types of tax calculation:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="calculating-taxes3.htm#GUID-3EF12D27-F1A2-4860-B03F-C5518990E8C6">Creating simple tax codes</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-2593DD52-16C6-4A6D-A373-427D3B27AEEB">Creating location-based tax codes</a></p>
+</li>
+<li>
+<p><a href="calculating-taxes3.htm#GUID-000E5380-B817-4F02-B0C6-F04F557D50CD">Using tax codes from a taxation gateway</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG898"></a>
+<div class="props_rev_3"><a id="GUID-3EF12D27-F1A2-4860-B03F-C5518990E8C6"></a>
+<h3 id="BCSUG-GUID-3EF12D27-F1A2-4860-B03F-C5518990E8C6" class="sect3">Creating simple tax codes</h3>
+<div>
+<p>Simple tax codes apply a rate to a charge, independent of location.</p>
+<p>Use Business Configuration to create simple tax codes. Select <span class="bold">Finance</span>, the <span class="bold">Tax Code</span> tab, the <span class="bold">Simple</span> tab, and then <span class="bold">Edit</span>.</p>
+<p>Enter the following information about your simple tax code:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The tax code name; for example, <span class="bold">usage</span> or <span class="bold">VAT</span>. The name is displayed in Offer Design.</p>
+</li>
+<li>
+<p>The tax rate type: amount or percentage.</p>
+</li>
+<li>
+<p>The tax rate, such as 5% or 0.08.</p>
+</li>
+<li>
+<p>The GL ID for the tax code. Each tax code can be associated with only one GL ID. Each tax code must use a different GL ID.</p>
+</li>
+<li>
+<p>(Optional) The dates during which the rate applies. You can define multiple rates for a tax code with different validity dates for each rate.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG899"></a>
+<div class="props_rev_3"><a id="GUID-2593DD52-16C6-4A6D-A373-427D3B27AEEB"></a>
+<h3 id="BCSUG-GUID-2593DD52-16C6-4A6D-A373-427D3B27AEEB" class="sect3">Creating location-based tax codes</h3>
+<div>
+<div class="section">To create location-based tax codes:</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create a comma separated value (CSV) file that defines the locations and tax rates. A CSV file can be a text file or a spreadsheet.</span>
+<div>One CSV file can contain data for only one tax code.</div>
+</li>
+<li class="stepexpand"><span>Upload the CSV file. In Business Configuration, select <span class="bold">Finance</span>, the <span class="bold">Tax Code</span> tab, the <span class="bold">Location Based</span> tab, and then <span class="bold">Import CSV</span>.</span>
+<div>When you import the CSV file, you must enter the GL ID for the tax code. One tax code can be associated with only one GL ID. Also, each tax code must use a different GL ID.</div>
+</li>
+</ol>
+</div>
+<a id="BCSUG1043"></a>
+<div class="props_rev_3"><a id="GUID-6B88F6BD-9242-463C-B98C-F729057D37F2"></a>
+<h4 id="BCSUG-GUID-6B88F6BD-9242-463C-B98C-F729057D37F2" class="sect4">About the CSV file</h4>
+<div>
+<div class="section">
+<p>The CSV file includes the tax code name, location, and rates. The first row defines the fields that are included in the file. The other rows specify the values of those fields, including the rates for each locale. For example, to define a tax code named <span class="bold">usage</span> with rates for city and state taxes:</p>
+<pre dir="ltr">
+TAXCODE,CITY,STATE,COUNTRY,ZIPCODE,TAX_JUR_CITY,TAX_JUR_STATE,TAX_JUR_COMBINED
+usage,SACRAMENTO,CA,USA,94203,0.01,0.07,0.08
+</pre>
+<p>In this example, the city tax rate is 0.01, the state tax rate is 0.07, and the combined city and state tax rate is 0.08.</p>
+<p>The table below describes the fields used in the CSV file. Each row must contain the required fields and at least one tax jurisdiction (<span class="bold">TAX_JUR</span>) field.</p>
+<div class="infobox-note" id="GUID-6B88F6BD-9242-463C-B98C-F729057D37F2__GUID-88EEA84A-1BE0-45EC-80C1-53FF85316A80">
+<p class="notep1">Note:</p>
+<p>You must provide a TAX_JUR_COMBINED value for each row of your CSV file if you configure Oracle Monetization Cloud to use the highest or lowest rate when it finds multiple tax rates for a charge.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-6B88F6BD-9242-463C-B98C-F729057D37F2__GUID-BB88B917-0DCA-48D0-B136-67B8F67F15D7">
+<table class="cellalignment201" summary="This table shows fields in tax codes.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment202" id="d23854e239">Header</th>
+<th class="cellalignment203" id="d23854e242">Type</th>
+<th class="cellalignment204" id="d23854e245">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e250" headers="d23854e239">
+<p>TAXCODE</p>
+</td>
+<td class="cellalignment206" headers="d23854e250 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e250 d23854e245">
+<p>The name of the tax code</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e260" headers="d23854e239">
+<p>CITY</p>
+</td>
+<td class="cellalignment206" headers="d23854e260 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e260 d23854e245">
+<p>The name of the city (required)</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e270" headers="d23854e239">
+<p>STATE</p>
+</td>
+<td class="cellalignment206" headers="d23854e270 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e270 d23854e245">
+<p>The name of the state or province (required)</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e280" headers="d23854e239">
+<p>COUNTRY</p>
+</td>
+<td class="cellalignment206" headers="d23854e280 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e280 d23854e245">
+<p>The name of the country (required)</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e290" headers="d23854e239">
+<p>ZIPCODE</p>
+</td>
+<td class="cellalignment206" headers="d23854e290 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e290 d23854e245">
+<p>The postal code (required)</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e300" headers="d23854e239">
+<p>TAX_JUR_FED</p>
+</td>
+<td class="cellalignment206" headers="d23854e300 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e300 d23854e245">
+<p>The tax percentage for the federal tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e310" headers="d23854e239">
+<p>TAX_JUR_STATE</p>
+</td>
+<td class="cellalignment206" headers="d23854e310 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e310 d23854e245">
+<p>The tax percentage for the state tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e320" headers="d23854e239">
+<p>TAX_JUR_COUNTY</p>
+</td>
+<td class="cellalignment206" headers="d23854e320 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e320 d23854e245">
+<p>The tax percentage for the county tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e330" headers="d23854e239">
+<p>TAX_JUR_CITY</p>
+</td>
+<td class="cellalignment206" headers="d23854e330 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e330 d23854e245">
+<p>The tax percentage for the city tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e340" headers="d23854e239">
+<p>TAX_JUR_SEC_COUNTY</p>
+</td>
+<td class="cellalignment206" headers="d23854e340 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e340 d23854e245">
+<p>The tax percentage for the secondary county tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e350" headers="d23854e239">
+<p>TAX_JUR_TERRITORY</p>
+</td>
+<td class="cellalignment206" headers="d23854e350 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e350 d23854e245">
+<p>The tax percentage for the territory tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e361" headers="d23854e239">
+<p>TAX_JUR_SEC_STATE</p>
+</td>
+<td class="cellalignment206" headers="d23854e361 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e361 d23854e245">
+<p>The tax percentage for the secondary state tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e371" headers="d23854e239">
+<p>TAX_JUR_DISTRICT</p>
+</td>
+<td class="cellalignment206" headers="d23854e371 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e371 d23854e245">
+<p>The tax percentage for the district tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e381" headers="d23854e239">
+<p>TAX_JUR_SEC_FED</p>
+</td>
+<td class="cellalignment206" headers="d23854e381 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e381 d23854e245">
+<p>The tax percentage for the secondary federal tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e391" headers="d23854e239">
+<p>TAX_JUR_COUNTY_DISTRICT</p>
+</td>
+<td class="cellalignment206" headers="d23854e391 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e391 d23854e245">
+<p>The tax percentage for the county district tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e401" headers="d23854e239">
+<p>TAX_JUR_CITY_DISTRICT</p>
+</td>
+<td class="cellalignment206" headers="d23854e401 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e401 d23854e245">
+<p>The tax percentage for the city district tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e411" headers="d23854e239">
+<p>TAX_JUR_OTHER</p>
+</td>
+<td class="cellalignment206" headers="d23854e411 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e411 d23854e245">
+<p>The tax percentage for the other tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e421" headers="d23854e239">
+<p>TAX_JUR_COMBINED</p>
+</td>
+<td class="cellalignment206" headers="d23854e421 d23854e242">
+<p>Decimal</p>
+</td>
+<td class="cellalignment207" headers="d23854e421 d23854e245">
+<p>The combined tax jurisdiction</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e431" headers="d23854e239">
+<p>EFFECTIVE_DATE</p>
+</td>
+<td class="cellalignment206" headers="d23854e431 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e431 d23854e245">
+<p>The date the tax rate is effective</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment205" id="d23854e441" headers="d23854e239">
+<p>DESCRIPTION</p>
+</td>
+<td class="cellalignment206" headers="d23854e441 d23854e242">
+<p>String</p>
+</td>
+<td class="cellalignment207" headers="d23854e441 d23854e245">
+<p>A description of the tax code</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+</div>
+<a id="BCSUG900"></a>
+<div class="props_rev_3"><a id="GUID-000E5380-B817-4F02-B0C6-F04F557D50CD"></a>
+<h3 id="BCSUG-GUID-000E5380-B817-4F02-B0C6-F04F557D50CD" class="sect3">Using tax codes from a taxation gateway</h3>
+<div>
+<p>To use tax codes from a taxation gateway:</p>
+<ol>
+<li>
+<p>Integrate Oracle Monetization Cloud with the taxation gateway. See <a class="olink BCSIG2283" target="_blank" href="../BCSIG/connecting-taxation-gateways1.htm#BCSIG2283">Connecting to taxation gateways</a>.</p>
+</li>
+<li>
+<p>Map tax codes in Oracle Monetization Cloud to the tax codes used by the taxation gateway.</p>
+</li>
+</ol>
+<p>Use Business Configuration to map internal tax codes to taxation gateway tax codes. Select <span class="bold">Finance</span>, the <span class="bold">Tax Code</span> tab, the <span class="bold">External</span> tab, and then <span class="bold">Edit</span>.</p>
+<p>Enter the following mapping information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The tax code name in Oracle Monetization Cloud; for example, <span class="bold">usage</span> or <span class="bold">VAT</span>.</p>
+</li>
+<li>
+<p>The name of the taxation gateway vendor, such as Vertex O Series.</p>
+</li>
+<li>
+<p>The tax code name used by the taxation gateway.</p>
+</li>
+<li>
+<p>The GL ID for the tax code. One tax code can be associated with only one GL ID. Each tax code must use a different GL ID.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<a id="BCSUG901"></a>
+<div class="props_rev_3"><a id="GUID-1B2CD99B-A0C8-4823-B69B-9E21CBADF60A"></a>
+<h2 id="BCSUG-GUID-1B2CD99B-A0C8-4823-B69B-9E21CBADF60A" class="sect2">Creating tax suppliers</h2>
+<div>
+<p>A tax supplier is the company or corporate division responsible for a given business transaction; for example, selling a product or service. It typically includes your corporate headquarters and branch offices. Tax rates differ depending on the location of the tax supplier.</p>
+<p>You must create at least one tax supplier. If you create multiple tax suppliers, only one can be used as the default tax supplier.</p>
+<p>Use Business Configuration to create tax suppliers. Select <span class="bold">Finance</span>, the <span class="bold">Tax Suppliers</span> tab, and then <span class="bold">Edit</span>.</p>
+<p>Enter the following information about each tax supplier:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The name and description of the tax supplier.</p>
+</li>
+<li>
+<p>The address of the tax supplier.</p>
+</li>
+<li>
+<p>Whether the charge that the tax applies to is regulated or unregulated.</p>
+</li>
+<li>
+<p>The states in which the tax supplier has a nexus. This determines which states the company must collect taxes for.</p>
+</li>
+<li>
+<p>The geographic code that represents the tax jurisdiction for the tax supplier.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG541"></a>
+<div class="props_rev_3"><a id="GUID-117714A2-AF43-43F6-88C8-48446DB3D28F"></a>
+<h2 id="BCSUG-GUID-117714A2-AF43-43F6-88C8-48446DB3D28F" class="sect2">When to calculate taxes</h2>
+<div>
+<p>You specify when to calculate taxes for each charge in a charge offer. You can choose to calculate taxes at these times:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">During rating</span>. Taxes are calculated when the event is rated, and they are added to the customer's account balance. This way, you always have an accurate reading of a customer's account balance at any time in the accounting cycle.</p>
+</li>
+<li>
+<p><span class="bold">During billing</span>. Deferring tax calculation until billing is run reduces rounding errors because all events of the same type are calculated together. For example, taxes are calculated on the total amount of usage fees rather than on individual usage events.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG688"></a>
+<div class="props_rev_3"><a id="GUID-6EFF497A-9F5F-42AB-A6E5-993BBA602643"></a>
+<h2 id="BCSUG-GUID-6EFF497A-9F5F-42AB-A6E5-993BBA602643" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="managing-customer-tax-settings1.htm#GUID-E38DB37A-2067-47FF-BE75-CAB4A006F61D">Changing your customer's tax settings</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="calculating-taxes1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="general-ledger.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

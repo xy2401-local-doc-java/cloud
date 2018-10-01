@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating charge offers</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="creating-pricing-setup-components1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="creating-charge-selectors1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF"></a> <span id="PAGE" style="display:none;">21/67</span> <!-- End Header -->
+<a id="BCSUG821"></a><a id="BCSUG822"></a><a id="BCSUG430"></a>
+<h1 id="BCSUG-GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" class="sect1"><span class="enumeration_chapter">16</span> Creating charge offers</h1>
+<div>
+<p>Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.</p>
+<p>For background information, see <a href="designing-product-offerings1.htm#GUID-C905DB91-CB82-482D-AE45-7BA170D22079" title="In Oracle Monetization Cloud, you create pricing components that represent your product offerings. Pricing components define how you sell your products and services to customers. For example, you could offer an International VOIP package for a monthly subscription fee plus usage charges. You also create pricing setup components, such as services and rating metrics. Pricing setup components define the data used in pricing components.">About designing product offerings</a>.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-C8AA4A66-4B12-48BA-A74C-CC92996F2351">Creating charge offers</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-38AB5821-FFEA-47DA-BF4A-7C5015B03B76">Charge offer general properties</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6">Creating charges</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB">Configuring usage charges</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94">Configuring recurring charges</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-964C853A-769B-4A6E-94BE-B216D4E759B6">Charging based on rules</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-A7480AB4-F492-4E52-9979-109E5AB89303">Using multiple balance impacts in a charge</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-963FA9A1-7751-405B-8CA3-9A279FA52282">Adding counters to track balances</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF">Charging based on quantity</a></p>
+</li>
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-067BC31D-007A-4295-A40A-7E976534C8FA">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG431"></a>
+<div class="props_rev_3"><a id="GUID-C8AA4A66-4B12-48BA-A74C-CC92996F2351"></a>
+<h2 id="BCSUG-GUID-C8AA4A66-4B12-48BA-A74C-CC92996F2351" class="sect2">Creating charge offers</h2>
+<div>
+<div class="section">
+<p>Use Offer Design to create charge offers. From the Pricing navigation pane, select <span class="bold">Create Charge Offer</span>.</p>
+<p>When you create a charge offer, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Define general properties such as the service that the charges apply to, how a customer can purchase and own the charge offer, and so on.</span></li>
+<li class="stepexpand"><span>Create one or more charges. For each charge, you define the type of charge; for example, a monthly fee or a usage fee, and how much to charge.</span></li>
+</ol>
+<div class="section">
+<p>To make a charge offer available to your customers, you must add it to a bundle and then add that bundle to a package.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG657"></a>
+<div class="props_rev_3"><a id="GUID-38AB5821-FFEA-47DA-BF4A-7C5015B03B76"></a>
+<h2 id="BCSUG-GUID-38AB5821-FFEA-47DA-BF4A-7C5015B03B76" class="sect2">Charge offer general properties</h2>
+<div>
+<p>Every charge offer includes the following general properties:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Name and description.</p>
+</li>
+<li>
+<p>The service that you want to charge.</p>
+<p>Select <span class="bold">Account</span> to create a charge offer that applies to any account that owns any service. For example, you might do this for late charges or for coupons.</p>
+</li>
+<li>
+<p>The currency that you want to charge. All charges in the charge offer must use the same currency.</p>
+</li>
+<li>
+<p>The deliverables to associate with the charge offer. Deliverables define when and how much revenue can be recognized from purchases. See <a href="setting-revenue-recognition-your-product-offerings1.htm#GUID-AF5E1089-3E50-4679-8D03-771CB83E7C55" title="In Oracle Monetization Cloud, you set up revenue recognition by creating revenue general ledger accounts, revenue general ledger IDs (GL IDs), and deliverables in the Business Configuration application.">Setting up revenue recognition for your product offerings</a>.</p>
+</li>
+<li>
+<p>The tax supplier. This ID specifies the company or corporate division that sells the product and is responsible for collecting taxes for it.</p>
+<p>You create tax supplier IDs in Business Configuration. See <a href="calculating-taxes3.htm#GUID-1B2CD99B-A0C8-4823-B69B-9E21CBADF60A">Creating tax suppliers</a>.</p>
+</li>
+<li>
+<p>The dates when the charge offer is valid for purchase.</p>
+</li>
+<li>
+<p>The type of charge offer:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Item:</span> A one-time purchase fee only. An item offer can't include usage charges or recurring charges.</p>
+</li>
+<li>
+<p><span class="bold">Subscription:</span> Charges apply only to the subscriber who owns the charge offer. You can use any type of charge.</p>
+</li>
+<li>
+<p><span class="bold">System:</span> Charges apply to all subscribers who use a particular service. A system charge offer can't include usage charges.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The priority of the charge offer. A higher number indicates a higher priority.</p>
+<p>Priority specifies the order in which charge offers are applied to a customer&rsquo;s account. For example, if a customer has two charge offers, offer A with priority 10 and offer B with priority 8, offer A is applied first and offer B is applied second.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG432"></a>
+<div class="props_rev_3"><a id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6"></a>
+<h2 id="BCSUG-GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6" class="sect2">Creating charges</h2>
+<div>
+<p>The figure below shows a charge:</p>
+<div class="figure" id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6__FIG_RWS_DXG_Z2B"><br />
+<div class="imageleft"><img class="imageleft" id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6__IMAGE_NTJ_H2P_Z2B" width="585" height="168" src="img/purchase_charge_18b.gif" alt="Description of purchase_charge_18b.gif follows" title="Description of purchase_charge_18b.gif follows" /><br />
+<a href="img_text/purchase_charge_18b.htm">Description of the illustration purchase_charge_18b.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>This figure illustrates the following:</p>
+<ul style="list-style-type: disc;" id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6__UL_Q3W_JCY_H2B">
+<li>
+<p>You can create different types of charges. This example shows a one-time charge. You can also create usage charges, recurring charges, and charge selector charges.</p>
+</li>
+<li>
+<p>The <span class="bold">Impact</span> is either debit or credit.</p>
+<ul style="list-style-type: disc;" id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6__UL_R3W_JCY_H2B">
+<li>
+<p><span class="bold">Debit:</span> Increases the amount your customer owes, such as by charging your customer $10.</p>
+</li>
+<li>
+<p><span class="bold">Credit:</span> You typically use credits to grant your customer minutes, gigabytes, and so on.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The amount to charge your customer, or the number of minutes, gigabytes, and so on to grant your customer.</p>
+</li>
+<li>
+<p>The <span class="bold">Balance Element</span> is either currency, such as US Dollars, or noncurrency, such as minutes or gigabytes.</p>
+</li>
+<li>
+<p>For credit impacts of noncurrency balances, you can specify a validity period for the balance. In <span class="bold">Amount Is Valid</span>, select the number of cycles to keep a running total of free minutes, gigabytes, and so on: for the current billing cycle, for multiple billing cycles, or always. When the cycle ends, the noncurrency balance is reset to 0.</p>
+<p>For debit impacts and currency balances, the field is disabled and automatically set to <span class="bold">Not Applicable</span>.</p>
+</li>
+<li>
+<p>You can track general ledger revenue by the type of charge. The <span class="bold">GLID</span> is the general ledger ID that applies to the charge. See <a href="setting-your-general-ledger1.htm#GUID-B058B105-4C78-468E-861F-4DA9697FE7D7" title="In Oracle Monetization Cloud, a financial analyst specifies how to record revenue transactions in the general ledger by creating general ledger accounts and general ledger IDs.">Setting up your general ledger</a>.</p>
+</li>
+<li>
+<p>You can add counters to a charge for tracking balances, such as the amount spent or megabytes downloaded by a customer. See <a href="creating-charge-offers1.htm#GUID-963FA9A1-7751-405B-8CA3-9A279FA52282">Adding counters to track balances</a>.</p>
+</li>
+<li>
+<p>You can vary the amount charged based on the quantity that your customer has used or your customer's counter balance. See <a href="creating-charge-offers1.htm#GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF">Charging based on quantity</a>.</p>
+</li>
+<li>
+<p>You can assign a tax to the charge. Select <span class="bold">Tax Treatment</span>, assign a tax code, and specify how to apply the tax:</p>
+<ul style="list-style-type: disc;" id="GUID-8B637B1D-1DC0-4DCA-9E6C-D63FBA126BE6__UL_S3W_JCY_H2B">
+<li>
+<p><span class="bold">Never:</span> Taxes aren't added.</p>
+</li>
+<li>
+<p><span class="bold">After Computing Charge:</span> Taxes are applied to the balance at the same time as the charge.</p>
+</li>
+<li>
+<p><span class="bold">At Billing:</span> Taxes are calculated when billing is run for the account.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>All types of charges include the options listed above. Recurring charges, usage charges, and charge selector charges include additional properties.</p>
+</div>
+</div>
+<a id="BCSUG433"></a>
+<div class="props_rev_3"><a id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB"></a>
+<h2 id="BCSUG-GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB" class="sect2">Configuring usage charges</h2>
+<div>
+<p>This figure shows a usage charge:</p>
+<div class="figure" id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB__FIG_Z1L_M3R_V2B"><br />
+<div class="imageleft"><img class="imageleft" id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB__IMAGE_TDD_ZKX_L2B" width="698" height="231" src="img/usage_charge.gif" alt="Description of usage_charge.gif follows" title="Description of usage_charge.gif follows" /><br />
+<a href="img_text/usage_charge.htm">Description of the illustration usage_charge.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>In addition to the standard charge properties, usage charges include these properties:</p>
+<ul style="list-style-type: disc;" id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB__UL_VDG_CYX_H2B">
+<li>
+<p><span class="bold">Measured By:</span> This is how the usage event is measured for rating. These values are called ratable usage metrics (RUMs):</p>
+<ul style="list-style-type: disc;" id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB__UL_WDG_CYX_H2B">
+<li>
+<p>Duration</p>
+</li>
+<li>
+<p>Occurrence</p>
+</li>
+<li>
+<p>Quantity</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">per:</span> What the charge is based on; for example, number of megabytes downloaded or number of minutes used.</p>
+<p>The <span class="bold">per</span> value is typically the RUM that the charge is based on, or a measurement related to it. For example, if the Duration RUM used to rate the event is seconds, the <span class="bold">per</span> value can be seconds, minutes, or hours.</p>
+<p>You can also use the following options for the <span class="bold">per</span> value:</p>
+<ul style="list-style-type: disc;" id="GUID-3DDDE7A4-B3CC-4AD5-86B8-53FA37E122BB__UL_XDG_CYX_H2B">
+<li>
+<p><span class="bold">Fixed Charge:</span> Use this option to charge a flat fee for the event. Fixed charges are unaffected by the quantity of the event.</p>
+</li>
+<li>
+<p><span class="bold">Amount Used:</span> This bases the charge on the quantity of the event measured. For example, to charge for SMS messages, each event is one message, so <span class="bold">Amount Used</span> is always one message. If the <span class="bold">Amount</span> column is <span class="bold">.10</span> and the <span class="bold">per</span> column is <span class="bold">Amount Used</span>, the charge is 10 cents for each SMS message.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG435"></a>
+<div class="props_rev_3"><a id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94"></a>
+<h2 id="BCSUG-GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94" class="sect2">Configuring recurring charges</h2>
+<div>
+<p>This figure shows a recurring charge:</p>
+<div class="figure" id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94__FIG_TBQ_43R_V2B"><br />
+<div class="imageleft"><img class="imageleft" id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94__IMAGE_XDP_TLX_L2B" width="692" height="236" src="img/recurring_charge.gif" alt="Description of recurring_charge.gif follows" title="Description of recurring_charge.gif follows" /><br />
+<a href="img_text/recurring_charge.htm">Description of the illustration recurring_charge.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>Recurring charges are typically used for monthly subscription fees. There are three types:</p>
+<ul style="list-style-type: disc;" id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94__UL_NJN_3YX_H2B">
+<li>
+<p><span class="italic">Cycle forward</span> charges in advance. With a monthly fee, when billing is run on an account, the account is billed for the following month.</p>
+<p>Cycle forward fees can be monthly, bi-monthly, quarterly, semi-annual, or annual.</p>
+</li>
+<li>
+<p><span class="italic">Cycle arrears</span> charges for the previous month.</p>
+<p>Cycle arrears charges are always monthly.</p>
+</li>
+<li>
+<p><span class="italic">Cycle forward arrears</span> charges for the previous month, but your customer's balance is impacted at the beginning of the month, and their revenue is reported as unearned in your general ledger accounts.</p>
+<p>Cycle forward arrears charges are always monthly.</p>
+</li>
+</ul>
+<p>In addition to the standard charge properties, recurring charges include a <span class="bold">Cycle Settings</span> property. This property specifies when to apply recurring charges to a customer's account balance.</p>
+<ul style="list-style-type: disc;" id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94__UL_OJN_3YX_H2B">
+<li>
+<p><span class="bold">Align cycle with Billing:</span> The recurring charge is applied on your customer's billing date. The only exception is the first charge, which is charged at purchase. For example, if the billing date is the 1st of the month and the charge offer is purchased on January 10, the charge is applied on January 10 for the interval January 10 to February 1. For subsequent cycles, the charge is applied on the billing date (for the interval February 1 to March 1 and so on).</p>
+</li>
+<li>
+<p><span class="bold">Align cycle with Purchase:</span> The recurring charge is always applied on the charge offer purchase day of month.</p>
+<p>For example, if the billing date is the 1st of the month and the charge offer is purchased on January 10, the charge is applied on the 10th of every month (for the interval January 10 to February 10, February 10 to March 10, and so on).</p>
+</li>
+<li>
+<p><span class="bold">Proration:</span> Specifies how to handle a recurring charge if it's purchased or canceled midcycle:</p>
+<ul style="list-style-type: disc;" id="GUID-CEDD0119-3F6E-47D0-8E9F-0E18BEF1FC94__UL_PJN_3YX_H2B">
+<li>
+<p><span class="bold">Prorate:</span> Calculate the charge based on the amount used.</p>
+</li>
+<li>
+<p><span class="bold">Full Charge:</span> Charge for the entire cycle.</p>
+</li>
+<li>
+<p><span class="bold">No Charge:</span> Don't charge for the cycle.</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG743"></a>
+<div class="props_rev_3"><a id="GUID-964C853A-769B-4A6E-94BE-B216D4E759B6"></a>
+<h2 id="BCSUG-GUID-964C853A-769B-4A6E-94BE-B216D4E759B6" class="sect2">Charging based on rules</h2>
+<div>
+<p>You can apply different fees for the same event based on the value of one or more service, event, or customer attributes. For example, you could charge different fees for phone calls depending on a call's origin and destination.</p>
+<p>To charge based on rules, you do the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Create a charge selector, which assigns a result tag to events that have specific service, event, or customer attributes. For example, you could assign the PST result tag to events from the pacific time zone, and assign the CST result tag to events from the central time zone. See <a href="creating-charge-selectors1.htm#GUID-049E9B73-9342-4930-B0BA-5ECD19CFFF84">Creating charge selectors</a>.</p>
+</li>
+<li>
+<p>Add the charge selector to your charge offer. You then map the result tags to a specific charge amount. For example, you could map result tag PST to a $45 fee, and result tag CST to a $50 fee.</p>
+</li>
+</ul>
+<p>This figure shows a charge based on charge selector rules:</p>
+<div class="figure" id="GUID-964C853A-769B-4A6E-94BE-B216D4E759B6__GUID-3853BE9B-4066-49CA-8716-8C5EB280E5FC"><br />
+<div class="imageleft"><img class="imageleft" width="425" height="272" src="img/usr_charge_selet_add.gif" alt="Description of usr_charge_selet_add.gif follows" title="Description of usr_charge_selet_add.gif follows" /><br />
+<a href="img_text/usr_charge_selet_add.htm">Description of the illustration usr_charge_selet_add.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>Configuring charges for charge selectors is very similar to configuring other kinds of charges, except it includes these additional properties:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The event type, such as Basic Usage or Product Purchase Fee.</p>
+</li>
+<li>
+<p><span class="bold">Measured By:</span> How the event is measured for rating: Duration, Occurrence, or Quantity.</p>
+</li>
+<li>
+<p><span class="bold">Charge Selector:</span> The name of the charge selector.</p>
+</li>
+<li>
+<p><span class="bold">Selector Result:</span> The name of a result tag from your charge selector. You map each result tag to a specific charge amount, such as result tag A to a $20 charge, and result tag B to a $25 charge.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG436"></a>
+<div class="props_rev_3"><a id="GUID-A7480AB4-F492-4E52-9979-109E5AB89303"></a>
+<h2 id="BCSUG-GUID-A7480AB4-F492-4E52-9979-109E5AB89303" class="sect2">Using multiple balance impacts in a charge</h2>
+<div>
+<p>You can use multiple balance impacts in a single charge. To do so, select the <span class="bold">Add Balance Impact</span> icon:</p>
+<div class="figure" id="GUID-A7480AB4-F492-4E52-9979-109E5AB89303__GUID-F66D392F-DCFD-4EC9-A8DB-777AEBD4B253"><br />
+<div class="imageleft"><img class="imageleft" width="40" height="38" src="img/usr_bal_impact_button.gif" alt="Shows the Add Balance Impact icon" title="Shows the Add Balance Impact icon" /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>This figure shows a monthly charge with two balance impacts. Each month, it charges your customers $50 and grants them 200 free minutes.</p>
+<div class="figure" id="GUID-A7480AB4-F492-4E52-9979-109E5AB89303__GUID-D39CFE28-A63F-44DE-804F-2B9756D6B066"><br />
+<div class="imageleft"><img class="imageleft" width="574" height="199" src="img/two_bal_impacts.gif" alt="Description of two_bal_impacts.gif follows" title="Description of two_bal_impacts.gif follows" /><br />
+<a href="img_text/two_bal_impacts.htm">Description of the illustration two_bal_impacts.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-963FA9A1-7751-405B-8CA3-9A279FA52282"></a>
+<h2 id="BCSUG-GUID-963FA9A1-7751-405B-8CA3-9A279FA52282" class="sect2">Adding counters to track balances</h2>
+<div>
+<p>You can add counters to a charge to track balances, such as the amount spent or megabytes downloaded by a customer. This enables you to vary your charges based on a counter's total. For example, you could create a counter to track how many books were purchased in a cycle and then charge different monthly cycle fees based on the counter total.</p>
+<p>To add a counter, select the <span class="bold">Add Counter</span> icon:</p>
+<div class="figure" id="GUID-963FA9A1-7751-405B-8CA3-9A279FA52282__GUID-67A8C844-82B9-47D4-AA70-0AEE2BCA8304"><br />
+<div class="imageleft"><img class="imageleft" width="37" height="37" src="img/counter_icon.gif" alt="Shows the Add Counter icon" title="Shows the Add Counter icon" /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>For each counter that you add, do the following:</p>
+<ul style="list-style-type: disc;" id="GUID-963FA9A1-7751-405B-8CA3-9A279FA52282__UL_US3_NH3_X2B">
+<li>
+<p>Select whether to increase or decrease the counter.</p>
+</li>
+<li>
+<p>Enter the amount to increase or decrease the counter, such as 1 loyalty point, 2 tokens, or 1 point for every $10 charge.</p>
+<p>Only noncurrency balance elements that are enabled as counters are supported. See Creating balance elements.</p>
+</li>
+<li>
+<p>Select the number of cycles to keep a running total in the counter: for the current billing cycle, for multiple billing cycles, or always. When the cycle ends, the counter is reset to 0.</p>
+</li>
+<li>
+<p>Select the GL ID to associate with the counter.</p>
+</li>
+</ul>
+<p>This figure shows a counter that increases by one Loyalty Point when the product is purchased. The counter keeps a running total for one billing cycle at a time.</p>
+<div class="figure" id="GUID-963FA9A1-7751-405B-8CA3-9A279FA52282__GUID-A132283E-3F07-468B-BC9F-3E979465BA97"><br />
+<div class="imageleft"><img class="imageleft" width="572" height="196" src="img/usr_offer_charge_count.gif" alt="Description of usr_offer_charge_count.gif follows" title="Description of usr_offer_charge_count.gif follows" /><br />
+<a href="img_text/usr_offer_charge_count.htm">Description of the illustration usr_offer_charge_count.gif</a></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<div class="props_rev_3"><a id="GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF"></a>
+<h2 id="BCSUG-GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF" class="sect2">Charging based on quantity</h2>
+<div>
+<p>You can apply different charge amounts for an event based on:</p>
+<ul style="list-style-type: disc;">
+<li>The customer's counter balance. For example, you can charge customers a $100 monthly cycle fee for counter balances of up to 10 loyalty points, and a $90 monthly cycle fee for counter balances of 11 loyalty points and above.</li>
+<li>
+<p>The amount used by the customer, such as the number of minutes or gigabytes. For example, you can charge 10 cents per minute for the first 100 minutes, and 5 cents per minute for all other minutes.</p>
+</li>
+</ul>
+<p>To do so, select the <span class="bold">Add Quantity Range</span> icon:</p>
+<div class="figure" id="GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF__GUID-6A43D99B-531B-4FA5-BC4B-1300635709B6"><br />
+<div class="imageleft"><img class="imageleft" width="37" height="37" src="img/usr_quantity_button.gif" alt="Shows the Add Quantity range icon" title="Shows the Add Quantity range icon" /></div>
+<br /></div>
+<!-- class="figure" -->
+<p>Enter an ending point for the range. For example, to create a range from 0&ndash;10, enter <span class="bold">10</span>. Each subsequent range uses the end of the previous range as the starting value.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Each range includes all of the elements of a charge; for example, amount, balance element, and G/L ID.</p>
+</li>
+<li>
+<p>The end of the range is inclusive. For example, a range of 0&ndash;100 includes minute 100. The next range, 100&ndash;200 minutes, begins at minute 101.</p>
+</li>
+<li>
+<p>For the first range, you can enter a minimum amount. To do so, after creating the range, select the <span class="bold">Quantity Range</span> value and change the <span class="bold">Start</span> value.</p>
+</li>
+<li>
+<p>For the last range, you can enter a maximum amount. To do so, after creating the range, select the <span class="bold">Quantity Range</span> value and enter an <span class="bold">End</span> value.</p>
+</li>
+</ul>
+<p>For recurring, one-time, and charge selector charges, you also select a counter balance element such as Loyalty Points.</p>
+<p>This figure shows two quantity ranges, 0&ndash;100, and greater than 100.</p>
+<div class="figure" id="GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF__GUID-7E9C91C7-BC01-4F98-BC4E-3BC80A3A6130"><br />
+<div class="imageleft"><img class="imageleft" width="413" height="294" src="img/quantity_ranges.gif" alt="Description of quantity_ranges.gif follows" title="Description of quantity_ranges.gif follows" /><br />
+<a href="img_text/quantity_ranges.htm">Description of the illustration quantity_ranges.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>To delete a quantity range, select the range and select the <span class="bold">Delete Quantity Range</span> icon:</p>
+<div class="figure" id="GUID-323B241F-D834-4DE6-A8A7-1EE8EDA5D2BF__GUID-75EF05BE-8E4D-4FC4-B1DB-39F4A3A1AF81"><br />
+<div class="imageleft"><img class="imageleft" width="45" height="39" src="img/usr_quantity_delete.gif" alt="Shows the Delete Quantity Range icon" title="Shows the Delete Quantity Range icon" /></div>
+<br /></div>
+<!-- class="figure" --></div>
+</div>
+<a id="BCSUG658"></a>
+<div class="props_rev_3"><a id="GUID-067BC31D-007A-4295-A40A-7E976534C8FA"></a>
+<h2 id="BCSUG-GUID-067BC31D-007A-4295-A40A-7E976534C8FA" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a></p>
+</li>
+<li>
+<p><a href="creating-packages1.htm#GUID-19C29957-A507-4279-B7AB-1BFDE6C14176" title="In Oracle Monetization Cloud, you use packages to offer multiple services to your customers. For example, you could create an Internet package that includes the Wifi, email, and fax services.">Creating packages</a></p>
+</li>
+<li>
+<p><a href="creating-bundles1.htm#GUID-3838CAC0-56BB-42A4-BA5F-FE69B44CE895" title="In Oracle Monetization Cloud, you use bundles to group offers that you want to sell together. After you create bundles, you add them to your packages.">Creating bundles</a></p>
+</li>
+<li>
+<p><a href="creating-package-lists1.htm#GUID-912C17D9-0875-4DFB-B0FC-1E387B6EB2D8" title="This document describes how to create package lists in Oracle Monetization Cloud.">Creating package lists</a></p>
+</li>
+<li>
+<p><a href="pricing-scenarios1.htm#GUID-E3143009-C6D6-42B8-865D-E7A46B39E13F" title="This document describes how to configure common pricing scenarios in Oracle Monetization Cloud.">Pricing scenarios</a></p>
+</li>
+<li>
+<p><a href="creating-charge-selectors1.htm#GUID-049E9B73-9342-4930-B0BA-5ECD19CFFF84">Creating charge selectors</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="creating-pricing-setup-components1.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="creating-charge-selectors1.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

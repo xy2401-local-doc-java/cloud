@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Extra Information is Included in the Response Headers Returned as Part of the Response Message</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="When standard HTTP headers are used in the response headers as part of the response message, extra information is included as part of the returned output data at runtime. This issue occurs only when headers are used in the SOAP Adapter. Without headers, the output is returned without extra information in the response message." />
+<meta name="dcterms.created" content="2017-02-24T15:08:31Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Known Issues for Oracle Integration Cloud Service" />
+<meta name="dcterms.identifier" content="E55682-22" />
+<meta name="dcterms.isVersionOf" content="ICSKI" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-DC3B7FE4-6DC6-412D-AFD1-14357E7E1AD5.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-4EAA2D34-9C44-4B84-A617-5E06EAD4AA8A.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSKI.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSKI.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSKI.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-25F13370-2ACB-43C3-A46D-12DB0077E704"></a> <span id="PAGE" style="display:none;">11/60</span> <!-- End Header -->
+<h1 class="sect1">Extra Information is Included in the Response Headers Returned as Part of the Response Message</h1>
+<div>
+<p>When standard HTTP headers are used in the response headers as part of the response message, extra information is included as part of the returned output data at runtime. This issue occurs only when headers are used in the SOAP Adapter. Without headers, the output is returned without extra information in the response message.</p>
+<p>The extra information is not an extra namespace. It is a valid namespace matching the prefix of the element. Without headers, the namespace comes as an attribute in the root element. With headers, since elements are converted from a wrapper, the child elements are copied along with their namespaces.</p>
+<p>For example, with a connection that uses the same web service, but one with a header (custom HTTP Header) and another one without a header, the body elements in the response message are different as shown below:</p>
+<p>Without a header:</p>
+<pre dir="ltr">
+&lt;nstrgmpr:result&gt;            
+   &lt;nsmpr6:PartyId&gt;10&lt;/nsmpr6:PartyId&gt;
+   &lt;nsmpr6:PartyName&gt;Acme Corp&lt;/nsmpr6:PartyName&gt;
+&lt;/nstrgmpr:result&gt;
+</pre>
+<p>With a header:</p>
+<pre dir="ltr">
+&lt;nsmpr2:result&gt;
+   &lt;nsmpr8:PartyId
+xmlns:nsmpr8="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"&gt;10
+   &lt;/nsmpr8:PartyId&gt;
+            &lt;nsmpr8:PartyName
+xmlns:nsmpr8="http://xmlns.oracle.com/apps/cdm/foundation/parties/organizationService/"&gt;Acme Corp
+            &lt;/nsmpr8:PartyName&gt;
+   &lt;/nsmpr2:result&gt;
+</pre></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment134">
+<tr>
+<td class="cellalignment141">
+<table class="cellalignment139">
+<tr>
+<td class="cellalignment138"><a href="GUID-DC3B7FE4-6DC6-412D-AFD1-14357E7E1AD5.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment138"><a href="GUID-4EAA2D34-9C44-4B84-A617-5E06EAD4AA8A.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2017, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment143">
+<table class="cellalignment137">
+<tr>
+<td class="cellalignment138"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment138"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment138"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

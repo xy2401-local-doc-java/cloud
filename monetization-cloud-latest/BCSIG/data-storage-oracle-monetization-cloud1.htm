@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>About data storage in Oracle Monetization Cloud</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="All data in Oracle Monetization Cloud is stored in an Oracle database. In the database, data is organized into objects, which you can extend to suit your business needs." />
+<meta name="dcterms.created" content="2018-08-31T10:19:16Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud Integration Guide" />
+<meta name="dcterms.identifier" content="E92624-02" />
+<meta name="dcterms.isVersionOf" content="BCSIG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="oracle-monetization-cloud-data.htm" title="Previous" type="text/html" />
+<link rel="Next" href="web-services.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92624-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92624-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92624-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D11AD8B9-A73B-4546-A7F6-59FBD64B861B"></a> <span id="PAGE" style="display:none;">26/42</span> <!-- End Header -->
+<a id="BCSIG122"></a><a id="BCSIG123"></a><a id="BCSIG121"></a>
+<h1 id="BCSIG-GUID-D11AD8B9-A73B-4546-A7F6-59FBD64B861B" class="sect1"><span class="enumeration_chapter">17</span> About data storage in Oracle Monetization Cloud</h1>
+<div>
+<p>All data in Oracle Monetization Cloud is stored in an Oracle database. In the database, data is organized into objects, which you can extend to suit your business needs.</p>
+<p>This document is for developers who integrate Oracle Monetization Cloud with external applications, for example, with a customer management system.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="data-storage-oracle-monetization-cloud1.htm#GUID-8E181CDF-4668-407B-BFAF-D033ED3146ED">About objects</a></p>
+</li>
+<li>
+<p><a href="data-storage-oracle-monetization-cloud1.htm#GUID-0A423CDE-C05D-4745-A058-0B9FBE25949C">About object fields</a></p>
+</li>
+<li>
+<p><a href="data-storage-oracle-monetization-cloud1.htm#GUID-30D9A739-CA77-4341-A6CE-3C56155BC245">About object POIDs</a></p>
+</li>
+<li>
+<p><a href="data-storage-oracle-monetization-cloud1.htm#GUID-F00B5200-B6B7-4227-8B32-004F5FC92C4D">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSIG124"></a>
+<div class="props_rev_3"><a id="GUID-8E181CDF-4668-407B-BFAF-D033ED3146ED"></a>
+<h2 id="BCSIG-GUID-8E181CDF-4668-407B-BFAF-D033ED3146ED" class="sect2">About objects</h2>
+<div>
+<p>Each type of data in the database has its own type of object. For example, accounts are stored in <span class="bold">/account</span> objects, and events are stored in <span class="bold">/event</span> objects.</p>
+<p>The formatting convention for object names is <span class="bold">/</span><span class="italic">object_type</span>, such as <span class="bold">/service</span>. API descriptions and sample web services operation code reference objects using this convention. For example:</p>
+<pre dir="ltr">
+&lt;POID&gt;0.0.0.1 <span class="bold">/account</span> 297583 8&lt;/POID&gt;
+</pre>
+<p>Some objects have sub-types. For example, <span class="bold">/service</span> objects can have many sub-types, such as <span class="bold">/service/email</span> and <span class="bold">/service/broadband</span>.</p>
+<div class="infobox-note" id="GUID-8E181CDF-4668-407B-BFAF-D033ED3146ED__GUID-26E4D767-92E6-44C1-A33E-B49E2F28B112">
+<p class="notep1">Note:</p>
+<p>Object types and their sub-types are often referred to as <span class="italic">classes</span> and <span class="italic">sub-classes</span> in the API descriptions.</p>
+</div>
+<p>You can create your own service types in Oracle Monetization Cloud. When you do, the data for the service is stored in a sub-class of the <span class="bold">/service</span> class.</p>
+<p>You can also create your own events in Oracle Monetization Cloud. For example, to charge customers for a movie download, you could create an event named <span class="bold">/event/movie_download</span> that stores data about every movie that a customer downloads. You could then write an application to find all of the movies that a customer downloaded by searching for the <span class="bold">/event/movie_download</span> objects associated with the customer's account.</p>
+</div>
+</div>
+<a id="BCSIG125"></a>
+<div class="props_rev_3"><a id="GUID-0A423CDE-C05D-4745-A058-0B9FBE25949C"></a>
+<h2 id="BCSIG-GUID-0A423CDE-C05D-4745-A058-0B9FBE25949C" class="sect2">About object fields</h2>
+<div>
+<p>Every object stores data in fields. For example, when you create an account, the <span class="bold">/account</span> object includes fields for the customer's name, address, and so on. You can view fields in objects from the data returned by API operations. For example, you can view some fields in the <span class="bold">/account</span> object from the data returned by the pcmOpCustCommitCustomer operation, which creates the <span class="bold">/account</span> object:</p>
+<pre dir="ltr">
+&lt;INV_INFO elem="0"&gt;
+   &lt;ADDRESS&gt;123 Hollywood Boulevard&lt;/ADDRESS&gt;
+   &lt;CITY&gt;Los Angeles&lt;/CITY&gt;
+   &lt;COUNTRY&gt;USA&lt;/COUNTRY&gt;
+   &lt;DELIVERY_DESCR&gt;test_001&lt;/DELIVERY_DESCR&gt;
+   &lt;DELIVERY_PREFER&gt;0&lt;/DELIVERY_PREFER&gt;
+   &lt;EMAIL_ADDR /&gt;
+   &lt;INV_TERMS&gt;0&lt;/INV_TERMS&gt;
+   &lt;NAME&gt;Chet3457 Chet8905&lt;/NAME&gt;
+   &lt;STATE&gt;NJ&lt;/STATE&gt;
+   &lt;ZIP&gt;90001&lt;/ZIP&gt;
+&lt;/INV_INFO&gt;
+</pre></div>
+</div>
+<a id="BCSIG126"></a>
+<div class="props_rev_3"><a id="GUID-30D9A739-CA77-4341-A6CE-3C56155BC245"></a>
+<h2 id="BCSIG-GUID-30D9A739-CA77-4341-A6CE-3C56155BC245" class="sect2">About object POIDs</h2>
+<div>
+<p>Every object in the database has a unique identifier called a POID. You use the POID to specify an object in calls to web service operations. For example, to read the contents of a package in the database, you use this operation:</p>
+<pre dir="ltr">
+&lt;bus:pcmOpReadObjRequest&gt;
+   &lt;bus:PCM_OP_READ_OBJ_Request&gt;
+      &lt;bus:flags&gt;0&lt;/bus:flags&gt;
+      &lt;bus:PCM_OP_READ_OBJ_inputFlist&gt;
+         <span class="bold">&lt;bus:POID&gt;0.0.0.1 /plan 298723 8&lt;/bus:POID&gt;</span>
+      &lt;/bus:PCM_OP_READ_OBJ_inputFlist&gt;
+   &lt;/bus:PCM_OP_READ_OBJ_Request&gt;
+&lt;/bus:pcmOpReadObj&gt;
+</pre>
+<p>In addition to identifying objects, POIDs link objects together. For example, in this figure:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <span class="bold">/bill</span> and <span class="bold">/invoice</span> objects point to their related account by specifying the POID of the <span class="bold">/account</span> object.</p>
+</li>
+<li>
+<p>The <span class="bold">/bill</span> object points to the <span class="bold">/invoice</span> object, and the <span class="bold">/invoice</span> object points to the <span class="bold">/bill</span> object.</p>
+</li>
+</ul>
+<div class="figure" id="GUID-30D9A739-CA77-4341-A6CE-3C56155BC245__GUID-EAFAF2D3-CC5C-4EF5-BE18-4CFC23585D7D"><br />
+<div class="imageleft"><img class="imageleft" width="501" height="190" src="img/poid_links.gif" alt="Description of poid_links.gif follows" title="Description of poid_links.gif follows" /><br />
+<a href="img_text/poid_links.htm">Description of the illustration poid_links.gif</a></div>
+<br /></div>
+<!-- class="figure" -->
+<p>You can use these links between objects when you use web services operations. For example, to change the status of a service, you use the pcmOpSubscriptionSetProductStatus operation. In that operation, you use this XML to identify the account that owns the offer, the service associated with the offer, and the offer whose status you'll change:</p>
+<pre dir="ltr">
+&lt;bus:PCM_OP_SUBSCRIPTION_SET_PRODUCT_STATUS_inputFlist&gt;
+   &lt;bus:DESCR&gt;Due to activating/inactivating an account/service.&lt;/bus:DESCR&gt;
+   &lt;bus:POID&gt;<span class="bold">0.0.0.1 /account 297583 0</span>&lt;/bus:POID&gt;
+   &lt;bus:PROGRAM_NAME&gt;web service&lt;/bus:PROGRAM_NAME&gt;
+   &lt;bus:SERVICE_OBJ&gt;<span class="bold">0.0.0.1 /service/email 298223 0</span>&lt;/bus:SERVICE_OBJ&gt;
+   &lt;bus:STATUSES elem="1"&gt;
+      &lt;bus:OFFERING_OBJ&gt;<span class="bold">0.0.0.1 /purchased_product 294943 1</span>&lt;/bus:OFFERING_OBJ&gt;
+      &lt;bus:STATUS&gt;2&lt;/bus:STATUS&gt;
+      &lt;bus:STATUS_FLAGS&gt;0&lt;/bus:STATUS_FLAGS&gt;
+  &lt;/bus:STATUSES&gt;
+&lt;/bus:PCM_OP_SUBSCRIPTION_SET_PRODUCT_STATUS_inputFlist&gt;
+</pre></div>
+</div>
+<a id="BCSIG127"></a>
+<div class="props_rev_3"><a id="GUID-F00B5200-B6B7-4227-8B32-004F5FC92C4D"></a>
+<h2 id="BCSIG-GUID-F00B5200-B6B7-4227-8B32-004F5FC92C4D" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="oracle-monetization-cloud-web-services1.htm#GUID-1DCEA540-0860-4858-8A17-56C60F2FCC47">Oracle Monetization Cloud web services</a></p>
+</li>
+<li>
+<p><a href="performing-common-tasks-web-services1.htm#GUID-136B5FAA-AD2B-4E10-8E58-59A50FA6FED0">Performing common tasks with web services</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment76">
+<tr>
+<td class="cellalignment83">
+<table class="cellalignment81">
+<tr>
+<td class="cellalignment80"><a href="oracle-monetization-cloud-data.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment80"><a href="web-services.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment85">
+<table class="cellalignment79">
+<tr>
+<td class="cellalignment80"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment80"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment80"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Scaling MySQL Cloud Service</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="If a database deployment on MySQL Cloud Service is performing poorly or is running out of storage, you can scale up the environment supporting the database deployment." />
+<meta name="dcterms.created" content="2018-07-13T03:37:04Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using Oracle MySQL Cloud Service" />
+<meta name="dcterms.identifier" content="E75881-22" />
+<meta name="dcterms.isVersionOf" content="UOMCS" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-795B394F-6002-4F70-A541-A5E90B9A5711.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-C5AB98FB-9DA4-4E23-BE3D-7F3D34CB04F5.htm" title="Next" type="text/html" />
+<link rel="alternate" href="UOMCS.pdf" title="PDF version" type="application/pdf" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F"></a> <span id="PAGE" style="display:none;">39/83</span> <!-- End Header -->
+<h1 id="UOMCS-GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F" class="sect1">Scaling <span id="MYSQLCSHORT">MySQL Cloud Service</span></h1>
+<div>
+<div>
+<p><img width="32" height="32" src="img/GUID-C093C2D1-FAC9-4EEA-BD23-CB0C3C7AC569-default.png" alt="Not Oracle Cloud Infrastructure" title="Not Oracle Cloud Infrastructure" /> This topic does not apply to Oracle Cloud Infrastructure.</p>
+<div><span>If a database deployment on <span>MySQL Cloud Service</span> is performing poorly or is running out of storage, you can scale up the environment supporting the database deployment.</span></div>
+</div>
+<div class="section">
+<p>Usually, the need to scale arises as the result of analyzing database performance, as described in <a href="GUID-ACECCCFA-C6A8-46C3-8ACD-289ED0227941.htm">Tuning Database Performance on MySQL Cloud Service</a>.</p>
+<p>Occasionally, the need to scale arises from some change made to the database or backup configuration after it was created. For example, you might need to scale up the compute shape to one of the high-memory options, such as scaling from "OC4 - 2&nbsp;OCPU, 15&nbsp;GB RAM" to "OC2M - 2&nbsp;OCPU, 30&nbsp;GB RAM".</p>
+</div>
+<!-- class="section" -->
+<div class="section" id="GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F__SCALEUPSHAPE">
+<p class="subhead1">Scaling the Compute Shape for <span id="GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F__MYSQLCSHORT">MySQL Cloud Service</span></p>
+<div class="infobox-note" id="GUID-D67EFECC-6F47-4DBD-9725-49BF99773B6F__GUID-BC2B80A1-54BA-42E7-A7BC-13E9A5FEA1A7">
+<p class="notep1">Note:</p>
+<p>When you scale the compute shape of a database deployment on <span>MySQL Cloud Service</span>, the deployment is put into Maintenance status during the operation and it is restarted. As a result of the restarting, any resources you&rsquo;ve manually added using the Compute Cloud Service console become detached from the database deployment. For more information and for instructions on reattaching such resources, see <a href="GUID-52546D52-1039-4802-9F4C-A55067D2337A.htm#GUID-52546D52-1039-4802-9F4C-A55067D2337A__ABOUT-STOP-START-RESTART">About Stopping, Starting and Restarting a MySQL Server Deployment</a>.</p>
+</div>
+<p>To scale the compute shape for a database deployment:</p>
+<ol>
+<li>
+<p>Open the <span class="bold">Instance Overview</span> page for the service by clicking the service name on the console.</p>
+</li>
+<li>
+<p>Select the menu in the <span class="bold">Resources</span> section on the <span class="bold">Instance Overview</span> page.</p>
+</li>
+<li>
+<p>Select <span class="bold">Scale Up/Down</span> from the menu.</p>
+<p>The <span class="bold">Scale Up/Down</span> dialog is displayed.</p>
+</li>
+<li>
+<p>Choose the required shape and click <span class="bold">Yes, Scale Up/Down VM</span> to scale your instance.</p>
+<p>The service restarts.</p>
+</li>
+</ol>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment20">
+<tr>
+<td class="cellalignment27">
+<table class="cellalignment25">
+<tr>
+<td class="cellalignment24"><a href="GUID-795B394F-6002-4F70-A541-A5E90B9A5711.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment24"><a href="GUID-C5AB98FB-9DA4-4E23-BE3D-7F3D34CB04F5.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2016, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment29">
+<table class="cellalignment23">
+<tr>
+<td class="cellalignment24"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment24"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment24"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

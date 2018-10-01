@@ -1,0 +1,50 @@
+<html>
+<head>
+<title>pcmOpReadObj.html</title>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body bgcolor=#ffffff>
+<pre>
+
+!
+!  <h3>@(#)pcmOpReadObj.input</h3>
+! 
+! 	Copyright (c) 1995, 2015, Oracle and/or its affiliates. All rights reserved.
+!
+
+! pcmOpReadObj input parameter element specifications. Most of the fields on the
+! return parameter element depend on the type of the object being read.
+!
+! Mandatory fields for input parameter element:
+!	PIN_FLD_POID
+
+! Poid of the object to be read.
+field PIN_FLD_POID (
+	type	=		PIN_FLDT_POID,
+	perms	=		M,
+);
+!
+!  <h3>@(#)pcmOpReadObj.output </h3>
+! 
+! 	Copyright (c) 1995, 2015, Oracle and/or its affiliates. All rights reserved.
+!  
+
+! pcmOpReadObj return parameter element specifications. Details depend on the
+! type of object being read.
+!
+! Mandatory fields for output parameter element:
+!	PIN_FLD_POID
+!	&ltall fields in the object read, details depend on object type&gt
+
+! Poid of the object that was read.
+field PIN_FLD_POID (
+	type	=		PIN_FLDT_POID,
+	perms	=		M,
+);
+
+! All other fields in the object read are added to the return parameter element here.
+! See the object spec for the type of object being read for a list of
+! the fields in the object. All elements of arrays are returned.
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Setting up your general ledger</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="In Oracle Monetization Cloud, a financial analyst specifies how to record revenue transactions in the general ledger by creating general ledger accounts and general ledger IDs." />
+<meta name="dcterms.created" content="2018-08-31T14:45:42Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Monetization Cloud User's Guide" />
+<meta name="dcterms.identifier" content="E92621-02" />
+<meta name="dcterms.isVersionOf" content="BCSUG" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="general-ledger.htm" title="Previous" type="text/html" />
+<link rel="Next" href="generating-general-ledger-reports2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="E92621-02.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="E92621-02.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="E92621-02.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B058B105-4C78-468E-861F-4DA9697FE7D7"></a> <span id="PAGE" style="display:none;">58/67</span> <!-- End Header -->
+<a id="BCSUG1005"></a><a id="BCSUG1006"></a><a id="BCSUG1004"></a>
+<h1 id="BCSUG-GUID-B058B105-4C78-468E-861F-4DA9697FE7D7" class="sect1"><span class="enumeration_chapter">48</span> Setting up your general ledger</h1>
+<div>
+<p>In Oracle Monetization Cloud, a financial analyst specifies how to record revenue transactions in the general ledger by creating general ledger accounts and general ledger IDs.</p>
+<div class="section">
+<p class="subhead1">Topics in this document</p>
+</div>
+<!-- class="section" -->
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-A87CAC0D-5F01-4336-A10E-C34507E91057">About the general ledger</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-BFA07AD6-793A-43BB-8E27-7B4FA2082767">About GL IDs</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-F51D530C-8B5C-4348-A3AD-014510B9DE89">Setting up your general ledger</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-58B38A82-DC8D-480F-9280-0971DCC7ACB2">Creating general ledger accounts in Business Configuration</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-61FD8A5F-6F07-4DAC-B95A-DBD977CC23CE">Creating GL IDs in Business Configuration</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-D84C7180-9BC5-47F6-9310-20A832DB12D5">Creating the general ledger from an XML file</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-71EA8CC1-D63A-491F-95B3-1C99DA9DAFFE">Mapping A/R actions to GL IDs</a></p>
+</li>
+<li>
+<p><a href="setting-your-general-ledger1.htm#GUID-B5A78216-81A7-46B0-A289-EE6320D7110F">Related topics</a></p>
+</li>
+</ul>
+</div>
+<a id="BCSUG1102"></a>
+<div class="props_rev_3"><a id="GUID-A87CAC0D-5F01-4336-A10E-C34507E91057"></a>
+<h2 id="BCSUG-GUID-A87CAC0D-5F01-4336-A10E-C34507E91057" class="sect2">About the general ledger</h2>
+<div>
+<p>The general ledger is a list of accounts in which your company records financial transactions for accounting purposes. It shows how much revenue is recorded for each type of charge, such as how much revenue is generated by purchase fees or usage fees. Each type of transaction is recorded in a separate general ledger account.</p>
+</div>
+</div>
+<a id="BCSUG1103"></a>
+<div class="props_rev_3"><a id="GUID-BFA07AD6-793A-43BB-8E27-7B4FA2082767"></a>
+<h2 id="BCSUG-GUID-BFA07AD6-793A-43BB-8E27-7B4FA2082767" class="sect2">About GL IDs</h2>
+<div>
+<p>A general ledger ID (GL ID) is a set of related general ledger accounts that you want to report a financial transaction against. Each GL ID is associated with a debit account and a credit account.</p>
+<p>Oracle Monetization Cloud contains four types of GL IDs: revenue GL IDs, accounts receivable (AR) GL IDs, standard GL IDs, and contract GL IDs.</p>
+</div>
+<a id="BCSUG1104"></a>
+<div class="props_rev_3"><a id="GUID-103735BB-5DB7-41A4-98F1-FDC40DB4E575"></a>
+<h3 id="BCSUG-GUID-103735BB-5DB7-41A4-98F1-FDC40DB4E575" class="sect3">About revenue GL IDs</h3>
+<div>
+<p>You use revenue GL IDs for revenue recognition. They record financial transactions from charges that are associated with deliverables and that occur when a customer cancels their contract early.</p>
+<p>Revenue GL IDs report earned net revenue.</p>
+<p>For information about revenue recognition, see <a href="deliverable-based-revenue-recognition-title.htm#GUID-45962C5B-303A-4127-A2A8-6F08F1745383" title="Revenue recognition is an accounting principle and process for reporting revenue. Oracle Monetization Cloud supports revenue recognition for the goods and services that you sell.">About revenue recognition</a>.</p>
+</div>
+</div>
+<a id="BCSUG1105"></a>
+<div class="props_rev_3"><a id="GUID-5735EDA7-FCBA-4884-BC2B-04E7FCA45934"></a>
+<h3 id="BCSUG-GUID-5735EDA7-FCBA-4884-BC2B-04E7FCA45934" class="sect3">About accounts receivable GL IDs</h3>
+<div>
+<p>Accounts receivable (AR) GL IDs record financial transactions from:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Recurring, one-time, and charge selector charges</p>
+</li>
+<li>
+<p>Recurring, one-time, and billing-time discounts</p>
+</li>
+<li>
+<p>Taxes</p>
+</li>
+<li>
+<p>Fees for cancelling a service early. This is different from early termination fees that are associated with customer contracts.</p>
+</li>
+</ul>
+<p>AR GL IDs report billed net, billed tax, unbilled net, and unbilled tax revenue.</p>
+</div>
+</div>
+<a id="BCSUG1106"></a>
+<div class="props_rev_3"><a id="GUID-D2B9FDF7-324E-467B-AB71-CE0FA802B842"></a>
+<h3 id="BCSUG-GUID-D2B9FDF7-324E-467B-AB71-CE0FA802B842" class="sect3">About standard GL IDs</h3>
+<div>
+<p>Standard GL IDs are used to track financial transactions for:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Service usage charges, such as the amount of data downloaded</p>
+</li>
+<li>
+<p>Charges and discounts that aren't associated with deliverables</p>
+</li>
+<li>
+<p>Accounts receivable (A/R) actions, such as payments, write-offs, and adjustments</p>
+</li>
+</ul>
+<p>Because standard GL IDs can be used for multiple types of financial transactions, Business Configuration allows you to map them to any debit account and credit account. When you create standard GL IDs, you must ensure that the mappings are valid for your business needs.</p>
+<p>This table shows the recommended debit and credit accounts to use for each financial transaction type.</p>
+<div class="tblformalwide" id="GUID-D2B9FDF7-324E-467B-AB71-CE0FA802B842__GUID-428F4950-31F9-4D4C-AAD7-C2FC895B38F9">
+<table class="cellalignment201" summary="Describes the applications.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment209" id="d25835e156">Financial transaction type</th>
+<th class="cellalignment209" id="d25835e159">Report type</th>
+<th class="cellalignment209" id="d25835e162">Amount represents</th>
+<th class="cellalignment209" id="d25835e165">Debit account type</th>
+<th class="cellalignment209" id="d25835e168">Credit account type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e173" headers="d25835e156">
+<p>Charge</p>
+</td>
+<td class="cellalignment210" headers="d25835e173 d25835e159">
+<p>Billed</p>
+<p>Unbilled</p>
+</td>
+<td class="cellalignment210" headers="d25835e173 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e173 d25835e165">
+<p>Asset</p>
+</td>
+<td class="cellalignment210" headers="d25835e173 d25835e168">
+<p>Liability</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e191" headers="d25835e156">
+<p>Charge</p>
+</td>
+<td class="cellalignment210" headers="d25835e191 d25835e159">
+<p>Earned</p>
+</td>
+<td class="cellalignment210" headers="d25835e191 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e191 d25835e165">
+<p>Liability</p>
+</td>
+<td class="cellalignment210" headers="d25835e191 d25835e168">
+<p>Revenue</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e207" headers="d25835e156">
+<p>Credit adjustment</p>
+<p>Write-off</p>
+</td>
+<td class="cellalignment210" headers="d25835e207 d25835e159">
+<p>Billed</p>
+<p>Unbilled</p>
+</td>
+<td class="cellalignment210" headers="d25835e207 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e207 d25835e165">
+<p>Asset</p>
+</td>
+<td class="cellalignment210" headers="d25835e207 d25835e168">
+<p>Expense</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e227" headers="d25835e156">
+<p>Debit adjustment</p>
+</td>
+<td class="cellalignment210" headers="d25835e227 d25835e159">
+<p>Billed</p>
+<p>Unbilled</p>
+</td>
+<td class="cellalignment210" headers="d25835e227 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e227 d25835e165">
+<p>Asset</p>
+</td>
+<td class="cellalignment210" headers="d25835e227 d25835e168">
+<p>Liability</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e245" headers="d25835e156">
+<p>Debit adjustment</p>
+</td>
+<td class="cellalignment210" headers="d25835e245 d25835e159">
+<p>Earned</p>
+</td>
+<td class="cellalignment210" headers="d25835e245 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e245 d25835e165">
+<p>Liability</p>
+</td>
+<td class="cellalignment210" headers="d25835e245 d25835e168">
+<p>Revenue</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment210" id="d25835e261" headers="d25835e156">
+<p>Payment</p>
+</td>
+<td class="cellalignment210" headers="d25835e261 d25835e159">
+<p>Billed</p>
+<p>Unbilled</p>
+</td>
+<td class="cellalignment210" headers="d25835e261 d25835e162">
+<p>Net</p>
+</td>
+<td class="cellalignment210" headers="d25835e261 d25835e165">
+<p>Asset</p>
+</td>
+<td class="cellalignment210" headers="d25835e261 d25835e168">
+<p>Cash</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<a id="BCSUG1107"></a>
+<div class="props_rev_3"><a id="GUID-BA4F3980-7BA2-4382-BA29-C4400CCD0CD7"></a>
+<h3 id="BCSUG-GUID-BA4F3980-7BA2-4382-BA29-C4400CCD0CD7" class="sect3">About contract GL IDs</h3>
+<div>
+<p>Contract GL IDs use journal entries to track the amount paid and owed by customers throughout their contract term. Contract GL IDs report earned net revenue.</p>
+</div>
+</div>
+</div>
+<a id="BCSUG623"></a>
+<div class="props_rev_3"><a id="GUID-F51D530C-8B5C-4348-A3AD-014510B9DE89"></a>
+<h2 id="BCSUG-GUID-F51D530C-8B5C-4348-A3AD-014510B9DE89" class="sect2">Setting up your general ledger</h2>
+<div>
+<div class="section">
+<p>When you set up the general ledger, you do the following:</p>
+</div>
+<!-- class="section" -->
+<ol>
+<li class="stepexpand"><span>Create your general ledger accounts in the chart of accounts (CoA).</span></li>
+<li class="stepexpand"><span>Create your GL IDs.</span></li>
+<li class="stepexpand"><span>Specify the GL IDs used to record financial transactions when a charge or an accounts receivable (AR) action occurs, such as a write-off. To do so, you assign GL IDs to the following:</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>A/R actions, such as adjustments, disputes, and settlements. See <a href="setting-your-general-ledger1.htm#GUID-71EA8CC1-D63A-491F-95B3-1C99DA9DAFFE">Mapping A/R actions to GL IDs</a>.</p>
+</li>
+<li>
+<p>Deliverables, which define when and how much revenue can be recognized by your company. See <a href="setting-revenue-recognition-your-product-offerings1.htm#GUID-580DAC8E-D420-4365-8D68-5340991EAB13">Creating deliverables</a>.</p>
+</li>
+<li>
+<p>Subscription term termination fees, which users can be charged when they cancel their contract early. See <a href="creating-subscription-terms1.htm#GUID-6491E10D-2723-4097-A5D0-3E37219AD346" title="Create subscription terms to define the commitment periods and options for canceling and renewing the services you offer. Use Oracle Monetization Cloud Offer Design to create terms and associate them with packages.">Creating subscription terms</a>.</p>
+</li>
+<li>
+<p>Tax codes. See <a href="calculating-taxes3.htm#GUID-C582CC4D-2676-43D4-A456-9E935F730848">Creating tax codes</a>.</p>
+</li>
+<li>
+<p>Charges. See <a href="creating-charge-offers1.htm#GUID-469D6E4F-DC6A-4603-8F0B-BFBDDF0854CF" title="Charge offers specify how to charge your customers for your services; for example, by using monthly charges or usage charges. You create charge offers by using the Oracle Monetization Cloud Offer Design application.">Creating charge offers</a>.</p>
+</li>
+<li>
+<p>Discounts. See <a href="creating-discount-offers2.htm#GUID-D90FC10C-D984-4318-992C-E2529084E201" title="Discount offers specify when and how to apply discounts to charges. After you create discount offers, add them to your bundles.">Creating discount offers</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+<div class="section">
+<p>You can run reports to view a summary of the totals in each general ledger account. See <a href="generating-general-ledger-reports2.htm#GUID-C5B23D02-F4EB-4E28-ABAF-846B266A22FC" title="General ledger (GL) reports provide a summary of the debits and credits in your GL accounts. You generate the reports by using Oracle Monetization Cloud Business Operations.">Generating general ledger reports</a>.</p>
+</div>
+<!-- class="section" --></div>
+</div>
+<a id="BCSUG624"></a>
+<div class="props_rev_3"><a id="GUID-58B38A82-DC8D-480F-9280-0971DCC7ACB2"></a>
+<h2 id="BCSUG-GUID-58B38A82-DC8D-480F-9280-0971DCC7ACB2" class="sect2">Creating general ledger accounts in Business Configuration</h2>
+<div>
+<p>Use Business Configuration to create general ledger accounts in the CoA. Select <span class="bold">Finance</span>, the <span class="bold">Chart of Accounts</span> tab, and then <span class="bold">Edit</span>.</p>
+<p>Select the add icon to add a general ledger account. For each account, enter this information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A name for the account. The name should match the one used by your company's external financial system.</p>
+</li>
+<li>
+<p>A description of the account, such as Cash, Accounts Receivable, or Accounts Payable.</p>
+</li>
+<li>
+<p>The type of account: asset, expense, liability, or revenue.</p>
+</li>
+<li>
+<p>The status of the account: active or inactive.</p>
+<p>Inactive accounts can't be associated with a GL ID.</p>
+</li>
+</ul>
+<p>After you've created your general ledger accounts, select an asset account to be your contract asset account and a liability account to be your contract liability account.</p>
+</div>
+</div>
+<a id="BCSUG625"></a>
+<div class="props_rev_3"><a id="GUID-61FD8A5F-6F07-4DAC-B95A-DBD977CC23CE"></a>
+<h2 id="BCSUG-GUID-61FD8A5F-6F07-4DAC-B95A-DBD977CC23CE" class="sect2">Creating GL IDs in Business Configuration</h2>
+<div>
+<p>To create your GL IDs, perform these steps in Business Configuration:</p>
+<ol>
+<li>
+<p>Add one or more GL IDs.</p>
+<p>Select <span class="bold">Finance</span>, the <span class="bold">GL IDs</span> tab, and then <span class="bold">Edit</span>. Select the add icon to add a GL ID. Enter the following for each GL ID:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>A unique GL ID number, such as 1000111.</p>
+</li>
+<li>
+<p>The type of GL ID: standard, revenue, or accounts receivable.</p>
+<p>See <a href="setting-your-general-ledger1.htm#GUID-BFA07AD6-793A-43BB-8E27-7B4FA2082767">About GL IDs</a>.</p>
+</li>
+<li>
+<p>A description, such as usage fees, monthly fees, or tax fees.</p>
+</li>
+</ul>
+<p>After you've created your GL IDs, select the accounts receivable GL ID to associate with early termination fees.</p>
+</li>
+<li>
+<p>In the <span class="bold">G/L Groups</span> tab, use the add icon to create a group.</p>
+</li>
+<li>
+<p>Map the GL IDs you created to general ledger accounts for debits and credits. Do the following for each GL ID:</p>
+<ol>
+<li>
+<p>Select the add icon and select one of your GL IDs.</p>
+</li>
+<li>
+<p>In the <span class="bold">G/L Account Mapping for</span> section, select the add icon and enter this information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Whether the amount is billed, unbilled, or earned (its condition).</p>
+</li>
+<li>
+<p>What the amount represents: net or tax.</p>
+</li>
+<li>
+<p>The general ledger accounts for tracking debits and credits.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>This figure shows the mapping for a standard GL ID for service usage.</p>
+<div class="figure" id="GUID-61FD8A5F-6F07-4DAC-B95A-DBD977CC23CE__GUID-3C2D9343-EB19-4361-A89A-49EAC19A8560"><br />
+<div class="imageleft"><img class="imageleft" width="584" height="182" src="img/usr_gl_map.gif" alt="Description of usr_gl_map.gif follows" title="Description of usr_gl_map.gif follows" /><br />
+<a href="img_text/usr_gl_map.htm">Description of the illustration usr_gl_map.gif</a></div>
+<br /></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+</div>
+<a id="BCSUG1052"></a>
+<div class="props_rev_3"><a id="GUID-D84C7180-9BC5-47F6-9310-20A832DB12D5"></a>
+<h2 id="BCSUG-GUID-D84C7180-9BC5-47F6-9310-20A832DB12D5" class="sect2">Creating the general ledger from an XML file</h2>
+<div>
+<p>You can create your general ledger accounts and GL IDs by importing the information from an XML file into Business Configuration. This can save you time if you need to create many general ledger accounts or if you want to transfer the general ledger configuration from your development environment to your production environment. To do so:</p>
+<ol>
+<li>
+<p>Create an XML file that complies with the Oracle Monetization Cloud schema. You can create the XML file manually or by exporting your general ledger in a changeset or transfer request in Business Configuration.</p>
+</li>
+<li>
+<p>Import the XML file into Business Configuration.</p>
+</li>
+</ol>
+<p>For information about importing and exporting changesets and transfer requests in Business Configuration, see <a href="managing-configuration-changes-cloud1.htm#GUID-F9ACF7F9-5D7C-4E61-AAA1-A71C604A4A1A" title="In Oracle Monetization Cloud, you have access to two separate cloud environments: a development environment and a production environment. You can create and test your data in the development environment by using changesets. After your data is thoroughly tested, you can create a transfer request to have the data from your changesets transferred to the production environment.">Managing configuration changes in the cloud</a>.</p>
+</div>
+<a id="BCSUG1053"></a>
+<div class="props_rev_3"><a id="GUID-89C79767-96EE-4A95-B334-F781DAFA76C3"></a>
+<h3 id="BCSUG-GUID-89C79767-96EE-4A95-B334-F781DAFA76C3" class="sect3">Creating general ledger accounts from an XML file</h3>
+<div>
+<p>If you use XML to create your create general ledger accounts in the CoA, your XML file must include these parameters:</p>
+<div class="tblformal" id="GUID-89C79767-96EE-4A95-B334-F781DAFA76C3__GUID-155DBEEA-9C9F-4F72-A544-48B8D6F3C83C">
+<table class="cellalignment211" summary="This table describes the parameters that must be included in your XML file.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment204" id="d25835e529">Parameter</th>
+<th class="cellalignment204" id="d25835e532">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e537" headers="d25835e529">
+<p>name</p>
+</td>
+<td class="cellalignment207" headers="d25835e537 d25835e532">
+<p>The name of your CoA.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e544" headers="d25835e529">
+<p>priceListName</p>
+</td>
+<td class="cellalignment207" headers="d25835e544 d25835e532">
+<p>The name of the product offering that the CoA applies to. Set this to <span class="bold">Default</span> to apply the CoA to all product offerings.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e554" headers="d25835e529">
+<p>obsolete</p>
+</td>
+<td class="cellalignment207" headers="d25835e554 d25835e532">
+<p>Whether your CoA is obsolete. Set this to <span class="bold">False</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e564" headers="d25835e529">
+<p>glAccounts</p>
+</td>
+<td class="cellalignment207" headers="d25835e564 d25835e532">
+<p>The container for a general ledger account.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e571" headers="d25835e529">
+<p>glAccounts.accountName</p>
+</td>
+<td class="cellalignment207" headers="d25835e571 d25835e532">
+<p>The name of the general ledger account. The name should match the one used by your company's external financial system.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e578" headers="d25835e529">
+<p>glAccounts.accountDescription</p>
+</td>
+<td class="cellalignment207" headers="d25835e578 d25835e532">
+<p>A description of the account, such as Cash, Accounts Receivable, or Accounts Payable.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e585" headers="d25835e529">
+<p>glAccounts.accountType</p>
+</td>
+<td class="cellalignment207" headers="d25835e585 d25835e532">
+<p>The type of account: asset, expense, liability, or revenue.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e592" headers="d25835e529">
+<p>glAccounts.accountStatus</p>
+</td>
+<td class="cellalignment207" headers="d25835e592 d25835e532">
+<p>The status of the account: active or inactive. Inactive accounts can't be associated with a GL ID.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This shows sample XML for creating a CoA with three general ledger accounts.</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;cim:ConfigObjects xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+   &lt;chartOfAccounts xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+      &lt;name&gt;Chart of Accounts&lt;/name&gt;
+      &lt;priceListName&gt;Default&lt;/priceListName&gt;
+      &lt;obsolete&gt;false&lt;/obsolete&gt;
+      &lt;glAccounts&gt;
+         &lt;accountName&gt;Contract.liability&lt;/accountName&gt;
+         &lt;accountDescription&gt;Contract.liability&lt;/accountDescription&gt;
+         &lt;accountType&gt;LIABILITY_CONTRACT&lt;/accountType&gt;
+         &lt;accountStatus&gt;ACTIVE&lt;/accountStatus&gt;
+      &lt;/glAccounts&gt;
+      &lt;glAccounts&gt;
+         &lt;accountName&gt;Revenue-Internet&lt;/accountName&gt;
+         &lt;accountDescription&gt;Revenue-Internet&lt;/accountDescription&gt;
+         &lt;accountType&gt;REVENUE&lt;/accountType&gt;
+         &lt;accountStatus&gt;ACTIVE&lt;/accountStatus&gt;
+      &lt;/glAccounts&gt;
+      &lt;glAccounts&gt;
+         &lt;accountName&gt;Revenue-TV&lt;/accountName&gt;
+         &lt;accountDescription&gt;Revenue-TV&lt;/accountDescription&gt;
+         &lt;accountType&gt;REVENUE&lt;/accountType&gt;
+         &lt;accountStatus&gt;ACTIVE&lt;/accountStatus&gt;
+      &lt;/glAccounts&gt;
+    &lt;/chartOfAccounts&gt;
+&lt;/cim:ConfigObjects&gt;
+</pre></div>
+</div>
+<a id="BCSUG1054"></a>
+<div class="props_rev_3"><a id="GUID-FF2B320C-D999-458F-AA38-DB6C372BD229"></a>
+<h3 id="BCSUG-GUID-FF2B320C-D999-458F-AA38-DB6C372BD229" class="sect3">Creating GL IDs from an XML file</h3>
+<div>
+<p>If you use XML to create your GL IDs, your XML file must include these parameters:</p>
+<div class="tblformal" id="GUID-FF2B320C-D999-458F-AA38-DB6C372BD229__GUID-938C38F1-660E-4C46-B767-16B32FBC26AB">
+<table class="cellalignment211" summary="This table describes the parameters that must be included your XML file.">
+<thead>
+<tr class="cellalignment192">
+<th class="cellalignment204" id="d25835e621">Parameter</th>
+<th class="cellalignment204" id="d25835e624">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e629" headers="d25835e621">
+<p>glids</p>
+</td>
+<td class="cellalignment207" headers="d25835e629 d25835e624">
+<p>The container for a GL ID.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e636" headers="d25835e621">
+<p>glids.name</p>
+</td>
+<td class="cellalignment207" headers="d25835e636 d25835e624">
+<p>A unique number for the GL ID, such as 1000111.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e643" headers="d25835e621">
+<p>glids.description</p>
+</td>
+<td class="cellalignment207" headers="d25835e643 d25835e624">
+<p>A description of the GL ID.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e650" headers="d25835e621">
+<p>glids.priceListName</p>
+</td>
+<td class="cellalignment207" headers="d25835e650 d25835e624">
+<p>The name of the product offering that the GL ID applies to. Set this to <span class="bold">Default</span> to apply the GL ID to all product offerings.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e660" headers="d25835e621">
+<p>glids.obsolete</p>
+</td>
+<td class="cellalignment207" headers="d25835e660 d25835e624">
+<p>Whether the GL ID is obsolete. Set this to <span class="bold">False</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e670" headers="d25835e621">
+<p>glids.type</p>
+</td>
+<td class="cellalignment207" headers="d25835e670 d25835e624">
+<p>The type of GL ID: revenue, accounts receivable, or standard.</p>
+<p>See <a href="setting-your-general-ledger1.htm#GUID-BFA07AD6-793A-43BB-8E27-7B4FA2082767">About GL IDs</a>.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e682" headers="d25835e621">
+<p>glids.usedForTerminationFees</p>
+</td>
+<td class="cellalignment207" headers="d25835e682 d25835e624">
+<p>Whether to associate the GL ID with early termination fees.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e689" headers="d25835e621">
+<p>generalLedgerGroups</p>
+</td>
+<td class="cellalignment207" headers="d25835e689 d25835e624">
+<p>The container for a GL group.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e696" headers="d25835e621">
+<p>generalLedgerGroups.name</p>
+</td>
+<td class="cellalignment207" headers="d25835e696 d25835e624">
+<p>The name of the GL group.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e703" headers="d25835e621">
+<p>generalLedgerGroups.priceListName</p>
+</td>
+<td class="cellalignment207" headers="d25835e703 d25835e624">
+<p>The name of the product offering that the GL group applies to. Set this to <span class="bold">Default</span> to apply the GL group to all product offerings.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e713" headers="d25835e621">
+<p>generalLedgerGroups.obsolete</p>
+</td>
+<td class="cellalignment207" headers="d25835e713 d25835e624">
+<p>Whether the GL group is obsolete. Set this to <span class="bold">False</span>.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e724" headers="d25835e621">
+<p>generalLedgerGroups.coaName</p>
+</td>
+<td class="cellalignment207" headers="d25835e724 d25835e624">
+<p>The name of the CoA to associate with the GL group.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e731" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids</p>
+</td>
+<td class="cellalignment207" headers="d25835e731 d25835e624">
+<p>The container for mapping a GL ID.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e738" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.glid</p>
+</td>
+<td class="cellalignment207" headers="d25835e738 d25835e624">
+<p>The GL ID number.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e745" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.mappedGLAccounts</p>
+</td>
+<td class="cellalignment207" headers="d25835e745 d25835e624">
+<p>The container for mapping a GL ID to credit and debit general ledger accounts.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e752" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.mappedGLAccounts.condition</p>
+</td>
+<td class="cellalignment207" headers="d25835e752 d25835e624">
+<p>Whether the amount is billed, unbilled, or earned.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e759" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.mappedGLAccounts.amountRepresents</p>
+</td>
+<td class="cellalignment207" headers="d25835e759 d25835e624">
+<p>What the amount represents: net or tax.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e766" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.mappedGLAccounts.debitGLAccount</p>
+</td>
+<td class="cellalignment207" headers="d25835e766 d25835e624">
+<p>The general ledger account for tracking debits.</p>
+</td>
+</tr>
+<tr class="cellalignment192">
+<td class="cellalignment207" id="d25835e773" headers="d25835e621">
+<p>generalLedgerGroups.mappedGlids.mappedGLAccounts.creditGLAccount</p>
+</td>
+<td class="cellalignment207" headers="d25835e773 d25835e624">
+<p>The general ledger account for tracking credits.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>This shows sample XML for creating a GL group with two GL IDs.</p>
+<pre dir="ltr">
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;cim:ConfigObjects xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+   &lt;glids xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+      &lt;name&gt;100005&lt;/name&gt;
+      &lt;description&gt;For Usage Charges&lt;/description&gt;
+      &lt;priceListName&gt;Default&lt;/priceListName&gt;
+      &lt;obsolete&gt;false&lt;/obsolete&gt;
+      &lt;type&gt;STANDARD&lt;/type&gt;
+      &lt;usedForTerminationFees&gt;false&lt;/usedForTerminationFees&gt;
+   &lt;/glids&gt;
+   &lt;glids xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+      &lt;name&gt;100004&lt;/name&gt;
+      &lt;description&gt;To map in the deliverable - TV&lt;/description&gt;
+      &lt;priceListName&gt;Default&lt;/priceListName&gt;
+      &lt;obsolete&gt;false&lt;/obsolete&gt;
+      &lt;type&gt;REVENUE&lt;/type&gt;
+      &lt;usedForTerminationFees&gt;false&lt;/usedForTerminationFees&gt;
+   &lt;/glids&gt;
+   &lt;generalLedgerGroups xmlns:cim="http://xmlns.oracle.com/communications/platform/model/Config"&gt;
+      &lt;name&gt;ASC 606 GLG&lt;/name&gt;
+      &lt;priceListName&gt;Default&lt;/priceListName&gt;
+      &lt;obsolete&gt;false&lt;/obsolete&gt;
+      &lt;coaName&gt;Chart of Accounts&lt;/coaName&gt;
+      &lt;glSegments&gt;
+         &lt;name&gt;.&lt;/name&gt;
+         &lt;includeInParentReport&gt;false&lt;/includeInParentReport&gt;
+      &lt;/glSegments&gt;
+      &lt;glid&gt;100004&lt;/glid&gt;
+      &lt;mappedGLAccounts&gt;
+         &lt;condition&gt;EARNED&lt;/condition&gt;
+         &lt;amountRepresents&gt;NET&lt;/amountRepresents&gt;
+         &lt;debitGLAccount&gt;Contract.liability&lt;/debitGLAccount&gt;
+         &lt;creditGLAccount&gt;Revenue-TV&lt;/creditGLAccount&gt;
+      &lt;/mappedGLAccounts&gt;
+      &lt;glid&gt;100005&lt;/glid&gt;
+      &lt;mappedGLAccounts&gt;
+         &lt;condition&gt;UNBILLED&lt;/condition&gt;
+         &lt;amountRepresents&gt;NET&lt;/amountRepresents&gt;
+         &lt;debitGLAccount&gt;Asset&lt;/debitGLAccount&gt;
+         &lt;creditGLAccount&gt;Account-Liability&lt;/creditGLAccount&gt;
+         &lt;/mappedGLAccounts&gt;
+   &lt;/generalLedgerGroups&gt;
+&lt;/cim:ConfigObjects&gt;
+</pre></div>
+</div>
+</div>
+<a id="BCSUG1007"></a>
+<div class="props_rev_3"><a id="GUID-71EA8CC1-D63A-491F-95B3-1C99DA9DAFFE"></a>
+<h2 id="BCSUG-GUID-71EA8CC1-D63A-491F-95B3-1C99DA9DAFFE" class="sect2">Mapping A/R actions to GL IDs</h2>
+<div>
+<p>Some balance impacts are generated by A/R actions, such as payments and refunds, rather than by charges. To have these actions recorded in your general ledger, you must map each A/R action to a GL ID.</p>
+<p>In Business Configuration, select <span class="bold">Finance</span>, the <span class="bold">A/R Action - G/L Assignment</span> tab, and then <span class="bold">Edit</span>. Select the add icon and specify the following for each A/R action:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The type of action, such as write-off, settlement, or refund.</p>
+</li>
+<li>
+<p>The reason for the action, such as fraudulent charges, erroneous charges, or dissatisfied customer.</p>
+</li>
+<li>
+<p>The standard GL ID to associate with the action.</p>
+</li>
+</ul>
+</div>
+</div>
+<a id="BCSUG1008"></a>
+<div class="props_rev_3"><a id="GUID-B5A78216-81A7-46B0-A289-EE6320D7110F"></a>
+<h2 id="BCSUG-GUID-B5A78216-81A7-46B0-A289-EE6320D7110F" class="sect2">Related topics</h2>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><a href="generating-general-ledger-reports2.htm#GUID-C5B23D02-F4EB-4E28-ABAF-846B266A22FC" title="General ledger (GL) reports provide a summary of the debits and credits in your GL accounts. You generate the reports by using Oracle Monetization Cloud Business Operations.">Generating general ledger reports</a></p>
+</li>
+<li>
+<p><a href="managing-configuration-changes-cloud1.htm#GUID-F9ACF7F9-5D7C-4E61-AAA1-A71C604A4A1A" title="In Oracle Monetization Cloud, you have access to two separate cloud environments: a development environment and a production environment. You can create and test your data in the development environment by using changesets. After your data is thoroughly tested, you can create a transfer request to have the data from your changesets transferred to the production environment.">Managing configuration changes in the cloud</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment191">
+<tr>
+<td class="cellalignment198">
+<table class="cellalignment196">
+<tr>
+<td class="cellalignment195"><a href="general-ledger.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment195"><a href="generating-general-ledger-reports2.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2017, 2018, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment200">
+<table class="cellalignment194">
+<tr>
+<td class="cellalignment195"><a href="../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment195"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment195"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

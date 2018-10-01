@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>pcmOpReadFlds.html</title>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body bgcolor=#ffffff>
+<pre>
+
+!
+!  <h3>@(#)pcmOpReadFlds.input</h3>
+! 
+! 	Copyright (c) 1995, 2015, Oracle and/or its affiliates. All rights reserved.
+!  
+!
+
+! pcmOpReadFlds input parameter element specifications. Most of the input and return
+! parameter elements depend on the fields being read.
+!
+! Mandatory fields for input parameter element:
+!	PIN_FLD_POID
+
+! Poid of the object from which to read fields.
+field PIN_FLD_POID (
+	type	=		PIN_FLDT_POID,
+	perms	=		M,
+);
+
+! Fields to be read from the object are added to the input parameter element here. The
+! 'value' of these fields on the input parameter element is ignored. Entire arrays
+! can be read using a single element with element-id PIN_ELEM_ID_ANY.
+! These fields are all optional, if none are present only the poid is
+! read and returned. See the object spec for the type of object being read
+! for a list of fields that can be read.
+
+!  <h3>@(#)pcmOpReadFlds.output</h3>
+! 
+! 	Copyright (c) 1995, 2015, Oracle and/or its affiliates. All rights reserved.
+!  
+
+! pcmOpReadFlds return parameter element specifications. Details depend on
+! the fields being read.
+!
+! Mandatory fields for output parameter element:
+!	PIN_FLD_POID
+!	&ltall fields specified to be read except optional substructs and
+!	 array elements that were not found&gt
+
+! Poid of the object from which fields were read. Includes current
+! revision number of object.
+field PIN_FLD_POID (
+	type	=		PIN_FLDT_POID,
+	perms	=		M,
+);
+
+! Fields that were read from the object are added to the return parameter element here.
+! The 'value' for each field reflects the state of the database as of
+! the moment the read was performed.
+</pre>
+</body>
+</html>

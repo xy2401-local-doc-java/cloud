@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>Creating a Connection</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="The first step in creating an integration is to create the connections to the applications with which you want to share data." />
+<meta name="dcterms.created" content="2016-11-28T14:49:33Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Using the SOAP Adapter" />
+<meta name="dcterms.identifier" content="E66631-03" />
+<meta name="dcterms.isVersionOf" content="ICSSO" />
+<meta name="dcterms.rights" content="Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved." />
+<link rel="Start" href="../../index.html" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Prev" href="GUID-9F6A7704-A8DE-484E-8D8A-06D51AD9D13C.htm" title="Previous" type="text/html" />
+<link rel="Next" href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm" title="Next" type="text/html" />
+<link rel="alternate" href="ICSSO.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="ICSSO.epub" title="ePub version" type="application/epub+zip" />
+<link rel="alternate" href="ICSSO.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook" />
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD"></a> <span id="PAGE" style="display:none;">14/28</span> <!-- End Header -->
+<h1 id="ICSSO-GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD" class="sect1">Creating a Connection</h1>
+<div>
+<p>The first step in creating an integration is to create the connections to the applications with which you want to share data.</p>
+<ol>
+<li class="stepexpand"><span>In the Integration Cloud Service toolbar, click <span class="bold">Designer</span>.</span></li>
+<li class="stepexpand"><span>On the Designer Portal, click <span class="bold">Connections</span>.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">New Connection</span>.</span>
+<div>The Create Connection &mdash; Select Adapter dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Select an adapter from the dialog. You can also search for the type of adapter to use by entering a partial or full name in the Search field, and clicking <span class="bold">Search</span>.</span>
+<div>The New Connection &mdash; Information dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>Enter the information to describe the connection.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>Enter a meaningful name to help others find your connection when they begin to create their own integrations. The name you enter is automatically added in capital letters to the <span class="bold">Identifier</span> field. If you modify the identifier name, do not include a blank space (for example, <code>OSC Inbound</code>).</p>
+</li>
+<li>
+<p>Select the role (direction) in which to use this connection (trigger, invoke, or both). Only the roles supported by this adapter are displayed for selection. When you select a role, only the connection properties and security policies appropriate to that role are displayed on the Connections page. If you select an adapter that supports both invoke and trigger, but select only one of those roles, then try to drag the adapter into the section you did not select, you receive an error (for example, configure an <span>Oracle RightNow Cloud Adapter</span> as only an invoke, but drag the adapter to the trigger section).</p>
+</li>
+<li>
+<p>Enter an optional description of the connection.</p>
+</li>
+</ul>
+<br />
+<img width="550" height="326" src="img/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png" alt="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" title="Description of GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png follows" /><br />
+<a href="img_text/GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.htm">Description of the illustration GUID-CBC87EE9-55CA-4320-A131-5426E3ECB478-default.png</a><br /></div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">Create</span>.</span>
+<div>Your connection is created and you are now ready to configure connection details, such as email contact, connection properties, security policies, and connection login credentials.</div>
+</li>
+</ol>
+</div>
+<div class="sect2"><a id="GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE"></a>
+<h2 id="ICSSO-GUID-6CD39FBD-7E66-4DB2-997D-EEE3EB3CFBBE" class="sect2">Adding a Contact Email</h2>
+<div>
+<p>From the Connection Administrator section of the connection, you can add a contact email address for notifications.</p>
+<ol>
+<li><span>In the <span class="bold">Email Address</span> field, enter an email address to receive email notifications when problems occur.</span></li>
+<li><span>In the upper right corner, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-6C2557BD-2393-4F13-AA1B-1E3840B42DDC"></a>
+<h2 id="ICSSO-GUID-6C2557BD-2393-4F13-AA1B-1E3840B42DDC" class="sect2">Configuring Connection Properties</h2>
+<div>
+<p>Enter connection information so your application can process requests.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Connectivity</span>.</span>
+<div>The Connection Properties dialog is displayed.</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">WSDL URL</span> field, specify the URL in either of two ways:</span>
+<ol>
+<li><span>Click the <span class="bold">Upload File</span> checkbox, then click <span class="bold">Upload</span> to upload the WSDL.</span></li>
+<li><span>Manually specify the WSDL to use.</span></li>
+</ol>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Target Server's TLS version (Optional)</span> field, optionally specify the Transport Layer Security (TLS) version of the target server. Oracle Integration Cloud Service is configured to use TLS v1.1 by default.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p>TLSv1</p>
+</li>
+<li>
+<p>TLSv1.1</p>
+</li>
+<li>
+<p>TLSv1.2</p>
+</li>
+</ul>
+<p>The TLS protocol provides privacy and data integrity between two communicating computer applications. Depending on the JDK version in use, the version of TLS being used during connection establishment can differ for different clients and servers. If the outbound server requires a different TLS version, specify the required version to use.</p>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Suppress insertion of timestamp into the request (Optional)</span> field, optionally suppress the timestamp in the WS-Security header. Suppression applies to the Username Password Token security policy in the invoke (outbound) direction. In secure Web Services transactions, a WS-Utility (WSU) timestamp can be inserted into a WS-Security header to define the lifetime of the message in which it is placed.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Yes</span>: No timestamp is added to the WS-Security header sent as part of the outbound request. For inbound requests with the basic authentication security policy, no timestamp is required to be sent by the client.</p>
+</li>
+<li>
+<p><span class="bold">No</span>: Clients are expected to send a timestamp in the WS-Security header with the request.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>In the <span class="bold">Ignore timestamp in the response message (Optional)</span> field, specify if the timestamp is not required in the response message.</span>
+<div>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Yes</span>: The timestamp is not required in the response message. If the timestamp is present in the SOAP security header when the response is received from the service , it is ignored.</p>
+</li>
+<li>
+<p><span class="bold">No</span>: The timestamp is received in the response from the service is not ignored.</p>
+</li>
+</ul>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+<li class="stepexpand"><span>Configure connection security.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-B83AABDA-4E24-4186-A140-50A5A2857E63"></a>
+<h2 id="ICSSO-GUID-B83AABDA-4E24-4186-A140-50A5A2857E63" class="sect2">Configuring Connection Security</h2>
+<div>
+<p>Configure security for your <span>Update Adapter Product Name</span> connection by selecting the security policy.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Credentials</span>.</span></li>
+<li class="stepexpand"><span>Select the security policy.</span>
+<div>The page is refreshed to display the login credential fields.</div>
+</li>
+<li class="stepexpand"><span>Specify the login credentials. For trigger (inbound) connections, the security policy must be either username password token or basic authentication. This is because all Oracle Integration Cloud Service inbound endpoints are protected with either of these policies. If <span class="bold">Preview updated SOAP adapter runtime</span> is enabled, the SOAP Adapter response payload does not contain the timestamp in the WSEE headers.</span>
+<div>
+<div class="tblformal" id="GUID-B83AABDA-4E24-4186-A140-50A5A2857E63__GUID-C1736C4B-A3C4-4685-A96D-F7EE75A51FAE">
+<table class="cellalignment415" summary="Table lists the different adapters and the security policies they support. It also lists the fields required by each policy type.">
+<thead align="left">
+<tr>
+<th class="cellalignment416" id="d2409e272">Security Policy</th>
+<th class="cellalignment416" id="d2409e274">Fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment416" id="d2409e278" headers="d2409e272">
+<p><span class="bold">Username Password Token</span></p>
+<p>(In the trigger (inbound) direction, supports oracle/wss_username_token_over_ssl_service_policy.)</p>
+</td>
+<td class="cellalignment416" headers="d2409e278 d2409e274">
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Username</span> &mdash; Enter the name of a user</p>
+</li>
+<li>
+<p><span class="bold">Password</span> &mdash; Enter the password.</p>
+</li>
+<li>
+<p><span class="bold">Confirm Password</span> &mdash; Reenter the password.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment416" id="d2409e302" headers="d2409e272">
+<p><span class="bold">Basic Authentication</span></p>
+<p>(In the trigger (inbound) direction, supports HTTP basic authentication over SSL: oracle/wss_http_token_over_ssl_service_policy).</p>
+<p>Note the following behavior:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the invoking client is secured with Oracle Web Services Manager (OWSM) using an oracle/wss* policy, the client receives a failure.</p>
+</li>
+<li>
+<p>In the inbound (trigger) direction, if the <span class="bold">Suppress insertion of timestamp into the request (Optional)</span> field is enabled, then oracle/http_basic_auth_over_ssl_service_policy is supported.</p>
+</li>
+</ul>
+<p>If Basic Authentication is required for both trigger and invoke connections, create one connection with the <span class="bold">Trigger and Invoke</span> role that uses the Basic Authentication security policy.</p>
+</td>
+<td class="cellalignment416" headers="d2409e302 d2409e274">
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="bold">Username</span> &mdash; Enter the name of a user who has access to the destination web service.</p>
+</li>
+<li>
+<p><span class="bold">Password</span> &mdash; Enter the password.</p>
+</li>
+<li>
+<p><span class="bold">Confirm Password</span> &mdash; Reenter the password.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment416" id="d2409e343" headers="d2409e272">
+<p><span class="bold">No Security Policy</span></p>
+</td>
+<td class="cellalignment416" headers="d2409e343 d2409e274">
+<p>No fields are displayed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<p>If you select a security policy, and then select <span class="bold">Yes</span> for <span class="bold">Preview updated SOAP adapter runtime</span> to use the JCA transport protocol on the Basic Info page, the following behavior occurs.</p>
+<div class="tblformal" id="GUID-B83AABDA-4E24-4186-A140-50A5A2857E63__GUID-76465848-4788-462E-A1BD-AA93B97F8C95">
+<table class="cellalignment415" summary="Description of the security policy behavior when Yes is selected for the Preview updated SOAP adapter runtime option.">
+<thead align="left">
+<tr>
+<th class="cellalignment422" id="d2409e369">If the Inbound SOAP Connection is Configured with Security Policy...</th>
+<th class="cellalignment422" id="d2409e371">Then...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment422" id="d2409e375" headers="d2409e369">Username Password Token</td>
+<td class="cellalignment422" headers="d2409e375 d2409e371">
+<ul style="list-style-type: disc;">
+<li>
+<p>The client should send the username/password and timestamp as part of the WSEE header.</p>
+</li>
+<li>
+<p>The response includes only the SOAP payload.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment422" id="d2409e386" headers="d2409e369">Basic Authentication</td>
+<td class="cellalignment422" headers="d2409e386 d2409e371">
+<ul style="list-style-type: disc;">
+<li>
+<p>The client should send the username/password in the HTTP headers and timestamp as part of the WSEE header.</p>
+</li>
+<li>
+<p>The response includes only the SOAP payload.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment422" id="d2409e397" headers="d2409e369">Basic Authentication and the <span class="bold">Suppress insertion of timestamp into the request (Optional)</span> field is enabled</td>
+<td class="cellalignment422" headers="d2409e397 d2409e371">
+<ul style="list-style-type: disc;">
+<li>
+<p>The client should send the username/password in the HTTP headers.</p>
+</li>
+<li>
+<p>The response includes only the SOAP payload.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- class="inftblhruleinformal" -->
+<div class="infobox-note" id="GUID-B83AABDA-4E24-4186-A140-50A5A2857E63__GUID-1A94C827-393D-46BC-95F1-111169C799E7">
+<p class="notep1">Note:</p>
+If no timestamp is included as part of the header, configure the SOAP Adapter connection with the Basic Authentication security policy (oracle/http_basic_auth_over_ssl_client_policy) and set <span class="bold">Suppress insertion of timestamp into the request (Optional)</span> to <span class="bold">Yes</span>.</div>
+</div>
+</li>
+<li class="stepexpand"><span>Click <span class="bold">OK</span>.</span></li>
+</ol>
+</div>
+</div>
+<div class="sect2"><a id="GUID-FF2562B7-0B46-4429-AC60-B5BE5A97950E"></a>
+<h2 id="ICSSO-GUID-FF2562B7-0B46-4429-AC60-B5BE5A97950E" class="sect2">Configuring an Agent Group</h2>
+<div>
+<p>Configure an agent group for accessing your on-premises application.</p>
+<ol>
+<li class="stepexpand"><span>Click <span class="bold">Configure Agents</span>.</span>
+<div>The Select an Agent Group page appears.</div>
+</li>
+<li class="stepexpand"><span>Click the name of the agent group.</span></li>
+<li class="stepexpand"><span>Click <span class="bold">Use</span>.</span></li>
+<li class="stepexpand"><span>Test the connection. See <a href="GUID-7A6854EE-4ED9-4978-8DB7-EF0A7C2C5CDD.htm#GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" title="Test your connection to ensure that it is successfully configured.">Testing the Connection</a>.</span></li>
+</ol>
+</div>
+<div>
+<div class="linklist">For more information about agent groups, see these sections in <cite>Using <span>Oracle Integration Cloud Service</span></cite>:<br />
+<div><a class="olink ICSUG-GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905" target="_blank" href="../ICSUG/GUID-8BE53B5C-6436-4F81-AD20-78ECE5589BA9.htm#ICSUG-GUID-ECC56F34-0578-4AE7-80F0-7F2FE9550905">About Agents and Integrations Between On-Premises Applications and Oracle Integration Cloud Service</a></div>
+<div><a class="olink ICSUG-GUID-22529652-FD48-420C-9903-EB1339D4EBFA" target="_blank" href="../ICSUG/GUID-22529652-FD48-420C-9903-EB1339D4EBFA.htm#ICSUG-GUID-22529652-FD48-420C-9903-EB1339D4EBFA">Managing Agent Groups and the On-Premises Agent</a></div>
+<div><a class="olink ICSUG-GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B" target="_blank" href="../ICSUG/GUID-45976C83-37F1-4A6D-B79E-C749121B4E9E.htm#ICSUG-GUID-B32DACD8-CC7C-4FC6-97CB-495071EC468B">Monitoring Agents</a></div>
+</div>
+</div>
+</div>
+<div class="sect2"><a id="GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22"></a>
+<h2 id="ICSSO-GUID-035AEC59-52B8-4F63-BE0D-0F8CCF89FD22" class="sect2">Testing the Connection</h2>
+<div>
+<p>Test your connection to ensure that it is successfully configured.</p>
+<ol>
+<li class="stepexpand"><span>In the upper right corner of the page, click <span class="bold">Test</span>.</span>
+<div>If successful, the following message is displayed and the progress indicator shows 100%.
+<p><code>The connection test was successful!</code></p>
+</div>
+</li>
+<li class="stepexpand"><span>If your connection was unsuccessful, an error message is displayed with details. Verify that the configuration details you entered are correct.</span></li>
+<li class="stepexpand"><span>When complete, click <span class="bold">Save</span>.</span></li>
+</ol>
+</div>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment405">
+<tr>
+<td class="cellalignment412">
+<table class="cellalignment410">
+<tr>
+<td class="cellalignment409"><a href="GUID-9F6A7704-A8DE-484E-8D8A-06D51AD9D13C.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment409"><a href="GUID-14C32FCB-0E2D-4543-B489-34AE136397ED.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2015, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment414">
+<table class="cellalignment408">
+<tr>
+<td class="cellalignment409"><a href="../../index.html"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment409"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment409"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

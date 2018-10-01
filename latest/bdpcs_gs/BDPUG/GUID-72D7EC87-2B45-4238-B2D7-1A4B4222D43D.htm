@@ -1,0 +1,126 @@
+<!DOCTYPE html
+  SYSTEM "about:legacy-compat">
+
+<!-- saved from url=(0023)https://docs.oracle.com -->
+
+<html xml:lang="en-us" lang="en-us">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="abstract" content="Merge multiple columns in your transform, use a delimiter in your merge, assign a new name to the resulting column, and add a prefix or suffix to the contents of the column.">
+      <meta name="description" content="Merge multiple columns in your transform, use a delimiter in your merge, assign a new name to the resulting column, and add a prefix or suffix to the contents of the column.">
+      <title>Merging Columns</title>
+      <meta property="og:site_name" content="Oracle Help Center">
+      <meta property="og:title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta property="og:description" content="Merge multiple columns in your transform, use a delimiter in your merge, assign a new name to the resulting column, and add a prefix or suffix to the contents of the column.">
+      <link rel="stylesheet" href="/sp_common/book-template/ohc-book-template/css/book.css">
+      <link rel="shortcut icon" href="/sp_common/book-template/ohc-common/img/favicon.ico">
+      <meta name="application-name" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)">
+      <meta name="plugin" content="SP_docbuilder HTML plugin release 17.3.1">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.pdf" title="PDF File" type="application/pdf">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.epub" title="ePub File" type="application/epub+zip">
+      <link rel="alternate" href="using-oracle-big-data-preparation-cloud-service.mobi" title="Mobi File" type="application/x-mobipocket-ebook">
+      <meta name="robots" content="all">
+      <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+      <meta name="dcterms.created" content="2017-05-10T15:12:37-07:00">
+      <meta name="dcterms.title" content="Using Oracle Big Data Preparation Cloud Service">
+      <meta name="dcterms.dateCopyrighted" content="2015, 2017">
+      <meta name="dcterms.category" content="cloud">
+      <meta name="dcterms.identifier" content="E63106-15">
+      <meta name="dcterms.isVersionOf" content="bdpug">
+      <meta name="dcterms.product" content="en/cloud/paas/big-data-prep-cloud">
+      <meta name="dcterms.release" content="Latest Cloud Release">
+      <link rel="prev" href="changing-column-name.html" title="Previous" type="text/html">
+      <link rel="next" href="filtering-transform-script-actions.html" title="Next" type="text/html">
+      <script>
+        document.write('<style type="text/css">');
+        document.write('body > .noscript, body > .noscript ~ * { visibility: hidden; }');
+        document.write('</style>');
+     </script>
+      <script data-main="/sp_common/book-template/ohc-book-template/js/book-config" src="/sp_common/book-template/requirejs/require.js"></script>
+      <script>
+            if (window.require === undefined) {
+                document.write('<script data-main="sp_common/book-template/ohc-book-template/js/book-config" src="sp_common/book-template/requirejs/require.js"><\/script>');
+                document.write('<link href="sp_common/book-template/ohc-book-template/css/book.css" rel="stylesheet">');
+            }
+        </script>
+      <script type="application/json" id="ssot-metadata">
+            {
+                "primary":
+                {
+                    "category":{
+                      "short_name":"cloud",
+                      "element_name":"Cloud",
+                      "display_in_url":true
+                    },
+                    "suite":{
+                      "short_name":"paas",
+                      "element_name":"Platform as a Service (PaaS)",
+                      "display_in_url":true
+                    },
+                    "product_group":{
+                      "short_name":"business-analytics",
+                      "element_name":"Business Analytics",
+                      "display_in_url":false
+                    },
+                    "product":{
+                      "short_name":"big-data-prep-cloud",
+                      "element_name":"Big Data Preparation Cloud Service",
+                      "display_in_url":true
+                    },
+                    "release":{
+                      "short_name":"latest",
+                      "element_name":"Latest Cloud Release",
+                      "display_in_url":false
+                    }
+                }
+            }
+            </script>
+      <script>window.ohcglobal || document.write('<script src="/en/dcommon/js/global.js">\x3C/script>')</script></head>
+   <body>
+      <div class="noscript alert alert-danger text-center" role="alert">
+         <a href="changing-column-name.html" class="pull-left"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Previous</a>
+         <a href="filtering-transform-script-actions.html" class="pull-right">Next<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+         <span class="fa fa-exclamation-triangle" aria-hidden="true"></span> JavaScript must be enabled to correctly display this content
+        
+      </div>
+      <article>
+         <header>
+            <ol class="breadcrumb" vocab="http://schema.org/" typeof="BreadcrumbList">
+               <li property="itemListElement" typeof="ListItem"><a href="index.html" property="item" typeof="WebPage"><span property="name">Using Oracle Big Data Preparation Cloud Service</span></a></li>
+               <li property="itemListElement" typeof="ListItem"><a href="authoring-transform-script.html" property="item" typeof="WebPage"><span property="name">Authoring the Transform Script</span></a></li>
+               <li class="active" property="itemListElement" typeof="ListItem">Merging Columns</li>
+            </ol>
+            <a id="GUID-72D7EC87-2B45-4238-B2D7-1A4B4222D43D" name="GUID-72D7EC87-2B45-4238-B2D7-1A4B4222D43D"></a>
+            
+            <h2 id="BDPUG-GUID-72D7EC87-2B45-4238-B2D7-1A4B4222D43D" class="sect2">Merging Columns</h2>
+         </header>
+         <div class="ind">
+            <div>
+               <p>Merge multiple columns in your transform, use a delimiter in your merge, assign a new name to the resulting column, and add a prefix or suffix to the contents of the column.</p>
+               <div class="section">To merge columns:</div>
+               <!-- class="section" -->
+               <ol>
+                  <li class="stepexpand"><span>On the main authoring page, click the <span class="bold">Merge Columns</span> <img src="img/mergecolumns.png" alt="Merge Columns" title="Merge Columns"> icon.</span><div>The Column Merge dialog appears.</div>
+                  </li>
+                  <li class="stepexpand"><span>From the Available Columns list, select the columns that you want to merge.</span><div>You must select at least two columns to perform a merge.</div>
+                     <div>Select multiple columns by pressing the Ctrl key as you select the columns.</div>
+                  </li>
+                  <li class="stepexpand"><span>Click the <span class="bold">Push Selected</span> <img src="img/pushselected.png" alt="Push Selected" title="Push Selected"> icon.</span><div>To use all the available columns, click the <span class="bold">Push All</span> <img src="img/pushall.png" alt="Push All" title="Push All"> icon.
+                     </div>
+                     <div>The selected columns appear in the Selected Columns list.</div>
+                  </li>
+                  <li class="stepexpand"><span>In the <span class="bold">Merge Column Name</span> field, enter a name for the new column that contains your merged data. This field is required.</span></li>
+                  <li class="stepexpand"><span>In the <span class="bold">Merge Delimiter</span> field, assign a delimiter to place between data values in your merged data. The default delimiter is <code class="codeph">&lt;SPACE&gt;</code>. This field is required.</span></li>
+                  <li class="stepexpand"><span>Optionally, assign a prefix or suffix for your merged data by entering it in the <span class="bold">Prefix</span> or <span class="bold">Suffix</span> fields.</span></li>
+                  <li class="stepexpand"><span>Click <span class="bold">Apply</span>.</span></li>
+               </ol>
+               <div class="section">The transform displays a new merge column with the name that you assigned to it and the contents from the available columns that you selected for the merge.</div>
+               <!-- class="section" -->
+            </div>
+         </div>
+      </article>
+   </body>
+</html>
